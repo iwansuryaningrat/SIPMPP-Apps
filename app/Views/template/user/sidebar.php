@@ -4,7 +4,7 @@
         <div>
             <!-- brand -->
             <div class="sidebar__content-brand">
-                <a href="#" class="d-flex align-items-center">
+                <a href="/home" class="d-flex align-items-center">
                     <img src="/assets/img/undip-logo-color.png" alt="logo-undip" />
                     <h4>SIPMPP UNDIP</h4>
                 </a>
