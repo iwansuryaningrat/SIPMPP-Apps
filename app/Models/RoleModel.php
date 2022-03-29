@@ -15,4 +15,10 @@ class RoleModel extends Model
     {
         return $this->where('role', $role)->first();
     }
+
+    // Get role
+    public function getRoleId($role_id)
+    {
+        return $this->where('role_id', $role_id)->first();
+    }
 }

@@ -48,7 +48,7 @@ class Auditor extends BaseController
             'role_id' => session()->get('role_id'),
             'tahun' => session()->get('tahun'),
         ];
-        $this->getTahun = (int)date('Y');
+        $this->tahun = $this->data_user['tahun'];
         $this->i = 1;
         $this->session = \Config\Services::session();
     }
@@ -303,7 +303,7 @@ class Auditor extends BaseController
         $nilai = $this->request->getVar('nilai');
 
         // Update Data
-        $this->unitIndukTahunModel->updateNilai($unit_id, $tahun, $induk_id, $nilai);
+        // $this->unitIndukTahunModel->updateNilai($unit_id, $tahun, $induk_id, $nilai);
 
         return redirect()->to('/home/datainduk/' . $unit_id . '/' . $tahun);
     }

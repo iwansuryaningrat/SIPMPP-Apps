@@ -43,27 +43,29 @@ class UserRoleUnitModel extends Model
     }
 
     // Join Table User Unit Role Tahun
-    public function getUserUnitRoleTahun($email, $tahun, $role)
+    public function getUserUnitRoleTahun($email, $tahun, $role_id)
     {
+        // return $this->select('user_role_unit.unit_id, units.nama_unit')
         return $this->select('user_role_unit.unit_id, units.nama_unit')
             ->join('users', 'users.email = user_role_unit.email')
             ->join('units', 'units.unit_id = user_role_unit.unit_id')
             ->join('role', 'role.role_id = user_role_unit.role_id')
             ->where('user_role_unit.email', $email)
             ->where('user_role_unit.tahun', $tahun)
-            ->where('role.role', $role)
+            ->where('user_role_unit.role_id', $role_id)
+            // ->where('role.role', $role)
             ->findAll();
     }
 
     // Get user's role by email and tahun
     public function getUserRole($email, $tahun)
     {
-        return $this->select('role.*')
+        return $this->select('user_role_unit.role_id, role.role')
             ->join('users', 'users.email = user_role_unit.email')
-            ->join('units', 'units.unit_id = user_role_unit.unit_id')
             ->join('role', 'role.role_id = user_role_unit.role_id')
             ->where('user_role_unit.email', $email)
             ->where('user_role_unit.tahun', $tahun)
+            ->groupby('user_role_unit.role_id')
             ->findAll();
     }
 
@@ -88,6 +90,15 @@ class UserRoleUnitModel extends Model
             ->join('users', 'users.email = user_role_unit.email')
             ->join('units', 'units.unit_id = user_role_unit.unit_id')
             ->join('role', 'role.role_id = user_role_unit.role_id')
+            ->findAll();
+    }
+
+    // Get Tahun By Email
+    public function getTahun($email)
+    {
+        return $this->select('user_role_unit.tahun')
+            ->where('user_role_unit.email', $email)
+            ->groupby('user_role_unit.tahun')
             ->findAll();
     }
 }

@@ -5,13 +5,11 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title><?= $title; ?>
-    </title>
+    <title><?= $title; ?></title>
 
     <!-- meta data -->
     <meta name="title" content="SIPMPP UNDIP">
-    <meta name="description"
-        content="SIPMPP merupakan Sistem Informasi Penjaminan Mutu Penelitian dan Pengabdian Universitas Diponegoro.">
+    <meta name="description" content="SIPMPP merupakan Sistem Informasi Penjaminan Mutu Penelitian dan Pengabdian Universitas Diponegoro.">
     <meta name="keywords" content="sipmpp, sipma, undip, penelitian, pengabdian, mutu">
     <meta name="robots" content="index, follow">
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
@@ -20,14 +18,11 @@
     <meta name="copyright" content="© 2022 teamsipmpppundip">
 
     <!-- bootstrap -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
-        integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous" />
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous" />
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.1/font/bootstrap-icons.css" />
     <!-- fontawesome -->
-    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v6.1.0/css/solid.css"
-        integrity="sha384-ltWlpN+Dl8XfKEnC9oW+dDRF8Z7jsYkxQ/WMRoJ2VHH5G2nQZ4if2NWwmV0ybzZ7" crossorigin="anonymous" />
-    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v6.1.0/css/fontawesome.css"
-        integrity="sha384-RLM8Rxp/DcBfCfSI3bGwwoMMxxy34D2e58WAqXmmdnh0WYlAQ8jeOB3A1ed5KUSm" crossorigin="anonymous" />
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v6.1.0/css/solid.css" integrity="sha384-ltWlpN+Dl8XfKEnC9oW+dDRF8Z7jsYkxQ/WMRoJ2VHH5G2nQZ4if2NWwmV0ybzZ7" crossorigin="anonymous" />
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v6.1.0/css/fontawesome.css" integrity="sha384-RLM8Rxp/DcBfCfSI3bGwwoMMxxy34D2e58WAqXmmdnh0WYlAQ8jeOB3A1ed5KUSm" crossorigin="anonymous" />
     <!-- custom -->
     <link rel="stylesheet" href="/assets/css/styles.css" />
     <link rel="stylesheet" href="/assets/css/styles-login.css" />
@@ -62,23 +57,20 @@
                     <p class="login__desc__unit mb-4">Silahkan pilih unit yang ingin Anda kunjungi. Harap masukkan unit
                         sesuai dengan unit Anda!</p>
 
-                    <form class="form__login" method="POST"
-                        action="/auth/loginprocess/<?= $email; ?>">
+                    <form class="form__login" method="POST" action="/auth/loginprocess/<?= $email; ?>">
                         <div class="mb-4 position-relative">
                             <label for="tahun" class="form-label form__label">Tahun</label>
                             <select class="form-select form__select shadow-none" name="tahun" id="tahun">
                                 <option selected disabled>Pilih Tahun</option>
-                                <option value="">2045</option>
+                                <?php foreach ($tahun as $tahun) : ?>
+                                    <option value="<?= $tahun['tahun']; ?>"><?= $tahun['tahun']; ?></option>
+                                <?php endforeach; ?>
                             </select>
                         </div>
                         <div class="mb-4 position-relative">
                             <label for="role" class="form-label form__label">Role</label>
                             <select class="form-select form__select shadow-none" name="role" id="role">
                                 <option selected disabled>Pilih User Role</option>
-                                <?php foreach ($roles as $role) : ?>
-                                <option value="<?= $role; ?>"><?= ucfirst($role); ?>
-                                </option>
-                                <?php endforeach; ?>
                             </select>
                         </div>
                         <div class="mb-4 position-relative">
@@ -96,19 +88,14 @@
 
     <!-- scripts -->
     <!-- jquery -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"
-        integrity="sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ=="
-        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js" integrity="sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
     <!-- bootstrap -->
-    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"
-        integrity="sha384-IQsoLXl5PILFhosVNubq5LC7Qb9DXgDA9i+tQ8Zj3iwWAwPtgFTxbJ8NT4GN1R8p" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js" integrity="sha384-IQsoLXl5PILFhosVNubq5LC7Qb9DXgDA9i+tQ8Zj3iwWAwPtgFTxbJ8NT4GN1R8p" crossorigin="anonymous">
     </script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.min.js"
-        integrity="sha384-cVKIPhGWiC2Al4u+LWgxfKTRIcfu0JTxR+EQDz/bgldoEyl4H0zUF0QKbrJ0EcQF" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.min.js" integrity="sha384-cVKIPhGWiC2Al4u+LWgxfKTRIcfu0JTxR+EQDz/bgldoEyl4H0zUF0QKbrJ0EcQF" crossorigin="anonymous">
     </script>
     <!-- fontawesome -->
-    <script defer src="https://use.fontawesome.com/releases/v6.1.0/js/all.js"
-        integrity="sha384-vLLEq/Un/eZFmXAu4Xxf8F00RSSMzPcI7iDiT6hpB4zFpezCEGhb5daeR8PLyrLI" crossorigin="anonymous">
+    <script defer src="https://use.fontawesome.com/releases/v6.1.0/js/all.js" integrity="sha384-vLLEq/Un/eZFmXAu4Xxf8F00RSSMzPcI7iDiT6hpB4zFpezCEGhb5daeR8PLyrLI" crossorigin="anonymous">
     </script>
     <!-- custom -->
     <script>
@@ -116,7 +103,7 @@
             $("#tahun").change(function() {
                 var tahun = $(this).val();
                 $.ajax({
-                    url: "<?= base_url('auth/getunit/' . $email) ?>",
+                    url: "<?= base_url('auth/getrole/' . $email) ?>",
                     type: "POST",
                     data: {
                         tahun: tahun,
@@ -124,22 +111,22 @@
                     dataType: "json",
                     success: function(response) {
                         $("#role").html(response);
-                        // console.log(response);
                     },
                 });
             });
             $("#role").change(function() {
                 var id = $(this).val();
+                var tahun = $('#tahun').val();
                 $.ajax({
                     url: "<?= base_url('auth/getunit/' . $email) ?>",
                     type: "POST",
                     data: {
-                        role: id,
+                        role_id: id,
+                        tahun: tahun,
                     },
                     dataType: "json",
                     success: function(response) {
                         $("#unit").html(response);
-                        // console.log(response);
                     },
                 });
             });

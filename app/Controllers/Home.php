@@ -48,7 +48,6 @@ class Home extends BaseController
             'role_id' => session()->get('role_id'),
             'tahun' => session()->get('tahun'),
         ];
-        $this->getTahun = (int)date('Y');
         $this->i = 1;
         $this->session = \Config\Services::session();
     }

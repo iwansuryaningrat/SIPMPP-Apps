@@ -29,7 +29,6 @@ class Auth extends BaseController
         $this->supercodeModel = new SupercodeModel();
         $this->validation = \Config\Services::validation();
         $this->session = \Config\Services::session();
-        $this->getTahun = (int)date('Y');
     }
 
     // Login Page (Done)
@@ -60,7 +59,7 @@ class Auth extends BaseController
     {
         $role = $this->request->getVar('role');
         $unit_id = $this->request->getVar('unit');
-        $tahun = $this->getTahun;
+        $tahun = $this->request->getVar('tahun');
 
         $data = $this->userroleunitModel->getDataSpec($email, $tahun, $role, $unit_id);
 
@@ -113,7 +112,7 @@ class Auth extends BaseController
         return view('auth/register', $data);
     }
 
-    // valid register (Done)
+    // valid register (Done) (Must Edit)
     public function registerProcess()
     {
         $supercode = $this->supercodeModel->findAll();
@@ -174,46 +173,19 @@ class Auth extends BaseController
 
         $user = $this->usersModel->getUserByEmail($email);
 
-        $tahun = $this->getTahun;
-
         if ($user) {
             if (password_verify($password, $user['password'])) {
-                $user = $this->userroleunitModel->getUserUnit($email, $tahun);
+                $user_tahun = $this->userroleunitModel->getTahun($email);
 
-                $user_role = $this->userroleunitModel->getUserRole($email, $tahun);
+                $data = [
+                    'title' => 'Login | SIPMPP UNDIP 2022',
+                    'nama' => $user['nama'],
+                    'email' => $user['email'],
+                    'userdata' => $user,
+                    'tahun' => $user_tahun,
+                ];
 
-                // Cek apakah yg login merupakan admin
-                if ($user_role[0]['role'] == 'admin' || $user_role[0]['role'] == 'pimpinan') {
-                    $data = [
-                        'email' => $user[0]['email'],
-                        'nama' => $user[0]['nama'],
-                        'foto' => $user[0]['foto'],
-                        'role_id' => $user_role[0]['role_id'],
-                        'role' => $user_role[0]['role'],
-                        'tahun' => $this->getTahun,
-                        'isLoggedIn' => true,
-                    ];
-
-                    $this->session->set($data);
-
-                    return redirect()->to('/admin');
-                } else {
-                    foreach ($user_role as $role) {
-                        $roles[] = $role['role'];
-                    }
-
-                    $roles = array_unique($roles);
-
-                    $data = [
-                        'title' => 'Login | SIPMPP UNDIP 2022',
-                        'nama' => $user[0]['nama'],
-                        'email' => $user[0]['email'],
-                        'userdata' => $user,
-                        'roles' => $roles,
-                    ];
-
-                    return view('auth/login-unit', $data);
-                }
+                return view('auth/login-unit', $data);
             } else {
                 session()->setFlashdata('gagal', 'Gagal melakukan proses autentikasi. Mohon untuk mengisi password dengan benar.');
 
@@ -230,11 +202,33 @@ class Auth extends BaseController
     public function getUnit($email)
     {
         $data = $this->request->getPost();
-        $units = $this->userroleunitModel->getUserUnitRoleTahun($email, $this->getTahun, $data['role']);
+
+        $role = $this->roleModel->getRoleid($data['role_id']);
+        $tahun = $data['tahun'];
+
+
+        $role_id = $role['role_id'];
+
+        $units = $this->userroleunitModel->getUserUnitRoleTahun($email, $tahun, $role_id);
         $option = '<option selected disabled>Pilih Unit</option>';
         foreach ($units as $unit) {
             $option .= '<option value="' . $unit['unit_id'] . '">' . $unit['nama_unit'] . '</option>';
         }
+        return json_encode($option);
+    }
+
+    // Get User Role (Done)
+    public function getRole($email)
+    {
+        $data = $this->request->getPost();
+        $tahun = (int)$data['tahun'];
+        $role = $this->userroleunitModel->getUserRole($email, $tahun);
+
+        $option = '<option selected disabled>Pilih Role</option>';
+        foreach ($role as $r) {
+            $option .= '<option value="' . $r['role_id'] . '">' . $r['role'] . '</option>';
+        }
+
         return json_encode($option);
     }
 }
