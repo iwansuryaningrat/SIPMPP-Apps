@@ -2,105 +2,68 @@
 
 <?= $this->section('admin'); ?>
 
-<div class="container-fluid container__fluid pb-0">
-  <div class="header__main-nav">
-    <div class="header__main-nav-btn">
-      <div id="header-main-nav-btn-i" class="line__humberger">
-        <span class="line__menu line-1" id="line1"></span>
-        <span class="line__menu line-2" id="line2"></span>
-        <span class="line__menu line-3" id="line3"></span>
-      </div>
-    </div>
-    <div class="header__main-nav-profile">
-      <div class="nav-profile__photo">
-        <img src="/profile/<?= $usersession['foto']; ?>" alt="profile-picture" id="photo-dropdown" />
-      </div>
-      <div class="nav-profile__desc">
-        <p id="profileName" class="ellipsis__text"><?= $usersession['nama']; ?>
-        </p>
-        <p id="profileStatus" class="ellipsis__text">Administrator</p>
-      </div>
-      <div class="nav-profile__btn">
-        <i class="fi-br-angle-down" id="btn-dropdown"></i>
-      </div>
-    </div>
-
-    <div class="header__main-nav-dropdown" id="header-main-nav-dropdown">
-      <p class="nav-dropdown__title">Pengaturan Profil</p>
-      <p class="d-flex align-items-center">
-        <a href="/admin/profile" class="d-block">Lihat Profil</a>
-      </p>
-      <hr />
-      <p class="d-flex align-items-center">
-        <i class="fa-solid fa-arrow-right-from-bracket d-flex"></i>
-        <a href="/logout" class="d-block">Log out</a>
-      </p>
+<div class="header__main-title">
+  <div class="header__main-title__pagination">
+    <a href="/admin/index">Dashboard</a>
+    / Unit
+  </div>
+  <div class="header__main-title__subtitle">
+    <div class="title__subtitle-desc">
+      <h1>Unit</h1>
+      <p>Halo <span><?php // uses regex that accepts any word character or hyphen in last name
+                    function split_name($name)
+                    {
+                      $name = trim($name);
+                      $last_name = (strpos($name, ' ') === false) ? '' : preg_replace('#.*\s([\w-]*)$#', '$1', $name);
+                      $first_name = trim(preg_replace('#' . preg_quote($last_name, '#') . '#', '', $name));
+                      return array($first_name, $last_name);
+                    }
+                    echo split_name($usersession['nama'])[0];
+                    ?>
+        </span>, selamat datang di dashboard Unit</p>
     </div>
   </div>
+</div>
 
-  <div class="header__main-title">
-    <div class="header__main-title__pagination">
-      <a href="/admin/index">Dashboard</a>
-      / Unit
-    </div>
-    <div class="header__main-title__subtitle">
-      <div class="title__subtitle-desc">
-        <h1>Unit</h1>
-        <p>Halo <span><?php // uses regex that accepts any word character or hyphen in last name
-                      function split_name($name)
-                      {
-                        $name = trim($name);
-                        $last_name = (strpos($name, ' ') === false) ? '' : preg_replace('#.*\s([\w-]*)$#', '$1', $name);
-                        $first_name = trim(preg_replace('#' . preg_quote($last_name, '#') . '#', '', $name));
-                        return array($first_name, $last_name);
-                      }
-                      echo split_name($usersession['nama'])[0];
-                      ?>
-          </span>, selamat datang di dashboard Unit</p>
-      </div>
-    </div>
-  </div>
+<!--========== body main ==========-->
+<div class="title__table__add">
+  <h4 class="title__body__user">Daftar Unit</h4>
+  <a href="/admin/addUnit" class="btn shadow-none btn__add btn__dark add__unit__icon" role="button" data-bs-toggle="modal" href="#staticBackdrop2">
+    <i class="fa-solid fa-plus"></i>
+    Add Unit
+  </a>
+</div>
 
-  <!--========== body main ==========-->
-  <div class="title__table__add">
-    <h4 class="title__body__user">Daftar Unit</h4>
-    <a href="/admin/addUnit" class="btn shadow-none btn__add btn__dark add__unit__icon" role="button" data-bs-toggle="modal" href="#staticBackdrop2">
-      <i class="fa-solid fa-plus"></i>
-      Add Unit
-    </a>
-  </div>
+<!-- table indikator -->
+<!-- Menampilkan flashdata msg -->
+<?= session()->getFlashdata('msg'); ?>
 
-  <!-- table indikator -->
-  <!-- Menampilkan flashdata msg -->
-  <?= session()->getFlashdata('msg'); ?>
-
-  <div class="sipmpp__table">
-    <div class="table-responsive">
-      <table class="table table__unit__content sipmpp__table-content table-hover">
-        <thead class="bg__light">
+<div class="sipmpp__table">
+  <div class="table-responsive">
+    <table class="table table__unit__content sipmpp__table-content table-hover">
+      <thead class="bg__light">
+        <tr>
+          <th class="table__unit-number">no</th>
+          <th class="table__unit-namaunit">nama unit</th>
+          <th class="table__unit-aksi">aksi</th>
+        </tr>
+      </thead>
+      <tbody>
+        <?php foreach ($units as $unit) : ?>
           <tr>
-            <th class="table__unit-number">no</th>
-            <th class="table__unit-namaunit">nama unit</th>
-            <th class="table__unit-aksi">aksi</th>
+            <td><?= $i; ?>
+            </td>
+            <td><?= $unit['nama_unit']; ?>
+            </td>
+            <td>
+              <a role="button" data-bs-toggle="modal" data-bs-placement="top" title="Edit" href="#staticBackdrop" class="edit__data__induk__icon me-3 me-md-5"><i class="fa-solid fa-pen-to-square" data-unit="<?= $unit['nama_unit']; ?>" data-id="<?= $unit['unit_id']; ?>"></i></a>
+              <a data-bs-placement="top" title="Delete" href="#" class="delete__data__induk__icon"><i class="fa-solid fa-trash"></i></a>
+            </td>
           </tr>
-        </thead>
-        <tbody>
-          <?php foreach ($units as $unit) : ?>
-            <tr>
-              <td><?= $i; ?>
-              </td>
-              <td><?= $unit['nama_unit']; ?>
-              </td>
-              <td>
-                <a role="button" data-bs-toggle="modal" data-bs-placement="top" title="Edit" href="#staticBackdrop" class="edit__data__induk__icon me-3 me-md-5"><i class="fa-solid fa-pen-to-square" data-unit="<?= $unit['nama_unit']; ?>" data-id="<?= $unit['unit_id']; ?>"></i></a>
-                <a data-bs-placement="top" title="Delete" href="#" class="delete__data__induk__icon"><i class="fa-solid fa-trash"></i></a>
-              </td>
-            </tr>
-          <?php $i++;
-          endforeach; ?>
-        </tbody>
-      </table>
-    </div>
+        <?php $i++;
+        endforeach; ?>
+      </tbody>
+    </table>
   </div>
 </div>
 

@@ -2,106 +2,65 @@
 
 <?= $this->section('admin'); ?>
 
-<div class="container-fluid container__fluid pb-0">
-    <div class="header__main-nav">
-        <div class="header__main-nav-btn">
-            <div id="header-main-nav-btn-i" class="line__humberger">
-                <span class="line__menu line-1" id="line1"></span>
-                <span class="line__menu line-2" id="line2"></span>
-                <span class="line__menu line-3" id="line3"></span>
-            </div>
-        </div>
-        <div class="header__main-nav-profile">
-            <div class="nav-profile__photo">
-                <img src="/profile/<?= $usersession['foto']; ?>"
-                    alt="profile-picture" id="photo-dropdown" />
-            </div>
-            <div class="nav-profile__desc">
-                <p id="profileName" class="ellipsis__text"><?= $usersession['nama']; ?>
-                </p>
-                <p id="profileStatus" class="ellipsis__text">Administrator</p>
-            </div>
-            <div class="nav-profile__btn">
-                <i class="fi-br-angle-down" id="btn-dropdown"></i>
-            </div>
-        </div>
-
-        <div class="header__main-nav-dropdown" id="header-main-nav-dropdown">
-            <p class="nav-dropdown__title">Pengaturan Profil</p>
-            <p class="d-flex align-items-center">
-                <a href="/admin/profile" class="d-block">Lihat Profil</a>
-            </p>
-            <hr />
-            <p class="d-flex align-items-center">
-                <i class="fa-solid fa-arrow-right-from-bracket d-flex"></i>
-                <a href="/logout" class="d-block">Log out</a>
+<div class="header__main-title">
+    <div class="header__main-title__pagination">
+        <a href="/admin/index">Dashboard</a>
+        / <a href="/admin/daftarUser">Daftar User</a> / Form Add User
+    </div>
+    <div class="header__main-title__subtitle">
+        <div class="title__subtitle-desc">
+            <h1>Add User</h1>
+            <p>
+                Form untuk menambahkan user baru
             </p>
         </div>
     </div>
+</div>
 
-    <div class="header__main-title">
-        <div class="header__main-title__pagination">
-            <a href="/admin/index">Dashboard</a>
-            / <a href="/admin/daftarUser">Daftar User</a> / Form Add User
+<!--========== body main ==========-->
+<div class="title__table__add">
+    <h4 class="title__body__user">Form Add User</h4>
+</div>
+
+<!-- form add user -->
+<div class="form__add__user">
+    <!-- Menampilkan flashdata -->
+    <?= session()->getFlashdata('msg'); ?>
+    <form method="POST" action="/admin/adduser">
+        <!-- fullname -->
+        <div class="row mb-3 mb-sm-4">
+            <label for="fullname" class="col-lg-3 col-md-3 col-sm-4 col-form-label form__label">Nama Lengkap
+                <span class="color__danger">*</span></label>
+            <div class="col-lg-6 col-md-9 col-sm-8">
+                <input class="form-control form__control shadow-none" id="fullname" name="fullname" required autocomplete="off" placeholder="Masukkan nama lengkap" />
+            </div>
         </div>
-        <div class="header__main-title__subtitle">
-            <div class="title__subtitle-desc">
-                <h1>Add User</h1>
-                <p>
-                    Form untuk menambahkan user baru
-                </p>
+        <!-- email -->
+        <div class="row mb-3 mb-sm-4">
+            <label for="email" class="col-lg-3 col-md-3 col-sm-4 col-form-label form__label">Email
+                <span class="color__danger">*</span></label>
+            <div class="col-lg-6 col-md-9 col-sm-8">
+                <input class="form-control form__control shadow-none" id="email" name="email" required autocomplete="off" placeholder="Masukkan email" />
             </div>
         </div>
-    </div>
-
-    <!--========== body main ==========-->
-    <div class="title__table__add">
-        <h4 class="title__body__user">Form Add User</h4>
-    </div>
-
-    <!-- form add user -->
-    <div class="form__add__user">
-        <!-- Menampilkan flashdata -->
-        <?= session()->getFlashdata('msg'); ?>
-        <form method="POST" action="/admin/adduser">
-            <!-- fullname -->
-            <div class="row mb-3 mb-sm-4">
-                <label for="fullname" class="col-lg-3 col-md-3 col-sm-4 col-form-label form__label">Nama Lengkap
-                    <span class="color__danger">*</span></label>
-                <div class="col-lg-6 col-md-9 col-sm-8">
-                    <input class="form-control form__control shadow-none" id="fullname" name="fullname" required
-                        autocomplete="off" placeholder="Masukkan nama lengkap" />
-                </div>
+        <!-- password -->
+        <div class="row mb-3 mb-sm-4">
+            <label for="password" class="col-lg-3 col-md-3 col-sm-4 col-form-label form__label">Password
+                <span class="color__danger">*</span></label>
+            <div class="col-lg-6 col-md-9 col-sm-8">
+                <input class="form-control form__control shadow-none" type="password" id="password" name="password" required autocomplete="off" placeholder="Masukkan password" />
             </div>
-            <!-- email -->
-            <div class="row mb-3 mb-sm-4">
-                <label for="email" class="col-lg-3 col-md-3 col-sm-4 col-form-label form__label">Email
-                    <span class="color__danger">*</span></label>
-                <div class="col-lg-6 col-md-9 col-sm-8">
-                    <input class="form-control form__control shadow-none" id="email" name="email" required
-                        autocomplete="off" placeholder="Masukkan email" />
-                </div>
+        </div>
+        <!-- button -->
+        <div class="row">
+            <div class="col-lg-9 col-md-12 col-sm-12 button__section">
+                <a href="/admin/user" class="btn form__btn cancel__btn me-4 shadow-none" role="button">Batal</a>
+                <button type="submit" class="btn form__btn btn__dark shadow-none">
+                    Simpan
+                </button>
             </div>
-            <!-- password -->
-            <div class="row mb-3 mb-sm-4">
-                <label for="password" class="col-lg-3 col-md-3 col-sm-4 col-form-label form__label">Password
-                    <span class="color__danger">*</span></label>
-                <div class="col-lg-6 col-md-9 col-sm-8">
-                    <input class="form-control form__control shadow-none" type="password" id="password" name="password"
-                        required autocomplete="off" placeholder="Masukkan password" />
-                </div>
-            </div>
-            <!-- button -->
-            <div class="row">
-                <div class="col-lg-9 col-md-12 col-sm-12 button__section">
-                    <a href="/admin/user" class="btn form__btn cancel__btn me-4 shadow-none" role="button">Batal</a>
-                    <button type="submit" class="btn form__btn btn__dark shadow-none">
-                        Simpan
-                    </button>
-                </div>
-            </div>
-        </form>
-    </div>
+        </div>
+    </form>
 </div>
 
 <?= $this->endSection(); ?>
