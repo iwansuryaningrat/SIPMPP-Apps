@@ -65,6 +65,13 @@
                     <form class="form__login" method="POST"
                         action="/auth/loginprocess/<?= $email; ?>">
                         <div class="mb-4 position-relative">
+                            <label for="tahun" class="form-label form__label">Tahun</label>
+                            <select class="form-select form__select shadow-none" name="tahun" id="tahun">
+                                <option selected disabled>Pilih Tahun</option>
+                                <option value="">2045</option>
+                            </select>
+                        </div>
+                        <div class="mb-4 position-relative">
                             <label for="role" class="form-label form__label">Role</label>
                             <select class="form-select form__select shadow-none" name="role" id="role">
                                 <option selected disabled>Pilih User Role</option>
@@ -106,6 +113,21 @@
     <!-- custom -->
     <script>
         $(document).ready(function() {
+            $("#tahun").change(function() {
+                var tahun = $(this).val();
+                $.ajax({
+                    url: "<?= base_url('auth/getunit/' . $email) ?>",
+                    type: "POST",
+                    data: {
+                        tahun: tahun,
+                    },
+                    dataType: "json",
+                    success: function(response) {
+                        $("#role").html(response);
+                        // console.log(response);
+                    },
+                });
+            });
             $("#role").change(function() {
                 var id = $(this).val();
                 $.ajax({
