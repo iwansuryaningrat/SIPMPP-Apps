@@ -58,10 +58,13 @@ class Auth extends BaseController
     public function loginProcess($email)
     {
         $role = $this->request->getVar('role');
+        $role = $this->roleModel->getRoleId($role);
+        $role = $role['role'];
         $unit_id = $this->request->getVar('unit');
         $tahun = $this->request->getVar('tahun');
 
         $data = $this->userroleunitModel->getDataSpec($email, $tahun, $role, $unit_id);
+        // dd($role, $unit_id, $tahun, $data);
 
         $data = [
             'email' => $data['email'],
