@@ -129,17 +129,18 @@
           </thead>
           <tbody>
 
-
-            <tr>
-              <td>1</td>
-              <td><a href="#" class="unit__link">S1 Informatika</a></td>
-              <td>
-                <div class="progress table__unit__progress">
-                  <div class="progress-bar bg__dark-main unit__progressbar" role="progressbar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100" style="width: 60%" data-bs-toggle="tooltip" data-bs-placement="top" title="60%"></div>
-                </div>
-              </td>
-            </tr>
-
+            <?php foreach ($units as $unit) : ?>
+              <tr>
+                <td><?= $i; ?></td>
+                <td><a href="#" class="unit__link"><?= $unit['nama_unit']; ?></a></td>
+                <td>
+                  <div class="progress table__unit__progress">
+                    <div class="progress-bar bg__dark-main unit__progressbar" role="progressbar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100" style="width: 60%" data-bs-toggle="tooltip" data-bs-placement="top" title="60%"></div>
+                  </div>
+                </td>
+              </tr>
+            <?php $i++;
+            endforeach; ?>
 
           </tbody>
         </table>

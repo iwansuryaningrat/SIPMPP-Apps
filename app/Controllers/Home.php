@@ -57,7 +57,7 @@ class Home extends BaseController
     {
         $data_user = $this->data_user;
         $units = $this->unitsModel->findAll();
-        dd($units);
+        // dd($units);
 
         $i = 1;
 
@@ -67,7 +67,8 @@ class Home extends BaseController
             'i' => $i,
             'tab' => 'home',
             'header' => 'header__big',
-            'css' => 'styles-dashboard.css'
+            'css' => 'styles-dashboard.css',
+            'units' => $units,
         ];
 
         return view('user/index', $data);
