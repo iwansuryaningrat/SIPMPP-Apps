@@ -45,14 +45,15 @@
 
 <body>
     <!-- sidebar -->
-    <?= $this->include('template/user/usersidebar'); ?>
+    <?= $this->include('template/user/sidebar'); ?>
 
     <!-- main -->
     <div class="main__content" id="main-content">
         <!-- header main -->
         <div class="header__main-color <?= $header; ?>"></div>
         <div class="container-fluid container__fluid">
-            <?= $this->include('template/user/userprofile'); ?>
+
+            <?= $this->include('template/user/profile'); ?>
 
             <?= $this->renderSection('user'); ?>
 
