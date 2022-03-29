@@ -245,7 +245,7 @@ class Auth extends BaseController
         $units = $this->userroleunitModel->getUserUnitRoleTahun($email, $tahun, $role_id);
         $option = '<option selected disabled>Pilih Unit</option>';
         foreach ($units as $unit) {
-            $option .= '<option value="' . $unit['unit_id'] . '">' . ucfirst($unit['nama_unit']) . '</option>';
+            $option .= '<option value="' . $unit['unit_id'] . '">' . $unit['nama_unit'] . '</option>';
         }
         return json_encode($option);
     }
@@ -259,7 +259,7 @@ class Auth extends BaseController
 
         $option = '<option selected disabled>Pilih Role</option>';
         foreach ($role as $r) {
-            $option .= '<option value="' . $r['role_id'] . '">' . $r['role'] . '</option>';
+            $option .= '<option value="' . $r['role_id'] . '">' . ucfirst($r['role']) . '</option>';
         }
 
         return json_encode($option);
