@@ -1,0 +1,49 @@
+@import url(styles-admin.css);
+/* ========== table ========== */
+.table__indikator__content tbody tr:hover {
+  background-color: rgba(38, 48, 77, 0.1) !important;
+}
+
+.table__indikator__content tr th:first-child,
+.table__indikator__content tr td:first-child,
+.table__indikator__content tr th:last-child,
+.table__indikator__content tr td:last-child,
+.table__indikator__content tr th:nth-child(4),
+.table__indikator__content tr td:nth-child(4) {
+  text-align: center;
+}
+
+.table__indikator__content tbody tr:last-child {
+  border-bottom: none;
+  border-bottom-style: hidden;
+}
+
+.table__indikator-number,
+.table__indikator-aksi,
+.table__indikator-nilai {
+  width: 10%;
+}
+
+.table__indikator-indikator,
+.table__indikator-target {
+  width: 35%;
+}
+
+.table__indikator__content thead tr th,
+.table__indikator__content tbody tr td {
+  padding-right: 1.5rem;
+  padding-left: 1.5rem;
+}
+
+.sipmpp__table tr td .edit__data__induk__icon svg {
+  color: rgba(21, 114, 232, 1);
+}
+
+@media screen and (max-width: 1024px) {
+}
+
+@media screen and (max-width: 991px) {
+}
+
+@media screen and (max-width: 576px) {
+}

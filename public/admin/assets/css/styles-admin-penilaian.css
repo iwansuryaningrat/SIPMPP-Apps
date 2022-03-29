@@ -1,0 +1,62 @@
+@import url(styles-admin.css);
+/* ========== table ========== */
+#datatablePenilaian tbody tr:hover {
+  background-color: rgba(38, 48, 77, 0.1) !important;
+}
+
+#datatablePenilaian tr th:first-child,
+#datatablePenilaian tr td:first-child,
+#datatablePenilaian tr th:last-child,
+#datatablePenilaian tr td:last-child,
+#datatablePenilaian tr th:nth-child(2),
+#datatablePenilaian tr td:nth-child(2),
+#datatablePenilaian tr th:nth-child(5),
+#datatablePenilaian tr td:nth-child(5),
+#datatablePenilaian tr th:nth-child(6),
+#datatablePenilaian tr td:nth-child(6) {
+  text-align: center;
+}
+
+#datatablePenilaian tbody tr:last-child {
+  border-bottom: none !important;
+  border-bottom-style: hidden !important;
+}
+
+/* .table__datainduk-number {
+  width: 10%;
+}
+
+.table__datainduk-kode {
+  width: 15%;
+}
+
+.table__datainduk-aksi {
+  width: 20%;
+}
+
+.table__datainduk-kebutuhan-data {
+  width: 55%;
+} */
+
+#datatablePenilaian thead tr th,
+#datatablePenilaian tbody tr td {
+  padding-right: 1.5rem;
+  padding-left: 1.5rem;
+}
+
+.sipmpp__table tr td .edit__data__induk__icon svg {
+  color: rgba(21, 114, 232, 1);
+}
+
+.sipmpp__table tr td .delete__data__induk__icon svg {
+  color: var(--danger-color);
+}
+
+@media screen and (max-width: 1024px) {
+}
+
+@media screen and (max-width: 991px) {
+}
+
+@media screen and (max-width: 576px) {
+}

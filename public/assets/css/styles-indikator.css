@@ -1,0 +1,59 @@
+@import url(styles.css);
+
+.title__body__indikator-u {
+  font-weight: 600;
+  margin-top: 2.625rem;
+  margin-bottom: 1rem;
+}
+
+.title__body__indikator-s {
+  margin-top: 0;
+  margin-bottom: 2rem;
+  font-weight: 600;
+}
+
+/* table */
+.table__indikatpr__content tbody tr:hover {
+  background-color: rgba(38, 48, 77, 0.1) !important;
+}
+
+.table__indikator__content tr th:first-child,
+.table__indikator__content tr td:first-child,
+.table__indikator__content tr th:last-child,
+.table__indikator__content tr td:last-child,
+.table__indikator__content tr th:nth-child(4),
+.table__indikator__content tr td:nth-child(4),
+.table__indikator__content tr th:nth-child(5),
+.table__indikator__content tr td:nth-child(5) {
+  text-align: center;
+}
+
+.table__indikator__content tbody tr:last-child {
+  border-bottom: none;
+  border-bottom-style: hidden;
+}
+
+.table__indikator-number,
+.table__indikator-nilai,
+.table__indikator-aksi {
+  width: 10%;
+}
+
+.table__indikator-status {
+  width: 15%;
+}
+
+.table__indikator-indikator,
+.table__indikator-target {
+  width: 27.5%;
+}
+
+.table__indikator__content thead tr th,
+.table__indikator__content tbody tr td {
+  padding-right: 1.5rem;
+  padding-left: 1.5rem;
+}
+
+.sipmpp__table tr td .edit__data__induk__icon svg {
+  color: rgba(21, 114, 232, 1);
+}

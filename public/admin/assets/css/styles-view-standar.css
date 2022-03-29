@@ -1,0 +1,68 @@
+@import url(styles-admin.css);
+/* ========== table ========== */
+.table__view-standar__content tbody tr:hover {
+  background-color: rgba(38, 48, 77, 0.1) !important;
+}
+
+.table__view-standar__content tr th:first-child,
+.table__view-standar__content tr td:first-child,
+.table__view-standar__content tr th:last-child,
+.table__view-standar__content tr td:last-child,
+.table__view-standar__content tr th:nth-child(2),
+.table__view-standar__content tr th:nth-child(4),
+.table__view-standar__content tr th:nth-child(5),
+.table__view-standar__content tr th:nth-child(6),
+.table__view-standar__content tr td:nth-child(2),
+.table__view-standar__content tr td:nth-child(4),
+.table__view-standar__content tr td:nth-child(5),
+.table__view-standar__content tr td:nth-child(6) {
+  text-align: center;
+}
+
+.table__view-standar__content tbody tr:last-child {
+  border-bottom: none;
+  border-bottom-style: hidden;
+}
+
+.table__view__standar-number {
+  width: 7%;
+}
+.table__view_standar-standar,
+.table__view__standar-tahun {
+  width: 10%;
+}
+
+.table__view__standar-status,
+.table__view__standar-kategori {
+  width: 15%;
+}
+
+.table__view__standar-aksi {
+  width: 20%;
+}
+.table__view__standar-nama {
+  width: 23%;
+}
+
+.table__view-standar__content thead tr th,
+.table__view-standar__content tbody tr td {
+  padding-right: 1.5rem;
+  padding-left: 1.5rem;
+}
+
+.sipmpp__table tr td .edit__data__induk__icon svg {
+  color: rgba(21, 114, 232, 1);
+}
+
+.sipmpp__table tr td .delete__data__induk__icon svg {
+  color: var(--danger-color);
+}
+
+@media screen and (max-width: 1024px) {
+}
+
+@media screen and (max-width: 991px) {
+}
+
+@media screen and (max-width: 576px) {
+}

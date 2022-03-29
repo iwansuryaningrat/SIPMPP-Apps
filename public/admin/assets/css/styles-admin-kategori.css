@@ -1,0 +1,52 @@
+@import url(styles-admin.css);
+/* ========== table ========== */
+.table__kategori__content tbody tr:hover {
+  background-color: rgba(38, 48, 77, 0.1) !important;
+}
+
+.table__kategori__content tr th:first-child,
+.table__kategori__content tr td:first-child,
+.table__kategori__content tr th:last-child,
+.table__kategori__content tr td:last-child {
+  text-align: center;
+}
+
+.table__kategori__content tbody tr:last-child {
+  border-bottom: none;
+  border-bottom-style: hidden;
+}
+
+.table__user-number {
+  width: 10%;
+}
+
+.table__user-aksi {
+  width: 20%;
+}
+
+.table__user-kategori {
+  width: 70%;
+}
+
+.table__kategori__content thead tr th,
+.table__kategori__content tbody tr td {
+  padding-right: 1.5rem;
+  padding-left: 1.5rem;
+}
+
+.sipmpp__table tr td .edit__data__induk__icon svg {
+  color: rgba(21, 114, 232, 1);
+}
+
+.sipmpp__table tr td .delete__data__induk__icon svg {
+  color: var(--danger-color);
+}
+
+@media screen and (max-width: 1024px) {
+}
+
+@media screen and (max-width: 991px) {
+}
+
+@media screen and (max-width: 576px) {
+}

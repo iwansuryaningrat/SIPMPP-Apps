@@ -1,0 +1,364 @@
+@import url(styles.css);
+
+/* ==========header main========== */
+.report__link {
+  display: flex;
+  transition: var(--trans-m);
+
+  align-items: center;
+  justify-content: center;
+}
+
+.report__link span {
+  font-weight: 600;
+
+  display: block;
+
+  transition: var(--trans-m);
+
+  color: rgba(255, 255, 255, 0.8);
+}
+
+.report__link img {
+  width: 1.625rem;
+  margin-right: 0.625rem;
+
+  transition: var(--trans-m);
+
+  opacity: 0.8;
+}
+
+.report__link:hover {
+  box-shadow: 0 0.25rem 1.25rem rgba(0, 0, 0, 0.2);
+}
+
+.report__link:hover span {
+  color: var(--white);
+}
+
+.report__link:hover img {
+  opacity: 1;
+}
+
+/* ==========progress pengisian========== */
+.progress__content {
+  display: flex;
+
+  margin-bottom: 1.75rem;
+}
+
+.progress__content-card {
+  padding: 2.25rem 1.875rem 1.875rem;
+
+  border: var(--border-sm);
+  border-radius: var(--radius-lg);
+  background-color: var(--white);
+
+  flex: 0.5;
+  display: flex;
+  flex-direction: column;
+}
+
+.progress__content-card:first-child {
+  margin-right: 0.875rem;
+}
+
+.progress__content-card:last-child {
+  margin-left: 0.875rem;
+}
+
+.progress__content-card .d-flex {
+  flex-wrap: wrap;
+}
+
+.progress__icon-warp {
+  height: 1.875rem;
+  margin-right: 1rem;
+  margin-bottom: 1rem;
+}
+
+.progress__icon-warp img {
+  height: 100%;
+}
+
+.progress__content-progress-desc {
+  display: flex;
+
+  margin-bottom: 0.75rem;
+
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+
+.progress__content-progress-desc p {
+  margin-bottom: 0;
+}
+
+.progress__content-progress-desc p:first-child {
+  margin-right: 0.5rem;
+}
+
+.progress__content-progress-bar {
+  height: 0.75rem;
+
+  border-radius: 1rem;
+  background-color: var(--light-color);
+}
+
+.progress-bar.bg__dark-main {
+  border-radius: 1rem;
+}
+
+/* ==========recap content========== */
+.recap__content {
+  display: flex;
+}
+
+.recap__content-link {
+  display: flex;
+  flex-direction: column;
+
+  margin-right: 0.875rem;
+
+  flex: 0.27;
+}
+
+.recap__link-card {
+  margin-bottom: 1.75rem;
+
+  border: var(--border-sm);
+  border-radius: var(--radius-lg);
+  background-color: var(--light-color);
+}
+
+.recap__link-card__body {
+  padding: 1.875rem 1.875rem 1.125rem;
+}
+
+.recap__link-card__body img {
+  width: 3.375rem;
+  margin-bottom: 1.25rem;
+}
+
+.recap__link-card__footer {
+  padding: 1.5rem 1.875rem;
+
+  border-radius: 0 0 var(--radius-lg) var(--radius-lg);
+  background-color: var(--dark-main-color);
+}
+
+.recap__link-card__footer a {
+  display: flex;
+
+  align-items: center;
+  justify-content: space-between;
+}
+
+.recap__link-card__footer a i {
+  font-size: 1.125rem;
+}
+
+.recap__link-card__footer a i,
+.recap__link-card__footer a span {
+  display: flex;
+
+  transition: var(--trans-m);
+
+  color: rgba(255, 255, 255, 0.7);
+}
+
+.recap__link-card__footer a:hover i,
+.recap__link-card__footer a:hover span {
+  color: var(--white);
+}
+
+.recap__content-unit {
+  overflow-x: hidden;
+
+  margin-left: 0.875rem;
+
+  flex: 0.73;
+}
+
+.sipmpp__table .card__title {
+  font-size: 1.25rem !important;
+
+  padding: 1.875rem;
+}
+
+.table__unit {
+  padding: 0 1.875rem 1.875rem;
+}
+
+.table__unit__content tbody tr:hover {
+  background-color: rgba(38, 48, 77, 0.1) !important;
+}
+
+.table__unit__content tr th:first-child,
+.table__unit__content tr td:first-child,
+.table__unit__content tr th:last-child,
+.table__unit__content tr td:last-child {
+  text-align: center;
+}
+
+.table__unit__content tr th:last-child,
+.table__unit__content tr td:last-child {
+  padding-right: 1.875rem;
+  padding-left: 1.875rem;
+
+  vertical-align: middle;
+}
+
+.table__unit__head__number {
+  width: 10%;
+  min-width: 3.375rem;
+}
+
+.table__unit__head__unit {
+  width: 40%;
+  min-width: 14.375rem;
+}
+
+.table__unit__head__progress {
+  width: 50%;
+  min-width: 18rem;
+}
+
+.table__unit__progress {
+  height: 0.6rem;
+
+  border-radius: 1rem;
+  background-color: var(--light-color);
+}
+
+.unit__link:hover {
+  text-decoration: underline;
+
+  color: var(--black);
+}
+
+/* ==========tablet view========== */
+@media screen and (max-width: 991px) {
+  /* ==========progress pengisian========== */
+  .progress__content {
+    flex-direction: column;
+  }
+  .progress__content-card:first-child,
+  .progress__content-card:last-child {
+    margin-right: 0;
+    margin-left: 0;
+
+    flex: 1;
+  }
+
+  /* ==========recap content========== */
+  .recap__content {
+    flex-direction: column;
+  }
+
+  .recap__content-link {
+    flex-direction: column;
+
+    margin-right: 0;
+
+    flex: 1;
+  }
+
+  .recap__link-card {
+    width: 100%;
+    margin-bottom: 1.75rem;
+    flex: 1;
+  }
+
+  .recap__link-card:first-child {
+    margin-right: 0;
+  }
+
+  .recap__link-card:last-child {
+    margin-left: 0;
+  }
+
+  .recap__content-unit {
+    margin-left: 0;
+
+    flex: 1;
+  }
+}
+
+/* ==========mobile view========== */
+@media screen and (max-width: 576px) {
+  /* ==========progress pengisian========== */
+  .progress__content {
+    margin-bottom: 1rem;
+  }
+
+  .progress__content-card {
+    padding: 1.5rem 1.25rem 1.25rem;
+
+    border-radius: var(--border-l);
+  }
+
+  /* ==========recap content========== */
+  .recap__link-card {
+    /* width: 100%; */
+    margin-bottom: 1rem;
+
+    border-radius: var(--border-l);
+  }
+
+  .recap__link-card__body {
+    padding: 1.25rem 1.25rem 0.75rem;
+  }
+
+  .recap__link-card__body img {
+    width: 2.25rem;
+    margin-bottom: 1rem;
+  }
+
+  .recap__link-card__footer {
+    padding: 1rem 1.25rem;
+
+    border-radius: 0 0 var(--border-l) var(--border-l);
+  }
+
+  .recap__link-card__body .card__title {
+    font-size: 1rem;
+  }
+
+  .sipmpp__table {
+    border-radius: var(--border-l);
+  }
+
+  .sipmpp__table .card__title {
+    font-size: 1.125rem !important;
+
+    padding: 1.25rem;
+  }
+
+  .table__unit {
+    padding: 0 1.25rem 1.25rem;
+  }
+
+  .table__unit__content thead tr th,
+  .table__unit__content tbody tr td,
+  .table__datainduk thead tr th,
+  .table__datainduk tbody tr td {
+    padding: 1.125rem 0;
+  }
+
+  .table__unit__content tr th:last-child,
+  .table__unit__content tr td:last-child,
+  .table__datainduk tr th:last-child,
+  .table__datainduk tr td:last-child {
+    padding-right: 1.125rem;
+    padding-left: 1.125rem;
+  }
+}
+
+/* mini-mobile view */
+@media screen and (max-width: 380px) {
+  .recap__link-card__footer a i {
+    display: none !important;
+  }
+}
