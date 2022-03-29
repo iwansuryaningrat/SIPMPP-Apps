@@ -37,7 +37,7 @@ class Home extends BaseController
         $this->unitIndukTahunModel = new UnitIndukTahunModel();
         $this->unitsModel = new UnitsModel();
         $this->usersModel = new UsersModel();
-        $this->userunitModel = new UserRoleUnitModel();
+        $this->userroleunitModel = new UserRoleUnitModel();
         $this->data_user = [
             'email' => session()->get('email'),
             'nama' => session()->get('nama'),
@@ -56,7 +56,8 @@ class Home extends BaseController
     public function index()
     {
         $data_user = $this->data_user;
-        // dd($data_user);
+        $units = $this->unitsModel->findAll();
+        dd($units);
 
         $i = 1;
 

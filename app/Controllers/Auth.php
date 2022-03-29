@@ -4,29 +4,29 @@ namespace App\Controllers;
 
 use App\Controllers\BaseController;
 use App\Models\UsersModel;
-use App\Models\UserUnitModel;
 use App\Models\UserRoleUnitModel;
 use App\Models\UnitsModel;
 use App\Models\RoleModel;
 use App\Models\SupercodeModel;
+use App\Models\TahunModel;
 
 class Auth extends BaseController
 {
     protected $usersModel;
-    protected $userunitModel;
     protected $userroleunitModel;
     protected $unitsModel;
     protected $roleModel;
     protected $supercodeModel;
+    protected $tahunModel;
 
     public function __construct()
     {
         $this->usersModel = new UsersModel();
-        $this->userunitModel = new UserUnitModel();
         $this->userroleunitModel = new UserRoleUnitModel();
         $this->unitsModel = new UnitsModel();
         $this->roleModel = new RoleModel();
         $this->supercodeModel = new SupercodeModel();
+        $this->tahunModel = new TahunModel();
         $this->validation = \Config\Services::validation();
         $this->session = \Config\Services::session();
     }
@@ -115,42 +115,72 @@ class Auth extends BaseController
         return view('auth/register', $data);
     }
 
-    // valid register (Done) (Must Edit)
+    // valid register (Done)
     public function registerProcess()
     {
         $supercode = $this->supercodeModel->findAll();
         $supercode = $supercode[0]['supercode'];
         $inputcode = $this->request->getVar('superpass');
         $verify = password_verify($inputcode, $supercode);
+        $email = $this->request->getVar('email');
 
         if ($verify == false) {
             session()->setFlashdata('error', 'Gagal melakukan proses registrasi. Mohon maaf untuk mengisi supercode dengan benar.');
 
             return redirect()->to('auth/register');
         } else {
-            $data = [
-                'nama' => $this->request->getVar('nama'),
-                'email' => $this->request->getVar('email'),
-                'password' => password_hash($this->request->getVar('password'), PASSWORD_DEFAULT),
-                'foto' => 'default.png',
-            ];
+            $user = $this->usersModel->getUserByEmail($email);
+            if ($user == null) {
 
-            $this->usersModel->insert($data);
+                $data = [
+                    'nama' => $this->request->getVar('nama'),
+                    'email' => $email,
+                    'password' => password_hash($this->request->getVar('password'), PASSWORD_DEFAULT),
+                    'foto' => 'default.png',
+                ];
 
-            $role = $this->roleModel->getRole('admin');
-            $roleuser = [
-                'email' => $this->request->getVar('email'),
-                'role_id' => $role['role_id'],
-                'unit_id' => 'lppm',
-                'tahun' => $this->getTahun,
-            ];
+                $this->usersModel->insert($data);
 
-            $this->userroleunitModel->insert($roleuser);
+                $role = $this->roleModel->getRole('admin');
+                $tahun = $this->tahunModel->findAll();
+                foreach ($tahun as $tahun) {
+                    $data = [
+                        'email' => $email,
+                        'role_id' => $role['role_id'],
+                        'unit_id' => 'lppm',
+                        'tahun' => $tahun['tahun'],
+                    ];
 
-            session()->setFlashdata('success', 'Akun berhasil dibuat, silahkan login sebagai administrator.');
+                    $this->userroleunitModel->insert($data);
+                }
 
-            return redirect()->to('/login');
+                session()->setFlashdata('success', 'Akun berhasil dibuat, silahkan login sebagai administrator.');
+
+                return redirect()->to('/login');
+            } else {
+                session()->setFlashdata('gagal', 'Akun sudah terdaftar, silahkan login.');
+
+                return redirect()->to('/login');
+            }
         }
+    }
+
+    // Update Admin (Done)
+    public function updateadmin($email)
+    {
+        $user = $this->usersModel->getUserByEmail($email);
+        $data = [
+            'email' => $email,
+            'role_id' => '2',
+            'unit_id' => 'lppm',
+            'tahun' => date('Y'),
+        ];
+
+        $this->userroleunitModel->insert($data);
+
+        session()->setFlashdata('success', 'Akun berhasil diupdate, silahkan login sebagai administrator.');
+
+        return redirect()->to('/login');
     }
 
     // Logout
@@ -215,7 +245,7 @@ class Auth extends BaseController
         $units = $this->userroleunitModel->getUserUnitRoleTahun($email, $tahun, $role_id);
         $option = '<option selected disabled>Pilih Unit</option>';
         foreach ($units as $unit) {
-            $option .= '<option value="' . $unit['unit_id'] . '">' . $unit['nama_unit'] . '</option>';
+            $option .= '<option value="' . $unit['unit_id'] . '">' . ucfirst($unit['nama_unit']) . '</option>';
         }
         return json_encode($option);
     }

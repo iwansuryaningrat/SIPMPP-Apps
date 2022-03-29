@@ -14,7 +14,6 @@ use App\Models\TahunModel;
 use App\Models\UnitIndukTahunModel;
 use App\Models\UnitsModel;
 use App\Models\UsersModel;
-use App\Models\UserUnitModel;
 use App\Models\UserRoleUnitModel;
 use Config\Validation;
 
@@ -30,7 +29,6 @@ class Admin extends BaseController
     protected $unitIndukTahunModel;
     protected $unitsModel;
     protected $usersModel;
-    protected $userunitModel;
     protected $userroleunitModel;
 
     public function __construct()
@@ -45,7 +43,6 @@ class Admin extends BaseController
         $this->unitIndukTahunModel = new UnitIndukTahunModel();
         $this->unitsModel = new UnitsModel();
         $this->usersModel = new UsersModel();
-        $this->userunitModel = new UserUnitModel();
         $this->userroleunitModel = new UserRoleUnitModel();
         $this->data_user = [
             'email' => session()->get('email'),

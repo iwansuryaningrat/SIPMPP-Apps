@@ -37,7 +37,7 @@ class Auditor extends BaseController
         $this->unitIndukTahunModel = new UnitIndukTahunModel();
         $this->unitsModel = new UnitsModel();
         $this->usersModel = new UsersModel();
-        $this->userunitModel = new UserRoleUnitModel();
+        $this->userroleunitModel = new UserRoleUnitModel();
         $this->data_user = [
             'email' => session()->get('email'),
             'nama' => session()->get('nama'),
