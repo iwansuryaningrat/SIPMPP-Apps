@@ -53,9 +53,9 @@
         <div class="header__main-color <?= $header; ?>"></div>
         <div class="container-fluid container__fluid">
 
-            <?= $this->include('template/user/profile'); ?>
+            <?= $this->include('template/auditor/profile'); ?>
 
-            <?= $this->renderSection('user'); ?>
+            <?= $this->renderSection('auditor'); ?>
 
         </div>
 

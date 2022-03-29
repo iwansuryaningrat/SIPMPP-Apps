@@ -1,6 +1,6 @@
-<?= $this->extend('template/userlayout'); ?>
+<?= $this->extend('template/auditorlayout'); ?>
 
-<?= $this->section('user'); ?>
+<?= $this->section('auditor'); ?>
 
 <div class="header__main-title">
   <div class="header__main-title__pagination">
