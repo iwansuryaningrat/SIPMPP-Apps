@@ -34,6 +34,9 @@
 
 <!-- =====data table induk =====-->
 <div class="tab-content" id="pills-tabContent">
+  <!-- Menampilkan Flashdata Message -->
+  <?= session()->getFlashdata('message'); ?>
+
   <!-- penelitian -->
   <div class="tab-pane fade show active" id="pills-table-datainduk-penelitian" role="tabpanel" aria-labelledby="pills-datainduk-penelitian">
     <div class="sipmpp__table">

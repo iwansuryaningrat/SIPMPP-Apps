@@ -88,14 +88,19 @@
                                                         echo 'badge__warning';
                                                       } ?>"><?= $standar['status']; ?></span>
                   </td>
-                  <td>0</td>
+                  <td><?php
+                      foreach ($data_nilai as $nilai) :
+                        if ($nilai['standar_id'] == $standar['standar_id'] && $nilai['kategori_id'] == $standar['kategori_id']) echo $nilai['nilai_akhir'];
+                      endforeach; ?>
+                  </td>
                   <td>
-                    <a data-bs-placement="top" title="Lihat" href="/home/indikator/<?= $standar['standar_id'] . '/' . $tahun . '/' . $standar['kategori_id'] ?>" class="edit__data__induk__icon">
+                    <a data-bs-placement="top" title="Lihat" href="/home/indikator/<?= $standar['standar_id'] . '/' . $standar['kategori_id'] ?>" class="edit__data__induk__icon">
                       <i class="fa-solid fa-eye"></i>
                     </a>
                   </td>
                 </tr>
-            <?php $i++;
+            <?php
+                $i++;
               endif;
             endforeach; ?>
 
@@ -142,14 +147,18 @@
                                                         echo 'badge__warning';
                                                       } ?>"><?= $standar['status']; ?></span>
                   </td>
-                  <td>0</td>
+                  <td><?php
+                      foreach ($data_nilai as $nilai) :
+                        if ($nilai['standar_id'] == $standar['standar_id'] && $nilai['kategori_id'] == $standar['kategori_id']) echo $nilai['nilai_akhir'];
+                      endforeach; ?></td>
                   <td>
-                    <a data-bs-placement="top" title="Lihat" href="/home/indikator/<?= $standar['standar_id'] . '/' . $tahun . '/' . $standar['kategori_id'] ?>" class="edit__data__induk__icon">
+                    <a data-bs-placement="top" title="Lihat" href="/home/indikator/<?= $standar['standar_id'] . '/' . $standar['kategori_id'] ?>" class="edit__data__induk__icon">
                       <i class="fa-solid fa-eye"></i>
                     </a>
                   </td>
                 </tr>
-            <?php $i++;
+            <?php
+                $i++;
               endif;
             endforeach; ?>
 

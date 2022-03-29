@@ -111,18 +111,350 @@ class Home extends BaseController
         $unit_id = $user['unit_id'];
 
         $induk_id = $this->request->getVar('induk_id');
-        // dd($induk_id);
+
         $nilai = $this->request->getVar('nilai');
         $kategori_id = $this->request->getVar('kategori_id');
-        // dd($nilai, $kategori_id);
 
-        // $data_induk = $this->unitIndukTahunModel->getIndukUnitSpec($unit_id, $tahun, $induk_id, $kategori_id);
-        // dd($data_induk);
 
         // Update Data
         $this->unitIndukTahunModel->updateNilai($unit_id, $tahun, $induk_id, $kategori_id, $nilai);
-        // $this->unitIndukTahunModel->updateNilai($unit_id, $tahun, $induk_id, $nilai);
+
+        session()->setFlashdata('message', '<div class="alert alert-success" role="alert">Data Induk berhasil diubah!</div>');
 
         return redirect()->to('/home/datainduk/' . $unit_id . '/' . $tahun);
+    }
+
+    // Standar Method (Done)
+    public function standar()
+    {
+        $data_user = $this->data_user;
+        $tahun = $data_user['tahun'];
+
+        $unit_id = $data_user['unit_id'];
+
+
+        $data = $this->penilaianModel->getPenilaian($unit_id, $tahun);
+        // dd($data);
+        $data_nilai = [];
+        foreach ($data as $datap) {
+            $nilai_akhir = 0;
+            $i = 1;
+            $datapenilaian = $this->penilaianModel->getPenilaianSpec($data_user['unit_id'], $datap['standar_id'], $tahun, $datap['kategori_id']);
+            // dd($datapenilaian);
+            foreach ($datapenilaian as $nilai) {
+                $nilai_akhir += $nilai['nilai_akhir'];
+                $i++;
+            }
+            $nilai_akhir = $nilai_akhir / $i;
+            $data_nilai[] = [
+                'standar_id' => $datap['standar_id'],
+                'kategori_id' => $datap['kategori_id'],
+                'nilai_akhir' => $nilai_akhir,
+            ];
+        }
+        // dd($data_nilai);
+
+
+        $i = 1;
+
+        $status = [];
+        foreach ($data as $s) {
+            $status[] = $s['status'];
+        }
+
+
+        // Cek apakah semua standar sudah diisi
+        if (in_array('Dikirim', $status)) {
+            $status = "Sudah Dikirim";
+        } elseif (in_array('Diaudit', $status)) {
+            $status = "Sudah Diaudit";
+        } else {
+            $status = "Belum Dikirim";
+        }
+
+        $data = [
+            'title' => 'Standar | SIPMPP UNDIP 2022',
+            'data_user' => $data_user,
+            'tab' => 'standar',
+            'header' => 'header__mini',
+            'css' => 'styles-standar.css',
+            'tahun' => $tahun,
+            'i' => $i,
+            'status' => $status,
+            'data_standar' => $data,
+            'data_nilai' => $data_nilai,
+        ];
+
+        return view('user/standar', $data);
+    }
+
+    // Indikator Method (Done)
+    public function indikator($standar_id, $kategori_id)
+    {
+        $data_user = $this->data_user;
+
+        $tahun = $data_user['tahun'];
+        // dd($data_user['unit_id'], $standar_id, $tahun, $kategori_id);
+
+        $datapenilaian = $this->penilaianModel->getPenilaianSpec($data_user['unit_id'], $standar_id, $tahun, $kategori_id);
+        // dd($datapenilaian);
+
+        $kategori = $datapenilaian[0]['nama_kategori'];
+
+        $standar = [
+            'standar_id' => $datapenilaian[0]['standar_id'],
+            'nama_standar' => $datapenilaian[0]['nama_standar'],
+        ];
+        // dd($standar);
+
+        $i = 1;
+
+        $data = [
+            'title' => 'Indikator | SIPMPP UNDIP 2022',
+            'data_user' => $data_user,
+            'tab' => 'standar',
+            'i' => $i,
+            'header' => 'header__mini header__indikator',
+            'css' => 'styles-indikator.css',
+            'tahun' => $tahun,
+            'datapenilaian' => $datapenilaian,
+            'standar' => $standar,
+            'kategori' => $kategori,
+        ];
+
+        return view('user/indikator', $data);
+    }
+
+    // Indikator Form Method (Done)
+    public function indikatorForm($kategori_id, $standar_id, $indikator_id)
+    {
+        $data_user = $this->data_user;
+        $unit_id = $data_user['unit_id'];
+        $tahun = $data_user['tahun'];
+
+        // $datapenilaian = $this->penilaianModel->getPenilaianSpec($unit_id, $standar_id, $tahun, $kategori_id);
+        $datapenilaian = $this->penilaianModel->getPenilaianSpecId($unit_id, $standar_id, $tahun, $kategori_id, $indikator_id);
+        $standar = $this->standarModel->getStandar($standar_id);
+        // dd($datapenilaian, $standar);
+        $induk = $this->unitIndukTahunModel->getIndukUnitSpec($unit_id, $tahun, $datapenilaian[0]['indikator_id'], $kategori_id);
+        // dd($induk);
+
+        if ($datapenilaian[0]['nilai'] == 0) {
+            session()->setFlashdata('message', '<div class="alert alert-danger" role="alert">Nilai Data Induk Belum Diisi. Silakan isi Data Induk terlebih dahulu</div>');
+            return redirect()->to('/home/indikator/' . $standar_id . '/' . $kategori_id);
+        } else {
+            $data = [
+                'title' => 'Form Indikator SPMI | SIPMPP UNDIP',
+                'data_user' => $data_user,
+                'tab' => 'standar',
+                'header' => 'header__mini header__indikator',
+                'css' => 'styles-form-indikator-spmi.css',
+                'datapenilaian' => $datapenilaian,
+                'standar' => $standar,
+                'induk' => $induk,
+                'tahun' => $tahun,
+            ];
+
+            return view('user/indikatorform', $data);
+        }
+    }
+
+    // Save Indikator Method (Done)
+    public function saveIndikator($indikator_id, $tahun, $standar_id, $unit_id, $kategori_id)
+    {
+        $indikator_id = (int)$indikator_id;
+        $nilai_input = $this->request->getVar('hasil');
+        $keterangan = $this->request->getVar('keterangan');
+        $status = "Diisi";
+
+        $datapenilaian = $this->penilaianModel->getPenilaianSpec($unit_id, $standar_id, $tahun, $kategori_id);
+
+        if ($nilai_input == 'ADA / SESUAI') {
+            $nilai_input = 1;
+            $hasil = 100;
+            $nilai_akhir = $hasil;
+        } elseif ($nilai_input == 'TIDAK ADA / SESUAI') {
+            $nilai_input = 0;
+            $hasil = 0;
+            $nilai_akhir = $hasil;
+        } else {
+            $nilai_input = (int)$nilai_input;
+            $nilai_acuan = (int)$datapenilaian[0]['nilai_acuan'];
+            $nilai_induk = (int)$datapenilaian[0]['nilai'];
+            $hasil = $nilai_input / $nilai_induk * 100;
+            if ($hasil >= $nilai_acuan) {
+                $nilai_akhir = 100;
+            } else {
+                $nilai_akhir = $hasil / $nilai_acuan * 100;
+            }
+        }
+
+
+        // Dokumen handler
+        $dokumen = $this->request->getFile('dokumen');
+        if ($dokumen->getError() == 4) {
+            return redirect()->to('/home/indikatorform/' . $indikator_id);
+        } else {
+            $namadokumen = 'dokumen-' . $indikator_id . '-' . $standar_id . '-' . $unit_id . '-' . $kategori_id . '-' . $tahun . '/' . $dokumen->getExtension();
+            $dokumen->move('dokumen/', $namadokumen);
+        };
+
+        $data = [
+            'nilai_input' => $nilai_input,
+            'dokumen' => $namadokumen,
+            'keterangan' => $keterangan,
+            'status' => $status,
+            'hasil' => $hasil,
+            'nilai_akhir' => $nilai_akhir
+        ];
+
+        $this->penilaianModel->updatePenilaian($unit_id, $tahun, $standar_id, $kategori_id, $indikator_id, $data);
+
+        session()->setFlashdata('message', '<div class="alert alert-success" role="alert">Data Indikator berhasil diubah</div>');
+
+        return redirect()->to('/home/indikator/' . $standar_id . '/' . $kategori_id);
+    }
+
+    // Send Penilaian Method (Done)
+    public function sendPenilaian()
+    {
+        $data_user = $this->data_user;
+        $tahun = $data_user['tahun'];
+
+
+        $unit_id = $data_user['unit_id'];
+        $standar = $this->penilaianModel->getPenilaian($unit_id, $tahun);
+        $status = [];
+        foreach ($standar as $s) {
+            array_push($status, $s['status']);
+        }
+        // dd($status);
+
+        // Cek apakah semua standar sudah diisi
+        if (in_array('Belum Diisi', $status) || in_array('Belum Lengkap', $status)) {
+            // dd('Belum Lengkap');
+            $this->session->setFlashdata('message', '<div class="alert alert-danger" role="alert"><strong>Maaf!</strong> Data penilaian belum lengkap.</div>');
+            return redirect()->to('/home/standar/');
+        } else {
+            // dd('Lengkap');
+            $this->penilaianModel->updateStatus($data_user['unit_id'], $tahun, 'Dikirim');
+
+            $this->session->setFlashdata('message', '<div class="alert alert-success" role="alert"><strong>Selamat!</strong> Data penilaian telah dikirim.</div>');
+            return redirect()->to('/home/standar/');
+        }
+    }
+
+    // Report Method
+    public function report()
+    {
+        $data_user = $this->data_user;
+
+        $unitData = $this->unitData;
+        $i = 1;
+
+        $data = [
+            'title' => 'Dashboard SIPMPP | SIPMPP UNDIP 2022',
+            'data_user' => $data_user,
+            'unitData' => $unitData,
+            'i' => $i,
+            'tab' => 'report',
+            'header' => 'header__mini',
+            'css' => 'styles-report.css'
+        ];
+
+        return view('user/report', $data);
+    }
+
+    // Profile Method (Done)
+    public function profile()
+    {
+        $data_user = $this->data_user;
+        $user = $this->usersModel->getUserByEmail($data_user['email']);
+
+        $data = [
+            'title' => 'Profile | SIPMPP UNDIP 2022',
+            'data_user' => $data_user,
+            'user' => $user,
+            'tab' => 'profile',
+            'header' => '',
+            'css' => 'styles-profile.css'
+        ];
+
+        return view('user/profile', $data);
+    }
+
+    // Edit Password Method (Done)
+    public function editPassword()
+    {
+        $data_user = $this->data_user;
+        $user = $this->usersModel->getUserByEmail($data_user['email']);
+
+        $old_password = $this->request->getVar('old-password');
+        $new_password = $this->request->getVar('new-password');
+
+        // Cek apakah password lama sama dengan password lama
+        if (password_verify($old_password, $user['password'])) {
+            // Cek apakah password baru sama dengan password lama
+            if ($old_password == $new_password) {
+                $this->session->setFlashdata('message', '<div class="alert alert-danger" role="alert"> <strong>Maaf!</strong> Password baru tidak boleh sama dengan password lama.</div>');
+                return redirect()->to('/home/profile/');
+            } else {
+                // Update Password
+                $new_password = password_hash($new_password, PASSWORD_DEFAULT);
+                $this->usersModel->updatePassword($data_user['email'], $new_password);
+
+                $this->session->setFlashdata('message', '<div class="alert alert-success" role="alert"><strong>Selamat!</strong> Password berhasil diubah.</div>');
+                return redirect()->to('/home/profile/');
+            }
+        } else {
+            $this->session->setFlashdata('message', '<div class="alert alert-danger" role="alert"><strong>Maaf!</strong> Password lama tidak sesuai.</div>');
+            return redirect()->to('/home/profile/');
+        }
+    }
+
+    // Edit Profile Method (Done)
+    public function editProfile()
+    {
+        $data_user = $this->data_user;
+        $user = $this->usersModel->getUserByEmail($data_user['email']);
+
+        // Mengambil foto profil
+        $foto = $this->request->getFile('photo-profile');
+        if ($foto->getError() == 4) {
+            $namafoto = $user['foto'];
+        } else {
+            // Hapus foto lama
+            $namafoto = $user['foto'];
+            unlink('profile/' . $namafoto);
+            // set nama foto baru
+            $namafoto = 'foto-' . $user['email'] . '.' . $foto->getExtension();
+            $foto->move('profile/', $namafoto);
+        };
+
+        $data = [
+            'nama' => $this->request->getVar('fullname'),
+            'nip' => $this->request->getVar('nip'),
+            'telp' => $this->request->getVar('no-telp'),
+            'foto' => $namafoto,
+        ];
+
+        // Update Data
+        $this->usersModel->updateProfile($data_user['email'], $data);
+
+        // Update Session
+        $datasession = [
+            'email' => $user['email'],
+            'nama' => $data['nama'],
+            'foto' => $data['foto'],
+            'role_id' => $data_user['role_id'],
+            'role' => $data_user['role'],
+            'tahun' => $this->getTahun,
+            'isLoggedIn' => true,
+        ];
+
+        $this->session->set($datasession);
+
+        $this->session->setFlashdata('message', '<div class="alert alert-success" role="alert"><strong>Selamat!</strong> Data berhasil diubah.</div>');
+        return redirect()->to('/home/profile/');
     }
 }

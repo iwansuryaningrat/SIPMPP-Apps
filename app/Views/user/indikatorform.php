@@ -56,17 +56,26 @@
         <input class="form-control form__control shadow-none" id="satuan" name="satuan" disabled required value="<?= $datapenilaian[0]['satuan']; ?>" />
       </div>
     </div>
-
-    <div class="row mb-3">
-      <label for="hasil" class="col-lg-3 col-md-3 col-sm-4 col-form-label form__label">Hasil <span class="color__danger">*</span></label>
-      <div class="col-lg-6 col-md-9 col-sm-8">
-        <select class="form-select form__select shadow-none" name="hasil" id="hasil">
-          <option selected disabled>Pilih hasil data</option>
-          <option value="ADA / SESUAI">ADA / SESUAI</option>
-          <option value="Tidak ADA / TIDAK SESUAI">Tidak ADA / TIDAK SESUAI</option>
-        </select>
+    <!-- Hasil -->
+    <?php if ($datapenilaian[0]['nilai_acuan'] == 1) { ?>
+      <div class="row mb-3">
+        <label for="hasil" class="col-lg-3 col-md-3 col-sm-4 col-form-label form__label">Hasil <span class="color__danger">*</span></label>
+        <div class="col-lg-6 col-md-9 col-sm-8">
+          <select class="form-select form__select shadow-none" name="hasil" id="hasil">
+            <option selected disabled>Pilih hasil data</option>
+            <option value="ADA / SESUAI">ADA / SESUAI</option>
+            <option value="Tidak ADA / TIDAK SESUAI">Tidak ADA / TIDAK SESUAI</option>
+          </select>
+        </div>
       </div>
-    </div>
+    <?php } else { ?>
+      <div class="row mb-3 mb-sm-4">
+        <label for="hasil" class="col-lg-3 col-md-3 col-sm-4 col-form-label form__label">Hasil</label>
+        <div class="col-lg-6 col-md-9 col-sm-8">
+          <input class="form-control form__control shadow-none" id="hasil" name="hasil" required />
+        </div>
+      </div>
+    <?php } ?>
 
     <!-- dokumen -->
     <div class="row mb-3">
@@ -95,7 +104,7 @@
     <!-- button -->
     <div class="row">
       <div class="col-lg-9 col-md-12 col-sm-12 button__section">
-        <a href="/home/indikator/<?= $standar['standar_id'] . '/' . $tahun . '/' . $datapenilaian[0]['kategori_id'] ?>" class="btn form__btn cancel__btn me-4" role="button">Batal</a>
+        <a href="/home/indikator/<?= $standar['standar_id'] . '/' . $datapenilaian[0]['kategori_id'] ?>" class="btn form__btn cancel__btn me-4" role="button">Batal</a>
         <button type="submit" class="btn form__btn btn__dark shadow-none">
           Simpan
         </button>

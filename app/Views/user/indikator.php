@@ -17,13 +17,15 @@
 
 <!--========== body main ==========-->
 <h4 class="title__body__indikator-u">
-  Kategori: Penelitian
+  Kategori: <?= $kategori; ?>
 </h4>
 <h4 class="title__body__indikator-s">
   <?= $standar['standar_id'] . '. ' . $standar['nama_standar'] ?>
 </h4>
 
 <!-- table indikator -->
+<!-- Menampilkan Flashdata Message -->
+<?= session()->getFlashdata('message'); ?>
 <div class="sipmpp__table">
   <div class="table-responsive">
     <table class="table table__indikator__content sipmpp__table-content table-hover">
@@ -60,7 +62,7 @@
             <td><?= $data['nilai_akhir']; ?>
             </td>
             <td>
-              <a data-bs-placement="top" title="Edit" href="/home/indikatorform/<?= $tahun . '/' . $data['unit_id'] . '/' . $data['kategori_id'] . '/' . $data['standar_id'] . '/' . $data['indikator_id']; ?>" class="edit__data__induk__icon"><i class="fa-solid fa-pen-to-square"></i></a>
+              <a data-bs-placement="top" title="Edit" href="/home/indikatorform/<?= $data['kategori_id'] . '/' . $data['standar_id'] . '/' . $data['indikator_id']; ?>" class="edit__data__induk__icon"><i class="fa-solid fa-pen-to-square"></i></a>
             </td>
           </tr>
         <?php $i++;
