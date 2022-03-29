@@ -56,9 +56,10 @@
 
             <?= $this->renderSection('user'); ?>
 
-            <!-- footer -->
-            <?= $this->include('template/footer'); ?>
         </div>
+
+        <!-- footer -->
+        <?= $this->include('template/footer'); ?>
     </div>
 
     <?= $this->renderSection('modal'); ?>
