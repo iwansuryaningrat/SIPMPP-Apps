@@ -1,56 +1,54 @@
--- MySQL dump 10.13  Distrib 5.7.35, for Win64 (x86_64)
+-- phpMyAdmin SQL Dump
+-- version 5.1.1
+-- https://www.phpmyadmin.net/
 --
--- Host: localhost    Database: spmi
--- ------------------------------------------------------
--- Server version	5.7.35-log
+-- Host: 127.0.0.1
+-- Waktu pembuatan: 28 Mar 2022 pada 09.51
+-- Versi server: 10.4.21-MariaDB
+-- Versi PHP: 8.0.12
+
+SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
+START TRANSACTION;
+SET time_zone = "+00:00";
+
 
 /*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
 /*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
 /*!40101 SET @OLD_COLLATION_CONNECTION=@@COLLATION_CONNECTION */;
-/*!40101 SET NAMES utf8 */;
-/*!40103 SET @OLD_TIME_ZONE=@@TIME_ZONE */;
-/*!40103 SET TIME_ZONE='+00:00' */;
-/*!40014 SET @OLD_UNIQUE_CHECKS=@@UNIQUE_CHECKS, UNIQUE_CHECKS=0 */;
-/*!40014 SET @OLD_FOREIGN_KEY_CHECKS=@@FOREIGN_KEY_CHECKS, FOREIGN_KEY_CHECKS=0 */;
-/*!40101 SET @OLD_SQL_MODE=@@SQL_MODE, SQL_MODE='NO_AUTO_VALUE_ON_ZERO' */;
-/*!40111 SET @OLD_SQL_NOTES=@@SQL_NOTES, SQL_NOTES=0 */;
+/*!40101 SET NAMES utf8mb4 */;
 
 --
--- Table structure for table `data_induk`
+-- Database: `spmi`
 --
 
-DROP TABLE IF EXISTS `data_induk`;
-/*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!40101 SET character_set_client = utf8 */;
+-- --------------------------------------------------------
+
+--
+-- Struktur dari tabel `data_induk`
+--
+
 CREATE TABLE `data_induk` (
   `induk_id` int(11) NOT NULL,
   `kategori_id` varchar(10) NOT NULL,
   `nama_induk` varchar(50) NOT NULL,
   `created_at` datetime NOT NULL,
-  `updated_at` datetime NOT NULL,
-  PRIMARY KEY (`induk_id`,`kategori_id`),
-  KEY `kategori_id` (`kategori_id`),
-  CONSTRAINT `data_induk_ibfk_1` FOREIGN KEY (`kategori_id`) REFERENCES `kategori` (`kategori_id`)
+  `updated_at` datetime NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
-/*!40101 SET character_set_client = @saved_cs_client */;
 
 --
--- Dumping data for table `data_induk`
+-- Dumping data untuk tabel `data_induk`
 --
 
-LOCK TABLES `data_induk` WRITE;
-/*!40000 ALTER TABLE `data_induk` DISABLE KEYS */;
-INSERT INTO `data_induk` VALUES (1,'PEN','Judul Penelitian','2022-03-26 18:04:42','2022-03-26 18:04:42'),(1,'PPM','Judul PPM','2022-03-26 18:04:42','2022-03-26 18:04:42'),(2,'PEN','Dokumen','2022-03-27 07:38:44','2022-03-27 07:38:44'),(2,'PPM','Dokumen','2022-03-27 07:38:44','2022-03-27 07:38:44');
-/*!40000 ALTER TABLE `data_induk` ENABLE KEYS */;
-UNLOCK TABLES;
+INSERT INTO `data_induk` (`induk_id`, `kategori_id`, `nama_induk`, `created_at`, `updated_at`) VALUES
+(1, 'PEN', 'Judul PKM', '2022-03-26 18:04:42', '2022-03-26 18:04:42'),
+(1, 'PPM', 'Judul PKM', '2022-03-26 18:04:42', '2022-03-26 18:04:42');
+
+-- --------------------------------------------------------
 
 --
--- Table structure for table `indikator`
+-- Struktur dari tabel `indikator`
 --
 
-DROP TABLE IF EXISTS `indikator`;
-/*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `indikator` (
   `indikator_id` int(11) NOT NULL,
   `kategori_id` varchar(10) NOT NULL,
@@ -62,58 +60,42 @@ CREATE TABLE `indikator` (
   `keterangan` varchar(255) NOT NULL,
   `induk_id` int(11) NOT NULL,
   `created_at` datetime NOT NULL,
-  `updated_at` datetime NOT NULL,
-  PRIMARY KEY (`indikator_id`,`kategori_id`,`standar_id`),
-  KEY `induk_fk` (`induk_id`),
-  KEY `standar_fk` (`standar_id`),
-  KEY `kategori_id` (`kategori_id`),
-  CONSTRAINT `indikator_ibfk_1` FOREIGN KEY (`kategori_id`) REFERENCES `kategori` (`kategori_id`),
-  CONSTRAINT `induk_fk` FOREIGN KEY (`induk_id`) REFERENCES `data_induk` (`induk_id`),
-  CONSTRAINT `standar_fk` FOREIGN KEY (`standar_id`) REFERENCES `standar` (`standar_id`)
+  `updated_at` datetime NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
-/*!40101 SET character_set_client = @saved_cs_client */;
 
 --
--- Dumping data for table `indikator`
+-- Dumping data untuk tabel `indikator`
 --
 
-LOCK TABLES `indikator` WRITE;
-/*!40000 ALTER TABLE `indikator` DISABLE KEYS */;
-INSERT INTO `indikator` VALUES (1,'PEN','S1','Tersedianya data Jumlah luaran Penelitian yang mendapat pengakuan HKI (Paten, Paten Sederhana)','Lebih dari nilai patokan luaran Penelitian yang mendapat pengakuan HKI (Paten, Paten Sederhana)',10,'Luaran','Judul HKI',1,'2022-03-26 18:05:35','2022-03-26 18:05:35'),(1,'PEN','S2','Kedalaman dan keluasan topik dan materi Penelitian kepada masyarakat bersumber dari hasil penelitian atau pengembangan ilmu pengetahuan dan teknologi yang sesuai dengan kebutuhan masyarakat','Adanya dokumen laporan penelitian kepada masyarakat bersumber dari hasil penelitian atau pengembangan ilmu pengetahuan dan teknologi yang sesuai dengan kebutuhan masyarakat',1,'Dokumen','Dokumen',2,'2022-03-27 07:38:44','2022-03-27 07:38:44'),(1,'PPM','S1','Tersedianya data Jumlah luaran PPM yang mendapat pengakuan HKI (Paten, Paten Sederhana)','Lebih dari nilai patokan luaran PPM yang mendapat pengakuan HKI (Paten, Paten Sederhana)',10,'Luaran','Judul HKI',1,'2022-03-27 07:38:44','2022-03-27 07:38:44'),(1,'PPM','S2','Kedalaman dan keluasan topik dan materi pengabdian kepada masyarakat bersumber dari hasil penelitian atau pengembangan ilmu pengetahuan dan teknologi yang sesuai dengan kebutuhan masyarakat','Adanya dokumen laporan pengabdian kepada masyarakat bersumber dari hasil penelitian atau pengembangan ilmu pengetahuan dan teknologi yang sesuai dengan kebutuhan masyarakat',1,'Dokumen','Dokumen',2,'2022-03-27 07:38:44','2022-03-27 07:38:44'),(2,'PEN','S1','Jumlah luaran PEN yang mendapat pengakuan HKI (Hak Cipta, Desain Produk Industri, Perlindungan Varietas Tanaman, Desain Tata Letak Sirkuit Terpadu, dll.)','Lebih dari nilai patokan luaran PEN yang mendapat pengakuan HKI (Hak Cipta, Desain Produk Industri, Perlindungan Varietas Tanaman, Desain Tata Letak Sirkuit Terpadu, dll.)',10,'Luaran','Judul',1,'2022-03-27 07:38:44','2022-03-27 07:38:44'),(2,'PPM','S1','Jumlah luaran PPM yang mendapat pengakuan HKI (Hak Cipta, Desain Produk Industri, Perlindungan Varietas Tanaman, Desain Tata Letak Sirkuit Terpadu, dll.)','Lebih dari nilai patokan luaran PPM yang mendapat pengakuan HKI (Hak Cipta, Desain Produk Industri, Perlindungan Varietas Tanaman, Desain Tata Letak Sirkuit Terpadu, dll.)',10,'Luaran','Judul',1,'2022-03-27 07:38:44','2022-03-27 07:38:44');
-/*!40000 ALTER TABLE `indikator` ENABLE KEYS */;
-UNLOCK TABLES;
+INSERT INTO `indikator` (`indikator_id`, `kategori_id`, `standar_id`, `nama_indikator`, `target`, `nilai_acuan`, `satuan`, `keterangan`, `induk_id`, `created_at`, `updated_at`) VALUES
+(1, 'PEN', 'S1', 'Indikator 1', 'Target 1', 0, '', '', 1, '2022-03-26 18:05:35', '2022-03-26 18:05:35'),
+(1, 'PPM', 'S1', '', '', 0, '', '', 1, '2022-03-27 07:38:44', '2022-03-27 07:38:44');
+
+-- --------------------------------------------------------
 
 --
--- Table structure for table `kategori`
+-- Struktur dari tabel `kategori`
 --
 
-DROP TABLE IF EXISTS `kategori`;
-/*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `kategori` (
   `kategori_id` varchar(10) NOT NULL,
-  `nama_kategori` varchar(50) NOT NULL,
-  PRIMARY KEY (`kategori_id`)
+  `nama_kategori` varchar(50) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
-/*!40101 SET character_set_client = @saved_cs_client */;
 
 --
--- Dumping data for table `kategori`
+-- Dumping data untuk tabel `kategori`
 --
 
-LOCK TABLES `kategori` WRITE;
-/*!40000 ALTER TABLE `kategori` DISABLE KEYS */;
-INSERT INTO `kategori` VALUES ('PEN','Penelitian'),('PPM','Pengabdian Masyarakat');
-/*!40000 ALTER TABLE `kategori` ENABLE KEYS */;
-UNLOCK TABLES;
+INSERT INTO `kategori` (`kategori_id`, `nama_kategori`) VALUES
+('PEN', 'Penelitian'),
+('PPM', 'Pengabdian Masyarakat');
+
+-- --------------------------------------------------------
 
 --
--- Table structure for table `penilaian`
+-- Struktur dari tabel `penilaian`
 --
 
-DROP TABLE IF EXISTS `penilaian`;
-/*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `penilaian` (
   `tahun` int(11) NOT NULL,
   `unit_id` varchar(20) NOT NULL,
@@ -128,257 +110,149 @@ CREATE TABLE `penilaian` (
   `hasil` int(11) NOT NULL,
   `nilai_akhir` float NOT NULL,
   `created_at` datetime NOT NULL,
-  `updated_at` datetime NOT NULL,
-  PRIMARY KEY (`tahun`,`unit_id`,`kategori_id`,`standar_id`,`indikator_id`),
-  KEY `indikator_fk` (`indikator_id`),
-  KEY `unit_id` (`unit_id`),
-  KEY `kategori_id` (`kategori_id`),
-  KEY `standar_id` (`standar_id`),
-  CONSTRAINT `indikator_fk` FOREIGN KEY (`indikator_id`) REFERENCES `indikator` (`indikator_id`),
-  CONSTRAINT `penilaian_ibfk_1` FOREIGN KEY (`unit_id`) REFERENCES `units` (`unit_id`),
-  CONSTRAINT `penilaian_ibfk_2` FOREIGN KEY (`tahun`) REFERENCES `tahun` (`tahun`),
-  CONSTRAINT `penilaian_ibfk_3` FOREIGN KEY (`kategori_id`) REFERENCES `kategori` (`kategori_id`),
-  CONSTRAINT `penilaian_ibfk_4` FOREIGN KEY (`standar_id`) REFERENCES `standar` (`standar_id`)
+  `updated_at` datetime NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
-/*!40101 SET character_set_client = @saved_cs_client */;
 
 --
--- Dumping data for table `penilaian`
+-- Dumping data untuk tabel `penilaian`
 --
 
-LOCK TABLES `penilaian` WRITE;
-/*!40000 ALTER TABLE `penilaian` DISABLE KEYS */;
-INSERT INTO `penilaian` VALUES (2022,'infor','PEN','S1',1,1,'dokumen-1-S1-infor-PEN-2022pdf','ksdskjui','','Dikirim',100,100,'2022-03-27 07:26:27','2022-03-27 15:28:27'),(2022,'infor','PPM','S1',1,1,'','','','Dikirim',1,1,'2022-03-27 07:40:13','2022-03-27 15:28:27'),(2022,'lppm','PEN','S1',1,1,' ',' ',' ',' ',0,0,'2022-03-27 07:40:13','2022-03-27 07:40:13'),(2022,'lppm','PEN','S1',2,1,' ',' ',' ',' ',0,0,'2022-03-27 07:40:13','2022-03-27 07:40:13'),(2022,'lppm','PEN','S2',1,1,' ',' ',' ',' ',0,0,'2022-03-27 07:40:13','2022-03-27 07:40:13'),(2022,'lppm','PPM','S1',1,1,' ',' ',' ',' ',0,0,'2022-03-27 07:40:13','2022-03-27 07:40:13'),(2022,'lppm','PPM','S1',2,1,' ',' ',' ',' ',0,0,'2022-03-27 07:40:13','2022-03-27 07:40:13'),(2022,'lppm','PPM','S2',1,1,' ',' ',' ',' ',0,0,'2022-03-27 07:40:13','2022-03-27 07:40:13');
-/*!40000 ALTER TABLE `penilaian` ENABLE KEYS */;
-UNLOCK TABLES;
+INSERT INTO `penilaian` (`tahun`, `unit_id`, `kategori_id`, `standar_id`, `indikator_id`, `nilai_input`, `dokumen`, `keterangan`, `catatan`, `status`, `hasil`, `nilai_akhir`, `created_at`, `updated_at`) VALUES
+(2022, 'infor', 'PEN', 'S1', 1, 1, 'dokumen-1-S1-infor-PEN-2022pdf', 'ksdskjui', '', 'Dikirim', 100, 100, '2022-03-27 07:26:27', '2022-03-27 15:28:27'),
+(2022, 'infor', 'PPM', 'S1', 1, 1, '', '', '', 'Dikirim', 1, 1, '2022-03-27 07:40:13', '2022-03-27 15:28:27');
+
+-- --------------------------------------------------------
 
 --
--- Table structure for table `role`
+-- Struktur dari tabel `role`
 --
 
-DROP TABLE IF EXISTS `role`;
-/*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `role` (
-  `role_id` int(11) NOT NULL AUTO_INCREMENT,
-  `role` varchar(20) NOT NULL,
-  PRIMARY KEY (`role_id`)
-) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=utf8mb4;
-/*!40101 SET character_set_client = @saved_cs_client */;
+  `role_id` int(11) NOT NULL,
+  `role` varchar(20) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
--- Dumping data for table `role`
+-- Dumping data untuk tabel `role`
 --
 
-LOCK TABLES `role` WRITE;
-/*!40000 ALTER TABLE `role` DISABLE KEYS */;
-INSERT INTO `role` VALUES (1,'user'),(2,'admin'),(3,'auditor'),(4,'pimpinan');
-/*!40000 ALTER TABLE `role` ENABLE KEYS */;
-UNLOCK TABLES;
+INSERT INTO `role` (`role_id`, `role`) VALUES
+(1, 'user'),
+(2, 'admin'),
+(3, 'auditor'),
+(4, 'pimpinan');
+
+-- --------------------------------------------------------
 
 --
--- Table structure for table `standar`
+-- Struktur dari tabel `standar`
 --
 
-DROP TABLE IF EXISTS `standar`;
-/*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `standar` (
   `standar_id` varchar(5) NOT NULL,
   `kategori_id` varchar(20) NOT NULL,
   `nama_standar` varchar(50) NOT NULL,
   `created_at` datetime NOT NULL,
-  `updated_at` datetime NOT NULL,
-  PRIMARY KEY (`standar_id`,`kategori_id`),
-  KEY `kategori_fk` (`kategori_id`),
-  CONSTRAINT `kategori_fk` FOREIGN KEY (`kategori_id`) REFERENCES `kategori` (`kategori_id`)
+  `updated_at` datetime NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
-/*!40101 SET character_set_client = @saved_cs_client */;
 
 --
--- Dumping data for table `standar`
+-- Dumping data untuk tabel `standar`
 --
 
-LOCK TABLES `standar` WRITE;
-/*!40000 ALTER TABLE `standar` DISABLE KEYS */;
-INSERT INTO `standar` VALUES ('S1','PEN','Standar Hasil Penelitian','2022-03-26 18:03:54','2022-03-26 18:03:54'),('S1','PPM','Standar Hasil PPM','2022-03-26 18:03:53','2022-03-26 18:03:53'),('S2','PEN','Standar Isi Penelitian','2022-03-28 01:32:36','2022-03-28 01:32:36'),('S2','PPM','Standar Isi PPM','2022-03-28 01:32:36','2022-03-28 01:32:36');
-/*!40000 ALTER TABLE `standar` ENABLE KEYS */;
-UNLOCK TABLES;
+INSERT INTO `standar` (`standar_id`, `kategori_id`, `nama_standar`, `created_at`, `updated_at`) VALUES
+('S1', 'PEN', 'Standar Hasil', '2022-03-26 18:03:54', '2022-03-26 18:03:54'),
+('S1', 'PPM', 'Standar Hasil', '2022-03-26 18:03:53', '2022-03-26 18:03:53'),
+('S6', 'PEN', '', '2022-03-28 01:32:36', '2022-03-28 01:32:36');
+
+-- --------------------------------------------------------
 
 --
--- Table structure for table `supercode`
+-- Struktur dari tabel `supercode`
 --
 
-DROP TABLE IF EXISTS `supercode`;
-/*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `supercode` (
-  `id` int(11) NOT NULL AUTO_INCREMENT,
-  `supercode` varchar(255) NOT NULL,
-  PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8mb4;
-/*!40101 SET character_set_client = @saved_cs_client */;
+  `id` int(11) NOT NULL,
+  `supercode` varchar(255) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
--- Dumping data for table `supercode`
+-- Dumping data untuk tabel `supercode`
 --
 
-LOCK TABLES `supercode` WRITE;
-/*!40000 ALTER TABLE `supercode` DISABLE KEYS */;
-INSERT INTO `supercode` VALUES (1,'$2y$10$ufF4qOpdmH51RsZcmCrdouQrb8ByWjYAh2FmF4hWYpd3/2cq7Oo7m');
-/*!40000 ALTER TABLE `supercode` ENABLE KEYS */;
-UNLOCK TABLES;
+INSERT INTO `supercode` (`id`, `supercode`) VALUES
+(1, '$2y$10$ufF4qOpdmH51RsZcmCrdouQrb8ByWjYAh2FmF4hWYpd3/2cq7Oo7m');
+
+-- --------------------------------------------------------
 
 --
--- Table structure for table `tahun`
+-- Struktur dari tabel `tahun`
 --
 
-DROP TABLE IF EXISTS `tahun`;
-/*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `tahun` (
-  `tahun` int(11) NOT NULL AUTO_INCREMENT,
-  PRIMARY KEY (`tahun`)
-) ENGINE=InnoDB AUTO_INCREMENT=2023 DEFAULT CHARSET=utf8mb4;
-/*!40101 SET character_set_client = @saved_cs_client */;
+  `tahun` int(11) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
--- Dumping data for table `tahun`
+-- Dumping data untuk tabel `tahun`
 --
 
-LOCK TABLES `tahun` WRITE;
-/*!40000 ALTER TABLE `tahun` DISABLE KEYS */;
-INSERT INTO `tahun` VALUES (2019),(2020),(2021),(2022);
-/*!40000 ALTER TABLE `tahun` ENABLE KEYS */;
-UNLOCK TABLES;
+INSERT INTO `tahun` (`tahun`) VALUES
+(2019),
+(2020),
+(2021),
+(2022);
+
+-- --------------------------------------------------------
 
 --
--- Table structure for table `unit_induk_tahun`
+-- Struktur dari tabel `units`
 --
 
-DROP TABLE IF EXISTS `unit_induk_tahun`;
-/*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `units` (
+  `unit_id` varchar(20) NOT NULL,
+  `nama_unit` varchar(50) NOT NULL,
+  `created_at` datetime NOT NULL,
+  `updated_at` datetime NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data untuk tabel `units`
+--
+
+INSERT INTO `units` (`unit_id`, `nama_unit`, `created_at`, `updated_at`) VALUES
+('infor', 'S1 - Informatika', '2022-03-26 17:06:47', '2022-03-26 17:06:47'),
+('lppm', 'LPPM', '2022-03-26 17:06:47', '2022-03-26 17:06:47'),
+('mesin', 'S1 Teknik Mesin', '2022-03-27 23:36:54', '2022-03-27 23:36:54');
+
+-- --------------------------------------------------------
+
+--
+-- Struktur dari tabel `unit_induk_tahun`
+--
+
 CREATE TABLE `unit_induk_tahun` (
   `tahun` int(11) NOT NULL,
   `unit_id` varchar(20) NOT NULL,
   `induk_id` int(11) NOT NULL,
   `nilai` int(11) NOT NULL,
   `created_at` datetime NOT NULL,
-  `updated_at` datetime NOT NULL,
-  PRIMARY KEY (`tahun`,`unit_id`,`induk_id`),
-  KEY `induk_id` (`induk_id`),
-  KEY `unit_id` (`unit_id`),
-  CONSTRAINT `induk_id` FOREIGN KEY (`induk_id`) REFERENCES `data_induk` (`induk_id`),
-  CONSTRAINT `tahun_fk` FOREIGN KEY (`tahun`) REFERENCES `tahun` (`tahun`),
-  CONSTRAINT `unit_induk_tahun_ibfk_1` FOREIGN KEY (`unit_id`) REFERENCES `units` (`unit_id`)
+  `updated_at` datetime NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
-/*!40101 SET character_set_client = @saved_cs_client */;
 
 --
--- Dumping data for table `unit_induk_tahun`
+-- Dumping data untuk tabel `unit_induk_tahun`
 --
 
-LOCK TABLES `unit_induk_tahun` WRITE;
-/*!40000 ALTER TABLE `unit_induk_tahun` DISABLE KEYS */;
-INSERT INTO `unit_induk_tahun` VALUES (2022,'infor',1,90,'2022-03-27 06:49:21','2022-03-27 07:25:42'),(2022,'lppm',1,150,'2022-03-27 06:49:21','2022-03-27 06:49:21'),(2022,'lppm',2,1,'2022-03-27 06:49:21','2022-03-27 06:49:21');
-/*!40000 ALTER TABLE `unit_induk_tahun` ENABLE KEYS */;
-UNLOCK TABLES;
+INSERT INTO `unit_induk_tahun` (`tahun`, `unit_id`, `induk_id`, `nilai`, `created_at`, `updated_at`) VALUES
+(2022, 'infor', 1, 90, '2022-03-27 06:49:21', '2022-03-27 07:25:42');
+
+-- --------------------------------------------------------
 
 --
--- Table structure for table `units`
+-- Struktur dari tabel `users`
 --
 
-DROP TABLE IF EXISTS `units`;
-/*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!40101 SET character_set_client = utf8 */;
-CREATE TABLE `units` (
-  `unit_id` varchar(20) NOT NULL,
-  `nama_unit` varchar(50) NOT NULL,
-  `created_at` datetime NOT NULL,
-  `updated_at` datetime NOT NULL,
-  PRIMARY KEY (`unit_id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
-/*!40101 SET character_set_client = @saved_cs_client */;
-
---
--- Dumping data for table `units`
---
-
-LOCK TABLES `units` WRITE;
-/*!40000 ALTER TABLE `units` DISABLE KEYS */;
-INSERT INTO `units` VALUES ('infor','S1 - Informatika','2022-03-26 17:06:47','2022-03-26 17:06:47'),('lppm','LPPM','2022-03-26 17:06:47','2022-03-26 17:06:47'),('mesin','S1 Teknik Mesin','2022-03-27 23:36:54','2022-03-27 23:36:54');
-/*!40000 ALTER TABLE `units` ENABLE KEYS */;
-UNLOCK TABLES;
-
---
--- Table structure for table `user_role_unit`
---
-
-DROP TABLE IF EXISTS `user_role_unit`;
-/*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!40101 SET character_set_client = utf8 */;
-CREATE TABLE `user_role_unit` (
-  `email` varchar(100) NOT NULL,
-  `role_id` int(11) NOT NULL,
-  `unit_id` varchar(50) NOT NULL,
-  `tahun` int(11) NOT NULL,
-  `created_at` datetime NOT NULL,
-  `updated_at` datetime NOT NULL,
-  PRIMARY KEY (`email`,`role_id`,`unit_id`,`tahun`),
-  KEY `role_id` (`role_id`),
-  KEY `tahun` (`tahun`),
-  KEY `unit_id` (`unit_id`),
-  CONSTRAINT `user_role_unit_ibfk_1` FOREIGN KEY (`email`) REFERENCES `users` (`email`),
-  CONSTRAINT `user_role_unit_ibfk_2` FOREIGN KEY (`role_id`) REFERENCES `role` (`role_id`),
-  CONSTRAINT `user_role_unit_ibfk_3` FOREIGN KEY (`tahun`) REFERENCES `tahun` (`tahun`),
-  CONSTRAINT `user_role_unit_ibfk_4` FOREIGN KEY (`unit_id`) REFERENCES `units` (`unit_id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
-/*!40101 SET character_set_client = @saved_cs_client */;
-
---
--- Dumping data for table `user_role_unit`
---
-
-LOCK TABLES `user_role_unit` WRITE;
-/*!40000 ALTER TABLE `user_role_unit` DISABLE KEYS */;
-INSERT INTO `user_role_unit` VALUES ('adminlppm@gmail.com',1,'lppm',2022,'2022-03-26 11:59:42','2022-03-26 11:59:42'),('email@gmail.com',3,'infor',2019,'2022-03-27 18:29:54','2022-03-27 18:29:54'),('iwan.suryaningrat28@gmail.com',1,'infor',2021,'2022-03-27 17:47:26','2022-03-27 17:47:26'),('iwan.suryaningrat28@gmail.com',1,'infor',2022,'2022-03-26 17:08:18','2022-03-26 17:08:18'),('iwan.suryaningrat28@gmail.com',1,'lppm',2022,'2022-03-26 17:08:18','2022-03-26 17:08:18'),('iwan.suryaningrat28@gmail.com',3,'lppm',2022,'2022-03-26 21:01:07','2022-03-26 21:01:07'),('iwansuryaningrat@students.undip.ac.id',2,'lppm',2022,'2022-03-26 11:59:42','2022-03-26 11:59:42');
-/*!40000 ALTER TABLE `user_role_unit` ENABLE KEYS */;
-UNLOCK TABLES;
-
---
--- Table structure for table `user_unit`
---
-
-DROP TABLE IF EXISTS `user_unit`;
-/*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!40101 SET character_set_client = utf8 */;
-CREATE TABLE `user_unit` (
-  `email` varchar(100) NOT NULL,
-  `unit_id` varchar(20) NOT NULL,
-  PRIMARY KEY (`email`,`unit_id`),
-  KEY `unit_fk` (`unit_id`),
-  CONSTRAINT `unit_fk` FOREIGN KEY (`unit_id`) REFERENCES `units` (`unit_id`),
-  CONSTRAINT `user_fk` FOREIGN KEY (`email`) REFERENCES `users` (`email`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
-/*!40101 SET character_set_client = @saved_cs_client */;
-
---
--- Dumping data for table `user_unit`
---
-
-LOCK TABLES `user_unit` WRITE;
-/*!40000 ALTER TABLE `user_unit` DISABLE KEYS */;
-/*!40000 ALTER TABLE `user_unit` ENABLE KEYS */;
-UNLOCK TABLES;
-
---
--- Table structure for table `users`
---
-
-DROP TABLE IF EXISTS `users`;
-/*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `users` (
   `email` varchar(100) NOT NULL,
   `nama` varchar(50) NOT NULL,
@@ -387,28 +261,236 @@ CREATE TABLE `users` (
   `foto` varchar(255) NOT NULL,
   `password` varchar(255) NOT NULL,
   `created_at` datetime NOT NULL,
-  `updated_at` datetime NOT NULL,
-  PRIMARY KEY (`email`)
+  `updated_at` datetime NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
-/*!40101 SET character_set_client = @saved_cs_client */;
 
 --
--- Dumping data for table `users`
+-- Dumping data untuk tabel `users`
 --
 
-LOCK TABLES `users` WRITE;
-/*!40000 ALTER TABLE `users` DISABLE KEYS */;
-INSERT INTO `users` VALUES ('adminlppm@gmail.com','Admin LPPM',' ',' ',' ','$2y$10$9vDN2.Pe8BZJPJmAAsEg.ufJ7W2oEu4Sw3tyARH1v.LqIQzmRboi2','2022-03-26 11:59:42','2022-03-26 11:59:42'),('email@gmail.com','orang','','','','$2y$10$onlYvVTD4vaRJScd4TMuo.UI9.r5YJXdeswxlqEmhIBUDJASEz5B6','2022-03-27 16:20:22','2022-03-27 16:20:22'),('irul@gmail.com','Irul','','','','$2y$10$SlMNeWp/xB.gxiy94CQ/V.IW57mcOrTajXQHbrvGIatOvnCCzP8A6','2022-03-27 16:04:02','2022-03-27 16:04:02'),('iwan.suryaningrat28@gmail.com','Iwan Suryaningrat','24060119120027','088802851811','foto-iwan.suryaningrat28@gmail.com.jpg','$2y$10$RIEP4l5cJ/mxXFTM/IuWROc.TQV1Gk4yQI3dfFNy6B6Z01IO.SN5y','2022-03-26 16:51:22','2022-03-27 11:40:24'),('iwan@gmail.com','iwan','','','','$2y$10$TzX.4wpax5LmfpMgzgUQ4OpJ6fqDEr2bYvW97LnySVVX6HpQ96aE6','2022-03-27 16:18:45','2022-03-27 16:18:45'),('iwansuryaningrat@students.undip.ac.id','Iwan Suryaningrat','','','default.png','$2y$10$wRjof3KUnWwBfB3XdELsYuPXtUZKXvMeUG0DturLnU30j2sVbY.jO','2022-03-26 11:59:42','2022-03-26 11:59:42');
-/*!40000 ALTER TABLE `users` ENABLE KEYS */;
-UNLOCK TABLES;
-/*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
+INSERT INTO `users` (`email`, `nama`, `nip`, `telp`, `foto`, `password`, `created_at`, `updated_at`) VALUES
+('email@gmail.com', 'orang', '', '', '', '$2y$10$onlYvVTD4vaRJScd4TMuo.UI9.r5YJXdeswxlqEmhIBUDJASEz5B6', '2022-03-27 16:20:22', '2022-03-27 16:20:22'),
+('irul@gmail.com', 'Irul', '', '', '', '$2y$10$SlMNeWp/xB.gxiy94CQ/V.IW57mcOrTajXQHbrvGIatOvnCCzP8A6', '2022-03-27 16:04:02', '2022-03-27 16:04:02'),
+('iwan.suryaningrat28@gmail.com', 'Iwan Suryaningrat', '24060119120027', '088802851811', 'foto-iwan.suryaningrat28@gmail.com.jpg', '$2y$10$RIEP4l5cJ/mxXFTM/IuWROc.TQV1Gk4yQI3dfFNy6B6Z01IO.SN5y', '2022-03-26 16:51:22', '2022-03-27 11:40:24'),
+('iwan@gmail.com', 'iwan', '', '', '', '$2y$10$TzX.4wpax5LmfpMgzgUQ4OpJ6fqDEr2bYvW97LnySVVX6HpQ96aE6', '2022-03-27 16:18:45', '2022-03-27 16:18:45'),
+('iwansuryaningrat@students.undip.ac.id', 'Iwan Suryaningrat', '', '', 'default.png', '$2y$10$wRjof3KUnWwBfB3XdELsYuPXtUZKXvMeUG0DturLnU30j2sVbY.jO', '2022-03-26 11:59:42', '2022-03-26 11:59:42');
 
-/*!40101 SET SQL_MODE=@OLD_SQL_MODE */;
-/*!40014 SET FOREIGN_KEY_CHECKS=@OLD_FOREIGN_KEY_CHECKS */;
-/*!40014 SET UNIQUE_CHECKS=@OLD_UNIQUE_CHECKS */;
+-- --------------------------------------------------------
+
+--
+-- Struktur dari tabel `user_role_unit`
+--
+
+CREATE TABLE `user_role_unit` (
+  `email` varchar(100) NOT NULL,
+  `role_id` int(11) NOT NULL,
+  `unit_id` varchar(50) NOT NULL,
+  `tahun` int(11) NOT NULL,
+  `created_at` datetime NOT NULL,
+  `updated_at` datetime NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data untuk tabel `user_role_unit`
+--
+
+INSERT INTO `user_role_unit` (`email`, `role_id`, `unit_id`, `tahun`, `created_at`, `updated_at`) VALUES
+('email@gmail.com', 3, 'infor', 2019, '2022-03-27 18:29:54', '2022-03-27 18:29:54'),
+('iwan.suryaningrat28@gmail.com', 1, 'infor', 2021, '2022-03-27 17:47:26', '2022-03-27 17:47:26'),
+('iwan.suryaningrat28@gmail.com', 1, 'infor', 2022, '2022-03-26 17:08:18', '2022-03-26 17:08:18'),
+('iwan.suryaningrat28@gmail.com', 1, 'lppm', 2022, '2022-03-26 17:08:18', '2022-03-26 17:08:18'),
+('iwan.suryaningrat28@gmail.com', 3, 'lppm', 2022, '2022-03-26 21:01:07', '2022-03-26 21:01:07'),
+('iwansuryaningrat@students.undip.ac.id', 2, 'lppm', 2022, '2022-03-26 11:59:42', '2022-03-26 11:59:42');
+
+-- --------------------------------------------------------
+
+--
+-- Struktur dari tabel `user_unit`
+--
+
+CREATE TABLE `user_unit` (
+  `email` varchar(100) NOT NULL,
+  `unit_id` varchar(20) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Indexes for dumped tables
+--
+
+--
+-- Indeks untuk tabel `data_induk`
+--
+ALTER TABLE `data_induk`
+  ADD PRIMARY KEY (`induk_id`,`kategori_id`),
+  ADD KEY `kategori_id` (`kategori_id`);
+
+--
+-- Indeks untuk tabel `indikator`
+--
+ALTER TABLE `indikator`
+  ADD PRIMARY KEY (`indikator_id`,`kategori_id`,`standar_id`),
+  ADD KEY `induk_fk` (`induk_id`),
+  ADD KEY `standar_fk` (`standar_id`),
+  ADD KEY `kategori_id` (`kategori_id`);
+
+--
+-- Indeks untuk tabel `kategori`
+--
+ALTER TABLE `kategori`
+  ADD PRIMARY KEY (`kategori_id`);
+
+--
+-- Indeks untuk tabel `penilaian`
+--
+ALTER TABLE `penilaian`
+  ADD PRIMARY KEY (`tahun`,`unit_id`,`kategori_id`,`standar_id`,`indikator_id`),
+  ADD KEY `indikator_fk` (`indikator_id`),
+  ADD KEY `unit_id` (`unit_id`),
+  ADD KEY `kategori_id` (`kategori_id`),
+  ADD KEY `standar_id` (`standar_id`);
+
+--
+-- Indeks untuk tabel `role`
+--
+ALTER TABLE `role`
+  ADD PRIMARY KEY (`role_id`);
+
+--
+-- Indeks untuk tabel `standar`
+--
+ALTER TABLE `standar`
+  ADD PRIMARY KEY (`standar_id`,`kategori_id`),
+  ADD KEY `kategori_fk` (`kategori_id`);
+
+--
+-- Indeks untuk tabel `supercode`
+--
+ALTER TABLE `supercode`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Indeks untuk tabel `tahun`
+--
+ALTER TABLE `tahun`
+  ADD PRIMARY KEY (`tahun`);
+
+--
+-- Indeks untuk tabel `units`
+--
+ALTER TABLE `units`
+  ADD PRIMARY KEY (`unit_id`);
+
+--
+-- Indeks untuk tabel `unit_induk_tahun`
+--
+ALTER TABLE `unit_induk_tahun`
+  ADD PRIMARY KEY (`tahun`,`unit_id`,`induk_id`),
+  ADD KEY `induk_id` (`induk_id`),
+  ADD KEY `unit_id` (`unit_id`);
+
+--
+-- Indeks untuk tabel `users`
+--
+ALTER TABLE `users`
+  ADD PRIMARY KEY (`email`);
+
+--
+-- Indeks untuk tabel `user_role_unit`
+--
+ALTER TABLE `user_role_unit`
+  ADD PRIMARY KEY (`email`,`role_id`,`unit_id`,`tahun`),
+  ADD KEY `role_id` (`role_id`),
+  ADD KEY `tahun` (`tahun`),
+  ADD KEY `unit_id` (`unit_id`);
+
+--
+-- Indeks untuk tabel `user_unit`
+--
+ALTER TABLE `user_unit`
+  ADD PRIMARY KEY (`email`,`unit_id`),
+  ADD KEY `unit_fk` (`unit_id`);
+
+--
+-- AUTO_INCREMENT untuk tabel yang dibuang
+--
+
+--
+-- AUTO_INCREMENT untuk tabel `role`
+--
+ALTER TABLE `role`
+  MODIFY `role_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+
+--
+-- AUTO_INCREMENT untuk tabel `supercode`
+--
+ALTER TABLE `supercode`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+
+--
+-- AUTO_INCREMENT untuk tabel `tahun`
+--
+ALTER TABLE `tahun`
+  MODIFY `tahun` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2023;
+
+--
+-- Ketidakleluasaan untuk tabel pelimpahan (Dumped Tables)
+--
+
+--
+-- Ketidakleluasaan untuk tabel `data_induk`
+--
+ALTER TABLE `data_induk`
+  ADD CONSTRAINT `data_induk_ibfk_1` FOREIGN KEY (`kategori_id`) REFERENCES `kategori` (`kategori_id`);
+
+--
+-- Ketidakleluasaan untuk tabel `indikator`
+--
+ALTER TABLE `indikator`
+  ADD CONSTRAINT `indikator_ibfk_1` FOREIGN KEY (`kategori_id`) REFERENCES `kategori` (`kategori_id`),
+  ADD CONSTRAINT `induk_fk` FOREIGN KEY (`induk_id`) REFERENCES `data_induk` (`induk_id`),
+  ADD CONSTRAINT `standar_fk` FOREIGN KEY (`standar_id`) REFERENCES `standar` (`standar_id`);
+
+--
+-- Ketidakleluasaan untuk tabel `penilaian`
+--
+ALTER TABLE `penilaian`
+  ADD CONSTRAINT `indikator_fk` FOREIGN KEY (`indikator_id`) REFERENCES `indikator` (`indikator_id`),
+  ADD CONSTRAINT `penilaian_ibfk_1` FOREIGN KEY (`unit_id`) REFERENCES `units` (`unit_id`),
+  ADD CONSTRAINT `penilaian_ibfk_2` FOREIGN KEY (`tahun`) REFERENCES `tahun` (`tahun`),
+  ADD CONSTRAINT `penilaian_ibfk_3` FOREIGN KEY (`kategori_id`) REFERENCES `kategori` (`kategori_id`),
+  ADD CONSTRAINT `penilaian_ibfk_4` FOREIGN KEY (`standar_id`) REFERENCES `standar` (`standar_id`);
+
+--
+-- Ketidakleluasaan untuk tabel `standar`
+--
+ALTER TABLE `standar`
+  ADD CONSTRAINT `kategori_fk` FOREIGN KEY (`kategori_id`) REFERENCES `kategori` (`kategori_id`);
+
+--
+-- Ketidakleluasaan untuk tabel `unit_induk_tahun`
+--
+ALTER TABLE `unit_induk_tahun`
+  ADD CONSTRAINT `induk_id` FOREIGN KEY (`induk_id`) REFERENCES `data_induk` (`induk_id`),
+  ADD CONSTRAINT `tahun_fk` FOREIGN KEY (`tahun`) REFERENCES `tahun` (`tahun`),
+  ADD CONSTRAINT `unit_induk_tahun_ibfk_1` FOREIGN KEY (`unit_id`) REFERENCES `units` (`unit_id`);
+
+--
+-- Ketidakleluasaan untuk tabel `user_role_unit`
+--
+ALTER TABLE `user_role_unit`
+  ADD CONSTRAINT `user_role_unit_ibfk_1` FOREIGN KEY (`email`) REFERENCES `users` (`email`),
+  ADD CONSTRAINT `user_role_unit_ibfk_2` FOREIGN KEY (`role_id`) REFERENCES `role` (`role_id`),
+  ADD CONSTRAINT `user_role_unit_ibfk_3` FOREIGN KEY (`tahun`) REFERENCES `tahun` (`tahun`),
+  ADD CONSTRAINT `user_role_unit_ibfk_4` FOREIGN KEY (`unit_id`) REFERENCES `units` (`unit_id`);
+
+--
+-- Ketidakleluasaan untuk tabel `user_unit`
+--
+ALTER TABLE `user_unit`
+  ADD CONSTRAINT `unit_fk` FOREIGN KEY (`unit_id`) REFERENCES `units` (`unit_id`),
+  ADD CONSTRAINT `user_fk` FOREIGN KEY (`email`) REFERENCES `users` (`email`);
+COMMIT;
+
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
-/*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
-
--- Dump completed on 2022-03-29  8:24:32
