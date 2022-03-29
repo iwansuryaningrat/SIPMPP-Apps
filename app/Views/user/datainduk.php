@@ -49,23 +49,21 @@
             </tr>
           </thead>
           <tbody>
-            <?php foreach ($data_induk as $datainduk) :
-              if ($datainduk['nama_kategori'] == 'Penelitian') : ?>
-                <tr>
-                  <td><?= $i; ?>
-                  </td>
-                  <td><?= $datainduk['induk_id']; ?>
-                  </td>
-                  <td><?= $datainduk['nama_induk']; ?>
-                  </td>
-                  <td><?= $datainduk['nilai']; ?>
-                  </td>
-                  <td>
-                    <a role="button" data-bs-toggle="modal" data-bs-placement="top" title="Edit" href="#staticBackdrop" class="edit__data__induk__icon" data-id="<?= $datainduk['induk_id']; ?>" data-kode="<?= $datainduk['induk_id']; ?>" data-kategori="<?= $datainduk['nama_kategori']; ?>" data-katid="<?= $datainduk['kategori_id']; ?>" data-kebutuhan-data="<?= $datainduk['nama_induk']; ?>" data-nilai="<?= $datainduk['nilai']; ?>"><i class="fa-solid fa-pen-to-square"></i></a>
-                  </td>
-                </tr>
+            <?php foreach ($data_indukPen as $datainduk) : ?>
+              <tr>
+                <td><?= $i; ?>
+                </td>
+                <td><?= $datainduk['induk_id']; ?>
+                </td>
+                <td><?= $datainduk['nama_induk']; ?>
+                </td>
+                <td><?= $datainduk['nilai']; ?>
+                </td>
+                <td>
+                  <a role="button" data-bs-toggle="modal" data-bs-placement="top" title="Edit" href="#staticBackdrop" class="edit__data__induk__icon" data-id="<?= $datainduk['induk_id']; ?>" data-kode="<?= $datainduk['induk_id']; ?>" data-kategori="<?= $datainduk['nama_kategori']; ?>" data-katid="<?= $datainduk['kategori_id']; ?>" data-kebutuhan-data="<?= $datainduk['nama_induk']; ?>" data-nilai="<?= $datainduk['nilai']; ?>"><i class="fa-solid fa-pen-to-square"></i></a>
+                </td>
+              </tr>
             <?php $i++;
-              endif;
             endforeach; ?>
           </tbody>
         </table>
@@ -89,23 +87,21 @@
           </thead>
           <tbody>
             <?php $i = 1;
-            foreach ($data_induk as $datainduk) :
-              if ($datainduk['nama_kategori'] == 'Pengabdian Masyarakat') : ?>
-                <tr>
-                  <td><?= $i; ?>
-                  </td>
-                  <td><?= $datainduk['induk_id']; ?>
-                  </td>
-                  <td><?= $datainduk['nama_induk']; ?>
-                  </td>
-                  <td><?= $datainduk['nilai']; ?>
-                  </td>
-                  <td>
-                    <a role="button" data-bs-toggle="modal" data-bs-placement="top" title="Edit" href="#staticBackdrop" class="edit__data__induk__icon" data-id="<?= $datainduk['induk_id']; ?>" data-kode="<?= $datainduk['induk_id']; ?>" data-kategori="<?= $datainduk['nama_kategori']; ?>" data-katid="<?= $datainduk['kategori_id']; ?>" data-kebutuhan-data="<?= $datainduk['nama_induk']; ?>" data-nilai="<?= $datainduk['nilai']; ?>"><i class="fa-solid fa-pen-to-square"></i></a>
-                  </td>
-                </tr>
+            foreach ($data_indukPPM as $datainduk) : ?>
+              <tr>
+                <td><?= $i; ?>
+                </td>
+                <td><?= $datainduk['induk_id']; ?>
+                </td>
+                <td><?= $datainduk['nama_induk']; ?>
+                </td>
+                <td><?= $datainduk['nilai']; ?>
+                </td>
+                <td>
+                  <a role="button" data-bs-toggle="modal" data-bs-placement="top" title="Edit" href="#staticBackdrop" class="edit__data__induk__icon" data-id="<?= $datainduk['induk_id']; ?>" data-kode="<?= $datainduk['induk_id']; ?>" data-kategori="<?= $datainduk['nama_kategori']; ?>" data-katid="<?= $datainduk['kategori_id']; ?>" data-kebutuhan-data="<?= $datainduk['nama_induk']; ?>" data-nilai="<?= $datainduk['nilai']; ?>"><i class="fa-solid fa-pen-to-square"></i></a>
+                </td>
+              </tr>
             <?php $i++;
-              endif;
             endforeach; ?>
           </tbody>
         </table>
@@ -129,7 +125,7 @@
         <h4 class="modal-title" id="modal-data-induk">Nilai Data Induk</h4>
 
         <!-- form -->
-        <form class="modal__form" method="POST" action="/home/editdatainduk/<?= $data_user['unit_id'] . '/' . $tahun ?>">
+        <form class="modal__form" method="POST" action="/home/editdatainduk">
           <!-- id input -->
           <input type="hidden" id="id" name="induk_id" />
           <input type="hidden" id="kategori_id" name="kategori_id" />

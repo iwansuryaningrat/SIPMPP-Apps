@@ -57,4 +57,20 @@ class UnitIndukTahunModel extends Model
             ->where('data_induk.kategori_id', $kategori_id)
             ->first();
     }
+
+    public function getIndukUnitKategori($unit_id, $tahun, $kategori_id)
+    {
+        return $this->select('unit_induk_tahun.*, units.*, data_induk.*, tahun.*, kategori.*')
+            ->join('units', 'units.unit_id = unit_induk_tahun.unit_id')
+            ->join('data_induk', 'data_induk.induk_id = unit_induk_tahun.induk_id')
+            ->join('tahun', 'tahun.tahun = unit_induk_tahun.tahun')
+            ->join('kategori', 'kategori.kategori_id = data_induk.kategori_id')
+            ->where('unit_induk_tahun.unit_id', $unit_id)
+            ->where('unit_induk_tahun.tahun', $tahun)
+            ->where('unit_induk_tahun.kategori_id', $kategori_id)
+            ->where('data_induk.kategori_id', $kategori_id)
+            ->groupby('data_induk.nama_induk')
+            ->orderBy('data_induk.induk_id', 'ASC')
+            ->findAll();
+    }
 }
