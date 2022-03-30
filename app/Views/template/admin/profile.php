@@ -26,7 +26,7 @@
             <a href="/admin/profile" class="d-block">Lihat Profil</a>
         </p>
         <hr />
-        <form action="" method="POST" id="form-tahun-profile">
+        <form action="/admin/switchtahun" method="POST" id="form-tahun-profile">
             <label for="tahunProfile" class="form-label form__label__profile nav-dropdown__title" id="form-tahun-profile-label">Tahun</label>
             <div class="d-flex align-items-center">
                 <select name="tahun" id="tahunProfile" class="form-select form__select__profile shadow-none me-2">
