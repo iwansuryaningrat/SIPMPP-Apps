@@ -13,7 +13,6 @@ use App\Models\TahunModel;
 use App\Models\UnitIndukTahunModel;
 use App\Models\UnitsModel;
 use App\Models\UsersModel;
-use App\Models\UserUnitModel;
 
 class Leader extends BaseController
 {
@@ -25,7 +24,6 @@ class Leader extends BaseController
     protected $tahunModel;
     protected $unitIndukTahunModel;
     protected $unitsModel;
-    protected $usersModel;
     protected $userunitModel;
 
     public function __construct()
@@ -39,7 +37,6 @@ class Leader extends BaseController
         $this->unitIndukTahunModel = new UnitIndukTahunModel();
         $this->unitsModel = new UnitsModel();
         $this->usersModel = new UsersModel();
-        $this->userunitModel = new UserUnitModel();
         $this->data_user = [
             'nama' => session()->get('nama'),
             'role' => session()->get('role'),
