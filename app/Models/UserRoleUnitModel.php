@@ -101,4 +101,14 @@ class UserRoleUnitModel extends Model
             ->groupby('user_role_unit.tahun')
             ->findAll();
     }
+
+    // Get Tahun By Email and Role
+    public function getTahunRole($email, $role_id)
+    {
+        return $this->select('user_role_unit.tahun')
+            ->where('user_role_unit.email', $email)
+            ->where('user_role_unit.role_id', $role_id)
+            ->groupby('user_role_unit.tahun')
+            ->findAll();
+    }
 }

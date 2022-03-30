@@ -79,6 +79,8 @@
     <!-- custom -->
     <script src="/assets/js/scripts.js"></script>
 
+    <?= $this->include('template/script'); ?>
+
     <?= $this->renderSection('userscript'); ?>
 
 </body>

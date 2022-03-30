@@ -48,7 +48,7 @@ class Home extends BaseController
             'role_id' => session()->get('role_id'),
             'tahun' => session()->get('tahun'),
         ];
-        $this->tahun = $this->userroleunitModel->getTahun($this->data_user['email']);
+        $this->tahun = $this->userroleunitModel->getTahun($this->data_user['email'], $this->data_user['role_id']);
         $this->i = 1;
         $this->session = \Config\Services::session();
     }
@@ -468,5 +468,27 @@ class Home extends BaseController
 
         $this->session->setFlashdata('message', '<div class="alert alert-success" role="alert"><strong>Selamat!</strong> Data berhasil diubah.</div>');
         return redirect()->to('/home/profile/');
+    }
+
+    // Swith Tahun Method
+    public function switchTahun()
+    {
+        $data_user = $this->data_user;
+        $tahun = $this->request->getVar('tahun');
+
+        $datasession = [
+            'email' => $data_user['email'],
+            'nama' => $data_user['nama'],
+            'foto' => $data_user['foto'],
+            'role_id' => $data_user['role_id'],
+            'role' => $data_user['role'],
+            'tahun' => $tahun,
+            'isLoggedIn' => true,
+        ];
+
+        $this->session->set($datasession);
+
+        $this->session->setFlashdata('message', '<div class="alert alert-success" role="alert"><strong>Selamat!</strong> Tahun berhasil diubah.</div>');
+        return redirect()->to('/home');
     }
 }
