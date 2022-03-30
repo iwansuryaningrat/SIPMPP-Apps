@@ -8,8 +8,7 @@
     </div>
     <div class="header__main-nav-profile">
         <div class="nav-profile__photo">
-            <img src="/profile/<?= $data_user['foto']; ?>"
-                alt="profile-picture" id="photo-dropdown" />
+            <img src="/profile/<?= $data_user['foto']; ?>" alt="profile-picture" id="photo-dropdown" />
         </div>
         <div class="nav-profile__desc">
             <p id="profileName" class="ellipsis__text"><?= $data_user['nama']; ?>
@@ -29,8 +28,7 @@
         </p>
         <hr />
         <form action="" method="POST" id="form-tahun-profile">
-            <label for="tahunProfile" class="form-label form__label__profile nav-dropdown__title"
-                id="form-tahun-profile-label">Tahun</label>
+            <label for="tahunProfile" class="form-label form__label__profile nav-dropdown__title" id="form-tahun-profile-label">Tahun</label>
             <select name="tahun" id="tahunProfile" class="form-select form__select__profile shadow-none">
                 <option value="">2018</option>
                 <option value="">2019</option>
