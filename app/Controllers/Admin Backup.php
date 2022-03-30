@@ -58,44 +58,7 @@ class Admin extends BaseController
         $this->session = \Config\Services::session();
     }
 
-    // Admin Dashboard Method
-    public function index()
-    {
-        $usersession = $this->data_user;
-        $units = $this->unitsModel->findAll();
 
-        $data = [
-            'title' => 'Dashboard SIPMPP | SIPMPP UNDIP 2022',
-            'tab' => 'home',
-            'css' => 'styles-admin-dashboard.css',
-            'header' => 'header__big',
-            'i' => $this->i,
-            'usersession' => $usersession,
-            'tahun' => $this->tahunModel->findAll(),
-            'units' => $units,
-            'tahunsession' => $this->tahun,
-        ];
-
-
-        return view('admin/index', $data);
-    }
-
-    //daftar user (Done)
-    public function daftarUser()
-    {
-        $users = $this->usersModel->findAll();
-        $data = [
-            'title' => 'Daftar User | SIPMPP Admin UNDIP',
-            'tab' => 'user',
-            'css' => 'styles-admin-daftar-user.css',
-            'header' => 'header__mini',
-            'i' => $this->i,
-            'usersession' => $this->data_user,
-            'users' => $users
-        ];
-
-        return view('admin/daftar-user', $data);
-    }
 
     // User Method (Kurang parsing data units)
     public function user()
@@ -263,19 +226,7 @@ class Admin extends BaseController
 
     // FORM METHOD
 
-    //Add user form method (Done)
-    public function addUserForm()
-    {
-        $data = [
-            'title' => 'Form Tambah User | SIPMPP Admin UNDIP',
-            'tab' => 'user',
-            'css' => 'styles-admin-add-user.css',
-            'header' => 'header__mini',
-            'i' => $this->i,
-            'usersession' => $this->data_user,
-        ];
-        return view('admin/add-user', $data);
-    }
+
 
     // add basic user Form (Done)
     public function addBasicUserform()
@@ -451,43 +402,7 @@ class Admin extends BaseController
 
     // FORM ACTION METHOD
 
-    // Add user method (Done)
-    public function addUser()
-    {
-        $email = $this->request->getVar('email');
-        $nama = $this->request->getVar('fullname');
-        $password = password_hash($this->request->getVar('password'), PASSWORD_DEFAULT);
 
-        // Validasi email
-        $validation =  \Config\Services::validation();
-        $valid = $this->validate([
-            'email' => [
-                'label' => 'Email',
-                'rules' => 'required|is_unique[users.email]',
-                'errors' => [
-                    'required' => '{field} tidak boleh kosong',
-                    'is_unique' => '{field} sudah terdaftar'
-                ]
-            ],
-        ]);
-
-        if (!$valid) {
-            // Set flashdata gagal dan kirim pesan eror dengan flashdata
-            $this->session->setFlashdata('msg', '<div class="alert alert-danger alert-dismissible fade show" role="alert">Email sudah terdaftar!</div>');
-            return redirect()->to(base_url('admin/adduserform'));
-        } else {
-            $data = [
-                'email' => $email,
-                'nama' => $nama,
-                'password' => $password,
-            ];
-
-            $this->usersModel->insert($data);
-            // Set flashdata gagal dan kirim pesan eror dengan flashdata
-            $this->session->setFlashdata('msg', '<div class="alert alert-success alert-dismissible fade show" role="alert">User berhasil ditambahkan!</div>');
-            return redirect()->to(base_url('admin/daftaruser'));
-        }
-    }
 
     // Add user role unit method (Done)
     public function addBasicUser($role)
