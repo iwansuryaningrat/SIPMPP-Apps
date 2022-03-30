@@ -914,6 +914,10 @@ footer .container-fluid.container__fluid {
   color: #f5a623;
 }
 
+.color__primary {
+  color: #1572e8;
+}
+
 /* ========== Radius ========== */
 .radius__lg {
   border-radius: var(--radius-lg);

@@ -22,6 +22,8 @@
     <p class="status__spmi">
       Status Penilaian: <span id="status-spmi" class=" <?php if ($status == 'Belum Dikirim') {
                                                           echo 'color__warning';
+                                                        } else if ($status == 'Dikirim') {
+                                                          echo 'color__primary';
                                                         } else {
                                                           echo 'color__success';
                                                         } ?> "><?= $status; ?></span>
