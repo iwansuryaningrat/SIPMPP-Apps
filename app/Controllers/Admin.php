@@ -272,7 +272,6 @@ class Admin extends BaseController
     // add leader Form (Done)
     public function addLeader()
     {
-
         $usersession = $this->data_user;
         $users = $this->usersModel->findAll();
         $units = $this->unitsModel->findAll();
@@ -296,6 +295,58 @@ class Admin extends BaseController
 
         return view('admin/add-leader', $data);
     }
+
+    // Auditor Method (Done)
+    public function auditor()
+    {
+        $usersession = $this->data_user;
+        $units = $this->userroleunitModel->getData();
+        $users = $this->userroleunitModel->getDataEmailRole(3);
+        // dd($users);
+
+        $data = [
+            'title' => 'Auditor | SIPMPP Admin UNDIP',
+            'tab' => 'user',
+            'css' => 'styles-admin-user.css',
+            'header' => 'header__mini',
+            'i' => $this->i,
+            'usersession' => $usersession,
+            'users' => $users,
+            'units' => $units,
+            'tahun' => $usersession['tahun'],
+            'tahunsession' => $this->tahun,
+        ];
+
+        return view('admin/user-auditor', $data);
+    }
+
+    // add auditor Form (Done)
+    public function addAuditor()
+    {
+        $usersession = $this->data_user;
+        $users = $this->usersModel->findAll();
+        $units = $this->unitsModel->findAll();
+        $tahun = $this->tahunModel->findAll();
+        $role = $this->roleModel->getRole('auditor');
+        // dd($role, $tahun, $units, $users);
+        $data = [
+            'title' => 'Form Tambah Auditor | SIPMPP Admin UNDIP',
+            'tab' => 'user',
+            'css' => 'styles-admin-add-user.css',
+            'header' => 'header__mini',
+            'i' => $this->i,
+            'usersession' => $this->data_user,
+            'users' => $users,
+            'units' => $units,
+            'tahuns' => $tahun,
+            'roles' => $role,
+            'tahun' => $usersession['tahun'],
+            'tahunsession' => $this->tahun,
+        ];
+
+        return view('admin/add-auditor', $data);
+    }
+
 
 
 

@@ -64,25 +64,6 @@ class Admin extends BaseController
 
 
 
-    // Auditor Method (Done)
-    public function auditor()
-    {
-        $usersession = $this->data_user;
-        $users = $this->userroleunitModel->getData();
-        // dd($users);
-
-        $data = [
-            'title' => 'Auditor | SIPMPP Admin UNDIP',
-            'tab' => 'user',
-            'css' => 'styles-admin-user.css',
-            'header' => 'header__mini',
-            'i' => $this->i,
-            'usersession' => $usersession,
-            'users' => $users
-        ];
-
-        return view('admin/user-auditor', $data);
-    }
 
     // units Method (Done)
     public function units()
@@ -194,29 +175,7 @@ class Admin extends BaseController
 
 
 
-    // add auditor Form (Done)
-    public function addAuditor()
-    {
-        $users = $this->usersModel->findAll();
-        $units = $this->unitsModel->findAll();
-        $tahun = $this->tahunModel->findAll();
-        $role = $this->roleModel->getRole('auditor');
-        // dd($role, $tahun, $units, $users);
-        $data = [
-            'title' => 'Form Tambah Auditor | SIPMPP Admin UNDIP',
-            'tab' => 'user',
-            'css' => 'styles-admin-add-user.css',
-            'header' => 'header__mini',
-            'i' => $this->i,
-            'usersession' => $this->data_user,
-            'users' => $users,
-            'units' => $units,
-            'tahun' => $tahun,
-            'role' => $role,
-        ];
-
-        return view('admin/add-auditor', $data);
-    }
+    
 
     //add data induk method (Done)
     public function addDataIndukForm()

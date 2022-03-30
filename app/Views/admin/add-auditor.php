@@ -55,8 +55,8 @@
       <div class="col-lg-6 col-md-9 col-sm-8">
         <select name="tahun" id="tahun" class="form-select form__select shadow-none" required>
           <option disabled selected>Pilih Tahun</option>
-          <?php foreach ($tahun as $tahun) : ?>
-            <option value="<?= $tahun['tahun'] ?>"><?= $tahun['tahun'] ?></option>
+          <?php foreach ($tahuns as $tahuns) : ?>
+            <option value="<?= $tahuns['tahun'] ?>"><?= $tahuns['tahun'] ?></option>
           <?php endforeach; ?>
 
         </select>
@@ -65,7 +65,7 @@
     <!-- button -->
     <div class="row">
       <div class="col-lg-9 col-md-12 col-sm-12 button__section">
-        <a href="#" class="btn form__btn cancel__btn me-4 shadow-none" role="button">Batal</a>
+        <a href="/admin/auditor" class="btn form__btn cancel__btn me-4 shadow-none" role="button">Batal</a>
         <button type="submit" class="btn form__btn btn__dark shadow-none">
           Simpan
         </button>
