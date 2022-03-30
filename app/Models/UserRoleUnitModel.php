@@ -90,6 +90,20 @@ class UserRoleUnitModel extends Model
             ->join('users', 'users.email = user_role_unit.email')
             ->join('units', 'units.unit_id = user_role_unit.unit_id')
             ->join('role', 'role.role_id = user_role_unit.role_id')
+            ->groupby('units.nama_unit')
+            ->groupby('users.email')
+            ->findAll();
+    }
+
+    // Joining All table to find all data
+    public function getDataEmailRole($role_id)
+    {
+        return $this->select('user_role_unit.*, users.*, units.*, role.*')
+            ->join('users', 'users.email = user_role_unit.email')
+            ->join('units', 'units.unit_id = user_role_unit.unit_id')
+            ->join('role', 'role.role_id = user_role_unit.role_id')
+            ->where('user_role_unit.role_id', $role_id)
+            ->groupby('user_role_unit.email')
             ->findAll();
     }
 
@@ -110,5 +124,13 @@ class UserRoleUnitModel extends Model
             ->where('user_role_unit.role_id', $role_id)
             ->groupby('user_role_unit.tahun')
             ->findAll();
+    }
+
+    // Delete User Role Unit
+    public function deleteUserRoleUnit($email, $role_id)
+    {
+        return $this->where('email', $email)
+            ->where('role_id', $role_id)
+            ->delete();
     }
 }

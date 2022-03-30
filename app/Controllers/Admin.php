@@ -156,6 +156,95 @@ class Admin extends BaseController
         }
     }
 
+    // User Method (Kurang parsing data units)
+    public function user()
+    {
+        $usersession = $this->data_user;
+        $units = $this->userroleunitModel->getData();
+        $users = $this->userroleunitModel->getDataEmailRole(1);
+        // dd($users);
+
+        $data = [
+            'title' => 'Base User | SIPMPP Admin UNDIP',
+            'tab' => 'user',
+            'css' => 'styles-admin-user.css',
+            'header' => 'header__mini',
+            'i' => $this->i,
+            'usersession' => $usersession,
+            'users' => $users,
+            'units' => $units,
+            'tahun' => $usersession['tahun'],
+            'tahunsession' => $this->tahun,
+        ];
+
+        return view('admin/user-baseuser', $data);
+    }
+
+    // add basic user Form (Done)
+    public function addBasicUserform()
+    {
+        $usersession = $this->data_user;
+        $users = $this->usersModel->findAll();
+        $units = $this->unitsModel->findAll();
+        $tahun = $this->tahunModel->findAll();
+        $role = $this->roleModel->getRole('user');
+        // dd($role, $tahun, $units, $users);
+        $data = [
+            'title' => 'Form Tambah User | SIPMPP Admin UNDIP',
+            'tab' => 'user',
+            'css' => 'styles-admin-add-user.css',
+            'header' => 'header__mini',
+            'i' => $this->i,
+            'usersession' => $this->data_user,
+            'users' => $users,
+            'units' => $units,
+            'tahuns' => $tahun,
+            'role' => $role,
+            'tahun' => $usersession['tahun'],
+            'tahunsession' => $this->tahun,
+        ];
+
+        return view('admin/add-base-user', $data);
+    }
+
+    // Add user role unit method (Done)
+    public function addBasicUser($role)
+    {
+        $email = $this->request->getVar('user');
+        $role_id = $this->roleModel->getRole($role);
+        $role_id = (int)$role_id['role_id'];
+
+        if ($role == 'pimpinan') {
+            $unit = 'lppm';
+        } else {
+            $unit = $this->request->getVar('unit');
+        }
+        $tahun = (int)$this->request->getVar('tahun');
+
+        $data = [
+            'email' => $email,
+            'role_id' => $role_id,
+            'unit_id' => $unit,
+            'tahun' => $tahun,
+        ];
+
+        // Insert data ke User Role Unit
+        $this->userroleunitModel->insert($data);
+
+        // Set flashdata gagal dan kirim pesan eror dengan flashdata
+        $this->session->setFlashdata('msg', '<div class="alert alert-success alert-dismissible fade show" role="alert">User berhasil ditambahkan!</div>');
+        return redirect()->to(base_url('admin/daftaruser'));
+    }
+
+    // Delete User Role Unit Method (Kurang kondisi hapus per unit tertentu)
+    public function deleteUserRoleUnit($email, $role_id)
+    {
+        $this->userroleunitModel->deleteUserRoleUnit($email, $role_id);
+        // Set flashdata gagal dan kirim pesan eror dengan flashdata
+        $this->session->setFlashdata('msg', '<div class="alert alert-success alert-dismissible fade show" role="alert">User berhasil dihapus!</div>');
+        return redirect()->to(base_url('admin/daftaruser'));
+    }
+
 
 
 

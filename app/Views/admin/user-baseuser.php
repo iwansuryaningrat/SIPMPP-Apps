@@ -52,25 +52,27 @@
       </thead>
       <tbody>
 
-        <?php foreach ($users as $user) :
-          if ($user['role'] == 'user') : ?>
-            <tr>
-              <td><?= $i; ?>
-              </td>
-              <td><?= $user['nama']; ?></td>
-              <td><?= $user['email']; ?></td>
-              <td><?= $user['nama_unit']; ?>
-                <!-- <ol class="list__table__user-unit">
-                    <li></li>
-                  </ol> -->
-              </td>
-              <td><?= $user['telp']; ?></td>
-              <td>
-                <a data-bs-placement="top" title="Delete" href="#" class="delete__data__induk__icon"><i class="fa-solid fa-trash"></i></a>
-              </td>
-            </tr>
+        <?php foreach ($users as $user) : ?>
+          <tr>
+            <td><?= $i; ?>
+            </td>
+            <td><?= $user['nama']; ?></td>
+            <td><?= $user['email']; ?></td>
+            <td>
+              <ol class="list__table__user-unit">
+                <?php foreach ($units as $unit) :
+                  if ($unit['email'] == $user['email'] && $unit['role'] == 'user') : ?>
+                    <li><?= $unit['nama_unit']; ?></li>
+                <?php endif;
+                endforeach; ?>
+              </ol>
+            </td>
+            <td><?= $user['telp']; ?></td>
+            <td>
+              <a data-bs-placement="top" title="Delete" href="/admin/deleteUserRoleUnit/<?= $user['email']; ?>/1" class="delete__data__induk__icon"><i class="fa-solid fa-trash"></i></a>
+            </td>
+          </tr>
         <?php $i++;
-          endif;
         endforeach; ?>
 
       </tbody>
