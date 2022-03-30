@@ -8,8 +8,8 @@
                 data: {
                     tahun: tahun
                 },
-                success: function(data) {
-                    console.log(tahun);
+                success: function(response) {
+                    console.log(response);
                     window.location.reload();
                 }
             });

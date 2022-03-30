@@ -488,7 +488,6 @@ class Home extends BaseController
 
         $this->session->set($datasession);
 
-        $this->session->setFlashdata('message', '<div class="alert alert-success" role="alert"><strong>Selamat!</strong> Tahun berhasil diubah.</div>');
-        return redirect()->to('/home');
+        return json_encode($datasession['tahun']);
     }
 }
