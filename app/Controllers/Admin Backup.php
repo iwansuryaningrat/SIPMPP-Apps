@@ -65,24 +65,7 @@ class Admin extends BaseController
 
 
 
-    // units Method (Done)
-    public function units()
-    {
-        $usersession = $this->data_user;
-        $units = $this->unitsModel->findAll();
 
-        $data = [
-            'title' => 'Daftar Unit | SIPMPP Admin UNDIP',
-            'tab' => 'unit',
-            'css' => 'styles-admin-unit.css',
-            'header' => 'header__mini',
-            'i' => $this->i,
-            'usersession' => $usersession,
-            'units' => $units
-        ];
-
-        return view('admin/units', $data);
-    }
 
     // Data Induk Method
     public function dataInduk()
@@ -175,7 +158,7 @@ class Admin extends BaseController
 
 
 
-    
+
 
     //add data induk method (Done)
     public function addDataIndukForm()

@@ -56,7 +56,7 @@
             <td><?= $unit['nama_unit']; ?>
             </td>
             <td>
-              <a role="button" data-bs-toggle="modal" data-bs-placement="top" title="Edit" href="#staticBackdrop" class="edit__data__induk__icon me-3 me-md-5"><i class="fa-solid fa-pen-to-square" data-unit="<?= $unit['nama_unit']; ?>" data-id="<?= $unit['unit_id']; ?>"></i></a>
+              <a role="button" data-bs-toggle="modal" data-bs-placement="top" title="Edit" href="#staticBackdrop" class="edit__data__induk__icon me-3 me-md-5" data-Unit="<?= $unit['nama_unit']; ?>" data-idUnit="<?= $unit['unit_id']; ?>"><i class="fa-solid fa-pen-to-square"></i></a>
               <a data-bs-placement="top" title="Delete" href="#" class="delete__data__induk__icon"><i class="fa-solid fa-trash"></i></a>
             </td>
           </tr>
@@ -67,6 +67,9 @@
   </div>
 </div>
 
+<?= $this->endSection(); ?>
+
+<?= $this->section('modal'); ?>
 <!-- Modal edit -->
 <div class="modal fade edit__unit__modal" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="modal-unit" aria-hidden="true">
   <div class="modal-dialog modal-dialog-centered">
@@ -159,8 +162,10 @@
     // get Edit Product
     $(".edit__data__induk__icon").on("click", function() {
       // get data from button edit
-      const id = $(this).data("id");
-      const unit = $(this).data("unit");
+      const id = $(this).data("idUnit");
+      const unit = $(this).data("Unit");
+      console.log(id);
+      console.log(unit);
       // Set data to Form Edit
       $("#idEdit").val(id);
       $("#unitEdit").val(unit);

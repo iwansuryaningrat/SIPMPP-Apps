@@ -347,7 +347,26 @@ class Admin extends BaseController
         return view('admin/add-auditor', $data);
     }
 
+    // units Method (Done)
+    public function units()
+    {
+        $usersession = $this->data_user;
+        $units = $this->unitsModel->findAll();
 
+        $data = [
+            'title' => 'Daftar Unit | SIPMPP Admin UNDIP',
+            'tab' => 'unit',
+            'css' => 'styles-admin-unit.css',
+            'header' => 'header__mini',
+            'i' => $this->i,
+            'usersession' => $usersession,
+            'units' => $units,
+            'tahun' => $usersession['tahun'],
+            'tahunsession' => $this->tahun,
+        ];
+
+        return view('admin/units', $data);
+    }
 
 
 
