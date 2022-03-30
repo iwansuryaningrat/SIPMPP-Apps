@@ -48,6 +48,7 @@ class Home extends BaseController
             'role_id' => session()->get('role_id'),
             'tahun' => session()->get('tahun'),
         ];
+        $this->tahun = $this->userroleunitModel->getTahun($this->data_user['email']);
         $this->i = 1;
         $this->session = \Config\Services::session();
     }
@@ -66,9 +67,11 @@ class Home extends BaseController
             'data_user' => $data_user,
             'i' => $i,
             'tab' => 'home',
+            'tahun' => $data_user['tahun'],
             'header' => 'header__big',
             'css' => 'styles-dashboard.css',
             'units' => $units,
+            'tahunsession' => $this->tahun,
         ];
 
         return view('user/index', $data);
@@ -98,6 +101,8 @@ class Home extends BaseController
             'data_user' => $data_user,
             'data_indukPen' => $data_indukPen,
             'data_indukPPM' => $data_indukPPM,
+            'tahunsession' => $this->tahun,
+            'tahun' => $data_user['tahun'],
         ];
 
         return view('user/datainduk', $data);
@@ -183,6 +188,7 @@ class Home extends BaseController
             'status' => $status,
             'data_standar' => $data,
             'data_nilai' => $data_nilai,
+            'tahunsession' => $this->tahun,
         ];
 
         return view('user/standar', $data);
@@ -220,6 +226,7 @@ class Home extends BaseController
             'datapenilaian' => $datapenilaian,
             'standar' => $standar,
             'kategori' => $kategori,
+            'tahunsession' => $this->tahun,
         ];
 
         return view('user/indikator', $data);
@@ -253,6 +260,7 @@ class Home extends BaseController
                 'standar' => $standar,
                 'induk' => $induk,
                 'tahun' => $tahun,
+                'tahunsession' => $this->tahun,
             ];
 
             return view('user/indikatorform', $data);
@@ -359,7 +367,9 @@ class Home extends BaseController
             'i' => $i,
             'tab' => 'report',
             'header' => 'header__mini',
-            'css' => 'styles-report.css'
+            'css' => 'styles-report.css',
+            'tahunsession' => $this->tahun,
+            'tahun' => $data_user['tahun'],
         ];
 
         return view('user/report', $data);
@@ -377,7 +387,9 @@ class Home extends BaseController
             'user' => $user,
             'tab' => 'profile',
             'header' => '',
-            'css' => 'styles-profile.css'
+            'css' => 'styles-profile.css',
+            'tahunsession' => $this->tahun,
+            'tahun' => $data_user['tahun'],
         ];
 
         return view('user/profile', $data);
