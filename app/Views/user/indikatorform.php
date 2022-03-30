@@ -57,7 +57,7 @@
       </div>
     </div>
     <!-- Hasil -->
-    <?php if ($datapenilaian[0]['nilai_acuan'] == 1) { ?>
+    <?php if ((int)$datapenilaian[0]['nilai_acuan'] == 1) { ?>
       <div class="row mb-3">
         <label for="hasil" class="col-lg-3 col-md-3 col-sm-4 col-form-label form__label">Hasil <span class="color__danger">*</span></label>
         <div class="col-lg-6 col-md-9 col-sm-8">
@@ -68,7 +68,7 @@
           </select>
         </div>
       </div>
-    <?php } else { ?>
+    <?php } else if ((int)$datapenilaian[0]['nilai_acuan'] > 1) { ?>
       <div class="row mb-3 mb-sm-4">
         <label for="hasil" class="col-lg-3 col-md-3 col-sm-4 col-form-label form__label">Hasil</label>
         <div class="col-lg-6 col-md-9 col-sm-8">
