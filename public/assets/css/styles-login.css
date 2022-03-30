@@ -20,6 +20,29 @@
   flex: 0.5;
 }
 
+.content-left__bg {
+  background: url(/assets/img/background-gradient-book.png);
+  height: 100%;
+  background-size: auto 100%;
+  background-repeat: no-repeat;
+  background-position: right;
+  width: 100%;
+}
+
+.content-left__carousel {
+  height: 100%;
+  width: 100%;
+  padding: 4rem;
+}
+
+.carousel__inner {
+  height: 100%;
+}
+
+.carousel__item {
+  height: 100%;
+}
+
 .login__card-content {
   width: 400px;
   height: 480px;
@@ -88,6 +111,14 @@ form .position-relative svg {
 @media screen and (max-width: 991px) {
   .login__content-right__body {
     max-width: 75%;
+  }
+
+  .login__content-left {
+    flex: 0.3;
+  }
+
+  .login__content-right {
+    flex: 0.7;
   }
 }
 

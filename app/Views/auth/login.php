@@ -29,7 +29,6 @@
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v6.1.0/css/fontawesome.css"
         integrity="sha384-RLM8Rxp/DcBfCfSI3bGwwoMMxxy34D2e58WAqXmmdnh0WYlAQ8jeOB3A1ed5KUSm" crossorigin="anonymous" />
     <!-- custom -->
-    <link rel="stylesheet" href="/assets/css/styles.css" />
     <link rel="stylesheet" href="/assets/css/styles-login.css" />
 
     <!-- appletochicon -->
@@ -49,7 +48,55 @@
     <div class="container__login">
         <div class="login__content">
             <!-- left -->
-            <div class="login__content-left"></div>
+            <div class="login__content-left">
+                <div class="content-left__bg">
+                    <div id="carouselExampleCaptions" class="carousel slide content-left__carousel"
+                        data-bs-ride="carousel">
+                        <div class="carousel-indicators">
+                            <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="0"
+                                class="active" aria-current="true" aria-label="Slide 1"></button>
+                            <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="1"
+                                aria-label="Slide 2"></button>
+                            <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="2"
+                                aria-label="Slide 3"></button>
+                        </div>
+                        <div class="carousel-inner carousel__inner">
+                            <div class="carousel-item active carousel__item">
+                                <img src="..." class="d-block w-100" alt="...">
+                                <div class="carousel-caption d-none d-md-block">
+                                    <h5>First slide label</h5>
+                                    <p>Some representative placeholder content for the first slide.</p>
+                                </div>
+                            </div>
+                            <div class="carousel-item carousel__item">
+                                <img src="..." class="d-block w-100" alt="...">
+                                <div class="carousel-caption d-none d-md-block">
+                                    <h5>Second slide label</h5>
+                                    <p>Some representative placeholder content for the second slide.</p>
+                                </div>
+                            </div>
+                            <div class="carousel-item carousel__item">
+                                <img src="..." class="d-block w-100" alt="...">
+                                <div class="carousel-caption d-none d-md-block">
+                                    <h5>Third slide label</h5>
+                                    <p>Some representative placeholder content for the third slide.</p>
+                                </div>
+                            </div>
+                        </div>
+                        <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleCaptions"
+                            data-bs-slide="prev">
+                            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                            <span class="visually-hidden">Previous</span>
+                        </button>
+                        <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleCaptions"
+                            data-bs-slide="next">
+                            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                            <span class="visually-hidden">Next</span>
+                        </button>
+                    </div>
+
+                </div>
+            </div>
 
             <!-- right -->
             <div class="login__content-right">
@@ -94,7 +141,7 @@
                         <div class="mb-4 position-relative">
                             <label for="email" class="form-label form__label">Email</label>
                             <input type="email" class="form-control form__control shadow-none" name="email" id="email"
-                                placeholder="Masukkan Email" required />
+                                placeholder="Masukkan Email" required autocomplete="off" />
                             <i class="fa-solid fa-at icon__form"></i>
                         </div>
                         <div class="mb-5 position-relative">
