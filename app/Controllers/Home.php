@@ -470,7 +470,7 @@ class Home extends BaseController
         return redirect()->to('/home/profile/');
     }
 
-    // Swith Tahun Method
+    // Swith Tahun Method (Done)
     public function switchTahun()
     {
         $data_user = $this->data_user;
