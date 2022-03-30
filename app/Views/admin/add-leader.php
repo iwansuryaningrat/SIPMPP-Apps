@@ -43,8 +43,8 @@
             <div class="col-lg-6 col-md-9 col-sm-8">
                 <select name="tahun" id="tahun" class="form-select form__select shadow-none" required>
                     <option disabled selected>Pilih Tahun</option>
-                    <?php foreach ($tahun as $tahun) : ?>
-                        <option value="<?= $tahun['tahun'] ?>"><?= $tahun['tahun'] ?></option>
+                    <?php foreach ($tahuns as $tahuns) : ?>
+                        <option value="<?= $tahuns['tahun'] ?>"><?= $tahuns['tahun'] ?></option>
                     <?php endforeach; ?>
                 </select>
             </div>

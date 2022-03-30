@@ -62,25 +62,7 @@ class Admin extends BaseController
 
 
 
-    // Leader Method (Kurang parsing data units)
-    public function leader()
-    {
-        $usersession = $this->data_user;
-        $users = $this->userroleunitModel->getData();
-        // dd($users);
 
-        $data = [
-            'title' => 'Pimpinan | SIPMPP Admin UNDIP',
-            'tab' => 'user',
-            'css' => 'styles-admin-user.css',
-            'header' => 'header__mini',
-            'i' => $this->i,
-            'usersession' => $usersession,
-            'users' => $users
-        ];
-
-        return view('admin/user-leader', $data);
-    }
 
     // Auditor Method (Done)
     public function auditor()
@@ -234,30 +216,6 @@ class Admin extends BaseController
         ];
 
         return view('admin/add-auditor', $data);
-    }
-
-    // add leader Form (Done)
-    public function addLeader()
-    {
-        $users = $this->usersModel->findAll();
-        $units = $this->unitsModel->findAll();
-        $tahun = $this->tahunModel->findAll();
-        $role = $this->roleModel->getRole('pimpinan');
-        // dd($role, $tahun, $units, $users);
-        $data = [
-            'title' => 'Form Tambah User Pimpinan | SIPMPP Admin UNDIP',
-            'tab' => 'user',
-            'css' => 'styles-admin-add-user.css',
-            'header' => 'header__mini',
-            'i' => $this->i,
-            'usersession' => $this->data_user,
-            'users' => $users,
-            'units' => $units,
-            'tahun' => $tahun,
-            'role' => $role,
-        ];
-
-        return view('admin/add-leader', $data);
     }
 
     //add data induk method (Done)

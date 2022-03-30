@@ -245,6 +245,58 @@ class Admin extends BaseController
         return redirect()->to(base_url('admin/daftaruser'));
     }
 
+    // Leader Method (Kurang parsing data units)
+    public function leader()
+    {
+        $usersession = $this->data_user;
+        $units = $this->userroleunitModel->getData();
+        $users = $this->userroleunitModel->getDataEmailRole(4);
+        // dd($users);
+
+        $data = [
+            'title' => 'Pimpinan | SIPMPP Admin UNDIP',
+            'tab' => 'user',
+            'css' => 'styles-admin-user.css',
+            'header' => 'header__mini',
+            'i' => $this->i,
+            'usersession' => $usersession,
+            'users' => $users,
+            'units' => $units,
+            'tahun' => $usersession['tahun'],
+            'tahunsession' => $this->tahun,
+        ];
+
+        return view('admin/user-leader', $data);
+    }
+
+    // add leader Form (Done)
+    public function addLeader()
+    {
+
+        $usersession = $this->data_user;
+        $users = $this->usersModel->findAll();
+        $units = $this->unitsModel->findAll();
+        $tahun = $this->tahunModel->findAll();
+        $role = $this->roleModel->getRole('pimpinan');
+        // dd($role, $tahun, $units, $users);
+        $data = [
+            'title' => 'Form Tambah User Pimpinan | SIPMPP Admin UNDIP',
+            'tab' => 'user',
+            'css' => 'styles-admin-add-user.css',
+            'header' => 'header__mini',
+            'i' => $this->i,
+            'usersession' => $this->data_user,
+            'users' => $users,
+            'units' => $units,
+            'tahuns' => $tahun,
+            'roles' => $role,
+            'tahun' => $usersession['tahun'],
+            'tahunsession' => $this->tahun,
+        ];
+
+        return view('admin/add-leader', $data);
+    }
+
 
 
 
