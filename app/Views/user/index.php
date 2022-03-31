@@ -15,10 +15,10 @@
           <?php // uses regex that accepts any word character or hyphen in last name
           function split_name($name)
           {
-            $name = trim($name);
-            $last_name = (strpos($name, ' ') === false) ? '' : preg_replace('#.*\s([\w-]*)$#', '$1', $name);
-            $first_name = trim(preg_replace('#' . preg_quote($last_name, '#') . '#', '', $name));
-            return array($first_name, $last_name);
+              $name = trim($name);
+              $last_name = (strpos($name, ' ') === false) ? '' : preg_replace('#.*\s([\w-]*)$#', '$1', $name);
+              $first_name = trim(preg_replace('#' . preg_quote($last_name, '#') . '#', '', $name));
+              return array($first_name, $last_name);
           }
           echo split_name($data_user['nama'])[0];
           ?>
@@ -52,7 +52,9 @@
       </div>
       <div>
         <div class="progress progress__content-progress-bar">
-          <div class="progress-bar bg__dark-main unit__progressbar" role="progressbar" aria-valuenow="72" aria-valuemin="0" aria-valuemax="100" style="width: 72%" data-bs-toggle="tooltip" data-bs-placement="top" title="72%"></div>
+          <div class="progress-bar bg__dark-main unit__progressbar" role="progressbar" aria-valuenow="72"
+            aria-valuemin="0" aria-valuemax="100" style="width: 72%" data-bs-toggle="tooltip" data-bs-placement="top"
+            title="72%"></div>
         </div>
       </div>
     </div>
@@ -73,7 +75,9 @@
       </div>
       <div>
         <div class="progress progress__content-progress-bar">
-          <div class="progress-bar bg__dark-main unit__progressbar" role="progressbar" aria-valuenow="42" aria-valuemin="0" aria-valuemax="100" style="width: 42%" data-bs-toggle="tooltip" data-bs-placement="top" title="42%"></div>
+          <div class="progress-bar bg__dark-main unit__progressbar" role="progressbar" aria-valuenow="42"
+            aria-valuemin="0" aria-valuemax="100" style="width: 42%" data-bs-toggle="tooltip" data-bs-placement="top"
+            title="42%"></div>
         </div>
       </div>
     </div>
@@ -134,7 +138,9 @@
               <td><a href="#" class="unit__link">LPPM</a></td>
               <td>
                 <div class="progress table__unit__progress">
-                  <div class="progress-bar bg__dark-main unit__progressbar" role="progressbar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100" style="width: 60%" data-bs-toggle="tooltip" data-bs-placement="top" title="60%"></div>
+                  <div class="progress-bar bg__dark-main unit__progressbar" role="progressbar" aria-valuenow="60"
+                    aria-valuemin="0" aria-valuemax="100" style="width: 60%" data-bs-toggle="tooltip"
+                    data-bs-placement="top" title="60%"></div>
                 </div>
               </td>
             </tr>
@@ -148,41 +154,9 @@
 
 <?= $this->endSection(); ?>
 
-<?= $this->section('userscript'); ?>
+<?= $this->section('script'); ?>
 
 <script>
-  // dropdown
-  $(document).click((e) => {
-    if (
-      e.target.id !== "header-main-nav-dropdown" &&
-      e.target.id !== "btn-dropdown" &&
-      e.target.id !== "photo-dropdown" &&
-      e.target.id !== "form-tahun-profile" &&
-      e.target.id !== "form-tahun-profile-label" &&
-      e.target.id !== "tahunProfile" &&
-      e.target.id !== "profileEmail" &&
-      e.target.id !== "profileName" &&
-      e.target.id !== "profileStatus"
-    ) {
-      $("#header-main-nav-dropdown").removeClass("active");
-    }
-  });
-  $("#btn-dropdown").click(() => {
-    $("#header-main-nav-dropdown").toggleClass("active");
-  });
-  $("#photo-dropdown").click(() => {
-    $("#header-main-nav-dropdown").toggleClass("active");
-  });
-  $("#profileName").click(() => {
-    $("#header-main-nav-dropdown").toggleClass("active");
-  });
-  $("#profileEmail").click(() => {
-    $("#header-main-nav-dropdown").toggleClass("active");
-  });
-  $("#profileStatus").click(() => {
-    $("#header-main-nav-dropdown").toggleClass("active");
-  });
-
   // tooltips
   // progress bar unit
   const tooltipsUnitProgress =

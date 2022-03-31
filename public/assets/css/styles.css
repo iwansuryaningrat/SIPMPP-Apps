@@ -401,11 +401,14 @@ select.form__select {
 }
 .nav-profile__photo {
   width: 3rem;
+  height: 3rem;
   margin-right: 1rem;
 }
 
 .nav-profile__photo img {
   width: 100%;
+  height: 100%;
+  object-fit: cover;
 
   clip-path: circle(50%);
 }

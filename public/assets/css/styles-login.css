@@ -43,6 +43,41 @@
   height: 100%;
 }
 
+.carousel__item .carousel-caption > p {
+  color: rgb(203, 203, 203);
+}
+.carousel__item .carousel-caption > h5 {
+  color: rgba(255, 255, 255, 0.9);
+  font-weight: 600;
+}
+
+.carousel__item-title {
+  width: 30rem;
+  color: rgba(255, 255, 255, 0.9);
+  margin-top: 2rem;
+  margin-bottom: 2rem;
+}
+
+.carousel__item-map__content {
+  height: calc(100% - 15rem);
+  width: 100%;
+  display: flex;
+  align-items: center;
+}
+
+.carousel__item-map {
+  margin: 0 auto;
+  max-width: 30rem;
+  max-height: 20rem;
+  position: relative;
+  box-shadow: 0 0.25rem 1.125rem rgba(0, 0, 0, 0.4);
+}
+
+.carousel__item-map iframe {
+  height: 20rem;
+  max-width: 100%;
+}
+
 .login__card-content {
   width: 400px;
   height: 480px;
@@ -105,6 +140,12 @@ form .position-relative svg {
   transition: var(--trans-m);
 
   color: rgba(79, 79, 79, 0.6);
+}
+
+@media screen and (max-width: 1048px) {
+  .content-left__carousel {
+    display: none;
+  }
 }
 
 /* tablet view */

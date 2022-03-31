@@ -8,7 +8,8 @@
     </div>
     <div class="header__main-nav-profile">
         <div class="nav-profile__photo">
-            <img src="/profile/<?= $usersession['foto']; ?>" alt="profile-picture" id="photo-dropdown" />
+            <img src="/profile/<?= $usersession['foto']; ?>"
+                alt="profile-picture" id="photo-dropdown" />
         </div>
         <div class="nav-profile__desc">
             <p id="profileName" class="ellipsis__text"><?= $usersession['nama']; ?>
@@ -27,14 +28,19 @@
         </p>
         <hr />
         <form action="/admin/switchtahun" method="POST" id="form-tahun-profile">
-            <label for="tahunProfile" class="form-label form__label__profile nav-dropdown__title" id="form-tahun-profile-label">Tahun</label>
+            <label for="tahunProfile" class="form-label form__label__profile nav-dropdown__title"
+                id="form-tahun-profile-label">Tahun</label>
             <div class="d-flex align-items-center">
-                <select name="tahun" id="tahunProfile" class="form-select form__select__profile shadow-none me-2">
+                <select name="tahun" id="tahunProfile" class="form-select form__select__profile shadow-none">
                     <?php foreach ($tahunsession as $data_tahun) : ?>
-                        <option value="<?= $data_tahun['tahun']; ?>" <?php if ($tahun == $data_tahun['tahun']) echo 'selected'; ?>><?= $data_tahun['tahun']; ?></option>
+                    <option
+                        value="<?= $data_tahun['tahun']; ?>"
+                        <?php if ($tahun == $data_tahun['tahun']) {
+    echo 'selected';
+} ?>><?= $data_tahun['tahun']; ?>
+                    </option>
                     <?php endforeach; ?>
                 </select>
-                <button class="btn btn__dark"><i class="fa-solid fa-check"></i></button>
             </div>
         </form>
         <hr />
