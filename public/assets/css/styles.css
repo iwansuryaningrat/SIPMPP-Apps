@@ -970,6 +970,15 @@ footer .container-fluid.container__fluid {
   font-size: 0.875rem;
 }
 
+/* ========== Shadow ========== */
+.shadow__box-sm {
+  box-shadow: 0 0.25rem 1.125rem rgba(0, 0, 0, 0.06);
+}
+
+.shadow__box-md {
+  box-shadow: 0 0.5rem 1.125rem rgba(0, 0, 0, 0.15);
+}
+
 /******************************************/
 /*               Responsive               */
 /******************************************/
@@ -1100,6 +1109,7 @@ footer .container-fluid.container__fluid {
 
   .nav-profile__photo {
     width: 2.5rem;
+    height: 2.5rem;
   }
 
   .header__main-nav-dropdown {

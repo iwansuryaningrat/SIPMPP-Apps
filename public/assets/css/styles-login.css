@@ -99,6 +99,7 @@
 }
 
 .login__title {
+  margin-top: 1.5rem;
   margin-bottom: 1.25rem !important;
 }
 
@@ -130,6 +131,39 @@
   padding-right: 3rem !important;
 }
 
+.form__login #password {
+  padding-right: 5rem !important;
+}
+
+#togglePassword svg {
+  z-index: 99;
+  color: rgba(79, 79, 79, 0.25) !important;
+}
+
+.logo__sipmpp {
+  position: absolute;
+  top: 3rem;
+}
+
+.logo__sipmpp__content {
+  display: flex;
+  align-items: center;
+  justify-content: start;
+}
+
+.logo__sipmpp__content img {
+  height: 1.875rem;
+  display: block;
+  margin-right: 0.75rem;
+}
+
+.logo__sipmpp__content p {
+  font-size: 1.375rem;
+  margin-bottom: 0;
+  letter-spacing: 0.03em;
+  font-weight: 700;
+}
+
 form .position-relative svg {
   font-size: 1rem;
 
@@ -140,6 +174,11 @@ form .position-relative svg {
   transition: var(--trans-m);
 
   color: rgba(79, 79, 79, 0.6);
+}
+
+form .position-relative .icon__hide__password {
+  top: 3rem;
+  right: 3rem;
 }
 
 @media screen and (max-width: 1048px) {
@@ -160,6 +199,10 @@ form .position-relative svg {
 
   .login__content-right {
     flex: 0.7;
+  }
+
+  .logo__sipmpp {
+    top: 1.75rem;
   }
 }
 

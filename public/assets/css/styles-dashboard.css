@@ -297,7 +297,7 @@
   .progress__content-card {
     padding: 1.5rem 1.25rem 1.25rem;
 
-    border-radius: var(--border-l);
+    border-radius: var(--radius-md);
   }
 
   /* ==========recap content========== */
@@ -305,7 +305,7 @@
     /* width: 100%; */
     margin-bottom: 1rem;
 
-    border-radius: var(--border-l);
+    border-radius: var(--radius-md);
   }
 
   .recap__link-card__body {
@@ -320,7 +320,7 @@
   .recap__link-card__footer {
     padding: 1rem 1.25rem;
 
-    border-radius: 0 0 var(--border-l) var(--border-l);
+    border-radius: 0 0 var(--radius-md) var(--radius-md);
   }
 
   .recap__link-card__body .card__title {
@@ -328,7 +328,7 @@
   }
 
   .sipmpp__table {
-    border-radius: var(--border-l);
+    border-radius: var(--radius-md);
   }
 
   .sipmpp__table .card__title {

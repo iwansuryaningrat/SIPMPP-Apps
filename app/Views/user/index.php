@@ -37,12 +37,12 @@
 <!-- body main -->
 <!-- progress pengisian -->
 <div class="progress__content">
-  <div class="progress__content-card mb-3 mb-sm-4 mb-md-0" id="progress-data-induk">
+  <div class="progress__content-card mb-3 mb-sm-4 mb-lg-0 shadow__box-sm" id="progress-data-induk">
     <div class="d-flex align-items-center mb-2">
       <div class="progress__icon-warp">
         <img src="/assets/img/logo-data-induk.svg" alt="logo-data-induk" />
       </div>
-      <h5 class="mb-0 card__title mb-2">Pengisian Data Induk</h5>
+      <h5 class="card__title mb-2">Pengisian Data Induk <span>2022</span></h5>
     </div>
 
     <div class="progress__content-progress">
@@ -60,12 +60,12 @@
     </div>
   </div>
 
-  <div class="progress__content-card" id="progress-spmi">
-    <div class="d-flex align-items-center mb-4">
+  <div class="progress__content-card shadow__box-sm" id="progress-spmi">
+    <div class="d-flex align-items-center mb-2">
       <div class="progress__icon-warp">
         <img src="/assets/img/logo-spmi.svg" alt="logo-spmi" />
       </div>
-      <h5 class="mb-0 card__title">Pengisian Nilai SPMI</h5>
+      <h5 class="mb-3 card__title">Pengisian Nilai SPMI <span>2022</span></h5>
     </div>
 
     <div class="progress__content-progress">
@@ -88,20 +88,20 @@
 <div class="recap__content">
   <!-- left -->
   <div class="recap__content-link">
-    <div class="recap__link-card">
+    <div class="recap__link-card shadow__box-md">
       <div class="recap__link-card__body">
         <img src="/assets/img/penelitian-logo.svg" alt="penelitian-logo" />
         <h5 class="card__title mb-0 ellipsis__text">Penelitian</h5>
       </div>
       <div class="recap__link-card__footer">
-        <a href="#">
+        <a href="/home/standar">
           <span class="ellipsis__text">Selengkapnya</span>
           <i class="bi bi-arrow-right-circle d-flex"></i>
         </a>
       </div>
     </div>
 
-    <div class="recap__link-card">
+    <div class="recap__link-card shadow__box-md">
       <div class="recap__link-card__body">
         <img src="/assets/img/pengabdian-masyarakat-logo.svg" alt="penelitian-logo" />
         <h5 class="card__title mb-0 ellipsis__text">
@@ -109,7 +109,7 @@
         </h5>
       </div>
       <div class="recap__link-card__footer">
-        <a href="#">
+        <a href="/home/standar">
           <span class="ellipsis__text">Selengkapnya</span>
           <i class="bi bi-arrow-right-circle d-flex"></i>
         </a>
@@ -120,7 +120,7 @@
   <!-- right -->
   <!-- table unit -->
   <div class="recap__content-unit">
-    <div class="sipmpp__table radius__lg">
+    <div class="sipmpp__table radius__lg shadow__box-sm">
       <h5 class="card__title mb-0">Daftar Unit</h5>
       <div class="table__unit table-responsive">
         <table class="table table__unit__content sipmpp__table-content table-hover">

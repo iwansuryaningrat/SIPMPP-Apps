@@ -112,7 +112,13 @@
             </div>
 
             <!-- right -->
-            <div class="login__content-right">
+            <div class="login__content-right position-relative">
+                <div class="logo__sipmpp">
+                    <div class="logo__sipmpp__content">
+                        <img src="/assets/img/undip-logo-color.png" alt="logo-sipmpp" />
+                        <p>SIPMPP UNDIP</p>
+                    </div>
+                </div>
                 <div class="login__content-right__body">
                     <h2 class="login__title">Login</h2>
                     <p class="login__desc mb-4">
@@ -154,7 +160,7 @@
                         <div class="mb-4 position-relative">
                             <label for="email" class="form-label form__label">Email</label>
                             <input type="email" class="form-control form__control shadow-none" name="email" id="email"
-                                placeholder="Masukkan Email" required autocomplete="off" />
+                                placeholder="Masukkan email" required autocomplete="off" />
                             <i class="fa-solid fa-at icon__form"></i>
                         </div>
                         <div class="mb-5 position-relative">
@@ -162,6 +168,8 @@
                             <input type="password" class="form-control form__control shadow-none" name="password"
                                 id="password" placeholder="Masukkan password" required />
                             <i class="fa-solid fa-lock icon__form"></i>
+                            <span id="togglePassword"><i class="fa-solid fa-eye icon__hide__password"
+                                    title="show password"></i></span>
                         </div>
                         <button type="submit" class="btn login__btn shadow-none">Login</button>
                     </form>
@@ -198,6 +206,17 @@
         // get year now
         var currentYear = new Date().getFullYear();
         $("#year__now").text(currentYear);
+
+        // togglePassword
+        // change icon
+        $("#togglePassword").click(function() {
+            $(this).children().toggleClass("fa-eye-slash");
+            $(this).children().toggleClass("fa-eye");
+
+            var type = $("#password").attr("type") === "password" ? "text" : "password";
+            $("#password").attr("type", type);
+
+        });
     </script>
 </body>
 
