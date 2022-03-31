@@ -154,7 +154,7 @@
 
 <?= $this->endSection(); ?>
 
-<?= $this->section('script'); ?>
+<?= $this->section('userscript'); ?>
 
 <script>
   // tooltips
