@@ -200,18 +200,15 @@ class Home extends BaseController
         $data_user = $this->data_user;
 
         $tahun = $data_user['tahun'];
-        // dd($data_user['unit_id'], $standar_id, $tahun, $kategori_id);
 
         $datapenilaian = $this->penilaianModel->getPenilaianSpec($data_user['unit_id'], $standar_id, $tahun, $kategori_id);
-        // dd($datapenilaian);
+        $indikator = $this->indikatorModel->getIndikator($kategori_id, $standar_id);
+        // dd($datapenilaian, $indikator);
 
-        $kategori = $datapenilaian[0]['nama_kategori'];
+        $kategori =  $this->kategoriModel->getKategoriById($kategori_id)['nama_kategori'];
+        // dd($kategori);
 
-        $standar = [
-            'standar_id' => $datapenilaian[0]['standar_id'],
-            'nama_standar' => $datapenilaian[0]['nama_standar'],
-        ];
-        // dd($standar);
+        $standar = $this->standarModel->getStandar($standar_id);
 
         $i = 1;
 
@@ -226,6 +223,7 @@ class Home extends BaseController
             'datapenilaian' => $datapenilaian,
             'standar' => $standar,
             'kategori' => $kategori,
+            'indikator' => $indikator,
             'tahunsession' => $this->tahun,
         ];
 
@@ -279,7 +277,8 @@ class Home extends BaseController
         $keterangan = $this->request->getVar('keterangan');
         $status = "Diisi";
 
-        $datapenilaian = $this->penilaianModel->getPenilaianSpec($unit_id, $standar_id, $tahun, $kategori_id);
+        $datapenilaian = $this->penilaianModel->getPenilaianSpecId($unit_id, $standar_id, $tahun, $kategori_id, $indikator_id);
+        // dd($datapenilaian);
 
         if ($nilai_input == 'ADA / SESUAI') {
             $nilai_input = 1;

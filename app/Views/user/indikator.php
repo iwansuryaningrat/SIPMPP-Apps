@@ -45,11 +45,16 @@
           <tr>
             <td><?= $i; ?>
             </td>
-            <td>
-              <?= $data['nama_indikator']; ?>
-            </td>
-            <td><?= $data['target']; ?>
-            </td>
+            <?php foreach ($indikator as $indi) :
+              if ($data['indikator_id'] == $indi['indikator_id'] &&  $data['standar_id'] == $indi['standar_id'] && $data['kategori_id'] == $indi['kategori_id']) : ?>
+                <td>
+                  <?= $indi['nama_indikator']; ?>
+                </td>
+                <td>
+                  <?= $indi['target']; ?>
+                </td>
+            <?php endif;
+            endforeach; ?>
             <td><span class="badge badge__sipmpp <?php if ($data['status'] == 'Diaudit') {
                                                     echo 'badge__success';
                                                   } elseif ($data['status'] == 'Dikirim') {
