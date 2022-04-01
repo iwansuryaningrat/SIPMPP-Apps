@@ -82,23 +82,6 @@
 <?= $this->section('script'); ?>
 
 <script>
-  // dropdown
-  $(document).click((e) => {
-    if (
-      e.target.id !== "header-main-nav-dropdown" &&
-      e.target.id !== "btn-dropdown" &&
-      e.target.id !== "photo-dropdown"
-    ) {
-      $("#header-main-nav-dropdown").removeClass("active");
-    }
-  });
-  $("#btn-dropdown").click(() => {
-    $("#header-main-nav-dropdown").toggleClass("active");
-  });
-  $("#photo-dropdown").click(() => {
-    $("#header-main-nav-dropdown").toggleClass("active");
-  });
-
   // tooltips
   const tooltipsDelete = document.querySelectorAll(
     ".delete__data__induk__icon"
