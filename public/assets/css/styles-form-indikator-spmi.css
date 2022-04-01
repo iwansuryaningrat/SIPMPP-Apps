@@ -47,6 +47,10 @@
   }
 
   .button__section {
-    margin-top: 2rem;
+    margin-top: 0.875rem;
+  }
+
+  .button__section .form__btn {
+    padding: 0.625rem 0.875rem !important;
   }
 }

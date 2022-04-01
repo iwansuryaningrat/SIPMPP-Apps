@@ -6,7 +6,9 @@
   <div class="header__main-title__pagination">
     <a id="unit-user" href="/" style="font-weight: 600;"><?= $data_user['unit']; ?></a>
     / <a href="/home/standar">Nilai SPMI</a> /
-    <a href="/home/standar">Indikator</a> / Form Indikator
+    <a
+      href="/home/indikator/<?= $standar['standar_id'] . '/' . $datapenilaian[0]['kategori_id'] ?>">Indikator</a>
+    / Form Indikator
   </div>
   <div class="header__main-title__subtitle">
     <div class="title__subtitle-desc">
@@ -120,7 +122,7 @@
     <div class="row">
       <div class="col-lg-9 col-md-12 col-sm-12 button__section">
         <a href="/home/indikator/<?= $standar['standar_id'] . '/' . $datapenilaian[0]['kategori_id'] ?>"
-          class="btn form__btn cancel__btn me-4" role="button">Batal</a>
+          class="btn form__btn cancel__btn me-4 shadow-none" role="button">Batal</a>
         <button type="submit" class="btn form__btn btn__dark shadow-none">
           Simpan
         </button>
@@ -134,35 +136,6 @@
 <?= $this->section('userscript'); ?>
 
 <script>
-  // dropdown
-  $(document).click((e) => {
-    if (
-      e.target.id !== "header-main-nav-dropdown" &&
-      e.target.id !== "btn-dropdown" &&
-      e.target.id !== "photo-dropdown"
-    ) {
-      $("#header-main-nav-dropdown").removeClass("active");
-    }
-  });
-  $("#btn-dropdown").click(() => {
-    $("#header-main-nav-dropdown").toggleClass("active");
-  });
-  $("#photo-dropdown").click(() => {
-    $("#header-main-nav-dropdown").toggleClass("active");
-  });
-
-  // active filer button
-  $(function() {
-    $(".filter__btn").click(function() {
-      // remove classes from all
-      $(".filter__btn").removeClass("active");
-      // add class to the one we clicked
-      $(this).addClass("active");
-      // stop the page from jumping to the top
-      return false;
-    });
-  });
-
   // tooltips
   // progress bar unit
   const tooltipsEdit = document.querySelectorAll(

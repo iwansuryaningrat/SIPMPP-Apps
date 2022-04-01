@@ -101,7 +101,7 @@ button,
 }
 
 .form__btn {
-  padding: 0.875rem 1.875rem;
+  padding: 0.875rem 1.875rem !important;
   border-radius: var(--radius-sm);
 }
 

@@ -81,18 +81,6 @@
 <?= $this->section('userscript'); ?>
 
 <script>
-  // active filer button
-  $(function() {
-    $(".filter__btn").click(function() {
-      // remove classes from all
-      $(".filter__btn").removeClass("active");
-      // add class to the one we clicked
-      $(this).addClass("active");
-      // stop the page from jumping to the top
-      return false;
-    });
-  });
-
   // tooltips
   // progress bar unit
   const tooltipsEdit = document.querySelectorAll(
