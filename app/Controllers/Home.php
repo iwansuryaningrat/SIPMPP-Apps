@@ -245,6 +245,8 @@ class Home extends BaseController
         // dd($datapenilaian, $standar);
         $induk = $this->unitIndukTahunModel->getIndukUnitSpec($unit_id, $tahun, $datapenilaian[0]['indikator_id'], $kategori_id);
         // dd($induk);
+        $kategori = $this->kategoriModel->getKategoriById($kategori_id);
+        // dd($kategori);
 
         if ($datapenilaian[0]['nilai'] == 0) {
             session()->setFlashdata('message', '<div class="alert alert-danger" role="alert">Nilai Data Induk Belum Diisi. Silakan isi Data Induk terlebih dahulu</div>');
@@ -256,6 +258,7 @@ class Home extends BaseController
                 'tab' => 'standar',
                 'header' => 'header__mini header__indikator',
                 'css' => 'styles-form-indikator-spmi.css',
+                'kategori' => $kategori['nama_kategori'],
                 'datapenilaian' => $datapenilaian,
                 'standar' => $standar,
                 'induk' => $induk,
