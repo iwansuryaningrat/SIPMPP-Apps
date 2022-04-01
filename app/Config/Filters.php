@@ -9,6 +9,7 @@ use CodeIgniter\Filters\Honeypot;
 use CodeIgniter\Filters\InvalidChars;
 use CodeIgniter\Filters\SecureHeaders;
 use App\Filters\LoginFilter;
+use App\Filters\LoginFirstFilter;
 use App\Filters\UsersFilter;
 use App\Filters\AdminFilter;
 use App\Filters\AuditorFilter;
@@ -30,6 +31,7 @@ class Filters extends BaseConfig
         'invalidchars'  => InvalidChars::class,
         'secureheaders' => SecureHeaders::class,
         'login'         => LoginFilter::class,
+        'loginfirst'    => LoginFirstFilter::class,
         'users'         => UsersFilter::class,
         'admin'         => AdminFilter::class,
         'auditor'       => AuditorFilter::class,
@@ -77,9 +79,13 @@ class Filters extends BaseConfig
      * @var array
      */
     public $filters = [
-        'login' => [
+        'loginfirst' => [
             'before' => [
                 '/',
+            ],
+        ],
+        'login' => [
+            'before' => [
                 'home',
                 'home/*',
                 'admin',
