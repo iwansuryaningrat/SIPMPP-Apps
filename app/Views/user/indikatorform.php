@@ -53,13 +53,9 @@
     <div class="row mb-3 mb-sm-4">
       <label for="kebutuhan-data" class="col-lg-3 col-md-3 col-sm-4 col-form-label form__label">Kebutuhan Data</label>
       <div class="col-lg-6 col-md-9 col-sm-8">
-<<<<<<< HEAD
         <textarea class="form-control form__control shadow-none" id="kebutuhan-data" name="kebutuhan-data" cols="30"
           rows="3" disabled
-          required><?= $induk['nama_induk']; ?></textarea>
-=======
-        <textarea class="form-control form__control shadow-none" id="kebutuhan-data" name="kebutuhan-data" cols="30" rows="3" disabled required><?= $datapenilaian[0]['nama_induk']; ?></textarea>
->>>>>>> f063947e957609936900e1d579a8a043555e0a58
+          required><?= $datapenilaian[0]['nama_induk']; ?></textarea>
       </div>
     </div>
     <!-- satuan -->
