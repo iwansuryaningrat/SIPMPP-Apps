@@ -46,8 +46,8 @@ class PenilaianModel extends Model
             ->where('standar.kategori_id', $kategori_id)
             ->where('unit_induk_tahun.tahun', $tahun)
             ->where('unit_induk_tahun.unit_id', $unit_id)
-            ->groupby('indikator.induk_id')
-            // ->groupby('indikator.indikator_id')
+            // ->groupby('indikator.induk_id')
+            ->groupby('indikator.indikator_id')
             ->orderBy('standar.NoStd', 'ASC')
             ->findAll();
     }
