@@ -101,7 +101,7 @@ button,
 }
 
 .form__btn {
-  padding: 0.875rem 1.875rem;
+  padding: 0.875rem 1.875rem !important;
   border-radius: var(--radius-sm);
 }
 
@@ -989,20 +989,14 @@ footer .container-fluid.container__fluid {
 /*               Responsive               */
 /******************************************/
 @media screen and (max-width: 1160px) {
-  .header__main-color.header__mini.header__spmi {
-    height: 18rem !important;
-  }
-
-  .header__main-color.header__mini.header__spmi.active {
-    height: 17.5rem !important;
-  }
-
+  .header__main-color.header__mini.header__spmi,
   .header__main-color.header__mini.header__indikator {
-    height: 20rem !important;
+    height: 18.5rem !important;
   }
 
+  .header__main-color.header__mini.header__spmi.active,
   .header__main-color.header__mini.header__indikator.active {
-    height: 17.5rem !important;
+    height: 16rem !important;
   }
 }
 
@@ -1038,8 +1032,16 @@ footer .container-fluid.container__fluid {
     height: 16rem !important;
   }
 
-  .header__main-color.header__mini.header__indikator {
-    height: 18rem !important;
+  .header__main-color.header__mini.header__datainduk {
+    height: 16rem !important;
+  }
+
+  .header__main-color.header__mini.header__datainduk.active {
+    height: 15rem !important;
+  }
+
+  .header__main-color.header__mini.header__profile {
+    height: 16rem !important;
   }
 
   /**************************************/
@@ -1051,10 +1053,28 @@ footer .container-fluid.container__fluid {
   }
 }
 
-@media screen and (max-width: 700px) {
+@media screen and (max-width: 860px) {
+  .header__main-color.header__mini.header__spmi.active,
+  .header__main-color.header__mini.header__indikator.active {
+    height: 17rem !important;
+  }
+}
+
+@media screen and (max-width: 710px) {
   .header__main-color.header__mini.header__indikator,
   .header__main-color.header__mini.header__spmi {
     height: 20rem !important;
+  }
+
+  .header__main-color.header__mini.header__datainduk {
+    height: 18rem !important;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .header__main-color.header__mini.header__spmi,
+  .header__main-color.header__mini.header__indikator {
+    height: 22rem !important;
   }
 }
 
@@ -1090,16 +1110,14 @@ footer .container-fluid.container__fluid {
     height: 15rem !important;
   }
 
-  .header__main-color.header__mini.header__spmi {
-    height: 21.5rem !important;
-  }
-
+  .header__main-color.header__mini.header__spmi,
   .header__main-color.header__mini.header__indikator {
-    height: 21.5rem !important;
+    height: 18rem !important;
   }
 
-  .header__main-color.header__mini.header__datainduk {
-    height: 20rem !important;
+  .header__main-color.header__mini.header__spmi.active,
+  .header__main-color.header__mini.header__indikator.active {
+    height: 16rem !important;
   }
 
   .header__main-color.header__mini.header__datainduk.active {
@@ -1107,7 +1125,7 @@ footer .container-fluid.container__fluid {
   }
 
   .header__main-color.header__mini.header__profile {
-    height: 13.5rem !important;
+    height: 14rem !important;
   }
 
   .header__main-color.header__mini.header__profile.active {
@@ -1194,25 +1212,33 @@ footer .container-fluid.container__fluid {
   }
 }
 
+@media screen and (max-width: 440px) {
+  .header__main-color.header__mini.header__spmi,
+  .header__main-color.header__mini.header__indikator {
+    height: 21rem !important;
+  }
+
+  .header__main-color.header__mini.header__spmi.active,
+  .header__main-color.header__mini.header__indikator.active {
+    height: 17.5rem !important;
+  }
+}
+
 @media screen and (max-width: 420px) {
   .header__main-color.header__mini.header__datainduk.active {
     height: 16rem !important;
   }
 
-  .header__main-color.header__mini.header__spmi {
-    height: 24rem !important;
+  .header__main-color.header__mini.header__spmi,
+  .header__main-color.header__mini.header__indikator {
+    height: 23rem !important;
   }
 }
 
 @media screen and (max-width: 380px) {
-  .header__main-color.header__mini.header__spmi.active {
-    height: 17rem !important;
-  }
-  .header__main-color.header__mini.header__indikator {
-    height: 27rem !important;
-  }
+  .header__main-color.header__mini.header__spmi.active,
   .header__main-color.header__mini.header__indikator.active {
-    height: 21.5rem !important;
+    height: 17rem !important;
   }
 
   .header__main-color.header__mini.header__datainduk {
@@ -1221,5 +1247,23 @@ footer .container-fluid.container__fluid {
 
   .header__main-color.header__mini.header__datainduk.active {
     height: 17rem !important;
+  }
+
+  .header__main-color.header__mini.header__profile {
+    height: 15.5rem !important;
+  }
+}
+
+@media screen and (max-width: 350px) {
+  .header__main-color.header__mini.header__spmi,
+  .header__main-color.header__mini.header__indikator {
+    height: 25rem !important;
+  }
+}
+
+@media screen and (max-width: 320px) {
+  .header__main-color.header__mini.header__spmi.active,
+  .header__main-color.header__mini.header__indikator.active {
+    height: 20rem !important;
   }
 }
