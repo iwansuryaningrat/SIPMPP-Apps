@@ -28,7 +28,7 @@
 <!--========== body main ==========-->
 <div class="profile__section">
   <!-- left -->
-  <div class="profile__section-profile">
+  <div class="profile__section-profile shadow__box-sm">
     <h5>Profile Pengguna</h5>
     <hr class="head__hr" />
     <?= session()->getFlashdata('message'); ?>
@@ -94,7 +94,7 @@
 
   <!-- right -->
   <div class="profile__section-password">
-    <div class="section-password__border">
+    <div class="section-password__border shadow__box-sm">
       <h5>Ubah Password</h5>
       <hr />
       <?= session()->getFlashdata('message'); ?>

@@ -132,3 +132,20 @@ input.error {
     height: 4rem;
   }
 }
+
+@media screen and (max-width: 576px) {
+  .mb__big {
+    margin-bottom: 1.875rem !important;
+  }
+
+  .form__profile button,
+  .form__change__password button,
+  .form__label__photo {
+    padding: 0.5rem 0.635rem;
+  }
+
+  .profile__section-profile,
+  .profile__section-password {
+    padding: 1.5rem 1.5rem 1.625rem;
+  }
+}

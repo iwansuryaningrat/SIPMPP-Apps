@@ -17,7 +17,7 @@
 
 <!--========== body main ==========-->
 <h4 class="title__body__indikator-u">
-  Kategori: <?= $kategori; ?>
+  Kategori: <?= $kategori; ?> <span>2022</span>
 </h4>
 <h4 class="title__body__indikator-s">
   <?= $standar['standar_id'] . '. ' . $standar['nama_standar'] ?>
@@ -42,29 +42,31 @@
       <tbody>
 
         <?php foreach ($datapenilaian as $data) : ?>
-          <tr>
-            <td><?= $i; ?>
-            </td>
-            <td>
-              <?= $data['nama_indikator']; ?>
-            </td>
-            <td><?= $data['target']; ?>
-            </td>
-            <td><span class="badge badge__sipmpp <?php if ($data['status'] == 'Diaudit') {
-                                                    echo 'badge__success';
-                                                  } elseif ($data['status'] == 'Dikirim') {
-                                                    echo 'badge__primary';
-                                                  } elseif ($data['status'] == 'Belum Diisi') {
-                                                    echo 'badge__danger';
-                                                  } else {
-                                                    echo 'badge__warning';
-                                                  } ?>"><?= $data['status']; ?></span></td>
-            <td><?= $data['nilai_akhir']; ?>
-            </td>
-            <td>
-              <a data-bs-placement="top" title="Edit" href="/home/indikatorform/<?= $data['kategori_id'] . '/' . $data['standar_id'] . '/' . $data['indikator_id']; ?>" class="edit__data__induk__icon"><i class="fa-solid fa-pen-to-square"></i></a>
-            </td>
-          </tr>
+        <tr>
+          <td><?= $i; ?>
+          </td>
+          <td>
+            <?= $data['nama_indikator']; ?>
+          </td>
+          <td><?= $data['target']; ?>
+          </td>
+          <td><span class="badge badge__sipmpp <?php if ($data['status'] == 'Diaudit') {
+    echo 'badge__success';
+} elseif ($data['status'] == 'Dikirim') {
+    echo 'badge__primary';
+} elseif ($data['status'] == 'Belum Diisi') {
+    echo 'badge__danger';
+} else {
+    echo 'badge__warning';
+} ?>"><?= $data['status']; ?></span></td>
+          <td><?= $data['nilai_akhir']; ?>
+          </td>
+          <td>
+            <a data-bs-placement="top" title="Edit"
+              href="/home/indikatorform/<?= $data['kategori_id'] . '/' . $data['standar_id'] . '/' . $data['indikator_id']; ?>"
+              class="edit__data__induk__icon"><i class="fa-solid fa-pen-to-square"></i></a>
+          </td>
+        </tr>
         <?php $i++;
         endforeach; ?>
 

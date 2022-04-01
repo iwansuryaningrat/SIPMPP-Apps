@@ -34,6 +34,7 @@
 .kirim__btn:hover {
   color: var(--white);
   background-color: var(--dark-main-color);
+  box-shadow: 0 0.25rem 1.25rem rgba(0, 0, 0, 0.2);
 }
 
 /* table */

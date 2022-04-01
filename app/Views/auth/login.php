@@ -72,7 +72,7 @@
                                 </div>
                             </div>
                             <div class="carousel-item carousel__item">
-                                <img src="..." class="d-block w-100" alt="...">
+                                <!-- <img src="..." class="d-block w-100" alt="..."> -->
                                 <div class="carousel-caption d-none d-md-block">
                                     <h5>Second slide label</h5>
                                     <p>Lectus ut donec eros, diam purus enim mauris aliquam et. Id scelerisque turpis

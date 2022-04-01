@@ -172,6 +172,10 @@ select.form__select {
   background-color: var(--white);
 }
 
+.sipmpp__table tbody tr:nth-child(even) {
+  background-color: rgba(240, 240, 240, 0.7);
+}
+
 .sipmpp__table-content thead tr,
 .sipmpp__table-content thead tr th {
   border: none !important;
@@ -795,9 +799,11 @@ footer .container-fluid.container__fluid {
   display: flex;
 
   width: 100%;
+  padding: 0 1.875rem;
 
   align-items: center;
-  justify-content: end;
+  justify-content: left;
+  justify-content: flex-end;
 }
 
 .footer__caption p i,
@@ -972,7 +978,7 @@ footer .container-fluid.container__fluid {
 
 /* ========== Shadow ========== */
 .shadow__box-sm {
-  box-shadow: 0 0.25rem 1.125rem rgba(0, 0, 0, 0.06);
+  box-shadow: 0 0.25rem 1.125rem rgba(0, 0, 0, 0.07);
 }
 
 .shadow__box-md {
@@ -1092,6 +1098,22 @@ footer .container-fluid.container__fluid {
     height: 21.5rem !important;
   }
 
+  .header__main-color.header__mini.header__datainduk {
+    height: 20rem !important;
+  }
+
+  .header__main-color.header__mini.header__datainduk.active {
+    height: 15rem !important;
+  }
+
+  .header__main-color.header__mini.header__profile {
+    height: 13.5rem !important;
+  }
+
+  .header__main-color.header__mini.header__profile.active {
+    height: 14rem !important;
+  }
+
   .main__content {
     width: calc(100% - 12.375rem) !important;
   }
@@ -1164,16 +1186,40 @@ footer .container-fluid.container__fluid {
   /***************************************/
   .footer__caption {
     justify-content: center;
+    padding: 0 0.5rem;
+  }
+
+  .footer__caption p {
+    text-align: center;
   }
 }
 
-@media screen and (max-width: 320px) {
-  .header__main-color.header__mini.header__indikator,
+@media screen and (max-width: 420px) {
+  .header__main-color.header__mini.header__datainduk.active {
+    height: 16rem !important;
+  }
+
   .header__main-color.header__mini.header__spmi {
+    height: 24rem !important;
+  }
+}
+
+@media screen and (max-width: 380px) {
+  .header__main-color.header__mini.header__spmi.active {
+    height: 17rem !important;
+  }
+  .header__main-color.header__mini.header__indikator {
     height: 27rem !important;
   }
-  .header__main-color.header__mini.header__indikator.active,
-  .header__main-color.header__mini.header__spmi.active {
+  .header__main-color.header__mini.header__indikator.active {
     height: 21.5rem !important;
+  }
+
+  .header__main-color.header__mini.header__datainduk {
+    height: 22.5rem !important;
+  }
+
+  .header__main-color.header__mini.header__datainduk.active {
+    height: 17rem !important;
   }
 }

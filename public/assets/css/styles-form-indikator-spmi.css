@@ -29,6 +29,18 @@
   margin-top: 2.625rem;
 }
 
+.title__body__indikator-u {
+  font-weight: 600;
+  margin-top: 2.625rem;
+  margin-bottom: 1rem;
+}
+
+.title__body__indikator-s {
+  margin-top: 0;
+  margin-bottom: 2rem;
+  font-weight: 600;
+}
+
 @media screen and (max-width: 600px) {
   .form__indikator form .form__label {
     text-align: left;
