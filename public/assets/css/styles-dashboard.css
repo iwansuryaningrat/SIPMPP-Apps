@@ -185,7 +185,7 @@
 .sipmpp__table .card__title {
   font-size: 1.25rem !important;
 
-  padding: 1.875rem;
+  /* padding: 1.875rem; */
 }
 
 .table__unit {
@@ -212,18 +212,15 @@
 }
 
 .table__unit__head__number {
-  width: 10%;
-  min-width: 3.375rem;
+  width: 12%;
 }
 
 .table__unit__head__unit {
-  width: 40%;
-  min-width: 14.375rem;
+  width: 43%;
 }
 
 .table__unit__head__progress {
-  width: 50%;
-  min-width: 18rem;
+  width: 45%;
 }
 
 .table__unit__progress {
@@ -237,6 +234,41 @@
   text-decoration: underline;
 
   color: var(--black);
+}
+
+.content-unit__title {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1.875rem;
+}
+
+.filter__btn.me-md-3 {
+  margin-right: 0.75rem !important;
+}
+
+.filter__btn {
+  font-size: 0.75rem;
+  padding: 0.25rem 0.5rem;
+  border-radius: var(--radius-sm);
+  background-color: var(--light-color) !important;
+  border: var(--border-sm) !important;
+  color: rgba(0, 0, 0, 0.8) !important;
+}
+
+.filter__btn:hover {
+  color: var(--black) !important;
+}
+
+.filter__btn.active {
+  color: rgba(255, 255, 255, 0.8) !important;
+  font-weight: 500 !important;
+  background-color: rgba(38, 48, 77, 0.9) !important;
+}
+
+.filter__btn.active:hover {
+  color: var(--white) !important;
+  background-color: var(--dark-main-color) !important;
 }
 
 /* chart */

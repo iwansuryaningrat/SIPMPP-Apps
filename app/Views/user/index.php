@@ -121,21 +121,37 @@
   <!-- table unit -->
   <div class="recap__content-unit">
     <div class="sipmpp__table radius__lg shadow__box-sm">
-      <h5 class="card__title mb-0">Daftar Unit</h5>
+      <div class="content-unit__title">
+        <h5 class="card__title mb-0">Progress SPMI <span><?= $data_user['tahun']; ?></span></h5>
+        <div class="filter__panel">
+          <div class="nav nav-pills" id="pills-tab" role="tablist">
+            <button class="btn filter__btn me-0 me-md-3 shadow-none active nav-link active" id="pills-spmi-penelitian"
+              data-bs-toggle="pill" data-bs-target="#pills-table-spmi-penelitian" type="button" role="tab"
+              aria-controls="pills-table-spmi-penelitian" aria-selected="true">
+              Penelitian
+            </button>
+            <button class="btn filter__btn shadow-none nav-link" id="pills-spmi-pm" data-bs-toggle="pill"
+              data-bs-target="#pills-table-spmi-pm" type="button" role="tab" aria-controls="pills-table-spmi-pm"
+              aria-selected="false">
+              Pengabdian Masyarakat
+            </button>
+          </div>
+        </div>
+      </div>
+      <!-- table penelitian -->
       <div class="table__unit table-responsive">
         <table class="table table__unit__content sipmpp__table-content table-hover">
           <thead class="bg__light">
             <tr>
-              <th class="table__unit__head__number">No</th>
-              <th class="table__unit__head__unit">Unit</th>
+              <th class="table__unit__head__number">#</th>
+              <th class="table__unit__head__unit">nama standar</th>
               <th class="table__unit__head__progress">Progress</th>
             </tr>
           </thead>
           <tbody>
-
             <tr>
-              <td>1</td>
-              <td><a href="#" class="unit__link">LPPM</a></td>
+              <td>S1</td>
+              <td>Standar Peneliti</td>
               <td>
                 <div class="progress table__unit__progress">
                   <div class="progress-bar bg__dark-main unit__progressbar" role="progressbar" aria-valuenow="60"
@@ -144,10 +160,33 @@
                 </div>
               </td>
             </tr>
-
+            <tr>
+              <td>S2</td>
+              <td>Standar Sistem Informasi Penelitian</td>
+              <td>
+                <div class="progress table__unit__progress">
+                  <div class="progress-bar bg__dark-main unit__progressbar" role="progressbar" aria-valuenow="40"
+                    aria-valuemin="0" aria-valuemax="100" style="width: 40%" data-bs-toggle="tooltip"
+                    data-bs-placement="top" title="40%"></div>
+                </div>
+              </td>
+            </tr>
+            <tr>
+              <td>S3</td>
+              <td>Standar Pembelajaran</td>
+              <td>
+                <div class="progress table__unit__progress">
+                  <div class="progress-bar bg__dark-main unit__progressbar" role="progressbar" aria-valuenow="90"
+                    aria-valuemin="0" aria-valuemax="100" style="width: 90%" data-bs-toggle="tooltip"
+                    data-bs-placement="top" title="90%"></div>
+                </div>
+              </td>
+            </tr>
           </tbody>
         </table>
       </div>
+
+      <!-- table pengabdian masyarakat -->
     </div>
   </div>
 </div>
