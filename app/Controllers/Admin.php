@@ -692,6 +692,28 @@ class Admin extends BaseController
         }
     }
 
+    // Profile Method (Done)
+    public function profile()
+    {
+        $data_user = $this->data_user;
+        $user = $this->usersModel->getUserByEmail($data_user['email']);
+
+        $data = [
+            'title' => 'Profile | SIPMPP UNDIP 2022',
+            'usersession' => $data_user,
+            'data_user' => $data_user,
+            'user' => $user,
+            'tab' => 'profile',
+            'header' => '',
+            'css' =>
+            'styles-admin-profile.css',
+            'tahun' => $data_user['tahun'],
+            'tahunsession' => $this->tahun,
+        ];
+
+        return view('admin/profile', $data);
+    }
+
 
 
 
