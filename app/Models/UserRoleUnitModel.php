@@ -133,4 +133,11 @@ class UserRoleUnitModel extends Model
             ->where('role_id', $role_id)
             ->delete();
     }
+
+    // Delete Unit
+    public function deleteUnit($unit_id)
+    {
+        return $this->where('unit_id', $unit_id)
+            ->delete();
+    }
 }

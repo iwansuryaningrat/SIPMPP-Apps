@@ -441,6 +441,25 @@ class Admin extends BaseController
         }
     }
 
+    // Delete unit method
+    public function deleteunit($unit_id)
+    {
+        $unit = $this->unitsModel->getUnit($unit_id);
+
+        if ($unit != null) {
+            // Hapus Semua role user yang berhubungan dengan unit ini
+            $this->userroleunitModel->deleteUnit($unit_id);
+            $this->unitsModel->delete($unit_id);
+
+            // Set flashdata gagal dan kirim pesan eror dengan flashdata
+            $this->session->setFlashdata('msg', '<div class="alert alert-success alert-dismissible fade show" role="alert">Unit berhasil dihapus!</div>');
+            return redirect()->to(base_url('admin/units'));
+        } else {
+            $this->session->setFlashdata('msg', '<div class="alert alert-danger alert-dismissible fade show" role="alert">Unit tidak ditemukan!</div>');
+            return redirect()->to(base_url('admin/units'));
+        }
+    }
+
 
 
 

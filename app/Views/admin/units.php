@@ -57,7 +57,7 @@
             </td>
             <td>
               <a role="button" data-bs-toggle="modal" data-bs-placement="top" title="Edit" href="#staticBackdrop" class="edit__data__induk__icon me-3 me-md-5" data-Unit="<?= $unit['nama_unit']; ?>" data-idUnit="<?= $unit['unit_id']; ?>"><i class="fa-solid fa-pen-to-square"></i></a>
-              <a data-bs-placement="top" title="Delete" href="#" class="delete__data__induk__icon"><i class="fa-solid fa-trash"></i></a>
+              <a data-bs-placement="top" title="Delete" href="/admin/deleteunit/<?= $unit['unit_id']; ?>" class="delete__data__induk__icon"><i class="fa-solid fa-trash"></i></a>
             </td>
           </tr>
         <?php $i++;
