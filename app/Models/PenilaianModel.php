@@ -87,11 +87,12 @@ class PenilaianModel extends Model
     // Joining all tables
     public function getPenilaianSpecId($unit_id, $standar_id, $tahun, $kategori_id, $indikator_id)
     {
-        return $this->select('penilaian.*, kategori.nama_kategori, standar.nama_standar , indikator.*, units.*, unit_induk_tahun.nilai')
+        return $this->select('penilaian.*, kategori.nama_kategori, standar.nama_standar , indikator.*, units.*, data_induk.*, unit_induk_tahun.nilai')
             ->join('kategori', 'kategori.kategori_id = penilaian.kategori_id')
             ->join('standar', 'standar.standar_id = penilaian.standar_id')
             ->join('units', 'units.unit_id = penilaian.unit_id')
             ->join('indikator', 'indikator.standar_id = penilaian.standar_id')
+            ->join('data_induk', 'data_induk.induk_id = indikator.induk_id')
             ->join('unit_induk_tahun', 'unit_induk_tahun.induk_id = indikator.induk_id')
             ->where('penilaian.unit_id', $unit_id)
             ->where('penilaian.standar_id', $standar_id)

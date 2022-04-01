@@ -241,6 +241,7 @@ class Home extends BaseController
 
         // $datapenilaian = $this->penilaianModel->getPenilaianSpec($unit_id, $standar_id, $tahun, $kategori_id);
         $datapenilaian = $this->penilaianModel->getPenilaianSpecId($unit_id, $standar_id, $tahun, $kategori_id, $indikator_id);
+        // dd($datapenilaian);
         $standar = $this->standarModel->getStandar($standar_id);
         // dd($datapenilaian, $standar);
         $induk = $this->unitIndukTahunModel->getIndukUnitSpec($unit_id, $tahun, $datapenilaian[0]['indikator_id'], $kategori_id);
@@ -261,7 +262,7 @@ class Home extends BaseController
                 'kategori' => $kategori['nama_kategori'],
                 'datapenilaian' => $datapenilaian,
                 'standar' => $standar,
-                'induk' => $induk,
+                // 'induk' => $induk,
                 'tahun' => $tahun,
                 'tahunsession' => $this->tahun,
             ];
@@ -304,9 +305,10 @@ class Home extends BaseController
         // Dokumen handler
         $dokumen = $this->request->getFile('dokumen');
         if ($dokumen->getError() == 4) {
-            return redirect()->to('/home/indikatorform/' . $indikator_id);
+            return redirect()->to('/home/indikatorform/' . $kategori_id . '/' . $standar_id . '/' . $indikator_id);
         } else {
-            $namadokumen = 'dokumen-' . $indikator_id . '-' . $standar_id . '-' . $unit_id . '-' . $kategori_id . '-' . $tahun . '/' . $dokumen->getExtension();
+            $namadokumen = 'dokumen-' . $indikator_id . '-' . $standar_id . '-' . $unit_id . '-' . $kategori_id . '-' . $tahun . '.' . $dokumen->getExtension();
+            // dd($namadokumen);
             $dokumen->move('dokumen/', $namadokumen);
         };
 
