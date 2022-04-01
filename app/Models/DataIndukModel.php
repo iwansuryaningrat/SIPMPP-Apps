@@ -32,4 +32,12 @@ class DataIndukModel extends Model
             ->where('kategori_id', $kategori_id)
             ->first();
     }
+
+    //  Delete induk data by induk_id and kategori_id
+    public function deleteIndukById($induk_id, $kategori_id)
+    {
+        return $this->where('induk_id', $induk_id)
+            ->where('kategori_id', $kategori_id)
+            ->delete();
+    }
 }

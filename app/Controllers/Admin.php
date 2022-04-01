@@ -677,6 +677,21 @@ class Admin extends BaseController
         return redirect()->to(base_url('admin/induk'));
     }
 
+    // Delete data induk (Kurang delete Data yang menggunakan data induk)
+    public function deleteInduk($induk_id, $kategori_id)
+    {
+        $data = $this->dataIndukModel->getIndukById($induk_id, $kategori_id);
+        // dd($data);
+        if ($data) {
+            $this->unitIndukTahunModel->$this->dataIndukModel->deleteByInduk($induk_id, $kategori_id);
+            $this->session->setFlashdata('msg', '<div class="alert alert-success alert-dismissible fade show" role="alert">Data Induk berhasil dihapus!</div>');
+            return redirect()->to(base_url('admin/induk'));
+        } else {
+            $this->session->setFlashdata('msg', '<div class="alert alert-danger alert-dismissible fade show" role="alert">Data Induk tidak ditemukan!</div>');
+            return redirect()->to(base_url('admin/induk'));
+        }
+    }
+
 
 
 

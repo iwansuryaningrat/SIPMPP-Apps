@@ -73,4 +73,12 @@ class UnitIndukTahunModel extends Model
             ->orderBy('data_induk.induk_id', 'ASC')
             ->findAll();
     }
+
+    // Delete Data Unit Induk Tahun by uinduk_id, kategori_id
+    public function deleteByInduk($induk_id, $kategori_id)
+    {
+        return $this->where('induk_id', $induk_id)
+            ->where('kategori_id', $kategori_id)
+            ->delete();
+    }
 }
