@@ -37,12 +37,20 @@
                 </select>
             </div>
         </div>
+        <!-- Induk Id -->
+        <div class="row mb-3 mb-sm-4">
+            <label for="kode" class="col-lg-3 col-md-3 col-sm-4 col-form-label form__label">Id Induk
+                <span class="color__danger">*</span></label>
+            <div class="col-lg-6 col-md-9 col-sm-8">
+                <input class="form-control form__control shadow-none" id="kode" name="induk_id" value="<?= $induk['induk_id']; ?>" required autocomplete="off" placeholder="Masukkan kode data induk" />
+            </div>
+        </div>
         <!-- kode -->
         <div class="row mb-3 mb-sm-4">
             <label for="kode" class="col-lg-3 col-md-3 col-sm-4 col-form-label form__label">Kode
                 <span class="color__danger">*</span></label>
             <div class="col-lg-6 col-md-9 col-sm-8">
-                <input class="form-control form__control shadow-none" id="kode" name="induk_id" value="<?= $induk['induk_id']; ?>" required autocomplete="off" placeholder="Masukkan kode data induk" />
+                <input class="form-control form__control shadow-none" id="kode" name="kode" value="<?= $induk['kode']; ?>" required autocomplete="off" placeholder="Masukkan kode data induk" />
             </div>
         </div>
         <!-- kebutuhan data -->

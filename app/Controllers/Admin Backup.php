@@ -58,25 +58,7 @@ class Admin extends BaseController
         $this->session = \Config\Services::session();
     }
 
-    // Data Induk Method
-    public function dataInduk()
-    {
-        $usersession = $this->data_user;
-        $induk = $this->dataIndukModel->getInduk();
-        // dd($induk);
 
-        $data = [
-            'title' => 'Data Induk | SIPMPP Admin UNDIP',
-            'tab' => 'induk',
-            'css' => 'styles-admin-data-induk.css',
-            'header' => 'header__mini',
-            'i' => $this->i,
-            'usersession' => $usersession,
-            'induk' => $induk
-        ];
-
-        return view('admin/dataInduk', $data);
-    }
 
     //view data induk method
     public function viewDataInduk()
@@ -145,50 +127,7 @@ class Admin extends BaseController
 
     // FORM METHOD
 
-    //add data induk method (Done)
-    public function addDataIndukForm()
-    {
-        $usersession = $this->data_user;
-        $induk = $this->dataIndukModel->getInduk();
-        $kategori = $this->kategoriModel->findAll();
 
-        $data = [
-            'title' => 'Form Add Data Induk | SIPMPP Admin UNDIP',
-            'tab' => 'induk',
-            'css' => 'styles-admin-add-datainduk.css',
-            'header' => 'header__mini',
-            'i' => $this->i,
-            'usersession' => $usersession,
-            'induk' => $induk,
-            'kategori' => $kategori
-        ];
-
-        return view('admin/add-dataInduk', $data);
-    }
-
-    // Add data induk method (Done)
-    public function adddatainduk()
-    {
-        $kategori_id = $this->request->getVar('kategori_id');
-        $induk_id = $this->request->getVar('induk_id');
-        $nama_induk = $this->request->getVar('nama_induk');
-
-        $data = $this->dataIndukModel->getIndukById($induk_id, $kategori_id);
-        // dd($data);
-        if ($data) {
-            session()->setFlashdata('message', '<div class="alert alert-danger" role="alert">Data Induk sudah ada!</div>');
-            return redirect()->to(base_url('admin/dataInduk'));
-        } else {
-            $data = [
-                'induk_id' => (int)$induk_id,
-                'kategori_id' => $kategori_id,
-                'nama_induk' => $nama_induk
-            ];
-            $this->dataIndukModel->insert($data);
-            session()->setFlashdata('message', '<div class="alert alert-success" role="alert">Data Induk berhasil ditambahkan!</div>');
-            return redirect()->to(base_url('admin/dataInduk'));
-        }
-    }
 
     //Add standar method (Done)
     public function addStandarform()
@@ -306,47 +245,7 @@ class Admin extends BaseController
         return redirect()->to(base_url('admin/standar'));
     }
 
-    //edit data induk page
-    public function editDataInduk($induk_id, $kategori_id)
-    {
-        $usersession = $this->data_user;
-        $datainduk = $this->dataIndukModel->getIndukById($induk_id, $kategori_id);
-        // dd($datainduk);
-        $kategori = $this->kategoriModel->findAll();
 
-        $data = [
-            'title' => 'Form Edit Data Induk | SIPMPP Admin UNDIP',
-            'tab' => 'induk',
-            'css' => 'styles-admin-add-datainduk.css',
-            'header' => 'header__mini',
-            'i' => $this->i,
-            'usersession' => $usersession,
-            'induk' => $datainduk,
-            'kategori' => $kategori
-        ];
-
-        return view('admin/edit-dataInduk', $data);
-    }
-
-    // Update data induk
-    public function updateInduk()
-    {
-        $induk_id = $this->request->getVar('induk_id');
-        $kategori_id = $this->request->getVar('kategori_id');
-        $nama_induk = $this->request->getVar('nama_induk');
-
-        $data = [
-            'induk_id' => $induk_id,
-            'kategori_id' => $kategori_id,
-            'nama_induk' => $nama_induk,
-        ];
-
-        $this->dataIndukModel->update($induk_id, $data);
-
-        // Set flashdata gagal dan kirim pesan eror dengan flashdata
-        $this->session->setFlashdata('msg', '<div class="alert alert-success alert-dismissible fade show" role="alert">Data Induk berhasil diubah!</div>');
-        return redirect()->to(base_url('admin/induk'));
-    }
 
     // Profile Method (Done)
     public function profile()

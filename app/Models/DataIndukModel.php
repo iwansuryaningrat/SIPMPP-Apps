@@ -9,7 +9,7 @@ class DataIndukModel extends Model
     protected $table            = 'data_induk';
     protected $primaryKey       = ['induk_id', "kategori_id"];
     protected $returnType       = 'array';
-    protected $allowedFields    = ['induk_id', "kategori_id", 'nama_induk', 'created_at', 'updated_at'];
+    protected $allowedFields    = ['induk_id', "kategori_id", "kode", 'nama_induk', 'created_at', 'updated_at'];
 
     // Dates
     protected $useTimestamps = true;
