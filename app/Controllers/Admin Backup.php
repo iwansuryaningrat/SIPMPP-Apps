@@ -266,74 +266,9 @@ class Admin extends BaseController
 
 
 
-    // Add Unit method
-    public function addunit()
-    {
-        $nama_unit = $this->request->getVar('nama_unit');
-        // dd($unit);
 
-        function split_name($name)
-        {
-            $name = trim($name);
-            $last_name = (strpos($name, ' ') === false) ? '' : preg_replace('#.*\s([\w-]*)$#', '$1', $name);
-            $first_name = trim(preg_replace('#' . preg_quote($last_name, '#') . '#', '', $name));
-            return array($first_name, $last_name);
-        }
 
-        if (split_name($nama_unit)[1] != '') {
-            $id = strtolower(split_name($nama_unit)[1]);
-        } else {
-            $id = strtolower(split_name($nama_unit)[0]);
-        }
-        // dd($id);
 
-        // Get unit by id
-        $unit = $this->unitsModel->getUnit($id);
-        // dd($unit);
-
-        if ($unit != null) {
-            $this->session->setFlashdata('msg', '<div class="alert alert-danger alert-dismissible fade show" role="alert">Unit telah ada! Silakan menambahkan unit lain.</div>');
-            return redirect()->to(base_url('admin/units'));
-        } else {
-            $data = [
-                'unit_id' => $id,
-                'nama_unit' => $nama_unit,
-            ];
-
-            $this->unitsModel->insert($data);
-
-            // Set flashdata gagal dan kirim pesan eror dengan flashdata
-            $this->session->setFlashdata('msg', '<div class="alert alert-success alert-dismissible fade show" role="alert">Unit berhasil ditambahkan!</div>');
-            return redirect()->to(base_url('admin/units'));
-        }
-    }
-
-    // Edit unit method (Done)
-    public function editunit()
-    {
-        $unit_id = $this->request->getVar('unit_id');
-        $nama_unit = $this->request->getVar('nama_unit');
-
-        $unit = $this->unitsModel->getUnit($unit_id);
-
-        if ($unit != null) {
-            $data = [
-                'unit_id' => $unit_id,
-                'nama_unit' => $nama_unit,
-            ];
-
-            dd($data);
-
-            $this->unitsModel->update($unit_id, $data);
-
-            // Set flashdata gagal dan kirim pesan eror dengan flashdata
-            $this->session->setFlashdata('msg', '<div class="alert alert-success alert-dismissible fade show" role="alert">Unit berhasil diubah!</div>');
-            return redirect()->to(base_url('admin/units'));
-        } else {
-            $this->session->setFlashdata('msg', '<div class="alert alert-danger alert-dismissible fade show" role="alert">Unit tidak ditemukan!</div>');
-            return redirect()->to(base_url('admin/units'));
-        }
-    }
 
     // GENERATOR
 
