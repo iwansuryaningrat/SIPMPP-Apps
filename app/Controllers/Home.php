@@ -361,13 +361,11 @@ class Home extends BaseController
     {
         $data_user = $this->data_user;
 
-        $unitData = $this->unitData;
         $i = 1;
 
         $data = [
             'title' => 'Dashboard SIPMPP | SIPMPP UNDIP 2022',
             'data_user' => $data_user,
-            'unitData' => $unitData,
             'i' => $i,
             'tab' => 'report',
             'header' => 'header__mini',

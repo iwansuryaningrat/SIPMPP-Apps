@@ -19,7 +19,7 @@
                       return array($first_name, $last_name);
                     }
                     echo split_name($data_user['nama'])[0];
-                    ?></span>, selamat datang kembali!</p>
+                    ?></span>, selamat datang di halaman Report!</p>
     </div>
   </div>
 </div>
@@ -32,23 +32,6 @@
 <?= $this->section('userscript'); ?>
 
 <script>
-  // dropdown
-  $(document).click((e) => {
-    if (
-      e.target.id !== "header-main-nav-dropdown" &&
-      e.target.id !== "btn-dropdown" &&
-      e.target.id !== "photo-dropdown"
-    ) {
-      $("#header-main-nav-dropdown").removeClass("active");
-    }
-  });
-  $("#btn-dropdown").click(() => {
-    $("#header-main-nav-dropdown").toggleClass("active");
-  });
-  $("#photo-dropdown").click(() => {
-    $("#header-main-nav-dropdown").toggleClass("active");
-  });
-
   // tooltips
   // progress bar unit
   const tooltipsUnitProgress =
