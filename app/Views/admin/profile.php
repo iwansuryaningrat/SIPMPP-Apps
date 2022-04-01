@@ -120,23 +120,6 @@
 <!-- jquery validate -->
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.19.3/jquery.validate.min.js" integrity="sha512-37T7leoNS06R80c8Ulq7cdCDU5MNQBwlYoy1TX/WUsLFC2eYNqtKlV0QjH7r8JpG/S0GUMZwebnVFLPd6SU5yg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 <script>
-  // dropdown
-  $(document).click((e) => {
-    if (
-      e.target.id !== "header-main-nav-dropdown" &&
-      e.target.id !== "btn-dropdown" &&
-      e.target.id !== "photo-dropdown"
-    ) {
-      $("#header-main-nav-dropdown").removeClass("active");
-    }
-  });
-  $("#btn-dropdown").click(() => {
-    $("#header-main-nav-dropdown").toggleClass("active");
-  });
-  $("#photo-dropdown").click(() => {
-    $("#header-main-nav-dropdown").toggleClass("active");
-  });
-
   // preview image and validation
   previewImage = (input) => {
     const fi = document.getElementById("photo-profile");
