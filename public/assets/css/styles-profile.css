@@ -36,7 +36,8 @@
 }
 
 .img__input-field {
-  width: calc(100% - 204px);
+  /* width: calc(100% - 204px); */
+  width: 13.75rem;
 }
 
 .img__photo-field {
@@ -128,8 +129,8 @@ input.error {
   }
 
   .img__photo-field {
-    width: 4rem;
-    height: 4rem;
+    width: 5rem;
+    height: 5rem;
   }
 }
 
@@ -145,7 +146,7 @@ input.error {
   }
 
   .profile__section-profile,
-  .profile__section-password {
+  .section-password__border {
     padding: 1.5rem 1.5rem 1.625rem;
   }
 }
