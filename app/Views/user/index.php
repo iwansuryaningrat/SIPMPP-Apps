@@ -15,10 +15,10 @@
           <?php // uses regex that accepts any word character or hyphen in last name
           function split_name($name)
           {
-              $name = trim($name);
-              $last_name = (strpos($name, ' ') === false) ? '' : preg_replace('#.*\s([\w-]*)$#', '$1', $name);
-              $first_name = trim(preg_replace('#' . preg_quote($last_name, '#') . '#', '', $name));
-              return array($first_name, $last_name);
+            $name = trim($name);
+            $last_name = (strpos($name, ' ') === false) ? '' : preg_replace('#.*\s([\w-]*)$#', '$1', $name);
+            $first_name = trim(preg_replace('#' . preg_quote($last_name, '#') . '#', '', $name));
+            return array($first_name, $last_name);
           }
           echo split_name($data_user['nama'])[0];
           ?>
@@ -42,7 +42,7 @@
       <div class="progress__icon-warp">
         <img src="/assets/img/logo-data-induk.svg" alt="logo-data-induk" />
       </div>
-      <h5 class="card__title mb-2">Pengisian Data Induk <span>2022</span></h5>
+      <h5 class="card__title mb-2">Pengisian Data Induk <span><?= $data_user['tahun']; ?></span></h5>
     </div>
 
     <div class="progress__content-progress">
@@ -52,9 +52,7 @@
       </div>
       <div>
         <div class="progress progress__content-progress-bar">
-          <div class="progress-bar bg__dark-main unit__progressbar" role="progressbar" aria-valuenow="72"
-            aria-valuemin="0" aria-valuemax="100" style="width: 72%" data-bs-toggle="tooltip" data-bs-placement="top"
-            title="72%"></div>
+          <div class="progress-bar bg__dark-main unit__progressbar" role="progressbar" aria-valuenow="72" aria-valuemin="0" aria-valuemax="100" style="width: 72%" data-bs-toggle="tooltip" data-bs-placement="top" title="72%"></div>
         </div>
       </div>
     </div>
@@ -65,7 +63,7 @@
       <div class="progress__icon-warp">
         <img src="/assets/img/logo-spmi.svg" alt="logo-spmi" />
       </div>
-      <h5 class="mb-3 card__title">Pengisian Nilai SPMI <span>2022</span></h5>
+      <h5 class="mb-3 card__title">Pengisian Nilai SPMI <span><?= $data_user['tahun']; ?></span></h5>
     </div>
 
     <div class="progress__content-progress">
@@ -75,9 +73,7 @@
       </div>
       <div>
         <div class="progress progress__content-progress-bar">
-          <div class="progress-bar bg__dark-main unit__progressbar" role="progressbar" aria-valuenow="42"
-            aria-valuemin="0" aria-valuemax="100" style="width: 42%" data-bs-toggle="tooltip" data-bs-placement="top"
-            title="42%"></div>
+          <div class="progress-bar bg__dark-main unit__progressbar" role="progressbar" aria-valuenow="42" aria-valuemin="0" aria-valuemax="100" style="width: 42%" data-bs-toggle="tooltip" data-bs-placement="top" title="42%"></div>
         </div>
       </div>
     </div>
@@ -138,9 +134,7 @@
               <td><a href="#" class="unit__link">LPPM</a></td>
               <td>
                 <div class="progress table__unit__progress">
-                  <div class="progress-bar bg__dark-main unit__progressbar" role="progressbar" aria-valuenow="60"
-                    aria-valuemin="0" aria-valuemax="100" style="width: 60%" data-bs-toggle="tooltip"
-                    data-bs-placement="top" title="60%"></div>
+                  <div class="progress-bar bg__dark-main unit__progressbar" role="progressbar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100" style="width: 60%" data-bs-toggle="tooltip" data-bs-placement="top" title="60%"></div>
                 </div>
               </td>
             </tr>
