@@ -460,6 +460,106 @@ class Admin extends BaseController
         }
     }
 
+    //kategori page (Done)
+    public function kategori()
+    {
+        $usersession = $this->data_user;
+        $kategori = $this->kategoriModel->findAll();
+        $data = [
+            'title' => 'Daftar Kategori | SIPMPP Admin UNDIP',
+            'tab' => 'kategori',
+            'css' => 'styles-admin-kategori.css',
+            'header' => 'header__mini',
+            'i' => $this->i,
+            'usersession' => $usersession,
+            'kategori' => $kategori,
+            'tahun' => $usersession['tahun'],
+            'tahunsession' => $this->tahun,
+        ];
+
+        return view('admin/kategori', $data);
+    }
+
+    // Add kategori method (Done)
+    public function addkategori()
+    {
+        $kategori = $this->request->getVar('kategori');
+
+        function name($name)
+        {
+            $name = trim($name);
+            $last_name = (strpos($name, ' ') === false) ? '' : preg_replace('#.*\s([\w-]*)$#', '$1', $name);
+            $first_name = trim(preg_replace('#' . preg_quote($last_name, '#') . '#', '', $name));
+            return array($first_name, $last_name);
+        }
+
+        $id = strtolower(name($kategori)[0]);
+        $id = strtolower($id);
+
+
+        $datakategori = $this->kategoriModel->getKategoriById($id);
+
+        if ($datakategori != null) {
+            $this->session->setFlashdata('msg', '<div class="alert alert-danger alert-dismissible fade show" role="alert">Kategori sudah ada!</div>');
+            return redirect()->to(base_url('admin/kategori'));
+        } else {
+            $data = [
+                'kategori_id' => $id,
+                'nama_kategori' => $kategori,
+            ];
+
+            $this->kategoriModel->insert($data);
+
+            // Set flashdata gagal dan kirim pesan eror dengan flashdata
+            $this->session->setFlashdata('msg', '<div class="alert alert-success alert-dismissible fade show" role="alert">Kategori berhasil ditambahkan!</div>');
+            return redirect()->to(base_url('admin/kategori'));
+        }
+    }
+
+    // Edit kategori method
+    public function editkategori()
+    {
+        $kategori = $this->request->getVar('kategori');
+        $id = $this->request->getVar('id');
+
+        $datakategori = $this->kategoriModel->getKategoriById($id);
+
+        if ($datakategori != null) {
+
+            $data = [
+                'kategori_id' => $id,
+                'nama_kategori' => $kategori,
+            ];
+
+            $this->kategoriModel->update($id, $data);
+
+            // Set flashdata gagal dan kirim pesan eror dengan flashdata
+            $this->session->setFlashdata('msg', '<div class="alert alert-success alert-dismissible fade show" role="alert">Kategori berhasil diubah!</div>');
+            return redirect()->to(base_url('admin/kategori'));
+        } else {
+            $this->session->setFlashdata('msg', '<div class="alert alert-danger alert-dismissible fade show" role="alert">Kategori sudah ada!</div>');
+            return redirect()->to(base_url('admin/kategori'));
+        }
+    }
+
+    // Delete kategori method
+    public function deletekategori($kategori_id)
+    {
+        $kategori = $this->kategoriModel->getKategoriById($kategori_id);
+
+        if ($kategori != null) {
+            $this->kategoriModel->delete($kategori_id);
+
+            // Set flashdata gagal dan kirim pesan eror dengan flashdata
+            $this->session->setFlashdata('msg', '<div class="alert alert-success alert-dismissible fade show" role="alert">Kategori berhasil dihapus!</div>');
+            return redirect()->to(base_url('admin/kategori'));
+        } else {
+            $this->session->setFlashdata('msg', '<div class="alert alert-danger alert-dismissible fade show" role="alert">Kategori tidak ditemukan!</div>');
+            return redirect()->to(base_url('admin/kategori'));
+        }
+    }
+
+
 
 
 

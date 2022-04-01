@@ -58,15 +58,6 @@ class Admin extends BaseController
         $this->session = \Config\Services::session();
     }
 
-
-
-
-
-
-
-
-
-
     // Data Induk Method
     public function dataInduk()
     {
@@ -153,12 +144,6 @@ class Admin extends BaseController
     }
 
     // FORM METHOD
-
-
-
-
-
-
 
     //add data induk method (Done)
     public function addDataIndukForm()
@@ -259,16 +244,7 @@ class Admin extends BaseController
         }
     }
 
-
     // FORM ACTION METHOD
-
-
-
-
-
-
-
-
 
     // GENERATOR
 
@@ -328,90 +304,6 @@ class Admin extends BaseController
         // Set flashdata sukses
         $this->session->setFlashdata('msg', '<div class="alert alert-success alert-dismissible fade show" role="alert">Standar berhasil digenerate setiap unit!</div>');
         return redirect()->to(base_url('admin/standar'));
-    }
-
-    //kategori page (Done)
-    public function kategori()
-    {
-        $usersession = $this->data_user;
-        $kategori = $this->kategoriModel->findAll();
-        $data = [
-            'title' => 'Daftar Unit | SIPMPP Admin UNDIP',
-            'tab' => 'kategori',
-            'css' => 'styles-admin-kategori.css',
-            'header' => 'header__mini',
-            'i' => $this->i,
-            'usersession' => $usersession,
-            'kategori' => $kategori
-        ];
-
-        return view('admin/kategori', $data);
-    }
-
-    // Add kategori method (Done)
-    public function addkategori()
-    {
-        $kategori = $this->request->getVar('kategori');
-
-        function name($name)
-        {
-            $name = trim($name);
-            $last_name = (strpos($name, ' ') === false) ? '' : preg_replace('#.*\s([\w-]*)$#', '$1', $name);
-            $first_name = trim(preg_replace('#' . preg_quote($last_name, '#') . '#', '', $name));
-            return array($first_name, $last_name);
-        }
-
-        if (name($kategori)[1] != '') {
-            $id = name($kategori)[0] . '-' . name($kategori)[1];
-            $id = strtolower($id);
-        } else {
-            $id = strtolower(name($kategori)[0]);
-            $id = strtolower($id);
-        }
-
-        $datakategori = $this->kategoriModel->getKategoriById($id);
-
-        if ($datakategori != null) {
-            $data = [
-                'kategori_id' => $id,
-                'nama_kategori' => $kategori,
-            ];
-
-            $this->kategoriModel->insert($data);
-
-            // Set flashdata gagal dan kirim pesan eror dengan flashdata
-            $this->session->setFlashdata('msg', '<div class="alert alert-success alert-dismissible fade show" role="alert">Kategori berhasil ditambahkan!</div>');
-            return redirect()->to(base_url('admin/kategori'));
-        } else {
-            $this->session->setFlashdata('msg', '<div class="alert alert-danger alert-dismissible fade show" role="alert">Kategori sudah ada!</div>');
-            return redirect()->to(base_url('admin/kategori'));
-        }
-    }
-
-    // Edit kategori method (Done)
-    public function editkategori()
-    {
-        $kategori = $this->request->getVar('kategori');
-        $id = $this->request->getVar('id');
-
-        $datakategori = $this->kategoriModel->getKategoriById($id);
-
-        if ($datakategori != null) {
-
-            $data = [
-                'kategori_id' => $id,
-                'nama_kategori' => $kategori,
-            ];
-
-            $this->kategoriModel->update($id, $data);
-
-            // Set flashdata gagal dan kirim pesan eror dengan flashdata
-            $this->session->setFlashdata('msg', '<div class="alert alert-success alert-dismissible fade show" role="alert">Kategori berhasil diubah!</div>');
-            return redirect()->to(base_url('admin/kategori'));
-        } else {
-            $this->session->setFlashdata('msg', '<div class="alert alert-danger alert-dismissible fade show" role="alert">Kategori sudah ada!</div>');
-            return redirect()->to(base_url('admin/kategori'));
-        }
     }
 
     //edit data induk page

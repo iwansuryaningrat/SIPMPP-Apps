@@ -33,7 +33,7 @@
     </a>
 </div>
 
-<!-- table indikator -->
+<!-- table Kategori -->
 <div class="sipmpp__table">
     <div class="table-responsive">
         <table class="table table__kategori__content sipmpp__table-content table-hover">
