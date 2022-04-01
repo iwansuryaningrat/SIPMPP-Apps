@@ -239,6 +239,17 @@
   color: var(--black);
 }
 
+/* chart */
+.chart__content {
+  display: flex;
+}
+
+.chart__content-dounat {
+  padding: 1.875rem 1.875rem 1.875rem;
+  border-radius: var(--radius-lg);
+  border: var(--border-sm);
+}
+
 /* ==========tablet view========== */
 @media screen and (max-width: 991px) {
   /* ==========progress pengisian========== */

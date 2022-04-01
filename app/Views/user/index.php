@@ -15,10 +15,10 @@
           <?php // uses regex that accepts any word character or hyphen in last name
           function split_name($name)
           {
-            $name = trim($name);
-            $last_name = (strpos($name, ' ') === false) ? '' : preg_replace('#.*\s([\w-]*)$#', '$1', $name);
-            $first_name = trim(preg_replace('#' . preg_quote($last_name, '#') . '#', '', $name));
-            return array($first_name, $last_name);
+              $name = trim($name);
+              $last_name = (strpos($name, ' ') === false) ? '' : preg_replace('#.*\s([\w-]*)$#', '$1', $name);
+              $first_name = trim(preg_replace('#' . preg_quote($last_name, '#') . '#', '', $name));
+              return array($first_name, $last_name);
           }
           echo split_name($data_user['nama'])[0];
           ?>
@@ -52,7 +52,9 @@
       </div>
       <div>
         <div class="progress progress__content-progress-bar">
-          <div class="progress-bar bg__dark-main unit__progressbar" role="progressbar" aria-valuenow="72" aria-valuemin="0" aria-valuemax="100" style="width: 72%" data-bs-toggle="tooltip" data-bs-placement="top" title="72%"></div>
+          <div class="progress-bar bg__dark-main unit__progressbar" role="progressbar" aria-valuenow="72"
+            aria-valuemin="0" aria-valuemax="100" style="width: 72%" data-bs-toggle="tooltip" data-bs-placement="top"
+            title="72%"></div>
         </div>
       </div>
     </div>
@@ -73,7 +75,9 @@
       </div>
       <div>
         <div class="progress progress__content-progress-bar">
-          <div class="progress-bar bg__dark-main unit__progressbar" role="progressbar" aria-valuenow="42" aria-valuemin="0" aria-valuemax="100" style="width: 42%" data-bs-toggle="tooltip" data-bs-placement="top" title="42%"></div>
+          <div class="progress-bar bg__dark-main unit__progressbar" role="progressbar" aria-valuenow="42"
+            aria-valuemin="0" aria-valuemax="100" style="width: 42%" data-bs-toggle="tooltip" data-bs-placement="top"
+            title="42%"></div>
         </div>
       </div>
     </div>
@@ -134,7 +138,9 @@
               <td><a href="#" class="unit__link">LPPM</a></td>
               <td>
                 <div class="progress table__unit__progress">
-                  <div class="progress-bar bg__dark-main unit__progressbar" role="progressbar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100" style="width: 60%" data-bs-toggle="tooltip" data-bs-placement="top" title="60%"></div>
+                  <div class="progress-bar bg__dark-main unit__progressbar" role="progressbar" aria-valuenow="60"
+                    aria-valuemin="0" aria-valuemax="100" style="width: 60%" data-bs-toggle="tooltip"
+                    data-bs-placement="top" title="60%"></div>
                 </div>
               </td>
             </tr>
@@ -146,10 +152,81 @@
   </div>
 </div>
 
+<!-- chart content -->
+<div class="chart__content">
+  <!-- left -->
+  <div class="chart__content-left">
+    <div class="chart__content-dounat shadow__box-sm">
+      <h5 class="card__title mb-5">Nilai SPMI <span>2018</span></h5>
+      <canvas id="myChartSpmi" width="400" height="400"></canvas>
+    </div>
+  </div>
+
+  <!-- right -->
+  <div class="chart__content-right">
+    <div class="chart__content-chart shadow__box-sm"></div>
+  </div>
+</div>
+
 <?= $this->endSection(); ?>
 
 <?= $this->section('userscript'); ?>
+<!-- chart js -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.7.1/chart.min.js"
+  integrity="sha512-QSkVNOCYLtj73J4hbmVoOV6KVZuMluZlioC+trLpewV8qMjsWqlIQvkn1KGX2StWvPMdWGBqim1xlC8krl1EKQ=="
+  crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+<!-- generate chart -->
+<script>
+  const myChartSpmi = document.getElementById('myChartSpmi').getContext('2d');
 
+  const popChartSpmi = new Chart(myChartSpmi, {
+    type: 'doughnut',
+    data: {
+      labels: [
+        'S1',
+        'S2',
+        'S3',
+        'S4',
+        'S5',
+        'S6',
+        'S7',
+        'S8',
+        'S9',
+        'S10',
+        'S11',
+        'S12'
+      ],
+      datasets: [{
+        label: 'My First Dataset',
+        data: [300, 50, 100, 40, 120, 80, 20, 10, 30, 60, 90, 40],
+        backgroundColor: [
+          'rgb(255, 99, 132)',
+          'rgb(54, 162, 235)',
+          'rgb(255, 205, 86)',
+          'rgb(75, 192, 192)',
+          'rgb(153, 102, 255)',
+          'rgb(255, 159, 64)',
+          'rgb(24, 99, 132)',
+          'rgb(54, 162, 25)',
+          'rgb(255, 205, 86)',
+          'rgb(75, 192, 192)',
+          'rgb(153, 102, 255)',
+          'rgb(255, 159, 64)'
+        ],
+        hoverOffset: 2
+      }],
+      options: {
+        legend: {
+          position: 'bottom',
+          labels: {
+            fontSize: 40,
+          }
+        }
+      }
+
+    }
+  });
+</script>
 <script>
   // tooltips
   // progress bar unit
