@@ -79,7 +79,7 @@
     <!-- custom -->
     <script src="/assets/js/scripts.js"></script>
 
-    <?= $this->include('template/script'); ?>
+    <?= $this->include('template/user/script'); ?>
 
     <?= $this->renderSection('userscript'); ?>
 
