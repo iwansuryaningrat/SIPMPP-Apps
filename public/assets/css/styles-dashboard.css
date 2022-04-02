@@ -213,14 +213,17 @@
 
 .table__unit__head__number {
   width: 12%;
+  min-width: 3.5rem;
 }
 
 .table__unit__head__unit {
   width: 43%;
+  min-width: 12.5rem;
 }
 
 .table__unit__head__progress {
   width: 45%;
+  min-width: 12.5rem;
 }
 
 .table__unit__progress {
@@ -240,7 +243,8 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 1.875rem;
+  padding: 1.875rem 1.875rem 1rem;
+  flex-wrap: wrap;
 }
 
 .filter__btn.me-md-3 {
@@ -376,8 +380,6 @@
 
   .sipmpp__table .card__title {
     font-size: 1.125rem !important;
-
-    padding: 1.25rem;
   }
 
   .table__unit {

@@ -15,10 +15,10 @@
           <?php // uses regex that accepts any word character or hyphen in last name
           function split_name($name)
           {
-            $name = trim($name);
-            $last_name = (strpos($name, ' ') === false) ? '' : preg_replace('#.*\s([\w-]*)$#', '$1', $name);
-            $first_name = trim(preg_replace('#' . preg_quote($last_name, '#') . '#', '', $name));
-            return array($first_name, $last_name);
+              $name = trim($name);
+              $last_name = (strpos($name, ' ') === false) ? '' : preg_replace('#.*\s([\w-]*)$#', '$1', $name);
+              $first_name = trim(preg_replace('#' . preg_quote($last_name, '#') . '#', '', $name));
+              return array($first_name, $last_name);
           }
           echo split_name($data_user['nama'])[0];
           ?>
@@ -52,7 +52,9 @@
       </div>
       <div>
         <div class="progress progress__content-progress-bar">
-          <div class="progress-bar bg__dark-main unit__progressbar" role="progressbar" aria-valuenow="72" aria-valuemin="0" aria-valuemax="100" style="width: 72%" data-bs-toggle="tooltip" data-bs-placement="top" title="72%"></div>
+          <div class="progress-bar bg__dark-main unit__progressbar" role="progressbar" aria-valuenow="72"
+            aria-valuemin="0" aria-valuemax="100" style="width: 72%" data-bs-toggle="tooltip" data-bs-placement="top"
+            title="72%"></div>
         </div>
       </div>
     </div>
@@ -73,7 +75,9 @@
       </div>
       <div>
         <div class="progress progress__content-progress-bar">
-          <div class="progress-bar bg__dark-main unit__progressbar" role="progressbar" aria-valuenow="42" aria-valuemin="0" aria-valuemax="100" style="width: 42%" data-bs-toggle="tooltip" data-bs-placement="top" title="42%"></div>
+          <div class="progress-bar bg__dark-main unit__progressbar" role="progressbar" aria-valuenow="42"
+            aria-valuemin="0" aria-valuemax="100" style="width: 42%" data-bs-toggle="tooltip" data-bs-placement="top"
+            title="42%"></div>
         </div>
       </div>
     </div>
@@ -118,8 +122,8 @@
   <div class="recap__content-unit">
     <div class="sipmpp__table radius__lg shadow__box-sm">
       <div class="content-unit__title">
-        <h5 class="card__title mb-0">Progress SPMI <span><?= $data_user['tahun']; ?></span></h5>
-        <div class="filter__panel">
+        <h5 class="card__title mb-3">Progress SPMI <span><?= $data_user['tahun']; ?></span></h5>
+        <div class="filter__panel mb-3">
           <div class="nav nav-pills" id="pills-tab" role="tablist">
             <button class="btn filter__btn me-0 me-md-3 shadow-none active nav-link active" id="pills-spmi-penelitian"
               data-bs-toggle="pill" data-bs-target="#pills-table-spmi-penelitian" type="button" role="tab"
@@ -134,53 +138,109 @@
           </div>
         </div>
       </div>
-      <!-- table penelitian -->
-      <div class="table__unit table-responsive">
-        <table class="table table__unit__content sipmpp__table-content table-hover">
-          <thead class="bg__light">
-            <tr>
-              <th class="table__unit__head__number">#</th>
-              <th class="table__unit__head__unit">nama standar</th>
-              <th class="table__unit__head__progress">Progress</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr>
-              <td>S1</td>
-              <td>Standar Peneliti</td>
-              <td>
-                <div class="progress table__unit__progress">
-                  <div class="progress-bar bg__dark-main unit__progressbar" role="progressbar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100" style="width: 60%" data-bs-toggle="tooltip" data-bs-placement="top" title="60%"></div>
-                </div>
-              </td>
-            </tr>
-            <tr>
-              <td>S2</td>
-              <td>Standar Sistem Informasi Penelitian</td>
-              <td>
-                <div class="progress table__unit__progress">
-                  <div class="progress-bar bg__dark-main unit__progressbar" role="progressbar" aria-valuenow="40"
-                    aria-valuemin="0" aria-valuemax="100" style="width: 40%" data-bs-toggle="tooltip"
-                    data-bs-placement="top" title="40%"></div>
-                </div>
-              </td>
-            </tr>
-            <tr>
-              <td>S3</td>
-              <td>Standar Pembelajaran</td>
-              <td>
-                <div class="progress table__unit__progress">
-                  <div class="progress-bar bg__dark-main unit__progressbar" role="progressbar" aria-valuenow="90"
-                    aria-valuemin="0" aria-valuemax="100" style="width: 90%" data-bs-toggle="tooltip"
-                    data-bs-placement="top" title="90%"></div>
-                </div>
-              </td>
-            </tr>
-          </tbody>
-        </table>
-      </div>
 
-      <!-- table pengabdian masyarakat -->
+      <div class="tab-content" id="pills-tabContent">
+        <!-- table penelitian -->
+        <div class="tab-pane fade show active" id="pills-table-spmi-penelitian" role="tabpanel"
+          aria-labelledby="pills-spmi-penelitian">
+          <div class="table__unit table-responsive">
+            <table class="table table__unit__content sipmpp__table-content table-hover">
+              <thead class="bg__light">
+                <tr>
+                  <th class="table__unit__head__number">#</th>
+                  <th class="table__unit__head__unit">nama standar</th>
+                  <th class="table__unit__head__progress">Progress</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>S1</td>
+                  <td>Standar Peneliti</td>
+                  <td>
+                    <div class="progress table__unit__progress">
+                      <div class="progress-bar bg__dark-main unit__progressbar" role="progressbar" aria-valuenow="60"
+                        aria-valuemin="0" aria-valuemax="100" style="width: 60%" data-bs-toggle="tooltip"
+                        data-bs-placement="top" title="60%"></div>
+                    </div>
+                  </td>
+                </tr>
+                <tr>
+                  <td>S2</td>
+                  <td>Standar Sistem Informasi Penelitian</td>
+                  <td>
+                    <div class="progress table__unit__progress">
+                      <div class="progress-bar bg__dark-main unit__progressbar" role="progressbar" aria-valuenow="40"
+                        aria-valuemin="0" aria-valuemax="100" style="width: 40%" data-bs-toggle="tooltip"
+                        data-bs-placement="top" title="40%"></div>
+                    </div>
+                  </td>
+                </tr>
+                <tr>
+                  <td>S3</td>
+                  <td>Standar Pembelajaran</td>
+                  <td>
+                    <div class="progress table__unit__progress">
+                      <div class="progress-bar bg__dark-main unit__progressbar" role="progressbar" aria-valuenow="90"
+                        aria-valuemin="0" aria-valuemax="100" style="width: 90%" data-bs-toggle="tooltip"
+                        data-bs-placement="top" title="90%"></div>
+                    </div>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+
+        <!-- table pengabdian masyarakat -->
+        <div class="tab-pane fade" id="pills-table-spmi-pm" role="tabpanel" aria-labelledby="pills-spmi-pm">
+          <div class="table__unit table-responsive">
+            <table class="table table__unit__content sipmpp__table-content table-hover">
+              <thead class="bg__light">
+                <tr>
+                  <th class="table__unit__head__number">#</th>
+                  <th class="table__unit__head__unit">nama standar</th>
+                  <th class="table__unit__head__progress">Progress</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>S1</td>
+                  <td>Standar Pengabdian</td>
+                  <td>
+                    <div class="progress table__unit__progress">
+                      <div class="progress-bar bg__dark-main unit__progressbar" role="progressbar" aria-valuenow="40"
+                        aria-valuemin="0" aria-valuemax="100" style="width: 40%" data-bs-toggle="tooltip"
+                        data-bs-placement="top" title="40%"></div>
+                    </div>
+                  </td>
+                </tr>
+                <tr>
+                  <td>S2</td>
+                  <td>Standar Sistem Informasi Penelitian</td>
+                  <td>
+                    <div class="progress table__unit__progress">
+                      <div class="progress-bar bg__dark-main unit__progressbar" role="progressbar" aria-valuenow="17"
+                        aria-valuemin="0" aria-valuemax="100" style="width: 17%" data-bs-toggle="tooltip"
+                        data-bs-placement="top" title="17%"></div>
+                    </div>
+                  </td>
+                </tr>
+                <tr>
+                  <td>S3</td>
+                  <td>Standar Kerjasama Pendidikan</td>
+                  <td>
+                    <div class="progress table__unit__progress">
+                      <div class="progress-bar bg__dark-main unit__progressbar" role="progressbar" aria-valuenow="3"
+                        aria-valuemin="0" aria-valuemax="100" style="width: 3%" data-bs-toggle="tooltip"
+                        data-bs-placement="top" title="3%"></div>
+                    </div>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
     </div>
   </div>
 </div>
@@ -205,7 +265,9 @@
 
 <?= $this->section('userscript'); ?>
 <!-- chart js -->
-<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.7.1/chart.min.js" integrity="sha512-QSkVNOCYLtj73J4hbmVoOV6KVZuMluZlioC+trLpewV8qMjsWqlIQvkn1KGX2StWvPMdWGBqim1xlC8krl1EKQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.7.1/chart.min.js"
+  integrity="sha512-QSkVNOCYLtj73J4hbmVoOV6KVZuMluZlioC+trLpewV8qMjsWqlIQvkn1KGX2StWvPMdWGBqim1xlC8krl1EKQ=="
+  crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 <!-- generate chart -->
 <script>
   const myChartSpmi = document.getElementById('myChartSpmi').getContext('2d');
@@ -259,6 +321,18 @@
   });
 </script>
 <script>
+  // active filer button
+  $(function() {
+    $(".filter__btn").click(function() {
+      // remove classes from all
+      $(".filter__btn").removeClass("active");
+      // add class to the one we clicked
+      $(this).addClass("active");
+      // stop the page from jumping to the top
+      return false;
+    });
+  });
+
   // tooltips
   // progress bar unit
   const tooltipsUnitProgress =
