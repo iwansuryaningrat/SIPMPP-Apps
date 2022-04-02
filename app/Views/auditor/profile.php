@@ -4,7 +4,7 @@
 
 <div class="header__main-title">
   <div class="header__main-title__pagination">
-    <a id="unit-user" href="/" style="font-weight: 600;">Home</a>
+    <a id="unit-user" href="/" style="font-weight: 600;"><?= $data_user['unit']; ?></a>
     / Profile
   </div>
   <div class="header__main-title__subtitle">
@@ -28,21 +28,21 @@
 <!--========== body main ==========-->
 <div class="profile__section">
   <!-- left -->
-  <div class="profile__section-profile">
+  <div class="profile__section-profile shadow__box-sm">
     <h5>Profile Pengguna</h5>
     <hr class="head__hr" />
     <?= session()->getFlashdata('message'); ?>
-    <form class="form__profile" action="/home/editprofile" enctype="multipart/form-data" method="POST">
+    <form class="form__profile" id="formChangeInfo" action="/home/editprofile" enctype="multipart/form-data" method="POST">
       <!-- foto -->
-      <div class="mb-3">
+      <div>
         <label for="photo-profile" class="form-label form__label">Foto Profil</label>
         <div class="input-group input-group__photo">
-          <div class="img__input-photo">
+          <div class="img__input-photo mb-3">
             <div class="img__photo-field">
               <img src="/profile/<?= $data_user['foto']; ?>" alt="photo-profile" class="img__input" id="img-input-preview" />
             </div>
           </div>
-          <div class="img__input-field">
+          <div class="img__input-field mb-3">
             <input type="file" class="form-control form__control__photo" id="photo-profile" aria-labelledby="photo-notice" onchange="previewImage(this)" name="photo-profile" />
             <label class="form__label__photo btn btn__dark" for="photo-profile">Ubah Profile</label>
             <label id="photo-notice" class="form-text form__text">
@@ -74,7 +74,7 @@
       </div>
       <!-- button -->
       <div class="d-flex justify-content-end">
-        <button type="submit" class="btn btn__dark shadow-none">
+        <button type="submit" class="btn btn__dark shadow-none" id="btnSubmitChangeInfo">
           Simpan Perubahan
         </button>
       </div>
@@ -83,11 +83,11 @@
 
   <!-- right -->
   <div class="profile__section-password">
-    <div class="section-password__border">
+    <div class="section-password__border shadow__box-sm">
       <h5>Ubah Password</h5>
       <hr />
       <?= session()->getFlashdata('message'); ?>
-      <form class="form__change__password" action="/home/editpassword" method="POST">
+      <form class="form__change__password" id="formChangePassword" action="/home/editpassword" method="POST">
         <div class="mb-3">
           <label for="oldPassword" class="form-label form__label">Password Lama <span class="color__danger">*</span></label>
           <input type="password" class="form-control form__control shadow-none" id="oldPassword" name="oldPassword" autocomplete="off" required />
@@ -116,27 +116,10 @@
 
 <?= $this->endSection(); ?>
 
-<?= $this->section('userscript'); ?>
+<?= $this->section('script'); ?>
 <!-- jquery validate -->
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.19.3/jquery.validate.min.js" integrity="sha512-37T7leoNS06R80c8Ulq7cdCDU5MNQBwlYoy1TX/WUsLFC2eYNqtKlV0QjH7r8JpG/S0GUMZwebnVFLPd6SU5yg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 <script>
-  // dropdown
-  $(document).click((e) => {
-    if (
-      e.target.id !== "header-main-nav-dropdown" &&
-      e.target.id !== "btn-dropdown" &&
-      e.target.id !== "photo-dropdown"
-    ) {
-      $("#header-main-nav-dropdown").removeClass("active");
-    }
-  });
-  $("#btn-dropdown").click(() => {
-    $("#header-main-nav-dropdown").toggleClass("active");
-  });
-  $("#photo-dropdown").click(() => {
-    $("#header-main-nav-dropdown").toggleClass("active");
-  });
-
   // preview image and validation
   previewImage = (input) => {
     const fi = document.getElementById("photo-profile");
@@ -188,8 +171,29 @@
       },
     });
 
+    $("#formChangeInfo").validate({
+      rules: {
+        fullname: {
+          required: true,
+        },
+        email: {
+          required: true,
+        },
+        nip: {
+          required: true,
+        },
+        'no-telp': {
+          required: true,
+          minlength: 12,
+        },
+      },
+    });
+
     $("#btnSubmitChangePassword").on("click", () => {
       console.log($("#formChangePassword").valid());
+    });
+    $("#btnSubmitChangeInfo").on("click", () => {
+      console.log($("#formChangeInfo").valid());
     });
   });
 </script>

@@ -18,7 +18,7 @@
 </div>
 
 <!--========== body main ==========-->
-<h4 class="title__body__main">Unit: <span><?= $data_user['unit']; ?></span></h4>
+<h4 class="title__body__main">Unit: <span><?= $data_user['unit']; ?></span> <span><?= $data_user['tahun']; ?></span></h4>
 
 <!-- filter -->
 <div class="filter__table">
@@ -34,6 +34,9 @@
 
 <!-- =====data table induk =====-->
 <div class="tab-content" id="pills-tabContent">
+  <!-- Menampilkan Flashdata Message -->
+  <?= session()->getFlashdata('message'); ?>
+
   <!-- penelitian -->
   <div class="tab-pane fade show active" id="pills-table-datainduk-penelitian" role="tabpanel" aria-labelledby="pills-datainduk-penelitian">
     <div class="sipmpp__table">
@@ -49,23 +52,21 @@
             </tr>
           </thead>
           <tbody>
-            <?php foreach ($data_induk as $datainduk) :
-              if ($datainduk['nama_kategori'] == 'Penelitian') : ?>
-                <tr>
-                  <td><?= $i; ?>
-                  </td>
-                  <td><?= $datainduk['induk_id']; ?>
-                  </td>
-                  <td><?= $datainduk['nama_induk']; ?>
-                  </td>
-                  <td><?= $datainduk['nilai']; ?>
-                  </td>
-                  <td>
-                    <a role="button" data-bs-toggle="modal" data-bs-placement="top" title="Edit" href="#staticBackdrop" class="edit__data__induk__icon" data-id="<?= $datainduk['induk_id']; ?>" data-kode="<?= $datainduk['induk_id']; ?>" data-kategori="<?= $datainduk['nama_kategori']; ?>" data-katid="<?= $datainduk['kategori_id']; ?>" data-kebutuhan-data="<?= $datainduk['nama_induk']; ?>" data-nilai="<?= $datainduk['nilai']; ?>"><i class="fa-solid fa-pen-to-square"></i></a>
-                  </td>
-                </tr>
+            <?php foreach ($data_indukPen as $datainduk) : ?>
+              <tr>
+                <td><?= $i; ?>
+                </td>
+                <td><?= $datainduk['induk_id']; ?>
+                </td>
+                <td><?= $datainduk['nama_induk']; ?>
+                </td>
+                <td><?= $datainduk['nilai']; ?>
+                </td>
+                <td>
+                  <a role="button" data-bs-toggle="modal" data-bs-placement="top" title="Edit" href="#staticBackdrop" class="edit__data__induk__icon" data-id="<?= $datainduk['induk_id']; ?>" data-kode="<?= $datainduk['induk_id']; ?>" data-kategori="<?= $datainduk['nama_kategori']; ?>" data-katid="<?= $datainduk['kategori_id']; ?>" data-kebutuhan-data="<?= $datainduk['nama_induk']; ?>" data-nilai="<?= $datainduk['nilai']; ?>"><i class="fa-solid fa-pen-to-square"></i></a>
+                </td>
+              </tr>
             <?php $i++;
-              endif;
             endforeach; ?>
           </tbody>
         </table>
@@ -89,23 +90,21 @@
           </thead>
           <tbody>
             <?php $i = 1;
-            foreach ($data_induk as $datainduk) :
-              if ($datainduk['nama_kategori'] == 'Pengabdian Masyarakat') : ?>
-                <tr>
-                  <td><?= $i; ?>
-                  </td>
-                  <td><?= $datainduk['induk_id']; ?>
-                  </td>
-                  <td><?= $datainduk['nama_induk']; ?>
-                  </td>
-                  <td><?= $datainduk['nilai']; ?>
-                  </td>
-                  <td>
-                    <a role="button" data-bs-toggle="modal" data-bs-placement="top" title="Edit" href="#staticBackdrop" class="edit__data__induk__icon" data-id="<?= $datainduk['induk_id']; ?>" data-kode="<?= $datainduk['induk_id']; ?>" data-kategori="<?= $datainduk['nama_kategori']; ?>" data-katid="<?= $datainduk['kategori_id']; ?>" data-kebutuhan-data="<?= $datainduk['nama_induk']; ?>" data-nilai="<?= $datainduk['nilai']; ?>"><i class="fa-solid fa-pen-to-square"></i></a>
-                  </td>
-                </tr>
+            foreach ($data_indukPPM as $datainduk) : ?>
+              <tr>
+                <td><?= $i; ?>
+                </td>
+                <td><?= $datainduk['induk_id']; ?>
+                </td>
+                <td><?= $datainduk['nama_induk']; ?>
+                </td>
+                <td><?= $datainduk['nilai']; ?>
+                </td>
+                <td>
+                  <a role="button" data-bs-toggle="modal" data-bs-placement="top" title="Edit" href="#staticBackdrop" class="edit__data__induk__icon" data-id="<?= $datainduk['induk_id']; ?>" data-kode="<?= $datainduk['induk_id']; ?>" data-kategori="<?= $datainduk['nama_kategori']; ?>" data-katid="<?= $datainduk['kategori_id']; ?>" data-kebutuhan-data="<?= $datainduk['nama_induk']; ?>" data-nilai="<?= $datainduk['nilai']; ?>"><i class="fa-solid fa-pen-to-square"></i></a>
+                </td>
+              </tr>
             <?php $i++;
-              endif;
             endforeach; ?>
           </tbody>
         </table>
@@ -129,7 +128,7 @@
         <h4 class="modal-title" id="modal-data-induk">Nilai Data Induk</h4>
 
         <!-- form -->
-        <form class="modal__form" method="POST" action="/home/editdatainduk/<?= $data_user['unit_id'] . '/' . $tahun ?>">
+        <form class="modal__form" method="POST" action="/home/editdatainduk">
           <!-- id input -->
           <input type="hidden" id="id" name="induk_id" />
           <input type="hidden" id="kategori_id" name="kategori_id" />
@@ -169,26 +168,9 @@
 
 <?= $this->endSection(); ?>
 
-<?= $this->section('userscript'); ?>
+<?= $this->section('script'); ?>
 
 <script>
-  // dropdown
-  $(document).click((e) => {
-    if (
-      e.target.id !== "header-main-nav-dropdown" &&
-      e.target.id !== "btn-dropdown" &&
-      e.target.id !== "photo-dropdown"
-    ) {
-      $("#header-main-nav-dropdown").removeClass("active");
-    }
-  });
-  $("#btn-dropdown").click(() => {
-    $("#header-main-nav-dropdown").toggleClass("active");
-  });
-  $("#photo-dropdown").click(() => {
-    $("#header-main-nav-dropdown").toggleClass("active");
-  });
-
   // active filer button
   $(function() {
     $(".filter__btn").click(function() {

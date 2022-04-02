@@ -18,10 +18,14 @@
 <!--========== body main ==========-->
 <div class="status__spmi__content">
   <div class="spmi__content-desc">
-    <h4 class="title__body__main">Unit: <span><?= $data_user['unit']; ?></span></h4>
+    <h4 class="title__body__main">Unit: <span><?= $data_user['unit']; ?></span>
+      <span><?= $data_user['tahun']; ?></span>
+    </h4>
     <p class="status__spmi">
       Status Penilaian: <span id="status-spmi" class=" <?php if ($status == 'Belum Dikirim') {
                                                           echo 'color__warning';
+                                                        } elseif ($status == 'Dikirim') {
+                                                          echo 'color__primary';
                                                         } else {
                                                           echo 'color__success';
                                                         } ?> "><?= $status; ?></span>
@@ -80,22 +84,29 @@
                   <td>
                     <span class="badge badge__sipmpp <?php if ($standar['status'] == 'Diaudit') {
                                                         echo 'badge__success';
-                                                      } else if ($standar['status'] == 'Dikirim') {
+                                                      } elseif ($standar['status'] == 'Dikirim') {
                                                         echo 'badge__primary';
-                                                      } else if ($standar['status'] == 'Belum Diisi') {
+                                                      } elseif ($standar['status'] == 'Belum Diisi') {
                                                         echo 'badge__danger';
                                                       } else {
                                                         echo 'badge__warning';
                                                       } ?>"><?= $standar['status']; ?></span>
                   </td>
-                  <td>0</td>
+                  <td><?php
+                      foreach ($data_nilai as $nilai) :
+                        if ($nilai['standar_id'] == $standar['standar_id'] && $nilai['kategori_id'] == $standar['kategori_id']) {
+                          echo $nilai['nilai_akhir'];
+                        }
+                      endforeach; ?>
+                  </td>
                   <td>
-                    <a data-bs-placement="top" title="Lihat" href="/home/indikator/<?= $standar['standar_id'] . '/' . $tahun . '/' . $standar['kategori_id'] ?>" class="edit__data__induk__icon">
+                    <a data-bs-placement="top" title="Lihat" href="/home/indikator/<?= $standar['standar_id'] . '/' . $standar['kategori_id'] ?>" class="edit__data__induk__icon">
                       <i class="fa-solid fa-eye"></i>
                     </a>
                   </td>
                 </tr>
-            <?php $i++;
+            <?php
+                $i++;
               endif;
             endforeach; ?>
 
@@ -136,20 +147,27 @@
                   <td>
                     <span class="badge badge__sipmpp <?php if ($standar['status'] == 'Dikirim' || $standar['status'] == 'Diaudit') {
                                                         echo 'badge__success';
-                                                      } else if ($standar['status'] == 'Belum Diisi') {
+                                                      } elseif ($standar['status'] == 'Belum Diisi') {
                                                         echo 'badge__danger';
                                                       } else {
                                                         echo 'badge__warning';
                                                       } ?>"><?= $standar['status']; ?></span>
                   </td>
-                  <td>0</td>
+                  <td><?php
+                      foreach ($data_nilai as $nilai) :
+                        if ($nilai['standar_id'] == $standar['standar_id'] && $nilai['kategori_id'] == $standar['kategori_id']) {
+                          echo $nilai['nilai_akhir'];
+                        }
+                      endforeach; ?>
+                  </td>
                   <td>
-                    <a data-bs-placement="top" title="Lihat" href="/home/indikator/<?= $standar['standar_id'] . '/' . $tahun . '/' . $standar['kategori_id'] ?>" class="edit__data__induk__icon">
+                    <a data-bs-placement="top" title="Lihat" href="/home/indikator/<?= $standar['standar_id'] . '/' . $standar['kategori_id'] ?>" class="edit__data__induk__icon">
                       <i class="fa-solid fa-eye"></i>
                     </a>
                   </td>
                 </tr>
-            <?php $i++;
+            <?php
+                $i++;
               endif;
             endforeach; ?>
 
@@ -162,26 +180,9 @@
 
 <?= $this->endSection(); ?>
 
-<?= $this->section('userscript'); ?>
+<?= $this->section('script'); ?>
 
 <script>
-  // dropdown
-  $(document).click((e) => {
-    if (
-      e.target.id !== "header-main-nav-dropdown" &&
-      e.target.id !== "btn-dropdown" &&
-      e.target.id !== "photo-dropdown"
-    ) {
-      $("#header-main-nav-dropdown").removeClass("active");
-    }
-  });
-  $("#btn-dropdown").click(() => {
-    $("#header-main-nav-dropdown").toggleClass("active");
-  });
-  $("#photo-dropdown").click(() => {
-    $("#header-main-nav-dropdown").toggleClass("active");
-  });
-
   // active filer button
   $(function() {
     $(".filter__btn").click(function() {

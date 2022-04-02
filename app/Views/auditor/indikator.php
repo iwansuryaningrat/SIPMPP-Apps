@@ -17,13 +17,15 @@
 
 <!--========== body main ==========-->
 <h4 class="title__body__indikator-u">
-  Kategori: Penelitian
+  Kategori: <?= $kategori; ?> <span><?= $data_user['tahun']; ?></span>
 </h4>
 <h4 class="title__body__indikator-s">
   <?= $standar['standar_id'] . '. ' . $standar['nama_standar'] ?>
 </h4>
 
 <!-- table indikator -->
+<!-- Menampilkan Flashdata Message -->
+<?= session()->getFlashdata('message'); ?>
 <div class="sipmpp__table">
   <div class="table-responsive">
     <table class="table table__indikator__content sipmpp__table-content table-hover">
@@ -41,13 +43,17 @@
 
         <?php foreach ($datapenilaian as $data) : ?>
           <tr>
-            <td><?= $i; ?>
-            </td>
-            <td>
-              <?= $data['nama_indikator']; ?>
-            </td>
-            <td><?= $data['target']; ?>
-            </td>
+            <td><?= $i; ?></td>
+            <?php foreach ($indikator as $indi) :
+              if ($data['indikator_id'] == $indi['indikator_id'] &&  $data['standar_id'] == $indi['standar_id'] && $data['kategori_id'] == $indi['kategori_id']) : ?>
+                <td>
+                  <?= $indi['nama_indikator']; ?>
+                </td>
+                <td>
+                  <?= $indi['target']; ?>
+                </td>
+            <?php endif;
+            endforeach; ?>
             <td><span class="badge badge__sipmpp <?php if ($data['status'] == 'Diaudit') {
                                                     echo 'badge__success';
                                                   } elseif ($data['status'] == 'Dikirim') {
@@ -57,15 +63,13 @@
                                                   } else {
                                                     echo 'badge__warning';
                                                   } ?>"><?= $data['status']; ?></span></td>
-            <td><?= $data['nilai_akhir']; ?>
-            </td>
+            <td><?= $data['nilai_akhir']; ?></td>
             <td>
-              <a data-bs-placement="top" title="Edit" href="/home/indikatorform/<?= $tahun . '/' . $data['unit_id'] . '/' . $data['kategori_id'] . '/' . $data['standar_id'] . '/' . $data['indikator_id']; ?>" class="edit__data__induk__icon"><i class="fa-solid fa-pen-to-square"></i></a>
+              <a data-bs-placement="top" title="Edit" href="/home/indikatorform/<?= $data['kategori_id'] . '/' . $data['standar_id'] . '/' . $data['indikator_id']; ?>" class="edit__data__induk__icon"><i class="fa-solid fa-pen-to-square"></i></a>
             </td>
           </tr>
         <?php $i++;
         endforeach; ?>
-
 
       </tbody>
     </table>
@@ -74,38 +78,9 @@
 
 <?= $this->endSection(); ?>
 
-<?= $this->section('userscript'); ?>
+<?= $this->section('script'); ?>
 
 <script>
-  // dropdown
-  $(document).click((e) => {
-    if (
-      e.target.id !== "header-main-nav-dropdown" &&
-      e.target.id !== "btn-dropdown" &&
-      e.target.id !== "photo-dropdown"
-    ) {
-      $("#header-main-nav-dropdown").removeClass("active");
-    }
-  });
-  $("#btn-dropdown").click(() => {
-    $("#header-main-nav-dropdown").toggleClass("active");
-  });
-  $("#photo-dropdown").click(() => {
-    $("#header-main-nav-dropdown").toggleClass("active");
-  });
-
-  // active filer button
-  $(function() {
-    $(".filter__btn").click(function() {
-      // remove classes from all
-      $(".filter__btn").removeClass("active");
-      // add class to the one we clicked
-      $(this).addClass("active");
-      // stop the page from jumping to the top
-      return false;
-    });
-  });
-
   // tooltips
   // progress bar unit
   const tooltipsEdit = document.querySelectorAll(
