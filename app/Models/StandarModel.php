@@ -30,6 +30,7 @@ class StandarModel extends Model
     {
         return $this->select('standar.standar_id, standar.nama_standar, kategori.nama_kategori, kategori.kategori_id')
             ->join('kategori', 'kategori.kategori_id = standar.kategori_id')
+            ->orderBy('standar.NoStd', 'ASC')
             ->findAll();
     }
 

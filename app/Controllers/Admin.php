@@ -830,8 +830,7 @@ class Admin extends BaseController
             'i' => $this->i,
             'usersession' => $usersession,
             'standar' => $standar,
-            'kategori' =>
-            $kategori,
+            'kategori' => $kategori,
             'tahun' => $usersession['tahun'],
             'tahunsession' => $this->tahun,
         ];
