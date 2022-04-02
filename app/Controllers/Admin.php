@@ -945,6 +945,90 @@ class Admin extends BaseController
     }
 
 
+    // Add Indikator Method
+    public function addIndikatorform($standar_id, $kategori_id)
+    {
+        $usersession = $this->data_user;
+        $standar = $this->standarModel->getStandarByKategori($standar_id, $kategori_id);
+        $kategori = $this->kategoriModel->getKategoriById($kategori_id);
+        $indikator = $this->indikatorModel->getIndikator($kategori_id, $standar_id);
+
+        $data = [
+            'title' => 'Tambah Indikator | SIPMPP Admin UNDIP',
+            'tab' => 'standar',
+            'css' => 'styles-admin-add-indikator.css',
+            'header' => 'header__mini',
+            'i' => $this->i,
+            'usersession' => $usersession,
+            'standar' => $standar,
+            'kategori' => $kategori,
+            'indikator' => $indikator,
+            'tahun' => $usersession['tahun'],
+            'tahunsession' => $this->tahun,
+        ];
+
+        return view('admin/add-indikator', $data);
+    }
+
+    // Insert Indikator Method
+    public function insertIndikator($standar_id, $kategori_id)
+    {
+        $indikator = $this->request->getVar('indikator');
+        $bobot = $this->request->getVar('bobot');
+        $keterangan = $this->request->getVar('keterangan');
+
+        $dataindikator = $this->indikatorModel->getIndikator($kategori_id, $standar_id);
+
+        if ($dataindikator) {
+            session()->setFlashdata('message', '<div class="alert alert-danger" role="alert">
+            Data Indikator sudah ada!
+            </div>');
+            return redirect()->to(base_url('admin/standar'));
+        } else {
+            $data = [
+                'standar_id' => $standar_id,
+                'kategori_id' => $kategori_id,
+                'indikator' => $indikator,
+                'bobot' => $bobot,
+                'keterangan' => $keterangan,
+            ];
+
+            // dd($data);
+
+            $this->indikatorModel->insert($data);
+            session()->setFlashdata('message', '<div class="alert alert-success" role="alert">
+            Data Indikator berhasil ditambahkan!
+            </div>');
+            return redirect()->to(base_url('admin/standar'));
+        }
+    }
+
+    // Edit Indikator Method
+    public function editIndikatorform($standar_id, $kategori_id, $indikator_id)
+    {
+        $usersession = $this->data_user;
+        $standar = $this->standarModel->getStandarByKategori($standar_id, $kategori_id);
+        $kategori = $this->kategoriModel->getKategoriById($kategori_id);
+        $indikator = $this->indikatorModel->getIndikatorById($indikator_id);
+
+        $data = [
+            'title' => 'Edit Indikator | SIPMPP Admin UNDIP',
+            'tab' => 'standar',
+            'css' => 'styles-admin-edit-indikator.css',
+            'header' => 'header__mini',
+            'i' => $this->i,
+            'usersession' => $usersession,
+            'standar' => $standar,
+            'kategori' => $kategori,
+            'indikator' => $indikator,
+            'tahun' => $usersession['tahun'],
+            'tahunsession' => $this->tahun,
+        ];
+
+        return view('admin/edit-indikator', $data);
+    }
+
+
 
 
 

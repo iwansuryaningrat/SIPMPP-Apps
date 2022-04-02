@@ -32,7 +32,7 @@
         <h4 class="title__body__user"><span><?= $standar['standar_id'] ?></span>. <span><?= $standar['nama_standar'] ?></span></h4>
     </div>
     <div>
-        <a href="#" class="btn shadow-none btn__add btn__dark">
+        <a href="/admin/addindikatorform/<?= $standar['standar_id'] . '/' . $kategori['kategori_id'] ?>" class="btn shadow-none btn__add btn__dark">
             <i class="fa-solid fa-plus"></i>
             Add Indikator
         </a>
@@ -59,7 +59,8 @@
                         <td><?= $dataindikator['nama_indikator']; ?></td>
                         <td><?= $dataindikator['target']; ?></td>
                         <td>
-                            <a data-bs-placement="top" title="lihat" href="#" class="edit__data__induk__icon"><i class="fa-solid fa-eye"></i></a>
+                            <a data-bs-placement="top" title="Edit" href="admin/editindikatorform/<?= $standar['standar_id'] . '/' . $kategori['kategori_id'] . '/' . $dataindikator['indikator_id'] ?>" class="edit__data__induk__icon"><i class="fa-solid fa-eye"></i></a>
+                            <a data-bs-placement="top" title="Lihat" href="#" class="edit__data__induk__icon"><i class="fa-solid fa-eye"></i></a>
                         </td>
                     </tr>
                 <?php $i++;
