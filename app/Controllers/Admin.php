@@ -156,7 +156,7 @@ class Admin extends BaseController
         }
     }
 
-    // User Method (Kurang parsing data units)
+    // User Method (Done)
     public function user()
     {
         $usersession = $this->data_user;
