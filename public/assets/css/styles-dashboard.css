@@ -253,7 +253,8 @@
   margin-right: 0.75rem !important;
 }
 
-.filter__btn {
+.filter__btn,
+.filter__btn-chart {
   font-size: 0.75rem;
   padding: 0.25rem 0.5rem;
   border-radius: var(--radius-sm);
@@ -262,17 +263,20 @@
   color: rgba(0, 0, 0, 0.8) !important;
 }
 
-.filter__btn:hover {
+.filter__btn:hover,
+.filter__btn-chart:hover {
   color: var(--black) !important;
 }
 
-.filter__btn.active {
+.filter__btn.active,
+.filter__btn-chart.active {
   color: rgba(255, 255, 255, 0.8) !important;
   font-weight: 500 !important;
   background-color: rgba(38, 48, 77, 0.9) !important;
 }
 
-.filter__btn.active:hover {
+.filter__btn.active:hover,
+.filter__btn-chart.active:hover {
   color: var(--white) !important;
   background-color: var(--dark-main-color) !important;
 }
@@ -291,6 +295,10 @@
   padding: 1.875rem 1.875rem 1.875rem;
   border-radius: var(--radius-lg);
   border: var(--border-sm);
+}
+
+.chart__content-dounat .content-unit__title {
+  padding: 0;
 }
 
 .chart__content-left {

@@ -250,9 +250,39 @@
   <!-- left -->
   <div class="chart__content-left">
     <div class="chart__content-dounat shadow__box-sm">
-      <h5 class="card__title mb-3">Nilai SPMI <span>2018</span></h5>
-      <div class="chart__container">
-        <canvas id="chartStandarDoughnut"></canvas>
+      <div class="content-unit__title">
+        <h5 class="card__title">Nilai SPMI <span>2018</span></h5>
+        <div class="filter__panel mb-3">
+          <div class="nav nav-pills" id="pills-tab" role="tablist">
+            <button class="btn filter__btn-chart me-0 me-md-3 shadow-none active nav-link active"
+              id="pillsStandarPenelitian" data-bs-toggle="pill" data-bs-target="#pillsChartStandarPenelitian"
+              type="button" role="tab" aria-controls="pillsChartStandarPenelitian" aria-selected="true">
+              Penelitian
+            </button>
+            <button class="btn filter__btn-chart shadow-none nav-link" id="pillsStandarPengabdian" data-bs-toggle="pill"
+              data-bs-target="#pillsChartStandarPengabdian" type="button" role="tab"
+              aria-controls="pillsChartStandarPengabdian" aria-selected="false">
+              Pengabdian Masyarakat
+            </button>
+          </div>
+        </div>
+      </div>
+      <div class="tab-content" id="pills-tabContent">
+        <!-- penelitian -->
+        <div class="tab-pane fade show active" id="pillsChartStandarPenelitian" role="tabpanel"
+          aria-labelledby="pillsStandarPenelitian">
+          <div class="chart__container">
+            <canvas id="chartStandarDoughnutPenelitian"></canvas>
+          </div>
+        </div>
+
+        <!-- pengabdian masyarakat -->
+        <div class="tab-pane fade" id="pillsChartStandarPengabdian" role="tabpanel"
+          aria-labelledby="pillsStandarPengabdian">
+          <div class="chart__container">
+            <canvas id="chartStandarDoughnutPengabdian"></canvas>
+          </div>
+        </div>
       </div>
     </div>
   </div>
@@ -273,13 +303,14 @@
 <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 
 <!-- ========== GENERATE CHART ========== -->
+<!-- penelitian -->
 <script>
   // ========== CONFIG CHART DOUNAT ==========
   // setup block
-  const labels = ['S1', 'S2', 'S3', 'S4', 'S5', 'S6', 'S7', 'S8', 'S9', 'S10', 'S11', 'S12'];
+  const labelsDoughnutPenelitian = ['S1', 'S2', 'S3', 'S4', 'S5', 'S6', 'S7', 'S8', 'S9', 'S10', 'S11', 'S12'];
 
-  const data = {
-    labels: labels,
+  const dataDoughnutPenelitian = {
+    labels: labelsDoughnutPenelitian,
     datasets: [{
       label: 'Standar Dataset',
       data: [300, 50, 100, 40, 120, 80, 20, 10, 30, 60, 90, 40],
@@ -318,7 +349,7 @@
   };
 
   // conter plugin block
-  const counter = {
+  const counterDoughnutPenelitian = {
     id: 'counter',
     beforeDraw(chart, args, options) {
       const {
@@ -346,9 +377,9 @@
   };
 
   // config block
-  const config = {
+  const configDoughnutPenelitian = {
     type: 'doughnut',
-    data: data,
+    data: dataDoughnutPenelitian,
     options: {
       responsive: true,
       plugins: {
@@ -358,13 +389,107 @@
       }
     },
     // options: {},
-    plugins: [counter]
+    plugins: [counterDoughnutPenelitian]
   };
 
   // ========== RENDER CHART DOUNAT ==========
-  const chartStandarDoughnut = new Chart(
-    document.getElementById('chartStandarDoughnut'),
-    config
+  const chartStandarDoughnutPenelitian = new Chart(
+    document.getElementById('chartStandarDoughnutPenelitian'),
+    configDoughnutPenelitian
+  );
+</script>
+<!-- pengabdian -->
+<script>
+  // ========== CONFIG CHART DOUNAT ==========
+  // setup block
+  const labelsDoughnutPengabdian = ['S1', 'S2', 'S3', 'S4', 'S5', 'S6', 'S7', 'S8', 'S9', 'S10', 'S11', 'S12'];
+
+  const dataDoughnutPengabdian = {
+    labels: labelsDoughnutPengabdian,
+    datasets: [{
+      label: 'Standar Dataset',
+      data: [300, 50, 100, 40, 120, 80, 20, 10, 30, 60, 90, 40],
+      backgroundColor: [
+        'rgb(15, 22, 67)',
+        'rgb(73, 74, 106)',
+        'rgb(131, 127, 146)',
+        'rgb(189, 179, 185)',
+        'rgb(185, 152, 152)',
+        'rgb(182, 126, 120)',
+        'rgb(178, 99, 87)',
+        'rgb(204, 119, 79)',
+        'rgb(229, 139, 72)',
+        'rgb(255, 159, 64)',
+        'rgb(175, 133, 65)',
+        'rgb(95, 68, 66)',
+      ],
+      borderColor: [
+        'rgb(15, 22, 67)',
+        'rgb(73, 74, 106)',
+        'rgb(131, 127, 146)',
+        'rgb(189, 179, 185)',
+        'rgb(185, 152, 152)',
+        'rgb(182, 126, 120)',
+        'rgb(178, 99, 87)',
+        'rgb(204, 119, 79)',
+        'rgb(229, 139, 72)',
+        'rgb(255, 159, 64)',
+        'rgb(175, 133, 65)',
+        'rgb(95, 68, 66)',
+      ],
+      hoverOffset: 3,
+      borderWidth: 0,
+      cutout: '70%',
+    }]
+  };
+
+  // conter plugin block
+  const counterDoughnutPengabdian = {
+    id: 'counter',
+    beforeDraw(chart, args, options) {
+      const {
+        ctx,
+        chartArea: {
+          top,
+          right,
+          bottom,
+          left,
+          width,
+          height
+        }
+      } = chart;
+      ctx.save();
+      // write text + automate the text
+      ctx.font = '60px Work Sans';
+      ctx.textAlign = 'center';
+      ctx.textBaseline = 'middle';
+      ctx.fillText('57%', width / 2, (height / 2));
+      // x0 = starting point ont the horizontal level l/r
+      // y0 = starting point on the vertical level t/b
+      // x1 = length of the shape in pixel horizontal level
+      // y1 = length of the shape in pixel vertical level
+    }
+  };
+
+  // config block
+  const configDoughnutPengabdian = {
+    type: 'doughnut',
+    data: dataDoughnutPengabdian,
+    options: {
+      responsive: true,
+      plugins: {
+        legend: {
+          position: 'right',
+        },
+      }
+    },
+    plugins: [counterDoughnutPengabdian]
+  };
+
+  // ========== RENDER CHART DOUNAT ==========
+  const chartStandarDoughnutPengabdian = new Chart(
+    document.getElementById('chartStandarDoughnutPengabdian'),
+    configDoughnutPengabdian
   );
 </script>
 
@@ -375,24 +500,44 @@
   const dataLine = {
     labels: labelsLine,
     datasets: [{
-      label: 'My First Dataset',
-      data: [120, 49, 24, 84, 56],
-      backgroundColor: [
-        'rgba(15, 22, 67, .2)',
-        'rgba(38, 48, 77, .2)',
-        'rgba(189, 179, 185, .2)',
-        'rgba(191, 125, 115, .2)',
-        'rgba(178, 99, 87, .2)',
-      ],
-      borderColor: [
-        'rgba(15, 22, 67, 1)',
-        'rgba(38, 48, 77, 1)',
-        'rgba(189, 179, 185, 1)',
-        'rgba(191, 125, 115, 1)',
-        'rgba(178, 99, 87, 1)',
-      ],
-      borderWidth: 2,
-    }]
+        label: 'Penelitian',
+        data: [120, 49, 24, 84, 56],
+        backgroundColor: [
+          'rgba(15, 22, 67, .2)',
+          'rgba(38, 48, 77, .2)',
+          'rgba(189, 179, 185, .2)',
+          'rgba(191, 125, 115, .2)',
+          'rgba(178, 99, 87, .2)',
+        ],
+        borderColor: [
+          'rgba(15, 22, 67, 1)',
+          'rgba(38, 48, 77, 1)',
+          'rgba(189, 179, 185, 1)',
+          'rgba(191, 125, 115, 1)',
+          'rgba(178, 99, 87, 1)',
+        ],
+        borderWidth: 2,
+      },
+      {
+        label: 'Pengabdian Masyarakat',
+        data: [59, 80, 63, 28, 64],
+        backgroundColor: [
+          'rgba(15, 22, 67, .2)',
+          'rgba(38, 48, 77, .2)',
+          'rgba(189, 179, 185, .2)',
+          'rgba(191, 125, 115, .2)',
+          'rgba(178, 99, 87, .2)',
+        ],
+        borderColor: [
+          'rgba(15, 22, 67, 1)',
+          'rgba(38, 48, 77, 1)',
+          'rgba(189, 179, 185, 1)',
+          'rgba(191, 125, 115, 1)',
+          'rgba(178, 99, 87, 1)',
+        ],
+        borderWidth: 2,
+      }
+    ]
   };
 
   const configLine = {
@@ -421,6 +566,17 @@
     $(".filter__btn").click(function() {
       // remove classes from all
       $(".filter__btn").removeClass("active");
+      // add class to the one we clicked
+      $(this).addClass("active");
+      // stop the page from jumping to the top
+      return false;
+    });
+  });
+
+  $(function() {
+    $(".filter__btn-chart").click(function() {
+      // remove classes from all
+      $(".filter__btn-chart").removeClass("active");
       // add class to the one we clicked
       $(this).addClass("active");
       // stop the page from jumping to the top
