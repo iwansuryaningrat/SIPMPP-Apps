@@ -1,0 +1,40 @@
+@import url(styles-admin.css);
+
+.form__add__standar {
+  width: 100%;
+  margin: auto;
+}
+
+.form__add__standar form .form__label {
+  text-align: right;
+  font-weight: 600;
+  padding-right: 2rem;
+}
+
+.input__group__text {
+  font-size: 0.875rem;
+  background-color: var(--dark-main-color);
+  color: rgba(255, 255, 255, 0.8);
+  transition: var(--trans-m);
+}
+
+.input__group__text:hover {
+  color: var(--white);
+}
+
+.button__section {
+  display: flex;
+  align-items: center;
+  justify-content: end;
+  margin-top: 2.625rem;
+}
+
+@media screen and (max-width: 600px) {
+  .form__add__standar form .form__label {
+    text-align: left;
+  }
+
+  .button__section {
+    margin-top: 2rem;
+  }
+}

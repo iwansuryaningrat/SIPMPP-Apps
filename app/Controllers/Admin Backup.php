@@ -58,33 +58,10 @@ class Admin extends BaseController
         $this->session = \Config\Services::session();
     }
 
-
-
     //view data induk method
     public function viewDataInduk()
     {
         return view('admin/view-dataInduk');
-    }
-
-    // Standar Method
-    public function standar()
-    {
-
-        $usersession = $this->data_user;
-        $standar = $this->standarModel->getAllStandar();
-        // dd($standar);
-
-        $data = [
-            'title' => 'Daftar Standar | SIPMPP Admin UNDIP',
-            'tab' => 'standar',
-            'css' => 'styles-admin-standar.css',
-            'header' => 'header__mini',
-            'i' => $this->i,
-            'usersession' => $usersession,
-            'standar' => $standar
-        ];
-
-        return view('admin/standar', $data);
     }
 
     //view standar method
@@ -124,66 +101,6 @@ class Admin extends BaseController
     {
         return view('admin/report');
     }
-
-    // FORM METHOD
-
-
-
-    //Add standar method (Done)
-    public function addStandarform()
-    {
-        $usersession = $this->data_user;
-        $standar = $this->standarModel->getAllStandar();
-        $kategori = $this->kategoriModel->findAll();
-        // dd($standar);
-
-        $data = [
-            'title' => 'Tambah Standar | SIPMPP Admin UNDIP',
-            'tab' => 'standar',
-            'css' => 'styles-admin-add-standar.css',
-            'header' => 'header__mini',
-            'i' => $this->i,
-            'usersession' => $usersession,
-            'standar' => $standar,
-            'kategori' => $kategori
-        ];
-
-        return view('admin/add-standar', $data);
-    }
-
-    // Save Standar Method (Done)
-    public function addstandar()
-    {
-        $kategori_id = $this->request->getVar('kategori_id');
-        $standar = $this->request->getVar('namaStandar');
-        $standar_id = $this->request->getVar('kode');
-        // dd($kategori_id, $standar, $standar_id);
-
-        $datastandar = $this->standarModel->getStandarByKategori($standar_id, $kategori_id);
-
-        if ($datastandar) {
-            session()->setFlashdata('message', '<div class="alert alert-danger" role="alert">
-            Data Standar sudah ada!
-            </div>');
-            return redirect()->to(base_url('admin/standar'));
-        } else {
-            $data = [
-                'kategori_id' => $kategori_id,
-                'nama_standar' => $standar,
-                'standar_id' => $standar_id
-            ];
-
-            // dd($data);
-
-            $this->standarModel->insert($data);
-            session()->setFlashdata('message', '<div class="alert alert-success" role="alert">
-            Data Standar berhasil ditambahkan!
-            </div>');
-            return redirect()->to(base_url('admin/standar'));
-        }
-    }
-
-    // FORM ACTION METHOD
 
     // GENERATOR
 

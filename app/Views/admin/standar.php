@@ -58,7 +58,7 @@
                         <td><?= $standar['nama_kategori']; ?></td>
                         <td>
                             <a data-bs-placement="top" title="lihat" href="/admin/viewIndikator/<?= $standar['standar_id'] . '/' . $standar['kategori_id']; ?>" class="edit__data__induk__icon me-4"><i class="fa-solid fa-eye"></i></a>
-                            <a data-bs-placement="top" title="Edit" href="/admin/editstandar/<?= $standar['standar_id'] . '/' . $standar['kategori_id']; ?>" class="edit__data__induk__icon me-4"><i class="fa-solid fa-pen-to-square"></i></a>
+                            <a data-bs-placement="top" title="Edit" href="/admin/editstandarform/<?= $standar['standar_id'] . '/' . $standar['kategori_id']; ?>" class="edit__data__induk__icon me-4"><i class="fa-solid fa-pen-to-square"></i></a>
                             <a data-bs-placement="top" title="Delete" href="#" class="delete__data__induk__icon"><i class="fa-solid fa-trash"></i></a>
                         </td>
                     </tr>

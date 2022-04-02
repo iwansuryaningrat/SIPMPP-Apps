@@ -41,4 +41,13 @@ class StandarModel extends Model
             ->where('standar.kategori_id', $kategori_id)
             ->first();
     }
+
+    // Update Standar by standar_id and kategori_id
+    public function updateStandar($standar_id, $kategori_id, $nama_standar)
+    {
+        return $this->where('standar_id', $standar_id)
+            ->where('kategori_id', $kategori_id)
+            ->set('nama_standar', $nama_standar)
+            ->update();
+    }
 }

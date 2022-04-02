@@ -245,7 +245,7 @@ class Admin extends BaseController
         return redirect()->to(base_url('admin/daftaruser'));
     }
 
-    // Leader Method (Kurang parsing data units)
+    // Leader Method (Done)
     public function leader()
     {
         $usersession = $this->data_user;
@@ -460,7 +460,7 @@ class Admin extends BaseController
         }
     }
 
-    //kategori page (Done)
+    // kategori page (Done)
     public function kategori()
     {
         $usersession = $this->data_user;
@@ -630,7 +630,7 @@ class Admin extends BaseController
         }
     }
 
-    //edit data induk page (Done)
+    // edit data induk page (Done)
     public function editDataInduk($induk_id, $kategori_id)
     {
         $usersession = $this->data_user;
@@ -714,48 +714,6 @@ class Admin extends BaseController
         return view('admin/profile', $data);
     }
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
     // Edit Password Method (Need Testing)
     public function editPassword()
     {
@@ -832,6 +790,175 @@ class Admin extends BaseController
         <strong>Selamat!</strong> Data berhasil diubah.</div>');
         return redirect()->to('/admin/profile/');
     }
+
+    // Standar Method (Done)
+    public function standar()
+    {
+
+        $usersession = $this->data_user;
+        $standar = $this->standarModel->getAllStandar();
+        $data_user = $this->data_user;
+        // dd($standar);
+
+        $data = [
+            'title' => 'Daftar Standar | SIPMPP Admin UNDIP',
+            'tab' => 'standar',
+            'css' => 'styles-admin-standar.css',
+            'header' => 'header__mini',
+            'i' => $this->i,
+            'usersession' => $usersession,
+            'standar' => $standar,
+            'tahun' => $data_user['tahun'],
+            'tahunsession' => $this->tahun,
+        ];
+
+        return view('admin/standar', $data);
+    }
+
+    //Add standar method (Done)
+    public function addStandarform()
+    {
+        $usersession = $this->data_user;
+        $standar = $this->standarModel->getAllStandar();
+        $kategori = $this->kategoriModel->findAll();
+
+        $data = [
+            'title' => 'Tambah Standar | SIPMPP Admin UNDIP',
+            'tab' => 'standar',
+            'css' => 'styles-admin-add-standar.css',
+            'header' => 'header__mini',
+            'i' => $this->i,
+            'usersession' => $usersession,
+            'standar' => $standar,
+            'kategori' =>
+            $kategori,
+            'tahun' => $usersession['tahun'],
+            'tahunsession' => $this->tahun,
+        ];
+
+        return view('admin/add-standar', $data);
+    }
+
+    // Save Standar Method (Done)
+    public function addstandar()
+    {
+        $kategori_id = $this->request->getVar('kategori_id');
+        $standar = $this->request->getVar('namaStandar');
+        $standar_id = $this->request->getVar('kode');
+        $lenth = strlen($standar_id);
+        $NoStd = substr($standar_id, 1, $lenth - 1);
+
+        $datastandar = $this->standarModel->getStandarByKategori($standar_id, $kategori_id);
+
+        if ($datastandar) {
+            session()->setFlashdata('message', '<div class="alert alert-danger" role="alert">
+            Data Standar sudah ada!
+            </div>');
+            return redirect()->to(base_url('admin/standar'));
+        } else {
+            $data = [
+                'standar_id' => $standar_id,
+                'NoStd' => $NoStd,
+                'kategori_id' => $kategori_id,
+                'nama_standar' => $standar,
+            ];
+
+            // dd($data);
+
+            $this->standarModel->insert($data);
+            session()->setFlashdata('message', '<div class="alert alert-success" role="alert">
+            Data Standar berhasil ditambahkan!
+            </div>');
+            return redirect()->to(base_url('admin/standar'));
+        }
+    }
+
+    // Edit Standar Method (Done)
+    public function editStandarform($standar_id, $kategori_id)
+    {
+        $usersession = $this->data_user;
+        $standar = $this->standarModel->getStandarByKategori($standar_id, $kategori_id);
+        // dd($standar);
+        $kategori = $this->kategoriModel->findAll();
+
+        $data = [
+            'title' => 'Edit Standar | SIPMPP Admin UNDIP',
+            'tab' => 'standar',
+            'css' => 'styles-admin-edit-standar.css',
+            'header' => 'header__mini',
+            'i' => $this->i,
+            'usersession' => $usersession,
+            'standar' => $standar,
+            'kategori' => $kategori,
+            'tahun' => $usersession['tahun'],
+            'tahunsession' => $this->tahun,
+        ];
+
+        return view('admin/edit-standar', $data);
+    }
+
+    // Update Standar Method (Done)
+    public function editStandar($standar_id, $kategori_id)
+    {
+        $nama_standar = $this->request->getVar('namaStandar');
+
+        $this->standarModel->updateStandar($standar_id, $kategori_id, $nama_standar);
+        session()->setFlashdata('message', '<div class="alert alert-success" role="alert">
+        Data Standar berhasil diubah!
+        </div>');
+        return redirect()->to(base_url('admin/standar'));
+    }
+
+    // Delete Standar Method
+    public function deleteStandar($standar_id, $kategori_id)
+    {
+        $this->standarModel->deleteStandar($standar_id, $kategori_id);
+        session()->setFlashdata('message', '<div class="alert alert-success" role="alert">
+        Data Standar berhasil dihapus!
+        </div>');
+        return redirect()->to(base_url('admin/standar'));
+    }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
     // Swith Tahun Method (Done)
     public function switchTahun()
