@@ -78,6 +78,11 @@
   max-width: 100%;
 }
 
+.carousel-caption.carousel__caption {
+  left: 10%;
+  right: 10%;
+}
+
 .login__card-content {
   width: 400px;
   height: 480px;

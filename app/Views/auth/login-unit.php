@@ -66,7 +66,7 @@
                                 <h3 class="carousel__item-title">Sistem Informasi Penjaminan Mutu Penelitian dan
                                     Pengabdian Universitas Diponegoro
                                 </h3>
-                                <div class="carousel-caption d-none d-md-block">
+                                <div class="carousel-caption carousel__caption d-none d-md-block">
                                     <h5>Selamat Datang di SIPMPP UNDIP <span id="year__now"></span></h5>
                                     <p>Non vel hac urna aliquet aliquam egestas in ultrices blandit. Purus, commodo
                                         nibh.</p>
@@ -74,7 +74,7 @@
                             </div>
                             <div class="carousel-item carousel__item">
                                 <!-- <img src="..." class="d-block w-100" alt="..."> -->
-                                <div class="carousel-caption d-none d-md-block">
+                                <div class="carousel-caption carousel__caption d-none d-md-block">
                                     <h5>Second slide label</h5>
                                     <p>Lectus ut donec eros, diam purus enim mauris aliquam et. Id scelerisque turpis
                                         justo eget diam tempus.</p>
@@ -90,7 +90,7 @@
                                             referrerpolicy="no-referrer-when-downgrade"></iframe>
                                     </div>
                                 </div>
-                                <div class="carousel-caption d-none d-md-block">
+                                <div class="carousel-caption carousel__caption d-none d-md-block">
                                     <p>Gedung ICT Center Lantai 4 Jl. Prof. Sudarto, SH Tembalang,
                                         Semarang Kode Pos 50275 Telepon (024) 7460032, Fax (024) 7460039
                                         www.lppm.undip.ac.id, email: lppm@live.undip.ac.id.</p>

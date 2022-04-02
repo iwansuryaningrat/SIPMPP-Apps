@@ -47,4 +47,9 @@
             });
         });
     });
+
+    // footer year now
+    // get year now
+    var currentYear = new Date().getFullYear();
+    $("#footerYearNow").text(currentYear);
 </script>
