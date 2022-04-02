@@ -13,8 +13,7 @@
         <div class="nav-profile__desc">
             <p id="profileName" class="ellipsis__text"><?= $data_user['nama']; ?>
             </p>
-            <p id="profileEmail" class="ellipsis__text"><?= $data_user['email']; ?>
-            </p>
+            <p id="profileEmail" class="ellipsis__text">Auditor</p>
         </div>
         <div class="nav-profile__btn">
             <i class="fi-br-angle-down" id="btn-dropdown"></i>
