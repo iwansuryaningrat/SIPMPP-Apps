@@ -52,7 +52,7 @@ class Admin extends BaseController
             'role' => session()->get('role'),
             'tahun' => session()->get('tahun'),
         ];
-        $this->tahun = $this->userroleunitModel->getTahun($this->data_user['email'], $this->data_user['role_id']);
+        $this->tahun = $this->userroleunitModel->getTahunRole($this->data_user['email'], $this->data_user['role_id'], $this->data_user['unit_id']);
         $this->i = 1;
 
         $this->session = \Config\Services::session();

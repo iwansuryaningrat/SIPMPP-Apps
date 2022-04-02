@@ -29,11 +29,12 @@
         <form action="" method="POST" id="form-tahun-profile">
             <label for="tahunProfile" class="form-label form__label__profile nav-dropdown__title" id="form-tahun-profile-label">Tahun</label>
             <select name="tahun" id="tahunProfile" class="form-select form__select__profile shadow-none">
-                <option value="">2018</option>
-                <option value="">2019</option>
-                <option value="">2020</option>
-                <option value="">2021</option>
-                <option value="">2022</option>
+                <?php foreach ($tahunsession as $data_tahun) : ?>
+                    <option value="<?= $data_tahun['tahun']; ?>" <?php if ($tahun == $data_tahun['tahun']) {
+                                                                        echo 'selected';
+                                                                    } ?>><?= $data_tahun['tahun']; ?>
+                    </option>
+                <?php endforeach; ?>
             </select>
         </form>
         <hr />
