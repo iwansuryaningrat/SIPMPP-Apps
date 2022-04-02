@@ -24,7 +24,7 @@
     <div class="header__main-nav-dropdown" id="header-main-nav-dropdown">
         <p class="nav-dropdown__title">Pengaturan</p>
         <p class="d-flex align-items-center">
-            <a href="/home/profile" class="d-block">Lihat Profil</a>
+            <a href="/auditor/profile" class="d-block">Lihat Profil</a>
         </p>
         <hr />
         <form action="" method="POST" id="form-tahun-profile">

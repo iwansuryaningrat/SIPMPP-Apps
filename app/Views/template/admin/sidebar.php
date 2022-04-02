@@ -110,7 +110,7 @@
 
         <!-- footer sidebar -->
         <div class="sidebar__content-footer">
-            <p class="mb-4">@admin.sipmppundip . 2019</p>
+            <p class="mb-4">@admin.sipmppundip . <span id="sidebarfooterYearNow"></p>
             <p>
                 Sistem Informasi Penjaminan Mutu Penelitian dan Pengabdian
                 Universitas Diponegoro
