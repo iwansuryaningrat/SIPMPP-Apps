@@ -250,14 +250,19 @@
   <!-- left -->
   <div class="chart__content-left">
     <div class="chart__content-dounat shadow__box-sm">
-      <h5 class="card__title mb-5">Nilai SPMI <span>2018</span></h5>
-      <canvas id="myChartSpmi" width="400" height="400"></canvas>
+      <h5 class="card__title mb-3">Nilai SPMI <span>2018</span></h5>
+      <div class="chart__container">
+        <canvas id="chartStandarDoughnut"></canvas>
+      </div>
     </div>
   </div>
 
   <!-- right -->
   <div class="chart__content-right">
-    <div class="chart__content-chart shadow__box-sm"></div>
+    <div class="chart__content-line shadow__box-sm">
+      <h5 class="card__title mb-5">Nilai SPMI</h5>
+      <canvas id="chartStandarLine" width="540" height="400"></canvas>
+    </div>
   </div>
 </div>
 
@@ -265,61 +270,151 @@
 
 <?= $this->section('userscript'); ?>
 <!-- chart js -->
-<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.7.1/chart.min.js"
-  integrity="sha512-QSkVNOCYLtj73J4hbmVoOV6KVZuMluZlioC+trLpewV8qMjsWqlIQvkn1KGX2StWvPMdWGBqim1xlC8krl1EKQ=="
-  crossorigin="anonymous" referrerpolicy="no-referrer"></script>
-<!-- generate chart -->
-<script>
-  const myChartSpmi = document.getElementById('myChartSpmi').getContext('2d');
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 
-  const popChartSpmi = new Chart(myChartSpmi, {
-    type: 'doughnut',
-    data: {
-      labels: [
-        'S1',
-        'S2',
-        'S3',
-        'S4',
-        'S5',
-        'S6',
-        'S7',
-        'S8',
-        'S9',
-        'S10',
-        'S11',
-        'S12'
+<!-- ========== GENERATE CHART ========== -->
+<script>
+  // ========== CONFIG CHART DOUNAT ==========
+  // setup block
+  const labels = ['S1', 'S2', 'S3', 'S4', 'S5', 'S6', 'S7', 'S8', 'S9', 'S10', 'S11', 'S12'];
+
+  const data = {
+    labels: labels,
+    datasets: [{
+      label: 'Standar Dataset',
+      data: [300, 50, 100, 40, 120, 80, 20, 10, 30, 60, 90, 40],
+      backgroundColor: [
+        'rgb(15, 22, 67)',
+        'rgb(73, 74, 106)',
+        'rgb(131, 127, 146)',
+        'rgb(189, 179, 185)',
+        'rgb(185, 152, 152)',
+        'rgb(182, 126, 120)',
+        'rgb(178, 99, 87)',
+        'rgb(204, 119, 79)',
+        'rgb(229, 139, 72)',
+        'rgb(255, 159, 64)',
+        'rgb(175, 133, 65)',
+        'rgb(95, 68, 66)',
       ],
-      datasets: [{
-        label: 'My First Dataset',
-        data: [300, 50, 100, 40, 120, 80, 20, 10, 30, 60, 90, 40],
-        backgroundColor: [
-          'rgb(255, 99, 132)',
-          'rgb(54, 162, 235)',
-          'rgb(255, 205, 86)',
-          'rgb(75, 192, 192)',
-          'rgb(153, 102, 255)',
-          'rgb(255, 159, 64)',
-          'rgb(24, 99, 132)',
-          'rgb(54, 162, 25)',
-          'rgb(255, 205, 86)',
-          'rgb(75, 192, 192)',
-          'rgb(153, 102, 255)',
-          'rgb(255, 159, 64)'
-        ],
-        hoverOffset: 2
-      }],
-      options: {
+      borderColor: [
+        'rgb(15, 22, 67)',
+        'rgb(73, 74, 106)',
+        'rgb(131, 127, 146)',
+        'rgb(189, 179, 185)',
+        'rgb(185, 152, 152)',
+        'rgb(182, 126, 120)',
+        'rgb(178, 99, 87)',
+        'rgb(204, 119, 79)',
+        'rgb(229, 139, 72)',
+        'rgb(255, 159, 64)',
+        'rgb(175, 133, 65)',
+        'rgb(95, 68, 66)',
+      ],
+      hoverOffset: 3,
+      borderWidth: 0,
+      cutout: '70%',
+    }]
+  };
+
+  // conter plugin block
+  const counter = {
+    id: 'counter',
+    beforeDraw(chart, args, options) {
+      const {
+        ctx,
+        chartArea: {
+          top,
+          right,
+          bottom,
+          left,
+          width,
+          height
+        }
+      } = chart;
+      ctx.save();
+      // write text + automate the text
+      ctx.font = '60px Work Sans';
+      ctx.textAlign = 'center';
+      ctx.textBaseline = 'middle';
+      ctx.fillText('97%', width / 2, (height / 2));
+      // x0 = starting point ont the horizontal level l/r
+      // y0 = starting point on the vertical level t/b
+      // x1 = length of the shape in pixel horizontal level
+      // y1 = length of the shape in pixel vertical level
+    }
+  };
+
+  // config block
+  const config = {
+    type: 'doughnut',
+    data: data,
+    options: {
+      responsive: true,
+      plugins: {
         legend: {
-          position: 'bottom',
-          labels: {
-            fontSize: 40,
-          }
+          position: 'right',
+        },
+      }
+    },
+    // options: {},
+    plugins: [counter]
+  };
+
+  // ========== RENDER CHART DOUNAT ==========
+  const chartStandarDoughnut = new Chart(
+    document.getElementById('chartStandarDoughnut'),
+    config
+  );
+</script>
+
+<script>
+  // ========== CONFIG CHART LINE ==========
+  const labelsLine = ['2018', '2019', '2020', '2021', '2022'];
+
+  const dataLine = {
+    labels: labelsLine,
+    datasets: [{
+      label: 'My First Dataset',
+      data: [120, 49, 24, 84, 56],
+      backgroundColor: [
+        'rgba(15, 22, 67, .2)',
+        'rgba(38, 48, 77, .2)',
+        'rgba(189, 179, 185, .2)',
+        'rgba(191, 125, 115, .2)',
+        'rgba(178, 99, 87, .2)',
+      ],
+      borderColor: [
+        'rgba(15, 22, 67, 1)',
+        'rgba(38, 48, 77, 1)',
+        'rgba(189, 179, 185, 1)',
+        'rgba(191, 125, 115, 1)',
+        'rgba(178, 99, 87, 1)',
+      ],
+      borderWidth: 2,
+    }]
+  };
+
+  const configLine = {
+    type: 'line',
+    data: dataLine,
+    options: {
+      responsive: true,
+      scales: {
+        y: {
+          beginAtZero: true
         }
       }
-
     }
-  });
+  };
+
+  // ========== RENDER CHART DOUNAT ==========
+  const chartStandarLine = new Chart(
+    document.getElementById('chartStandarLine'),
+    configLine
+  );
 </script>
+
 <script>
   // active filer button
   $(function() {
