@@ -52,4 +52,5 @@
     // get year now
     var currentYear = new Date().getFullYear();
     $("#footerYearNow").text(currentYear);
+    $("#sidebarfooterYearNow").text(currentYear);
 </script>

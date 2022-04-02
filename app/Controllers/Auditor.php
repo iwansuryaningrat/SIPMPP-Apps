@@ -282,7 +282,7 @@ class Auditor extends BaseController
             $this->session->setFlashdata('message', '<div class="alert alert-danger" role="alert">
                 <strong>Peringatan!</strong> Semua standar belum diisi.
                 </div>');
-            return redirect()->to('/home/standar/');
+            return redirect()->to('/auditor/standar/');
         } else {
             // dd('Lengkap');
             $this->penilaianModel->updateStatus($data_user['unit_id'], $tahun, 'Dikirim');
@@ -290,7 +290,7 @@ class Auditor extends BaseController
             $this->session->setFlashdata('message', '<div class="alert alert-success" role="alert">
                 <strong>Berhasil!</strong> Penilaian telah dikirim.
                 </div>');
-            return redirect()->to('/home/standar/');
+            return redirect()->to('/auditor/standar/');
         }
     }
 
@@ -305,7 +305,7 @@ class Auditor extends BaseController
         // Update Data
         // $this->unitIndukTahunModel->updateNilai($unit_id, $tahun, $induk_id, $nilai);
 
-        return redirect()->to('/home/datainduk/' . $unit_id . '/' . $tahun);
+        return redirect()->to('/auditor/datainduk/' . $unit_id . '/' . $tahun);
     }
 
     // Save Indikator Method 
@@ -319,7 +319,7 @@ class Auditor extends BaseController
         // Dokumen handler
         $dokumen = $this->request->getFile('dokumen');
         if ($dokumen->getError() == 4) {
-            return redirect()->to('/home/indikatorform/' . $indikator_id);
+            return redirect()->to('/auditor/indikatorform/' . $indikator_id);
         } else {
             $namadokumen = 'dokumen-' . $indikator_id;
             $dokumen->move('dokumen/', $namadokumen);
@@ -346,6 +346,6 @@ class Auditor extends BaseController
         // Update Data
         $this->indikatorModel->updateUser($indikator_id, $status, $hasil, $keterangan, $namadokumen);
 
-        return redirect()->to('/home/indikator/' . $unit_id . '/' . $standar_id . '/' . $tahun);
+        return redirect()->to('/auditor/indikator/' . $unit_id . '/' . $standar_id . '/' . $tahun);
     }
 }

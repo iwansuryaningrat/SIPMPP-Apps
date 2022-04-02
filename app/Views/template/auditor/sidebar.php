@@ -4,7 +4,7 @@
         <div>
             <!-- brand -->
             <div class="sidebar__content-brand">
-                <a href="/home" class="d-flex align-items-center">
+                <a href="/auditor/index" class="d-flex align-items-center">
                     <img src="/assets/img/undip-logo-color.png" alt="logo-undip" />
                     <h4>SIPMPP UNDIP</h4>
                 </a>
@@ -15,15 +15,15 @@
                 <ul class="sidebar-nav__list">
                     <!-- dashboard -->
                     <li>
-                        <a href="/" class="nav__list__link <?php if ($tab == "home") : echo 'active';
-                                                            endif; ?>">
+                        <a href="/auditor/index" class="nav__list__link <?php if ($tab == "home") : echo 'active';
+                                                                        endif; ?>">
                             <i class="fa-solid fa-house"></i>
                             <span>Dashboard</span>
                         </a>
                     </li>
                     <!-- data induk -->
                     <li>
-                        <a href="/home/datainduk" class="nav__list__link <?php if ($tab == "induk") : echo 'active';
+                        <a href="/auditor/datainduk" class="nav__list__link <?php if ($tab == "induk") : echo 'active';
                                                                             endif; ?>">
                             <i class="fa-solid fa-book"></i>
                             <span>Data Induk</span>
@@ -31,16 +31,16 @@
                     </li>
                     <!-- Nilai SPMI -->
                     <li>
-                        <a href="/home/standar" class="nav__list__link <?php if ($tab == "standar") : echo 'active';
-                                                                        endif; ?>">
+                        <a href="/auditor/standar" class="nav__list__link <?php if ($tab == "standar") : echo 'active';
+                                                                            endif; ?>">
                             <i class="fa-solid fa-chart-bar"></i>
                             <span>Nilai SPMI</span>
                         </a>
                     </li>
                     <!-- report -->
                     <li>
-                        <a href="/home/report" class="nav__list__link <?php if ($tab == "report") : echo 'active';
-                                                                        endif; ?>">
+                        <a href="/auditor/report" class="nav__list__link <?php if ($tab == "report") : echo 'active';
+                                                                            endif; ?>">
                             <i class="fa-solid fa-print"></i>
                             <span>Report</span>
                         </a>
@@ -58,7 +58,7 @@
 
         <!-- footer sidebar -->
         <div class="sidebar__content-footer">
-            <p class="mb-4">@sipmppundip . <span id="sidebarfooterYearNow"></p>
+            <p class="mb-4">@sipmppundip . <span id="sidebarfooterYearNow"></span></p>
             <p>
                 Sistem Informasi Penjaminan Mutu Penelitian dan Pengabdian
                 Universitas Diponegoro

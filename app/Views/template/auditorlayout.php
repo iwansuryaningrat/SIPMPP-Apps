@@ -45,7 +45,7 @@
 
 <body>
     <!-- sidebar -->
-    <?= $this->include('template/user/sidebar'); ?>
+    <?= $this->include('template/auditor/sidebar'); ?>
 
     <!-- main -->
     <div class="main__content" id="main-content">
@@ -79,7 +79,9 @@
     <!-- custom -->
     <script src="/assets/js/scripts.js"></script>
 
-    <?= $this->renderSection('userscript'); ?>
+    <?= $this->include('template/auditor/script'); ?>
+
+    <?= $this->renderSection('script'); ?>
 
 </body>
 
