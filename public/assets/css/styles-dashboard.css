@@ -278,14 +278,29 @@
 }
 
 /* chart */
+.chart__container {
+  width: 100%;
+}
+
 .chart__content {
   display: flex;
 }
 
-.chart__content-dounat {
+.chart__content-dounat,
+.chart__content-line {
   padding: 1.875rem 1.875rem 1.875rem;
   border-radius: var(--radius-lg);
   border: var(--border-sm);
+}
+
+.chart__content-left {
+  margin-right: 0.875rem;
+  flex: 0.4;
+}
+
+.chart__content-right {
+  margin-left: 0.875rem;
+  flex: 0.6;
 }
 
 /* ==========tablet view========== */
