@@ -326,6 +326,8 @@ select.form__select {
   border-radius: var(--radius-sm);
   background-color: var(--white);
   box-shadow: 0 0.25rem 1.125rem rgba(0, 0, 0, 0.1);
+  -webkit-box-shadow: 0 0.25rem 1.125rem rgba(0, 0, 0, 0.1);
+  -moz-box-shadow: 0 0.25rem 1.125rem rgba(0, 0, 0, 0.1);
 }
 
 .header__main-nav-dropdown.active {
@@ -979,10 +981,14 @@ footer .container-fluid.container__fluid {
 /* ========== Shadow ========== */
 .shadow__box-sm {
   box-shadow: 0 0.25rem 1.125rem rgba(0, 0, 0, 0.07);
+  -webkit-box-shadow: 0 0.25rem 1.125rem rgba(0, 0, 0, 0.07);
+  -moz-box-shadow: 0 0.25rem 1.125rem rgba(0, 0, 0, 0.07);
 }
 
 .shadow__box-md {
   box-shadow: 0 0.5rem 1.125rem rgba(0, 0, 0, 0.15);
+  -webkit-box-shadow: 0 0.5rem 1.125rem rgba(0, 0, 0, 0.15);
+  -moz-box-shadow: 0 0.5rem 1.125rem rgba(0, 0, 0, 0.15);
 }
 
 /******************************************/
