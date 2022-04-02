@@ -72,17 +72,7 @@ class Admin extends BaseController
 
 
 
-    //penilaian
-    public function penilaian()
-    {
-        return view('admin/penilaian');
-    }
 
-    // Report Method
-    public function report()
-    {
-        return view('admin/report');
-    }
 
     // GENERATOR
 

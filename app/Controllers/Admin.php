@@ -983,7 +983,44 @@ class Admin extends BaseController
 
 
 
+    //penilaian
+    public function penilaian()
+    {
+        $users = $this->usersModel->findAll();
+        $usersession = $this->data_user;
+        $data = [
+            'title' => 'Penilaian | SIPMPP Admin UNDIP',
+            'tab' => 'penilaian',
+            'css' => 'styles-admin-penilaian.css',
+            'header' => 'header__mini',
+            'i' => $this->i,
+            'users' => $users,
+            'usersession' => $usersession,
+            'tahun' => $usersession['tahun'],
+            'tahunsession' => $this->tahun,
+        ];
 
+        return view('admin/penilaian', $data);
+    }
+
+    // Report Method
+    public function report()
+    {
+        $users = $this->usersModel->findAll();
+        $usersession = $this->data_user;
+        $data = [
+            'title' => 'Report | SIPMPP Admin UNDIP',
+            'tab' => 'report',
+            'css' => 'styles-admin-report.css',
+            'header' => 'header__mini',
+            'i' => $this->i,
+            'users' => $users,
+            'usersession' => $usersession,
+            'tahun' => $usersession['tahun'],
+            'tahunsession' => $this->tahun,
+        ];
+        return view('admin/report', $data);
+    }
 
     // Swith Tahun Method (Done)
     public function switchTahun()
