@@ -29,32 +29,37 @@
     <form method="POST" action="/admin/adduser">
         <!-- fullname -->
         <div class="row mb-3 mb-sm-4">
-            <label for="fullname" class="col-lg-3 col-md-3 col-sm-4 col-form-label form__label">Nama Lengkap
+            <label for="fullname" class="col-lg-3 col-md-4 col-sm-4 col-form-label form__label">Nama Lengkap
                 <span class="color__danger">*</span></label>
-            <div class="col-lg-6 col-md-9 col-sm-8">
-                <input class="form-control form__control shadow-none" id="fullname" name="fullname" required autocomplete="off" placeholder="Masukkan nama lengkap" />
+            <div class="col-lg-6 col-md-8 col-sm-8">
+                <input class="form-control form__control shadow-none" id="fullname" name="fullname" required
+                    autocomplete="off" placeholder="Masukkan nama lengkap" />
             </div>
         </div>
         <!-- email -->
         <div class="row mb-3 mb-sm-4">
-            <label for="email" class="col-lg-3 col-md-3 col-sm-4 col-form-label form__label">Email
+            <label for="email" class="col-lg-3 col-md-4 col-sm-4 col-form-label form__label">Email
                 <span class="color__danger">*</span></label>
-            <div class="col-lg-6 col-md-9 col-sm-8">
-                <input class="form-control form__control shadow-none" id="email" name="email" required autocomplete="off" placeholder="Masukkan email" />
+            <div class="col-lg-6 col-md-8 col-sm-8">
+                <input class="form-control form__control shadow-none" id="email" name="email" required
+                    autocomplete="off" placeholder="Masukkan email" />
             </div>
         </div>
         <!-- password -->
         <div class="row mb-3 mb-sm-4">
-            <label for="password" class="col-lg-3 col-md-3 col-sm-4 col-form-label form__label">Password
+            <label for="password" class="col-lg-3 col-md-4 col-sm-4 col-form-label form__label">Password
                 <span class="color__danger">*</span></label>
-            <div class="col-lg-6 col-md-9 col-sm-8">
-                <input class="form-control form__control shadow-none" type="password" id="password" name="password" required autocomplete="off" placeholder="Masukkan password" />
+            <div class="col-lg-6 col-md-8 col-sm-8 position-relative">
+                <input class="form-control form__control shadow-none" type="password" id="password" name="password"
+                    required autocomplete="off" placeholder="Masukkan password" />
+                <span id="togglePassword"><i class="fa-solid fa-eye icon__hide__password"
+                        title="show password"></i></span>
             </div>
         </div>
         <!-- button -->
         <div class="row">
             <div class="col-lg-9 col-md-12 col-sm-12 button__section">
-                <a href="/admin/user" class="btn form__btn cancel__btn me-4 shadow-none" role="button">Batal</a>
+                <a href="/admin/daftarUser" class="btn form__btn cancel__btn me-4 shadow-none" role="button">Batal</a>
                 <button type="submit" class="btn form__btn btn__dark shadow-none">
                     Simpan
                 </button>
@@ -68,7 +73,16 @@
 <?= $this->section('script'); ?>
 
 <script>
+    // togglePassword
+    // change icon
+    $("#togglePassword").click(function() {
+        $(this).children().toggleClass("fa-eye-slash");
+        $(this).children().toggleClass("fa-eye");
 
+        var type = $("#password").attr("type") === "password" ? "text" : "password";
+        $("#password").attr("type", type);
+
+    });
 </script>
 
 <?= $this->endSection();

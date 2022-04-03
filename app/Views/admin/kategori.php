@@ -19,7 +19,8 @@
                                 return array($first_name, $last_name);
                             }
                             echo split_name($usersession['nama'])[0];
-                            ?></span>, selamat datang di dashboard Kategori</p>
+                            ?>
+                </span>, selamat datang di dashboard Kategori</p>
         </div>
     </div>
 </div>
@@ -27,7 +28,8 @@
 <!--========== body main ==========-->
 <div class="title__table__add">
     <h4 class="title__body__user">Daftar Kategori</h4>
-    <a href="#" class="btn shadow-none btn__add btn__dark add__unit__icon" role="button" data-bs-toggle="modal" href="#staticBackdrop2">
+    <a href="#" class="btn shadow-none btn__add btn__dark add__unit__icon" role="button" data-bs-toggle="modal"
+        href="#staticBackdrop2">
         <i class="fa-solid fa-plus"></i>
         Add Kategori
     </a>
@@ -47,14 +49,21 @@
             <tbody>
 
                 <?php foreach ($kategori as $k) : ?>
-                    <tr>
-                        <td><?= $i; ?></td>
-                        <td><?= $k['nama_kategori']; ?></td>
-                        <td>
-                            <a role="button" data-bs-toggle="modal" data-bs-placement="top" title="Edit" href="#staticBackdrop" class="edit__data__induk__icon me-3 me-md-5"><i class="fa-solid fa-pen-to-square" data-kategori="<?= $k['nama_kategori']; ?>" data-id="<?= $k['kategori_id']; ?>"></i></a>
-                            <a data-bs-placement="top" title="Delete" href="#" class="delete__data__induk__icon"><i class="fa-solid fa-trash"></i></a>
-                        </td>
-                    </tr>
+                <tr>
+                    <td><?= $i; ?>
+                    </td>
+                    <td><?= $k['nama_kategori']; ?>
+                    </td>
+                    <td>
+                        <a role="button" data-bs-toggle="modal" data-bs-placement="top" title="Edit"
+                            href="#staticBackdrop" class="edit__data__induk__icon me-3 me-md-5"
+                            data-datakat="<?= $k['nama_kategori']; ?>"
+                            data-dataidkat="<?= $k['kategori_id']; ?>"><i
+                                class="fa-solid fa-pen-to-square"></i></a>
+                        <a data-bs-placement="top" title="Delete" href="#" class="delete__data__induk__icon"><i
+                                class="fa-solid fa-trash"></i></a>
+                    </td>
+                </tr>
                 <?php $i++;
                 endforeach; ?>
 
@@ -68,7 +77,8 @@
 <?= $this->section('modal'); ?>
 
 <!-- Modal edit -->
-<div class="modal fade edit__kategori__modal" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="modal-unit" aria-hidden="true">
+<div class="modal fade edit__kategori__modal" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false"
+    tabindex="-1" aria-labelledby="modal-unit" aria-hidden="true">
     <div class="modal-dialog modal-dialog-centered">
         <div class="modal-content modal__content">
             <div class="modal-header modal__header">
@@ -83,8 +93,10 @@
                     <input type="hidden" name="id" id="idEdit" />
                     <!-- unit -->
                     <div class="modal__form-content">
-                        <label for="kategoriEdit" class="form-label form__label">Kategori <span class="color__danger">*</span></label>
-                        <input type="text" class="form-control shadow-none form__control" name="kategori" id="kategoriEdit" required autocomplete="off" />
+                        <label for="kategoriEdit" class="form-label form__label">Kategori <span
+                                class="color__danger">*</span></label>
+                        <input type="text" class="form-control shadow-none form__control" name="kategori"
+                            id="kategoriEdit" required autocomplete="off" />
                     </div>
                     <!-- Button -->
                     <div class="modal__form-btn">
@@ -100,7 +112,8 @@
 </div>
 
 <!-- Modal add -->
-<div class="modal fade add__kategori__modal" id="staticBackdrop2" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="modal-unit" aria-hidden="true">
+<div class="modal fade add__kategori__modal" id="staticBackdrop2" data-bs-backdrop="static" data-bs-keyboard="false"
+    tabindex="-1" aria-labelledby="modal-unit" aria-hidden="true">
     <div class="modal-dialog modal-dialog-centered">
         <div class="modal-content modal__content">
             <div class="modal-header modal__header">
@@ -115,8 +128,10 @@
                     <input type="hidden" id="idAdd" />
                     <!-- unit -->
                     <div class="modal__form-content">
-                        <label for="kategoriAdd" class="form-label form__label">Kategori <span class="color__danger">*</span></label>
-                        <input type="text" class="form-control shadow-none form__control" name="kategori" id="kategoriAdd" required autocomplete="off" />
+                        <label for="kategoriAdd" class="form-label form__label">Kategori <span
+                                class="color__danger">*</span></label>
+                        <input type="text" class="form-control shadow-none form__control" name="kategori"
+                            id="kategoriAdd" required autocomplete="off" />
                     </div>
                     <!-- Button -->
                     <div class="modal__form-btn">
@@ -155,11 +170,13 @@
         // get Edit Product
         $(".edit__data__induk__icon").on("click", function() {
             // get data from button edit
-            const id = $(this).data("id");
-            const kategori = $(this).data("kategori");
+            const idKat = $(this).data("dataidkat");
+            const kategoriKat = $(this).data("datakat");
+            console.log(idKat);
+            console.log(kategoriKat);
             // Set data to Form Edit
-            $("#idEdit").val(id);
-            $("#kategoriEdit").val(unit);
+            $("#idEdit").val(idKat);
+            $("#kategoriEdit").val(kategoriKat);
             // Call Modal Edit
             $(".edit__kategori__modal").modal("show");
         });
@@ -171,4 +188,4 @@
     });
 </script>
 
-<?= $this->endSection(); ?>
+<?= $this->endSection();

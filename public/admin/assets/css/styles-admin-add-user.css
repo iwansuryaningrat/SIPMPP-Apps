@@ -29,6 +29,28 @@
   margin-top: 2.625rem;
 }
 
+.position-relative > #password {
+  padding-right: 2.75rem;
+}
+
+#togglePassword svg {
+  z-index: 99;
+  color: rgba(79, 79, 79, 0.25) !important;
+  font-size: 1rem;
+
+  position: absolute;
+  top: 1.125rem;
+  right: 1.75rem;
+
+  transition: var(--trans-m);
+}
+
+@media screen and (max-width: 768px) {
+  .form__add__user form .form__label {
+    padding-right: 1rem;
+  }
+}
+
 @media screen and (max-width: 600px) {
   .form__add__user form .form__label {
     text-align: left;
@@ -36,5 +58,11 @@
 
   .button__section {
     margin-top: 2rem;
+  }
+}
+
+@media screen and (max-width: 576px) {
+  .button__section {
+    margin-top: 1.5rem;
   }
 }

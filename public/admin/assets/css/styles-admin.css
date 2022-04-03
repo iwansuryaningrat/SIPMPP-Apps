@@ -20,6 +20,7 @@
   --danger-color: rgba(242, 89, 97, 1);
 
   /* utility */
+  --radius-xs: 4px;
   --radius-sm: 6px;
   --radius-md: 9px;
   --radius-lg: 18px;
@@ -156,6 +157,10 @@ select.form__select {
 
   border: var(--border-sm);
   background-color: var(--white);
+}
+
+.sipmpp__table tbody tr:nth-child(even) {
+  background-color: rgba(240, 240, 240, 0.7);
 }
 
 .sipmpp__table-content thead tr,
@@ -925,6 +930,8 @@ footer .container-fluid.container__fluid {
   justify-content: space-between;
   margin-top: 2.65rem;
   margin-bottom: 2rem;
+  flex-wrap: wrap;
+  align-items: center;
 }
 
 .btn__add {
@@ -956,21 +963,6 @@ footer .container-fluid.container__fluid {
 /*               Responsive               */
 /******************************************/
 @media screen and (max-width: 1160px) {
-  .header__main-color.header__mini.header__spmi {
-    height: 18rem !important;
-  }
-
-  .header__main-color.header__mini.header__spmi.active {
-    height: 17.5rem !important;
-  }
-
-  .header__main-color.header__mini.header__indikator {
-    height: 20rem !important;
-  }
-
-  .header__main-color.header__mini.header__indikator.active {
-    height: 17.5rem !important;
-  }
 }
 
 /* ========== Tablet View 2 ========== */
@@ -998,15 +990,11 @@ footer .container-fluid.container__fluid {
   }
 
   .header__main-color.header__mini {
-    height: 17rem !important;
+    height: 15rem !important;
   }
 
   .header__main-color.header__mini.active {
-    height: 16rem !important;
-  }
-
-  .header__main-color.header__mini.header__indikator {
-    height: 18rem !important;
+    height: 15rem !important;
   }
 
   /**************************************/
@@ -1019,10 +1007,6 @@ footer .container-fluid.container__fluid {
 }
 
 @media screen and (max-width: 700px) {
-  .header__main-color.header__mini.header__indikator,
-  .header__main-color.header__mini.header__spmi {
-    height: 20rem !important;
-  }
 }
 
 /* ========== Mobile View ========== */
@@ -1032,6 +1016,11 @@ footer .container-fluid.container__fluid {
   /**************************************/
   .big__btn {
     padding: 0.875rem 2.125rem;
+  }
+
+  .form__btn {
+    padding: 0.5rem 1.25rem !important;
+    border-radius: var(--radius-xs) !important;
   }
 
   /********************************************/
@@ -1050,19 +1039,7 @@ footer .container-fluid.container__fluid {
   }
 
   .header__main-color.header__mini {
-    height: 18rem !important;
-  }
-
-  .header__main-color.header__mini.active {
-    height: 15rem !important;
-  }
-
-  .header__main-color.header__mini.header__spmi {
-    height: 21.5rem !important;
-  }
-
-  .header__main-color.header__mini.header__indikator {
-    height: 21.5rem !important;
+    height: 16rem !important;
   }
 
   .main__content {
@@ -1082,6 +1059,7 @@ footer .container-fluid.container__fluid {
 
   .nav-profile__photo {
     width: 2.5rem;
+    height: 2.5rem;
   }
 
   .header__main-nav-dropdown {
@@ -1139,13 +1117,14 @@ footer .container-fluid.container__fluid {
   }
 }
 
-@media screen and (max-width: 320px) {
-  .header__main-color.header__mini.header__indikator,
-  .header__main-color.header__mini.header__spmi {
-    height: 27rem !important;
+@media screen and (max-width: 390px) {
+  .header__main-color.header__mini {
+    height: 19rem !important;
   }
-  .header__main-color.header__mini.header__indikator.active,
-  .header__main-color.header__mini.header__spmi.active {
-    height: 21.5rem !important;
+}
+
+@media screen and (max-width: 320px) {
+  .header__main-color.header__mini {
+    height: 22.5rem !important;
   }
 }

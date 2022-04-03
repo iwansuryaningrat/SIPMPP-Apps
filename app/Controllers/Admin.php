@@ -527,7 +527,6 @@ class Admin extends BaseController
         $datakategori = $this->kategoriModel->getKategoriById($id);
 
         if ($datakategori != null) {
-
             $data = [
                 'kategori_id' => $id,
                 'nama_kategori' => $kategori,
@@ -707,8 +706,7 @@ class Admin extends BaseController
             'user' => $user,
             'tab' => 'profile',
             'header' => '',
-            'css' =>
-            'styles-admin-profile.css',
+            'css' => 'styles-admin-profile.css',
             'tahun' => $data_user['tahun'],
             'tahunsession' => $this->tahun,
         ];
@@ -796,7 +794,6 @@ class Admin extends BaseController
     // Standar Method (Done)
     public function standar()
     {
-
         $usersession = $this->data_user;
         $standar = $this->standarModel->getAllStandar();
         $data_user = $this->data_user;

@@ -56,7 +56,7 @@
   </div>
 </div>
 
-<!-- =====data table spmi =====-->
+<!-- =====data table standar =====-->
 <div class="tab-content" id="pills-tabContent">
   <?= session()->getFlashdata('message'); ?>
   <!-- penelitian -->

@@ -30,7 +30,7 @@
 
 <!--========== body main ==========-->
 <div class="title__table__add">
-    <h4 class="title__body__user">Daftar User</h4>
+    <h4 class="title__body__user mb-3">Daftar User</h4>
     <a href="/admin/addUserForm" class="btn shadow-none btn__add btn__dark">
         <i class="fa-solid fa-plus"></i>
         Add User
@@ -55,13 +55,18 @@
             </thead>
             <tbody>
                 <?php foreach ($users as $user) : ?>
-                    <tr>
-                        <td><?= $i; ?></td>
-                        <td><?= $user['nama']; ?></td>
-                        <td><?= $user['email']; ?></td>
-                        <td><?= $user['telp']; ?></td>
-                        <td><?= $user['nip']; ?></td>
-                    </tr>
+                <tr>
+                    <td><?= $i; ?>
+                    </td>
+                    <td><?= $user['nama']; ?>
+                    </td>
+                    <td><?= $user['email']; ?>
+                    </td>
+                    <td><?= $user['telp']; ?>
+                    </td>
+                    <td><?= $user['nip']; ?>
+                    </td>
+                </tr>
                 <?php $i++;
                 endforeach; ?>
             </tbody>

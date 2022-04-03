@@ -5,7 +5,7 @@
 <div class="header__main-title">
     <div class="header__main-title__pagination">
         <a href="/admin/index">Dashboard</a>
-        / <a href="/admin/user">Base User</a> / Form Add Leader
+        / <a href="/admin/leader">Leader</a> / Form Add Leader
     </div>
     <div class="header__main-title__subtitle">
         <div class="title__subtitle-desc">
@@ -27,24 +27,32 @@
     <form method="POST" action="/admin/addbasicuser/pimpinan">
         <!-- User -->
         <div class="row mb-3 mb-sm-4">
-            <label for="user" class="col-lg-3 col-md-3 col-sm-4 col-form-label form__label">User <span class="color__danger">*</span></label>
+            <label for="user" class="col-lg-3 col-md-3 col-sm-4 col-form-label form__label">User <span
+                    class="color__danger">*</span></label>
             <div class="col-lg-6 col-md-9 col-sm-8">
                 <select name="user" id="user" class="form-select form__select shadow-none" required>
                     <option disabled selected>Pilih User</option>
                     <?php foreach ($users as $user) : ?>
-                        <option value="<?= $user['email'] ?>"><?= $user['nama']; ?></option>
+                    <option
+                        value="<?= $user['email'] ?>">
+                        <?= $user['nama']; ?>
+                    </option>
                     <?php endforeach; ?>
                 </select>
             </div>
         </div>
         <!-- tahun -->
         <div class="row mb-3 mb-sm-4">
-            <label for="tahun" class="col-lg-3 col-md-3 col-sm-4 col-form-label form__label">Tahun <span class="color__danger">*</span></label>
+            <label for="tahun" class="col-lg-3 col-md-3 col-sm-4 col-form-label form__label">Tahun <span
+                    class="color__danger">*</span></label>
             <div class="col-lg-6 col-md-9 col-sm-8">
                 <select name="tahun" id="tahun" class="form-select form__select shadow-none" required>
                     <option disabled selected>Pilih Tahun</option>
                     <?php foreach ($tahuns as $tahuns) : ?>
-                        <option value="<?= $tahuns['tahun'] ?>"><?= $tahuns['tahun'] ?></option>
+                    <option
+                        value="<?= $tahuns['tahun'] ?>">
+                        <?= $tahuns['tahun'] ?>
+                    </option>
                     <?php endforeach; ?>
                 </select>
             </div>
@@ -52,7 +60,7 @@
         <!-- button -->
         <div class="row">
             <div class="col-lg-9 col-md-12 col-sm-12 button__section">
-                <a href="#" class="btn form__btn cancel__btn me-4 shadow-none" role="button">Batal</a>
+                <a href="/admin/leader" class="btn form__btn cancel__btn me-4 shadow-none" role="button">Batal</a>
                 <button type="submit" class="btn form__btn btn__dark shadow-none">
                     Simpan
                 </button>
@@ -69,4 +77,4 @@
 
 </script>
 
-<?= $this->endSection(); ?>
+<?= $this->endSection();
