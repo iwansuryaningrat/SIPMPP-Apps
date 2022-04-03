@@ -123,4 +123,29 @@ class PenilaianModel extends Model
             ->where('penilaian.indikator_id', $indikator_id)
             ->findAll();
     }
+
+    // Get Penilaian By Unit_id and tahun
+    public function getPenilaianByUnitIdTahun($unit_id, $tahun)
+    {
+        return $this->select('penilaian.*, standar.nama_standar, standar.NoStd')
+            ->join('standar', 'standar.standar_id = penilaian.standar_id')
+            ->where('penilaian.unit_id', $unit_id)
+            ->where('penilaian.tahun', $tahun)
+            // ->where('penilaian.kategori_id', 'standar.kategori_id')
+            ->groupby('penilaian.standar_id')
+            ->groupby('penilaian.kategori_id')
+            ->orderBy('standar.NoStd', 'ASC')
+            ->findAll();
+    }
+
+    // Get Penilaian By Unit_id and tahun and standar_id
+    public function getPenilaianProgress($unit_id, $tahun, $standar_id, $kategori_id)
+    {
+        return $this->select('penilaian.*')
+            ->where('penilaian.unit_id', $unit_id)
+            ->where('penilaian.tahun', $tahun)
+            ->where('penilaian.standar_id', $standar_id)
+            ->where('penilaian.kategori_id', $kategori_id)
+            ->findAll();
+    }
 }

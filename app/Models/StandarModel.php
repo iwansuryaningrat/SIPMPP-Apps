@@ -23,6 +23,7 @@ class StandarModel extends Model
         return $this->select('standar.standar_id, standar.nama_standar, kategori.nama_kategori, kategori.kategori_id')
             ->join('kategori', 'kategori.kategori_id = standar.kategori_id')
             ->orderBy('standar.NoStd', 'ASC')
+            ->orderBy('standar.kategori_id', 'ASC')
             ->findAll();
     }
 
@@ -42,5 +43,14 @@ class StandarModel extends Model
             ->where('kategori_id', $kategori_id)
             ->set('nama_standar', $nama_standar)
             ->update();
+    }
+
+    // Get Standar by Kategori id
+    public function getStandarByKategoriId($kategori_id)
+    {
+        return $this->select('standar.*')
+            ->where('standar.kategori_id', $kategori_id)
+            ->orderBy('standar.NoStd', 'ASC')
+            ->findAll();
     }
 }

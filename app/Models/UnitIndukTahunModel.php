@@ -20,7 +20,7 @@ class UnitIndukTahunModel extends Model
     // Joining Unit and Induk Table
     public function getIndukUnit($unit_id, $tahun)
     {
-        return $this->select('unit_induk_tahun.*, units.*, data_induk.*, tahun.*, kategori.*')
+        return $this->select('unit_induk_tahun.*, units.nama_unit, data_induk.*, tahun.*, kategori.*')
             ->join('units', 'units.unit_id = unit_induk_tahun.unit_id')
             ->join('data_induk', 'data_induk.induk_id = unit_induk_tahun.induk_id')
             ->join('tahun', 'tahun.tahun = unit_induk_tahun.tahun')
@@ -29,6 +29,16 @@ class UnitIndukTahunModel extends Model
             ->where('unit_induk_tahun.tahun', $tahun)
             ->groupby('data_induk.nama_induk')
             ->orderBy('data_induk.induk_id', 'ASC')
+            ->findAll();
+    }
+
+    // get Data By Unit id and Tahun
+    public function getDataByUnit($unit_id, $tahun)
+    {
+        return $this->select('unit_induk_tahun.*')
+            ->where('unit_induk_tahun.unit_id', $unit_id)
+            ->where('unit_induk_tahun.tahun', $tahun)
+            ->orderBy('unit_induk_tahun.induk_id', 'ASC')
             ->findAll();
     }
 

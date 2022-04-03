@@ -58,8 +58,153 @@ class Home extends BaseController
     public function index()
     {
         $data_user = $this->data_user;
-        $units = $this->unitsModel->findAll();
-        // dd($units);
+
+        // Induk Progress
+        $indukdata = $this->unitIndukTahunModel->getDataByUnit($data_user['unit_id'], $data_user['tahun']);
+        $sum = 0;
+        $count = 0;
+        foreach ($indukdata as $datainduk) {
+            if ($datainduk['nilai'] != 0) {
+                $sum++;
+                $count++;
+            } else {
+                $count++;
+            }
+        }
+        $indukpersen = ($sum / $count) * 100;
+        $indukpersen = round($indukpersen, 2);;
+
+        // Standar Progress
+        $standar = $this->penilaianModel->getPenilaianByUnitIdTahun($data_user['unit_id'], $data_user['tahun']);
+        $standarprogress = [];
+        foreach ($standar as $datastandar) {
+            $indikator = $this->penilaianModel->getPenilaianProgress($data_user['unit_id'], $data_user['tahun'], $datastandar['standar_id'], $datastandar['kategori_id']);
+            $ssum = 0;
+            $scount = 0;
+            foreach ($indikator as $dataindikator) {
+                if ($dataindikator['status'] == 'Diisi') {
+                    $ssum++;
+                    $scount++;
+                } else {
+                    $scount++;
+                }
+            }
+
+            $standarprogress[] = [
+                'standar' => $datastandar['standar_id'],
+                'nama_standar' => $this->standarModel->getStandarByKategori($datastandar['standar_id'], $datastandar['kategori_id'])['nama_standar'],
+                'kategori' => $datastandar['kategori_id'],
+                'count' => $scount,
+                'sum' => $ssum,
+                'persen' => ($ssum / $scount) * 100,
+            ];
+        }
+
+        $sscount = 0;
+        $sssum = 0;
+        foreach ($standarprogress as $progresstandar) {
+            $sscount += $progresstandar['count'];
+            $sssum += $progresstandar['sum'];
+        }
+        $standarpersen = ($sssum / $sscount) * 100;
+        $standarpersen = round($standarpersen, 2);
+        $dataprogresstandar = [
+            'standar' => $standarprogress,
+            'count' => $sscount,
+            'sum' => $sssum,
+            'persen' => $standarpersen,
+        ];
+
+        $standar = $this->penilaianModel->getPenilaianByUnitIdTahun($data_user['unit_id'], $data_user['tahun']);
+        // dd($standar);
+        $standarPen = $this->standarModel->getStandarByKategoriId('PEN');
+        foreach ($standarPen as $pen) {
+            $standaridPen[] = $pen['standar_id'];
+            $nilaiPen[] = 0;
+        }
+        // dd($standaridPen, $nilaiPen);
+        $countpen = 0;
+
+
+
+        $standarPPM = $this->standarModel->getStandarByKategoriId('PPM');
+        foreach ($standarPPM as $PPM) {
+            $standaridPPM[] = $PPM['standar_id'];
+            $nilaiPPM[] = 0;
+        }
+        // dd($standaridPPM, $nilaiPPM);
+        $countPPM = 0;
+
+        foreach ($standar as $datastandar) {
+            $indikator = $this->penilaianModel->getPenilaianProgress($data_user['unit_id'], $data_user['tahun'], $datastandar['standar_id'], $datastandar['kategori_id']);
+            if ($datastandar['kategori_id'] == 'PEN') {
+                $PENnilai = 0;
+                $PENcount = 0;
+                foreach ($indikator as $dataindikator) {
+                    if ($dataindikator['status'] == 'Diisi') {
+                        $PENnilai += $dataindikator['nilai_akhir'];
+                        $PENcount++;
+                    }
+                }
+                if ($PENcount != 0) {
+                    $nilaiPen[array_search($datastandar['standar_id'], $standaridPen)] = round($PENnilai / $PENcount, 2);
+                }
+            } elseif ($datastandar['kategori_id'] == 'PPM') {
+                $PPMnilai = 0;
+                $PPMcount = 0;
+                foreach ($indikator as $dataindikator) {
+                    if ($dataindikator['status'] == 'Diisi') {
+                        $PPMnilai += $dataindikator['nilai_akhir'];
+                        $PPMcount++;
+                    }
+                }
+                if ($PPMcount != 0) {
+                    $nilaiPPM[array_search($datastandar['standar_id'], $standaridPPM)] = round($PPMnilai / $PPMcount, 2);
+                }
+            }
+        }
+
+        // dd($nilaiPen, $nilaiPPM);
+        $sumPEN = 0;
+        $JumlahPen = 0;
+        foreach ($nilaiPen as $pen) {
+            if ($pen != 0) {
+                $sumPEN += $pen;
+                $JumlahPen++;
+            }
+        }
+        if ($JumlahPen != 0) {
+            $avgPEN = ($sumPEN / $JumlahPen);
+            $avgPEN = round($avgPEN, 2);
+        } else {
+            $avgPEN = 0;
+        }
+        $datanilaiPEN = [
+            'standar' => $standaridPen,
+            'nilai' => $nilaiPen,
+            'avg' => $avgPEN,
+        ];
+        // dd($datanilaiPEN['standar']);
+
+        $sumPPM = 0;
+        $JumlahPPM = 0;
+        foreach ($nilaiPPM as $PPM) {
+            if ($PPM != 0) {
+                $sumPPM += $PPM;
+                $JumlahPPM++;
+            }
+        }
+        if ($JumlahPPM != 0) {
+            $avgPPM = round(($sumPPM / $JumlahPPM), 2);
+        } else {
+            $avgPPM = 0;
+        }
+        $datanilaiPPM = [
+            'standar' => $standaridPPM,
+            'nilai' => $nilaiPPM,
+            'avg' => $avgPPM,
+        ];
+        // dd($datanilaiPPM);
 
         $i = 1;
 
@@ -71,8 +216,11 @@ class Home extends BaseController
             'tahun' => $data_user['tahun'],
             'header' => 'header__big',
             'css' => 'styles-dashboard.css',
-            'units' => $units,
             'tahunsession' => $this->tahun,
+            'indukpersen' => $indukpersen,
+            'dataprogresstandar' => $dataprogresstandar,
+            'datanilaiPEN' => $datanilaiPEN,
+            'datanilaiPPM' => $datanilaiPPM,
         ];
 
         return view('user/index', $data);
