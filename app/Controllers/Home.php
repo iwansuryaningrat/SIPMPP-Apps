@@ -116,13 +116,11 @@ class Home extends BaseController
         ];
 
         $standar = $this->penilaianModel->getPenilaianByUnitIdTahun($data_user['unit_id'], $data_user['tahun']);
-        // dd($standar);
         $standarPen = $this->standarModel->getStandarByKategoriId('PEN');
         foreach ($standarPen as $pen) {
             $standaridPen[] = $pen['standar_id'];
             $nilaiPen[] = 0;
         }
-        // dd($standaridPen, $nilaiPen);
         $countpen = 0;
 
 
@@ -132,7 +130,6 @@ class Home extends BaseController
             $standaridPPM[] = $PPM['standar_id'];
             $nilaiPPM[] = 0;
         }
-        // dd($standaridPPM, $nilaiPPM);
         $countPPM = 0;
 
         foreach ($standar as $datastandar) {
@@ -164,7 +161,7 @@ class Home extends BaseController
             }
         }
 
-        // dd($nilaiPen, $nilaiPPM);
+
         $sumPEN = 0;
         $JumlahPen = 0;
         foreach ($nilaiPen as $pen) {
@@ -184,7 +181,6 @@ class Home extends BaseController
             'nilai' => $nilaiPen,
             'avg' => $avgPEN,
         ];
-        // dd($datanilaiPEN['standar']);
 
         $sumPPM = 0;
         $JumlahPPM = 0;
@@ -204,7 +200,58 @@ class Home extends BaseController
             'nilai' => $nilaiPPM,
             'avg' => $avgPPM,
         ];
-        // dd($datanilaiPPM);
+
+        // Nilai Per Tahun
+        $tahunAll = $this->tahunModel->findAll();
+        $tahun = [];
+        $nilaiPENTahun = [];
+        $nilaiPPMTahun = [];
+        foreach ($tahunAll as $tahunAll) {
+            $i = 1;
+            $tahun[] = $tahunAll['tahun'];
+            $nilaiPENTahun[] = 0;
+            $nilaiPPMTahun[] = 0;
+            $temp = 0;
+            $standar = $this->penilaianModel->getPenilaianByUnitIdTahun($data_user['unit_id'], $tahunAll['tahun']);
+            // dd($standar);
+            foreach ($standar as $data_standar) {
+                $indikator = $this->penilaianModel->getPenilaianProgress($data_user['unit_id'], $tahunAll['tahun'], $data_standar['standar_id'], $data_standar['kategori_id']);
+                if ($data_standar['kategori_id'] == 'PEN') {
+                    $PENnilai = 0;
+                    $PENcount = 0;
+                    foreach ($indikator as $dataindikator) {
+                        if ($dataindikator['status'] == 'Diisi') {
+                            $PENnilai += $dataindikator['nilai_akhir'];
+                            $PENcount++;
+                        }
+                    }
+                    if ($PENcount != 0) {
+                        $nilaiPENStd[$i] = round($PENnilai / $PENcount, 2);
+                    }
+                } elseif ($data_standar['kategori_id'] == 'PPM') {
+                    $PPMnilai = 0;
+                    $PPMcount = 0;
+                    foreach ($indikator as $dataindikator) {
+                        if ($dataindikator['status'] == 'Diisi') {
+                            $PPMnilai += $dataindikator['nilai_akhir'];
+                            $PPMcount++;
+                        }
+                    }
+                    if ($PPMcount != 0) {
+                        $nilaiPPMStd[$i] = round($PPMnilai / $PPMcount, 2);
+                    }
+                }
+            }
+        }
+
+
+
+        $dataTahun = [
+            'tahun' => $tahun,
+            'nilaiPEN' => $nilaiPENTahun,
+            'nilaiPPM' => $nilaiPPMTahun,
+        ];
+        dd($dataTahun);
 
         $i = 1;
 
