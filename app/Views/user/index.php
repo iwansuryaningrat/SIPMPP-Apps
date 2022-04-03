@@ -246,33 +246,34 @@
 </div>
 
 <!-- chart content -->
-<div class="chart__content">
+<div class="chart__content row">
   <!-- left -->
-  <div class="chart__content-left">
+  <div class="chart__content-left col-lg-5 col-12">
     <div class="chart__content-dounat shadow__box-sm">
       <div class="content-unit__title">
         <h5 class="card__title">Status Nilai SPMI <span><?= $data_user['tahun']; ?></span></h5>
-        <div class="filter__panel mb-3">
+        <div class="filter__panel">
           <div class="nav nav-pills" id="pills-tab" role="tablist">
-            <button class="btn filter__btn-chart me-0 me-md-3 shadow-none active nav-link active"
+            <button class="btn filter__btn-chart me-0 me-md-3 shadow-none active nav-link active mb-3"
               id="pillsStandarPenelitian" data-bs-toggle="pill" data-bs-target="#pillsChartStandarPenelitian"
               type="button" role="tab" aria-controls="pillsChartStandarPenelitian" aria-selected="true">
               Penelitian
             </button>
-            <button class="btn filter__btn-chart shadow-none nav-link" id="pillsStandarPengabdian" data-bs-toggle="pill"
-              data-bs-target="#pillsChartStandarPengabdian" type="button" role="tab"
+            <button class="btn filter__btn-chart shadow-none nav-link mb-3" id="pillsStandarPengabdian"
+              data-bs-toggle="pill" data-bs-target="#pillsChartStandarPengabdian" type="button" role="tab"
               aria-controls="pillsChartStandarPengabdian" aria-selected="false">
               Pengabdian Masyarakat
             </button>
           </div>
         </div>
       </div>
+      <hr />
       <div class="tab-content" id="pills-tabContent">
         <!-- penelitian -->
         <div class="tab-pane fade show active" id="pillsChartStandarPenelitian" role="tabpanel"
           aria-labelledby="pillsStandarPenelitian">
           <div class="chart__container">
-            <canvas id="chartStandarDoughnutPenelitian" width="360"></canvas>
+            <canvas id="chartStandarDoughnutPenelitian"></canvas>
           </div>
         </div>
 
@@ -280,7 +281,7 @@
         <div class="tab-pane fade" id="pillsChartStandarPengabdian" role="tabpanel"
           aria-labelledby="pillsStandarPengabdian">
           <div class="chart__container">
-            <canvas id="chartStandarDoughnutPengabdian" width="360"></canvas>
+            <canvas id="chartStandarDoughnutPengabdian"></canvas>
           </div>
         </div>
       </div>
@@ -288,13 +289,17 @@
   </div>
 
   <!-- right -->
-  <div class="chart__content-right">
+  <div class="chart__content-right col-lg-7 col-12">
     <div class="chart__content-line shadow__box-sm">
-      <h5 class="card__title mb-5">Analisis Kategori Tahunan</h5>
-      <canvas id="chartStandarLine" width="540" height="320"></canvas>
-      <div class="legends__chart">
-        <button id="legendsPenelitian" class="legends__item btn shadow-none" onclick="toggleDataChart(0)"></button>
-        <button id="legendsPengabdian" class="legends__item btn shadow-none" onclick="toggleDataChart(1)"></button>
+      <h5 class="card__title">Analisis Kategori Tahunan</h5>
+      <div class="chart__container">
+        <canvas id="chartStandarLine"></canvas>
+        <div class="legends__chart">
+          <button id="legendsPenelitian" class="legends__item btn shadow-none ellipsis__text"
+            onclick="toggleDataChart(0)"></button>
+          <button id="legendsPengabdian" class="legends__item btn shadow-none ellipsis__text"
+            onclick="toggleDataChart(1)"></button>
+        </div>
       </div>
     </div>
   </div>
@@ -346,7 +351,7 @@
         'rgb(175, 133, 65)',
         'rgb(95, 68, 66)',
       ],
-      hoverOffset: 3,
+      hoverOffset: 0,
       borderWidth: 0,
       cutout: '70%',
     }]
@@ -372,19 +377,14 @@
       ctx.font = '42px Work Sans';
       ctx.textAlign = 'center';
       ctx.textBaseline = 'middle';
-      ctx.fillText('97.26', width / 2, (height / 2));
-      // x0 = starting point ont the horizontal level l/r
-      // y0 = starting point on the vertical level t/b
-      // x1 = length of the shape in pixel horizontal level
-      // y1 = length of the shape in pixel vertical level
+      ctx.fillText('97.26', left + (width / 2), top + (height / 2));
     },
     afterInit(chart, args, options) {
-      console.log(chart.legend.fit);
       const fitValue = chart.legend.fit;
       chart.legend.fit = function fit() {
         fitValue.bind(chart.legend)();
-        let width = this.width += 30;
-        return width;
+        let height = this.height += 24;
+        return height;
       }
     }
   };
@@ -394,17 +394,16 @@
     type: 'doughnut',
     data: dataDoughnutPenelitian,
     options: {
+      maintainAspectRatio: false,
       responsive: true,
       layout: {
-        padding: 8,
+        padding: 0,
       },
       plugins: {
         legend: {
-          position: 'right',
-          rtl: true,
+          position: 'top',
           labels: {
             boxWidth: 10,
-            textAlign: 'left',
             font: {
               size: 14,
               family: 'Work Sans',
@@ -466,7 +465,7 @@
         'rgb(175, 133, 65)',
         'rgb(95, 68, 66)',
       ],
-      hoverOffset: 3,
+      hoverOffset: 0,
       borderWidth: 0,
       cutout: '70%',
     }]
@@ -492,19 +491,14 @@
       ctx.font = '42px Work Sans';
       ctx.textAlign = 'center';
       ctx.textBaseline = 'middle';
-      ctx.fillText('90.91', width / 2, (height / 2));
-      // x0 = starting point ont the horizontal level l/r
-      // y0 = starting point on the vertical level t/b
-      // x1 = length of the shape in pixel horizontal level
-      // y1 = length of the shape in pixel vertical level
+      ctx.fillText('87.91', left + (width / 2), top + (height / 2));
     },
     afterInit(chart, args, options) {
-      console.log(chart.legend.fit);
       const fitValuePengabdian = chart.legend.fit;
       chart.legend.fit = function fitPengabdian() {
         fitValuePengabdian.bind(chart.legend)();
-        let width = this.width += 30;
-        return width;
+        let height = this.height += 24;
+        return height;
       }
     }
   };
@@ -514,17 +508,16 @@
     type: 'doughnut',
     data: dataDoughnutPengabdian,
     options: {
+      maintainAspectRatio: false,
       responsive: true,
       layout: {
-        padding: 8,
+        padding: 0,
       },
       plugins: {
         legend: {
-          position: 'right',
-          rtl: true,
+          position: 'top',
           labels: {
             boxWidth: 10,
-            textAlign: 'left',
             font: {
               size: 14,
               family: 'Work Sans',
@@ -583,6 +576,7 @@
     type: 'line',
     data: dataLine,
     options: {
+      maintainAspectRatio: false,
       tension: 0.4,
       responsive: true,
       scales: {
