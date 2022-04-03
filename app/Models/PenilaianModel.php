@@ -104,9 +104,23 @@ class PenilaianModel extends Model
             ->where('indikator.kategori_id', $kategori_id)
             ->where('indikator.indikator_id', $indikator_id)
             ->where('standar.kategori_id', $kategori_id)
+            ->where('data_induk.kategori_id', $kategori_id)
+            ->where('unit_induk_tahun.kategori_id', $kategori_id)
             ->where('unit_induk_tahun.tahun', $tahun)
             ->where('unit_induk_tahun.unit_id', $unit_id)
-            ->groupby('indikator.nama_indikator')
+            // ->groupby('indikator.nama_indikator')
+            ->first();
+    }
+
+    // Get Penilaian By Unit_id, standar_id, kategori_id, tahun and indikator_id
+    public function getPenilaianByUnitId($unit_id, $standar_id, $kategori_id, $tahun, $indikator_id)
+    {
+        return $this->select('penilaian.*')
+            ->where('penilaian.unit_id', $unit_id)
+            ->where('penilaian.standar_id', $standar_id)
+            ->where('penilaian.kategori_id', $kategori_id)
+            ->where('penilaian.tahun', $tahun)
+            ->where('penilaian.indikator_id', $indikator_id)
             ->findAll();
     }
 }

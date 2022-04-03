@@ -51,6 +51,7 @@ class Home extends BaseController
         $this->tahun = $this->userroleunitModel->getTahunRole($this->data_user['email'], $this->data_user['role_id'], $this->data_user['unit_id']);
         $this->i = 1;
         $this->session = \Config\Services::session();
+        $this->thisTahun = (int)date('Y');
     }
 
     // Dashboard Method
@@ -63,7 +64,7 @@ class Home extends BaseController
         $i = 1;
 
         $data = [
-            'title' => 'Dashboard SIPMPP | SIPMPP UNDIP 2022',
+            'title' => 'Dashboard SIPMPP | SIPMPP UNDIP ' . $this->thisTahun,
             'data_user' => $data_user,
             'i' => $i,
             'tab' => 'home',
@@ -93,7 +94,7 @@ class Home extends BaseController
         $i = 1;
 
         $data = [
-            'title' => 'Data Induk | SIPMPP UNDIP 2022',
+            'title' => 'Data Induk | SIPMPP UNDIP ' . $this->thisTahun,
             'tab' => 'induk',
             'header' => 'header__mini header__datainduk',
             'css' => 'styles-data-induk.css',
@@ -178,7 +179,7 @@ class Home extends BaseController
         }
 
         $data = [
-            'title' => 'Standar | SIPMPP UNDIP 2022',
+            'title' => 'Standar | SIPMPP UNDIP ' . $this->thisTahun,
             'data_user' => $data_user,
             'tab' => 'standar',
             'header' => 'header__mini header__spmi',
@@ -208,12 +209,12 @@ class Home extends BaseController
         $kategori =  $this->kategoriModel->getKategoriById($kategori_id)['nama_kategori'];
         // dd($kategori);
 
-        $standar = $this->standarModel->getStandar($standar_id);
+        $standar = $this->standarModel->getStandarByKategori($standar_id, $kategori_id);
 
         $i = 1;
 
         $data = [
-            'title' => 'Indikator | SIPMPP UNDIP 2022',
+            'title' => 'Indikator | SIPMPP UNDIP ' . $this->thisTahun,
             'data_user' => $data_user,
             'tab' => 'standar',
             'i' => $i,
@@ -237,22 +238,24 @@ class Home extends BaseController
         $unit_id = $data_user['unit_id'];
         $tahun = $data_user['tahun'];
 
-        // $datapenilaian = $this->penilaianModel->getPenilaianSpec($unit_id, $standar_id, $tahun, $kategori_id);
+        // dd($kategori_id, $standar_id, $indikator_id);
+
+        // $datapenilaian = $this->penilaianModel->getPenilaianByUnitId($unit_id, $standar_id, $kategori_id, $tahun, $indikator_id);
         $datapenilaian = $this->penilaianModel->getPenilaianSpecId($unit_id, $standar_id, $tahun, $kategori_id, $indikator_id);
         // dd($datapenilaian);
-        $standar = $this->standarModel->getStandar($standar_id);
+        $standar = $this->standarModel->getStandarByKategori($standar_id, $kategori_id);
         // dd($datapenilaian, $standar);
-        $induk = $this->unitIndukTahunModel->getIndukUnitSpec($unit_id, $tahun, $datapenilaian[0]['indikator_id'], $kategori_id);
+        $induk = $this->unitIndukTahunModel->getIndukUnitSpec($unit_id, $tahun, $datapenilaian['indikator_id'], $kategori_id);
         // dd($induk);
         $kategori = $this->kategoriModel->getKategoriById($kategori_id);
         // dd($kategori);
 
-        if ($datapenilaian[0]['nilai'] == 0) {
+        if ($datapenilaian['nilai'] == 0) {
             session()->setFlashdata('message', '<div class="alert alert-danger" role="alert">Nilai Data Induk Belum Diisi. Silakan isi Data Induk terlebih dahulu</div>');
             return redirect()->to('/home/indikator/' . $standar_id . '/' . $kategori_id);
         } else {
             $data = [
-                'title' => 'Form Indikator SPMI | SIPMPP UNDIP',
+                'title' => 'Form Indikator SPMI | SIPMPP UNDIP ' . $this->thisTahun,
                 'data_user' => $data_user,
                 'tab' => 'standar',
                 'header' => 'header__mini header__indikator',
@@ -277,6 +280,8 @@ class Home extends BaseController
         $keterangan = $this->request->getVar('keterangan');
         $status = "Diisi";
 
+        // dd($kategori_id, $standar_id, $unit_id, $tahun, $indikator_id, $nilai_input, $keterangan, $status);
+
         $datapenilaian = $this->penilaianModel->getPenilaianSpecId($unit_id, $standar_id, $tahun, $kategori_id, $indikator_id);
         // dd($datapenilaian);
 
@@ -290,8 +295,8 @@ class Home extends BaseController
             $nilai_akhir = $hasil;
         } else {
             $nilai_input = (int)$nilai_input;
-            $nilai_acuan = (int)$datapenilaian[0]['nilai_acuan'];
-            $nilai_induk = (int)$datapenilaian[0]['nilai'];
+            $nilai_acuan = (int)$datapenilaian['nilai_acuan'];
+            $nilai_induk = (int)$datapenilaian['nilai'];
             $hasil = $nilai_input / $nilai_induk * 100;
             if ($hasil >= $nilai_acuan) {
                 $nilai_akhir = 100;
@@ -364,7 +369,7 @@ class Home extends BaseController
         $i = 1;
 
         $data = [
-            'title' => 'Dashboard SIPMPP | SIPMPP UNDIP 2022',
+            'title' => 'Report SIPMPP | SIPMPP UNDIP ' . $this->thisTahun,
             'data_user' => $data_user,
             'i' => $i,
             'tab' => 'report',
@@ -384,7 +389,7 @@ class Home extends BaseController
         $user = $this->usersModel->getUserByEmail($data_user['email']);
 
         $data = [
-            'title' => 'Profile | SIPMPP UNDIP 2022',
+            'title' => 'Profile | SIPMPP UNDIP ' . $this->thisTahun,
             'data_user' => $data_user,
             'user' => $user,
             'tab' => 'profile',

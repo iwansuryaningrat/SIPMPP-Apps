@@ -54,7 +54,7 @@ class Admin extends BaseController
         ];
         $this->tahun = $this->userroleunitModel->getTahunRole($this->data_user['email'], $this->data_user['role_id'], $this->data_user['unit_id']);
         $this->i = 1;
-
+        $this->thisTahun = (int)date('Y');
         $this->session = \Config\Services::session();
     }
 
@@ -65,7 +65,7 @@ class Admin extends BaseController
         $units = $this->unitsModel->findAll();
 
         $data = [
-            'title' => 'Dashboard SIPMPP | SIPMPP UNDIP 2022',
+            'title' => 'Dashboard SIPMPP | SIPMPP UNDIP ' . $this->thisTahun,
             'tab' => 'home',
             'css' => 'styles-admin-dashboard.css',
             'header' => 'header__big',
@@ -86,7 +86,7 @@ class Admin extends BaseController
         $users = $this->usersModel->findAll();
         $usersession = $this->data_user;
         $data = [
-            'title' => 'Daftar User | SIPMPP Admin UNDIP',
+            'title' => 'Daftar User | SIPMPP Admin UNDIP ' . $this->thisTahun,
             'tab' => 'user',
             'css' => 'styles-admin-daftar-user.css',
             'header' => 'header__mini',
@@ -105,7 +105,7 @@ class Admin extends BaseController
     {
         $usersession = $this->data_user;
         $data = [
-            'title' => 'Form Tambah User | SIPMPP Admin UNDIP',
+            'title' => 'Form Tambah User | SIPMPP Admin UNDIP ' . $this->thisTahun,
             'tab' => 'user',
             'css' => 'styles-admin-add-user.css',
             'header' => 'header__mini',
@@ -165,7 +165,7 @@ class Admin extends BaseController
         // dd($users);
 
         $data = [
-            'title' => 'Base User | SIPMPP Admin UNDIP',
+            'title' => 'Base User | SIPMPP Admin UNDIP ' . $this->thisTahun,
             'tab' => 'user',
             'css' => 'styles-admin-user.css',
             'header' => 'header__mini',
@@ -190,7 +190,7 @@ class Admin extends BaseController
         $role = $this->roleModel->getRole('user');
         // dd($role, $tahun, $units, $users);
         $data = [
-            'title' => 'Form Tambah User | SIPMPP Admin UNDIP',
+            'title' => 'Form Tambah User | SIPMPP Admin UNDIP ' . $this->thisTahun,
             'tab' => 'user',
             'css' => 'styles-admin-add-user.css',
             'header' => 'header__mini',
@@ -254,7 +254,7 @@ class Admin extends BaseController
         // dd($users);
 
         $data = [
-            'title' => 'Pimpinan | SIPMPP Admin UNDIP',
+            'title' => 'Pimpinan | SIPMPP Admin UNDIP ' . $this->thisTahun,
             'tab' => 'user',
             'css' => 'styles-admin-user.css',
             'header' => 'header__mini',
@@ -279,7 +279,7 @@ class Admin extends BaseController
         $role = $this->roleModel->getRole('pimpinan');
         // dd($role, $tahun, $units, $users);
         $data = [
-            'title' => 'Form Tambah User Pimpinan | SIPMPP Admin UNDIP',
+            'title' => 'Form Tambah User Pimpinan | SIPMPP Admin UNDIP ' . $this->thisTahun,
             'tab' => 'user',
             'css' => 'styles-admin-add-user.css',
             'header' => 'header__mini',
@@ -305,7 +305,7 @@ class Admin extends BaseController
         // dd($users);
 
         $data = [
-            'title' => 'Auditor | SIPMPP Admin UNDIP',
+            'title' => 'Auditor | SIPMPP Admin UNDIP ' . $this->thisTahun,
             'tab' => 'user',
             'css' => 'styles-admin-user.css',
             'header' => 'header__mini',
@@ -330,7 +330,7 @@ class Admin extends BaseController
         $role = $this->roleModel->getRole('auditor');
         // dd($role, $tahun, $units, $users);
         $data = [
-            'title' => 'Form Tambah Auditor | SIPMPP Admin UNDIP',
+            'title' => 'Form Tambah Auditor | SIPMPP Admin UNDIP ' . $this->thisTahun,
             'tab' => 'user',
             'css' => 'styles-admin-add-user.css',
             'header' => 'header__mini',
@@ -354,7 +354,7 @@ class Admin extends BaseController
         $units = $this->unitsModel->findAll();
 
         $data = [
-            'title' => 'Daftar Unit | SIPMPP Admin UNDIP',
+            'title' => 'Daftar Unit | SIPMPP Admin UNDIP ' . $this->thisTahun,
             'tab' => 'unit',
             'css' => 'styles-admin-unit.css',
             'header' => 'header__mini',
@@ -466,7 +466,7 @@ class Admin extends BaseController
         $usersession = $this->data_user;
         $kategori = $this->kategoriModel->findAll();
         $data = [
-            'title' => 'Daftar Kategori | SIPMPP Admin UNDIP',
+            'title' => 'Daftar Kategori | SIPMPP Admin UNDIP ' . $this->thisTahun,
             'tab' => 'kategori',
             'css' => 'styles-admin-kategori.css',
             'header' => 'header__mini',
@@ -567,7 +567,7 @@ class Admin extends BaseController
         // dd($induk);
 
         $data = [
-            'title' => 'Data Induk | SIPMPP Admin UNDIP',
+            'title' => 'Data Induk | SIPMPP Admin UNDIP ' . $this->thisTahun,
             'tab' => 'induk',
             'css' => 'styles-admin-data-induk.css',
             'header' => 'header__mini',
@@ -589,7 +589,7 @@ class Admin extends BaseController
         $kategori = $this->kategoriModel->findAll();
 
         $data = [
-            'title' => 'Form Add Data Induk | SIPMPP Admin UNDIP',
+            'title' => 'Form Add Data Induk | SIPMPP Admin UNDIP ' . $this->thisTahun,
             'tab' => 'induk',
             'css' => 'styles-admin-add-datainduk.css',
             'header' => 'header__mini',
@@ -639,7 +639,7 @@ class Admin extends BaseController
         $kategori = $this->kategoriModel->findAll();
 
         $data = [
-            'title' => 'Form Edit Data Induk | SIPMPP Admin UNDIP',
+            'title' => 'Form Edit Data Induk | SIPMPP Admin UNDIP ' . $this->thisTahun,
             'tab' => 'induk',
             'css' => 'styles-admin-add-datainduk.css',
             'header' => 'header__mini',
@@ -699,7 +699,7 @@ class Admin extends BaseController
         $user = $this->usersModel->getUserByEmail($data_user['email']);
 
         $data = [
-            'title' => 'Profile | SIPMPP UNDIP 2022',
+            'title' => 'Profile | SIPMPP UNDIP ' . $this->thisTahun,
             'usersession' => $data_user,
             'data_user' => $data_user,
             'user' => $user,
@@ -801,7 +801,7 @@ class Admin extends BaseController
         // dd($standar);
 
         $data = [
-            'title' => 'Daftar Standar | SIPMPP Admin UNDIP',
+            'title' => 'Daftar Standar | SIPMPP Admin UNDIP ' . $this->thisTahun,
             'tab' => 'standar',
             'css' => 'styles-admin-standar.css',
             'header' => 'header__mini',
@@ -823,7 +823,7 @@ class Admin extends BaseController
         $kategori = $this->kategoriModel->findAll();
 
         $data = [
-            'title' => 'Tambah Standar | SIPMPP Admin UNDIP',
+            'title' => 'Tambah Standar | SIPMPP Admin UNDIP ' . $this->thisTahun,
             'tab' => 'standar',
             'css' => 'styles-admin-add-standar.css',
             'header' => 'header__mini',
@@ -881,7 +881,7 @@ class Admin extends BaseController
         $kategori = $this->kategoriModel->findAll();
 
         $data = [
-            'title' => 'Edit Standar | SIPMPP Admin UNDIP',
+            'title' => 'Edit Standar | SIPMPP Admin UNDIP ' . $this->thisTahun,
             'tab' => 'standar',
             'css' => 'styles-admin-edit-standar.css',
             'header' => 'header__mini',
@@ -928,7 +928,7 @@ class Admin extends BaseController
 
         // dd($indikator, $kategori, $standar);
         $data = [
-            'title' => 'Daftar Indikator | SIPMPP Admin UNDIP',
+            'title' => 'Daftar Indikator | SIPMPP Admin UNDIP ' . $this->thisTahun,
             'tab' => 'standar',
             'css' => 'styles-view-indikator.css',
             'header' => 'header__mini',
@@ -954,7 +954,7 @@ class Admin extends BaseController
         $indikator = $this->indikatorModel->getIndikator($kategori_id, $standar_id);
 
         $data = [
-            'title' => 'Tambah Indikator | SIPMPP Admin UNDIP',
+            'title' => 'Tambah Indikator | SIPMPP Admin UNDIP ' . $this->thisTahun,
             'tab' => 'standar',
             'css' => 'styles-admin-add-indikator.css',
             'header' => 'header__mini',
@@ -1012,7 +1012,7 @@ class Admin extends BaseController
         $indikator = $this->indikatorModel->getIndikatorById($indikator_id);
 
         $data = [
-            'title' => 'Edit Indikator | SIPMPP Admin UNDIP',
+            'title' => 'Edit Indikator | SIPMPP Admin UNDIP ' . $this->thisTahun,
             'tab' => 'standar',
             'css' => 'styles-admin-edit-indikator.css',
             'header' => 'header__mini',
@@ -1073,7 +1073,7 @@ class Admin extends BaseController
         $users = $this->usersModel->findAll();
         $usersession = $this->data_user;
         $data = [
-            'title' => 'Penilaian | SIPMPP Admin UNDIP',
+            'title' => 'Penilaian | SIPMPP Admin UNDIP ' . $this->thisTahun,
             'tab' => 'penilaian',
             'css' => 'styles-admin-penilaian.css',
             'header' => 'header__mini',
@@ -1093,7 +1093,7 @@ class Admin extends BaseController
         $users = $this->usersModel->findAll();
         $usersession = $this->data_user;
         $data = [
-            'title' => 'Report | SIPMPP Admin UNDIP',
+            'title' => 'Report | SIPMPP Admin UNDIP ' . $this->thisTahun,
             'tab' => 'report',
             'css' => 'styles-admin-report.css',
             'header' => 'header__mini',
