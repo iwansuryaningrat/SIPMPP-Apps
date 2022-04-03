@@ -369,7 +369,7 @@ class Home extends BaseController
         $i = 1;
 
         $data = [
-            'title' => 'Dashboard SIPMPP | SIPMPP UNDIP ' . $this->thisTahun,
+            'title' => 'Report SIPMPP | SIPMPP UNDIP ' . $this->thisTahun,
             'data_user' => $data_user,
             'i' => $i,
             'tab' => 'report',
