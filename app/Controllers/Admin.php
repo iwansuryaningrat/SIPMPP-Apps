@@ -48,6 +48,8 @@ class Admin extends BaseController
             'email' => session()->get('email'),
             'nama' => session()->get('nama'),
             'foto' => session()->get('foto'),
+            'unit_id' => session()->get('unit_id'),
+            'unit' => session()->get('unit'),
             'role_id' => session()->get('role_id'),
             'role' => session()->get('role'),
             'tahun' => session()->get('tahun'),

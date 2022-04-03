@@ -467,6 +467,8 @@ class Home extends BaseController
             'foto' => $data['foto'],
             'role_id' => $data_user['role_id'],
             'role' => $data_user['role'],
+            'unit_id' => $data_user['unit_id'],
+            'unit' => $data_user['unit'],
             'tahun' => $this->getTahun,
             'isLoggedIn' => true,
         ];
