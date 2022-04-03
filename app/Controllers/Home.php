@@ -209,7 +209,7 @@ class Home extends BaseController
         $kategori =  $this->kategoriModel->getKategoriById($kategori_id)['nama_kategori'];
         // dd($kategori);
 
-        $standar = $this->standarModel->getStandar($standar_id);
+        $standar = $this->standarModel->getStandarByKategori($standar_id, $kategori_id);
 
         $i = 1;
 
@@ -238,17 +238,19 @@ class Home extends BaseController
         $unit_id = $data_user['unit_id'];
         $tahun = $data_user['tahun'];
 
-        // $datapenilaian = $this->penilaianModel->getPenilaianSpec($unit_id, $standar_id, $tahun, $kategori_id);
+        // dd($kategori_id, $standar_id, $indikator_id);
+
+        // $datapenilaian = $this->penilaianModel->getPenilaianByUnitId($unit_id, $standar_id, $kategori_id, $tahun, $indikator_id);
         $datapenilaian = $this->penilaianModel->getPenilaianSpecId($unit_id, $standar_id, $tahun, $kategori_id, $indikator_id);
         // dd($datapenilaian);
-        $standar = $this->standarModel->getStandar($standar_id);
+        $standar = $this->standarModel->getStandarByKategori($standar_id, $kategori_id);
         // dd($datapenilaian, $standar);
-        $induk = $this->unitIndukTahunModel->getIndukUnitSpec($unit_id, $tahun, $datapenilaian[0]['indikator_id'], $kategori_id);
+        $induk = $this->unitIndukTahunModel->getIndukUnitSpec($unit_id, $tahun, $datapenilaian['indikator_id'], $kategori_id);
         // dd($induk);
         $kategori = $this->kategoriModel->getKategoriById($kategori_id);
         // dd($kategori);
 
-        if ($datapenilaian[0]['nilai'] == 0) {
+        if ($datapenilaian['nilai'] == 0) {
             session()->setFlashdata('message', '<div class="alert alert-danger" role="alert">Nilai Data Induk Belum Diisi. Silakan isi Data Induk terlebih dahulu</div>');
             return redirect()->to('/home/indikator/' . $standar_id . '/' . $kategori_id);
         } else {
@@ -278,6 +280,8 @@ class Home extends BaseController
         $keterangan = $this->request->getVar('keterangan');
         $status = "Diisi";
 
+        // dd($kategori_id, $standar_id, $unit_id, $tahun, $indikator_id, $nilai_input, $keterangan, $status);
+
         $datapenilaian = $this->penilaianModel->getPenilaianSpecId($unit_id, $standar_id, $tahun, $kategori_id, $indikator_id);
         // dd($datapenilaian);
 
@@ -291,8 +295,8 @@ class Home extends BaseController
             $nilai_akhir = $hasil;
         } else {
             $nilai_input = (int)$nilai_input;
-            $nilai_acuan = (int)$datapenilaian[0]['nilai_acuan'];
-            $nilai_induk = (int)$datapenilaian[0]['nilai'];
+            $nilai_acuan = (int)$datapenilaian['nilai_acuan'];
+            $nilai_induk = (int)$datapenilaian['nilai'];
             $hasil = $nilai_input / $nilai_induk * 100;
             if ($hasil >= $nilai_acuan) {
                 $nilai_akhir = 100;

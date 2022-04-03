@@ -17,14 +17,6 @@ class StandarModel extends Model
     protected $createdField  = 'created_at';
     protected $updatedField  = 'updated_at';
 
-    // Get Standar
-    public function getStandar($standar_id)
-    {
-        return $this->select('standar.standar_id, standar.nama_standar')
-            ->where('standar.standar_id', $standar_id)
-            ->first();
-    }
-
     // Get all standar and join
     public function getAllStandar()
     {
