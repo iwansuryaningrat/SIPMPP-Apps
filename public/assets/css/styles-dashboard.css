@@ -311,6 +311,23 @@
   flex: 0.6;
 }
 
+.legends__chart {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 1.5rem;
+}
+
+.legends__item {
+  background-color: transparent;
+  border: 0;
+}
+
+.legends__item.hideChart {
+  opacity: 0.3;
+}
+
 /* ==========tablet view========== */
 @media screen and (max-width: 991px) {
   /* ==========progress pengisian========== */

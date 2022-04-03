@@ -251,7 +251,7 @@
   <div class="chart__content-left">
     <div class="chart__content-dounat shadow__box-sm">
       <div class="content-unit__title">
-        <h5 class="card__title">Nilai SPMI <span>2018</span></h5>
+        <h5 class="card__title">Status Nilai SPMI <span><?= $data_user['tahun']; ?></span></h5>
         <div class="filter__panel mb-3">
           <div class="nav nav-pills" id="pills-tab" role="tablist">
             <button class="btn filter__btn-chart me-0 me-md-3 shadow-none active nav-link active"
@@ -272,7 +272,7 @@
         <div class="tab-pane fade show active" id="pillsChartStandarPenelitian" role="tabpanel"
           aria-labelledby="pillsStandarPenelitian">
           <div class="chart__container">
-            <canvas id="chartStandarDoughnutPenelitian"></canvas>
+            <canvas id="chartStandarDoughnutPenelitian" width="360"></canvas>
           </div>
         </div>
 
@@ -280,7 +280,7 @@
         <div class="tab-pane fade" id="pillsChartStandarPengabdian" role="tabpanel"
           aria-labelledby="pillsStandarPengabdian">
           <div class="chart__container">
-            <canvas id="chartStandarDoughnutPengabdian"></canvas>
+            <canvas id="chartStandarDoughnutPengabdian" width="360"></canvas>
           </div>
         </div>
       </div>
@@ -290,8 +290,12 @@
   <!-- right -->
   <div class="chart__content-right">
     <div class="chart__content-line shadow__box-sm">
-      <h5 class="card__title mb-5">Nilai SPMI</h5>
-      <canvas id="chartStandarLine" width="540" height="400"></canvas>
+      <h5 class="card__title mb-5">Analisis Kategori Tahunan</h5>
+      <canvas id="chartStandarLine" width="540" height="320"></canvas>
+      <div class="legends__chart">
+        <button id="legendsPenelitian" class="legends__item btn shadow-none" onclick="toggleDataChart(0)"></button>
+        <button id="legendsPengabdian" class="legends__item btn shadow-none" onclick="toggleDataChart(1)"></button>
+      </div>
     </div>
   </div>
 </div>
@@ -303,7 +307,7 @@
 <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 
 <!-- ========== GENERATE CHART ========== -->
-<!-- penelitian -->
+<!-- PENELITIAN -->
 <script>
   // ========== CONFIG CHART DOUNAT ==========
   // setup block
@@ -365,14 +369,23 @@
       } = chart;
       ctx.save();
       // write text + automate the text
-      ctx.font = '60px Work Sans';
+      ctx.font = '42px Work Sans';
       ctx.textAlign = 'center';
       ctx.textBaseline = 'middle';
-      ctx.fillText('97%', width / 2, (height / 2));
+      ctx.fillText('97.26', width / 2, (height / 2));
       // x0 = starting point ont the horizontal level l/r
       // y0 = starting point on the vertical level t/b
       // x1 = length of the shape in pixel horizontal level
       // y1 = length of the shape in pixel vertical level
+    },
+    afterInit(chart, args, options) {
+      console.log(chart.legend.fit);
+      const fitValue = chart.legend.fit;
+      chart.legend.fit = function fit() {
+        fitValue.bind(chart.legend)();
+        let width = this.width += 30;
+        return width;
+      }
     }
   };
 
@@ -382,13 +395,28 @@
     data: dataDoughnutPenelitian,
     options: {
       responsive: true,
+      layout: {
+        padding: 8,
+      },
       plugins: {
         legend: {
           position: 'right',
+          rtl: true,
+          labels: {
+            boxWidth: 10,
+            textAlign: 'left',
+            font: {
+              size: 14,
+              family: 'Work Sans',
+              weight: 'bold'
+            },
+            fontFamily: 'Work Sans',
+            padding: 12,
+            usePointStyle: true,
+          },
         },
       }
     },
-    // options: {},
     plugins: [counterDoughnutPenelitian]
   };
 
@@ -398,7 +426,8 @@
     configDoughnutPenelitian
   );
 </script>
-<!-- pengabdian -->
+
+<!-- PENGABDIAN MASYARAKAT -->
 <script>
   // ========== CONFIG CHART DOUNAT ==========
   // setup block
@@ -445,7 +474,7 @@
 
   // conter plugin block
   const counterDoughnutPengabdian = {
-    id: 'counter',
+    id: 'counterPengabdian',
     beforeDraw(chart, args, options) {
       const {
         ctx,
@@ -460,14 +489,23 @@
       } = chart;
       ctx.save();
       // write text + automate the text
-      ctx.font = '60px Work Sans';
+      ctx.font = '42px Work Sans';
       ctx.textAlign = 'center';
       ctx.textBaseline = 'middle';
-      ctx.fillText('57%', width / 2, (height / 2));
+      ctx.fillText('90.91', width / 2, (height / 2));
       // x0 = starting point ont the horizontal level l/r
       // y0 = starting point on the vertical level t/b
       // x1 = length of the shape in pixel horizontal level
       // y1 = length of the shape in pixel vertical level
+    },
+    afterInit(chart, args, options) {
+      console.log(chart.legend.fit);
+      const fitValuePengabdian = chart.legend.fit;
+      chart.legend.fit = function fitPengabdian() {
+        fitValuePengabdian.bind(chart.legend)();
+        let width = this.width += 30;
+        return width;
+      }
     }
   };
 
@@ -477,9 +515,25 @@
     data: dataDoughnutPengabdian,
     options: {
       responsive: true,
+      layout: {
+        padding: 8,
+      },
       plugins: {
         legend: {
           position: 'right',
+          rtl: true,
+          labels: {
+            boxWidth: 10,
+            textAlign: 'left',
+            font: {
+              size: 14,
+              family: 'Work Sans',
+              weight: 'bold'
+            },
+            fontFamily: 'Work Sans',
+            padding: 12,
+            usePointStyle: true,
+          },
         },
       }
     },
@@ -493,6 +547,7 @@
   );
 </script>
 
+<!-- CHART YEAR -->
 <script>
   // ========== CONFIG CHART LINE ==========
   const labelsLine = ['2018', '2019', '2020', '2021', '2022'];
@@ -500,42 +555,26 @@
   const dataLine = {
     labels: labelsLine,
     datasets: [{
+        // data[0]
         label: 'Penelitian',
         data: [120, 49, 24, 84, 56],
-        backgroundColor: [
-          'rgba(15, 22, 67, .2)',
-          'rgba(38, 48, 77, .2)',
-          'rgba(189, 179, 185, .2)',
-          'rgba(191, 125, 115, .2)',
-          'rgba(178, 99, 87, .2)',
-        ],
-        borderColor: [
-          'rgba(15, 22, 67, 1)',
-          'rgba(38, 48, 77, 1)',
-          'rgba(189, 179, 185, 1)',
-          'rgba(191, 125, 115, 1)',
-          'rgba(178, 99, 87, 1)',
-        ],
-        borderWidth: 2,
+        borderColor: 'rgba(73, 74, 106, 1)',
+        backgroundColor: function gradientGenerate(chartStandarLine) {
+          return gradientBackgroundLine(chartStandarLine.chart.ctx, chartStandarLine.chart.data.datasets[0]
+            .borderColor);
+        },
+        fill: true,
       },
       {
+        // data[1]
         label: 'Pengabdian Masyarakat',
         data: [59, 80, 63, 28, 64],
-        backgroundColor: [
-          'rgba(15, 22, 67, .2)',
-          'rgba(38, 48, 77, .2)',
-          'rgba(189, 179, 185, .2)',
-          'rgba(191, 125, 115, .2)',
-          'rgba(178, 99, 87, .2)',
-        ],
-        borderColor: [
-          'rgba(15, 22, 67, 1)',
-          'rgba(38, 48, 77, 1)',
-          'rgba(189, 179, 185, 1)',
-          'rgba(191, 125, 115, 1)',
-          'rgba(178, 99, 87, 1)',
-        ],
-        borderWidth: 2,
+        borderColor: 'rgba(178, 99, 87, 1)',
+        backgroundColor: function gradientGenerate(chartStandarLine) {
+          return gradientBackgroundLine(chartStandarLine.chart.ctx, chartStandarLine.chart.data.datasets[1]
+            .borderColor);
+        },
+        fill: true,
       }
     ]
   };
@@ -544,20 +583,70 @@
     type: 'line',
     data: dataLine,
     options: {
+      tension: 0.4,
       responsive: true,
       scales: {
         y: {
-          beginAtZero: true
+          beginAtZero: true,
+          suggestedMin: 0,
+          suggestedMax: 150,
         }
+      },
+      interaction: {
+        intersect: false,
+        axis: 'xy',
+        mode: 'nearest',
+      },
+      plugins: {
+        legend: {
+          display: false,
+        },
       }
     }
   };
+
+  function gradientBackgroundLine(ctxLine, bgLine) {
+    const gradient = ctxLine.createLinearGradient(0, 0, 0, 320);
+    gradient.addColorStop(0, bgLine);
+    gradient.addColorStop(1, 'rgba(255, 255, 255, 0)');
+    return gradient;
+  }
 
   // ========== RENDER CHART DOUNAT ==========
   const chartStandarLine = new Chart(
     document.getElementById('chartStandarLine'),
     configLine
   );
+
+  // ========== LEGENDS CUSTOM ==========
+  // teks
+  $('#legendsPenelitian').html("<i class='fa-solid fa-circle me-2' id='legends" + chartStandarLine.data.datasets[0]
+    .label.split(' ').slice(0, -1).join(' ') +
+    "Icon'></i>" + chartStandarLine.data.datasets[0].label);
+  $('#legendsPengabdian').html("<i class='fa-solid fa-circle me-2' id='legends" + chartStandarLine.data.datasets[1]
+    .label.split(' ').slice(0, -1).join(' ') +
+    "Icon'></i>" + chartStandarLine.data.datasets[1].label);
+  // color
+  $('#legendsPenelitianIcon').css('color', chartStandarLine.data.datasets[0].borderColor);
+  $('#legendsPengabdianIcon').css('color', chartStandarLine.data.datasets[1].borderColor);
+
+  // toggleDataChart
+  function toggleDataChart(value) {
+    const visibilityDataChart = chartStandarLine.isDatasetVisible(value);
+    if (visibilityDataChart) {
+      chartStandarLine.hide(value);
+    } else {
+      chartStandarLine.show(value);
+    }
+  }
+
+  // function hide
+  jQuery(function($) {
+    jQuery('.legends__item').on('click', function(e) {
+      e.preventDefault();
+      $(this).toggleClass('hideChart');
+    });
+  });
 </script>
 
 <script>
