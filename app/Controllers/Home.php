@@ -51,6 +51,7 @@ class Home extends BaseController
         $this->tahun = $this->userroleunitModel->getTahunRole($this->data_user['email'], $this->data_user['role_id'], $this->data_user['unit_id']);
         $this->i = 1;
         $this->session = \Config\Services::session();
+        $this->thisTahun = (int)date('Y');
     }
 
     // Dashboard Method
@@ -63,7 +64,7 @@ class Home extends BaseController
         $i = 1;
 
         $data = [
-            'title' => 'Dashboard SIPMPP | SIPMPP UNDIP 2022',
+            'title' => 'Dashboard SIPMPP | SIPMPP UNDIP ' . $this->thisTahun,
             'data_user' => $data_user,
             'i' => $i,
             'tab' => 'home',
@@ -93,7 +94,7 @@ class Home extends BaseController
         $i = 1;
 
         $data = [
-            'title' => 'Data Induk | SIPMPP UNDIP 2022',
+            'title' => 'Data Induk | SIPMPP UNDIP ' . $this->thisTahun,
             'tab' => 'induk',
             'header' => 'header__mini header__datainduk',
             'css' => 'styles-data-induk.css',
@@ -178,7 +179,7 @@ class Home extends BaseController
         }
 
         $data = [
-            'title' => 'Standar | SIPMPP UNDIP 2022',
+            'title' => 'Standar | SIPMPP UNDIP ' . $this->thisTahun,
             'data_user' => $data_user,
             'tab' => 'standar',
             'header' => 'header__mini header__spmi',
@@ -213,7 +214,7 @@ class Home extends BaseController
         $i = 1;
 
         $data = [
-            'title' => 'Indikator | SIPMPP UNDIP 2022',
+            'title' => 'Indikator | SIPMPP UNDIP ' . $this->thisTahun,
             'data_user' => $data_user,
             'tab' => 'standar',
             'i' => $i,
@@ -252,7 +253,7 @@ class Home extends BaseController
             return redirect()->to('/home/indikator/' . $standar_id . '/' . $kategori_id);
         } else {
             $data = [
-                'title' => 'Form Indikator SPMI | SIPMPP UNDIP',
+                'title' => 'Form Indikator SPMI | SIPMPP UNDIP ' . $this->thisTahun,
                 'data_user' => $data_user,
                 'tab' => 'standar',
                 'header' => 'header__mini header__indikator',
@@ -364,7 +365,7 @@ class Home extends BaseController
         $i = 1;
 
         $data = [
-            'title' => 'Dashboard SIPMPP | SIPMPP UNDIP 2022',
+            'title' => 'Dashboard SIPMPP | SIPMPP UNDIP ' . $this->thisTahun,
             'data_user' => $data_user,
             'i' => $i,
             'tab' => 'report',
@@ -384,7 +385,7 @@ class Home extends BaseController
         $user = $this->usersModel->getUserByEmail($data_user['email']);
 
         $data = [
-            'title' => 'Profile | SIPMPP UNDIP 2022',
+            'title' => 'Profile | SIPMPP UNDIP ' . $this->thisTahun,
             'data_user' => $data_user,
             'user' => $user,
             'tab' => 'profile',
