@@ -461,6 +461,10 @@ label.error {
   margin-bottom: 1.5rem;
 }
 
+.header__main-title__pagination a {
+  font-weight: 600;
+}
+
 .header__main-title__subtitle {
   display: flex;
 
@@ -1156,6 +1160,14 @@ footer .container-fluid.container__fluid {
 @media screen and (max-width: 390px) {
   .header__main-color.header__mini {
     height: 17rem !important;
+  }
+
+  .header__main-color.header__mini.header__daftarUser.active {
+    height: 15rem !important;
+  }
+
+  .header__main-color.header__mini.header__daftarUser {
+    height: 18.5rem !important;
   }
 }
 

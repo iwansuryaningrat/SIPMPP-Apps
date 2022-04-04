@@ -33,6 +33,7 @@
 
 .table__unit-namaunit {
   width: 70%;
+  min-width: 11.25rem;
 }
 
 .sipmpp__table tr td .edit__data__induk__icon svg {
