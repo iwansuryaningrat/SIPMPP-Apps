@@ -17,7 +17,6 @@ use App\Controllers\BaseController;
 
 class Stats extends BaseController
 {
-
     protected $dataIndukModel;
     protected $indikatorModel;
     protected $kategoriModel;
