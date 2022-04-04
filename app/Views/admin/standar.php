@@ -26,7 +26,7 @@
 </div>
 
 <!--========== body main ==========-->
-<div class="title__table__add">
+<div class="title__table__add nav__kategori">
     <h4 class="title__body__user">Daftar Standar</h4>
     <a href="/admin/addStandarform" class="btn shadow-none btn__add btn__dark add__unit__icon" role="button">
         <i class="fa-solid fa-plus"></i>
@@ -80,10 +80,12 @@
                             <td>
                                 <a data-bs-placement="top" title="lihat"
                                     href="/admin/viewIndikator/<?= $standar['standar_id'] . '/' . $standar['kategori_id']; ?>"
-                                    class="edit__data__induk__icon me-4"><i class="fa-solid fa-eye"></i></a>
+                                    class="edit__data__induk__icon me-lg-5 me-md-4 me-3"><i
+                                        class="fa-solid fa-eye"></i></a>
                                 <a data-bs-placement="top" title="Edit"
                                     href="/admin/editstandarform/<?= $standar['standar_id'] . '/' . $standar['kategori_id']; ?>"
-                                    class="edit__data__induk__icon me-4"><i class="fa-solid fa-pen-to-square"></i></a>
+                                    class="edit__data__induk__icon me-lg-5 me-md-4 me-3"><i
+                                        class="fa-solid fa-pen-to-square"></i></a>
                                 <a data-bs-placement="top" title="Delete" href="#" class="delete__data__induk__icon"><i
                                         class="fa-solid fa-trash"></i></a>
                             </td>
@@ -98,7 +100,25 @@
 
     <!-- pengabdian masyarakat -->
     <div class="tab-pane fade" id="pills-table-spmi-pm" role="tabpanel" aria-labelledby="pills-spmi-pm">
-        <h1>Table Pengabdian Masyarakat</h1>
+        <div class="sipmpp__table">
+            <!-- Menampilkan flashdata message -->
+            <?= session()->getFlashdata('message'); ?>
+
+            <div class="table-responsive">
+                <table class="table table__standar__content sipmpp__table-content table-hover">
+                    <thead class="bg__light">
+                        <tr>
+                            <th class="table__standar-number">no</th>
+                            <th class="table__standar-kode">kode</th>
+                            <th class="table__standar-standar">standar</th>
+                            <th class="table__standar-aksi">aksi</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                    </tbody>
+                </table>
+            </div>
+        </div>
     </div>
 </div>
 

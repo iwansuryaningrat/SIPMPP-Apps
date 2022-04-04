@@ -7,9 +7,7 @@
 .table__indikator__content tr th:first-child,
 .table__indikator__content tr td:first-child,
 .table__indikator__content tr th:last-child,
-.table__indikator__content tr td:last-child,
-.table__indikator__content tr th:nth-child(4),
-.table__indikator__content tr td:nth-child(4) {
+.table__indikator__content tr td:last-child {
   text-align: center;
 }
 
@@ -19,14 +17,18 @@
 }
 
 .table__indikator-number,
-.table__indikator-aksi,
-.table__indikator-nilai {
+.table__indikator-kebutuha-data {
   width: 10%;
+}
+
+.table__indikator-aksi {
+  width: 20%;
+  min-width: 8.75rem;
 }
 
 .table__indikator-indikator,
 .table__indikator-target {
-  width: 35%;
+  width: 25%;
 }
 
 .table__indikator__content thead tr th,

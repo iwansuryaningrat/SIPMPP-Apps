@@ -28,6 +28,7 @@
 
 .table__unit-aksi {
   width: 20%;
+  min-width: 8.75rem;
 }
 
 .table__unit-namaunit {

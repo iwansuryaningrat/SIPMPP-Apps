@@ -28,6 +28,7 @@
 
 .table__standar-aksi {
   width: 30%;
+  min-width: 12.5rem;
 }
 
 .table__standar-standar {
@@ -69,6 +70,14 @@
 .filter__btn.active:hover {
   color: var(--white) !important;
   background-color: var(--dark-main-color) !important;
+}
+
+.title__table__add.nav__kategori {
+  margin-bottom: 1rem;
+}
+
+.filter__table {
+  margin-bottom: 1.5rem;
 }
 
 @media screen and (max-width: 1024px) {
