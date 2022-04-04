@@ -719,7 +719,7 @@ class Admin extends BaseController
             'data_user' => $data_user,
             'user' => $user,
             'tab' => 'profile',
-            'header' => '',
+            'header' => 'header__mini header__profile',
             'css' => 'styles-admin-profile.css',
             'tahun' => $data_user['tahun'],
             'tahunsession' => $this->tahun,

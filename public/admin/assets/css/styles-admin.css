@@ -1043,6 +1043,14 @@ footer .container-fluid.container__fluid {
     height: 16rem !important;
   }
 
+  .header__main-color.header__mini.header__profile {
+    height: 14rem !important;
+  }
+
+  .header__main-color.header__mini.header__profile.active {
+    height: 13.5rem !important;
+  }
+
   .main__content {
     width: calc(100% - 12.375rem) !important;
   }
