@@ -19,19 +19,22 @@
 }
 
 .table__datainduk-number {
-  width: 10%;
+  width: 7%;
 }
 
 .table__datainduk-kode {
-  width: 15%;
+  width: 12%;
+  min-width: 6.25rem;
 }
 
 .table__datainduk-aksi {
   width: 20%;
+  min-width: 8.75rem;
 }
 
 .table__datainduk-kebutuhan-data {
-  width: 55%;
+  width: 61%;
+  min-width: 12.5rem;
 }
 
 .table__datainduk__content thead tr th,
@@ -48,11 +51,65 @@
   color: var(--danger-color);
 }
 
+.filter__btn {
+  padding: 0.75rem 1rem !important;
+  border-radius: var(--radius-sm) !important;
+  background-color: var(--light-color) !important;
+  border: var(--border-sm) !important;
+  color: rgba(0, 0, 0, 0.8) !important;
+}
+
+.filter__btn:hover {
+  color: var(--black) !important;
+}
+
+.filter__btn.active {
+  color: rgba(255, 255, 255, 0.8) !important;
+  font-weight: 500 !important;
+  background-color: rgba(38, 48, 77, 0.9) !important;
+}
+
+.filter__btn.active:hover {
+  color: var(--white) !important;
+  background-color: var(--dark-main-color) !important;
+}
+
 @media screen and (max-width: 1024px) {
+  /* ========== filter btn ========== */
+  .filter__btn {
+    padding: 0.5rem 0.875rem !important;
+  }
 }
 
 @media screen and (max-width: 991px) {
+  .filter__btn {
+    flex: 0.5;
+  }
+
+  .filter__btn:first-child {
+    margin-right: 0.625rem !important;
+  }
+  .filter__btn:last-child {
+    margin-left: 0.625rem !important;
+  }
 }
 
 @media screen and (max-width: 576px) {
+  .nav.nav-pills {
+    flex-direction: column;
+  }
+  .filter__btn {
+    width: 100%;
+  }
+
+  .filter__btn:first-child {
+    margin-bottom: 0.75rem !important;
+    margin-right: 0 !important;
+    width: 100%;
+  }
+
+  .filter__btn:last-child {
+    margin-left: 0 !important;
+    width: 100%;
+  }
 }
