@@ -1024,7 +1024,14 @@ footer .container-fluid.container__fluid {
   }
 }
 
-@media screen and (max-width: 700px) {
+@media screen and (max-width: 620px) {
+  .header__main-color.header__mini.header__addIndikatorForm {
+    height: 17rem !important;
+  }
+
+  .header__main-color.header__mini.header__addIndikatorForm.active {
+    height: 15rem !important;
+  }
 }
 
 /* ========== Mobile View ========== */
@@ -1060,7 +1067,8 @@ footer .container-fluid.container__fluid {
     height: 16rem !important;
   }
 
-  .header__main-color.header__mini.header__profile {
+  .header__main-color.header__mini.header__profile,
+  .header__main-color.header__mini.header__addStandarForm {
     height: 14rem !important;
   }
 
@@ -1072,7 +1080,8 @@ footer .container-fluid.container__fluid {
   .header__main-color.header__mini.header__profile.active,
   .header__main-color.header__mini.header__addUserForm.active,
   .header__main-color.header__mini.header__addBasicUserForm.active,
-  .header__main-color.header__mini.header__addAuditor.active {
+  .header__main-color.header__mini.header__addAuditor.active,
+  .header__main-color.header__mini.header__addStandarForm.active {
     height: 13.5rem !important;
   }
 
@@ -1151,8 +1160,20 @@ footer .container-fluid.container__fluid {
   }
 }
 
-@media screen and (max-width: 420px) {
+@media screen and (max-width: 425px) {
   .header__main-color.header__mini.header__addBasicUserForm {
+    height: 19rem !important;
+  }
+
+  .header__main-color.header__mini.header__addStandarForm {
+    height: 16rem !important;
+  }
+
+  .header__main-color.header__mini.header__addIndikatorForm.active {
+    height: 15rem !important;
+  }
+
+  .header__main-color.header__mini.header__addIndikatorForm {
     height: 19rem !important;
   }
 }
@@ -1169,10 +1190,32 @@ footer .container-fluid.container__fluid {
   .header__main-color.header__mini.header__daftarUser {
     height: 18.5rem !important;
   }
+
+  .header__main-color.header__mini.header__addStandarForm {
+    height: 19rem !important;
+  }
+
+  .header__main-color.header__mini.header__addStandarForm.active {
+    height: 15rem !important;
+  }
+}
+
+@media screen and (max-width: 372px) {
+  .header__main-color.header__mini.header__addIndikatorForm {
+    height: 21.5rem !important;
+  }
+
+  .header__main-color.header__mini.header__addIndikatorForm.active {
+    height: 15rem !important;
+  }
 }
 
 @media screen and (max-width: 320px) {
   .header__main-color.header__mini {
     height: 22.5rem !important;
+  }
+
+  .header__main-color.header__mini.header__addStandarForm {
+    height: 21.5rem !important;
   }
 }
