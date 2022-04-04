@@ -26,7 +26,7 @@
 <div class="form__add__user">
     <!-- Menampilkan flashdata -->
     <?= session()->getFlashdata('msg'); ?>
-    <form method="POST" action="/admin/adduser">
+    <form method="POST" action="/admin/adduser" id="formAddUser">
         <!-- fullname -->
         <div class="row mb-3 mb-sm-4">
             <label for="fullname" class="col-lg-3 col-md-4 col-sm-4 col-form-label form__label">Nama Lengkap
@@ -60,7 +60,7 @@
         <div class="row">
             <div class="col-lg-9 col-md-12 col-sm-12 button__section">
                 <a href="/admin/daftarUser" class="btn form__btn cancel__btn me-4 shadow-none" role="button">Batal</a>
-                <button type="submit" class="btn form__btn btn__dark shadow-none">
+                <button type="submit" class="btn form__btn btn__dark shadow-none" id="btnAddUser">
                     Simpan
                 </button>
             </div>
@@ -71,8 +71,33 @@
 <?= $this->endSection(); ?>
 
 <?= $this->section('script'); ?>
-
+<!-- jquery validate -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.19.3/jquery.validate.min.js"
+    integrity="sha512-37T7leoNS06R80c8Ulq7cdCDU5MNQBwlYoy1TX/WUsLFC2eYNqtKlV0QjH7r8JpG/S0GUMZwebnVFLPd6SU5yg=="
+    crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 <script>
+    // validate form jquery
+    $(document).ready(function() {
+        $("#formAddUser").validate({
+            rules: {
+                fullname: {
+                    required: true,
+                },
+                email: {
+                    required: true,
+                },
+                password: {
+                    required: true,
+                    minlength: 8,
+                },
+            },
+        });
+
+        $("#btnAddUser").on("click", () => {
+            console.log($("#formAddUser").valid());
+        });
+    });
+
     // togglePassword
     // change icon
     $("#togglePassword").click(function() {

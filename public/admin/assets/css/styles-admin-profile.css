@@ -86,14 +86,6 @@
   background-color: rgba(242, 89, 97, 0.1);
 }
 
-.error {
-  color: var(--danger-color);
-}
-
-input.error {
-  border: 1px solid var(--danger-color) !important;
-}
-
 @media screen and (max-width: 991px) {
   .profile__section {
     flex-direction: column;
