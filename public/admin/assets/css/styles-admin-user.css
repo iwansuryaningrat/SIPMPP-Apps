@@ -26,7 +26,7 @@
 }
 
 .table__user-number {
-  width: 5%;
+  width: 7%;
 }
 .table__user-aksi {
   width: 10%;
@@ -37,7 +37,7 @@
   min-width: 10rem;
 }
 .table__user-telepon {
-  width: 15%;
+  width: 13%;
   min-width: 8.75rem;
 }
 

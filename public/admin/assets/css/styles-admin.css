@@ -1060,13 +1060,15 @@ footer .container-fluid.container__fluid {
     height: 14rem !important;
   }
 
-  .header__main-color.header__mini.header__addBasicUserForm {
+  .header__main-color.header__mini.header__addBasicUserForm,
+  .header__main-color.header__mini.header__addAuditor {
     height: 18rem !important;
   }
 
   .header__main-color.header__mini.header__profile.active,
   .header__main-color.header__mini.header__addUserForm.active,
-  .header__main-color.header__mini.header__addBasicUserForm.active {
+  .header__main-color.header__mini.header__addBasicUserForm.active,
+  .header__main-color.header__mini.header__addAuditor.active {
     height: 13.5rem !important;
   }
 
@@ -1153,7 +1155,7 @@ footer .container-fluid.container__fluid {
 
 @media screen and (max-width: 390px) {
   .header__main-color.header__mini {
-    height: 19rem !important;
+    height: 17rem !important;
   }
 }
 

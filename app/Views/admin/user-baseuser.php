@@ -30,7 +30,7 @@
 
 <!--========== body main ==========-->
 <div class="title__table__add mb-3">
-  <h4 class="title__body__user mb-lg-4 mb-3">Daftar Base User</h4>
+  <h4 class="title__body__user mb-lg-4 mb-3 me-3">Daftar Base User</h4>
   <a href="/admin/addBasicUserform" class="btn shadow-none btn__add btn__dark mb-lg-4 mb-3">
     <i class="fa-solid fa-plus"></i>
     Add Base User
