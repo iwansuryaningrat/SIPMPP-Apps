@@ -199,7 +199,7 @@ class Admin extends BaseController
             'title' => 'Form Tambah User | SIPMPP Admin UNDIP ' . $this->thisTahun,
             'tab' => 'user',
             'css' => 'styles-admin-add-user.css',
-            'header' => 'header__mini',
+            'header' => 'header__mini header__addBasicUserForm',
             'i' => $this->i,
             'usersession' => $this->data_user,
             'users' => $users,

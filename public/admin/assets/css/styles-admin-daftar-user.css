@@ -36,6 +36,7 @@
 .table__user-fullname,
 .table__user-email {
   width: 27.5%;
+  min-width: 11.25rem;
 }
 
 .list__table__user-unit {
