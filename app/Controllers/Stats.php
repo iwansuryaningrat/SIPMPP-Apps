@@ -57,7 +57,7 @@ class Stats extends BaseController
         $this->thisTahun = (int)date('Y');
     }
 
-    // Get Induk Progress Output Percentage
+    // Get Induk Progress Output Percentage (Done)
     public function getIndukProgress($unit_id, $tahun)
     {
         // Induk Progress
@@ -78,7 +78,7 @@ class Stats extends BaseController
         return $indukpersen;
     }
 
-    // Get Standar Progress
+    // Get Standar Progress (Done)
     public function getStandarProgress($unit_id, $tahun)
     {
         // Standar Progress
@@ -132,7 +132,7 @@ class Stats extends BaseController
         return $dataprogresstandar;
     }
 
-    // Get Standar Progress for Doughnut Chart
+    // Get Standar Progress for Doughnut Chart (Done)
     public function getStandarProgressDoughnut($unit_id, $tahun)
     {
         $standar = $this->penilaianModel->getPenilaianByUnitIdTahun($unit_id, $tahun);
@@ -273,8 +273,6 @@ class Stats extends BaseController
                 }
             }
         }
-
-
 
         $dataTahun = [
             'tahun' => $tahun,
