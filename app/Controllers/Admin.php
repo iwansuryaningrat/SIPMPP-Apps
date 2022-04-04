@@ -76,6 +76,7 @@ class Admin extends BaseController
             'units' => $units,
             'tahun' => $usersession['tahun'],
             'tahunsession' => $this->tahun,
+            'cssCustom' => '',
         ];
 
 
@@ -97,6 +98,7 @@ class Admin extends BaseController
             'usersession' => $usersession,
             'tahun' => $usersession['tahun'],
             'tahunsession' => $this->tahun,
+            'cssCustom' => '',
         ];
 
         return view('admin/daftar-user', $data);
@@ -115,6 +117,7 @@ class Admin extends BaseController
             'usersession' => $usersession,
             'tahun' => $usersession['tahun'],
             'tahunsession' => $this->tahun,
+            'cssCustom' => '',
         ];
 
         return view('admin/add-user', $data);
@@ -177,6 +180,7 @@ class Admin extends BaseController
             'units' => $units,
             'tahun' => $usersession['tahun'],
             'tahunsession' => $this->tahun,
+            'cssCustom' => '',
         ];
 
         return view('admin/user-baseuser', $data);
@@ -204,6 +208,7 @@ class Admin extends BaseController
             'role' => $role,
             'tahun' => $usersession['tahun'],
             'tahunsession' => $this->tahun,
+            'cssCustom' => '',
         ];
 
         return view('admin/add-base-user', $data);
@@ -266,6 +271,7 @@ class Admin extends BaseController
             'units' => $units,
             'tahun' => $usersession['tahun'],
             'tahunsession' => $this->tahun,
+            'cssCustom' => '',
         ];
 
         return view('admin/user-leader', $data);
@@ -293,6 +299,7 @@ class Admin extends BaseController
             'roles' => $role,
             'tahun' => $usersession['tahun'],
             'tahunsession' => $this->tahun,
+            'cssCustom' => '',
         ];
 
         return view('admin/add-leader', $data);
@@ -317,6 +324,7 @@ class Admin extends BaseController
             'units' => $units,
             'tahun' => $usersession['tahun'],
             'tahunsession' => $this->tahun,
+            'cssCustom' => '',
         ];
 
         return view('admin/user-auditor', $data);
@@ -344,6 +352,7 @@ class Admin extends BaseController
             'roles' => $role,
             'tahun' => $usersession['tahun'],
             'tahunsession' => $this->tahun,
+            'cssCustom' => '',
         ];
 
         return view('admin/add-auditor', $data);
@@ -365,6 +374,7 @@ class Admin extends BaseController
             'units' => $units,
             'tahun' => $usersession['tahun'],
             'tahunsession' => $this->tahun,
+            'cssCustom' => '',
         ];
 
         return view('admin/units', $data);
@@ -477,6 +487,7 @@ class Admin extends BaseController
             'kategori' => $kategori,
             'tahun' => $usersession['tahun'],
             'tahunsession' => $this->tahun,
+            'cssCustom' => '',
         ];
 
         return view('admin/kategori', $data);
@@ -577,6 +588,7 @@ class Admin extends BaseController
             'induk' => $induk,
             'tahun' => $usersession['tahun'],
             'tahunsession' => $this->tahun,
+            'cssCustom' => '',
         ];
 
         return view('admin/dataInduk', $data);
@@ -600,6 +612,7 @@ class Admin extends BaseController
             'kategori' => $kategori,
             'tahun' => $usersession['tahun'],
             'tahunsession' => $this->tahun,
+            'cssCustom' => '',
         ];
 
         return view('admin/add-dataInduk', $data);
@@ -650,6 +663,7 @@ class Admin extends BaseController
             'kategori' => $kategori,
             'tahun' => $usersession['tahun'],
             'tahunsession' => $this->tahun,
+            'cssCustom' => '',
         ];
 
         return view('admin/edit-dataInduk', $data);
@@ -709,6 +723,7 @@ class Admin extends BaseController
             'css' => 'styles-admin-profile.css',
             'tahun' => $data_user['tahun'],
             'tahunsession' => $this->tahun,
+            'cssCustom' => '',
         ];
 
         return view('admin/profile', $data);
@@ -809,6 +824,7 @@ class Admin extends BaseController
             'standar' => $standar,
             'tahun' => $data_user['tahun'],
             'tahunsession' => $this->tahun,
+            'cssCustom' => '',
         ];
 
         return view('admin/standar', $data);
@@ -832,6 +848,7 @@ class Admin extends BaseController
             'kategori' => $kategori,
             'tahun' => $usersession['tahun'],
             'tahunsession' => $this->tahun,
+            'cssCustom' => '',
         ];
 
         return view('admin/add-standar', $data);
@@ -890,6 +907,7 @@ class Admin extends BaseController
             'kategori' => $kategori,
             'tahun' => $usersession['tahun'],
             'tahunsession' => $this->tahun,
+            'cssCustom' => '',
         ];
 
         return view('admin/edit-standar', $data);
@@ -938,6 +956,7 @@ class Admin extends BaseController
             'indikator' => $indikator,
             'tahun' => $usersession['tahun'],
             'tahunsession' => $this->tahun,
+            'cssCustom' => '',
         ];
 
         return view('admin/view-indikator', $data);
@@ -964,6 +983,7 @@ class Admin extends BaseController
             'indikator' => $indikator,
             'tahun' => $usersession['tahun'],
             'tahunsession' => $this->tahun,
+            'cssCustom' => '',
         ];
 
         return view('admin/add-indikator', $data);
@@ -1022,6 +1042,7 @@ class Admin extends BaseController
             'indikator' => $indikator,
             'tahun' => $usersession['tahun'],
             'tahunsession' => $this->tahun,
+            'cssCustom' => '',
         ];
 
         return view('admin/edit-indikator', $data);
@@ -1081,6 +1102,7 @@ class Admin extends BaseController
             'usersession' => $usersession,
             'tahun' => $usersession['tahun'],
             'tahunsession' => $this->tahun,
+            'cssCustom' => '<link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.11.5/css/jquery.dataTables.css">',
         ];
 
         return view('admin/penilaian', $data);
@@ -1101,6 +1123,7 @@ class Admin extends BaseController
             'usersession' => $usersession,
             'tahun' => $usersession['tahun'],
             'tahunsession' => $this->tahun,
+            'cssCustom' => '',
         ];
         return view('admin/report', $data);
     }
