@@ -27,6 +27,7 @@
 
 .table__user-kategori {
   width: 70%;
+  min-width: 15rem;
 }
 
 .table__kategori__content thead tr th,

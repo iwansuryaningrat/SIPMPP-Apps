@@ -26,10 +26,10 @@
 </div>
 
 <!--========== body main ==========-->
-<div class="title__table__add">
-    <h4 class="title__body__user">Daftar Kategori</h4>
-    <a href="#" class="btn shadow-none btn__add btn__dark add__unit__icon" role="button" data-bs-toggle="modal"
-        href="#staticBackdrop2">
+<div class="title__table__add mb-3">
+    <h4 class="title__body__user me-3 mb-lg-4 mb-3">Daftar Kategori</h4>
+    <a href="#" class="btn shadow-none btn__add btn__dark add__unit__icon mb-lg-4 mb-3" role="button"
+        data-bs-toggle="modal" href="#staticBackdrop2">
         <i class="fa-solid fa-plus"></i>
         Add Kategori
     </a>
