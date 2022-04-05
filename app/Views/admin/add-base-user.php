@@ -40,13 +40,14 @@
         </select>
       </div>
     </div>
+
     <!-- unit -->
     <div class="row mb-3 mb-sm-4">
       <label for="unit" class="col-lg-3 col-md-3 col-sm-4 col-form-label form__label">Unit <span
           class="color__danger">*</span></label>
       <div class="col-lg-6 col-md-9 col-sm-8">
-        <select name="unit" id="unit" class="form-select form__select shadow-none" required>
-          <option disabled selected>Pilih Unit</option>
+        <select name="unit" id="unit" class="form-select form__select shadow-none" multiple multiselect-search="true"
+          multiselect-select-all="true" multiselect-max-items="3" onchange="console.log(this.selectedOptions)" required>
           <?php foreach ($units as $unit) : ?>
           <option
             value="<?= $unit['unit_id'] ?>">
@@ -56,6 +57,7 @@
         </select>
       </div>
     </div>
+
     <!-- tahun -->
     <div class="row mb-3 mb-sm-4">
       <label for="tahun" class="col-lg-3 col-md-3 col-sm-4 col-form-label form__label">Tahun <span
@@ -88,7 +90,7 @@
 <?= $this->endSection(); ?>
 
 <?= $this->section('script'); ?>
-
+<script src="/admin/assets/js/multipleselect-dropdown.js"></script>
 <script>
 </script>
 
