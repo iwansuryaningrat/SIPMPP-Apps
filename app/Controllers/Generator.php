@@ -55,4 +55,12 @@ class Generator extends BaseController
         $this->session = \Config\Services::session();
         $this->thisTahun = (int)date('Y');
     }
+
+    public function indukGenerator()
+    {
+    }
+
+    public function standarGenerator()
+    {
+    }
 }
