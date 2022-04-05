@@ -503,14 +503,18 @@
 <!-- CHART YEAR -->
 <script>
   // ========== CONFIG CHART LINE ==========
-  const labelsLine = ['2018', '2019', '2020', '2021', '2022'];
+  const labelsLine = [<?php foreach ($nilaiTahun['tahun'] as $tahun) {
+                        echo '"' . $tahun . '",';
+                      } ?>];
 
   const dataLine = {
     labels: labelsLine,
     datasets: [{
         // data[0]
         label: 'Penelitian',
-        data: [120, 49, 24, 84, 56],
+        data: [<?php foreach ($nilaiTahun['nilai'] as $nilaitahunpen) {
+                  echo '"' . $nilaitahunpen['pen']['avg'] . '",';
+                } ?>],
         borderColor: 'rgba(73, 74, 106, 1)',
         backgroundColor: function gradientGenerate(chartStandarLine) {
           return gradientBackgroundLine(chartStandarLine.chart.ctx, chartStandarLine.chart.data.datasets[0]
@@ -521,7 +525,9 @@
       {
         // data[1]
         label: 'Pengabdian Masyarakat',
-        data: [59, 80, 63, 28, 64],
+        data: [<?php foreach ($nilaiTahun['nilai'] as $nilaitahunppm) {
+                  echo '"' . $nilaitahunppm['ppm']['avg'] . '",';
+                } ?>],
         borderColor: 'rgba(178, 99, 87, 1)',
         backgroundColor: function gradientGenerate(chartStandarLine) {
           return gradientBackgroundLine(chartStandarLine.chart.ctx, chartStandarLine.chart.data.datasets[1]
@@ -543,7 +549,7 @@
         y: {
           beginAtZero: true,
           suggestedMin: 0,
-          suggestedMax: 150,
+          suggestedMax: 110,
         }
       },
       interaction: {

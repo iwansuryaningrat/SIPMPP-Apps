@@ -58,26 +58,23 @@ class Home extends BaseController
         $this->thisTahun = (int)date('Y');
     }
 
-    // Dashboard Method
+    // Dashboard Method (Done)
     public function index()
     {
         $data_user = $this->data_user;
 
         // Induk Progress
         $indukpersen = $this->stats->getIndukProgress($data_user['unit_id'], $data_user['tahun']);
-        // dd($indukpersen);
 
         // Standar Progress
         $dataprogresstandar = $this->stats->getStandarProgress($data_user['unit_id'], $data_user['tahun']);
 
         $databykat = $this->stats->getStandarProgressDoughnut($data_user['unit_id'], $data_user['tahun']);
-        // dd($databykat);
         $datanilaiPEN = $databykat['pen'];
         $datanilaiPPM = $databykat['ppm'];
 
-
         // Nilai Per Tahun
-
+        $nilaiTahun = $this->stats->getNilaiPerTahun($data_user['unit_id']);
 
         $i = 1;
 
@@ -94,6 +91,7 @@ class Home extends BaseController
             'dataprogresstandar' => $dataprogresstandar,
             'datanilaiPEN' => $datanilaiPEN,
             'datanilaiPPM' => $datanilaiPPM,
+            'nilaiTahun' => $nilaiTahun,
         ];
 
         return view('user/index', $data);

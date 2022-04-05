@@ -225,97 +225,23 @@ class Stats extends BaseController
         return $data;
     }
 
-    // Get Nilai Per Tahun
+    // Get Nilai Per Tahun (Done)
     public function getNilaiPerTahun($unit_id)
     {
         $daftarTahun = $this->tahunModel->findAll();
         foreach ($daftarTahun as $year) {
             $tahun[] = $year['tahun'];
         }
-        // dd($tahun, $tahunnilai);
 
-        foreach ($daftarTahun as $a) {
-            $standar = $this->penilaianModel->getPenilaianByUnitIdTahun($unit_id, $a['tahun']);
-            $standarPen = $this->standarModel->getStandarByKategoriId('PEN');
-            foreach ($standarPen as $pen) {
-                $standaridPen[] = $pen['standar_id'];
-                $nilaiPen[] = 0;
-            }
-            $countpen = 0;
-
-            $standarPPM = $this->standarModel->getStandarByKategoriId('PPM');
-            foreach ($standarPPM as $PPM) {
-                $standaridPPM[] = $PPM['standar_id'];
-                $nilaiPPM[] = 0;
-            }
-            $countPPM = 0;
-
-            foreach ($standar as $datastandar) {
-                $indikator = $this->penilaianModel->getPenilaianProgress($unit_id, $a['tahun'], $datastandar['standar_id'], $datastandar['kategori_id']);
-                if ($datastandar['kategori_id'] == 'PEN') {
-                    $PENnilai = 0;
-                    $PENcount = 0;
-                    foreach ($indikator as $dataindikator) {
-                        if ($dataindikator['status'] == 'Diisi') {
-                            $PENnilai += $dataindikator['nilai_akhir'];
-                            $PENcount++;
-                        }
-                    }
-                    if ($PENcount != 0) {
-                        $nilaiPen[array_search($datastandar['standar_id'], $standaridPen)] = round($PENnilai / $PENcount, 2);
-                    }
-                } elseif ($datastandar['kategori_id'] == 'PPM') {
-                    $PPMnilai = 0;
-                    $PPMcount = 0;
-                    foreach ($indikator as $dataindikator) {
-                        if ($dataindikator['status'] == 'Diisi') {
-                            $PPMnilai += $dataindikator['nilai_akhir'];
-                            $PPMcount++;
-                        }
-                    }
-                    if ($PPMcount != 0) {
-                        $nilaiPPM[array_search($datastandar['standar_id'], $standaridPPM)] = round($PPMnilai / $PPMcount, 2);
-                    }
-                }
-            }
-
-            $sumPEN = 0;
-            $JumlahPen = 0;
-            foreach ($nilaiPen as $pen) {
-                if ($pen != 0) {
-                    $sumPEN += $pen;
-                    $JumlahPen++;
-                }
-            }
-            if ($JumlahPen != 0) {
-                $avgPEN = ($sumPEN / $JumlahPen);
-                $avgPEN = round($avgPEN, 2);
-            } else {
-                $avgPEN = 0;
-            }
-            $datanilaiPEN = $avgPEN;
-
-            $sumPPM = 0;
-            $JumlahPPM = 0;
-            foreach ($nilaiPPM as $PPM) {
-                if ($PPM != 0) {
-                    $sumPPM += $PPM;
-                    $JumlahPPM++;
-                }
-            }
-            if ($JumlahPPM != 0) {
-                $avgPPM = round(($sumPPM / $JumlahPPM), 2);
-            } else {
-                $avgPPM = 0;
-            }
-            $datanilaiPPM = $avgPPM;
-
-            $data[$a['tahun']] = [
-                'pen' => $datanilaiPEN,
-                'ppm' => $datanilaiPPM,
-            ];
+        foreach ($daftarTahun as $dataTahun) {
+            $nilai[] = Stats::getStandarProgressDoughnut($unit_id, $dataTahun['tahun']);
         }
 
-        dd($data);
+        $data = [
+            'tahun' => $tahun,
+            'nilai' => $nilai,
+        ];
+
+        return $data;
     }
 }
