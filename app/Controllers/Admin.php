@@ -1068,6 +1068,26 @@ class Admin extends BaseController
         return view('admin/auto-generate-data-induk', $data);
     }
 
+    //auto generate penilaian
+    public function autoGeneratePenilaian()
+    {
+        $usersession = $this->data_user;
+
+        $data = [
+            'title' => 'Auto Generate Penilaian | SIPMPP Admin UNDIP ' . $this->thisTahun,
+            'tab' => 'penilaian',
+            'css' => 'styles-admin-add-indikator.css',
+            'header' => 'header__mini header__addIndikatorForm',
+            'i' => $this->i,
+            'usersession' => $usersession,
+            'tahun' => $usersession['tahun'],
+            'tahunsession' => $this->tahun,
+            'cssCustom' => '',
+        ];
+
+        return view('admin/auto-generate-penilaian', $data);
+    }
+
 
 
 
