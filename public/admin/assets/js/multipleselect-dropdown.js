@@ -22,6 +22,7 @@ style.innerHTML = `
   margin-right:0.5em;
   display:inline-block;
 }
+
 .multiselect-dropdown span.optext{
   background-color: var(--light-color);
   padding: .5rem 1rem 0.5rem 0.5rem;
@@ -39,7 +40,7 @@ style.innerHTML = `
 }
 .multiselect-dropdown span.optext .optdel:hover { color: #c66;}
 .multiselect-dropdown span.placeholder{
-  color:#212529;
+  color: rgba(79, 79, 79, 0.6);
 }
 
 .multiselect-dropdown-list-wrapper{
@@ -111,9 +112,9 @@ function MultiselectDropdown(options) {
     height: "12rem",
     placeholder: "Pilih Unit",
     txtSelected: "selected",
-    txtAll: "All",
+    txtAll: "Pilih Semua",
     txtRemove: "Remove",
-    txtSearch: "Search Unit",
+    txtSearch: "Search",
     ...options,
   };
   function newEl(tag, attrs) {
@@ -267,7 +268,9 @@ function MultiselectDropdown(options) {
           div.appendChild(
             newEl("span", {
               class: "placeholder",
-              text: el.attributes["placeholder"]?.value ?? config.placeholder,
+              text:
+                el.attributes["placeholder"]?.value ??
+                el.attributes["placeholder-inputs"].value,
             })
           );
       };

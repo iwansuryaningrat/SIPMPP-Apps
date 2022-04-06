@@ -31,7 +31,7 @@
           class="color__danger">*</span></label>
       <div class="col-lg-6 col-md-9 col-sm-8">
         <select name="user" id="user" class="form-select form__select shadow-none" required>
-          <option disabled selected>Pilih User</option>
+          <option value="" disabled selected>Pilih User</option>
           <?php foreach ($users as $user) : ?>
           <option value="<?= $user['email'] ?>">
             <?= $user['nama']; ?>
@@ -46,7 +46,8 @@
           class="color__danger">*</span></label>
       <div class="col-lg-6 col-md-9 col-sm-8">
         <select name="unit" id="unit" class="form-select form__select shadow-none" multiple multiselect-search="true"
-          multiselect-select-all="true" multiselect-max-items="5" onchange="console.log(this.selectedOptions)" required>
+          multiselect-select-all="true" multiselect-max-items="5" onchange="console.log(this.selectedOptions)" required
+          placeholder-inputs="Pilih Unit">
           <?php foreach ($units as $unit) : ?>
           <option
             value="<?= $unit['unit_id'] ?>">
@@ -62,7 +63,7 @@
           class="color__danger">*</span></label>
       <div class="col-lg-6 col-md-9 col-sm-8">
         <select name="tahun" id="tahun" class="form-select form__select shadow-none" required>
-          <option disabled selected>Pilih Tahun</option>
+          <option value="" disabled selected>Pilih Tahun</option>
           <?php foreach ($tahuns as $tahuns) : ?>
           <option
             value="<?= $tahuns['tahun'] ?>">

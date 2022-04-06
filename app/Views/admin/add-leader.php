@@ -31,7 +31,7 @@
                     class="color__danger">*</span></label>
             <div class="col-lg-6 col-md-9 col-sm-8">
                 <select name="user" id="user" class="form-select form__select shadow-none" required>
-                    <option disabled selected>Pilih User</option>
+                    <option value="" disabled selected>Pilih User</option>
                     <?php foreach ($users as $user) : ?>
                     <option
                         value="<?= $user['email'] ?>">
@@ -47,7 +47,7 @@
                     class="color__danger">*</span></label>
             <div class="col-lg-6 col-md-9 col-sm-8">
                 <select name="tahun" id="tahun" class="form-select form__select shadow-none" required>
-                    <option disabled selected>Pilih Tahun</option>
+                    <option value="" disabled selected>Pilih Tahun</option>
                     <?php foreach ($tahuns as $tahuns) : ?>
                     <option
                         value="<?= $tahuns['tahun'] ?>">

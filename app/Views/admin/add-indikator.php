@@ -49,7 +49,7 @@
                 <span class="color__danger">*</span></label>
             <div class="col-lg-6 col-md-9 col-sm-8">
                 <select name="kebutuhan_data" id="kebutuhan_data" class="form-select form__select shadow-none" required>
-                    <option disabled selected>Pilih Kebutuhan Data</option>
+                    <option value="" disabled selected>Pilih Kebutuhan Data</option>
                 </select>
             </div>
         </div>
