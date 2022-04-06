@@ -47,7 +47,7 @@
           class="color__danger">*</span></label>
       <div class="col-lg-6 col-md-9 col-sm-8">
         <select name="unit" id="unit" class="form-select form__select shadow-none" multiple multiselect-search="true"
-          multiselect-select-all="true" multiselect-max-items="3" onchange="console.log(this.selectedOptions)" required>
+          multiselect-select-all="true" multiselect-max-items="5" onchange="console.log(this.selectedOptions)" required>
           <?php foreach ($units as $unit) : ?>
           <option
             value="<?= $unit['unit_id'] ?>">

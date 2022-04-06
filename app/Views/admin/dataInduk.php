@@ -28,10 +28,16 @@
 <!--========== body main ==========-->
 <div class="title__table__add mb-2">
     <h4 class="title__body__user me-3 mb-lg-4 mb-3">Daftar Data Induk</h4>
-    <a href="/admin/addDataIndukform" class="btn shadow-none btn__add btn__dark mb-lg-4 mb-3" role="button">
-        <i class="fa-solid fa-plus"></i>
-        Add Data Induk
-    </a>
+    <div class="title__body__button">
+        <a href="#" class="btn shadow-none btn__add btn__generate mb-lg-4 mb-3 me-3" role="button">
+            <i class="fa-solid fa-folder-plus"></i>
+            Auto Generate
+        </a>
+        <a href="/admin/addDataIndukform" class="btn shadow-none btn__add btn__dark mb-lg-4 mb-3" role="button">
+            <i class="fa-solid fa-plus"></i>
+            Add Data Induk
+        </a>
+    </div>
 </div>
 
 <!-- filter -->

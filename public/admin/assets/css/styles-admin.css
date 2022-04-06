@@ -85,6 +85,16 @@ button,
   color: var(--white);
 }
 
+.btn__generate {
+  background-color: rgba(255, 159, 64, 0.9);
+  color: rgba(255, 255, 255, 0.8);
+}
+
+.btn__generate:hover {
+  background-color: rgba(255, 159, 64, 1);
+  color: var(--white);
+}
+
 .btn__light {
   background-color: var(--light-color) !important;
   color: rgba(0, 0, 0, 0.7);
@@ -952,6 +962,12 @@ footer .container-fluid.container__fluid {
   align-items: center;
 }
 
+.title__body__button {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
 .btn__add {
   display: flex;
   align-items: center;
@@ -990,6 +1006,23 @@ footer .container-fluid.container__fluid {
   /**************************************/
   .big__btn {
     padding: 1rem 2.75rem;
+  }
+
+  .title__table__add,
+  .title__body__button {
+    width: 100%;
+  }
+
+  .title__body__button .btn__add.btn__generate {
+    margin-right: 0.625rem !important;
+    flex: 0.5;
+    justify-content: center;
+  }
+
+  .title__body__button .btn__add.btn__dark {
+    margin-left: 0.625rem !important;
+    flex: 0.5;
+    justify-content: center;
   }
 
   /********************************************/

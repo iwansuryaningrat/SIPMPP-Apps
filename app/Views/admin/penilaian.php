@@ -26,12 +26,18 @@
 </div>
 
 <!--========== body main ==========-->
-<div class="title__table__add">
-    <h4 class="title__body__user">Daftar Penilaian</h4>
-    <a href="/admin/addDataInduk" class="btn shadow-none btn__add btn__dark" role="button">
-        <i class="fa-solid fa-plus"></i>
-        Add Penilaian
-    </a>
+<div class="title__table__add mb-4">
+    <h4 class="title__body__user mb-lg-0 mb-3">Daftar Penilaian</h4>
+    <div class="title__body__button">
+        <a href="#" class="btn shadow-none btn__add btn__generate me-3" role="button">
+            <i class="fa-solid fa-folder-plus"></i>
+            Auto Generate
+        </a>
+        <a href="/admin/addDataInduk" class="btn shadow-none btn__add btn__dark" role="button">
+            <i class="fa-solid fa-plus"></i>
+            Add Penilaian
+        </a>
+    </div>
 </div>
 
 <!-- datatable penilaian -->

@@ -23,9 +23,11 @@ style.innerHTML = `
   display:inline-block;
 }
 .multiselect-dropdown span.optext{
-  background-color:lightgray;
+  background-color: var(--light-color);
   padding: .5rem 1rem 0.5rem 0.5rem;
   border-radius: 4px; 
+  margin-top: .25rem;
+  margin-bottom: .25rem;
 }
 .multiselect-dropdown span.optext .optdel {
   float: right;
