@@ -55,18 +55,13 @@
             </thead>
             <tbody>
                 <?php foreach ($users as $user) : ?>
-                <tr>
-                    <td><?= $i; ?>
-                    </td>
-                    <td><?= $user['nama']; ?>
-                    </td>
-                    <td><?= $user['email']; ?>
-                    </td>
-                    <td><?= $user['telp']; ?>
-                    </td>
-                    <td><?= $user['nip']; ?>
-                    </td>
-                </tr>
+                    <tr>
+                        <td><?= $i; ?></td>
+                        <td><?= $user['nama']; ?></td>
+                        <td><?= $user['email']; ?></td>
+                        <td><?= $user['telp']; ?></td>
+                        <td><?= $user['nip']; ?></td>
+                    </tr>
                 <?php $i++;
                 endforeach; ?>
             </tbody>

@@ -8,14 +8,11 @@
     <title>Kategori Data Induk | SIPMPP Admin UNDIP</title>
 
     <!-- bootstrap -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
-        integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous" />
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous" />
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.1/font/bootstrap-icons.css" />
     <!-- fontawesome -->
-    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v6.1.0/css/solid.css"
-        integrity="sha384-ltWlpN+Dl8XfKEnC9oW+dDRF8Z7jsYkxQ/WMRoJ2VHH5G2nQZ4if2NWwmV0ybzZ7" crossorigin="anonymous" />
-    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v6.1.0/css/fontawesome.css"
-        integrity="sha384-RLM8Rxp/DcBfCfSI3bGwwoMMxxy34D2e58WAqXmmdnh0WYlAQ8jeOB3A1ed5KUSm" crossorigin="anonymous" />
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v6.1.0/css/solid.css" integrity="sha384-ltWlpN+Dl8XfKEnC9oW+dDRF8Z7jsYkxQ/WMRoJ2VHH5G2nQZ4if2NWwmV0ybzZ7" crossorigin="anonymous" />
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v6.1.0/css/fontawesome.css" integrity="sha384-RLM8Rxp/DcBfCfSI3bGwwoMMxxy34D2e58WAqXmmdnh0WYlAQ8jeOB3A1ed5KUSm" crossorigin="anonymous" />
     <!-- uicons icon -->
     <link rel="stylesheet" href="/admin/assets/vendor/uicons-bold-rounded/css/uicons-bold-rounded.css" />
     <!-- custom -->
@@ -47,8 +44,7 @@
                         </li>
 
                         <li>
-                            <a class="nav__list__link-dropdown" data-bs-toggle="collapse" href="#user-collapse"
-                                role="button" aria-expanded="false" aria-controls="user-collapse">
+                            <a class="nav__list__link-dropdown" data-bs-toggle="collapse" href="#user-collapse" role="button" aria-expanded="false" aria-controls="user-collapse">
                                 <div class="link-dropdown__sidebar">
                                     <i class="fa-solid fa-id-card-clip"></i>
                                     <span>User</span>
@@ -64,12 +60,10 @@
                                             User</a>
                                     </li>
                                     <li>
-                                        <a href="/admin/auditor"
-                                            class="nav__list__link-collapse ellipsis__text">Auditor</a>
+                                        <a href="/admin/auditor" class="nav__list__link-collapse ellipsis__text">Auditor</a>
                                     </li>
                                     <li>
-                                        <a href="/admin/leader"
-                                            class="nav__list__link-collapse ellipsis__text">Leader</a>
+                                        <a href="/admin/leader" class="nav__list__link-collapse ellipsis__text">Leader</a>
                                     </li>
                                 </ul>
                             </div>
@@ -209,11 +203,8 @@
                                 <td>Mata Kuliah</td>
                                 <td>2019</td>
                                 <td>
-                                    <a data-bs-placement="top" title="Edit" href="/admin/addDataInduk"
-                                        class="edit__data__induk__icon me-4"><i
-                                            class="fa-solid fa-pen-to-square"></i></a>
-                                    <a data-bs-placement="top" title="Delete" href="/admin/addDataInduk"
-                                        class="delete__data__induk__icon"><i class="fa-solid fa-trash"></i></a>
+                                    <a data-bs-placement="top" title="Edit" href="/admin/addDataInduk" class="edit__data__induk__icon me-4"><i class="fa-solid fa-pen-to-square"></i></a>
+                                    <a data-bs-placement="top" title="Delete" href="/admin/addDataInduk" class="delete__data__induk__icon"><i class="fa-solid fa-trash"></i></a>
                                 </td>
                             </tr>
                             <tr>
@@ -224,11 +215,8 @@
                                     masyarakat</td>
                                 <td>2021</td>
                                 <td>
-                                    <a data-bs-placement="top" title="Edit" href="/admin/addDataInduk"
-                                        class="edit__data__induk__icon me-4"><i
-                                            class="fa-solid fa-pen-to-square"></i></a>
-                                    <a data-bs-placement="top" title="Delete" href="/admin/addDataInduk"
-                                        class="delete__data__induk__icon"><i class="fa-solid fa-trash"></i></a>
+                                    <a data-bs-placement="top" title="Edit" href="/admin/addDataInduk" class="edit__data__induk__icon me-4"><i class="fa-solid fa-pen-to-square"></i></a>
+                                    <a data-bs-placement="top" title="Delete" href="/admin/addDataInduk" class="delete__data__induk__icon"><i class="fa-solid fa-trash"></i></a>
                                 </td>
                             </tr>
                         </tbody>
@@ -253,19 +241,14 @@
 
     <!-- scripts -->
     <!-- jquery -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"
-        integrity="sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ=="
-        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js" integrity="sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
     <!-- bootstrap -->
-    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"
-        integrity="sha384-IQsoLXl5PILFhosVNubq5LC7Qb9DXgDA9i+tQ8Zj3iwWAwPtgFTxbJ8NT4GN1R8p" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js" integrity="sha384-IQsoLXl5PILFhosVNubq5LC7Qb9DXgDA9i+tQ8Zj3iwWAwPtgFTxbJ8NT4GN1R8p" crossorigin="anonymous">
     </script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.min.js"
-        integrity="sha384-cVKIPhGWiC2Al4u+LWgxfKTRIcfu0JTxR+EQDz/bgldoEyl4H0zUF0QKbrJ0EcQF" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.min.js" integrity="sha384-cVKIPhGWiC2Al4u+LWgxfKTRIcfu0JTxR+EQDz/bgldoEyl4H0zUF0QKbrJ0EcQF" crossorigin="anonymous">
     </script>
     <!-- fontawesome -->
-    <script defer src="https://use.fontawesome.com/releases/v6.1.0/js/all.js"
-        integrity="sha384-vLLEq/Un/eZFmXAu4Xxf8F00RSSMzPcI7iDiT6hpB4zFpezCEGhb5daeR8PLyrLI" crossorigin="anonymous">
+    <script defer src="https://use.fontawesome.com/releases/v6.1.0/js/all.js" integrity="sha384-vLLEq/Un/eZFmXAu4Xxf8F00RSSMzPcI7iDiT6hpB4zFpezCEGhb5daeR8PLyrLI" crossorigin="anonymous">
     </script>
     <!-- custom -->
     <script src="/admin/assets/js/scripts-admin.js"></script>

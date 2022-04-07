@@ -13,10 +13,10 @@
           <?php // uses regex that accepts any word character or hyphen in last name
           function split_name($name)
           {
-              $name = trim($name);
-              $last_name = (strpos($name, ' ') === false) ? '' : preg_replace('#.*\s([\w-]*)$#', '$1', $name);
-              $first_name = trim(preg_replace('#' . preg_quote($last_name, '#') . '#', '', $name));
-              return array($first_name, $last_name);
+            $name = trim($name);
+            $last_name = (strpos($name, ' ') === false) ? '' : preg_replace('#.*\s([\w-]*)$#', '$1', $name);
+            $first_name = trim(preg_replace('#' . preg_quote($last_name, '#') . '#', '', $name));
+            return array($first_name, $last_name);
           }
           echo split_name($usersession['nama'])[0];
           ?>
@@ -48,12 +48,12 @@
           <tbody>
 
             <?php foreach ($units as $unit) : ?>
-            <tr>
-              <td><?= $i; ?>
-              </td>
-              <td><?= $unit['nama_unit']; ?>
-              </td>
-            </tr>
+              <tr>
+                <td><?= $i; ?>
+                </td>
+                <td><?= $unit['nama_unit']; ?>
+                </td>
+              </tr>
             <?php $i++;
             endforeach; ?>
 

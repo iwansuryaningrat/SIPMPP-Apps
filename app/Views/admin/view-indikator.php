@@ -36,8 +36,7 @@
         </h4>
     </div>
     <div>
-        <a href="/admin/addindikatorform/<?= $standar['standar_id'] . '/' . $kategori['kategori_id'] ?>"
-            class="btn shadow-none btn__add btn__dark">
+        <a href="/admin/addindikatorform/<?= $standar['standar_id'] . '/' . $kategori['kategori_id'] ?>" class="btn shadow-none btn__add btn__dark">
             <i class="fa-solid fa-plus"></i>
             Add Indikator
         </a>
@@ -60,23 +59,19 @@
             <tbody>
 
                 <?php foreach ($indikator as $dataindikator) : ?>
-                <tr>
-                    <td><?= $i; ?>
-                    </td>
-                    <td><?= $dataindikator['nama_indikator']; ?>
-                    </td>
-                    <td><?= $dataindikator['target']; ?>
-                    </td>
-                    <td>Data</td>
-                    <td>
-                        <a data-bs-placement="top" title="Edit"
-                            href="admin/editindikatorform/<?= $standar['standar_id'] . '/' . $kategori['kategori_id'] . '/' . $dataindikator['indikator_id'] ?>"
-                            class="edit__data__induk__icon me-lg-4 me-md-4 me-3"><i
-                                class="fa-solid fa-pen-to-square"></i></a>
-                        <a data-bs-placement="top" title="Lihat" href="#" class="edit__data__induk__icon"><i
-                                class="fa-solid fa-eye"></i></a>
-                    </td>
-                </tr>
+                    <tr>
+                        <td><?= $i; ?>
+                        </td>
+                        <td><?= $dataindikator['nama_indikator']; ?>
+                        </td>
+                        <td><?= $dataindikator['target']; ?>
+                        </td>
+                        <td>Data</td>
+                        <td>
+                            <a data-bs-placement="top" title="Edit" href="admin/editindikatorform/<?= $standar['standar_id'] . '/' . $kategori['kategori_id'] . '/' . $dataindikator['indikator_id'] ?>" class="edit__data__induk__icon me-lg-4 me-md-4 me-3"><i class="fa-solid fa-pen-to-square"></i></a>
+                            <a data-bs-placement="top" title="Lihat" href="#" class="edit__data__induk__icon"><i class="fa-solid fa-eye"></i></a>
+                        </td>
+                    </tr>
                 <?php $i++;
                 endforeach; ?>
 

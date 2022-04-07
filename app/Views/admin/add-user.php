@@ -32,8 +32,7 @@
             <label for="fullname" class="col-lg-3 col-md-4 col-sm-4 col-form-label form__label">Nama Lengkap
                 <span class="color__danger">*</span></label>
             <div class="col-lg-6 col-md-8 col-sm-8">
-                <input class="form-control form__control shadow-none" id="fullname" name="fullname" required
-                    autocomplete="off" placeholder="Masukkan nama lengkap" />
+                <input class="form-control form__control shadow-none" id="fullname" name="fullname" required autocomplete="off" placeholder="Masukkan nama lengkap" />
             </div>
         </div>
         <!-- email -->
@@ -41,8 +40,7 @@
             <label for="email" class="col-lg-3 col-md-4 col-sm-4 col-form-label form__label">Email
                 <span class="color__danger">*</span></label>
             <div class="col-lg-6 col-md-8 col-sm-8">
-                <input class="form-control form__control shadow-none" id="email" name="email" required
-                    autocomplete="off" placeholder="Masukkan email" />
+                <input class="form-control form__control shadow-none" id="email" name="email" required autocomplete="off" placeholder="Masukkan email" />
             </div>
         </div>
         <!-- password -->
@@ -50,10 +48,8 @@
             <label for="password" class="col-lg-3 col-md-4 col-sm-4 col-form-label form__label">Password
                 <span class="color__danger">*</span></label>
             <div class="col-lg-6 col-md-8 col-sm-8 position-relative">
-                <input class="form-control form__control shadow-none" type="password" id="password" name="password"
-                    required autocomplete="off" placeholder="Masukkan password" />
-                <span id="togglePassword"><i class="fa-solid fa-eye icon__hide__password"
-                        title="show password"></i></span>
+                <input class="form-control form__control shadow-none" type="password" id="password" name="password" required autocomplete="off" placeholder="Masukkan password" />
+                <span id="togglePassword"><i class="fa-solid fa-eye icon__hide__password" title="show password"></i></span>
             </div>
         </div>
         <!-- button -->
@@ -72,9 +68,7 @@
 
 <?= $this->section('script'); ?>
 <!-- jquery validate -->
-<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.19.3/jquery.validate.min.js"
-    integrity="sha512-37T7leoNS06R80c8Ulq7cdCDU5MNQBwlYoy1TX/WUsLFC2eYNqtKlV0QjH7r8JpG/S0GUMZwebnVFLPd6SU5yg=="
-    crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.19.3/jquery.validate.min.js" integrity="sha512-37T7leoNS06R80c8Ulq7cdCDU5MNQBwlYoy1TX/WUsLFC2eYNqtKlV0QjH7r8JpG/S0GUMZwebnVFLPd6SU5yg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 <script>
     // validate form jquery
     $(document).ready(function() {

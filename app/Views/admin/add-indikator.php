@@ -27,20 +27,16 @@
     <form method="POST" action="#">
         <!-- User -->
         <div class="row mb-3 mb-sm-4">
-            <label for="indikator" class="col-lg-3 col-md-3 col-sm-4 col-form-label form__label">Indikator <span
-                    class="color__danger">*</span></label>
+            <label for="indikator" class="col-lg-3 col-md-3 col-sm-4 col-form-label form__label">Indikator <span class="color__danger">*</span></label>
             <div class="col-lg-6 col-md-9 col-sm-8">
-                <input type="text" name="indikator" id="indikator" class="form-control form__control shadow-none"
-                    required placeholder="Masukkan indikator">
+                <input type="text" name="indikator" id="indikator" class="form-control form__control shadow-none" required placeholder="Masukkan indikator">
             </div>
         </div>
         <!-- target -->
         <div class="row mb-3 mb-sm-4">
-            <label for="target" class="col-lg-3 col-md-3 col-sm-4 col-form-label form__label">Target <span
-                    class="color__danger">*</span></label>
+            <label for="target" class="col-lg-3 col-md-3 col-sm-4 col-form-label form__label">Target <span class="color__danger">*</span></label>
             <div class="col-lg-6 col-md-9 col-sm-8">
-                <input type="text" name="target" id="target" class="form-control form__control shadow-none" required
-                    placeholder="Masukkan target">
+                <input type="text" name="target" id="target" class="form-control form__control shadow-none" required placeholder="Masukkan target">
             </div>
         </div>
         <!-- kebutuhan data -->
@@ -58,27 +54,21 @@
             <label for="nilai_patokan" class="col-lg-3 col-md-3 col-sm-4 col-form-label form__label">Nilai Patokan
                 <span class="color__danger">*</span></label>
             <div class="col-lg-6 col-md-9 col-sm-8">
-                <input type="text" name="nilai_patokan" id="nilai_patokan"
-                    class="form-control form__control shadow-none" required placeholder="Masukkan nilai patokan"
-                    autocomplete="off" onkeypress="javascript: return validationNumber(event)">
+                <input type="text" name="nilai_patokan" id="nilai_patokan" class="form-control form__control shadow-none" required placeholder="Masukkan nilai patokan" autocomplete="off" onkeypress="javascript: return validationNumber(event)">
             </div>
         </div>
         <!-- satuan -->
         <div class="row mb-3 mb-sm-4">
-            <label for="satuan" class="col-lg-3 col-md-3 col-sm-4 col-form-label form__label">Satuan <span
-                    class="color__danger">*</span></label>
+            <label for="satuan" class="col-lg-3 col-md-3 col-sm-4 col-form-label form__label">Satuan <span class="color__danger">*</span></label>
             <div class="col-lg-6 col-md-9 col-sm-8">
-                <input type="text" name="satuan" id="satuan" class="form-control form__control shadow-none" required
-                    placeholder="Masukkan satuan">
+                <input type="text" name="satuan" id="satuan" class="form-control form__control shadow-none" required placeholder="Masukkan satuan">
             </div>
         </div>
         <!-- keterangan -->
         <div class="row mb-3 mb-sm-4">
-            <label for="keterangan" class="col-lg-3 col-md-3 col-sm-4 col-form-label form__label">Keterangan <span
-                    class="color__danger">*</span></label>
+            <label for="keterangan" class="col-lg-3 col-md-3 col-sm-4 col-form-label form__label">Keterangan <span class="color__danger">*</span></label>
             <div class="col-lg-6 col-md-9 col-sm-8">
-                <textarea name="keterangan" id="keterangan" class="form-control form__control shadow-none" required
-                    placeholder="Masukkan keterangan" cols="30" rows="3"></textarea>
+                <textarea name="keterangan" id="keterangan" class="form-control form__control shadow-none" required placeholder="Masukkan keterangan" cols="30" rows="3"></textarea>
             </div>
         </div>
         <!-- button -->
