@@ -25,7 +25,7 @@
 
 <!-- form add standar -->
 <div class="form__add__standar">
-    <form method="POST" action="/admin/editstandar/<?= $standar['standar_id'] . '/' . $standar['kategori_id']; ?>">
+    <form method="POST" action="/editdata/editstandar/<?= $standar['standar_id'] . '/' . $standar['kategori_id']; ?>">
         <!-- kategori -->
         <div class="row mb-3 mb-sm-4">
             <label for="kategori" class="col-lg-3 col-md-3 col-sm-4 col-form-label form__label">Kategori

@@ -81,7 +81,7 @@
         <h4 class="modal-title" id="modal-data-induk">Edit Unit</h4>
 
         <!-- form -->
-        <form class="modal__form" method="POST" action="/admin/editunit">
+        <form class="modal__form" method="POST" action="/Editdata/editunit">
           <!-- id input -->
           <input type="hidden" id="idEdit" name="unit_id" />
           <!-- unit -->

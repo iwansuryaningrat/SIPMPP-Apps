@@ -79,7 +79,7 @@
                 <h4 class="modal-title" id="modal-data-induk">Edit Kategori</h4>
 
                 <!-- form -->
-                <form class="modal__form" method="POST" action="/admin/editkategori">
+                <form class="modal__form" method="POST" action="/editdata/editkategori">
                     <!-- id input -->
                     <input type="hidden" name="id" id="idEdit" />
                     <!-- unit -->

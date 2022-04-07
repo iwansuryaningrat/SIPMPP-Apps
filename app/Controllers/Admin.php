@@ -313,34 +313,6 @@ class Admin extends BaseController
         return view('admin/units', $data);
     }
 
-    // Edit unit method
-    public function editunit()
-    {
-        $unit_id = $this->request->getVar('unit_id');
-        $nama_unit = $this->request->getVar('nama_unit');
-        dd($unit_id, $nama_unit);
-
-        $unit = $this->unitsModel->getUnit($unit_id);
-
-        if ($unit != null) {
-            $data = [
-                'unit_id' => $unit_id,
-                'nama_unit' => $nama_unit,
-            ];
-
-            // dd($data);
-
-            $this->unitsModel->update($unit_id, $data);
-
-            // Set flashdata gagal dan kirim pesan eror dengan flashdata
-            $this->session->setFlashdata('msg', '<div class="alert alert-success alert-dismissible fade show" role="alert">Unit berhasil diubah!</div>');
-            return redirect()->to(base_url('admin/units'));
-        } else {
-            $this->session->setFlashdata('msg', '<div class="alert alert-danger alert-dismissible fade show" role="alert">Unit tidak ditemukan!</div>');
-            return redirect()->to(base_url('admin/units'));
-        }
-    }
-
     // Delete unit method
     public function deleteunit($unit_id)
     {
@@ -379,31 +351,6 @@ class Admin extends BaseController
         ];
 
         return view('admin/kategori', $data);
-    }
-
-    // Edit kategori method
-    public function editkategori()
-    {
-        $kategori = $this->request->getVar('kategori');
-        $id = $this->request->getVar('id');
-
-        $datakategori = $this->kategoriModel->getKategoriById($id);
-
-        if ($datakategori != null) {
-            $data = [
-                'kategori_id' => $id,
-                'nama_kategori' => $kategori,
-            ];
-
-            $this->kategoriModel->update($id, $data);
-
-            // Set flashdata gagal dan kirim pesan eror dengan flashdata
-            $this->session->setFlashdata('msg', '<div class="alert alert-success alert-dismissible fade show" role="alert">Kategori berhasil diubah!</div>');
-            return redirect()->to(base_url('admin/kategori'));
-        } else {
-            $this->session->setFlashdata('msg', '<div class="alert alert-danger alert-dismissible fade show" role="alert">Kategori sudah ada!</div>');
-            return redirect()->to(base_url('admin/kategori'));
-        }
     }
 
     // Delete kategori method
@@ -495,29 +442,6 @@ class Admin extends BaseController
         return view('admin/edit-dataInduk', $data);
     }
 
-    // Update data induk
-    public function updateInduk()
-    {
-        $induk_id = $this->request->getVar('induk_id');
-        $kode = $this->request->getVar('kode');
-        $kategori_id = $this->request->getVar('kategori_id');
-        $nama_induk = $this->request->getVar('nama_induk');
-
-        $data = [
-            'induk_id' => $induk_id,
-            'kategori_id' => $kategori_id,
-            'kode' => $kode,
-            'nama_induk' => $nama_induk,
-        ];
-        // dd($data);
-
-        $this->dataIndukModel->update($induk_id, $data);
-
-        // Set flashdata gagal dan kirim pesan eror dengan flashdata
-        $this->session->setFlashdata('msg', '<div class="alert alert-success alert-dismissible fade show" role="alert">Data Induk berhasil diubah!</div>');
-        return redirect()->to(base_url('admin/induk'));
-    }
-
     // Delete data induk (Kurang delete Data yang menggunakan data induk)
     public function deleteInduk($induk_id, $kategori_id)
     {
@@ -553,83 +477,6 @@ class Admin extends BaseController
         ];
 
         return view('admin/profile', $data);
-    }
-
-    // Edit Password Method (Need Testing)
-    public function editPassword()
-    {
-        $data_user = $this->data_user;
-        $user = $this->usersModel->getUserByEmail($data_user['email']);
-
-        $old_password = $this->request->getVar('old-password');
-        $new_password = $this->request->getVar('new-password');
-
-        // Cek apakah password lama sama dengan password lama
-        if (password_verify($old_password, $user['password'])) {
-            // Cek apakah password baru sama dengan password lama
-            if ($old_password == $new_password) {
-                $this->session->setFlashdata('message', '<div class="alert alert-danger" role="alert"> <strong>Maaf!</strong> Password baru tidak boleh sama dengan password lama.</div>');
-                return redirect()->to('/admin/profile/');
-            } else {
-                // Update Password
-                $new_password = password_hash($new_password, PASSWORD_DEFAULT);
-                $this->usersModel->updatePassword($data_user['email'], $new_password);
-
-                $this->session->setFlashdata('message', '<div class="alert alert-success" role="alert"><strong>Selamat!</strong> Password berhasil diubah.</div>');
-                return redirect()->to('/admin/profile/');
-            }
-        } else {
-            $this->session->setFlashdata('message', '<div class="alert alert-danger" role="alert">
-            <strong>Maaf!</strong> Password lama tidak sesuai.</div>');
-            return redirect()->to('/admin/profile/');
-        }
-    }
-
-    // Edit Profile Method (Need Testing)
-    public function editProfile()
-    {
-        $data_user = $this->data_user;
-        $user = $this->usersModel->getUserByEmail($data_user['email']);
-
-        // Mengambil foto profil
-        $foto = $this->request->getFile('photo-profile');
-        if ($foto->getError() == 4) {
-            $namafoto = $user['foto'];
-        } else {
-            // Hapus foto lama
-            $namafoto = $user['foto'];
-            unlink('profile/' . $namafoto);
-            // set nama foto baru
-            $namafoto = 'foto-' . $user['email'] . '.' . $foto->getExtension();
-            $foto->move('profile/', $namafoto);
-        };
-
-        $data = [
-            'nama' => $this->request->getVar('fullname'),
-            'nip' => $this->request->getVar('nip'),
-            'telp' => $this->request->getVar('no-telp'),
-            'foto' => $namafoto,
-        ];
-
-        // Update Data
-        $this->usersModel->updateProfile($data_user['email'], $data);
-
-        // Update Session
-        $datasession = [
-            'email' => $user['email'],
-            'nama' => $data['nama'],
-            'foto' => $data['foto'],
-            'role_id' => $data_user['role_id'],
-            'role' => $data_user['role'],
-            'tahun' => $this->getTahun,
-            'isLoggedIn' => true,
-        ];
-
-        $this->session->set($datasession);
-
-        $this->session->setFlashdata('message', '<div class="alert alert-success" role="alert">
-        <strong>Selamat!</strong> Data berhasil diubah.</div>');
-        return redirect()->to('/admin/profile/');
     }
 
     // Standar Method (Done)
@@ -703,18 +550,6 @@ class Admin extends BaseController
         ];
 
         return view('admin/edit-standar', $data);
-    }
-
-    // Update Standar Method (Done)
-    public function editStandar($standar_id, $kategori_id)
-    {
-        $nama_standar = $this->request->getVar('namaStandar');
-
-        $this->standarModel->updateStandar($standar_id, $kategori_id, $nama_standar);
-        session()->setFlashdata('message', '<div class="alert alert-success" role="alert">
-        Data Standar berhasil diubah!
-        </div>');
-        return redirect()->to(base_url('admin/standar'));
     }
 
     // Delete Standar Method
