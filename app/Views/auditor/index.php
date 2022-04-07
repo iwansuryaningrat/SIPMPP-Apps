@@ -13,10 +13,10 @@
           <?php // uses regex that accepts any word character or hyphen in last name
           function split_name($name)
           {
-              $name = trim($name);
-              $last_name = (strpos($name, ' ') === false) ? '' : preg_replace('#.*\s([\w-]*)$#', '$1', $name);
-              $first_name = trim(preg_replace('#' . preg_quote($last_name, '#') . '#', '', $name));
-              return array($first_name, $last_name);
+            $name = trim($name);
+            $last_name = (strpos($name, ' ') === false) ? '' : preg_replace('#.*\s([\w-]*)$#', '$1', $name);
+            $first_name = trim(preg_replace('#' . preg_quote($last_name, '#') . '#', '', $name));
+            return array($first_name, $last_name);
           }
           echo split_name($data_user['nama'])[0];
           ?>
@@ -25,7 +25,7 @@
     </div>
     <div class="title__subtitle-btn">
       <a href="/home/report" class="report__link big__btn btn__dark">
-        <img src="/assets/img/icon/report-icon.svg" alt="icon-report" />
+        <img src="/auditor/img/icon/report-icon.svg" alt="icon-report" />
         <span>Report</span>
       </a>
     </div>
@@ -38,7 +38,7 @@
   <div class="progress__content-card mb-3 mb-sm-4 mb-lg-0 shadow__box-sm" id="progress-data-induk">
     <div class="d-flex align-items-center mb-2">
       <div class="progress__icon-warp">
-        <img src="/assets/img/logo-data-induk.svg" alt="logo-data-induk" />
+        <img src="/auditor/img/logo-data-induk.svg" alt="logo-data-induk" />
       </div>
       <h5 class="card__title mb-2">Pengisian Data Induk <span><?= $data_user['tahun']; ?></span></h5>
     </div>
@@ -50,9 +50,7 @@
       </div>
       <div>
         <div class="progress progress__content-progress-bar">
-          <div class="progress-bar bg__dark-main unit__progressbar" role="progressbar" aria-valuenow="72"
-            aria-valuemin="0" aria-valuemax="100" style="width: 72%" data-bs-toggle="tooltip" data-bs-placement="top"
-            title="72%"></div>
+          <div class="progress-bar bg__dark-main unit__progressbar" role="progressbar" aria-valuenow="72" aria-valuemin="0" aria-valuemax="100" style="width: 72%" data-bs-toggle="tooltip" data-bs-placement="top" title="72%"></div>
         </div>
       </div>
     </div>
@@ -61,7 +59,7 @@
   <div class="progress__content-card shadow__box-sm" id="progress-spmi">
     <div class="d-flex align-items-center mb-2">
       <div class="progress__icon-warp">
-        <img src="/assets/img/logo-spmi.svg" alt="logo-spmi" />
+        <img src="/auditor/img/logo-spmi.svg" alt="logo-spmi" />
       </div>
       <h5 class="mb-3 card__title">Pengisian Nilai SPMI <span><?= $data_user['tahun']; ?></span></h5>
     </div>
@@ -73,9 +71,7 @@
       </div>
       <div>
         <div class="progress progress__content-progress-bar">
-          <div class="progress-bar bg__dark-main unit__progressbar" role="progressbar" aria-valuenow="42"
-            aria-valuemin="0" aria-valuemax="100" style="width: 42%" data-bs-toggle="tooltip" data-bs-placement="top"
-            title="42%"></div>
+          <div class="progress-bar bg__dark-main unit__progressbar" role="progressbar" aria-valuenow="42" aria-valuemin="0" aria-valuemax="100" style="width: 42%" data-bs-toggle="tooltip" data-bs-placement="top" title="42%"></div>
         </div>
       </div>
     </div>
@@ -88,7 +84,7 @@
 <!-- <div class="recap__content-link">
     <div class="recap__link-card shadow__box-md">
       <div class="recap__link-card__body">
-        <img src="/assets/img/penelitian-logo.svg" alt="penelitian-logo" />
+        <img src="/auditor/img/penelitian-logo.svg" alt="penelitian-logo" />
         <h5 class="card__title mb-0 ellipsis__text">Penelitian</h5>
       </div>
       <div class="recap__link-card__footer">
@@ -101,7 +97,7 @@
 
     <div class="recap__link-card shadow__box-md">
       <div class="recap__link-card__body">
-        <img src="/assets/img/pengabdian-masyarakat-logo.svg" alt="penelitian-logo" />
+        <img src="/auditor/img/pengabdian-masyarakat-logo.svg" alt="penelitian-logo" />
         <h5 class="card__title mb-0 ellipsis__text">
           Pengabdian Masyarakat
         </h5>

@@ -1,0 +1,99 @@
+@import url(styles-data-induk.css);
+
+.status__spmi__content {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 1rem;
+  flex-wrap: wrap;
+}
+
+.spmi__content-desc .title__body__main {
+  margin: 0 0 1rem;
+}
+
+#status-spmi {
+  font-weight: 600;
+}
+
+.kirim__btn {
+  padding: 1.25rem 1.5rem;
+  border-radius: var(--radius-md);
+  color: rgba(255, 255, 255, 0.7);
+  background-color: rgba(38, 48, 77, 0.9);
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.kirim__btn svg {
+  font-size: 1rem;
+  margin-right: 0.75rem;
+}
+
+.kirim__btn:hover {
+  color: var(--white);
+  background-color: var(--dark-main-color);
+  box-shadow: 0 0.25rem 1.25rem rgba(0, 0, 0, 0.2);
+  -webkit-box-shadow: 0 0.25rem 1.25rem rgba(0, 0, 0, 0.2);
+  -moz-box-shadow: 0 0.25rem 1.25rem rgba(0, 0, 0, 0.2);
+}
+
+/* table */
+.table__spmi__content tbody tr:hover {
+  background-color: rgba(38, 48, 77, 0.1) !important;
+}
+
+.table__spmi__content thead tr th {
+  vertical-align: middle;
+}
+
+.table__spmi__content tr th:first-child,
+.table__spmi__content tr td:first-child,
+.table__spmi__content tr th:last-child,
+.table__spmi__content tr td:last-child,
+.table__spmi__content tr th:nth-child(2),
+.table__spmi__content tr th:nth-child(4),
+.table__spmi__content tr th:nth-child(5),
+.table__spmi__content tr th:nth-child(6),
+.table__spmi__content tr td:nth-child(2),
+.table__spmi__content tr td:nth-child(4),
+.table__spmi__content tr td:nth-child(5),
+.table__spmi__content tr td:nth-child(5) {
+  text-align: center;
+}
+
+.table__spmi__content tbody tr:last-child {
+  border-bottom: none;
+  border-bottom-style: hidden;
+}
+.table__spmi-number,
+.table__spmi-standar,
+.table__spmi-nilai,
+.table__spmi-aksi {
+  width: 10%;
+}
+
+.table__spmi-status {
+  width: 15%;
+}
+
+.table__spmi-nama {
+  width: 45%;
+}
+
+.table__spmi__content thead tr th,
+.table__spmi__content tbody tr td {
+  padding-right: 1.5rem;
+  padding-left: 1.5rem;
+}
+
+@media screen and (max-width: 576px) {
+  .status__spmi__content {
+    flex-direction: column;
+  }
+
+  .kirim__btn {
+    width: 100%;
+  }
+}

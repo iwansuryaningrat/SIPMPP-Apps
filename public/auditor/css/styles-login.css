@@ -1,0 +1,231 @@
+@import url(styles.css);
+
+/* login page */
+.container__login {
+  width: 100%;
+  height: 100vh;
+  min-height: 25rem;
+}
+
+.login__content {
+  display: flex;
+  flex-direction: row;
+}
+
+.login__content-left {
+  height: 100vh;
+
+  background-color: var(--dark-main-color);
+
+  flex: 0.5;
+}
+
+.content-left__bg {
+  background: url(/assets/img/background-gradient-book.png);
+  height: 100%;
+  background-size: auto 100%;
+  background-repeat: no-repeat;
+  background-position: right;
+  width: 100%;
+}
+
+.content-left__carousel {
+  height: 100%;
+  width: 100%;
+  padding: 4rem;
+}
+
+.carousel__inner {
+  height: 100%;
+}
+
+.carousel__item {
+  height: 100%;
+}
+
+.carousel__item .carousel-caption > p {
+  color: rgb(203, 203, 203);
+}
+.carousel__item .carousel-caption > h5 {
+  color: rgba(255, 255, 255, 0.9);
+  font-weight: 600;
+}
+
+.carousel__item-title {
+  width: 30rem;
+  color: rgba(255, 255, 255, 0.9);
+  margin-top: 2rem;
+  margin-bottom: 2rem;
+}
+
+.carousel__item-map__content {
+  height: calc(100% - 15rem);
+  width: 100%;
+  display: flex;
+  align-items: center;
+}
+
+.carousel__item-map {
+  margin: 0 auto;
+  max-width: 30rem;
+  max-height: 20rem;
+  position: relative;
+  box-shadow: 0 0.25rem 1.125rem rgba(0, 0, 0, 0.4);
+  -webkit-box-shadow: 0 0.25rem 1.125rem rgba(0, 0, 0, 0.4);
+  -moz-box-shadow: 0 0.25rem 1.125rem rgba(0, 0, 0, 0.4);
+}
+
+.carousel__item-map iframe {
+  height: 20rem;
+  max-width: 100%;
+}
+
+.carousel-caption.carousel__caption {
+  left: 10%;
+  right: 10%;
+}
+
+.login__card-content {
+  width: 400px;
+  height: 480px;
+
+  border-radius: 0.75rem;
+  background-color: rgba(255, 255, 255, 0.1);
+}
+
+.login__content-right {
+  display: flex;
+
+  flex: 0.5;
+  align-items: center;
+  justify-content: center;
+}
+
+.login__content-right__body {
+  max-width: 24rem;
+}
+
+.login__title {
+  margin-top: 1.5rem;
+  margin-bottom: 1.25rem !important;
+}
+
+.login__desc,
+.login__desc__unit {
+  color: rgba(0, 0, 0, 0.7);
+}
+
+.login__btn {
+  font-weight: 500;
+
+  width: 100%;
+  padding: 0.875rem 3rem;
+
+  transition: var(--trans-m);
+
+  color: rgba(255, 255, 255, 0.8);
+  border-radius: var(--radius-sm);
+  background-color: rgba(38, 48, 77, 0.9);
+}
+
+.login__btn:hover {
+  color: var(--white);
+  background-color: var(--dark-main-color);
+}
+
+.form__login .form-control.form__control,
+.form__login .form-select.form__select {
+  padding-right: 3rem !important;
+}
+
+.form__login #password {
+  padding-right: 5rem !important;
+}
+
+#togglePassword svg {
+  z-index: 99;
+  color: rgba(79, 79, 79, 0.25) !important;
+}
+
+.logo__sipmpp {
+  position: absolute;
+  top: 3rem;
+}
+
+.logo__sipmpp__content {
+  display: flex;
+  align-items: center;
+  justify-content: start;
+}
+
+.logo__sipmpp__content img {
+  height: 1.875rem;
+  display: block;
+  margin-right: 0.75rem;
+}
+
+.logo__sipmpp__content p {
+  font-size: 1.375rem;
+  margin-bottom: 0;
+  letter-spacing: 0.03em;
+  font-weight: 700;
+}
+
+form .position-relative svg {
+  font-size: 1rem;
+
+  position: absolute;
+  top: 3rem;
+  right: 1rem;
+
+  transition: var(--trans-m);
+
+  color: rgba(79, 79, 79, 0.6);
+}
+
+form .position-relative .icon__hide__password {
+  top: 3rem;
+  right: 3rem;
+}
+
+@media screen and (max-width: 1048px) {
+  .content-left__carousel {
+    display: none;
+  }
+}
+
+/* tablet view */
+@media screen and (max-width: 991px) {
+  .login__content-right__body {
+    max-width: 75%;
+  }
+
+  .login__content-left {
+    flex: 0.3;
+  }
+
+  .login__content-right {
+    flex: 0.7;
+  }
+
+  .logo__sipmpp {
+    top: 1.75rem;
+  }
+}
+
+/* mobile view */
+@media screen and (max-width: 576px) {
+  .login__content {
+    flex-direction: column;
+
+    height: 100vh;
+  }
+
+  .login__content-left {
+    display: none;
+  }
+
+  .login__content-right {
+    flex: 1;
+  }
+}

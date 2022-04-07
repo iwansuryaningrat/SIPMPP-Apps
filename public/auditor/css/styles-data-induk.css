@@ -1,0 +1,210 @@
+@import url(styles.css);
+
+.title__body__main {
+  font-weight: 600;
+  margin-top: 2.625rem;
+  margin-bottom: 2rem;
+}
+
+/* ========== filter btn ========== */
+.filter__table {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 1.5rem;
+}
+
+.filter__btn {
+  padding: 0.75rem 1rem !important;
+  border-radius: var(--radius-sm) !important;
+  background-color: var(--light-color) !important;
+  border: var(--border-sm) !important;
+  color: rgba(0, 0, 0, 0.8) !important;
+}
+
+.filter__btn:hover {
+  color: var(--black) !important;
+}
+
+.filter__btn.active {
+  color: rgba(255, 255, 255, 0.8) !important;
+  font-weight: 500 !important;
+  background-color: rgba(38, 48, 77, 0.9) !important;
+}
+
+.filter__btn.active:hover {
+  color: var(--white) !important;
+  background-color: var(--dark-main-color) !important;
+}
+
+.filter__table-year {
+  display: flex;
+  align-items: center;
+}
+
+.filter__table-year label {
+  font-weight: 500;
+  margin-right: 1rem;
+  color: var(--black);
+  margin-bottom: 0;
+}
+
+.filter__table-year select {
+  padding: 0.75rem 1rem;
+  width: 12.5rem;
+  margin-right: 1.125rem;
+  font-size: 0.875rem;
+}
+
+.terapkan__btn {
+  padding: 0.75rem 1.25rem;
+  border-radius: var(--radius-sm);
+  color: rgba(255, 255, 255, 0.8);
+  background-color: rgba(38, 48, 77, 0.9);
+}
+
+.terapkan__btn:hover {
+  color: var(--white);
+  background-color: var(--dark-main-color);
+}
+
+/* ========== table ========== */
+.table__datainduk__content tbody tr:hover {
+  background-color: rgba(38, 48, 77, 0.1) !important;
+}
+
+.table__datainduk__content tr th:first-child,
+.table__datainduk__content tr td:first-child,
+.table__datainduk__content tr th:last-child,
+.table__datainduk__content tr td:last-child,
+.table__datainduk__content tr th:nth-child(2),
+.table__datainduk__content tr th:nth-child(4),
+.table__datainduk__content tr td:nth-child(2),
+.table__datainduk__content tr td:nth-child(4) {
+  text-align: center;
+}
+
+.table__datainduk__content tbody tr:last-child {
+  border-bottom: none;
+  border-bottom-style: hidden;
+}
+
+.table__datainduk-number,
+.table__datainduk-nilai,
+.table__datainduk-aksi {
+  width: 10%;
+}
+
+.table__datainduk-kode {
+  width: 13%;
+}
+
+.table__datainduk-kebutuhandata {
+  width: 57%;
+}
+
+.table__datainduk__content thead tr th,
+.table__datainduk__content tbody tr td {
+  padding-right: 1.5rem;
+  padding-left: 1.5rem;
+}
+
+.sipmpp__table tr td .edit__data__induk__icon svg {
+  color: rgba(21, 114, 232, 1);
+}
+
+#alert-wrong-text .color__danger {
+  padding: 1rem;
+  border-radius: var(--radius-sm);
+  background-color: rgba(242, 89, 97, 0.1);
+}
+
+@media screen and (max-width: 1024px) {
+  /* ========== filter btn ========== */
+  .filter__btn {
+    padding: 0.5rem 0.875rem !important;
+  }
+  .filter__table {
+    flex-direction: column;
+  }
+
+  .filter__table-year select {
+    width: 16rem;
+  }
+
+  .terapkan__btn,
+  .filter__table-year select {
+    padding: 0.5rem 0.875rem !important;
+  }
+}
+
+@media screen and (max-width: 991px) {
+  .filter__table-year select,
+  .filter__table-year label {
+    margin-right: 1rem;
+  }
+
+  .filter__table-year select {
+    width: unset;
+    min-width: 10rem;
+  }
+
+  .filter__table .nav {
+    width: 100%;
+    margin-bottom: 1.25rem;
+  }
+
+  .filter__btn {
+    flex: 0.5;
+  }
+
+  .filter__btn:first-child {
+    margin-right: 0.625rem !important;
+  }
+  .filter__btn:last-child {
+    margin-left: 0.625rem !important;
+  }
+
+  .filter__table-year {
+    width: 100%;
+    justify-content: end;
+  }
+}
+
+@media screen and (max-width: 576px) {
+  .filter__btn {
+    width: 100%;
+  }
+
+  .filter__table .nav {
+    flex-direction: column;
+  }
+
+  .filter__btn:first-child {
+    margin-bottom: 0.75rem !important;
+    margin-right: 0 !important;
+  }
+
+  .filter__btn:last-child {
+    margin-left: 0 !important;
+  }
+
+  .filter__table-year {
+    width: 100%;
+    flex-wrap: wrap;
+  }
+
+  .filter__table-year label {
+    display: none;
+  }
+
+  .filter__table-year select {
+    margin-bottom: 0.75rem;
+    flex: 0.7;
+  }
+
+  .filter__table-year button {
+    margin-bottom: 0.75rem;
+    flex: 0.3;
+  }
+}
