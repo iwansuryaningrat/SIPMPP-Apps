@@ -330,7 +330,7 @@ class Home extends BaseController
         if ($dokumen->getError() == 4) {
             return redirect()->to('/home/indikatorform/' . $kategori_id . '/' . $standar_id . '/' . $indikator_id);
         } else {
-            $namadokumen = 'dokumen-' . $indikator_id . '-' . $standar_id . '-' . $unit_id . '-' . $kategori_id . '-' . $tahun . '.' . $dokumen->getExtension();
+            $namadokumen = $dokumen->getName() . $unit_id . $kategori_id . $tahun . $standar_id . $indikator_id . '.' . $dokumen->getExtension();
             // dd($namadokumen);
             $dokumen->move('dokumen/', $namadokumen);
         };
