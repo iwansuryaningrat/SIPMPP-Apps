@@ -58,9 +58,11 @@ class Generator extends BaseController
 
     public function indukGenerator()
     {
+        // Cek di database
     }
 
     public function standarGenerator()
     {
+        // Cek di database
     }
 }
