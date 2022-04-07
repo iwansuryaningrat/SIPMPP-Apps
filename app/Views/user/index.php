@@ -18,10 +18,10 @@
 
           function split_name($name)
           {
-            $name = trim($name);
-            $last_name = (strpos($name, ' ') === false) ? '' : preg_replace('#.*\s([\w-]*)$#', '$1', $name);
-            $first_name = trim(preg_replace('#' . preg_quote($last_name, '#') . '#', '', $name));
-            return array($first_name, $last_name);
+              $name = trim($name);
+              $last_name = (strpos($name, ' ') === false) ? '' : preg_replace('#.*\s([\w-]*)$#', '$1', $name);
+              $first_name = trim(preg_replace('#' . preg_quote($last_name, '#') . '#', '', $name));
+              return array($first_name, $last_name);
           }
           echo split_name($data_user['nama'])[0];
           ?>
@@ -55,7 +55,11 @@
       </div>
       <div>
         <div class="progress progress__content-progress-bar">
-          <div class="progress-bar bg__dark-main unit__progressbar" role="progressbar" aria-valuenow="<?= $indukpersen; ?>" aria-valuemin="0" aria-valuemax="100" style="width: <?= $indukpersen; ?>%" data-bs-toggle="tooltip" data-bs-placement="top" title="<?= $indukpersen; ?>%"></div>
+          <div class="progress-bar bg__dark-main unit__progressbar" role="progressbar"
+            aria-valuenow="<?= $indukpersen; ?>" aria-valuemin="0"
+            aria-valuemax="100" style="width: <?= $indukpersen; ?>%"
+            data-bs-toggle="tooltip" data-bs-placement="top"
+            title="<?= $indukpersen; ?>%"></div>
         </div>
       </div>
     </div>
@@ -72,11 +76,14 @@
     <div class="progress__content-progress">
       <div class="progress__content-progress-desc">
         <p>Task Complete</p>
-        <p><?= $dataprogresstandar['sum'] . '/' . $dataprogresstandar['count'] ?> Standar (<?= $dataprogresstandar['persen'] ?>%)</p>
+        <p><?= $dataprogresstandar['sum'] . '/' . $dataprogresstandar['count'] ?>
+          Standar (<?= $dataprogresstandar['persen'] ?>%)</p>
       </div>
       <div>
         <div class="progress progress__content-progress-bar">
-          <div class="progress-bar bg__dark-main unit__progressbar" role="progressbar" aria-valuenow="42" aria-valuemin="0" aria-valuemax="100" style="width: 42%" data-bs-toggle="tooltip" data-bs-placement="top" title="42%"></div>
+          <div class="progress-bar bg__dark-main unit__progressbar" role="progressbar" aria-valuenow="42"
+            aria-valuemin="0" aria-valuemax="100" style="width: 42%" data-bs-toggle="tooltip" data-bs-placement="top"
+            title="42%"></div>
         </div>
       </div>
     </div>
@@ -84,9 +91,9 @@
 </div>
 
 <!-- rekap content -->
-<div class="recap__content">
+<div class="recap__content row">
   <!-- left -->
-  <div class="recap__content-link">
+  <div class="recap__content-link col-lg-4 col-12">
     <div class="recap__link-card shadow__box-md">
       <div class="recap__link-card__body">
         <img src="/assets/img/penelitian-logo.svg" alt="penelitian-logo" />
@@ -118,16 +125,20 @@
 
   <!-- right -->
   <!-- table unit -->
-  <div class="recap__content-unit">
-    <div class="sipmpp__table radius__lg shadow__box-sm">
+  <div class="recap__content-unit col-lg-4 col-12">
+    <div class=" sipmpp__table radius__lg shadow__box-sm">
       <div class="content-unit__title">
         <h5 class="card__title mb-3">Progress SPMI <span><?= $data_user['tahun']; ?></span></h5>
         <div class="filter__panel mb-3">
           <div class="nav nav-pills" id="pills-tab" role="tablist">
-            <button class="btn filter__btn me-0 me-md-3 shadow-none active nav-link active" id="pills-spmi-penelitian" data-bs-toggle="pill" data-bs-target="#pills-table-spmi-penelitian" type="button" role="tab" aria-controls="pills-table-spmi-penelitian" aria-selected="true">
+            <button class="btn filter__btn me-0 me-md-3 shadow-none active nav-link active mb-2"
+              id="pills-spmi-penelitian" data-bs-toggle="pill" data-bs-target="#pills-table-spmi-penelitian"
+              type="button" role="tab" aria-controls="pills-table-spmi-penelitian" aria-selected="true">
               Penelitian
             </button>
-            <button class="btn filter__btn shadow-none nav-link" id="pills-spmi-pm" data-bs-toggle="pill" data-bs-target="#pills-table-spmi-pm" type="button" role="tab" aria-controls="pills-table-spmi-pm" aria-selected="false">
+            <button class="btn filter__btn shadow-none nav-link mb-2" id="pills-spmi-pm" data-bs-toggle="pill"
+              data-bs-target="#pills-table-spmi-pm" type="button" role="tab" aria-controls="pills-table-spmi-pm"
+              aria-selected="false">
               Pengabdian Masyarakat
             </button>
           </div>
@@ -136,7 +147,8 @@
 
       <div class="tab-content" id="pills-tabContent">
         <!-- table penelitian -->
-        <div class="tab-pane fade show active" id="pills-table-spmi-penelitian" role="tabpanel" aria-labelledby="pills-spmi-penelitian">
+        <div class="tab-pane fade show active" id="pills-table-spmi-penelitian" role="tabpanel"
+          aria-labelledby="pills-spmi-penelitian">
           <div class="table__unit table-responsive">
             <table class="table table__unit__content sipmpp__table-content table-hover">
               <thead class="bg__light">
@@ -151,15 +163,23 @@
                 <?php $Standard = $dataprogresstandar['standar'];
                 foreach ($Standard as $standar) :
                   if ($standar['kategori'] == 'PEN') : ?>
-                    <tr>
-                      <td><?= $standar['standar']; ?></td>
-                      <td><?= $standar['nama_standar']; ?></td>
-                      <td>
-                        <div class="progress table__unit__progress">
-                          <div class="progress-bar bg__dark-main unit__progressbar" role="progressbar" aria-valuenow="<?= round($standar['persen'], 2); ?>" aria-valuemin="0" aria-valuemax="100" style="width: <?= round($standar['persen'], 2); ?>%" data-bs-toggle="tooltip" data-bs-placement="top" title="<?= round($standar['persen'], 2); ?>%"></div>
-                        </div>
-                      </td>
-                    </tr>
+                <tr>
+                  <td><?= $standar['standar']; ?>
+                  </td>
+                  <td><?= $standar['nama_standar']; ?>
+                  </td>
+                  <td>
+                    <div class="progress table__unit__progress">
+                      <div class="progress-bar bg__dark-main unit__progressbar" role="progressbar"
+                        aria-valuenow="<?= round($standar['persen'], 2); ?>"
+                        aria-valuemin="0" aria-valuemax="100"
+                        style="width: <?= round($standar['persen'], 2); ?>%"
+                        data-bs-toggle="tooltip" data-bs-placement="top"
+                        title="<?= round($standar['persen'], 2); ?>%">
+                      </div>
+                    </div>
+                  </td>
+                </tr>
                 <?php endif;
                 endforeach; ?>
 
@@ -184,15 +204,23 @@
                 <?php $Standard = $dataprogresstandar['standar'];
                 foreach ($Standard as $standar) :
                   if ($standar['kategori'] == 'PPM') : ?>
-                    <tr>
-                      <td><?= $standar['standar']; ?></td>
-                      <td><?= $standar['nama_standar']; ?></td>
-                      <td>
-                        <div class="progress table__unit__progress">
-                          <div class="progress-bar bg__dark-main unit__progressbar" role="progressbar" aria-valuenow="<?= round($standar['persen'], 2); ?>" aria-valuemin="0" aria-valuemax="100" style="width: <?= round($standar['persen'], 2); ?>%" data-bs-toggle="tooltip" data-bs-placement="top" title="<?= round($standar['persen'], 2); ?>%"></div>
-                        </div>
-                      </td>
-                    </tr>
+                <tr>
+                  <td><?= $standar['standar']; ?>
+                  </td>
+                  <td><?= $standar['nama_standar']; ?>
+                  </td>
+                  <td>
+                    <div class="progress table__unit__progress">
+                      <div class="progress-bar bg__dark-main unit__progressbar" role="progressbar"
+                        aria-valuenow="<?= round($standar['persen'], 2); ?>"
+                        aria-valuemin="0" aria-valuemax="100"
+                        style="width: <?= round($standar['persen'], 2); ?>%"
+                        data-bs-toggle="tooltip" data-bs-placement="top"
+                        title="<?= round($standar['persen'], 2); ?>%">
+                      </div>
+                    </div>
+                  </td>
+                </tr>
                 <?php endif;
                 endforeach; ?>
 
@@ -214,10 +242,14 @@
         <h5 class="card__title">Status Nilai SPMI <span><?= $data_user['tahun']; ?></span></h5>
         <div class="filter__panel">
           <div class="nav nav-pills" id="pills-tab" role="tablist">
-            <button class="btn filter__btn-chart me-0 me-md-3 shadow-none active nav-link active mb-3" id="pillsStandarPenelitian" data-bs-toggle="pill" data-bs-target="#pillsChartStandarPenelitian" type="button" role="tab" aria-controls="pillsChartStandarPenelitian" aria-selected="true">
+            <button class="btn filter__btn-chart me-0 me-md-3 shadow-none active nav-link active mb-3"
+              id="pillsStandarPenelitian" data-bs-toggle="pill" data-bs-target="#pillsChartStandarPenelitian"
+              type="button" role="tab" aria-controls="pillsChartStandarPenelitian" aria-selected="true">
               Penelitian
             </button>
-            <button class="btn filter__btn-chart shadow-none nav-link mb-3" id="pillsStandarPengabdian" data-bs-toggle="pill" data-bs-target="#pillsChartStandarPengabdian" type="button" role="tab" aria-controls="pillsChartStandarPengabdian" aria-selected="false">
+            <button class="btn filter__btn-chart shadow-none nav-link mb-3" id="pillsStandarPengabdian"
+              data-bs-toggle="pill" data-bs-target="#pillsChartStandarPengabdian" type="button" role="tab"
+              aria-controls="pillsChartStandarPengabdian" aria-selected="false">
               Pengabdian Masyarakat
             </button>
           </div>
@@ -226,14 +258,16 @@
       <hr />
       <div class="tab-content" id="pills-tabContent">
         <!-- penelitian -->
-        <div class="tab-pane fade show active" id="pillsChartStandarPenelitian" role="tabpanel" aria-labelledby="pillsStandarPenelitian">
+        <div class="tab-pane fade show active" id="pillsChartStandarPenelitian" role="tabpanel"
+          aria-labelledby="pillsStandarPenelitian">
           <div class="chart__container">
             <canvas id="chartStandarDoughnutPenelitian"></canvas>
           </div>
         </div>
 
         <!-- pengabdian masyarakat -->
-        <div class="tab-pane fade" id="pillsChartStandarPengabdian" role="tabpanel" aria-labelledby="pillsStandarPengabdian">
+        <div class="tab-pane fade" id="pillsChartStandarPengabdian" role="tabpanel"
+          aria-labelledby="pillsStandarPengabdian">
           <div class="chart__container">
             <canvas id="chartStandarDoughnutPengabdian"></canvas>
           </div>
@@ -249,8 +283,10 @@
       <div class="chart__container">
         <canvas id="chartStandarLine"></canvas>
         <div class="legends__chart">
-          <button id="legendsPenelitian" class="legends__item btn shadow-none ellipsis__text" onclick="toggleDataChart(0)"></button>
-          <button id="legendsPengabdian" class="legends__item btn shadow-none ellipsis__text" onclick="toggleDataChart(1)"></button>
+          <button id="legendsPenelitian" class="legends__item btn shadow-none ellipsis__text"
+            onclick="toggleDataChart(0)"></button>
+          <button id="legendsPengabdian" class="legends__item btn shadow-none ellipsis__text"
+            onclick="toggleDataChart(1)"></button>
         </div>
       </div>
     </div>
@@ -268,17 +304,21 @@
 <script>
   // ========== CONFIG CHART DOUNAT ==========
   // setup block
-  const labelsDoughnutPenelitian = [<?php foreach ($datanilaiPEN['standar'] as $PEN) {
-                                      echo '"' . $PEN . '",';
-                                    } ?>];
+  const labelsDoughnutPenelitian = [
+    <?php foreach ($datanilaiPEN['standar'] as $PEN) {
+                    echo '"' . $PEN . '",';
+                } ?>
+  ];
 
   const dataDoughnutPenelitian = {
     labels: labelsDoughnutPenelitian,
     datasets: [{
       label: 'Standar Dataset',
-      data: [<?php foreach ($datanilaiPEN['nilai'] as $nilaiPEN) {
-                echo $nilaiPEN . ',';
-              } ?>],
+      data: [
+        <?php foreach ($datanilaiPEN['nilai'] as $nilaiPEN) {
+                    echo $nilaiPEN . ',';
+                } ?>
+      ],
       backgroundColor: [
         'rgb(15, 22, 67)',
         'rgb(73, 74, 106)',
@@ -333,7 +373,8 @@
       ctx.font = '42px Work Sans';
       ctx.textAlign = 'center';
       ctx.textBaseline = 'middle';
-      ctx.fillText('<?= $datanilaiPEN['avg'] ?>', left + (width / 2), top + (height / 2));
+      ctx.fillText('<?= $datanilaiPEN['avg'] ?>', left + (
+        width / 2), top + (height / 2));
     },
     afterInit(chart, args, options) {
       const fitValue = chart.legend.fit;
@@ -386,17 +427,21 @@
 <script>
   // ========== CONFIG CHART DOUNAT ==========
   // setup block
-  const labelsDoughnutPengabdian = [<?php foreach ($datanilaiPPM['standar'] as $PPM) {
-                                      echo '"' . $PPM . '",';
-                                    } ?>];
+  const labelsDoughnutPengabdian = [
+    <?php foreach ($datanilaiPPM['standar'] as $PPM) {
+                    echo '"' . $PPM . '",';
+                } ?>
+  ];
 
   const dataDoughnutPengabdian = {
     labels: labelsDoughnutPengabdian,
     datasets: [{
       label: 'Standar Dataset',
-      data: [<?php foreach ($datanilaiPPM['nilai'] as $nilaiPPM) {
-                echo $nilaiPPM . ',';
-              } ?>],
+      data: [
+        <?php foreach ($datanilaiPPM['nilai'] as $nilaiPPM) {
+                    echo $nilaiPPM . ',';
+                } ?>
+      ],
       backgroundColor: [
         'rgb(15, 22, 67)',
         'rgb(73, 74, 106)',
@@ -451,7 +496,8 @@
       ctx.font = '42px Work Sans';
       ctx.textAlign = 'center';
       ctx.textBaseline = 'middle';
-      ctx.fillText('<?= $datanilaiPPM['avg'] ?>', left + (width / 2), top + (height / 2));
+      ctx.fillText('<?= $datanilaiPPM['avg'] ?>', left + (
+        width / 2), top + (height / 2));
     },
     afterInit(chart, args, options) {
       const fitValuePengabdian = chart.legend.fit;
@@ -503,18 +549,22 @@
 <!-- CHART YEAR -->
 <script>
   // ========== CONFIG CHART LINE ==========
-  const labelsLine = [<?php foreach ($nilaiTahun['tahun'] as $tahun) {
-                        echo '"' . $tahun . '",';
-                      } ?>];
+  const labelsLine = [
+    <?php foreach ($nilaiTahun['tahun'] as $tahun) {
+                    echo '"' . $tahun . '",';
+                } ?>
+  ];
 
   const dataLine = {
     labels: labelsLine,
     datasets: [{
         // data[0]
         label: 'Penelitian',
-        data: [<?php foreach ($nilaiTahun['nilai'] as $nilaitahunpen) {
-                  echo '"' . $nilaitahunpen['pen']['avg'] . '",';
-                } ?>],
+        data: [
+          <?php foreach ($nilaiTahun['nilai'] as $nilaitahunpen) {
+                    echo '"' . $nilaitahunpen['pen']['avg'] . '",';
+                } ?>
+        ],
         borderColor: 'rgba(73, 74, 106, 1)',
         backgroundColor: function gradientGenerate(chartStandarLine) {
           return gradientBackgroundLine(chartStandarLine.chart.ctx, chartStandarLine.chart.data.datasets[0]
@@ -525,9 +575,11 @@
       {
         // data[1]
         label: 'Pengabdian Masyarakat',
-        data: [<?php foreach ($nilaiTahun['nilai'] as $nilaitahunppm) {
-                  echo '"' . $nilaitahunppm['ppm']['avg'] . '",';
-                } ?>],
+        data: [
+          <?php foreach ($nilaiTahun['nilai'] as $nilaitahunppm) {
+                    echo '"' . $nilaitahunppm['ppm']['avg'] . '",';
+                } ?>
+        ],
         borderColor: 'rgba(178, 99, 87, 1)',
         backgroundColor: function gradientGenerate(chartStandarLine) {
           return gradientBackgroundLine(chartStandarLine.chart.ctx, chartStandarLine.chart.data.datasets[1]
