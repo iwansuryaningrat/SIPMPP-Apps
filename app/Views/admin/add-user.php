@@ -26,7 +26,7 @@
 <div class="form__add__user">
     <!-- Menampilkan flashdata -->
     <?= session()->getFlashdata('msg'); ?>
-    <form method="POST" action="/admin/adduser" id="formAddUser">
+    <form method="POST" action="/savedata/adduser" id="formAddUser">
         <!-- fullname -->
         <div class="row mb-3 mb-sm-4">
             <label for="fullname" class="col-lg-3 col-md-4 col-sm-4 col-form-label form__label">Nama Lengkap

@@ -24,7 +24,7 @@
 
 <!-- form add data induk -->
 <div class="form__add__datainduk">
-    <form method="POST" action="/admin/adddatainduk">
+    <form method="POST" action="/savedata/adddatainduk">
         <!-- kategori -->
         <div class="row mb-3 mb-sm-4">
             <label for="kategori" class="col-lg-3 col-md-3 col-sm-4 col-form-label form__label">Kategori

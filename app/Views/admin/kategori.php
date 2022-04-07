@@ -111,7 +111,7 @@
                 <h4 class="modal-title" id="modal-data-induk">Add Kategori</h4>
 
                 <!-- form -->
-                <form class="modal__form" method="POST" action="/admin/addkategori">
+                <form class="modal__form" method="POST" action="/savedata/addkategori">
                     <!-- id input -->
                     <input type="hidden" id="idAdd" />
                     <!-- unit -->

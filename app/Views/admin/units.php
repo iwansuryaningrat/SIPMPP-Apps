@@ -113,7 +113,7 @@
         <h4 class="modal-title" id="modal-data-induk">Add Unit</h4>
 
         <!-- form -->
-        <form class="modal__form" method="POST" action="/admin/addunit">
+        <form class="modal__form" method="POST" action="/savedata/addunit">
           <!-- id input -->
           <input type="hidden" id="idAdd" />
           <!-- unit -->

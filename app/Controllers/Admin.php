@@ -123,44 +123,6 @@ class Admin extends BaseController
         return view('admin/add-user', $data);
     }
 
-    // Add user method (Done)
-    public function addUser()
-    {
-        $email = $this->request->getVar('email');
-        $nama = $this->request->getVar('fullname');
-        $password = password_hash($this->request->getVar('password'), PASSWORD_DEFAULT);
-
-        // Validasi email
-        $validation =  \Config\Services::validation();
-        $valid = $this->validate([
-            'email' => [
-                'label' => 'Email',
-                'rules' => 'required|is_unique[users.email]',
-                'errors' => [
-                    'required' => '{field} tidak boleh kosong',
-                    'is_unique' => '{field} sudah terdaftar'
-                ]
-            ],
-        ]);
-
-        if (!$valid) {
-            // Set flashdata gagal dan kirim pesan eror dengan flashdata
-            $this->session->setFlashdata('msg', '<div class="alert alert-danger alert-dismissible fade show" role="alert">Email sudah terdaftar!</div>');
-            return redirect()->to(base_url('admin/adduserform'));
-        } else {
-            $data = [
-                'email' => $email,
-                'nama' => $nama,
-                'password' => $password,
-            ];
-
-            $this->usersModel->insert($data);
-            // Set flashdata gagal dan kirim pesan eror dengan flashdata
-            $this->session->setFlashdata('msg', '<div class="alert alert-success alert-dismissible fade show" role="alert">User berhasil ditambahkan!</div>');
-            return redirect()->to(base_url('admin/daftaruser'));
-        }
-    }
-
     // User Method (Done)
     public function user()
     {
@@ -212,35 +174,6 @@ class Admin extends BaseController
         ];
 
         return view('admin/add-base-user', $data);
-    }
-
-    // Add user role unit method (Done)
-    public function addBasicUser($role)
-    {
-        $email = $this->request->getVar('user');
-        $role_id = $this->roleModel->getRole($role);
-        $role_id = (int)$role_id['role_id'];
-
-        if ($role == 'pimpinan') {
-            $unit = 'lppm';
-        } else {
-            $unit = $this->request->getVar('unit');
-        }
-        $tahun = (int)$this->request->getVar('tahun');
-
-        $data = [
-            'email' => $email,
-            'role_id' => $role_id,
-            'unit_id' => $unit,
-            'tahun' => $tahun,
-        ];
-
-        // Insert data ke User Role Unit
-        $this->userroleunitModel->insert($data);
-
-        // Set flashdata gagal dan kirim pesan eror dengan flashdata
-        $this->session->setFlashdata('msg', '<div class="alert alert-success alert-dismissible fade show" role="alert">User berhasil ditambahkan!</div>');
-        return redirect()->to(base_url('admin/daftaruser'));
     }
 
     // Delete User Role Unit Method (Kurang kondisi hapus per unit tertentu)
@@ -380,51 +313,6 @@ class Admin extends BaseController
         return view('admin/units', $data);
     }
 
-    // Add Unit method (Done)
-    public function addunit()
-    {
-        $nama_unit = $this->request->getVar('nama_unit');
-        // dd($unit);
-
-        function split_name($name)
-        {
-            $name = trim($name);
-            $last_name = (strpos($name, ' ') === false) ? '' : preg_replace('#.*\s([\w-]*)$#', '$1', $name);
-            $first_name = trim(preg_replace('#' . preg_quote($last_name, '#') . '#', '', $name));
-            return array($first_name, $last_name);
-        }
-
-        $nama = explode(" ", $nama_unit);
-        $count = count($nama);
-
-        $id = $nama[0];
-        if ($count > 1) {
-            for ($i = 1; $i < $count; $i++) {
-                $id .= $nama[$i];
-            }
-        }
-
-        // Get unit by id
-        $unit = $this->unitsModel->getUnit($id);
-        // dd($unit);
-
-        if ($unit != null) {
-            $this->session->setFlashdata('msg', '<div class="alert alert-danger alert-dismissible fade show" role="alert">Unit telah ada! Silakan menambahkan unit lain.</div>');
-            return redirect()->to(base_url('admin/units'));
-        } else {
-            $data = [
-                'unit_id' => $id,
-                'nama_unit' => $nama_unit,
-            ];
-
-            $this->unitsModel->insert($data);
-
-            // Set flashdata gagal dan kirim pesan eror dengan flashdata
-            $this->session->setFlashdata('msg', '<div class="alert alert-success alert-dismissible fade show" role="alert">Unit berhasil ditambahkan!</div>');
-            return redirect()->to(base_url('admin/units'));
-        }
-    }
-
     // Edit unit method
     public function editunit()
     {
@@ -491,42 +379,6 @@ class Admin extends BaseController
         ];
 
         return view('admin/kategori', $data);
-    }
-
-    // Add kategori method (Done)
-    public function addkategori()
-    {
-        $kategori = $this->request->getVar('kategori');
-
-        function name($name)
-        {
-            $name = trim($name);
-            $last_name = (strpos($name, ' ') === false) ? '' : preg_replace('#.*\s([\w-]*)$#', '$1', $name);
-            $first_name = trim(preg_replace('#' . preg_quote($last_name, '#') . '#', '', $name));
-            return array($first_name, $last_name);
-        }
-
-        $id = strtolower(name($kategori)[0]);
-        $id = strtolower($id);
-
-
-        $datakategori = $this->kategoriModel->getKategoriById($id);
-
-        if ($datakategori != null) {
-            $this->session->setFlashdata('msg', '<div class="alert alert-danger alert-dismissible fade show" role="alert">Kategori sudah ada!</div>');
-            return redirect()->to(base_url('admin/kategori'));
-        } else {
-            $data = [
-                'kategori_id' => $id,
-                'nama_kategori' => $kategori,
-            ];
-
-            $this->kategoriModel->insert($data);
-
-            // Set flashdata gagal dan kirim pesan eror dengan flashdata
-            $this->session->setFlashdata('msg', '<div class="alert alert-success alert-dismissible fade show" role="alert">Kategori berhasil ditambahkan!</div>');
-            return redirect()->to(base_url('admin/kategori'));
-        }
     }
 
     // Edit kategori method
@@ -616,32 +468,6 @@ class Admin extends BaseController
         ];
 
         return view('admin/add-dataInduk', $data);
-    }
-
-    // Add data induk method (Done)
-    public function adddatainduk()
-    {
-        $kategori_id = $this->request->getVar('kategori_id');
-        $induk_id = $this->request->getVar('induk_id');
-        $kode = $this->request->getVar('kode');
-        $nama_induk = $this->request->getVar('nama_induk');
-
-        $data = $this->dataIndukModel->getIndukById($induk_id, $kategori_id);
-        // dd($data);
-        if ($data) {
-            session()->setFlashdata('message', '<div class="alert alert-danger" role="alert">Data Induk sudah ada!</div>');
-            return redirect()->to(base_url('admin/dataInduk'));
-        } else {
-            $data = [
-                'induk_id' => (int)$induk_id,
-                'kategori_id' => $kategori_id,
-                'kode' => $kode,
-                'nama_induk' => $nama_induk
-            ];
-            $this->dataIndukModel->insert($data);
-            session()->setFlashdata('message', '<div class="alert alert-success" role="alert">Data Induk berhasil ditambahkan!</div>');
-            return redirect()->to(base_url('admin/dataInduk'));
-        }
     }
 
     // edit data induk page (Done)
@@ -830,7 +656,7 @@ class Admin extends BaseController
         return view('admin/standar', $data);
     }
 
-    //Add standar method (Done)
+    // Add standar method (Done)
     public function addStandarform()
     {
         $usersession = $this->data_user;
@@ -852,40 +678,6 @@ class Admin extends BaseController
         ];
 
         return view('admin/add-standar', $data);
-    }
-
-    // Save Standar Method (Done)
-    public function addstandar()
-    {
-        $kategori_id = $this->request->getVar('kategori_id');
-        $standar = $this->request->getVar('namaStandar');
-        $standar_id = $this->request->getVar('kode');
-        $lenth = strlen($standar_id);
-        $NoStd = substr($standar_id, 1, $lenth - 1);
-
-        $datastandar = $this->standarModel->getStandarByKategori($standar_id, $kategori_id);
-
-        if ($datastandar) {
-            session()->setFlashdata('message', '<div class="alert alert-danger" role="alert">
-            Data Standar sudah ada!
-            </div>');
-            return redirect()->to(base_url('admin/standar'));
-        } else {
-            $data = [
-                'standar_id' => $standar_id,
-                'NoStd' => $NoStd,
-                'kategori_id' => $kategori_id,
-                'nama_standar' => $standar,
-            ];
-
-            // dd($data);
-
-            $this->standarModel->insert($data);
-            session()->setFlashdata('message', '<div class="alert alert-success" role="alert">
-            Data Standar berhasil ditambahkan!
-            </div>');
-            return redirect()->to(base_url('admin/standar'));
-        }
     }
 
     // Edit Standar Method (Done)
@@ -962,7 +754,6 @@ class Admin extends BaseController
         return view('admin/view-indikator', $data);
     }
 
-
     // Add Indikator Method
     public function addIndikatorform($standar_id, $kategori_id)
     {
@@ -987,39 +778,6 @@ class Admin extends BaseController
         ];
 
         return view('admin/add-indikator', $data);
-    }
-
-    // Insert Indikator Method
-    public function insertIndikator($standar_id, $kategori_id)
-    {
-        $indikator = $this->request->getVar('indikator');
-        $bobot = $this->request->getVar('bobot');
-        $keterangan = $this->request->getVar('keterangan');
-
-        $dataindikator = $this->indikatorModel->getIndikator($kategori_id, $standar_id);
-
-        if ($dataindikator) {
-            session()->setFlashdata('message', '<div class="alert alert-danger" role="alert">
-            Data Indikator sudah ada!
-            </div>');
-            return redirect()->to(base_url('admin/standar'));
-        } else {
-            $data = [
-                'standar_id' => $standar_id,
-                'kategori_id' => $kategori_id,
-                'indikator' => $indikator,
-                'bobot' => $bobot,
-                'keterangan' => $keterangan,
-            ];
-
-            // dd($data);
-
-            $this->indikatorModel->insert($data);
-            session()->setFlashdata('message', '<div class="alert alert-success" role="alert">
-            Data Indikator berhasil ditambahkan!
-            </div>');
-            return redirect()->to(base_url('admin/standar'));
-        }
     }
 
     // Edit Indikator Method
@@ -1087,57 +845,6 @@ class Admin extends BaseController
 
         return view('admin/auto-generate-penilaian', $data);
     }
-
-    // Save Auto Generator for Data Induk
-    public function indukgenerator()
-    {
-        $data = $this->request->getPost('tahun');
-        dd($data);
-    }
-
-    // Save Auto Generator for Penilaian
-    public function penilaiangenerator()
-    {
-        $data = $this->request->getPost();
-        dd($data);
-    }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
     //penilaian
     public function penilaian()

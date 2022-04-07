@@ -24,7 +24,7 @@
 
 <!-- form add user -->
 <div class="form__add__user">
-  <form method="POST" action="/admin/addbasicuser/auditor">
+  <form method="POST" action="/savedata/addbasicuser/auditor">
     <!-- User -->
     <div class="row mb-3 mb-sm-4">
       <label for="user" class="col-lg-3 col-md-3 col-sm-4 col-form-label form__label">User <span class="color__danger">*</span></label>
