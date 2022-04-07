@@ -13,10 +13,10 @@
           <?php // uses regex that accepts any word character or hyphen in last name
           function split_name($name)
           {
-            $name = trim($name);
-            $last_name = (strpos($name, ' ') === false) ? '' : preg_replace('#.*\s([\w-]*)$#', '$1', $name);
-            $first_name = trim(preg_replace('#' . preg_quote($last_name, '#') . '#', '', $name));
-            return array($first_name, $last_name);
+              $name = trim($name);
+              $last_name = (strpos($name, ' ') === false) ? '' : preg_replace('#.*\s([\w-]*)$#', '$1', $name);
+              $first_name = trim(preg_replace('#' . preg_quote($last_name, '#') . '#', '', $name));
+              return array($first_name, $last_name);
           }
           echo split_name($data_user['nama'])[0];
           ?>
@@ -50,7 +50,9 @@
       </div>
       <div>
         <div class="progress progress__content-progress-bar">
-          <div class="progress-bar bg__dark-main unit__progressbar" role="progressbar" aria-valuenow="72" aria-valuemin="0" aria-valuemax="100" style="width: 72%" data-bs-toggle="tooltip" data-bs-placement="top" title="72%"></div>
+          <div class="progress-bar bg__dark-main unit__progressbar" role="progressbar" aria-valuenow="72"
+            aria-valuemin="0" aria-valuemax="100" style="width: 72%" data-bs-toggle="tooltip" data-bs-placement="top"
+            title="72%"></div>
         </div>
       </div>
     </div>
@@ -71,7 +73,9 @@
       </div>
       <div>
         <div class="progress progress__content-progress-bar">
-          <div class="progress-bar bg__dark-main unit__progressbar" role="progressbar" aria-valuenow="42" aria-valuemin="0" aria-valuemax="100" style="width: 42%" data-bs-toggle="tooltip" data-bs-placement="top" title="42%"></div>
+          <div class="progress-bar bg__dark-main unit__progressbar" role="progressbar" aria-valuenow="42"
+            aria-valuemin="0" aria-valuemax="100" style="width: 42%" data-bs-toggle="tooltip" data-bs-placement="top"
+            title="42%"></div>
         </div>
       </div>
     </div>
@@ -79,9 +83,9 @@
 </div>
 
 <!-- rekap content -->
-<div class="recap__content">
-  <!-- left -->
-  <div class="recap__content-link">
+<!-- <div class="recap__content"> -->
+<!-- left -->
+<!-- <div class="recap__content-link">
     <div class="recap__link-card shadow__box-md">
       <div class="recap__link-card__body">
         <img src="/assets/img/penelitian-logo.svg" alt="penelitian-logo" />
@@ -109,29 +113,34 @@
         </a>
       </div>
     </div>
-  </div>
+  </div> -->
 
-  <!-- right -->
-  <!-- table unit -->
-  <div class="recap__content-unit">
+<!-- right -->
+<!-- table unit -->
+<!-- <div class="recap__content-unit">
     <div class="sipmpp__table radius__lg shadow__box-sm">
       <div class="content-unit__title">
-        <h5 class="card__title mb-3">Progress SPMI <span><?= $data_user['tahun']; ?></span></h5>
-        <div class="filter__panel mb-3">
-          <div class="nav nav-pills" id="pills-tab" role="tablist">
-            <button class="btn filter__btn me-0 me-md-3 shadow-none active nav-link active" id="pills-spmi-penelitian" data-bs-toggle="pill" data-bs-target="#pills-table-spmi-penelitian" type="button" role="tab" aria-controls="pills-table-spmi-penelitian" aria-selected="true">
-              Penelitian
-            </button>
-            <button class="btn filter__btn shadow-none nav-link" id="pills-spmi-pm" data-bs-toggle="pill" data-bs-target="#pills-table-spmi-pm" type="button" role="tab" aria-controls="pills-table-spmi-pm" aria-selected="false">
-              Pengabdian Masyarakat
-            </button>
-          </div>
-        </div>
-      </div>
+        <h5 class="card__title mb-3">Progress SPMI <span><?= $data_user['tahun']; ?></span>
+</h5>
+<div class="filter__panel mb-3">
+  <div class="nav nav-pills" id="pills-tab" role="tablist">
+    <button class="btn filter__btn me-0 me-md-3 shadow-none active nav-link active" id="pills-spmi-penelitian"
+      data-bs-toggle="pill" data-bs-target="#pills-table-spmi-penelitian" type="button" role="tab"
+      aria-controls="pills-table-spmi-penelitian" aria-selected="true">
+      Penelitian
+    </button>
+    <button class="btn filter__btn shadow-none nav-link" id="pills-spmi-pm" data-bs-toggle="pill"
+      data-bs-target="#pills-table-spmi-pm" type="button" role="tab" aria-controls="pills-table-spmi-pm"
+      aria-selected="false">
+      Pengabdian Masyarakat
+    </button>
+  </div>
+</div>
+</div> -->
 
-      <div class="tab-content" id="pills-tabContent">
-        <!-- table penelitian -->
-        <div class="tab-pane fade show active" id="pills-table-spmi-penelitian" role="tabpanel" aria-labelledby="pills-spmi-penelitian">
+<!-- <div class="tab-content" id="pills-tabContent"> -->
+<!-- table penelitian -->
+<!-- <div class="tab-pane fade show active" id="pills-table-spmi-penelitian" role="tabpanel" aria-labelledby="pills-spmi-penelitian">
           <div class="table__unit table-responsive">
             <table class="table table__unit__content sipmpp__table-content table-hover">
               <thead class="bg__light">
@@ -172,10 +181,10 @@
               </tbody>
             </table>
           </div>
-        </div>
+        </div> -->
 
-        <!-- table pengabdian masyarakat -->
-        <div class="tab-pane fade" id="pills-table-spmi-pm" role="tabpanel" aria-labelledby="pills-spmi-pm">
+<!-- table pengabdian masyarakat -->
+<!-- <div class="tab-pane fade" id="pills-table-spmi-pm" role="tabpanel" aria-labelledby="pills-spmi-pm">
           <div class="table__unit table-responsive">
             <table class="table table__unit__content sipmpp__table-content table-hover">
               <thead class="bg__light">
@@ -220,52 +229,58 @@
       </div>
     </div>
   </div>
-</div>
+</div> -->
 
 <!-- chart content -->
-<div class="chart__content">
-  <!-- left -->
-  <div class="chart__content-left">
+<!-- <div class="chart__content"> -->
+<!-- left -->
+<!-- <div class="chart__content-left">
     <div class="chart__content-dounat shadow__box-sm">
       <div class="content-unit__title">
         <h5 class="card__title">Nilai SPMI <span>2018</span></h5>
         <div class="filter__panel mb-3">
           <div class="nav nav-pills" id="pills-tab" role="tablist">
-            <button class="btn filter__btn-chart me-0 me-md-3 shadow-none active nav-link active" id="pillsStandarPenelitian" data-bs-toggle="pill" data-bs-target="#pillsChartStandarPenelitian" type="button" role="tab" aria-controls="pillsChartStandarPenelitian" aria-selected="true">
+            <button class="btn filter__btn-chart me-0 me-md-3 shadow-none active nav-link active"
+              id="pillsStandarPenelitian" data-bs-toggle="pill" data-bs-target="#pillsChartStandarPenelitian"
+              type="button" role="tab" aria-controls="pillsChartStandarPenelitian" aria-selected="true">
               Penelitian
             </button>
-            <button class="btn filter__btn-chart shadow-none nav-link" id="pillsStandarPengabdian" data-bs-toggle="pill" data-bs-target="#pillsChartStandarPengabdian" type="button" role="tab" aria-controls="pillsChartStandarPengabdian" aria-selected="false">
+            <button class="btn filter__btn-chart shadow-none nav-link" id="pillsStandarPengabdian" data-bs-toggle="pill"
+              data-bs-target="#pillsChartStandarPengabdian" type="button" role="tab"
+              aria-controls="pillsChartStandarPengabdian" aria-selected="false">
               Pengabdian Masyarakat
             </button>
           </div>
         </div>
       </div>
-      <div class="tab-content" id="pills-tabContent">
-        <!-- penelitian -->
-        <div class="tab-pane fade show active" id="pillsChartStandarPenelitian" role="tabpanel" aria-labelledby="pillsStandarPenelitian">
+      <div class="tab-content" id="pills-tabContent"> -->
+<!-- penelitian -->
+<!-- <div class="tab-pane fade show active" id="pillsChartStandarPenelitian" role="tabpanel"
+          aria-labelledby="pillsStandarPenelitian">
           <div class="chart__container">
             <canvas id="chartStandarDoughnutPenelitian"></canvas>
           </div>
-        </div>
+        </div> -->
 
-        <!-- pengabdian masyarakat -->
-        <div class="tab-pane fade" id="pillsChartStandarPengabdian" role="tabpanel" aria-labelledby="pillsStandarPengabdian">
+<!-- pengabdian masyarakat -->
+<!-- <div class="tab-pane fade" id="pillsChartStandarPengabdian" role="tabpanel"
+          aria-labelledby="pillsStandarPengabdian">
           <div class="chart__container">
             <canvas id="chartStandarDoughnutPengabdian"></canvas>
           </div>
         </div>
       </div>
     </div>
-  </div>
+  </div> -->
 
-  <!-- right -->
-  <div class="chart__content-right">
+<!-- right -->
+<!-- <div class="chart__content-right">
     <div class="chart__content-line shadow__box-sm">
       <h5 class="card__title mb-5">Nilai SPMI</h5>
       <canvas id="chartStandarLine" width="540" height="400"></canvas>
     </div>
   </div>
-</div>
+</div> -->
 
 <?= $this->endSection(); ?>
 
