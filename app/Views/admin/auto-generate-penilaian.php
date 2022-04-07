@@ -24,15 +24,12 @@
 
 <!-- form auto generate penilaian -->
 <div class="form__add__user">
-    <form method="POST" action="#">
+    <form method="POST" action="/admin/penilaiangenerator">
         <!-- tahun -->
         <div class="row mb-3 mb-sm-4">
-            <label for="tahun" class="col-lg-3 col-md-3 col-sm-4 col-form-label form__label">Tahun <span
-                    class="color__danger">*</span></label>
+            <label for="tahun" class="col-lg-3 col-md-3 col-sm-4 col-form-label form__label">Tahun <span class="color__danger">*</span></label>
             <div class="col-lg-6 col-md-9 col-sm-8">
-                <select name="tahun" id="tahun" class="form-select form__select shadow-none" multiple
-                    multiselect-search="true" multiselect-select-all="true" multiselect-max-items="5"
-                    onchange="console.log(this.selectedOptions)" required placeholder-inputs="Pilih Tahun">
+                <select name="tahun[]" id="tahun" class="form-select form__select shadow-none" multiple multiselect-search="true" multiselect-select-all="true" multiselect-max-items="5" onchange="console.log(this.selectedOptions)" required placeholder-inputs="Pilih Tahun">
                     <option value="">tahun 1</option>
                     <option value="">tahun 2</option>
                     <option value="">tahun 3</option>
@@ -43,12 +40,9 @@
         </div>
         <!-- unit -->
         <div class="row mb-3 mb-sm-4">
-            <label for="unit" class="col-lg-3 col-md-3 col-sm-4 col-form-label form__label">Unit <span
-                    class="color__danger">*</span></label>
+            <label for="unit" class="col-lg-3 col-md-3 col-sm-4 col-form-label form__label">Unit <span class="color__danger">*</span></label>
             <div class="col-lg-6 col-md-9 col-sm-8">
-                <select name="unit" id="unit" class="form-select form__select shadow-none" multiple
-                    multiselect-search="true" multiselect-select-all="true" multiselect-max-items="5"
-                    onchange="console.log(this.selectedOptions)" required placeholder-inputs="Pilih Unit">
+                <select name="unit[]" id="unit" class="form-select form__select shadow-none" multiple multiselect-search="true" multiselect-select-all="true" multiselect-max-items="5" onchange="console.log(this.selectedOptions)" required placeholder-inputs="Pilih Unit">
                     <option value="">unit 1</option>
                     <option value="">unit 2</option>
                     <option value="">unit 3</option>
@@ -59,14 +53,10 @@
         </div>
         <!-- data induk -->
         <div class="row mb-3 mb-sm-4">
-            <label for="dataInduk" class="col-lg-3 col-md-3 col-sm-4 col-form-label form__label">Data Induk <span
-                    class="color__danger">*</span></label>
+            <label for="dataInduk" class="col-lg-3 col-md-3 col-sm-4 col-form-label form__label">Data Induk <span class="color__danger">*</span></label>
             <div class="col-lg-6 col-md-9 col-sm-8 row pe-0">
                 <div class="col-lg-6 col-12 pe-lg-2 pe-0 mb-lg-0 mb-3">
-                    <select name="dataIndukPenelitian" id="dataIndukPenelitian"
-                        class="form-select form__select shadow-none" multiple multiselect-search="true"
-                        multiselect-select-all="true" multiselect-max-items="3"
-                        onchange="console.log(this.selectedOptions)" required placeholder-inputs="Penelitian">
+                    <select name="dataIndukPenelitian[]" id="dataIndukPenelitian" class="form-select form__select shadow-none" multiple multiselect-search="true" multiselect-select-all="true" multiselect-max-items="3" onchange="console.log(this.selectedOptions)" required placeholder-inputs="Penelitian">
                         <option value="">Data Induk Penelitian 1</option>
                         <option value="">Data Induk Penelitian 2</option>
                         <option value="">Data Induk Penelitian 3</option>
@@ -75,11 +65,7 @@
                     </select>
                 </div>
                 <div class="col-lg-6 col-12 pe-0">
-                    <select name="dataIndukPengabdian" id="dataIndukPengabdian"
-                        class="form-select form__select shadow-none" multiple multiselect-search="true"
-                        multiselect-select-all="true" multiselect-max-items="3"
-                        onchange="console.log(this.selectedOptions)" required
-                        placeholder-inputs="Pengabdian Masyarakat">
+                    <select name="dataIndukPengabdian[]" id="dataIndukPengabdian" class="form-select form__select shadow-none" multiple multiselect-search="true" multiselect-select-all="true" multiselect-max-items="3" onchange="console.log(this.selectedOptions)" required placeholder-inputs="Pengabdian Masyarakat">
                         <option value="">Data Induk Pengabdian Masyarakat 1</option>
                         <option value="">Data Induk Pengabdian Masyarakat 2</option>
                         <option value="">Data Induk Pengabdian Masyarakat 3</option>

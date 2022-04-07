@@ -1088,7 +1088,19 @@ class Admin extends BaseController
         return view('admin/auto-generate-penilaian', $data);
     }
 
+    // Save Auto Generator for Data Induk
+    public function indukgenerator()
+    {
+        $data = $this->request->getPost();
+        dd($data);
+    }
 
+    // Save Auto Generator for Penilaian
+    public function penilaiangenerator()
+    {
+        $data = $this->request->getPost();
+        dd($data);
+    }
 
 
 
