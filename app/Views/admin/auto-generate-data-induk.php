@@ -29,7 +29,7 @@
         <div class="row mb-3 mb-sm-4">
             <label for="tahun" class="col-lg-3 col-md-3 col-sm-4 col-form-label form__label">Tahun <span class="color__danger">*</span></label>
             <div class="col-lg-6 col-md-9 col-sm-8">
-                <select name="tahun[]" id="tahun" class="form-select form__select shadow-none" multiple multiselect-search="true" multiselect-select-all="true" multiselect-max-items="5" onchange="console.log(this.selectedOptions)" required placeholder-inputs="Pilih Tahun">
+                <select name="tahun[]" id="tahun" class="form-select form__select shadow-none" multiple multiselect-search="true" multiselect-select-all="true" multiselect-max-items="200" onchange="console.log(this.selectedOptions)" required placeholder-inputs="Pilih Tahun">
                     <option value="tahun 1">tahun 1</option>
                     <option value="tahun 2">tahun 2</option>
                     <option value="tahun 3">tahun 3</option>
@@ -42,7 +42,7 @@
         <div class="row mb-3 mb-sm-4">
             <label for="unit" class="col-lg-3 col-md-3 col-sm-4 col-form-label form__label">Unit <span class="color__danger">*</span></label>
             <div class="col-lg-6 col-md-9 col-sm-8">
-                <select name="unit[]" id="unit" class="form-select form__select shadow-none" multiple multiselect-search="true" multiselect-select-all="true" multiselect-max-items="5" onchange="console.log(this.selectedOptions)" required placeholder-inputs="Pilih Unit">
+                <select name="unit[]" id="unit" class="form-select form__select shadow-none" multiple multiselect-search="true" multiselect-select-all="true" multiselect-max-items="200" onchange="console.log(this.selectedOptions)" required placeholder-inputs="Pilih Unit">
                     <option value="unit 1">unit 1</option>
                     <option value="unit 2">unit 2</option>
                     <option value="unit 3">unit 3</option>

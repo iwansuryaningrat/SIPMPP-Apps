@@ -1091,7 +1091,7 @@ class Admin extends BaseController
     // Save Auto Generator for Data Induk
     public function indukgenerator()
     {
-        $data = $this->request->getPost();
+        $data = $this->request->getPost('tahun');
         dd($data);
     }
 
