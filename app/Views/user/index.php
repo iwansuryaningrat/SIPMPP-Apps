@@ -77,13 +77,17 @@
       <div class="progress__content-progress-desc">
         <p>Task Complete</p>
         <p><?= $dataprogresstandar['sum'] . '/' . $dataprogresstandar['count'] ?>
-          Standar (<?= $dataprogresstandar['persen'] ?>%)</p>
+          Indikator (<?= $dataprogresstandar['persen'] ?>%)</p>
       </div>
       <div>
         <div class="progress progress__content-progress-bar">
-          <div class="progress-bar bg__dark-main unit__progressbar" role="progressbar" aria-valuenow="42"
-            aria-valuemin="0" aria-valuemax="100" style="width: 42%" data-bs-toggle="tooltip" data-bs-placement="top"
-            title="42%"></div>
+          <div class="progress-bar bg__dark-main unit__progressbar" role="progressbar"
+            aria-valuenow="<?= $dataprogresstandar['persen'] ?>"
+            aria-valuemin="0" aria-valuemax="100"
+            style="width: <?= $dataprogresstandar['persen'] ?>%"
+            data-bs-toggle="tooltip" data-bs-placement="top"
+            title="<?= $dataprogresstandar['persen'] ?>%">
+          </div>
         </div>
       </div>
     </div>
