@@ -204,7 +204,7 @@
                                 <td>2019</td>
                                 <td>
                                     <a data-bs-placement="top" title="Edit" href="/admin/addDataInduk" class="edit__data__induk__icon me-4"><i class="fa-solid fa-pen-to-square"></i></a>
-                                    <a data-bs-placement="top" title="Delete" href="/admin/addDataInduk" class="delete__data__induk__icon"><i class="fa-solid fa-trash"></i></a>
+                                    <a data-bs-placement="top" title="Delete" href="#" class="delete__data__induk__icon"><i class="fa-solid fa-trash"></i></a>
                                 </td>
                             </tr>
                             <tr>
@@ -216,7 +216,7 @@
                                 <td>2021</td>
                                 <td>
                                     <a data-bs-placement="top" title="Edit" href="/admin/addDataInduk" class="edit__data__induk__icon me-4"><i class="fa-solid fa-pen-to-square"></i></a>
-                                    <a data-bs-placement="top" title="Delete" href="/admin/addDataInduk" class="delete__data__induk__icon"><i class="fa-solid fa-trash"></i></a>
+                                    <a data-bs-placement="top" title="Delete" href="#" class="delete__data__induk__icon"><i class="fa-solid fa-trash"></i></a>
                                 </td>
                             </tr>
                         </tbody>

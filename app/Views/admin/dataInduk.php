@@ -79,7 +79,7 @@
                                 </td>
                                 <td>
                                     <a role="button" data-bs-placement="top" title="Edit" href="/admin/editDataInduk/<?= $induk['induk_id'] . '/' . $induk['kategori_id'] ?>" class="edit__data__induk__icon me-3 me-md-5"><i class="fa-solid fa-pen-to-square"></i></a>
-                                    <a data-bs-placement="top" title="Delete" href="/admin/deleteinduk/<?= $induk['induk_id'] . '/' . $induk['kategori_id'] ?>" class="delete__data__induk__icon"><i class="fa-solid fa-trash"></i></a>
+                                    <a data-bs-placement="top" title="Delete" href="/deletedata/deleteinduk/<?= $induk['induk_id'] . '/' . $induk['kategori_id'] ?>" class="delete__data__induk__icon"><i class="fa-solid fa-trash"></i></a>
                                 </td>
                             </tr>
                         <?php $i++;

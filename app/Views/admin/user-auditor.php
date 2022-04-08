@@ -67,7 +67,7 @@
               </td>
               <td><?= $user['telp']; ?></td>
               <td>
-                <a data-bs-placement="top" title="Delete" href="/admin/deleteUserRoleUnit/<?= $user['email']; ?>/3" class="delete__data__induk__icon"><i class="fa-solid fa-trash"></i></a>
+                <a data-bs-placement="top" title="Delete" href="/deletedata/deleteUserRoleUnit/<?= $user['email']; ?>/3" class="delete__data__induk__icon"><i class="fa-solid fa-trash"></i></a>
               </td>
             </tr>
         <?php $i++;
