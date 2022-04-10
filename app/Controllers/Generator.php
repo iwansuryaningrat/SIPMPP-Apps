@@ -70,7 +70,6 @@ class Generator extends BaseController
                 'kategori_id' => $kategori_id,
                 'nilai' => '0',
             ];
-            // dd($data);
 
             $this->unitIndukTahunModel->insert($data);
 

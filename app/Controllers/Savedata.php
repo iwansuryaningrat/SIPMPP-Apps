@@ -135,7 +135,6 @@ class Savedata extends BaseController
     public function addunit()
     {
         $nama_unit = $this->request->getVar('nama_unit');
-        // dd($unit);
 
         function split_name($name)
         {
@@ -157,7 +156,6 @@ class Savedata extends BaseController
 
         // Get unit by id
         $unit = $this->unitsModel->getUnit($id);
-        // dd($unit);
 
         if ($unit != null) {
             $this->session->setFlashdata('msg', '<div class="alert alert-danger alert-dismissible fade show" role="alert">Unit telah ada! Silakan menambahkan unit lain.</div>');
@@ -221,7 +219,7 @@ class Savedata extends BaseController
         $nama_induk = $this->request->getVar('nama_induk');
 
         $data = $this->dataIndukModel->getIndukById($induk_id, $kategori_id);
-        // dd($data);
+
         if ($data) {
             session()->setFlashdata('message', '<div class="alert alert-danger" role="alert">Data Induk sudah ada!</div>');
             return redirect()->to(base_url('admin/dataInduk'));
@@ -262,8 +260,6 @@ class Savedata extends BaseController
                 'nama_standar' => $standar,
             ];
 
-            // dd($data);
-
             $this->standarModel->insert($data);
             session()->setFlashdata('message', '<div class="alert alert-success" role="alert">
             Data Standar berhasil ditambahkan!
@@ -295,8 +291,6 @@ class Savedata extends BaseController
                 'keterangan' => $keterangan,
             ];
 
-            // dd($data);
-
             $this->indikatorModel->insert($data);
             session()->setFlashdata('message', '<div class="alert alert-success" role="alert">
             Data Indikator berhasil ditambahkan!
@@ -312,7 +306,6 @@ class Savedata extends BaseController
         $unit = $this->request->getPost(['unit'])['unit'];
         $dataIndukPenelitian = $this->request->getPost(['dataIndukPenelitian'])['dataIndukPenelitian'];
         $dataIndukPengabdian = $this->request->getPost(['dataIndukPengabdian'])['dataIndukPengabdian'];
-        // dd($unit);
 
         $countpen = 0;
         $countppm = 0;
@@ -320,14 +313,12 @@ class Savedata extends BaseController
             foreach ($unit as $units) {
                 foreach ($dataIndukPenelitian as $pen) {
                     $respon = $this->generator->indukGenerator($year, $units, $pen, 'PEN');
-                    // dd($respon);
                     if ($respon == "200") {
                         $countpen++;
                     }
                 }
                 foreach ($dataIndukPengabdian as $ppm) {
                     $respon = $this->generator->indukGenerator($year, $units, $ppm, 'PPM');
-                    // dd($respon);
                     if ($respon == "200") {
                         $countppm++;
                     }
@@ -335,7 +326,6 @@ class Savedata extends BaseController
             }
         }
         $sum = $countpen + $countppm;
-        // dd($sum);
         session()->setFlashdata('message', '<div class="alert alert-success alert__sipmpp" role="alert"><i class="fa-solid fa-circle-check color__success"></i><span> ' . $sum . ' data telah ditambahkan.</span></div>');
         return redirect()->to('/admin/datainduk');
     }

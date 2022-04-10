@@ -67,6 +67,5 @@ class Leader extends BaseController
         // }
 
         $user = session()->get('email');
-        dd($user);
     }
 }
