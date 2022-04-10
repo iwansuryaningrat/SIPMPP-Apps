@@ -124,7 +124,7 @@ class Auditor extends BaseController
         // Update Data
         $this->unitIndukTahunModel->updateNilai($unit_id, $tahun, $induk_id, $kategori_id, $nilai);
 
-        session()->setFlashdata('message', '<div class="alert alert-success" role="alert">Data Induk berhasil diubah!</div>');
+        session()->setFlashdata('message', '<div class="alert alert-success alert__sipmpp" role="alert"><i class="fa-solid fa-circle-check color__success"></i><span>Data Induk berhasil diubah!</span></div>');
 
         return redirect()->to('/auditor/datainduk/' . $unit_id . '/' . $tahun);
     }
@@ -248,7 +248,8 @@ class Auditor extends BaseController
         // dd($kategori);
 
         if ($datapenilaian[0]['nilai'] == 0) {
-            session()->setFlashdata('message', '<div class="alert alert-danger" role="alert">Nilai Data Induk Belum Diisi. Silakan isi Data Induk terlebih dahulu</div>');
+            session()->setFlashdata('message', '<div class="alert alert-danger alert__sipmpp" role="alert"><i class="fa-solid fa-circle-exclamation"></i><span>Nilai Data Induk Belum Diisi. Silakan isi Data Induk terlebih dahulu!</span></div>');
+
             return redirect()->to('/auditor/indikator/' . $standar_id . '/' . $kategori_id);
         } else {
             $data = [
@@ -322,7 +323,7 @@ class Auditor extends BaseController
 
         $this->penilaianModel->updatePenilaian($unit_id, $tahun, $standar_id, $kategori_id, $indikator_id, $data);
 
-        session()->setFlashdata('message', '<div class="alert alert-success" role="alert">Data Indikator berhasil diubah</div>');
+        session()->setFlashdata('message', '<div class="alert alert-success alert__sipmpp" role="alert"><i class="fa-solid fa-circle-check color__success"></i><span>Data Indikator berhasil diubah!</span></div>');
 
         return redirect()->to('/auditor/indikator/' . $standar_id . '/' . $kategori_id);
     }
@@ -345,13 +346,15 @@ class Auditor extends BaseController
         // Cek apakah semua standar sudah diisi
         if (in_array('Belum Diisi', $status) || in_array('Belum Lengkap', $status)) {
             // dd('Belum Lengkap');
-            $this->session->setFlashdata('message', '<div class="alert alert-danger" role="alert"><strong>Maaf!</strong> Data penilaian belum lengkap.</div>');
+            $this->session->setFlashdata('message', '<div class="alert alert-danger alert__sipmpp" role="alert"><i class="fa-solid fa-circle-exclamation"></i><span><strong>Maaf!</strong> Data penilaian belum lengkap.</span></div>');
+
             return redirect()->to('/auditor/standar/');
         } else {
             // dd('Lengkap');
             $this->penilaianModel->updateStatus($data_user['unit_id'], $tahun, 'Dikirim');
 
             $this->session->setFlashdata('message', '<div class="alert alert-success" role="alert"><strong>Selamat!</strong> Data penilaian telah dikirim.</div>');
+
             return redirect()->to('/auditor/standar/');
         }
     }
@@ -410,18 +413,21 @@ class Auditor extends BaseController
         if (password_verify($old_password, $user['password'])) {
             // Cek apakah password baru sama dengan password lama
             if ($old_password == $new_password) {
-                $this->session->setFlashdata('message', '<div class="alert alert-danger" role="alert"> <strong>Maaf!</strong> Password baru tidak boleh sama dengan password lama.</div>');
+                $this->session->setFlashdata('message', '<div class="alert alert-danger alert__sipmpp" role="alert"><i class="fa-solid fa-circle-exclamation"></i><span><strong>Maaf!</strong> Password baru tidak boleh sama dengan password lama.</span></div>');
+                
                 return redirect()->to('/auditor/profile/');
             } else {
                 // Update Password
                 $new_password = password_hash($new_password, PASSWORD_DEFAULT);
                 $this->usersModel->updatePassword($data_user['email'], $new_password);
 
-                $this->session->setFlashdata('message', '<div class="alert alert-success" role="alert"><strong>Selamat!</strong> Password berhasil diubah.</div>');
+                $this->session->setFlashdata('message', '<div class="alert alert-success alert__sipmpp" role="alert"><i class="fa-solid fa-circle-check color__success"></i><span><strong>Selamat!</strong> Password berhasil diubah.</span></div>');
+
                 return redirect()->to('/auditor/profile/');
             }
         } else {
-            $this->session->setFlashdata('message', '<div class="alert alert-danger" role="alert"><strong>Maaf!</strong> Password lama tidak sesuai.</div>');
+            $this->session->setFlashdata('message', '<div class="alert alert-danger alert__sipmpp" role="alert"><i class="fa-solid fa-circle-exclamation"></i><span><strong>Maaf!</strong> Password lama tidak sesuai.</span></div>');
+
             return redirect()->to('/auditor/profile/');
         }
     }
@@ -468,7 +474,8 @@ class Auditor extends BaseController
 
         $this->session->set($datasession);
 
-        $this->session->setFlashdata('message', '<div class="alert alert-success" role="alert"><strong>Selamat!</strong> Data berhasil diubah.</div>');
+        $this->session->setFlashdata('message', '<div class="alert alert-success alert__sipmpp" role="alert"><i class="fa-solid fa-circle-check color__success"></i><span><strong>Selamat!</strong> Data berhasil diubah.</span></div>');
+
         return redirect()->to('/auditor/profile/');
     }
 

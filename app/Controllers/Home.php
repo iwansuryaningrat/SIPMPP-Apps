@@ -378,6 +378,7 @@ class Home extends BaseController
             $this->penilaianModel->updateStatus($data_user['unit_id'], $tahun, 'Dikirim');
 
             $this->session->setFlashdata('message', '<div class="alert alert-success" role="alert"><strong>Selamat!</strong> Data penilaian telah dikirim.</div>');
+            
             return redirect()->to('/home/standar/');
         }
     }
