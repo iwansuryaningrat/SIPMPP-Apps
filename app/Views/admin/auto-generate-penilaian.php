@@ -30,11 +30,9 @@
             <label for="tahun" class="col-lg-3 col-md-3 col-sm-4 col-form-label form__label">Tahun <span class="color__danger">*</span></label>
             <div class="col-lg-6 col-md-9 col-sm-8">
                 <select name="tahun[]" id="tahun" class="form-select form__select shadow-none" multiple multiselect-search="true" multiselect-select-all="true" multiselect-max-items="200" onchange="console.log(this.selectedOptions)" required placeholder-inputs="Pilih Tahun">
-                    <option value="">tahun 1</option>
-                    <option value="">tahun 2</option>
-                    <option value="">tahun 3</option>
-                    <option value="">tahun 4</option>
-                    <option value="">tahun 5</option>
+                    <?php foreach ($daftartahun as $datatahun) : ?>
+                        <option value="<?= $datatahun['tahun'] ?>"><?= $datatahun['tahun'] ?></option>
+                    <?php endforeach; ?>
                 </select>
             </div>
         </div>
@@ -43,11 +41,9 @@
             <label for="unit" class="col-lg-3 col-md-3 col-sm-4 col-form-label form__label">Unit <span class="color__danger">*</span></label>
             <div class="col-lg-6 col-md-9 col-sm-8">
                 <select name="unit[]" id="unit" class="form-select form__select shadow-none" multiple multiselect-search="true" multiselect-select-all="true" multiselect-max-items="200" onchange="console.log(this.selectedOptions)" required placeholder-inputs="Pilih Unit">
-                    <option value="">unit 1</option>
-                    <option value="">unit 2</option>
-                    <option value="">unit 3</option>
-                    <option value="">unit 4</option>
-                    <option value="">unit 5</option>
+                    <?php foreach ($daftarunit as $dataunit) : ?>
+                        <option value="<?= $dataunit['unit_id'] ?>"><?= $dataunit['nama_unit'] ?></option>
+                    <?php endforeach; ?>
                 </select>
             </div>
         </div>
@@ -57,20 +53,16 @@
             <div class="col-lg-6 col-md-9 col-sm-8 row pe-0">
                 <div class="col-lg-6 col-12 pe-lg-2 pe-0 mb-lg-0 mb-3">
                     <select name="standarPenelitian[]" id="standarPenelitian" class="form-select form__select shadow-none" multiple multiselect-search="true" multiselect-select-all="true" multiselect-max-items="3" onchange="console.log(this.selectedOptions)" required placeholder-inputs="Penelitian">
-                        <option value="Standar Penelitian 1">Standar Penelitian 1</option>
-                        <option value="Standar Penelitian 2">Standar Penelitian 2</option>
-                        <option value="Standar Penelitian 3">Standar Penelitian 3</option>
-                        <option value="Standar Penelitian 4">Standar Penelitian 4</option>
-                        <option value="Standar Penelitian 5">Standar Penelitian 5</option>
+                        <?php foreach ($standarPEN as $PEN) : ?>
+                            <option value="<?= $PEN['standar_id'] ?>"><?= $PEN['nama_standar'] ?></option>
+                        <?php endforeach; ?>
                     </select>
                 </div>
                 <div class="col-lg-6 col-12 pe-0">
                     <select name="standarPengabdian[]" id="standarPengabdian" class="form-select form__select shadow-none" multiple multiselect-search="true" multiselect-select-all="true" multiselect-max-items="3" onchange="console.log(this.selectedOptions)" required placeholder-inputs="Pengabdian Masyarakat">
-                        <option value="Standar Pengabdian Masyarakat 1">Standar Pengabdian Masyarakat 1</option>
-                        <option value="Standar Pengabdian Masyarakat 2">Standar Pengabdian Masyarakat 2</option>
-                        <option value="Standar Pengabdian Masyarakat 3">Standar Pengabdian Masyarakat 3</option>
-                        <option value="Standar Pengabdian Masyarakat 4">Standar Pengabdian Masyarakat 4</option>
-                        <option value="Standar Pengabdian Masyarakat 5">Standar Pengabdian Masyarakat 5</option>
+                        <?php foreach ($standarPPM as $PPM) : ?>
+                            <option value="<?= $PPM['standar_id'] ?>"><?= $PPM['nama_standar'] ?></option>
+                        <?php endforeach; ?>
                     </select>
                 </div>
             </div>

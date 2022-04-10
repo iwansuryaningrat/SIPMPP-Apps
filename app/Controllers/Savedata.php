@@ -236,7 +236,7 @@ class Savedata extends BaseController
                 'nama_induk' => $nama_induk
             ];
             $this->dataIndukModel->insert($data);
-    
+
             session()->setFlashdata('message', '<div class="alert alert-success alert__sipmpp" role="alert"><i class="fa-solid fa-circle-check color__success"><span>Data Induk berhasil ditambahkan!</span></div>');
 
             return redirect()->to(base_url('admin/dataInduk'));
@@ -338,7 +338,38 @@ class Savedata extends BaseController
     // Save Auto Generator for Penilaian
     public function penilaiangenerator()
     {
-        $data = $this->request->getPost();
-        dd($data);
+        $tahun = $this->request->getPost(['tahun'])['tahun'];
+        $unit = $this->request->getPost(['unit'])['unit'];
+        $standarPenelitian = $this->request->getPost(['standarPenelitian'])['standarPenelitian'];
+        $standarPengabdian = $this->request->getPost(['standarPengabdian'])['standarPengabdian'];
+
+        $countpen = 0;
+        $countppm = 0;
+        foreach ($tahun as $year) {
+            foreach ($unit as $units) {
+                foreach ($standarPenelitian as $pen) {
+                    $data = $this->indikatorModel->getIndikator('PEN', $pen);
+                    foreach ($data as $indikator) {
+                        $respon = $this->generator->penilaianGenerator($year, $units, $pen, $indikator['indikator_id'], 'PEN');
+                        if ($respon == "200") {
+                            $countpen++;
+                        }
+                    }
+                }
+                foreach ($standarPengabdian as $ppm) {
+                    $data = $this->indikatorModel->getIndikator('PPM', $ppm);
+                    foreach ($data as $indikator) {
+                        $respon = $this->generator->penilaianGenerator($year, $units, $pen, $indikator['indikator_id'], 'PPM');
+                        if ($respon == "200") {
+                            $countppm++;
+                        }
+                    }
+                }
+            }
+        }
+
+        $sum = $countpen + $countppm;
+        session()->setFlashdata('message', '<div class="alert alert-success alert__sipmpp" role="alert"><i class="fa-solid fa-circle-check color__success"></i><span> ' . $sum . ' data telah ditambahkan.</span></div>');
+        return redirect()->to('/admin/penilaian');
     }
 }

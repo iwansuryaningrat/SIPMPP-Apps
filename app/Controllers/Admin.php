@@ -361,7 +361,7 @@ class Admin extends BaseController
 
             'cssCustom' => '<link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.11.5/css/jquery.dataTables.css">',
         ];
-        
+
         return view('admin/isian-data-induk', $data);
     }
 
@@ -612,10 +612,14 @@ class Admin extends BaseController
         return view('admin/auto-generate-data-induk', $data);
     }
 
-    //auto generate penilaian
+    //auto generate penilaian (Done)
     public function autoGeneratePenilaian()
     {
         $usersession = $this->data_user;
+        $daftartahun = $this->tahunModel->findAll();
+        $daftarunit = $this->unitsModel->findAll();
+        $standarPEN = $this->standarModel->getStandarByKategoriId('PEN');
+        $standarPPM = $this->standarModel->getStandarByKategoriId('PPM');
 
         $data = [
             'title' => 'Auto Generate Penilaian | SIPMPP Admin UNDIP ' . $this->thisTahun,
@@ -627,6 +631,10 @@ class Admin extends BaseController
             'tahun' => $usersession['tahun'],
             'tahunsession' => $this->tahun,
             'cssCustom' => '',
+            'daftartahun' => $daftartahun,
+            'daftarunit' => $daftarunit,
+            'standarPEN' => $standarPEN,
+            'standarPPM' => $standarPPM,
         ];
 
         return view('admin/auto-generate-penilaian', $data);

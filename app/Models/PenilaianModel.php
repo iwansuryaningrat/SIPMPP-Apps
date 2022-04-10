@@ -148,4 +148,16 @@ class PenilaianModel extends Model
             ->where('penilaian.kategori_id', $kategori_id)
             ->findAll();
     }
+
+    // Cek Data
+    public function cekData($tahun, $unit_id, $standar_id, $indikator_id, $kategori_id)
+    {
+        return $this->select('penilaian.*')
+            ->where('penilaian.unit_id', $unit_id)
+            ->where('penilaian.tahun', $tahun)
+            ->where('penilaian.standar_id', $standar_id)
+            ->where('penilaian.indikator_id', $indikator_id)
+            ->where('penilaian.kategori_id', $kategori_id)
+            ->first();
+    }
 }

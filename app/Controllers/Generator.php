@@ -56,7 +56,7 @@ class Generator extends BaseController
         $this->thisTahun = (int)date('Y');
     }
 
-    //  Done
+    //  Induk Generator Method (Done)
     public function indukGenerator($tahun, $unit, $induk_id, $kategori_id)
     {
         // Cek di database
@@ -79,8 +79,30 @@ class Generator extends BaseController
         }
     }
 
-    public function standarGenerator()
+    //  Penilaian Generator Method (Done)
+    public function penilaianGenerator($tahun, $unit, $standar_id, $indikator_id, $kategori_id)
     {
         // Cek di database
+        $data = $this->penilaianModel->cekData($tahun, $unit, $standar_id, $indikator_id, $kategori_id);
+
+        if ($data == null) {
+            $data = [
+                'tahun' => $tahun,
+                'kategori_id' => $kategori_id,
+                'standar_id' => $standar_id,
+                'indikator_id' => $indikator_id,
+                'unit_id' => $unit,
+                'nilai_input' => '0',
+                'status' => 'Belum Diisi',
+                'hasil' => '0',
+                'nilai_akhir' => '0',
+            ];
+
+            $this->penilaianModel->insert($data);
+
+            return "200";
+        } else {
+            return "500";
+        }
     }
 }
