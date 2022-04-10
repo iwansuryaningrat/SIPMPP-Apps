@@ -69,13 +69,31 @@
                             <span>Kategori</span>
                         </a>
                     </li>
-                    <!-- data induk -->
+                    <!-- induk -->
                     <li>
-                        <a href="/admin/dataInduk" class="nav__list__link <?php if ($tab == "induk") : echo 'active';
-                                                                            endif; ?>">
-                            <i class="fa-solid fa-book"></i>
-                            <span>Data Induk</span>
+                        <a class="nav__list__link-dropdown <?php if ($tab == "induk") : echo 'active';
+                                                            endif; ?>" data-bs-toggle="collapse"
+                            href="#induk-collapse" role="button" aria-expanded="false" aria-controls="induk-collapse">
+                            <div class="link-dropdown__sidebar">
+                                <i class="fa-solid fa-book"></i>
+                                <span>Data Induk</span>
+                            </div>
+                            <i class="fa-solid fa-chevron-down"></i>
                         </a>
+
+                        <!-- dropdown -->
+                        <div class="collapse collapse__dropside" id="induk-collapse">
+                            <ul class="sidebar-nav__list-collapse">
+                                <li>
+                                    <a href="/admin/dataInduk"
+                                        class="nav__list__link-collapse ellipsis__text">Daftar</a>
+                                </li>
+                                <li>
+                                    <a href="/admin/isianDataInduk"
+                                        class="nav__list__link-collapse ellipsis__text">Isian</a>
+                                </li>
+                            </ul>
+                        </div>
                     </li>
                     <!-- standar -->
                     <li>

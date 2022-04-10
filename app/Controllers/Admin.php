@@ -344,6 +344,27 @@ class Admin extends BaseController
         return view('admin/dataInduk', $data);
     }
 
+    // Isian Data Induk method
+    public function isianDataInduk()
+    {
+        $usersession = $this->data_user;
+
+        $data = [
+            'title' => 'Isian Data Induk | SIPMPP Admin UNDIP ' . $this->thisTahun,
+            'tab' => 'induk',
+            'css' => 'styles-admin-data-induk.css',
+            'header' => 'header__mini',
+            'i' => $this->i,
+            'usersession' => $usersession,
+            'tahun' => $usersession['tahun'],
+            'tahunsession' => $this->tahun,
+
+            'cssCustom' => '',
+        ];
+        
+        return view('admin/isian-data-induk', $data);
+    }
+
     //add data induk method (Done)
     public function addDataIndukForm()
     {
