@@ -24,7 +24,8 @@
                     <!-- user -->
                     <li>
                         <a class="nav__list__link-dropdown <?php if ($tab == "user") : echo 'active';
-                                                            endif; ?>" data-bs-toggle="collapse" href="#user-collapse" role="button" aria-expanded="false" aria-controls="user-collapse">
+                                                            endif; ?>" data-bs-toggle="collapse"
+                            href="#user-collapse" role="button" aria-expanded="false" aria-controls="user-collapse">
                             <div class="link-dropdown__sidebar">
                                 <i class="fa-solid fa-id-card-clip"></i>
                                 <span>User</span>
@@ -36,7 +37,8 @@
                         <div class="collapse collapse__dropside" id="user-collapse">
                             <ul class="sidebar-nav__list-collapse">
                                 <li>
-                                    <a href="/admin/daftarUser" class="nav__list__link-collapse ellipsis__text">Daftar User</a>
+                                    <a href="/admin/daftarUser" class="nav__list__link-collapse ellipsis__text">Daftar
+                                        User</a>
                                 </li>
                                 <li>
                                     <a href="/admin/user" class="nav__list__link-collapse ellipsis__text">Base
@@ -66,7 +68,8 @@
                             <i class="fa-solid fa-list-alt"></i>
                             <span>Kategori</span>
                         </a>
-                        <!-- data induk -->
+                    </li>
+                    <!-- data induk -->
                     <li>
                         <a href="/admin/dataInduk" class="nav__list__link <?php if ($tab == "induk") : echo 'active';
                                                                             endif; ?>">
@@ -88,13 +91,6 @@
                                                                             endif; ?>">
                             <i class="fa-solid fa-chart-bar"></i>
                             <span>Penilaian</span>
-                        </a>
-                        <!-- report -->
-                    <li>
-                        <a href="/admin/report" class="nav__list__link <?php if ($tab == "report") : echo 'active';
-                                                                        endif; ?>">
-                            <i class="fa-solid fa-print"></i>
-                            <span>Report</span>
                         </a>
                     </li>
                     <!-- logout -->
