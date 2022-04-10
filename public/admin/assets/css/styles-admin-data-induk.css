@@ -1,6 +1,8 @@
 @import url(styles-admin.css);
 /* ========== table ========== */
-.table__datainduk__content tbody tr:hover {
+.table__datainduk__content tbody tr:hover,
+#datatableDataIndukPenelitian tbody tr:hover,
+#datatableDataIndukPengabdian tbody tr:hover {
   background-color: rgba(38, 48, 77, 0.1) !important;
 }
 
@@ -9,7 +11,23 @@
 .table__datainduk__content tr th:last-child,
 .table__datainduk__content tr td:last-child,
 .table__datainduk__content tr th:nth-child(2),
-.table__datainduk__content tr td:nth-child(2) {
+.table__datainduk__content tr td:nth-child(2),
+#datatableDataIndukPenelitian tr th:first-child,
+#datatableDataIndukPenelitian tr td:first-child,
+#datatableDataIndukPenelitian tr th:last-child,
+#datatableDataIndukPenelitian tr td:last-child,
+#datatableDataIndukPenelitian tr th:nth-child(2),
+#datatableDataIndukPenelitian tr td:nth-child(2),
+#datatableDataIndukPenelitian tr th:nth-child(4),
+#datatableDataIndukPenelitian tr td:nth-child(4),
+#datatableDataIndukPengabdian tr th:first-child,
+#datatableDataIndukPengabdian tr td:first-child,
+#datatableDataIndukPengabdian tr th:last-child,
+#datatableDataIndukPengabdian tr td:last-child,
+#datatableDataIndukPengabdian tr th:nth-child(2),
+#datatableDataIndukPengabdian tr td:nth-child(2),
+#datatableDataIndukPengabdian tr th:nth-child(4),
+#datatableDataIndukPengabdian tr td:nth-child(4) {
   text-align: center;
 }
 
@@ -45,12 +63,188 @@
   padding-left: 1.5rem;
 }
 
-.sipmpp__table tr td .edit__data__induk__icon svg {
+.sipmpp__table tr td .edit__data__induk__icon svg,
+#datatableDataIndukPenelitian tr td .edit__data__induk__icon svg,
+#datatableDataIndukPengabdian tr td .edit__data__induk__icon svg {
   color: rgba(21, 114, 232, 1);
 }
 
-.sipmpp__table tr td .delete__data__induk__icon svg {
+.sipmpp__table tr td .delete__data__induk__icon svg,
+#datatableDataIndukPenelitian tr td .delete__data__induk__icon svg,
+#datatableDataIndukPengabdian tr td .delete__data__induk__icon svg {
   color: var(--danger-color);
+}
+
+/* datatable */
+#datatableDataIndukPenelitian thead th,
+#datatableDataIndukPengabdian thead th,
+table.dataTable thead td {
+  border: none !important;
+}
+
+#datatableDataIndukPenelitian,
+#datatableDataIndukPengabdian {
+  border-collapse: separate;
+  border: var(--border-sm);
+  background-color: var(--white);
+  margin-bottom: 0.5rem;
+}
+
+#datatableDataIndukPenelitian thead tr th,
+#datatableDataIndukPengabdian thead tr th {
+  font-weight: 700;
+  text-transform: uppercase;
+  color: rgba(0, 0, 0, 0.6);
+}
+
+#datatableDataIndukPenelitian thead tr th,
+#datatableDataIndukPenelitian tbody tr td,
+#datatableDataIndukPengabdian thead tr th,
+#datatableDataIndukPengabdian tbody tr td {
+  padding: 1.375rem 0 !important;
+}
+
+#datatableDataIndukPenelitian tbody tr:last-child,
+#datatableDataIndukPengabdian tbody tr:last-child {
+  border-bottom: none !important;
+  border-bottom-style: hidden !important;
+}
+
+#datatableDataIndukPenelitian thead tr th,
+#datatableDataIndukPenelitian tbody tr td,
+#datatableDataIndukPengabdian thead tr th,
+#datatableDataIndukPengabdian tbody tr td {
+  padding-right: 1.125rem !important;
+  padding-left: 1.125rem !important;
+}
+
+.datatable__number {
+  width: 7%;
+  min-width: 3rem;
+}
+
+.datatable__tahun,
+.datatable__kode {
+  width: 13%;
+  min-width: 5rem;
+}
+
+.datatable__aksi {
+  width: 15%;
+  min-width: 6.5rem;
+}
+
+.datatable__unit,
+.datatable__kebutuhan-data {
+  width: 26%;
+  min-width: 12rem;
+}
+
+#datatableDataIndukPenelitian_length,
+#datatableDataIndukPenelitian_filter,
+#datatableDataIndukPengabdian_length,
+#datatableDataIndukPengabdian_filter {
+  margin-bottom: 1.5rem;
+}
+
+#datatableDataIndukPenelitian_info,
+#datatableDataIndukPenelitian_paginate,
+#datatableDataIndukPengabdian_info,
+#datatableDataIndukPengabdian_paginate {
+  margin-top: 1rem;
+}
+
+#datatableDataIndukPenelitian tbody .even,
+#datatableDataIndukPengabdian tbody .even {
+  background-color: rgba(240, 240, 240, 0.7) !important;
+}
+
+#datatableDataIndukPenelitian tbody .odd,
+#datatableDataIndukPengabdian tbody .odd {
+  background-color: rgba(255, 255, 255, 1) !important;
+}
+
+#datatableDataIndukPenelitian_filter input[type="search"],
+#datatableDataIndukPengabdian_filter input[type="search"] {
+  padding: 0.375rem 0.75rem;
+  margin-left: 0.5rem;
+  font-size: 0.875rem;
+  color: rgba(0, 0, 0, 1);
+}
+
+#datatableDataIndukPenelitian_filter input[type="search"]:focus,
+#datatableDataIndukPengabdian_filter input[type="search"]:focus {
+  border: 1px solid #1a42b8;
+  outline: none;
+}
+
+#datatableDataIndukPenelitian_length select,
+#datatableDataIndukPengabdian_length select {
+  padding: 0.375rem 0.25rem;
+  margin-left: 0.375rem;
+  margin-right: 0.375rem;
+  font-size: 0.875rem;
+  color: rgba(0, 0, 0, 1);
+}
+
+#datatableDataIndukPenelitian_length select:focus,
+#datatableDataIndukPengabdian_length select:focus {
+  border: 1px solid #1a42b8;
+  outline: none;
+}
+
+#datatableDataIndukPenelitian_paginate > span,
+#datatableDataIndukPengabdian_paginate > span {
+  width: 2rem;
+  height: 2rem;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  background-color: rgba(230, 235, 250, 0.5);
+  border-radius: 2.5rem;
+  transition: var(--trans-m);
+}
+
+#datatableDataIndukPenelitian_paginate > span:hover,
+#datatableDataIndukPengabdian_paginate > span:hover {
+  background-color: rgba(230, 235, 250, 1);
+}
+
+#datatableDataIndukPenelitian_paginate span .paginate_button,
+#datatableDataIndukPengabdian_paginate span .paginate_button {
+  border: none;
+  background-color: transparent;
+  background: transparent;
+  font-size: 0.875rem;
+  line-height: 0.875rem;
+  padding: 0;
+  margin: 0;
+  min-width: 0;
+}
+
+#datatableDataIndukPenelitian_paginate span .paginate_button:focus,
+#datatableDataIndukPenelitian_paginate span .paginate_button:active,
+#datatableDataIndukPenelitian_paginate span .paginate_button:visited,
+#datatableDataIndukPengabdian_paginate span .paginate_button:focus,
+#datatableDataIndukPengabdian_paginate span .paginate_button:active,
+#datatableDataIndukPengabdian_paginate span .paginate_button:visited {
+  outline: none !important;
+  border: none;
+  box-shadow: none;
+}
+
+table.dataTable.display tbody tr.even > .sorting_1,
+table.dataTable.order-column.stripe tbody tr.even > .sorting_1 {
+  background-color: transparent !important;
+}
+
+table.dataTable.order-column tbody tr > .sorting_1,
+table.dataTable.order-column tbody tr > .sorting_2,
+table.dataTable.order-column tbody tr > .sorting_3,
+table.dataTable.display tbody tr > .sorting_1,
+table.dataTable.display tbody tr > .sorting_2,
+table.dataTable.display tbody tr > .sorting_3 {
+  background-color: transparent !important;
 }
 
 .filter__btn {

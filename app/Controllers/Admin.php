@@ -359,7 +359,7 @@ class Admin extends BaseController
             'tahun' => $usersession['tahun'],
             'tahunsession' => $this->tahun,
 
-            'cssCustom' => '',
+            'cssCustom' => '<link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.11.5/css/jquery.dataTables.css">',
         ];
         
         return view('admin/isian-data-induk', $data);

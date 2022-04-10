@@ -38,7 +38,7 @@
 </div>
 
 <!-- filter -->
-<div class="filter__table mb-4">
+<div class="filter__table mb-5">
     <div class="nav nav-pills" id="pills-tab" role="tablist">
         <button class="btn filter__btn me-0 me-md-3 shadow-none active nav-link active" id="pills-datainduk-penelitian"
             data-bs-toggle="pill" data-bs-target="#pills-table-datainduk-penelitian" type="button" role="tab"
@@ -58,20 +58,43 @@
     <div class="tab-pane fade show active" id="pills-table-datainduk-penelitian" role="tabpanel"
         aria-labelledby="pills-datainduk-penelitian">
         <!-- table data induk -->
-        <div class="sipmpp__table">
+        <div class="">
             <?= session()->getFlashdata('message'); ?>
             <div class="table-responsive">
-                <table class="table table__datainduk__content sipmpp__table-content table-hover">
+                <table id="datatableDataIndukPenelitian" class="display">
                     <thead class="bg__light">
                         <tr>
-                            <th class="table__datainduk-number">no</th>
-                            <th class="table__datainduk-kode">kode</th>
-                            <th class="table__datainduk-kebutuhan-data">kebutuhan data</th>
-                            <th class="table__datainduk-aksi">aksi</th>
+                            <th class="datatable__number">no</th>
+                            <th class="datatable__tahun">tahun</th>
+                            <th class="datatable__unit">unit</th>
+                            <th class="datatable__kode">kode</th>
+                            <th class="datatable__kebutuhan-data">kebutuhan data</th>
+                            <th class="datatable__aksi">aksi</th>
                         </tr>
                     </thead>
                     <tbody>
-                        <tr></tr>
+                        <tr>
+                            <td>1</td>
+                            <td>2019</td>
+                            <td>S1-Informatika</td>
+                            <td>AAA</td>
+                            <td>Kebutuhan Data 1</td>
+                            <td>
+                                <a data-bs-placement="top" title="Delete" href="#" class="delete__data__induk__icon"><i
+                                        class="fa-solid fa-trash"></i></a>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>2</td>
+                            <td>2019</td>
+                            <td>S1-Informatika</td>
+                            <td>BBB</td>
+                            <td>Kebutuhan Data 2</td>
+                            <td>
+                                <a data-bs-placement="top" title="Delete" href="#" class="delete__data__induk__icon"><i
+                                        class="fa-solid fa-trash"></i></a>
+                            </td>
+                        </tr>
                     </tbody>
                 </table>
             </div>
@@ -81,19 +104,43 @@
     <!-- pengabdian masyarakat -->
     <div class="tab-pane fade" id="pills-table-datainduk-pm" role="tabpanel" aria-labelledby="pills-datainduk-pm">
         <!-- table data induk -->
-        <div class="sipmpp__table">
+        <div class="">
             <?= session()->getFlashdata('message'); ?>
             <div class="table-responsive">
-                <table class="table table__datainduk__content sipmpp__table-content table-hover">
+                <table id="datatableDataIndukPengabdian" class="display">
                     <thead class="bg__light">
                         <tr>
-                            <th class="table__datainduk-number">no</th>
-                            <th class="table__datainduk-kode">kode</th>
-                            <th class="table__datainduk-kebutuhan-data">kebutuhan data</th>
-                            <th class="table__datainduk-aksi">aksi</th>
+                            <th class="datatable__number">no</th>
+                            <th class="datatable__tahun">tahun</th>
+                            <th class="datatable__unit">unit</th>
+                            <th class="datatable__kode">kode</th>
+                            <th class="datatable__kebutuhan-data">kebutuhan data</th>
+                            <th class="datatable__aksi">aksi</th>
                         </tr>
                     </thead>
                     <tbody>
+                        <tr>
+                            <td>1</td>
+                            <td>2019</td>
+                            <td>S1-Informatika</td>
+                            <td>AAA</td>
+                            <td>Kebutuhan Data 1</td>
+                            <td>
+                                <a data-bs-placement="top" title="Delete" href="#" class="delete__data__induk__icon"><i
+                                        class="fa-solid fa-trash"></i></a>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>2</td>
+                            <td>2019</td>
+                            <td>S1-Informatika</td>
+                            <td>BBB</td>
+                            <td>Kebutuhan Data 2</td>
+                            <td>
+                                <a data-bs-placement="top" title="Delete" href="#" class="delete__data__induk__icon"><i
+                                        class="fa-solid fa-trash"></i></a>
+                            </td>
+                        </tr>
                     </tbody>
                 </table>
             </div>
@@ -105,6 +152,8 @@
 
 <?= $this->section('script'); ?>
 
+<!-- datatable cdn -->
+<script type="text/javascript" charset="utf8" src="https://cdn.datatables.net/1.11.5/js/jquery.dataTables.js"></script>
 <script>
     // active filer button
     $(function() {
@@ -120,10 +169,19 @@
 
     // tooltips
     const tooltipsEdit = document.querySelectorAll(
-        ".edit__data__induk__icon"
-    );
+        ".edit__data__induk__icon");
     tooltipsEdit.forEach((t) => {
         new bootstrap.Tooltip(t);
+    });
+    const tooltipsDelete = document.querySelectorAll(".delete__data__induk__icon");
+    tooltipsDelete.forEach((t) => {
+        new bootstrap.Tooltip(t);
+    });
+
+    // datatable
+    $(document).ready(function() {
+        $('#datatableDataIndukPenelitian').DataTable();
+        $('#datatableDataIndukPengabdian').DataTable();
     });
 </script>
 
