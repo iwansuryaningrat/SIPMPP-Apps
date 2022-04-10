@@ -29,13 +29,10 @@
 <div class="title__table__add mb-1">
     <h4 class="title__body__user me-3 mb-lg-4 mb-3">Daftar Penilaian</h4>
     <div class="title__body__button">
-        <a href="/admin/autoGeneratePenilaian" class="btn shadow-none btn__add btn__generate mb-lg-4 mb-3 me-3" role="button">
+        <a href="/admin/autoGeneratePenilaian" class="btn shadow-none btn__add btn__generate mb-lg-4 mb-3"
+            role="button">
             <i class="fa-solid fa-folder-plus"></i>
             Auto Generate
-        </a>
-        <a href="/admin/addDataInduk" class="btn shadow-none btn__add btn__dark mb-lg-4 mb-3" role="button">
-            <i class="fa-solid fa-plus"></i>
-            Add Penilaian
         </a>
     </div>
 </div>
@@ -61,10 +58,10 @@
                 <td>S1-Informatika</td>
                 <td>Penelitian</td>
                 <td>S12</td>
-                <td>Sukses</td>
+                <td><span class="badge badge__sipmpp badge__success">Sukses</span></td>
                 <td>
-                    <a data-bs-placement="top" title="Edit" href="#" class="edit__data__induk__icon me-3 me-md-4 me-lg-5"><i class="fa-solid fa-pen-to-square"></i></a>
-                    <a data-bs-placement="top" title="Delete" href="#" class="delete__data__induk__icon"><i class="fa-solid fa-trash"></i></a>
+                    <a data-bs-placement="top" title="Delete" href="#" class="delete__data__induk__icon"><i
+                            class="fa-solid fa-trash"></i></a>
                 </td>
             </tr>
             <tr>
@@ -73,10 +70,10 @@
                 <td>S1-Matematika</td>
                 <td>Pengabdian Masyarakat</td>
                 <td>S15</td>
-                <td>Belum di audit</td>
+                <td><span class="badge badge__sipmpp badge__warning">Belum di audit</span></td>
                 <td>
-                    <a data-bs-placement="top" title="Edit" href="#" class="edit__data__induk__icon me-3 me-md-4 me-lg-5"><i class="fa-solid fa-pen-to-square"></i></a>
-                    <a data-bs-placement="top" title="Delete" href="#" class="delete__data__induk__icon"><i class="fa-solid fa-trash"></i></a>
+                    <a data-bs-placement="top" title="Delete" href="#" class="delete__data__induk__icon"><i
+                            class="fa-solid fa-trash"></i></a>
                 </td>
             </tr>
         </tbody>

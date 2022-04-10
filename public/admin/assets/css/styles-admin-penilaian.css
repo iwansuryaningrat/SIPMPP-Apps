@@ -47,25 +47,31 @@ table.dataTable thead td {
 
 .datatable__number {
   width: 7%;
+  min-width: 3rem;
 }
 
 .datatable__tahun,
 .datatable__standar {
   width: 10%;
+  min-width: 4rem;
 }
 
 .datatable__aksi {
-  width: 20%;
-  min-width: 8.75rem;
+  /* width: 20%;
+  min-width: 8.75rem; */
+  width: 15%;
+  min-width: 6.5rem;
 }
 
 .datatable__status {
-  width: 15%;
+  width: 18%;
+  min-width: 7.5rem;
 }
 
 .datatable__unit,
 .datatable__kategori {
-  width: 24%;
+  width: 25%;
+  min-width: 8.25rem;
 }
 
 #datatablePenilaian thead tr th,
