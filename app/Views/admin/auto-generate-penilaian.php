@@ -51,26 +51,26 @@
                 </select>
             </div>
         </div>
-        <!-- data induk -->
+        <!-- standar -->
         <div class="row mb-3 mb-sm-4">
-            <label for="dataInduk" class="col-lg-3 col-md-3 col-sm-4 col-form-label form__label">Data Induk <span class="color__danger">*</span></label>
+            <label for="standar" class="col-lg-3 col-md-3 col-sm-4 col-form-label form__label">Standar <span class="color__danger">*</span></label>
             <div class="col-lg-6 col-md-9 col-sm-8 row pe-0">
                 <div class="col-lg-6 col-12 pe-lg-2 pe-0 mb-lg-0 mb-3">
-                    <select name="dataIndukPenelitian[]" id="dataIndukPenelitian" class="form-select form__select shadow-none" multiple multiselect-search="true" multiselect-select-all="true" multiselect-max-items="200" onchange="console.log(this.selectedOptions)" required placeholder-inputs="Penelitian">
-                        <option value="">Data Induk Penelitian 1</option>
-                        <option value="">Data Induk Penelitian 2</option>
-                        <option value="">Data Induk Penelitian 3</option>
-                        <option value="">Data Induk Penelitian 4</option>
-                        <option value="">Data Induk Penelitian 5</option>
+                    <select name="standarPenelitian[]" id="standarPenelitian" class="form-select form__select shadow-none" multiple multiselect-search="true" multiselect-select-all="true" multiselect-max-items="3" onchange="console.log(this.selectedOptions)" required placeholder-inputs="Penelitian">
+                        <option value="Standar Penelitian 1">Standar Penelitian 1</option>
+                        <option value="Standar Penelitian 2">Standar Penelitian 2</option>
+                        <option value="Standar Penelitian 3">Standar Penelitian 3</option>
+                        <option value="Standar Penelitian 4">Standar Penelitian 4</option>
+                        <option value="Standar Penelitian 5">Standar Penelitian 5</option>
                     </select>
                 </div>
                 <div class="col-lg-6 col-12 pe-0">
-                    <select name="dataIndukPengabdian[]" id="dataIndukPengabdian" class="form-select form__select shadow-none" multiple multiselect-search="true" multiselect-select-all="true" multiselect-max-items="200" onchange="console.log(this.selectedOptions)" required placeholder-inputs="Pengabdian Masyarakat">
-                        <option value="">Data Induk Pengabdian Masyarakat 1</option>
-                        <option value="">Data Induk Pengabdian Masyarakat 2</option>
-                        <option value="">Data Induk Pengabdian Masyarakat 3</option>
-                        <option value="">Data Induk Pengabdian Masyarakat 4</option>
-                        <option value="">Data Induk Pengabdian Masyarakat 5</option>
+                    <select name="standarPengabdian[]" id="standarPengabdian" class="form-select form__select shadow-none" multiple multiselect-search="true" multiselect-select-all="true" multiselect-max-items="3" onchange="console.log(this.selectedOptions)" required placeholder-inputs="Pengabdian Masyarakat">
+                        <option value="Standar Pengabdian Masyarakat 1">Standar Pengabdian Masyarakat 1</option>
+                        <option value="Standar Pengabdian Masyarakat 2">Standar Pengabdian Masyarakat 2</option>
+                        <option value="Standar Pengabdian Masyarakat 3">Standar Pengabdian Masyarakat 3</option>
+                        <option value="Standar Pengabdian Masyarakat 4">Standar Pengabdian Masyarakat 4</option>
+                        <option value="Standar Pengabdian Masyarakat 5">Standar Pengabdian Masyarakat 5</option>
                     </select>
                 </div>
             </div>
