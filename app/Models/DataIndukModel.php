@@ -40,4 +40,11 @@ class DataIndukModel extends Model
             ->where('kategori_id', $kategori_id)
             ->delete();
     }
+
+    //  Get Data By Kategori_id
+    public function getIndukByKategoriId($kategori_id)
+    {
+        return $this->where('kategori_id', $kategori_id)
+            ->findAll();
+    }
 }

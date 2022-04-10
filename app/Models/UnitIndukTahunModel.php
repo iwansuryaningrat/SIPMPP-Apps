@@ -9,7 +9,7 @@ class UnitIndukTahunModel extends Model
     protected $table            = 'unit_induk_tahun';
     protected $primaryKey       = ['tahun', 'unit_id', 'induk_id'];
     protected $returnType       = 'array';
-    protected $allowedFields    = ['tahun', 'unit_id', 'induk_id', 'nilai', 'created_at', 'updated_at'];
+    protected $allowedFields    = ['tahun', 'unit_id', 'induk_id', 'kategori_id', 'nilai', 'created_at', 'updated_at'];
 
     // Dates
     protected $useTimestamps = true;
@@ -90,5 +90,15 @@ class UnitIndukTahunModel extends Model
         return $this->where('induk_id', $induk_id)
             ->where('kategori_id', $kategori_id)
             ->delete();
+    }
+
+    // Cek Data 
+    public function cekData($tahun, $unit, $induk_id, $kategori_id)
+    {
+        return $this->where('tahun', $tahun)
+            ->where('unit_id', $unit)
+            ->where('induk_id', $induk_id)
+            ->where('kategori_id', $kategori_id)
+            ->first();
     }
 }

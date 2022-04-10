@@ -29,12 +29,10 @@
         <div class="row mb-3 mb-sm-4">
             <label for="tahun" class="col-lg-3 col-md-3 col-sm-4 col-form-label form__label">Tahun <span class="color__danger">*</span></label>
             <div class="col-lg-6 col-md-9 col-sm-8">
-                <select name="tahun[]" id="tahun" class="form-select form__select shadow-none" multiple multiselect-search="true" multiselect-select-all="true" multiselect-max-items="200" onchange="console.log(this.selectedOptions)" required placeholder-inputs="Pilih Tahun">
-                    <option value="tahun 1">tahun 1</option>
-                    <option value="tahun 2">tahun 2</option>
-                    <option value="tahun 3">tahun 3</option>
-                    <option value="tahun 4">tahun 4</option>
-                    <option value="tahun 5">tahun 5</option>
+                <select name="tahun[]" id="tahun" class="form-select form__select shadow-none" multiple multiselect-search="true" multiselect-select-all="true" multiselect-max-items="5" onchange="console.log(this.selectedOptions)" required placeholder-inputs="Pilih Tahun">
+                    <?php foreach ($daftartahun as $datatahun) : ?>
+                        <option value="<?= $datatahun['tahun'] ?>"><?= $datatahun['tahun'] ?></option>
+                    <?php endforeach; ?>
                 </select>
             </div>
         </div>
@@ -42,12 +40,10 @@
         <div class="row mb-3 mb-sm-4">
             <label for="unit" class="col-lg-3 col-md-3 col-sm-4 col-form-label form__label">Unit <span class="color__danger">*</span></label>
             <div class="col-lg-6 col-md-9 col-sm-8">
-                <select name="unit[]" id="unit" class="form-select form__select shadow-none" multiple multiselect-search="true" multiselect-select-all="true" multiselect-max-items="200" onchange="console.log(this.selectedOptions)" required placeholder-inputs="Pilih Unit">
-                    <option value="unit 1">unit 1</option>
-                    <option value="unit 2">unit 2</option>
-                    <option value="unit 3">unit 3</option>
-                    <option value="unit 4">unit 4</option>
-                    <option value="unit 5">unit 5</option>
+                <select name="unit[]" id="unit" class="form-select form__select shadow-none" multiple multiselect-search="true" multiselect-select-all="true" multiselect-max-items="3" onchange="console.log(this.selectedOptions)" required placeholder-inputs="Pilih Unit">
+                    <?php foreach ($daftarunit as $dataunit) : ?>
+                        <option value="<?= $dataunit['unit_id'] ?>"><?= $dataunit['nama_unit'] ?></option>
+                    <?php endforeach; ?>
                 </select>
             </div>
         </div>
@@ -56,21 +52,17 @@
             <label for="dataInduk" class="col-lg-3 col-md-3 col-sm-4 col-form-label form__label">Data Induk <span class="color__danger">*</span></label>
             <div class="col-lg-6 col-md-9 col-sm-8 row pe-0">
                 <div class="col-lg-6 col-12 pe-lg-2 pe-0 mb-lg-0 mb-3">
-                    <select name="dataIndukPenelitian[]" id="dataIndukPenelitian" class="form-select form__select shadow-none" multiple multiselect-search="true" multiselect-select-all="true" multiselect-max-items="200" onchange="console.log(this.selectedOptions)" required placeholder-inputs="Penelitian">
-                        <option value="">Data Induk Penelitian 1</option>
-                        <option value="">Data Induk Penelitian 2</option>
-                        <option value="">Data Induk Penelitian 3</option>
-                        <option value="">Data Induk Penelitian 4</option>
-                        <option value="">Data Induk Penelitian 5</option>
+                    <select name="dataIndukPenelitian[]" id="dataIndukPenelitian" class="form-select form__select shadow-none" multiple multiselect-search="true" multiselect-select-all="true" multiselect-max-items="3" onchange="console.log(this.selectedOptions)" required placeholder-inputs="Penelitian">
+                        <?php foreach ($indukPEN as $penelitian) : ?>
+                            <option value="<?= $penelitian['induk_id'] ?>"><?= $penelitian['nama_induk'] ?></option>
+                        <?php endforeach; ?>
                     </select>
                 </div>
                 <div class="col-lg-6 col-12 pe-0">
-                    <select name="dataIndukPengabdian[]" id="dataIndukPengabdian" class="form-select form__select shadow-none" multiple multiselect-search="true" multiselect-select-all="true" multiselect-max-items="200" onchange="console.log(this.selectedOptions)" required placeholder-inputs="Pengabdian Masyarakat">
-                        <option value="">Data Induk Pengabdian Masyarakat 1</option>
-                        <option value="">Data Induk Pengabdian Masyarakat 2</option>
-                        <option value="">Data Induk Pengabdian Masyarakat 3</option>
-                        <option value="">Data Induk Pengabdian Masyarakat 4</option>
-                        <option value="">Data Induk Pengabdian Masyarakat 5</option>
+                    <select name="dataIndukPengabdian[]" id="dataIndukPengabdian" class="form-select form__select shadow-none" multiple multiselect-search="true" multiselect-select-all="true" multiselect-max-items="3" onchange="console.log(this.selectedOptions)" required placeholder-inputs="Pengabdian Masyarakat">
+                        <?php foreach ($indukPPM as $pengabdian) : ?>
+                            <option value="<?= $pengabdian['induk_id'] ?>"><?= $pengabdian['nama_induk'] ?></option>
+                        <?php endforeach; ?>
                     </select>
                 </div>
             </div>

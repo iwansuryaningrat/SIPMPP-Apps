@@ -17,8 +17,11 @@ use App\Models\UsersModel;
 use App\Models\UserRoleUnitModel;
 use Config\Validation;
 
+use App\Controllers\Generator;
+
 class Savedata extends BaseController
 {
+    protected $generator;
     protected $dataIndukModel;
     protected $indikatorModel;
     protected $kategoriModel;
@@ -33,6 +36,7 @@ class Savedata extends BaseController
 
     public function __construct()
     {
+        $this->generator = new Generator();
         $this->dataIndukModel = new DataIndukModel();
         $this->indikatorModel = new IndikatorModel();
         $this->kategoriModel = new KategoriModel();
@@ -301,11 +305,39 @@ class Savedata extends BaseController
         }
     }
 
-    // Save Auto Generator for Data Induk
+    // Save Auto Generator for Data Induk (Done)
     public function indukgenerator()
     {
-        $data = $this->request->getPost('tahun');
-        dd($data);
+        $tahun = $this->request->getPost(['tahun'])['tahun'];
+        $unit = $this->request->getPost(['unit'])['unit'];
+        $dataIndukPenelitian = $this->request->getPost(['dataIndukPenelitian'])['dataIndukPenelitian'];
+        $dataIndukPengabdian = $this->request->getPost(['dataIndukPengabdian'])['dataIndukPengabdian'];
+        // dd($unit);
+
+        $countpen = 0;
+        $countppm = 0;
+        foreach ($tahun as $year) {
+            foreach ($unit as $units) {
+                foreach ($dataIndukPenelitian as $pen) {
+                    $respon = $this->generator->indukGenerator($year, $units, $pen, 'PEN');
+                    // dd($respon);
+                    if ($respon == "200") {
+                        $countpen++;
+                    }
+                }
+                foreach ($dataIndukPengabdian as $ppm) {
+                    $respon = $this->generator->indukGenerator($year, $units, $ppm, 'PPM');
+                    // dd($respon);
+                    if ($respon == "200") {
+                        $countppm++;
+                    }
+                }
+            }
+        }
+        $sum = $countpen + $countppm;
+        // dd($sum);
+        session()->setFlashdata('message', '<div class="alert alert-success alert__sipmpp" role="alert"><i class="fa-solid fa-circle-check color__success"></i><span> ' . $sum . ' data telah ditambahkan.</span></div>');
+        return redirect()->to('/admin/datainduk');
     }
 
     // Save Auto Generator for Penilaian

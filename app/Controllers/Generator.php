@@ -56,9 +56,28 @@ class Generator extends BaseController
         $this->thisTahun = (int)date('Y');
     }
 
-    public function indukGenerator()
+    //  Done
+    public function indukGenerator($tahun, $unit, $induk_id, $kategori_id)
     {
         // Cek di database
+        $data = $this->unitIndukTahunModel->cekData($tahun, $unit, $induk_id, $kategori_id);
+
+        if ($data == null) {
+            $data = [
+                'tahun' => $tahun,
+                'unit_id' => $unit,
+                'induk_id' => $induk_id,
+                'kategori_id' => $kategori_id,
+                'nilai' => '0',
+            ];
+            // dd($data);
+
+            $this->unitIndukTahunModel->insert($data);
+
+            return "200";
+        } else {
+            return "500";
+        }
     }
 
     public function standarGenerator()
