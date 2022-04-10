@@ -90,16 +90,12 @@
 <script type="text/javascript" charset="utf8" src="https://cdn.datatables.net/1.11.5/js/jquery.dataTables.js"></script>
 <script>
     // tooltips
-    const tooltipsEdit = document.querySelectorAll(
-        ".edit__data__induk__icon"
-    );
+    const tooltipsEdit = document.querySelectorAll(".edit__data__induk__icon");
     tooltipsEdit.forEach((t) => {
         new bootstrap.Tooltip(t);
     });
 
-    const tooltipsDelete = document.querySelectorAll(
-        ".delete__data__induk__icon"
-    );
+    const tooltipsDelete = document.querySelectorAll(".delete__data__induk__icon");
     tooltipsDelete.forEach((t) => {
         new bootstrap.Tooltip(t);
     });
