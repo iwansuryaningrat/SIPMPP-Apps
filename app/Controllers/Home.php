@@ -58,7 +58,7 @@ class Home extends BaseController
         $this->thisTahun = (int)date('Y');
     }
 
-    // Dashboard Method (Done)
+    // Dashboard Method (Done, Checked & Tested 11 April 2022) 
     public function index()
     {
         $data_user = $this->data_user;
@@ -97,7 +97,7 @@ class Home extends BaseController
         return view('user/index', $data);
     }
 
-    // Data Induk Method (Done)
+    // Data Induk Method (Done, Checked & Tested 11 April 2022)
     public function dataInduk()
     {
         $data_user = $this->data_user;
@@ -105,9 +105,7 @@ class Home extends BaseController
 
         $unit_id = $data_user['unit_id'];
 
-        // $data_induk = $this->unitIndukTahunModel->getIndukUnit($unit_id, $tahun);
         $data_indukPen = $this->unitIndukTahunModel->getIndukUnitKategori($unit_id, $tahun, 'PEN');
-        // dd($data_induk);
         $data_indukPPM = $this->unitIndukTahunModel->getIndukUnitKategori($unit_id, $tahun, 'PPM');
 
         $i = 1;
@@ -128,7 +126,7 @@ class Home extends BaseController
         return view('user/datainduk', $data);
     }
 
-    // Edit Data Induk Method (Done)
+    // Edit Data Induk Method (Done, Checked & Tested 11 April 2022)
     public function editDataInduk()
     {
         $user = $this->data_user;
@@ -149,7 +147,7 @@ class Home extends BaseController
         return redirect()->to('/home/datainduk/' . $unit_id . '/' . $tahun);
     }
 
-    // Standar Method (Done)
+    // Standar Method (Done, Checked & Tested 11 April 2022)
     public function standar()
     {
         $data_user = $this->data_user;
@@ -159,13 +157,11 @@ class Home extends BaseController
 
 
         $data = $this->penilaianModel->getPenilaian($unit_id, $tahun);
-        // dd($data);
         $data_nilai = [];
         foreach ($data as $datap) {
             $nilai_akhir = 0;
             $i = 1;
             $datapenilaian = $this->penilaianModel->getPenilaianSpec($data_user['unit_id'], $datap['standar_id'], $tahun, $datap['kategori_id']);
-            // dd($datapenilaian);
             foreach ($datapenilaian as $nilai) {
                 $nilai_akhir += $nilai['nilai_akhir'];
                 $i++;
@@ -177,8 +173,6 @@ class Home extends BaseController
                 'nilai_akhir' => $nilai_akhir,
             ];
         }
-        // dd($data_nilai);
-
 
         $i = 1;
 
@@ -186,7 +180,6 @@ class Home extends BaseController
         foreach ($data as $s) {
             $status[] = $s['status'];
         }
-
 
         // Cek apakah semua standar sudah diisi
         if (in_array('Dikirim', $status)) {
@@ -214,7 +207,7 @@ class Home extends BaseController
         return view('user/standar', $data);
     }
 
-    // Indikator Method (Done)
+    // Indikator Method (Done, Checked & Tested 11 April 2022)
     public function indikator($standar_id, $kategori_id)
     {
         $data_user = $this->data_user;
@@ -223,10 +216,8 @@ class Home extends BaseController
 
         $datapenilaian = $this->penilaianModel->getPenilaianSpec($data_user['unit_id'], $standar_id, $tahun, $kategori_id);
         $indikator = $this->indikatorModel->getIndikator($kategori_id, $standar_id);
-        // dd($datapenilaian, $indikator);
 
         $kategori =  $this->kategoriModel->getKategoriById($kategori_id)['nama_kategori'];
-        // dd($kategori);
 
         $standar = $this->standarModel->getStandarByKategori($standar_id, $kategori_id);
 
@@ -257,17 +248,11 @@ class Home extends BaseController
         $unit_id = $data_user['unit_id'];
         $tahun = $data_user['tahun'];
 
-        // dd($kategori_id, $standar_id, $indikator_id);
-
-        // $datapenilaian = $this->penilaianModel->getPenilaianByUnitId($unit_id, $standar_id, $kategori_id, $tahun, $indikator_id);
         $datapenilaian = $this->penilaianModel->getPenilaianSpecId($unit_id, $standar_id, $tahun, $kategori_id, $indikator_id);
-        // dd($datapenilaian);
         $standar = $this->standarModel->getStandarByKategori($standar_id, $kategori_id);
-        // dd($datapenilaian, $standar);
         $induk = $this->unitIndukTahunModel->getIndukUnitSpec($unit_id, $tahun, $datapenilaian['indikator_id'], $kategori_id);
-        // dd($induk);
         $kategori = $this->kategoriModel->getKategoriById($kategori_id);
-        // dd($kategori);
+        // dd($datapenilaian);
 
         if ($datapenilaian['nilai'] == 0) {
             session()->setFlashdata('message', '<div class="alert alert-danger alert__sipmpp" role="alert"><i class="fa-solid fa-circle-exclamation color__danger"></i><span>Nilai Data Induk Belum Diisi. Silakan isi Data Induk terlebih dahulu!</span></div>');
@@ -283,7 +268,6 @@ class Home extends BaseController
                 'kategori' => $kategori['nama_kategori'],
                 'datapenilaian' => $datapenilaian,
                 'standar' => $standar,
-                // 'induk' => $induk,
                 'tahun' => $tahun,
                 'tahunsession' => $this->tahun,
             ];
@@ -352,7 +336,7 @@ class Home extends BaseController
         return redirect()->to('/home/indikator/' . $standar_id . '/' . $kategori_id);
     }
 
-    // Send Penilaian Method (Done)
+    // Send Penilaian Method (Done, checked and tested 11 April 2022)
     public function sendPenilaian()
     {
         $data_user = $this->data_user;
@@ -365,20 +349,17 @@ class Home extends BaseController
         foreach ($standar as $s) {
             array_push($status, $s['status']);
         }
-        // dd($status);
 
         // Cek apakah semua standar sudah diisi
         if (in_array('Belum Diisi', $status) || in_array('Belum Lengkap', $status)) {
-            // dd('Belum Lengkap');
             $this->session->setFlashdata('message', '<div class="alert alert-danger alert__sipmpp" role="alert"><i class="fa-solid fa-circle-exclamation color__danger"></i><span><strong>Maaf!</strong> Data penilaian belum lengkap.</span></div>');
 
             return redirect()->to('/home/standar/');
         } else {
-            // dd('Lengkap');
             $this->penilaianModel->updateStatus($data_user['unit_id'], $tahun, 'Dikirim');
 
             $this->session->setFlashdata('message', '<div class="alert alert-success alert__sipmpp" role="alert"><i class="fa-solid fa-circle-check color__success"></i><span><strong>Selamat!</strong> Data penilaian telah dikirim.</span></div>');
-            
+
             return redirect()->to('/home/standar/');
         }
     }
@@ -451,7 +432,7 @@ class Home extends BaseController
             }
         } else {
             $this->session->setFlashdata('message', '<div class="alert alert-danger alert__sipmpp" role="alert"><i class="fa-solid fa-circle-exclamation color__danger"></i><span><strong>Maaf!</strong> Password lama tidak sesuai.</span></div>');
-            
+
             return redirect()->to('/home/profile/');
         }
     }

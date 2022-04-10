@@ -84,6 +84,10 @@ class Stats extends BaseController
         $standar = $this->penilaianModel->getPenilaianByUnitIdTahun($unit_id, $tahun);
         $standarprogress = [];
         foreach ($standar as $datastandar) {
+            $Standar = $this->standarModel->getStandarByKategori($datastandar['standar_id'], $datastandar['kategori_id']);
+            if (isset($Standar['nama_standar'])) {
+                $namaStandar = $Standar['nama_standar'];
+            }
             $indikator = $this->penilaianModel->getPenilaianProgress($unit_id, $tahun, $datastandar['standar_id'], $datastandar['kategori_id']);
             $ssum = 0;
             $scount = 0;
@@ -105,7 +109,7 @@ class Stats extends BaseController
 
             $standarprogress[] = [
                 'standar' => $datastandar['standar_id'],
-                'nama_standar' => $this->standarModel->getStandarByKategori($datastandar['standar_id'], $datastandar['kategori_id'])['nama_standar'],
+                'nama_standar' => $namaStandar,
                 'kategori' => $datastandar['kategori_id'],
                 'count' => $scount,
                 'sum' => $ssum,

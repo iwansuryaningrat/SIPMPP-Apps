@@ -160,4 +160,21 @@ class PenilaianModel extends Model
             ->where('penilaian.kategori_id', $kategori_id)
             ->first();
     }
+
+    // Get Penilaian By Kategorinya
+    public function getPenilaianByKat($unit_id, $tahun, $kategori_id)
+    {
+        // return $this->select('penilaian.*, standar.nama_standar')
+        return $this->select('penilaian.*, standar.nama_standar, standar.NoStd')
+            // ->join('standar', 'standar.kategori_id = penilaian.kategori_id AND standar.standar_id=penilaian.standar_id')
+            ->join('standar', 'standar.standar_id=penilaian.standar_id')
+            ->where('penilaian.unit_id', $unit_id)
+            ->where('penilaian.tahun', $tahun)
+            ->where('penilaian.kategori_id', $kategori_id)
+            ->where('standar.kategori_id', $kategori_id)
+            // ->where('standar.kategori_id', 'penilaian.kategori_id')
+            ->groupby('standar.nama_standar')
+            ->orderBy('standar.NoStd', 'ASC')
+            ->findAll();
+    }
 }

@@ -23,14 +23,10 @@
 <!-- filter -->
 <div class="filter__table">
   <div class="nav nav-pills" id="pills-tab" role="tablist">
-    <button class="btn filter__btn me-0 me-md-3 shadow-none active nav-link active" id="pills-datainduk-penelitian"
-      data-bs-toggle="pill" data-bs-target="#pills-table-datainduk-penelitian" type="button" role="tab"
-      aria-controls="pills-table-datainduk-penelitian" aria-selected="true">
+    <button class="btn filter__btn me-0 me-md-3 shadow-none active nav-link active" id="pills-datainduk-penelitian" data-bs-toggle="pill" data-bs-target="#pills-table-datainduk-penelitian" type="button" role="tab" aria-controls="pills-table-datainduk-penelitian" aria-selected="true">
       Penelitian
     </button>
-    <button class="btn filter__btn shadow-none nav-link" id="pills-datainduk-pm" data-bs-toggle="pill"
-      data-bs-target="#pills-table-datainduk-pm" type="button" role="tab" aria-controls="pills-table-datainduk-pm"
-      aria-selected="false">
+    <button class="btn filter__btn shadow-none nav-link" id="pills-datainduk-pm" data-bs-toggle="pill" data-bs-target="#pills-table-datainduk-pm" type="button" role="tab" aria-controls="pills-table-datainduk-pm" aria-selected="false">
       Pengabdian Masyarakat
     </button>
   </div>
@@ -42,8 +38,7 @@
   <?= session()->getFlashdata('message'); ?>
 
   <!-- penelitian -->
-  <div class="tab-pane fade show active" id="pills-table-datainduk-penelitian" role="tabpanel"
-    aria-labelledby="pills-datainduk-penelitian">
+  <div class="tab-pane fade show active" id="pills-table-datainduk-penelitian" role="tabpanel" aria-labelledby="pills-datainduk-penelitian">
     <div class="sipmpp__table">
       <div class="table-responsive">
         <table class="table table__datainduk__content sipmpp__table-content table-hover" id="datainduk-penelitian">
@@ -58,27 +53,19 @@
           </thead>
           <tbody>
             <?php foreach ($data_indukPen as $datainduk) : ?>
-            <tr>
-              <td><?= $i; ?>
-              </td>
-              <td><?= $datainduk['induk_id']; ?>
-              </td>
-              <td><?= $datainduk['nama_induk']; ?>
-              </td>
-              <td><?= $datainduk['nilai']; ?>
-              </td>
-              <td>
-                <a role="button" data-bs-toggle="modal" data-bs-placement="top" title="Edit" href="#staticBackdrop"
-                  class="edit__data__induk__icon"
-                  data-id="<?= $datainduk['induk_id']; ?>"
-                  data-kode="<?= $datainduk['induk_id']; ?>"
-                  data-kategori="<?= $datainduk['nama_kategori']; ?>"
-                  data-katid="<?= $datainduk['kategori_id']; ?>"
-                  data-kebutuhan-data="<?= $datainduk['nama_induk']; ?>"
-                  data-nilai="<?= $datainduk['nilai']; ?>"><i
-                    class="fa-solid fa-pen-to-square"></i></a>
-              </td>
-            </tr>
+              <tr>
+                <td><?= $i; ?>
+                </td>
+                <td><?= $datainduk['kode']; ?>
+                </td>
+                <td><?= $datainduk['nama_induk']; ?>
+                </td>
+                <td><?= $datainduk['nilai']; ?>
+                </td>
+                <td>
+                  <a role="button" data-bs-toggle="modal" data-bs-placement="top" title="Edit" href="#staticBackdrop" class="edit__data__induk__icon" data-id="<?= $datainduk['induk_id']; ?>" data-kode="<?= $datainduk['kode']; ?>" data-kategori="<?= $datainduk['nama_kategori']; ?>" data-katid="<?= $datainduk['kategori_id']; ?>" data-kebutuhan-data="<?= $datainduk['nama_induk']; ?>" data-nilai="<?= $datainduk['nilai']; ?>"><i class="fa-solid fa-pen-to-square"></i></a>
+                </td>
+              </tr>
             <?php $i++;
             endforeach; ?>
           </tbody>
@@ -104,27 +91,19 @@
           <tbody>
             <?php $i = 1;
             foreach ($data_indukPPM as $datainduk) : ?>
-            <tr>
-              <td><?= $i; ?>
-              </td>
-              <td><?= $datainduk['induk_id']; ?>
-              </td>
-              <td><?= $datainduk['nama_induk']; ?>
-              </td>
-              <td><?= $datainduk['nilai']; ?>
-              </td>
-              <td>
-                <a role="button" data-bs-toggle="modal" data-bs-placement="top" title="Edit" href="#staticBackdrop"
-                  class="edit__data__induk__icon"
-                  data-id="<?= $datainduk['induk_id']; ?>"
-                  data-kode="<?= $datainduk['induk_id']; ?>"
-                  data-kategori="<?= $datainduk['nama_kategori']; ?>"
-                  data-katid="<?= $datainduk['kategori_id']; ?>"
-                  data-kebutuhan-data="<?= $datainduk['nama_induk']; ?>"
-                  data-nilai="<?= $datainduk['nilai']; ?>"><i
-                    class="fa-solid fa-pen-to-square"></i></a>
-              </td>
-            </tr>
+              <tr>
+                <td><?= $i; ?>
+                </td>
+                <td><?= $datainduk['kode']; ?>
+                </td>
+                <td><?= $datainduk['nama_induk']; ?>
+                </td>
+                <td><?= $datainduk['nilai']; ?>
+                </td>
+                <td>
+                  <a role="button" data-bs-toggle="modal" data-bs-placement="top" title="Edit" href="#staticBackdrop" class="edit__data__induk__icon" data-id="<?= $datainduk['induk_id']; ?>" data-kode="<?= $datainduk['kode']; ?>" data-kategori="<?= $datainduk['nama_kategori']; ?>" data-katid="<?= $datainduk['kategori_id']; ?>" data-kebutuhan-data="<?= $datainduk['nama_induk']; ?>" data-nilai="<?= $datainduk['nilai']; ?>"><i class="fa-solid fa-pen-to-square"></i></a>
+                </td>
+              </tr>
             <?php $i++;
             endforeach; ?>
           </tbody>
@@ -139,8 +118,7 @@
 <?= $this->section('modal'); ?>
 
 <!-- Modal -->
-<div class="modal fade edit__datainduk__modal" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false"
-  tabindex="-1" aria-labelledby="modal-data-induk" aria-hidden="true">
+<div class="modal fade edit__datainduk__modal" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="modal-data-induk" aria-hidden="true">
   <div class="modal-dialog modal-dialog-centered">
     <div class="modal-content modal__content">
       <div class="modal-header modal__header">
@@ -157,8 +135,7 @@
           <!-- kategori -->
           <div class="modal__form-content">
             <label for="kategori" class="form-label form__label">Kategori</label>
-            <input type="text" class="form-control shadow-none form__control" id="nama_kategori" name="nama_kategori"
-              disabled required />
+            <input type="text" class="form-control shadow-none form__control" id="nama_kategori" name="nama_kategori" disabled required />
           </div>
           <!-- kode -->
           <div class="modal__form-content">
@@ -168,15 +145,13 @@
           <!-- kebutuhan data -->
           <div class="modal__form-content">
             <label for="kebutuhan-data" class="form-label form__label">Kebutuhan Data</label>
-            <textarea id="kebutuhan-data" class="form-control shadow-none form__control" cols="30" rows="3"
-              name="kebutuhan" disabled required>
+            <textarea id="kebutuhan-data" class="form-control shadow-none form__control" cols="30" rows="3" name="kebutuhan" disabled required>
                 </textarea>
           </div>
           <!-- nilai -->
           <div class="modal__form-content">
             <label for="nilai" class="form-label form__label">Nilai</label>
-            <input type="text" class="form-control shadow-none form__control" id="nilai" name="nilai" required
-              autocomplete="off" onkeypress="javascript: return validationNumber(event)" />
+            <input type="text" class="form-control shadow-none form__control" id="nilai" name="nilai" required autocomplete="off" onkeypress="javascript: return validationNumber(event)" />
           </div>
           <div id="alert-wrong-text"></div>
           <div class="modal__form-btn">
