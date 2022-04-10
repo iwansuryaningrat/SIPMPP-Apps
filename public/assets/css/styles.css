@@ -976,6 +976,26 @@ footer .container-fluid.container__fluid {
   font-weight: 500;
 }
 
+/* ========== Alert ========== */
+.alert__sipmpp {
+  padding: 1rem;
+  display: flex;
+  align-items: center;
+}
+
+.alert-success.alert__sipmpp {
+  background-color: rgba(49, 206, 54, 0.2);
+}
+
+.alert-danger.alert__sipmpp {
+  background-color: rgba(242, 89, 97, 0.2);
+}
+
+.alert__sipmpp svg {
+  font-size: 1.625rem;
+  margin-right: 0.75rem;
+}
+
 /* ========== Profile Tahun ========== */
 #form-tahun-profile {
   width: 9rem;
