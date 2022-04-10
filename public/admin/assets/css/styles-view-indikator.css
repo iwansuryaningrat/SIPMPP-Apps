@@ -22,8 +22,10 @@
 }
 
 .table__indikator-aksi {
-  width: 20%;
-  min-width: 8.75rem;
+  /* width: 20%;
+  min-width: 8.75rem; */
+  width: 15%;
+  min-width: 6.5rem;
 }
 
 .table__indikator-indikator,

@@ -36,10 +36,14 @@
 
 <div class="filter__table">
     <div class="nav nav-pills" id="pills-tab" role="tablist">
-        <button class="btn filter__btn me-0 me-md-3 shadow-none active nav-link active" id="pills-spmi-penelitian" data-bs-toggle="pill" data-bs-target="#pills-table-spmi-penelitian" type="button" role="tab" aria-controls="pills-table-spmi-penelitian" aria-selected="true">
+        <button class="btn filter__btn me-0 me-md-3 shadow-none active nav-link active" id="pills-spmi-penelitian"
+            data-bs-toggle="pill" data-bs-target="#pills-table-spmi-penelitian" type="button" role="tab"
+            aria-controls="pills-table-spmi-penelitian" aria-selected="true">
             Penelitian
         </button>
-        <button class="btn filter__btn shadow-none nav-link" id="pills-spmi-pm" data-bs-toggle="pill" data-bs-target="#pills-table-spmi-pm" type="button" role="tab" aria-controls="pills-table-spmi-pm" aria-selected="false">
+        <button class="btn filter__btn shadow-none nav-link" id="pills-spmi-pm" data-bs-toggle="pill"
+            data-bs-target="#pills-table-spmi-pm" type="button" role="tab" aria-controls="pills-table-spmi-pm"
+            aria-selected="false">
             Pengabdian Masyarakat
         </button>
     </div>
@@ -48,7 +52,8 @@
 <!-- table standar -->
 <div class="tab-content" id="pills-tabContent">
     <!-- penelitian -->
-    <div class="tab-pane fade show active" id="pills-table-spmi-penelitian" role="tabpanel" aria-labelledby="pills-spmi-penelitian">
+    <div class="tab-pane fade show active" id="pills-table-spmi-penelitian" role="tabpanel"
+        aria-labelledby="pills-spmi-penelitian">
         <div class="sipmpp__table">
             <!-- Menampilkan flashdata message -->
             <?= session()->getFlashdata('message'); ?>
@@ -65,19 +70,23 @@
                     </thead>
                     <tbody>
                         <?php foreach ($standar as $standar) : ?>
-                            <tr>
-                                <td><?= $i; ?>
-                                </td>
-                                <td><?= $standar['standar_id']; ?>
-                                </td>
-                                <td><?= $standar['nama_standar']; ?>
-                                </td>
-                                <td>
-                                    <a data-bs-placement="top" title="lihat" href="/admin/viewIndikator/<?= $standar['standar_id'] . '/' . $standar['kategori_id']; ?>" class="edit__data__induk__icon me-lg-5 me-md-4 me-3"><i class="fa-solid fa-eye"></i></a>
-                                    <a data-bs-placement="top" title="Edit" href="/admin/editstandarform/<?= $standar['standar_id'] . '/' . $standar['kategori_id']; ?>" class="edit__data__induk__icon me-lg-5 me-md-4 me-3"><i class="fa-solid fa-pen-to-square"></i></a>
-                                    <a data-bs-placement="top" title="Delete" href="#" class="delete__data__induk__icon"><i class="fa-solid fa-trash"></i></a>
-                                </td>
-                            </tr>
+                        <tr>
+                            <td><?= $i; ?>
+                            </td>
+                            <td><?= $standar['standar_id']; ?>
+                            </td>
+                            <td><?= $standar['nama_standar']; ?>
+                            </td>
+                            <td>
+                                <a data-bs-placement="top" title="lihat"
+                                    href="/admin/viewIndikator/<?= $standar['standar_id'] . '/' . $standar['kategori_id']; ?>"
+                                    class="edit__data__induk__icon me-lg-5 me-md-4 me-3"><i
+                                        class="fa-solid fa-eye"></i></a>
+                                <a data-bs-placement="top" title="Edit"
+                                    href="/admin/editstandarform/<?= $standar['standar_id'] . '/' . $standar['kategori_id']; ?>"
+                                    class="edit__data__induk__icon"><i class="fa-solid fa-pen-to-square"></i></a>
+                            </td>
+                        </tr>
                         <?php $i++;
                         endforeach; ?>
                     </tbody>
@@ -130,7 +139,7 @@
     // tooltips
     // progress bar unit
     const tooltipsEdit = document.querySelectorAll(
-        ".lihat__data__induk__icon"
+        ".edit__data__induk__icon"
     );
     tooltipsEdit.forEach((t) => {
         new bootstrap.Tooltip(t);

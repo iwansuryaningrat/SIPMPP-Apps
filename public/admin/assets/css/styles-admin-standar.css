@@ -27,8 +27,10 @@
 }
 
 .table__standar-aksi {
-  width: 30%;
-  min-width: 12.5rem;
+  /* width: 30%;
+  min-width: 12.5rem; */
+  width: 20%;
+  min-width: 8.75rem;
 }
 
 .table__standar-standar {
