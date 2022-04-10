@@ -86,7 +86,8 @@ class Savedata extends BaseController
 
         if (!$valid) {
             // Set flashdata gagal dan kirim pesan eror dengan flashdata
-            $this->session->setFlashdata('msg', '<div class="alert alert-danger alert-dismissible fade show" role="alert">Email sudah terdaftar!</div>');
+            $this->session->setFlashdata('msg', '<div class="alert alert-danger alert__sipmpp alert-dismissible fade show" role="alert"><i class="fa-solid fa-circle-exclamation color__danger"></i><span>Email sudah terdaftar!</span></div>');
+
             return redirect()->to(base_url('admin/adduserform'));
         } else {
             $data = [
@@ -97,7 +98,7 @@ class Savedata extends BaseController
 
             $this->usersModel->insert($data);
             // Set flashdata gagal dan kirim pesan eror dengan flashdata
-            $this->session->setFlashdata('msg', '<div class="alert alert-success alert-dismissible fade show" role="alert">User berhasil ditambahkan!</div>');
+            $this->session->setFlashdata('msg', '<div class="alert alert-success alert__sipmpp alert-dismissible fade show" role="alert"><i class="fa-solid fa-circle-check color__success"></i><span>User berhasil ditambahkan!</span></div>');
             return redirect()->to(base_url('admin/daftaruser'));
         }
     }
@@ -127,7 +128,8 @@ class Savedata extends BaseController
         $this->userroleunitModel->insert($data);
 
         // Set flashdata gagal dan kirim pesan eror dengan flashdata
-        $this->session->setFlashdata('msg', '<div class="alert alert-success alert-dismissible fade show" role="alert">User berhasil ditambahkan!</div>');
+        $this->session->setFlashdata('msg', '<div class="alert alert-success alert__sipmpp alert-dismissible fade show" role="alert"><i class="fa-solid fa-circle-check color__success"></i><span>User berhasil ditambahkan!</span></div>');
+
         return redirect()->to(base_url('admin/daftaruser'));
     }
 
@@ -158,7 +160,8 @@ class Savedata extends BaseController
         $unit = $this->unitsModel->getUnit($id);
 
         if ($unit != null) {
-            $this->session->setFlashdata('msg', '<div class="alert alert-danger alert-dismissible fade show" role="alert">Unit telah ada! Silakan menambahkan unit lain.</div>');
+            $this->session->setFlashdata('msg', '<div class="alert alert-danger alert__sipmpp alert-dismissible fade show" role="alert"><i class="fa-solid fa-circle-exclamation color__danger"></i><span>Unit telah ada! Silakan menambahkan unit lain.</span></div>');
+
             return redirect()->to(base_url('admin/units'));
         } else {
             $data = [
@@ -169,7 +172,8 @@ class Savedata extends BaseController
             $this->unitsModel->insert($data);
 
             // Set flashdata gagal dan kirim pesan eror dengan flashdata
-            $this->session->setFlashdata('msg', '<div class="alert alert-success alert-dismissible fade show" role="alert">Unit berhasil ditambahkan!</div>');
+            $this->session->setFlashdata('msg', '<div class="alert alert-success alert__sipmpp alert-dismissible fade show" role="alert"><i class="fa-solid fa-circle-check color__success"></i><span>Unit berhasil ditambahkan!</span></div>');
+
             return redirect()->to(base_url('admin/units'));
         }
     }
@@ -194,7 +198,7 @@ class Savedata extends BaseController
         $datakategori = $this->kategoriModel->getKategoriById($id);
 
         if ($datakategori != null) {
-            $this->session->setFlashdata('msg', '<div class="alert alert-danger alert-dismissible fade show" role="alert">Kategori sudah ada!</div>');
+            $this->session->setFlashdata('msg', '<div class="alert alert-danger alert__sipmpp alert-dismissible fade show" role="alert"><i class="fa-solid fa-circle-exclamation color__danger"></i><span>Kategori sudah ada!</span></div>');
             return redirect()->to(base_url('admin/kategori'));
         } else {
             $data = [
@@ -205,7 +209,7 @@ class Savedata extends BaseController
             $this->kategoriModel->insert($data);
 
             // Set flashdata gagal dan kirim pesan eror dengan flashdata
-            $this->session->setFlashdata('msg', '<div class="alert alert-success alert-dismissible fade show" role="alert">Kategori berhasil ditambahkan!</div>');
+            $this->session->setFlashdata('msg', '<div class="alert alert-success alert__sipmpp alert-dismissible fade show" role="alert"><i class="fa-solid fa-circle-check color__success"></i><span>Kategori berhasil ditambahkan!</span></div>');
             return redirect()->to(base_url('admin/kategori'));
         }
     }
@@ -221,7 +225,8 @@ class Savedata extends BaseController
         $data = $this->dataIndukModel->getIndukById($induk_id, $kategori_id);
 
         if ($data) {
-            session()->setFlashdata('message', '<div class="alert alert-danger" role="alert">Data Induk sudah ada!</div>');
+            session()->setFlashdata('message', '<div class="alert alert-danger alert__sipmpp" role="alert"><i class="fa-solid fa-circle-exclamation color__danger"></i><span>Data Induk sudah ada!</span></div>');
+
             return redirect()->to(base_url('admin/dataInduk'));
         } else {
             $data = [
@@ -231,7 +236,9 @@ class Savedata extends BaseController
                 'nama_induk' => $nama_induk
             ];
             $this->dataIndukModel->insert($data);
-            session()->setFlashdata('message', '<div class="alert alert-success" role="alert">Data Induk berhasil ditambahkan!</div>');
+    
+            session()->setFlashdata('message', '<div class="alert alert-success alert__sipmpp" role="alert"><i class="fa-solid fa-circle-check color__success"><span>Data Induk berhasil ditambahkan!</span></div>');
+
             return redirect()->to(base_url('admin/dataInduk'));
         }
     }
@@ -248,9 +255,8 @@ class Savedata extends BaseController
         $datastandar = $this->standarModel->getStandarByKategori($standar_id, $kategori_id);
 
         if ($datastandar) {
-            session()->setFlashdata('message', '<div class="alert alert-danger" role="alert">
-            Data Standar sudah ada!
-            </div>');
+            session()->setFlashdata('message', '<div class="alert alert-danger alert__sipmpp" role="alert"><i class="fa-solid fa-circle-exclamation color__danger"></i><span>Data Standar sudah ada!</span></div>');
+
             return redirect()->to(base_url('admin/standar'));
         } else {
             $data = [
@@ -261,9 +267,9 @@ class Savedata extends BaseController
             ];
 
             $this->standarModel->insert($data);
-            session()->setFlashdata('message', '<div class="alert alert-success" role="alert">
-            Data Standar berhasil ditambahkan!
-            </div>');
+
+            session()->setFlashdata('message', '<div class="alert alert-success alert__sipmpp" role="alert"><i class="fa-solid fa-circle-check color__success"><span>Data Standar berhasil ditambahkan!</span></div>');
+
             return redirect()->to(base_url('admin/standar'));
         }
     }
@@ -278,9 +284,8 @@ class Savedata extends BaseController
         $dataindikator = $this->indikatorModel->getIndikator($kategori_id, $standar_id);
 
         if ($dataindikator) {
-            session()->setFlashdata('message', '<div class="alert alert-danger" role="alert">
-            Data Indikator sudah ada!
-            </div>');
+            session()->setFlashdata('message', '<div class="alert alert-danger alert__sipmpp" role="alert"><i class="fa-solid fa-circle-exclamation color__danger"></i><span>Data Indikator sudah ada!</span></div>');
+
             return redirect()->to(base_url('admin/standar'));
         } else {
             $data = [
@@ -292,9 +297,9 @@ class Savedata extends BaseController
             ];
 
             $this->indikatorModel->insert($data);
-            session()->setFlashdata('message', '<div class="alert alert-success" role="alert">
-            Data Indikator berhasil ditambahkan!
-            </div>');
+
+            session()->setFlashdata('message', '<div class="alert alert-success alert__sipmpp" role="alert"><i class="fa-solid fa-circle-check color__success"><span>Data Indikator berhasil ditambahkan!</span></div>');
+
             return redirect()->to(base_url('admin/standar'));
         }
     }

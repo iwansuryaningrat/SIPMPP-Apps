@@ -80,10 +80,12 @@ class Editdata extends BaseController
             $this->unitsModel->update($unit_id, $data);
 
             // Set flashdata gagal dan kirim pesan eror dengan flashdata
-            $this->session->setFlashdata('msg', '<div class="alert alert-success alert-dismissible fade show" role="alert">Unit berhasil diubah!</div>');
+            $this->session->setFlashdata('msg', '<div class="alert alert-success alert__sipmpp alert-dismissible fade show" role="alert"><i class="fa-solid fa-circle-check color__success"></i><span>Unit berhasil diubah!</span></div>');
+
             return redirect()->to(base_url('admin/units'));
         } else {
-            $this->session->setFlashdata('msg', '<div class="alert alert-danger alert-dismissible fade show" role="alert">Unit tidak ditemukan!</div>');
+            $this->session->setFlashdata('msg', '<div class="alert alert-danger alert__sipmpp alert-dismissible fade show" role="alert"><i class="fa-solid fa-circle-exclamation color__danger"></i><span>Unit tidak ditemukan!</span></div>');
+
             return redirect()->to(base_url('admin/units'));
         }
     }
@@ -105,10 +107,12 @@ class Editdata extends BaseController
             $this->kategoriModel->update($id, $data);
 
             // Set flashdata gagal dan kirim pesan eror dengan flashdata
-            $this->session->setFlashdata('msg', '<div class="alert alert-success alert-dismissible fade show" role="alert">Kategori berhasil diubah!</div>');
+            $this->session->setFlashdata('msg', '<div class="alert alert-success alert__sipmpp alert-dismissible fade show" role="alert"><i class="fa-solid fa-circle-check color__success"></i><span>Kategori berhasil diubah!</span></div>');
+
             return redirect()->to(base_url('admin/kategori'));
         } else {
-            $this->session->setFlashdata('msg', '<div class="alert alert-danger alert-dismissible fade show" role="alert">Kategori sudah ada!</div>');
+            $this->session->setFlashdata('msg', '<div class="alert alert-danger alert__sipmpp alert-dismissible fade show" role="alert"><i class="fa-solid fa-circle-exclamation color__danger"></i><span>Kategori sudah ada!</span></div>');
+            
             return redirect()->to(base_url('admin/kategori'));
         }
     }
@@ -132,7 +136,8 @@ class Editdata extends BaseController
         $this->dataIndukModel->update($induk_id, $data);
 
         // Set flashdata gagal dan kirim pesan eror dengan flashdata
-        $this->session->setFlashdata('msg', '<div class="alert alert-success alert-dismissible fade show" role="alert">Data Induk berhasil diubah!</div>');
+        $this->session->setFlashdata('msg', '<div class="alert alert-success alert__sipmpp alert-dismissible fade show" role="alert"><i class="fa-solid fa-circle-check color__success"></i><span>Data Induk berhasil diubah!</span></div>');
+        
         return redirect()->to(base_url('admin/induk'));
     }
 
@@ -149,19 +154,21 @@ class Editdata extends BaseController
         if (password_verify($old_password, $user['password'])) {
             // Cek apakah password baru sama dengan password lama
             if ($old_password == $new_password) {
-                $this->session->setFlashdata('message', '<div class="alert alert-danger" role="alert"> <strong>Maaf!</strong> Password baru tidak boleh sama dengan password lama.</div>');
+                $this->session->setFlashdata('message', '<div class="alert alert-danger alert__sipmpp" role="alert"><i class="fa-solid fa-circle-exclamation color__danger"></i><span><strong>Maaf!</strong> Password baru tidak boleh sama dengan password lama.</span></div>');
+
                 return redirect()->to('/admin/profile/');
             } else {
                 // Update Password
                 $new_password = password_hash($new_password, PASSWORD_DEFAULT);
                 $this->usersModel->updatePassword($data_user['email'], $new_password);
 
-                $this->session->setFlashdata('message', '<div class="alert alert-success" role="alert"><strong>Selamat!</strong> Password berhasil diubah.</div>');
+                $this->session->setFlashdata('message', '<div class="alert alert-success alert__sipmpp" role="alert"><i class="fa-solid fa-circle-check color__success"></i><span><strong>Selamat!</strong> Password berhasil diubah.</span></div>');
+
                 return redirect()->to('/admin/profile/');
             }
         } else {
-            $this->session->setFlashdata('message', '<div class="alert alert-danger" role="alert">
-            <strong>Maaf!</strong> Password lama tidak sesuai.</div>');
+            $this->session->setFlashdata('message', '<div class="alert alert-danger alert__sipmpp" role="alert"><i class="fa-solid fa-circle-exclamation color__danger"></i><span><strong>Maaf!</strong> Password lama tidak sesuai.</span></div>');
+
             return redirect()->to('/admin/profile/');
         }
     }
@@ -208,8 +215,8 @@ class Editdata extends BaseController
 
         $this->session->set($datasession);
 
-        $this->session->setFlashdata('message', '<div class="alert alert-success" role="alert">
-        <strong>Selamat!</strong> Data berhasil diubah.</div>');
+        $this->session->setFlashdata('message', '<div class="alert alert-success alert__sipmpp" role="alert"><i class="fa-solid fa-circle-check color__success"></i><span><strong>Selamat!</strong> Data berhasil diubah.</span></div>');
+
         return redirect()->to('/admin/profile/');
     }
 
@@ -219,9 +226,9 @@ class Editdata extends BaseController
         $nama_standar = $this->request->getVar('namaStandar');
 
         $this->standarModel->updateStandar($standar_id, $kategori_id, $nama_standar);
-        session()->setFlashdata('message', '<div class="alert alert-success" role="alert">
-        Data Standar berhasil diubah!
-        </div>');
+
+        session()->setFlashdata('message', '<div class="alert alert-success alert__sipmpp" role="alert"><i class="fa-solid fa-circle-check color__success"></i><span>Data Standar berhasil diubah!</span></div>');
+
         return redirect()->to(base_url('admin/standar'));
     }
 }

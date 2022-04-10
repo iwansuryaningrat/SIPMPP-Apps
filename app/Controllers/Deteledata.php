@@ -65,7 +65,8 @@ class Deteledata extends BaseController
     {
         $this->userroleunitModel->deleteUserRoleUnit($email, $role_id);
         // Set flashdata gagal dan kirim pesan eror dengan flashdata
-        $this->session->setFlashdata('msg', '<div class="alert alert-success alert-dismissible fade show" role="alert">User berhasil dihapus!</div>');
+
+        $this->session->setFlashdata('msg', '<div class="alert alert-success alert__sipmpp alert-dismissible fade show" role="alert"><i class="fa-solid fa-circle-minus color__success"></i><span>User berhasil dihapus!</span></div>');
         return redirect()->to(base_url('admin/daftaruser'));
     }
 
@@ -80,10 +81,11 @@ class Deteledata extends BaseController
             $this->unitsModel->delete($unit_id);
 
             // Set flashdata gagal dan kirim pesan eror dengan flashdata
-            $this->session->setFlashdata('msg', '<div class="alert alert-success alert-dismissible fade show" role="alert">Unit berhasil dihapus!</div>');
+            $this->session->setFlashdata('msg', '<div class="alert alert-success alert__sipmpp alert-dismissible fade show" role="alert"><i class="fa-solid fa-circle-minus color__success"></i><span>Unit berhasil dihapus!</span></div>');
+
             return redirect()->to(base_url('admin/units'));
         } else {
-            $this->session->setFlashdata('msg', '<div class="alert alert-danger alert-dismissible fade show" role="alert">Unit tidak ditemukan!</div>');
+            $this->session->setFlashdata('msg', '<div class="alert alert-danger alert__sipmpp alert-dismissible fade show" role="alert"><i class="fa-solid fa-circle-exclamation color__danger"></i><span>Unit tidak ditemukan!</span></div>');
             return redirect()->to(base_url('admin/units'));
         }
     }
@@ -97,10 +99,10 @@ class Deteledata extends BaseController
             $this->kategoriModel->delete($kategori_id);
 
             // Set flashdata gagal dan kirim pesan eror dengan flashdata
-            $this->session->setFlashdata('msg', '<div class="alert alert-success alert-dismissible fade show" role="alert">Kategori berhasil dihapus!</div>');
+            $this->session->setFlashdata('msg', '<div class="alert alert-success alert__sipmpp alert-dismissible fade show" role="alert"><i class="fa-solid fa-circle-minus color__success"></i><span>Kategori berhasil dihapus!</span></div>');
             return redirect()->to(base_url('admin/kategori'));
         } else {
-            $this->session->setFlashdata('msg', '<div class="alert alert-danger alert-dismissible fade show" role="alert">Kategori tidak ditemukan!</div>');
+            $this->session->setFlashdata('msg', '<div class="alert alert-danger alert__sipmpp alert-dismissible fade show" role="alert"><i class="fa-solid fa-circle-exclamation color__danger"></i><span>Kategori tidak ditemukan!</span></div>');
             return redirect()->to(base_url('admin/kategori'));
         }
     }
@@ -112,10 +114,11 @@ class Deteledata extends BaseController
         // dd($data);
         if ($data) {
             $this->unitIndukTahunModel->$this->dataIndukModel->deleteByInduk($induk_id, $kategori_id);
-            $this->session->setFlashdata('msg', '<div class="alert alert-success alert-dismissible fade show" role="alert">Data Induk berhasil dihapus!</div>');
+            $this->session->setFlashdata('msg', '<div class="alert alert-success alert__sipmpp alert-dismissible fade show" role="alert"><i class="fa-solid fa-circle-minus color__success"></i><span>Data Induk berhasil dihapus!</span></div>');
+
             return redirect()->to(base_url('admin/induk'));
         } else {
-            $this->session->setFlashdata('msg', '<div class="alert alert-danger alert-dismissible fade show" role="alert">Data Induk tidak ditemukan!</div>');
+            $this->session->setFlashdata('msg', '<div class="alert alert-danger alert__sipmpp alert-dismissible fade show" role="alert"><i class="fa-solid fa-circle-exclamation color__danger"></i><span>Data Induk tidak ditemukan!</span></div>');
             return redirect()->to(base_url('admin/induk'));
         }
     }
@@ -124,9 +127,8 @@ class Deteledata extends BaseController
     public function deleteStandar($standar_id, $kategori_id)
     {
         $this->standarModel->deleteStandar($standar_id, $kategori_id);
-        session()->setFlashdata('message', '<div class="alert alert-success" role="alert">
-        Data Standar berhasil dihapus!
-        </div>');
+        session()->setFlashdata('message', '<div class="alert alert-success alert__sipmpp alert-dismissible fade show" role="alert"><i class="fa-solid fa-circle-minus color__success"></i><span>Data Standar berhasil dihapus!</span></div>');
+
         return redirect()->to(base_url('admin/standar'));
     }
 }
