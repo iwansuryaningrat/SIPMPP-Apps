@@ -89,18 +89,24 @@
   border-bottom-style: hidden;
 }
 
-.table__datainduk-number,
-.table__datainduk-nilai,
-.table__datainduk-aksi {
+.table__datainduk-number {
   width: 10%;
+  min-width: 4rem;
+}
+
+.table__datainduk-nilai {
+  width: 20%;
+  min-width: 7.5rem;
 }
 
 .table__datainduk-kode {
   width: 13%;
+  min-width: 5.25rem;
 }
 
 .table__datainduk-kebutuhandata {
   width: 57%;
+  min-width: 12.5rem;
 }
 
 .table__datainduk__content thead tr th,
