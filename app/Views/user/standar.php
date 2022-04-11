@@ -23,16 +23,17 @@
     </h4>
     <p class="status__spmi">
       Status Penilaian: <span id="status-spmi" class=" <?php if ($status == 'Belum Dikirim') {
-                                                          echo 'color__warning';
-                                                        } elseif ($status == 'Dikirim') {
-                                                          echo 'color__primary';
-                                                        } else {
-                                                          echo 'color__success';
-                                                        } ?> "><?= $status; ?></span>
+    echo 'color__warning';
+} elseif ($status == 'Dikirim') {
+    echo 'color__primary';
+} else {
+    echo 'color__success';
+} ?> "><?= $status; ?></span>
     </p>
   </div>
   <div class="spmi__content-btn">
-    <a href="/home/sendpenilaian/<?= $tahun; ?>" class="btn kirim__btn">
+    <a href="/home/sendpenilaian/<?= $tahun; ?>"
+      class="btn kirim__btn">
       <i class="fa-solid fa-file-import"></i>
       Kirim Penilaian
     </a>
@@ -42,10 +43,14 @@
 <!-- filter -->
 <div class="filter__table">
   <div class="nav nav-pills" id="pills-tab" role="tablist">
-    <button class="btn filter__btn me-0 me-md-3 shadow-none active nav-link active" id="pills-spmi-penelitian" data-bs-toggle="pill" data-bs-target="#pills-table-spmi-penelitian" type="button" role="tab" aria-controls="pills-table-spmi-penelitian" aria-selected="true">
+    <button class="btn filter__btn me-0 me-md-3 shadow-none active nav-link active" id="pills-spmi-penelitian"
+      data-bs-toggle="pill" data-bs-target="#pills-table-spmi-penelitian" type="button" role="tab"
+      aria-controls="pills-table-spmi-penelitian" aria-selected="true">
       Penelitian
     </button>
-    <button class="btn filter__btn shadow-none nav-link" id="pills-spmi-pm" data-bs-toggle="pill" data-bs-target="#pills-table-spmi-pm" type="button" role="tab" aria-controls="pills-table-spmi-pm" aria-selected="false">
+    <button class="btn filter__btn shadow-none nav-link" id="pills-spmi-pm" data-bs-toggle="pill"
+      data-bs-target="#pills-table-spmi-pm" type="button" role="tab" aria-controls="pills-table-spmi-pm"
+      aria-selected="false">
       Pengabdian Masyarakat
     </button>
   </div>
@@ -55,7 +60,8 @@
 <div class="tab-content" id="pills-tabContent">
   <?= session()->getFlashdata('message'); ?>
   <!-- penelitian -->
-  <div class="tab-pane fade show active" id="pills-table-spmi-penelitian" role="tabpanel" aria-labelledby="pills-spmi-penelitian">
+  <div class="tab-pane fade show active" id="pills-table-spmi-penelitian" role="tabpanel"
+    aria-labelledby="pills-spmi-penelitian">
     <div class="sipmpp__table">
       <div class="table-responsive">
         <table class="table table__spmi__content sipmpp__table-content table-hover" id="spmi-penelitian">
@@ -73,38 +79,40 @@
 
             <?php foreach ($data_standar as $standar) :
               if ($standar['kategori_id'] == 'PEN') : ?>
-                <tr>
-                  <td><?= $i; ?>
-                  </td>
-                  <td class="text-uppercase">
-                    <span class="badge badge__standar"><?= $standar['standar_id']; ?></span>
-                  </td>
-                  <td><?= $standar['nama_standar']; ?>
-                  </td>
-                  <td>
-                    <span class="badge badge__sipmpp <?php if ($standar['status'] == 'Diaudit') {
-                                                        echo 'badge__success';
-                                                      } elseif ($standar['status'] == 'Dikirim') {
-                                                        echo 'badge__primary';
-                                                      } elseif ($standar['status'] == 'Belum Diisi') {
-                                                        echo 'badge__danger';
-                                                      } else {
-                                                        echo 'badge__warning';
-                                                      } ?>"><?= $standar['status']; ?></span>
-                  </td>
-                  <td><?php
+            <tr>
+              <td><?= $i; ?>
+              </td>
+              <td class="text-uppercase">
+                <span class="badge badge__standar"><?= $standar['standar_id']; ?></span>
+              </td>
+              <td><?= $standar['nama_standar']; ?>
+              </td>
+              <td>
+                <span class="badge badge__sipmpp <?php if ($standar['status'] == 'Diaudit') {
+                  echo 'badge__success';
+              } elseif ($standar['status'] == 'Dikirim') {
+                  echo 'badge__primary';
+              } elseif ($standar['status'] == 'Belum Diisi') {
+                  echo 'badge__danger';
+              } else {
+                  echo 'badge__warning';
+              } ?>"><?= $standar['status']; ?></span>
+              </td>
+              <td><?php
                       foreach ($data_nilai as $nilai) :
                         if ($nilai['standar_id'] == $standar['standar_id'] && $nilai['kategori_id'] == $standar['kategori_id']) {
-                          echo sprintf("%.2f", floatval($nilai['nilai_akhir']));
+                            echo sprintf("%.2f", floatval($nilai['nilai_akhir']));
                         }
                       endforeach; ?>
-                  </td>
-                  <td>
-                    <a data-bs-placement="top" title="Lihat" href="/home/indikator/<?= $standar['standar_id'] . '/' . $standar['kategori_id'] ?>" class="edit__data__induk__icon">
-                      <i class="fa-solid fa-eye"></i>
-                    </a>
-                  </td>
-                </tr>
+              </td>
+              <td>
+                <a data-bs-placement="top" title="Lihat"
+                  href="/home/indikator/<?= $standar['standar_id'] . '/' . $standar['kategori_id'] ?>"
+                  class="edit__data__induk__icon">
+                  <i class="fa-solid fa-eye"></i>
+                </a>
+              </td>
+            </tr>
             <?php
                 $i++;
               endif;
@@ -136,36 +144,38 @@
             <?php $i = 1;
             foreach ($data_standar as $standar) :
               if ($standar['kategori_id'] == 'PPM') : ?>
-                <tr>
-                  <td><?= $i; ?>
-                  </td>
-                  <td class="text-uppercase">
-                    <span class="badge badge__standar"><?= $standar['standar_id']; ?></span>
-                  </td>
-                  <td><?= $standar['nama_standar']; ?>
-                  </td>
-                  <td>
-                    <span class="badge badge__sipmpp <?php if ($standar['status'] == 'Dikirim' || $standar['status'] == 'Diaudit') {
-                                                        echo 'badge__success';
-                                                      } elseif ($standar['status'] == 'Belum Diisi') {
-                                                        echo 'badge__danger';
-                                                      } else {
-                                                        echo 'badge__warning';
-                                                      } ?>"><?= $standar['status']; ?></span>
-                  </td>
-                  <td><?php
+            <tr>
+              <td><?= $i; ?>
+              </td>
+              <td class="text-uppercase">
+                <span class="badge badge__standar"><?= $standar['standar_id']; ?></span>
+              </td>
+              <td><?= $standar['nama_standar']; ?>
+              </td>
+              <td>
+                <span class="badge badge__sipmpp <?php if ($standar['status'] == 'Dikirim' || $standar['status'] == 'Diaudit') {
+                  echo 'badge__success';
+              } elseif ($standar['status'] == 'Belum Diisi') {
+                  echo 'badge__danger';
+              } else {
+                  echo 'badge__warning';
+              } ?>"><?= $standar['status']; ?></span>
+              </td>
+              <td><?php
                       foreach ($data_nilai as $nilai) :
                         if ($nilai['standar_id'] == $standar['standar_id'] && $nilai['kategori_id'] == $standar['kategori_id']) {
-                          echo sprintf("%.2f", floatval($nilai['nilai_akhir']));
+                            echo sprintf("%.2f", floatval($nilai['nilai_akhir']));
                         }
                       endforeach; ?>
-                  </td>
-                  <td>
-                    <a data-bs-placement="top" title="Lihat" href="/home/indikator/<?= $standar['standar_id'] . '/' . $standar['kategori_id'] ?>" class="edit__data__induk__icon">
-                      <i class="fa-solid fa-eye"></i>
-                    </a>
-                  </td>
-                </tr>
+              </td>
+              <td>
+                <a data-bs-placement="top" title="Lihat"
+                  href="/home/indikator/<?= $standar['standar_id'] . '/' . $standar['kategori_id'] ?>"
+                  class="edit__data__induk__icon">
+                  <i class="fa-solid fa-eye"></i>
+                </a>
+              </td>
+            </tr>
             <?php
                 $i++;
               endif;
