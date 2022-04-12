@@ -254,7 +254,7 @@ class Home extends BaseController
         $kategori = $this->kategoriModel->getKategoriById($kategori_id);
         // dd($datapenilaian);
 
-        if ($datapenilaian['nilai'] == 0) {
+        if ($datapenilaian['nilai'] == 0 || $datapenilaian == null) {
             session()->setFlashdata('message', '<div class="alert alert-danger alert__sipmpp" role="alert"><i class="fa-solid fa-circle-exclamation color__danger"></i><span>Nilai Data Induk Belum Diisi. Silakan isi Data Induk terlebih dahulu!</span></div>');
 
             return redirect()->to('/home/indikator/' . $standar_id . '/' . $kategori_id);

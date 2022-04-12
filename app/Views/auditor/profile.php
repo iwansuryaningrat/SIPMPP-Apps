@@ -32,7 +32,7 @@
     <h5>Profile Pengguna</h5>
     <hr class="head__hr" />
     <?= session()->getFlashdata('message'); ?>
-    <form class="form__profile" id="formChangeInfo" action="/home/editprofile" enctype="multipart/form-data" method="POST">
+    <form class="form__profile" id="formChangeInfo" action="/auditor/editprofile" enctype="multipart/form-data" method="POST">
       <!-- foto -->
       <div>
         <label for="photo-profile" class="form-label form__label">Foto Profil</label>
@@ -87,7 +87,7 @@
       <h5>Ubah Password</h5>
       <hr />
       <?= session()->getFlashdata('message'); ?>
-      <form class="form__change__password" id="formChangePassword" action="/home/editpassword" method="POST">
+      <form class="form__change__password" id="formChangePassword" action="/auditor/editpassword" method="POST">
         <div class="mb-3">
           <label for="oldPassword" class="form-label form__label">Password Lama <span class="color__danger">*</span></label>
           <input type="password" class="form-control form__control shadow-none" id="oldPassword" name="oldPassword" autocomplete="off" required />

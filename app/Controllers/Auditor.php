@@ -13,6 +13,8 @@ use App\Models\UnitsModel;
 use App\Models\UsersModel;
 use App\Models\UserRoleUnitModel;
 
+use App\Controllers\Stats;
+
 class Auditor extends BaseController
 {
     protected $dataIndukModel;
@@ -25,9 +27,11 @@ class Auditor extends BaseController
     protected $unitsModel;
     protected $usersModel;
     protected $userroleunitModel;
+    protected $stats;
 
     public function __construct()
     {
+        $this->stats = new Stats();
         $this->dataIndukModel = new DataIndukModel();
         $this->indikatorModel = new IndikatorModel();
         $this->kategoriModel = new KategoriModel();
@@ -51,14 +55,26 @@ class Auditor extends BaseController
         $this->tahun = $this->userroleunitModel->getTahunRole($this->data_user['email'], $this->data_user['role_id'], $this->data_user['unit_id']);
         $this->i = 1;
         $this->session = \Config\Services::session();
+        $this->thisTahun = (int)date('Y');
     }
 
     // Dashboard Method
     public function index()
     {
         $data_user = $this->data_user;
-        $units = $this->unitsModel->findAll();
-        // dd($units);
+
+        // Induk Progress
+        $indukpersen = $this->stats->getIndukProgress($data_user['unit_id'], $data_user['tahun']);
+
+        // Standar Progress
+        $dataprogresstandar = $this->stats->getStandarProgress($data_user['unit_id'], $data_user['tahun']);
+
+        $databykat = $this->stats->getStandarProgressDoughnut($data_user['unit_id'], $data_user['tahun']);
+        $datanilaiPEN = $databykat['pen'];
+        $datanilaiPPM = $databykat['ppm'];
+
+        // Nilai Per Tahun
+        $nilaiTahun = $this->stats->getNilaiPerTahun($data_user['unit_id']);
 
         $i = 1;
 
@@ -70,7 +86,11 @@ class Auditor extends BaseController
             'tahun' => $data_user['tahun'],
             'header' => 'header__big',
             'css' => 'styles-dashboard.css',
-            'units' => $units,
+            'indukpersen' => $indukpersen,
+            'dataprogresstandar' => $dataprogresstandar,
+            'datanilaiPEN' => $datanilaiPEN,
+            'datanilaiPPM' => $datanilaiPPM,
+            'nilaiTahun' => $nilaiTahun,
             'tahunsession' => $this->tahun,
         ];
 
@@ -85,9 +105,7 @@ class Auditor extends BaseController
 
         $unit_id = $data_user['unit_id'];
 
-        // $data_induk = $this->unitIndukTahunModel->getIndukUnit($unit_id, $tahun);
         $data_indukPen = $this->unitIndukTahunModel->getIndukUnitKategori($unit_id, $tahun, 'PEN');
-        // dd($data_induk);
         $data_indukPPM = $this->unitIndukTahunModel->getIndukUnitKategori($unit_id, $tahun, 'PPM');
 
         $i = 1;
@@ -139,13 +157,11 @@ class Auditor extends BaseController
 
 
         $data = $this->penilaianModel->getPenilaian($unit_id, $tahun);
-        // dd($data);
         $data_nilai = [];
         foreach ($data as $datap) {
             $nilai_akhir = 0;
             $i = 1;
             $datapenilaian = $this->penilaianModel->getPenilaianSpec($data_user['unit_id'], $datap['standar_id'], $tahun, $datap['kategori_id']);
-            // dd($datapenilaian);
             foreach ($datapenilaian as $nilai) {
                 $nilai_akhir += $nilai['nilai_akhir'];
                 $i++;
@@ -157,8 +173,6 @@ class Auditor extends BaseController
                 'nilai_akhir' => $nilai_akhir,
             ];
         }
-        // dd($data_nilai);
-
 
         $i = 1;
 
@@ -166,7 +180,6 @@ class Auditor extends BaseController
         foreach ($data as $s) {
             $status[] = $s['status'];
         }
-
 
         // Cek apakah semua standar sudah diisi
         if (in_array('Dikirim', $status)) {
@@ -203,12 +216,10 @@ class Auditor extends BaseController
 
         $datapenilaian = $this->penilaianModel->getPenilaianSpec($data_user['unit_id'], $standar_id, $tahun, $kategori_id);
         $indikator = $this->indikatorModel->getIndikator($kategori_id, $standar_id);
-        // dd($datapenilaian, $indikator);
 
         $kategori =  $this->kategoriModel->getKategoriById($kategori_id)['nama_kategori'];
-        // dd($kategori);
 
-        $standar = $this->standarModel->getStandar($standar_id);
+        $standar = $this->standarModel->getStandarByKategori($standar_id, $kategori_id);
 
         $i = 1;
 
@@ -236,24 +247,21 @@ class Auditor extends BaseController
         $data_user = $this->data_user;
         $unit_id = $data_user['unit_id'];
         $tahun = $data_user['tahun'];
+        // dd($unit_id, $tahun, $kategori_id, $standar_id, $indikator_id);
 
-        // $datapenilaian = $this->penilaianModel->getPenilaianSpec($unit_id, $standar_id, $tahun, $kategori_id);
         $datapenilaian = $this->penilaianModel->getPenilaianSpecId($unit_id, $standar_id, $tahun, $kategori_id, $indikator_id);
-        // dd($datapenilaian);
-        $standar = $this->standarModel->getStandar($standar_id);
-        // dd($datapenilaian, $standar);
-        $induk = $this->unitIndukTahunModel->getIndukUnitSpec($unit_id, $tahun, $datapenilaian[0]['indikator_id'], $kategori_id);
-        // dd($induk);
+        $standar = $this->standarModel->getStandarByKategori($standar_id, $kategori_id);
+        // $induk = $this->unitIndukTahunModel->getIndukUnitSpec($unit_id, $tahun, $datapenilaian['indikator_id'], $kategori_id);
         $kategori = $this->kategoriModel->getKategoriById($kategori_id);
-        // dd($kategori);
+        // dd($datapenilaian);
 
-        if ($datapenilaian[0]['nilai'] == 0) {
+        if ($datapenilaian['nilai'] == 0 || $datapenilaian == null) {
             session()->setFlashdata('message', '<div class="alert alert-danger alert__sipmpp" role="alert"><i class="fa-solid fa-circle-exclamation color__danger"></i><span>Nilai Data Induk Belum Diisi. Silakan isi Data Induk terlebih dahulu!</span></div>');
 
             return redirect()->to('/auditor/indikator/' . $standar_id . '/' . $kategori_id);
         } else {
             $data = [
-                'title' => 'Form Indikator SPMI | SIPMPP UNDIP',
+                'title' => 'Form Indikator SPMI | SIPMPP UNDIP ' . $this->thisTahun,
                 'data_user' => $data_user,
                 'tab' => 'standar',
                 'header' => 'header__mini header__indikator',
@@ -261,7 +269,6 @@ class Auditor extends BaseController
                 'kategori' => $kategori['nama_kategori'],
                 'datapenilaian' => $datapenilaian,
                 'standar' => $standar,
-                // 'induk' => $induk,
                 'tahun' => $tahun,
                 'tahunsession' => $this->tahun,
             ];
@@ -414,7 +421,7 @@ class Auditor extends BaseController
             // Cek apakah password baru sama dengan password lama
             if ($old_password == $new_password) {
                 $this->session->setFlashdata('message', '<div class="alert alert-danger alert__sipmpp" role="alert"><i class="fa-solid fa-circle-exclamation color__danger"></i><span><strong>Maaf!</strong> Password baru tidak boleh sama dengan password lama.</span></div>');
-                
+
                 return redirect()->to('/auditor/profile/');
             } else {
                 // Update Password

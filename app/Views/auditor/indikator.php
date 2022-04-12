@@ -5,7 +5,7 @@
 <div class="header__main-title">
   <div class="header__main-title__pagination">
     <a id="unit-user" href="/" style="font-weight: 600"><?= $data_user['unit']; ?></a>
-    / <a href="/home/standar">Nilai SPMI</a> / Indikator
+    / <a href="/auditor/standar">Nilai SPMI</a> / Indikator
   </div>
   <div class="header__main-title__subtitle">
     <div class="title__subtitle-desc">
@@ -65,7 +65,7 @@
                                                   } ?>"><?= $data['status']; ?></span></td>
             <td><?= $data['nilai_akhir']; ?></td>
             <td>
-              <a data-bs-placement="top" title="Edit" href="/home/indikatorform/<?= $data['kategori_id'] . '/' . $data['standar_id'] . '/' . $data['indikator_id']; ?>" class="edit__data__induk__icon"><i class="fa-solid fa-pen-to-square"></i></a>
+              <a data-bs-placement="top" title="Edit" href="/auditor/indikatorform/<?= $data['kategori_id'] . '/' . $data['standar_id'] . '/' . $data['indikator_id']; ?>" class="edit__data__induk__icon"><i class="fa-solid fa-pen-to-square"></i></a>
             </td>
           </tr>
         <?php $i++;
