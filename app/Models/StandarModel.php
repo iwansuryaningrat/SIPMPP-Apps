@@ -20,10 +20,8 @@ class StandarModel extends Model
     // Get all standar and join
     public function getAllStandar()
     {
-        return $this->select('standar.standar_id, standar.nama_standar, kategori.nama_kategori, kategori.kategori_id')
-            ->join('kategori', 'kategori.kategori_id = standar.kategori_id')
+        return $this->select('standar.*')
             ->orderBy('standar.NoStd', 'ASC')
-            ->orderBy('standar.kategori_id', 'ASC')
             ->findAll();
     }
 

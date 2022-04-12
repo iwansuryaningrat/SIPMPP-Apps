@@ -465,8 +465,19 @@ class Admin extends BaseController
     public function standar()
     {
         $usersession = $this->data_user;
-        $standar = $this->standarModel->getAllStandar();
         $data_user = $this->data_user;
+        $standar = $this->standarModel->getAllStandar();
+        $standarPEN = [];
+        $standarPPM = [];
+
+        foreach ($standar as $data_standar) {
+            if ($data_standar['kategori_id'] == 'PEN') {
+                $standarPEN[] = $data_standar;
+            } else {
+                $standarPPM[] = $data_standar;
+            }
+        }
+        // dd($standarPPM, $standarPEN);
 
         $data = [
             'title' => 'Daftar Standar | SIPMPP Admin UNDIP ' . $this->thisTahun,
@@ -476,6 +487,8 @@ class Admin extends BaseController
             'i' => $this->i,
             'usersession' => $usersession,
             'standar' => $standar,
+            'standarPEN' => $standarPEN,
+            'standarPPM' => $standarPPM,
             'tahun' => $data_user['tahun'],
             'tahunsession' => $this->tahun,
             'cssCustom' => '',
