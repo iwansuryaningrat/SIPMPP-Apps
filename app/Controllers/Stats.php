@@ -71,7 +71,11 @@ class Stats extends BaseController
                 $count++;
             }
         }
-        $indukpersen = ($sum / $count) * 100;
+        if ($count == 0) {
+            $indukpersen = 0;
+        } else {
+            $indukpersen = ($sum / $count) * 100;
+        }
         $indukpersen = round($indukpersen, 2);
 
         return $indukpersen;
@@ -123,8 +127,13 @@ class Stats extends BaseController
             $sscount += $progresstandar['count'];
             $sssum += $progresstandar['sum'];
         }
-        $standarpersen = ($sssum / $sscount) * 100;
-        $standarpersen = round($standarpersen, 2);
+
+        if ($sscount == 0) {
+            $standarpersen = 0;
+        } else {
+            $standarpersen = ($sssum / $sscount) * 100;
+            $standarpersen = round($standarpersen, 2);
+        }
         $dataprogresstandar = [
             'standar' => $standarprogress,
             'count' => $sscount,
