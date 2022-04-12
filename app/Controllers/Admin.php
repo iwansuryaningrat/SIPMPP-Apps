@@ -684,6 +684,34 @@ class Admin extends BaseController
     {
         $users = $this->usersModel->findAll();
         $usersession = $this->data_user;
+        // $datapenilaian = $this->penilaianModel->getAllData();
+        // dd($datapenilaian);
+
+        // Get All Tahun
+        $tahun = $this->tahunModel->findAll();
+
+        // get All Unit
+        $units = $this->unitsModel->findAll();
+
+        // get All Standar
+        $standars = $this->standarModel->getAllStandar();
+
+        // dd($tahun, $units, $standars);
+        $dataPenilaian = [];
+
+        foreach ($tahun as $year) {
+            foreach ($units as $unit) {
+                foreach ($standars as $standar) {
+                    // $data = $this->penilaianModel->getPenilaianSpecOne($unit['unit_id'], $standar['standar_id'], $year['tahun'], $standar['kategori_id']);
+                    // if ($data) {
+                    $dataPenilaian[] = $standar;
+                    // }
+                }
+            }
+        }
+
+        // dd($dataPenilaian);
+
         $data = [
             'title' => 'Penilaian | SIPMPP Admin UNDIP ' . $this->thisTahun,
             'tab' => 'penilaian',

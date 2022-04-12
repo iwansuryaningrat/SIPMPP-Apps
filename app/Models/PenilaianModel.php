@@ -191,4 +191,43 @@ class PenilaianModel extends Model
             ->orderBy('standar.NoStd', 'ASC')
             ->findAll();
     }
+
+    // Get All Data & Join
+    public function getAllData()
+    {
+        return $this->select('penilaian.*, standar.nama_standar, standar.NoStd, kategori.nama_kategori')
+            ->join('standar', 'standar.standar_id=penilaian.standar_id')
+            ->join('kategori', 'kategori.kategori_id=penilaian.kategori_id')
+            // ->groupby('standar.nama_standar')
+            ->orderBy('standar.NoStd', 'ASC')
+            ->findAll();
+    }
+
+    // Joining all tables
+    public function getPenilaianSpecOne($unit_id, $standar_id, $tahun, $kategori_id)
+    {
+        return $this->select('penilaian.*, standar.nama_standar, standar.NoStd')
+            // return $this->select('penilaian.*')
+            // ->join('kategori', 'kategori.kategori_id = penilaian.kategori_id')
+            ->join('standar', 'standar.standar_id = penilaian.standar_id')
+            // ->join('units', 'units.unit_id = penilaian.unit_id')
+            // ->join('indikator', 'indikator.standar_id = penilaian.standar_id')
+            // ->join('unit_induk_tahun', 'unit_induk_tahun.induk_id = indikator.induk_id')
+            ->where('penilaian.unit_id', $unit_id)
+            ->where('penilaian.standar_id', $standar_id)
+            ->where('penilaian.tahun', $tahun)
+            ->where('penilaian.kategori_id', $kategori_id)
+            ->where('standar.kategori_id', $kategori_id)
+            ->where('standar.standar_id', $standar_id)
+            // ->where('indikator.kategori_id', $kategori_id)
+            // ->where('standar.kategori_id', $kategori_id)
+            // ->where('unit_induk_tahun.tahun', $tahun)
+            // ->where('unit_induk_tahun.unit_id', $unit_id)
+            // ->groupby('penilaian.indikator_id')
+            // ->groupby('indikator.indikator_id')
+            // ->groupby('indikator.nama_indikator')
+            // ->orderBy('standar.kategori_id', 'ASC')
+            // ->orderBy('standar.NoStd', 'ASC')
+            ->first();
+    }
 }

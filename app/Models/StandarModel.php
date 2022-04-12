@@ -21,6 +21,7 @@ class StandarModel extends Model
     public function getAllStandar()
     {
         return $this->select('standar.*')
+            ->orderBy('standar.kategori_id', 'ASC')
             ->orderBy('standar.NoStd', 'ASC')
             ->findAll();
     }
