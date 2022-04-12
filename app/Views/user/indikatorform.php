@@ -104,7 +104,7 @@
               </div>
             </div>
             <div class="col-2 px-0">
-              <a href="#" class="btn btn btn__dark btn__preview ellipsis__text btn__preview-icon">
+              <a href="/public/dokumen/<?= $datapenilaian['dokumen']; ?>" target="_blank" class="btn btn btn__dark btn__preview ellipsis__text btn__preview-icon">
                 <span>Preview</span>
                 <i class="fa-solid fa-file-circle-exclamation"></i>
               </a>
