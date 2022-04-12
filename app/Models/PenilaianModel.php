@@ -177,4 +177,18 @@ class PenilaianModel extends Model
             ->orderBy('standar.NoStd', 'ASC')
             ->findAll();
     }
+
+    // Get Penilaian Data
+    public function getPenilaianData($unit_id, $tahun, $kategori_id)
+    {
+        return $this->select('penilaian.*, standar.nama_standar, standar.NoStd')
+            ->join('standar', 'standar.standar_id=penilaian.standar_id')
+            ->where('penilaian.unit_id', $unit_id)
+            ->where('penilaian.tahun', $tahun)
+            ->where('penilaian.kategori_id', $kategori_id)
+            ->where('standar.kategori_id', $kategori_id)
+            ->groupby('standar.nama_standar')
+            ->orderBy('standar.NoStd', 'ASC')
+            ->findAll();
+    }
 }

@@ -369,6 +369,17 @@ class Home extends BaseController
     {
         $data_user = $this->data_user;
 
+        $unit_id = $data_user['unit_id'];
+        $tahun = $data_user['tahun'];
+
+        $kat = $this->kategoriModel->findAll();
+        foreach ($kat as $k) {
+            // $kategori[$k['id']] = $k['nama_kategori'];
+            $standar[] = $this->penilaianModel->getPenilaianData($unit_id, $tahun, $k['kategori_id']);
+        }
+        // $standar = $this->penilaianModel->findAll();
+        dd($standar);
+
         $i = 1;
 
         $data = [

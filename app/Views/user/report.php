@@ -13,10 +13,10 @@
       <p>Halo <span><?php // uses regex that accepts any word character or hyphen in last name
                     function split_name($name)
                     {
-                        $name = trim($name);
-                        $last_name = (strpos($name, ' ') === false) ? '' : preg_replace('#.*\s([\w-]*)$#', '$1', $name);
-                        $first_name = trim(preg_replace('#' . preg_quote($last_name, '#') . '#', '', $name));
-                        return array($first_name, $last_name);
+                      $name = trim($name);
+                      $last_name = (strpos($name, ' ') === false) ? '' : preg_replace('#.*\s([\w-]*)$#', '$1', $name);
+                      $first_name = trim(preg_replace('#' . preg_quote($last_name, '#') . '#', '', $name));
+                      return array($first_name, $last_name);
                     }
                     echo split_name($data_user['nama'])[0];
                     ?>
@@ -28,12 +28,10 @@
 <!-- body main -->
 <ul class="nav nav-tabs nav__tabs" id="myTab" role="tablist">
   <li class="nav-item nav__item-tab" role="presentation">
-    <button class="nav-link nav__link-tab active" id="penelitian-tab" data-bs-toggle="tab" data-bs-target="#penelitian"
-      type="button" role="tab" aria-controls="penelitian" aria-selected="true">Penelitian</button>
+    <button class="nav-link nav__link-tab active" id="penelitian-tab" data-bs-toggle="tab" data-bs-target="#penelitian" type="button" role="tab" aria-controls="penelitian" aria-selected="true">Penelitian</button>
   </li>
   <li class="nav-item nav__item-tab" role="presentation">
-    <button class="nav-link nav__link-tab" id="pengabdian-tab" data-bs-toggle="tab" data-bs-target="#pengabdian"
-      type="button" role="tab" aria-controls="pengabdian" aria-selected="false">Pengabdian Masyarakat</button>
+    <button class="nav-link nav__link-tab" id="pengabdian-tab" data-bs-toggle="tab" data-bs-target="#pengabdian" type="button" role="tab" aria-controls="pengabdian" aria-selected="false">Pengabdian Masyarakat</button>
   </li>
 </ul>
 <div class="tab-content tab__content" id="myTabContent">
@@ -48,8 +46,7 @@
       <div class="body__tab-item">
         <!-- title -->
         <div class="body__tab-item__title">
-          <a class="tab-item__link" data-bs-toggle="collapse" href="#collapsePENS1" role="button" aria-expanded="false"
-            aria-controls="collapsePENS1">
+          <a class="tab-item__link" data-bs-toggle="collapse" href="#collapsePENS1" role="button" aria-expanded="false" aria-controls="collapsePENS1">
             <span>S1. Standar Hasil Penelitian</span>
             <i class="fi-br-angle-down"></i>
           </a>
@@ -102,8 +99,7 @@
       <div class="body__tab-item">
         <!-- title -->
         <div class="body__tab-item__title">
-          <a class="tab-item__link" data-bs-toggle="collapse" href="#collapsePENS2" role="button" aria-expanded="false"
-            aria-controls="collapsePENS2">
+          <a class="tab-item__link" data-bs-toggle="collapse" href="#collapsePENS2" role="button" aria-expanded="false" aria-controls="collapsePENS2">
             <span>S2. Standar Sistem Informasi Penelitian</span>
             <i class="fi-br-angle-down"></i>
           </a>
@@ -166,8 +162,7 @@
       <div class="body__tab-item">
         <!-- title -->
         <div class="body__tab-item__title">
-          <a class="tab-item__link" data-bs-toggle="collapse" href="#collapsePPMS1" role="button" aria-expanded="false"
-            aria-controls="collapsePPMS1">
+          <a class="tab-item__link" data-bs-toggle="collapse" href="#collapsePPMS1" role="button" aria-expanded="false" aria-controls="collapsePPMS1">
             <span>S1. Standar Hasil PKM</span>
             <i class="fi-br-angle-down"></i>
           </a>
@@ -220,8 +215,7 @@
       <div class="body__tab-item">
         <!-- title -->
         <div class="body__tab-item__title">
-          <a class="tab-item__link" data-bs-toggle="collapse" href="#collapsePPMS2" role="button" aria-expanded="false"
-            aria-controls="collapsePPMS2">
+          <a class="tab-item__link" data-bs-toggle="collapse" href="#collapsePPMS2" role="button" aria-expanded="false" aria-controls="collapsePPMS2">
             <span>S2. Standar Sistem Informasi PKM</span>
             <i class="fi-br-angle-down"></i>
           </a>
