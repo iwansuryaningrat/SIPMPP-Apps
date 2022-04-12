@@ -360,6 +360,18 @@ class Admin extends BaseController
     public function isianDataInduk()
     {
         $usersession = $this->data_user;
+        $isianInduk = $this->unitIndukTahunModel->getAllData();
+        $indukPEN = [];
+        $indukPPM = [];
+
+        foreach ($isianInduk as $data_induk) {
+            if ($data_induk['kategori_id'] == 'PEN') {
+                $indukPEN[] = $data_induk;
+            } else {
+                $indukPPM[] = $data_induk;
+            }
+        }
+        // dd($indukPPM, $indukPEN);
 
         $data = [
             'title' => 'Isian Data Induk | SIPMPP Admin UNDIP ' . $this->thisTahun,
@@ -370,6 +382,8 @@ class Admin extends BaseController
             'usersession' => $usersession,
             'tahun' => $usersession['tahun'],
             'tahunsession' => $this->tahun,
+            'indukPEN' => $indukPEN,
+            'indukPPM' => $indukPPM,
 
             'cssCustom' => '<link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.11.5/css/jquery.dataTables.css">',
         ];

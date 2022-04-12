@@ -17,7 +17,7 @@ use App\Models\UsersModel;
 use App\Models\UserRoleUnitModel;
 use Config\Validation;
 
-class Deteledata extends BaseController
+class Deletedata extends BaseController
 {
     protected $dataIndukModel;
     protected $indikatorModel;
@@ -130,5 +130,14 @@ class Deteledata extends BaseController
         session()->setFlashdata('message', '<div class="alert alert-success alert__sipmpp alert-dismissible fade show" role="alert"><i class="fa-solid fa-circle-minus color__success"></i><span>Data Standar berhasil dihapus!</span></div>');
 
         return redirect()->to(base_url('admin/standar'));
+    }
+
+    // Dellete Isian Data Induk
+    public function deleteIsian($tahun, $unit_id, $induk_id, $kategori_id)
+    {
+        $this->unitIndukTahunModel->deleteIsian($tahun, $unit_id, $induk_id, $kategori_id);
+        session()->setFlashdata('message', '<div class="alert alert-success alert__sipmpp alert-dismissible fade show" role="alert"><i class="fa-solid fa-circle-minus color__success"></i><span>Data Isian berhasil dihapus!</span></div>');
+
+        return redirect()->to(base_url('admin/isianDataInduk'));
     }
 }

@@ -101,4 +101,28 @@ class UnitIndukTahunModel extends Model
             ->where('kategori_id', $kategori_id)
             ->first();
     }
+
+    // get All Data and Join
+    public function getAllData()
+    {
+        return $this->select('unit_induk_tahun.*, units.*, data_induk.*, tahun.*, kategori.*')
+            ->join('units', 'units.unit_id = unit_induk_tahun.unit_id')
+            ->join('data_induk', 'data_induk.induk_id = unit_induk_tahun.induk_id AND data_induk.kategori_id = unit_induk_tahun.kategori_id')
+            ->join('tahun', 'tahun.tahun = unit_induk_tahun.tahun')
+            ->join('kategori', 'kategori.kategori_id = data_induk.kategori_id')
+            // ->groupby('data_induk.nama_induk')
+            ->orderBy(' unit_induk_tahun.unit_id', 'ASC')
+            ->orderBy('data_induk.induk_id', 'ASC')
+            ->findAll();
+    }
+
+    // Delete Isian
+    public function deleteIsian($tahun, $unit_id, $induk_id, $kategori_id)
+    {
+        return $this->where('unit_id', $unit_id)
+            ->where('tahun', $tahun)
+            ->where('induk_id', $induk_id)
+            ->where('kategori_id', $kategori_id)
+            ->delete();
+    }
 }
