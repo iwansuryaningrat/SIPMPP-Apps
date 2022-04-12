@@ -79,25 +79,40 @@
     <?php } ?>
 
     <!-- dokumen -->
-    <div class="row mb-3">
-      <label for="dokumen" class="col-lg-3 col-md-3 col-sm-4 col-form-label form__label">Dokumen <span class="color__danger">*</span></label>
-      <div class="col-lg-6 col-md-9 col-sm-8">
-        <div class="row me-0">
-          <div class="col-10">
-            <div class="input-group">
-              <input type="file" class="form-control form__control shadow-none" name="dokumen" id="dokumen" required />
-              <label class="input-group-text" for="dokumen">Upload</label>
-            </div>
-          </div>
-          <div class="col-2 px-0">
-            <a href="#" class="btn btn btn__dark btn__preview ellipsis__text btn__preview-icon">
-              <span>Preview</span>
-              <i class="fa-solid fa-file-circle-exclamation"></i>
-            </a>
+    <?php if ($datapenilaian['dokumen'] == null) : ?>
+
+      <div class="row mb-3">
+        <label for="dokumen" class="col-lg-3 col-md-3 col-sm-4 col-form-label form__label">Dokumen <span class="color__danger">*</span></label>
+        <div class="col-lg-6 col-md-9 col-sm-8">
+          <div class="input-group">
+            <input type="file" class="form-control form__control shadow-none" name="dokumen" id="dokumen" required />
+            <label class="input-group-text" for="dokumen">Upload</label>
           </div>
         </div>
       </div>
-    </div>
+
+    <?php else : ?>
+
+      <div class="row mb-3">
+        <label for="dokumen" class="col-lg-3 col-md-3 col-sm-4 col-form-label form__label">Dokumen <span class="color__danger">*</span></label>
+        <div class="col-lg-6 col-md-9 col-sm-8">
+          <div class="row me-0">
+            <div class="col-10">
+              <div class="input-group">
+                <input type="file" class="form-control form__control shadow-none" name="dokumen" id="dokumen" required />
+                <label class="input-group-text" for="dokumen">Upload</label>
+              </div>
+            </div>
+            <div class="col-2 px-0">
+              <a href="#" class="btn btn btn__dark btn__preview ellipsis__text btn__preview-icon">
+                <span>Preview</span>
+                <i class="fa-solid fa-file-circle-exclamation"></i>
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    <?php endif; ?>
 
     <!-- keterangan -->
     <div class="row mb-3">
