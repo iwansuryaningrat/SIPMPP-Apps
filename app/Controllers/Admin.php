@@ -327,6 +327,17 @@ class Admin extends BaseController
     {
         $usersession = $this->data_user;
         $induk = $this->dataIndukModel->getInduk();
+        $indukPEN = [];
+        $indukPPM = [];
+
+        foreach ($induk as $data_induk) {
+            if ($data_induk['kategori_id'] == 'PEN') {
+                $indukPEN[] = $data_induk;
+            } else {
+                $indukPPM[] = $data_induk;
+            }
+        }
+
 
         $data = [
             'title' => 'Data Induk | SIPMPP Admin UNDIP ' . $this->thisTahun,
@@ -334,8 +345,9 @@ class Admin extends BaseController
             'css' => 'styles-admin-data-induk.css',
             'header' => 'header__mini',
             'i' => $this->i,
+            'indukPEN' => $indukPEN,
+            'indukPPM' => $indukPPM,
             'usersession' => $usersession,
-            'induk' => $induk,
             'tahun' => $usersession['tahun'],
             'tahunsession' => $this->tahun,
             'cssCustom' => '',
