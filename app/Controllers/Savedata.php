@@ -332,7 +332,7 @@ class Savedata extends BaseController
         }
         $sum = $countpen + $countppm;
         session()->setFlashdata('message', '<div class="alert alert-success alert__sipmpp" role="alert"><i class="fa-solid fa-circle-check color__success"></i><span> ' . $sum . ' data telah ditambahkan.</span></div>');
-        return redirect()->to('/admin/datainduk');
+        return redirect()->to('/admin/isianDataInduk');
     }
 
     // Save Auto Generator for Penilaian
