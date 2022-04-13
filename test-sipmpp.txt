@@ -1,0 +1,35 @@
+Back End
+- alert component, kurang tag penutup </i> (add data induk admin, add standar admin)
+- form add indikator, select kebutuhan data tidak tampil + link batal belum dibuat
+- edit nilai indikator (user) tidak bisa menampilkan perubahan
+- edit profile, tidak bisa menampilkan nama baru, redirect salah(all role)
+- flash data pada profile
+- ubah password page profile (all user)
+- ubah foto profile gagal, unlink permission denied (all user)
+- redirect salah, form add base user, add auditor, add leader + data handling
+- redirect salah, after deleting form add base user, add auditor, add leader
+- edit unit
+- edit data induk (admin)
+- report (user)
+- counting table daftar kategori do dashboard page (admin)
+- UNDO after add data (all form)
+- ADD KATEGORI (admin) bahaya!! mempengaruhi panel, id panel, nama target panel
+- EDIT KATEGORI (admin) bahaya!! mempengaruhi panel, id panel, nama target panel
+- edit indikator action belum bisa
+- penilaian (admin)
+
+Front End
+- pagination style link
+- shadow-none button
+- role admin hilangkan pilihan unit, using ajax
+- login page content
+- multiple select tahun di form add base user
+- add data induk, induk id -> angka, kode -> huruf kapital
+- form edit indikator admin
+- page report + index role auditor samakan dengan page role user
+- show document form indikator
+
+
+LEADER PAGE!
+- melihat seluruh chart dari semua unit dan tahun, terdapat select tahun dan unit
+- daftar unit
