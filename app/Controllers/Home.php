@@ -315,7 +315,7 @@ class Home extends BaseController
         if ($dokumen->getError() == 4) {
             return redirect()->to('/home/indikatorform/' . $kategori_id . '/' . $standar_id . '/' . $indikator_id);
         } else {
-            $namadokumen = $dokumen->getName() . $unit_id . $kategori_id . $tahun . $standar_id . $indikator_id . '.' . $dokumen->getExtension();
+            $namadokumen = $dokumen->getMTime() . '-' . $dokumen->getName();
             // dd($namadokumen);
             $dokumen->move('dokumen/', $namadokumen);
         };
@@ -463,7 +463,7 @@ class Home extends BaseController
             $namafoto = $user['foto'];
             unlink('profile/' . $namafoto);
             // set nama foto baru
-            $namafoto = 'foto-' . $user['email'] . '.' . $foto->getExtension();
+            $namafoto = $foto->getMTime() . '-' . $foto->getName();
             $foto->move('profile/', $namafoto);
         };
 
