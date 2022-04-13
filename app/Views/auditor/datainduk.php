@@ -4,7 +4,7 @@
 
 <div class="header__main-title">
   <div class="header__main-title__pagination">
-    <a id="unit-user" href="/" style="font-weight: 600;"><?= $data_user['unit']; ?></a>
+    <a id="unit-user" href="/">Audit <?= $data_user['unit']; ?></a>
     / Data Induk
   </div>
   <div class="header__main-title__subtitle">
@@ -23,10 +23,14 @@
 <!-- filter -->
 <div class="filter__table">
   <div class="nav nav-pills" id="pills-tab" role="tablist">
-    <button class="btn filter__btn me-0 me-md-3 shadow-none active nav-link active" id="pills-datainduk-penelitian" data-bs-toggle="pill" data-bs-target="#pills-table-datainduk-penelitian" type="button" role="tab" aria-controls="pills-table-datainduk-penelitian" aria-selected="true">
+    <button class="btn filter__btn me-0 me-md-3 shadow-none active nav-link active" id="pills-datainduk-penelitian"
+      data-bs-toggle="pill" data-bs-target="#pills-table-datainduk-penelitian" type="button" role="tab"
+      aria-controls="pills-table-datainduk-penelitian" aria-selected="true">
       Penelitian
     </button>
-    <button class="btn filter__btn shadow-none nav-link" id="pills-datainduk-pm" data-bs-toggle="pill" data-bs-target="#pills-table-datainduk-pm" type="button" role="tab" aria-controls="pills-table-datainduk-pm" aria-selected="false">
+    <button class="btn filter__btn shadow-none nav-link" id="pills-datainduk-pm" data-bs-toggle="pill"
+      data-bs-target="#pills-table-datainduk-pm" type="button" role="tab" aria-controls="pills-table-datainduk-pm"
+      aria-selected="false">
       Pengabdian Masyarakat
     </button>
   </div>
@@ -38,7 +42,8 @@
   <?= session()->getFlashdata('message'); ?>
 
   <!-- penelitian -->
-  <div class="tab-pane fade show active" id="pills-table-datainduk-penelitian" role="tabpanel" aria-labelledby="pills-datainduk-penelitian">
+  <div class="tab-pane fade show active" id="pills-table-datainduk-penelitian" role="tabpanel"
+    aria-labelledby="pills-datainduk-penelitian">
     <div class="sipmpp__table">
       <div class="table-responsive">
         <table class="table table__datainduk__content sipmpp__table-content table-hover" id="datainduk-penelitian">
@@ -52,16 +57,16 @@
           </thead>
           <tbody>
             <?php foreach ($data_indukPen as $datainduk) : ?>
-              <tr>
-                <td><?= $i; ?>
-                </td>
-                <td><?= $datainduk['induk_id']; ?>
-                </td>
-                <td><?= $datainduk['nama_induk']; ?>
-                </td>
-                <td><?= $datainduk['nilai']; ?>
-                </td>
-              </tr>
+            <tr>
+              <td><?= $i; ?>
+              </td>
+              <td><?= $datainduk['induk_id']; ?>
+              </td>
+              <td><?= $datainduk['nama_induk']; ?>
+              </td>
+              <td><?= $datainduk['nilai']; ?>
+              </td>
+            </tr>
             <?php $i++;
             endforeach; ?>
           </tbody>
@@ -86,16 +91,16 @@
           <tbody>
             <?php $i = 1;
             foreach ($data_indukPPM as $datainduk) : ?>
-              <tr>
-                <td><?= $i; ?>
-                </td>
-                <td><?= $datainduk['induk_id']; ?>
-                </td>
-                <td><?= $datainduk['nama_induk']; ?>
-                </td>
-                <td><?= $datainduk['nilai']; ?>
-                </td>
-              </tr>
+            <tr>
+              <td><?= $i; ?>
+              </td>
+              <td><?= $datainduk['induk_id']; ?>
+              </td>
+              <td><?= $datainduk['nama_induk']; ?>
+              </td>
+              <td><?= $datainduk['nilai']; ?>
+              </td>
+            </tr>
             <?php $i++;
             endforeach; ?>
           </tbody>

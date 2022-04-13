@@ -140,7 +140,7 @@
                         <div class="mb-4 position-relative">
                             <label for="role" class="form-label form__label">Role</label>
                             <select class="form-select form__select shadow-none" name="role" id="role" required>
-                                <option selected disabled>Pilih User Role</option>
+                                <option selected disabled>Pilih Role</option>
                             </select>
                         </div>
                         <div class="mb-4 position-relative">

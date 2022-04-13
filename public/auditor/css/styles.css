@@ -899,6 +899,10 @@ footer .container-fluid.container__fluid {
 }
 
 /* ========== Pagination ========== */
+.header__main-title__pagination > a {
+  font-weight: 600;
+}
+
 .header__main-title__pagination a:hover {
   color: var(--black);
   text-decoration: underline;

@@ -4,19 +4,19 @@
 
 <div class="header__main-title">
   <div class="header__main-title__pagination">
-    <span id="unit-user" style="font-weight: 600"><?= $data_user['unit']; ?></span>
+    <span id="unit-user">Audit <?= $data_user['unit']; ?></span>
   </div>
   <div class="header__main-title__subtitle">
     <div class="title__subtitle-desc">
-      <h1>Dashboard Overview</h1>
+      <h1>Dashboard Audit Overview</h1>
       <p>Halo <span>
           <?php // uses regex that accepts any word character or hyphen in last name
           function split_name($name)
           {
-            $name = trim($name);
-            $last_name = (strpos($name, ' ') === false) ? '' : preg_replace('#.*\s([\w-]*)$#', '$1', $name);
-            $first_name = trim(preg_replace('#' . preg_quote($last_name, '#') . '#', '', $name));
-            return array($first_name, $last_name);
+              $name = trim($name);
+              $last_name = (strpos($name, ' ') === false) ? '' : preg_replace('#.*\s([\w-]*)$#', '$1', $name);
+              $first_name = trim(preg_replace('#' . preg_quote($last_name, '#') . '#', '', $name));
+              return array($first_name, $last_name);
           }
           echo split_name($data_user['nama'])[0];
           ?>
@@ -50,7 +50,9 @@
       </div>
       <div>
         <div class="progress progress__content-progress-bar">
-          <div class="progress-bar bg__dark-main unit__progressbar" role="progressbar" aria-valuenow="72" aria-valuemin="0" aria-valuemax="100" style="width: 72%" data-bs-toggle="tooltip" data-bs-placement="top" title="72%"></div>
+          <div class="progress-bar bg__dark-main unit__progressbar" role="progressbar" aria-valuenow="72"
+            aria-valuemin="0" aria-valuemax="100" style="width: 72%" data-bs-toggle="tooltip" data-bs-placement="top"
+            title="72%"></div>
         </div>
       </div>
     </div>
@@ -71,7 +73,9 @@
       </div>
       <div>
         <div class="progress progress__content-progress-bar">
-          <div class="progress-bar bg__dark-main unit__progressbar" role="progressbar" aria-valuenow="42" aria-valuemin="0" aria-valuemax="100" style="width: 42%" data-bs-toggle="tooltip" data-bs-placement="top" title="42%"></div>
+          <div class="progress-bar bg__dark-main unit__progressbar" role="progressbar" aria-valuenow="42"
+            aria-valuemin="0" aria-valuemax="100" style="width: 42%" data-bs-toggle="tooltip" data-bs-placement="top"
+            title="42%"></div>
         </div>
       </div>
     </div>
