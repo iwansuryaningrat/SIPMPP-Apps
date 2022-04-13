@@ -237,7 +237,7 @@ class Savedata extends BaseController
             ];
             $this->dataIndukModel->insert($data);
 
-            session()->setFlashdata('message', '<div class="alert alert-success alert__sipmpp" role="alert"><i class="fa-solid fa-circle-check color__success"><span>Data Induk berhasil ditambahkan!</span></div>');
+            session()->setFlashdata('message', '<div class="alert alert-success alert__sipmpp" role="alert"><i class="fa-solid fa-circle-check color__success"></i><span>Data Induk berhasil ditambahkan!</span></div>');
 
             return redirect()->to(base_url('admin/dataInduk'));
         }
@@ -268,7 +268,7 @@ class Savedata extends BaseController
 
             $this->standarModel->insert($data);
 
-            session()->setFlashdata('message', '<div class="alert alert-success alert__sipmpp" role="alert"><i class="fa-solid fa-circle-check color__success"><span>Data Standar berhasil ditambahkan!</span></div>');
+            session()->setFlashdata('message', '<div class="alert alert-success alert__sipmpp" role="alert"><i class="fa-solid fa-circle-check color__success"></i><span>Data Standar berhasil ditambahkan!</span></div>');
 
             return redirect()->to(base_url('admin/standar'));
         }
@@ -298,7 +298,7 @@ class Savedata extends BaseController
 
             $this->indikatorModel->insert($data);
 
-            session()->setFlashdata('message', '<div class="alert alert-success alert__sipmpp" role="alert"><i class="fa-solid fa-circle-check color__success"><span>Data Indikator berhasil ditambahkan!</span></div>');
+            session()->setFlashdata('message', '<div class="alert alert-success alert__sipmpp" role="alert"><i class="fa-solid fa-circle-check color__success"></i><span>Data Indikator berhasil ditambahkan!</span></div>');
 
             return redirect()->to(base_url('admin/standar'));
         }

@@ -112,7 +112,7 @@ class Editdata extends BaseController
             return redirect()->to(base_url('admin/kategori'));
         } else {
             $this->session->setFlashdata('msg', '<div class="alert alert-danger alert__sipmpp alert-dismissible fade show" role="alert"><i class="fa-solid fa-circle-exclamation color__danger"></i><span>Kategori sudah ada!</span></div>');
-            
+
             return redirect()->to(base_url('admin/kategori'));
         }
     }
@@ -137,7 +137,7 @@ class Editdata extends BaseController
 
         // Set flashdata gagal dan kirim pesan eror dengan flashdata
         $this->session->setFlashdata('msg', '<div class="alert alert-success alert__sipmpp alert-dismissible fade show" role="alert"><i class="fa-solid fa-circle-check color__success"></i><span>Data Induk berhasil diubah!</span></div>');
-        
+
         return redirect()->to(base_url('admin/induk'));
     }
 
