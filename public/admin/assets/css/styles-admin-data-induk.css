@@ -193,23 +193,6 @@ table.dataTable thead td {
   outline: none;
 }
 
-#datatableDataIndukPenelitian_paginate > span,
-#datatableDataIndukPengabdian_paginate > span {
-  width: 2rem;
-  height: 2rem;
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  background-color: rgba(230, 235, 250, 0.5);
-  border-radius: 2.5rem;
-  transition: var(--trans-m);
-}
-
-#datatableDataIndukPenelitian_paginate > span:hover,
-#datatableDataIndukPengabdian_paginate > span:hover {
-  background-color: rgba(230, 235, 250, 1);
-}
-
 #datatableDataIndukPenelitian_paginate span .paginate_button,
 #datatableDataIndukPengabdian_paginate span .paginate_button {
   border: none;
@@ -220,6 +203,23 @@ table.dataTable thead td {
   padding: 0;
   margin: 0;
   min-width: 0;
+
+  width: 2rem;
+  height: 2rem;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  background-color: rgba(230, 235, 250, 0.5);
+  border-radius: 2.5rem;
+  transition: var(--trans-m);
+}
+
+#datatableDataIndukPenelitian_paginate > span .paginate_button:hover,
+#datatableDataIndukPengabdian_paginate > span .paginate_button:hover,
+#datatableDataIndukPenelitian_paginate > span .paginate_button.current:hover,
+#datatableDataIndukPengabdian_paginate > span .paginate_button.current:hover {
+  background-color: rgba(230, 235, 250, 1);
+  color: var(--black) !important;
 }
 
 #datatableDataIndukPenelitian_paginate span .paginate_button:focus,
@@ -231,6 +231,56 @@ table.dataTable thead td {
   outline: none !important;
   border: none;
   box-shadow: none;
+}
+
+#datatableDataIndukPenelitian_paginate span a,
+#datatableDataIndukPengabdian_paginate span a {
+  margin-right: 0.5rem !important;
+}
+
+#datatableDataIndukPenelitian_paginate span a:last-child,
+#datatableDataIndukPengabdian_paginate span a:last-child {
+  margin-right: 0 !important;
+}
+
+#datatableDataIndukPenelitian_paginate #datatableDataIndukPenelitian_next,
+#datatableDataIndukPenelitian_paginate #datatableDataIndukPenelitian_previous,
+#datatableDataIndukPengabdian_paginate #datatableDataIndukPengabdian_next,
+#datatableDataIndukPengabdian_paginate #datatableDataIndukPengabdian_previous,
+#datatableDataIndukPenelitian_paginate
+  #datatableDataIndukPenelitian_next.disabled,
+#datatableDataIndukPenelitian_paginate
+  #datatableDataIndukPengabdian_previous.disabled,
+#datatableDataIndukPengabdian_paginate
+  #datatableDataIndukPengabdian_next.disabled,
+#datatableDataIndukPengabdian_paginate
+  #datatableDataIndukPengabdian_previous.disabled {
+  border: none !important;
+}
+
+#datatableDataIndukPenelitian_paginate #datatableDataIndukPenelitian_next:hover,
+#datatableDataIndukPenelitian_paginate
+  #datatableDataIndukPenelitian_previous:hover,
+#datatableDataIndukPengabdian_paginate #datatableDataIndukPengabdian_next:hover,
+#datatableDataIndukPengabdian_paginate
+  #datatableDataIndukPengabdian_previous:hover {
+  background: rgba(230, 235, 250, 1);
+  border-radius: 2rem !important;
+  color: var(--black) !important;
+  border: none !important;
+  box-shadow: none;
+}
+
+#datatableDataIndukPenelitian_paginate
+  #datatableDataIndukPenelitian_next.disabled:hover,
+#datatableDataIndukPenelitian_paginate
+  #datatableDataIndukPenelitian_previous.disabled:hover,
+#datatableDataIndukPengabdian_paginate
+  #datatableDataIndukPengabdian_next.disabled:hover,
+#datatableDataIndukPengabdian_paginate
+  #datatableDataIndukPengabdian_previous.disabled:hover {
+  background: none;
+  border: none !important;
 }
 
 table.dataTable.display tbody tr.even > .sorting_1,

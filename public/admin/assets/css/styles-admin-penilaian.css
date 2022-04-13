@@ -10,8 +10,8 @@
 #datatablePenilaian tr td:last-child,
 #datatablePenilaian tr th:nth-child(2),
 #datatablePenilaian tr td:nth-child(2),
-#datatablePenilaian tr th:nth-child(5),
-#datatablePenilaian tr td:nth-child(5),
+#datatablePenilaian tr th:nth-child(4),
+#datatablePenilaian tr td:nth-child(4),
 #datatablePenilaian tr th:nth-child(6),
 #datatablePenilaian tr td:nth-child(6) {
   text-align: center;
@@ -69,7 +69,7 @@ table.dataTable thead td {
 }
 
 .datatable__unit,
-.datatable__kategori {
+.datatable__nama-standar {
   width: 25%;
   min-width: 8.25rem;
 }

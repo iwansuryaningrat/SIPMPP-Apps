@@ -29,7 +29,8 @@
 <div class="title__table__add mb-1">
     <h4 class="title__body__user me-3 mb-lg-4 mb-3">Daftar Penilaian</h4>
     <div class="title__body__button">
-        <a href="/admin/autoGeneratePenilaian" class="btn shadow-none btn__add btn__generate mb-lg-4 mb-3" role="button">
+        <a href="/admin/autoGeneratePenilaian" class="btn shadow-none btn__add btn__generate mb-lg-4 mb-3"
+            role="button">
             <i class="fa-solid fa-folder-plus"></i>
             Auto Generate
         </a>
@@ -45,8 +46,8 @@
                 <th class="datatable__number">no</th>
                 <th class="datatable__tahun">tahun</th>
                 <th class="datatable__unit">unit</th>
-                <th class="datatable__kategori">kategori</th>
                 <th class="datatable__standar">standar</th>
+                <th class="datatable__nama-standar">nama standar</th>
                 <th class="datatable__status">status</th>
                 <th class="datatable__aksi">aksi</th>
             </tr>
@@ -56,22 +57,24 @@
                 <td>1</td>
                 <td>2019</td>
                 <td>S1-Informatika</td>
-                <td>Penelitian</td>
                 <td>S12</td>
+                <td>Standar Hasil Penelitian</td>
                 <td><span class="badge badge__sipmpp badge__success">Sukses</span></td>
                 <td>
-                    <a data-bs-placement="top" title="Delete" href="#" class="delete__data__induk__icon"><i class="fa-solid fa-trash"></i></a>
+                    <a data-bs-placement="top" title="Delete" href="#" class="delete__data__induk__icon"><i
+                            class="fa-solid fa-trash"></i></a>
                 </td>
             </tr>
             <tr>
                 <td>2</td>
                 <td>2020</td>
                 <td>S1-Matematika</td>
-                <td>Pengabdian Masyarakat</td>
                 <td>S15</td>
+                <td>Standar Sistem Informasi Penelitian</td>
                 <td><span class="badge badge__sipmpp badge__warning">Belum di audit</span></td>
                 <td>
-                    <a data-bs-placement="top" title="Delete" href="#" class="delete__data__induk__icon"><i class="fa-solid fa-trash"></i></a>
+                    <a data-bs-placement="top" title="Delete" href="#" class="delete__data__induk__icon"><i
+                            class="fa-solid fa-trash"></i></a>
                 </td>
             </tr>
         </tbody>
