@@ -4,7 +4,7 @@
 
 <div class="header__main-title">
     <div class="header__main-title__pagination">
-        <a href="/admin">Dashboard</a>
+        <a href="/admin/index">Dashboard Admin</a>
         / <a href="/admin/standar">Standar</a>
         / Form Edit Standar
     </div>
@@ -25,16 +25,23 @@
 
 <!-- form add standar -->
 <div class="form__add__standar">
-    <form method="POST" action="/editdata/editstandar/<?= $standar['standar_id'] . '/' . $standar['kategori_id']; ?>">
+    <form method="POST"
+        action="/editdata/editstandar/<?= $standar['standar_id'] . '/' . $standar['kategori_id']; ?>">
         <!-- kategori -->
         <div class="row mb-3 mb-sm-4">
             <label for="kategori" class="col-lg-3 col-md-3 col-sm-4 col-form-label form__label">Kategori
                 <span class="color__danger">*</span></label>
             <div class="col-lg-6 col-md-9 col-sm-8">
-                <select class="form-select form__select shadow-none" name="kategori_id" id="kategori" required disabled autocomplete="off">
+                <select class="form-select form__select shadow-none" name="kategori_id" id="kategori" required disabled
+                    autocomplete="off">
                     <option disabled selected>Pilih Kategori</option>
                     <?php foreach ($kategori as $kategori) : ?>
-                        <option value="<?= $kategori['kategori_id']; ?>" <?php if ($kategori['kategori_id'] == $standar['kategori_id']) echo 'selected'; ?>><?= $kategori['nama_kategori']; ?></option>
+                    <option
+                        value="<?= $kategori['kategori_id']; ?>"
+                        <?php if ($kategori['kategori_id'] == $standar['kategori_id']) {
+    echo 'selected';
+} ?>><?= $kategori['nama_kategori']; ?>
+                    </option>
                     <?php endforeach; ?>
 
                 </select>
@@ -45,14 +52,19 @@
             <label for="kode" class="col-lg-3 col-md-3 col-sm-4 col-form-label form__label">Kode
                 <span class="color__danger">*</span></label>
             <div class="col-lg-6 col-md-9 col-sm-8">
-                <input class="form-control form__control shadow-none" id="kode" name="kode" required autocomplete="off" value="<?= $standar['standar_id'] ?>" disabled placeholder="Masukkan kode" />
+                <input class="form-control form__control shadow-none" id="kode" name="kode" required autocomplete="off"
+                    value="<?= $standar['standar_id'] ?>"
+                    disabled placeholder="Masukkan kode" />
             </div>
         </div>
         <!-- namaStandar -->
         <div class="row mb-3 mb-sm-4">
-            <label for="namaStandar" class="col-lg-3 col-md-3 col-sm-4 col-form-label form__label">Nama Standar<span class="color__danger">*</span></label>
+            <label for="namaStandar" class="col-lg-3 col-md-3 col-sm-4 col-form-label form__label">Nama Standar<span
+                    class="color__danger">*</span></label>
             <div class="col-lg-6 col-md-9 col-sm-8">
-                <input class="form-control form__control shadow-none" id="namaStandar" name="namaStandar" value="<?= $standar['nama_standar'] ?>" required autocomplete="off" placeholder="Masukkan nama standar" />
+                <input class="form-control form__control shadow-none" id="namaStandar" name="namaStandar"
+                    value="<?= $standar['nama_standar'] ?>"
+                    required autocomplete="off" placeholder="Masukkan nama standar" />
             </div>
         </div>
 
@@ -76,4 +88,4 @@
 
 </script>
 
-<?= $this->endSection(); ?>
+<?= $this->endSection();

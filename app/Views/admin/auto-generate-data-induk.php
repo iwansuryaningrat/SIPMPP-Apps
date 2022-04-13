@@ -4,7 +4,7 @@
 
 <div class="header__main-title">
     <div class="header__main-title__pagination">
-        <a href="/admin/index">Dashboard</a>
+        <a href="/admin/index">Dashboard Admin</a>
         / <a href="/admin/dataInduk">Data Induk</a> / Form Auto Generate
     </div>
     <div class="header__main-title__subtitle">

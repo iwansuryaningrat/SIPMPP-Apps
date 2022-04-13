@@ -4,7 +4,7 @@
 
 <div class="header__main-title">
     <div class="header__main-title__pagination">
-        <a href="/admin/index">Dashboard</a>
+        <a href="/admin/index">Dashboard Admin</a>
         / Daftar User
     </div>
     <div class="header__main-title__subtitle">
@@ -55,13 +55,18 @@
             </thead>
             <tbody>
                 <?php foreach ($users as $user) : ?>
-                    <tr>
-                        <td><?= $i; ?></td>
-                        <td><?= $user['nama']; ?></td>
-                        <td><?= $user['email']; ?></td>
-                        <td><?= $user['telp']; ?></td>
-                        <td><?= $user['nip']; ?></td>
-                    </tr>
+                <tr>
+                    <td><?= $i; ?>
+                    </td>
+                    <td><?= $user['nama']; ?>
+                    </td>
+                    <td><?= $user['email']; ?>
+                    </td>
+                    <td><?= $user['telp']; ?>
+                    </td>
+                    <td><?= $user['nip']; ?>
+                    </td>
+                </tr>
                 <?php $i++;
                 endforeach; ?>
             </tbody>

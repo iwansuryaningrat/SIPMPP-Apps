@@ -4,7 +4,7 @@
 
 <div class="header__main-title">
     <div class="header__main-title__pagination">
-        <a href="/admin">Dashboard</a>
+        <a href="/admin/index">Dashboard Admin</a>
         / <a href="/admin/dataInduk">Data Induk</a> / Form Add Data Induk
     </div>
     <div class="header__main-title__subtitle">
@@ -30,13 +30,15 @@
             <label for="kategori" class="col-lg-3 col-md-3 col-sm-4 col-form-label form__label">Kategori
                 <span class="color__danger">*</span></label>
             <div class="col-lg-6 col-md-9 col-sm-8">
-                <select name="kategori_id" id="kategori" class="form-select form__select shadow-none" required autocomplete="off">
+                <select name="kategori_id" id="kategori" class="form-select form__select shadow-none" required
+                    autocomplete="off">
                     <option value="" disabled selected>Pilih Kategori</option>
 
                     <?php foreach ($kategori as $kategori) : ?>
-                        <option value="<?= $kategori['kategori_id']; ?>">
-                            <?= $kategori['nama_kategori']; ?>
-                        </option>
+                    <option
+                        value="<?= $kategori['kategori_id']; ?>">
+                        <?= $kategori['nama_kategori']; ?>
+                    </option>
                     <?php endforeach; ?>
 
                 </select>
@@ -47,7 +49,8 @@
             <label for="kode" class="col-lg-3 col-md-3 col-sm-4 col-form-label form__label">Induk Id
                 <span class="color__danger">*</span></label>
             <div class="col-lg-6 col-md-9 col-sm-8">
-                <input class="form-control form__control shadow-none" id="kode" name="induk_id" required autocomplete="off" placeholder="Masukkan id data induk" />
+                <input class="form-control form__control shadow-none" id="kode" name="induk_id" required
+                    autocomplete="off" placeholder="Masukkan id data induk" />
             </div>
         </div>
         <!-- kode -->
@@ -55,7 +58,8 @@
             <label for="kode" class="col-lg-3 col-md-3 col-sm-4 col-form-label form__label">Kode
                 <span class="color__danger">*</span></label>
             <div class="col-lg-6 col-md-9 col-sm-8">
-                <input class="form-control form__control shadow-none" id="kode" name="kode" required autocomplete="off" placeholder="Masukkan kode data induk" />
+                <input class="form-control form__control shadow-none" id="kode" name="kode" required autocomplete="off"
+                    placeholder="Masukkan kode data induk" />
             </div>
         </div>
         <!-- kebutuhan data -->
@@ -64,7 +68,8 @@
                 Data
                 <span class="color__danger">*</span></label>
             <div class="col-lg-6 col-md-9 col-sm-8">
-                <input class="form-control form__control shadow-none" id="kebutuhanData" name="nama_induk" required autocomplete="off" placeholder="Masukkan kebutuhan data" />
+                <input class="form-control form__control shadow-none" id="kebutuhanData" name="nama_induk" required
+                    autocomplete="off" placeholder="Masukkan kebutuhan data" />
             </div>
         </div>
         <!-- button -->

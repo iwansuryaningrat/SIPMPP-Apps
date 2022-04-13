@@ -4,7 +4,7 @@
 
 <div class="header__main-title">
     <div class="header__main-title__pagination">
-        <a href="/admin/index">Dashboard</a>
+        <a href="/admin/index">Dashboard Admin</a>
         / Report
     </div>
     <div class="header__main-title__subtitle">
@@ -19,7 +19,8 @@
                                 return array($first_name, $last_name);
                             }
                             echo split_name($usersession['nama'])[0];
-                            ?></span>, selamat datang di dashboard Report</p>
+                            ?>
+                </span>, selamat datang di dashboard Report</p>
         </div>
     </div>
 </div>
@@ -36,4 +37,4 @@
 <script>
 </script>
 
-<?= $this->endSection(); ?>
+<?= $this->endSection();

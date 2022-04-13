@@ -4,7 +4,7 @@
 
 <div class="header__main-title">
     <div class="header__main-title__pagination">
-        <a href="/admin">Dashboard</a>
+        <a href="/admin/index">Dashboard Admin</a>
         / <a href="/admin/standar">Standar</a>
         / Form Add Standar
     </div>
@@ -31,12 +31,14 @@
             <label for="kategori" class="col-lg-3 col-md-3 col-sm-4 col-form-label form__label">Kategori
                 <span class="color__danger">*</span></label>
             <div class="col-lg-6 col-md-9 col-sm-8">
-                <select class="form-select form__select shadow-none" name="kategori_id" id="kategori" required autocomplete="off">
+                <select class="form-select form__select shadow-none" name="kategori_id" id="kategori" required
+                    autocomplete="off">
                     <option value="" disabled selected>Pilih Kategori</option>
                     <?php foreach ($kategori as $kategori) : ?>
-                        <option value="<?= $kategori['kategori_id']; ?>">
-                            <?= $kategori['nama_kategori']; ?>
-                        </option>
+                    <option
+                        value="<?= $kategori['kategori_id']; ?>">
+                        <?= $kategori['nama_kategori']; ?>
+                    </option>
                     <?php endforeach; ?>
 
                 </select>
@@ -47,7 +49,8 @@
             <label for="kode" class="col-lg-3 col-md-3 col-sm-4 col-form-label form__label">Kode
                 <span class="color__danger">*</span></label>
             <div class="col-lg-6 col-md-9 col-sm-8">
-                <input class="form-control form__control shadow-none" id="kode" name="kode" required autocomplete="off" placeholder="Masukkan kode" />
+                <input class="form-control form__control shadow-none" id="kode" name="kode" required autocomplete="off"
+                    placeholder="Masukkan kode" />
             </div>
         </div>
         <!-- namaStandar -->
@@ -56,7 +59,8 @@
                 Standar
                 <span class="color__danger">*</span></label>
             <div class="col-lg-6 col-md-9 col-sm-8">
-                <input class="form-control form__control shadow-none" id="namaStandar" name="namaStandar" required autocomplete="off" placeholder="Masukkan nama standar" />
+                <input class="form-control form__control shadow-none" id="namaStandar" name="namaStandar" required
+                    autocomplete="off" placeholder="Masukkan nama standar" />
             </div>
         </div>
 
