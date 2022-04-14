@@ -62,3 +62,11 @@
 .sipmpp__table tr td .delete__data__induk__icon svg {
   color: var(--danger-color);
 }
+
+@media screen and (max-width: 991px) {
+  .table__user__content thead tr th,
+  .table__user__content tbody tr td {
+    padding-right: 0.875rem;
+    padding-left: 0.875rem;
+  }
+}

@@ -342,6 +342,12 @@ table.dataTable.display tbody tr > .sorting_3 {
   .filter__btn:last-child {
     margin-left: 0.625rem !important;
   }
+
+  .table__datainduk__content thead tr th,
+  .table__datainduk__content tbody tr td {
+    padding-right: 0.875rem;
+    padding-left: 0.875rem;
+  }
 }
 
 @media screen and (max-width: 576px) {

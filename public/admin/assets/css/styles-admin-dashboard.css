@@ -241,6 +241,11 @@
   padding-left: 1.5rem;
 }
 
+.table__unit__content thead tr th,
+.table__kategori__content thead tr th {
+  vertical-align: middle;
+}
+
 .table__unit__progress {
   height: 0.6rem;
 
@@ -295,6 +300,14 @@
     margin-left: 0;
 
     flex: 1;
+  }
+
+  .table__unit__content thead tr th,
+  .table__unit__content tbody tr td,
+  .table__kategori__content thead tr th,
+  .table__kategori__content tbody tr td {
+    padding-right: 0.875rem;
+    padding-left: 0.875rem;
   }
 }
 

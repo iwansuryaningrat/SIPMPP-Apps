@@ -50,3 +50,11 @@
 .sipmpp__table tr td .edit__data__induk__icon svg {
   color: rgba(21, 114, 232, 1);
 }
+
+@media screen and (max-width: 991px) {
+  .table__daftar-user__content thead tr th,
+  .table__daftar-user__content tbody tr td {
+    padding-right: 0.875rem;
+    padding-left: 0.875rem;
+  }
+}

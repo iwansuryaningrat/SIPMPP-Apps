@@ -50,6 +50,11 @@
 }
 
 @media screen and (max-width: 991px) {
+  .table__kategori__content thead tr th,
+  .table__kategori__content tbody tr td {
+    padding-right: 0.875rem;
+    padding-left: 0.875rem;
+  }
 }
 
 @media screen and (max-width: 576px) {
