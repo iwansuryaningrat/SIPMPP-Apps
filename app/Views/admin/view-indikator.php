@@ -36,8 +36,7 @@
         </h4>
     </div>
     <div>
-        <a href="/admin/addindikatorform/<?= $standar['standar_id'] . '/' . $kategori['kategori_id'] ?>"
-            class="btn shadow-none btn__add btn__dark">
+        <a href="/admin/addindikatorform/<?= $standar['standar_id'] . '/' . $kategori['kategori_id'] ?>" class="btn shadow-none btn__add btn__dark">
             <i class="fa-solid fa-plus"></i>
             Add Indikator
         </a>
@@ -46,6 +45,8 @@
 
 <!-- table indikator -->
 <div class="sipmpp__table">
+    <!-- Session Message -->
+    <?= session()->getFlashdata('message'); ?>
     <div class="table-responsive">
         <table class="table table__indikator__content sipmpp__table-content table-hover">
             <thead class="bg__light">
@@ -60,20 +61,18 @@
             <tbody>
 
                 <?php foreach ($indikator as $dataindikator) : ?>
-                <tr>
-                    <td><?= $i; ?>
-                    </td>
-                    <td><?= $dataindikator['nama_indikator']; ?>
-                    </td>
-                    <td><?= $dataindikator['target']; ?>
-                    </td>
-                    <td>Data</td>
-                    <td>
-                        <a data-bs-placement="top" title="Edit"
-                            href="admin/editindikatorform/<?= $standar['standar_id'] . '/' . $kategori['kategori_id'] . '/' . $dataindikator['indikator_id'] ?>"
-                            class="edit__data__induk__icon"><i class="fa-solid fa-pen-to-square"></i></a>
-                    </td>
-                </tr>
+                    <tr>
+                        <td><?= $i; ?>
+                        </td>
+                        <td><?= $dataindikator['nama_indikator']; ?>
+                        </td>
+                        <td><?= $dataindikator['target']; ?>
+                        </td>
+                        <td>Data</td>
+                        <td>
+                            <a data-bs-placement="top" title="Edit" href="/admin/editindikatorform/<?= $standar['standar_id'] . '/' . $kategori['kategori_id'] . '/' . $dataindikator['indikator_id'] ?>" class="edit__data__induk__icon"><i class="fa-solid fa-pen-to-square"></i></a>
+                        </td>
+                    </tr>
                 <?php $i++;
                 endforeach; ?>
 

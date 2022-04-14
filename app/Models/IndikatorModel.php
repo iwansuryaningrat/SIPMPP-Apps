@@ -34,4 +34,23 @@ class IndikatorModel extends Model
             ->where('indikator.kategori_id', $kategori_id)
             ->findAll();
     }
+
+    // Find Spesific data by all primary key
+    public function findIndikator($indikator_id, $kategori_id, $standar_id)
+    {
+        return $this->select('indikator.*')
+            ->where('indikator.indikator_id', $indikator_id)
+            ->where('indikator.kategori_id', $kategori_id)
+            ->where('indikator.standar_id', $standar_id)
+            ->first();
+    }
+
+    // Update Indikator
+    public function updateIndikator($indikator_id, $kategori_id, $standar_id, $data)
+    {
+        return $this->where('indikator_id', $indikator_id)
+            ->where('kategori_id', $kategori_id)
+            ->where('standar_id', $standar_id)
+            ->update($data);
+    }
 }

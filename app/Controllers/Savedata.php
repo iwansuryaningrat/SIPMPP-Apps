@@ -277,30 +277,46 @@ class Savedata extends BaseController
     // Insert Indikator Method
     public function insertIndikator($standar_id, $kategori_id)
     {
-        $indikator = $this->request->getVar('indikator');
-        $bobot = $this->request->getVar('bobot');
-        $keterangan = $this->request->getVar('keterangan');
+        $data = $this->request->getPost();
+        $nama_indikator = $data['indikator'];
+        $target = $data['target'];
+        $induk_id = $data['kebutuhan_data'];
+        $nilai_acuan = $data['nilai_patokan'];
+        $satuan = $data['satuan'];
+        $keterangan = $data['keterangan'];
 
-        $dataindikator = $this->indikatorModel->getIndikator($kategori_id, $standar_id);
+        $allindikator = $this->indikatorModel->getIndikator($kategori_id, $standar_id);
+        $i = 1;
+        foreach ($allindikator as $all) {
+            if ($all['indikator_id'] == $i) {
+                $i++;
+            }
+        }
+
+        $dataindikator = $this->indikatorModel->findIndikator($i, $kategori_id, $standar_id);
 
         if ($dataindikator) {
             session()->setFlashdata('message', '<div class="alert alert-danger alert__sipmpp" role="alert"><i class="fa-solid fa-circle-exclamation color__danger"></i><span>Data Indikator sudah ada!</span></div>');
 
-            return redirect()->to(base_url('admin/standar'));
+            return redirect()->to(base_url('/admin/addIndikatorform/' . $standar_id . ' / ' . $kategori_id));
         } else {
             $data = [
-                'standar_id' => $standar_id,
+                'indikator_id' => $i,
                 'kategori_id' => $kategori_id,
-                'indikator' => $indikator,
-                'bobot' => $bobot,
+                'standar_id' => $standar_id,
+                'nama_indikator' => $nama_indikator,
+                'target' => $target,
+                'nilai_acuan' => $nilai_acuan,
+                'satuan' => $satuan,
                 'keterangan' => $keterangan,
+                'induk_id' => $induk_id,
             ];
 
             $this->indikatorModel->insert($data);
 
             session()->setFlashdata('message', '<div class="alert alert-success alert__sipmpp" role="alert"><i class="fa-solid fa-circle-check color__success"></i><span>Data Indikator berhasil ditambahkan!</span></div>');
 
-            return redirect()->to(base_url('admin/standar'));
+            return redirect()->to(base_url('/admin/viewIndikator/' . $standar_id . '/' . $kategori_id));
         }
     }
 
