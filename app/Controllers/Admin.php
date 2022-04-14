@@ -578,6 +578,7 @@ class Admin extends BaseController
         $standar = $this->standarModel->getStandarByKategori($standar_id, $kategori_id);
         $kategori = $this->kategoriModel->getKategoriById($kategori_id);
         $indikator = $this->indikatorModel->getIndikator($kategori_id, $standar_id);
+        $induk = $this->dataIndukModel->getIndukByKategoriId($kategori_id);
 
         $data = [
             'title' => 'Form Tambah Indikator | SIPMPP UNDIP ' . $this->thisTahun,
@@ -589,6 +590,9 @@ class Admin extends BaseController
             'standar' => $standar,
             'kategori' => $kategori,
             'indikator' => $indikator,
+            'induk' => $induk,
+            'standar_id' => $standar_id,
+            'kategori_id' => $kategori_id,
             'tahun' => $usersession['tahun'],
             'tahunsession' => $this->tahun,
             'cssCustom' => '',
@@ -598,35 +602,13 @@ class Admin extends BaseController
     }
 
     // Edit Indikator Method
-    // public function editIndikatorform($standar_id, $kategori_id, $indikator_id)
-    // {
-    //     $usersession = $this->data_user;
-    //     $standar = $this->standarModel->getStandarByKategori($standar_id, $kategori_id);
-    //     $kategori = $this->kategoriModel->getKategoriById($kategori_id);
-    //     $indikator = $this->indikatorModel->getIndikatorById($indikator_id);
-
-    //     $data = [
-    //         'title' => 'Form Edit Indikator | SIPMPP UNDIP ' . $this->thisTahun,
-    //         'tab' => 'standar',
-    //         'css' => 'styles-admin-edit-indikator.css',
-    //         'header' => 'header__mini',
-    //         'i' => $this->i,
-    //         'usersession' => $usersession,
-    //         'standar' => $standar,
-    //         'kategori' => $kategori,
-    //         'indikator' => $indikator,
-    //         'tahun' => $usersession['tahun'],
-    //         'tahunsession' => $this->tahun,
-    //         'cssCustom' => '',
-    //     ];
-
-    //     return view('admin/edit-indikator', $data);
-    // }
-
-    // ========== DUMMY CONTROLLER ==========
-    public function editIndikatorform()
+    public function editIndikatorform($standar_id, $kategori_id, $indikator_id)
     {
         $usersession = $this->data_user;
+        $standar = $this->standarModel->getStandarByKategori($standar_id, $kategori_id);
+        $kategori = $this->kategoriModel->getKategoriById($kategori_id);
+        $indikator = $this->indikatorModel->findIndikator($indikator_id, $kategori_id, $standar_id);
+        $induk = $this->dataIndukModel->getIndukByKategoriId($kategori_id);
 
         $data = [
             'title' => 'Form Edit Indikator | SIPMPP UNDIP ' . $this->thisTahun,
@@ -635,6 +617,13 @@ class Admin extends BaseController
             'header' => 'header__mini',
             'i' => $this->i,
             'usersession' => $usersession,
+            'standar' => $standar,
+            'kategori' => $kategori,
+            'indikator' => $indikator,
+            'induk' => $induk,
+            'standar_id' => $standar_id,
+            'kategori_id' => $kategori_id,
+            'indikator_id' => $indikator_id,
             'tahun' => $usersession['tahun'],
             'tahunsession' => $this->tahun,
             'cssCustom' => '',

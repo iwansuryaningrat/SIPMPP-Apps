@@ -142,6 +142,29 @@ class Home extends BaseController
         // Update Data
         $this->unitIndukTahunModel->updateNilai($unit_id, $tahun, $induk_id, $kategori_id, $nilai);
 
+        $daftarIndikator = $this->indikatorModel->findIndikatorByInduk($induk_id, $kategori_id);
+
+        // Update Penilaian
+        foreach ($daftarIndikator as $indikator) {
+            $penilaian = $this->penilaianModel->getPenilaianSpecId($unit_id, $indikator['standar_id'], $tahun, $indikator['kategori_id'], $indikator['indikator_id']);
+            if ($penilaian['nilai_input'] != 0) {
+                if ($penilaian['nilai_acuan'] = 1) {
+                    $hasil = 100;
+                    $nilai_akhir = 100;
+                } else {
+                    $hasil = $penilaian['nilai_input'] / $penilaian['nilai'] * 100;
+                    if ($hasil >= $penilaian['nilai_acuan']) {
+                        $nilai_akhir = 100;
+                    } else {
+                        $nilai_akhir = $hasil / $penilaian['nilai_acuan'] * 100;
+                    }
+                }
+                $penilaian['hasil'] = $hasil;
+                $penilaian['nilai_akhir'] = $nilai_akhir;
+            }
+            $this->penilaianModel->updatePenilaian($unit_id, $tahun, $indikator['standar_id'], $indikator['kategori_id'], $indikator['indikator_id'], $penilaian);
+        }
+
         session()->setFlashdata('message', '<div class="alert alert-success alert__sipmpp" role="alert"><i class="fa-solid fa-circle-check color__success"></i><span>Data Induk berhasil diubah!</span></div>');
 
         return redirect()->to('/home/datainduk/' . $unit_id . '/' . $tahun);

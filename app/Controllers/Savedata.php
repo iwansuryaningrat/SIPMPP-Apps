@@ -106,31 +106,57 @@ class Savedata extends BaseController
     // Add user role unit method (Done)
     public function addBasicUser($role)
     {
+        $data = $this->request->getPost();
         $email = $this->request->getVar('user');
         $role_id = $this->roleModel->getRole($role);
         $role_id = (int)$role_id['role_id'];
 
-        if ($role == 'pimpinan') {
-            $unit = 'lppm';
-        } else {
-            $unit = $this->request->getVar('unit');
+        if ($role != 'pimpinan') {
+            $unit_id = $data['unit'];
         }
-        $tahun = (int)$this->request->getVar('tahun');
+        $tahun = $data['tahun'];
+        // dd($tahun);
 
-        $data = [
-            'email' => $email,
-            'role_id' => $role_id,
-            'unit_id' => $unit,
-            'tahun' => $tahun,
-        ];
-
-        // Insert data ke User Role Unit
-        $this->userroleunitModel->insert($data);
+        if ($role == 'pimpinan') {
+            $unit_id = 'lppm';
+            foreach ($tahun as $key => $value) {
+                $cek = $this->userroleunitModel->getDataSpec($email, $value, $role, $unit_id);
+                if ($cek == null) {
+                    $data = [
+                        'email' => $email,
+                        'role_id' => $role_id,
+                        'unit_id' => $unit_id,
+                        'tahun' => $value,
+                    ];
+                    $this->userroleunitModel->insert($data);
+                }
+            }
+        } else {
+            foreach ($unit_id as $unit) {
+                foreach ($tahun as $key => $value) {
+                    $cek = $this->userroleunitModel->getDataSpec($email, $value, $role, $unit);
+                    if ($cek == null) {
+                        $data = [
+                            'email' => $email,
+                            'role_id' => $role_id,
+                            'unit_id' => $unit,
+                            'tahun' => $value,
+                        ];
+                        $this->userroleunitModel->insert($data);
+                    }
+                }
+            }
+        }
 
         // Set flashdata gagal dan kirim pesan eror dengan flashdata
         $this->session->setFlashdata('msg', '<div class="alert alert-success alert__sipmpp alert-dismissible fade show" role="alert"><i class="fa-solid fa-circle-check color__success"></i><span>User berhasil ditambahkan!</span></div>');
-
-        return redirect()->to(base_url('admin/daftaruser'));
+        if ($role == 'user') {
+            return redirect()->to(base_url('admin/user'));
+        } else if ($role == 'auditor') {
+            return redirect()->to(base_url('admin/auditor'));
+        } else {
+            return redirect()->to(base_url('admin/leader'));
+        }
     }
 
     // Add Unit method (Done)
@@ -277,30 +303,46 @@ class Savedata extends BaseController
     // Insert Indikator Method
     public function insertIndikator($standar_id, $kategori_id)
     {
-        $indikator = $this->request->getVar('indikator');
-        $bobot = $this->request->getVar('bobot');
-        $keterangan = $this->request->getVar('keterangan');
+        $data = $this->request->getPost();
+        $nama_indikator = $data['indikator'];
+        $target = $data['target'];
+        $induk_id = $data['kebutuhan_data'];
+        $nilai_acuan = $data['nilai_patokan'];
+        $satuan = $data['satuan'];
+        $keterangan = $data['keterangan'];
 
-        $dataindikator = $this->indikatorModel->getIndikator($kategori_id, $standar_id);
+        $allindikator = $this->indikatorModel->getIndikator($kategori_id, $standar_id);
+        $i = 1;
+        foreach ($allindikator as $all) {
+            if ($all['indikator_id'] == $i) {
+                $i++;
+            }
+        }
+
+        $dataindikator = $this->indikatorModel->findIndikator($i, $kategori_id, $standar_id);
 
         if ($dataindikator) {
             session()->setFlashdata('message', '<div class="alert alert-danger alert__sipmpp" role="alert"><i class="fa-solid fa-circle-exclamation color__danger"></i><span>Data Indikator sudah ada!</span></div>');
 
-            return redirect()->to(base_url('admin/standar'));
+            return redirect()->to(base_url('/admin/addIndikatorform/' . $standar_id . ' / ' . $kategori_id));
         } else {
             $data = [
-                'standar_id' => $standar_id,
+                'indikator_id' => $i,
                 'kategori_id' => $kategori_id,
-                'indikator' => $indikator,
-                'bobot' => $bobot,
+                'standar_id' => $standar_id,
+                'nama_indikator' => $nama_indikator,
+                'target' => $target,
+                'nilai_acuan' => $nilai_acuan,
+                'satuan' => $satuan,
                 'keterangan' => $keterangan,
+                'induk_id' => $induk_id,
             ];
 
             $this->indikatorModel->insert($data);
 
             session()->setFlashdata('message', '<div class="alert alert-success alert__sipmpp" role="alert"><i class="fa-solid fa-circle-check color__success"></i><span>Data Indikator berhasil ditambahkan!</span></div>');
 
-            return redirect()->to(base_url('admin/standar'));
+            return redirect()->to(base_url('/admin/viewIndikator/' . $standar_id . '/' . $kategori_id));
         }
     }
 

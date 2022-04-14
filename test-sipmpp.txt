@@ -7,18 +7,19 @@
 - edit profile, tidak bisa menampilkan nama baru, redirect salah(all role) (Done)
 - ubah password page profile (all user) (Done)
 - Doc Preview (User) (Just Can Download It) (Done)
+- Edit Induk must edit nilai indikator (Done)
+- form add indikator, select kebutuhan data tidak tampil + link batal belum dibuat (Done)
+- redirect salah, form add base user, add auditor, add leader + data handling (Done)
+- redirect salah, after deleting form add base user, add auditor, add leader (Done)
 
 * Admin Page
-- form add indikator, select kebutuhan data tidak tampil + link batal belum dibuat
-- redirect salah, form add base user, add auditor, add leader + data handling
-- redirect salah, after deleting form add base user, add auditor, add leader
+- edit indikator action belum bisa (Kurang Update Data method)
 - edit unit
 - edit data induk (admin)
 - counting table daftar kategori do dashboard page (admin)
 - UNDO after add data (all form)
 - ADD KATEGORI (admin) bahaya!! mempengaruhi panel, id panel, nama target panel
 - EDIT KATEGORI (admin) bahaya!! mempengaruhi panel, id panel, nama target panel
-- edit indikator action belum bisa
 - penilaian (admin)
 
 * Auditor Page
@@ -27,7 +28,6 @@
 - Report Page (Same With User Page)
 
 * USER Page
-- Edit Induk must edit nilai indikator
 - report Page (user)
 
 ----- Front End -----

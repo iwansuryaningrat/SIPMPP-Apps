@@ -141,7 +141,7 @@ class Editdata extends BaseController
         return redirect()->to(base_url('admin/induk'));
     }
 
-    // Edit Password Method (Need Testing)
+    // Edit Password Method (Done)
     public function editPassword()
     {
         $data_user = $this->data_user;
@@ -173,7 +173,7 @@ class Editdata extends BaseController
         }
     }
 
-    // Edit Profile Method (Need Testing)
+    // Edit Profile Method (Done)
     public function editProfile()
     {
         $data_user = $this->data_user;
@@ -190,7 +190,7 @@ class Editdata extends BaseController
                 unlink('profile/' . $namafoto);
             }
             // set nama foto baru
-            $namafoto = 'foto-' . $user['email'] . '.' . $foto->getExtension();
+            $namafoto = $foto->getMTime() . '-' . $foto->getName();
             $foto->move('profile/', $namafoto);
         };
 
@@ -211,7 +211,9 @@ class Editdata extends BaseController
             'foto' => $data['foto'],
             'role_id' => $data_user['role_id'],
             'role' => $data_user['role'],
-            'tahun' => $this->getTahun,
+            'unit_id' => $data_user['unit_id'],
+            'unit' => $data_user['unit'],
+            'tahun' => $data_user['tahun'],
             'isLoggedIn' => true,
         ];
 
@@ -232,5 +234,37 @@ class Editdata extends BaseController
         session()->setFlashdata('message', '<div class="alert alert-success alert__sipmpp" role="alert"><i class="fa-solid fa-circle-check color__success"></i><span>Data Standar berhasil diubah!</span></div>');
 
         return redirect()->to(base_url('admin/standar'));
+    }
+
+    // Update Indikator Method (Done)
+    public function editIndikator($indikator_id, $kategori_id, $standar_id)
+    {
+        $data = $this->request->getPost();
+        $nama_indikator = $data['indikator'];
+        $target = $data['target'];
+        $induk_id = $data['kebutuhan_data'];
+        $nilai_acuan = $data['nilai_patokan'];
+        $satuan = $data['satuan'];
+        $keterangan = $data['keterangan'];
+
+        $datas = [
+            'indikator_id' => $indikator_id,
+            'kategori_id' => $kategori_id,
+            'standar_id' => $standar_id,
+            'nama_indikator' => $nama_indikator,
+            'target' => $target,
+            'nilai_acuan' => $nilai_acuan,
+            'satuan' => $satuan,
+            'keterangan' => $keterangan,
+            'induk_id' => $induk_id,
+        ];
+
+        if ($datas) {
+            $this->indikatorModel->updateIndikator($indikator_id, $kategori_id, $standar_id, $datas);
+        }
+
+        session()->setFlashdata('message', '<div class="alert alert-success alert__sipmpp" role="alert"><i class="fa-solid fa-circle-check color__success"></i><span>Data Indikator berhasil ditambahkan!</span></div>');
+
+        return redirect()->to(base_url('/admin/viewIndikator/' . $standar_id . '/' . $kategori_id));
     }
 }
