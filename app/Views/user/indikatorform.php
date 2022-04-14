@@ -64,7 +64,7 @@
         <div class="col-lg-6 col-md-9 col-sm-8">
           <select class="form-select form__select shadow-none" name="hasil" id="hasil">
             <option selected disabled>Pilih hasil data</option>
-            <option value="ADA / SESUAI" <?php if ($datapenilaian['nilai_acuan'] == 1) echo 'selected'; ?>>ADA / SESUAI</option>
+            <option value="ADA / SESUAI" <?php if ($datapenilaian['nilai_input'] == 1) echo 'selected'; ?>>ADA / SESUAI</option>
             <option value="Tidak ADA / TIDAK SESUAI">Tidak ADA / TIDAK SESUAI</option>
           </select>
         </div>
@@ -73,7 +73,7 @@
       <div class="row mb-3 mb-sm-4">
         <label for="hasil" class="col-lg-3 col-md-3 col-sm-4 col-form-label form__label">Hasil <span class="color__danger">*</span></label>
         <div class="col-lg-6 col-md-9 col-sm-8">
-          <input class="form-control form__control shadow-none" value="<?= $datapenilaian['nilai_acuan'] ?>" id="hasil" name="hasil" required />
+          <input class="form-control form__control shadow-none" value="<?= $datapenilaian['nilai_input'] ?>" id="hasil" name="hasil" required />
         </div>
       </div>
     <?php } ?>
