@@ -456,7 +456,7 @@ class Auditor extends BaseController
                 unlink('profile/' . $namafoto);
             }
             // set nama foto baru
-            $namafoto = 'foto-' . $user['email'] . '.' . $foto->getExtension();
+            $namafoto = $foto->getMTime() . '-' . $foto->getName();
             $foto->move('profile/', $namafoto);
         };
 
@@ -477,7 +477,9 @@ class Auditor extends BaseController
             'foto' => $data['foto'],
             'role_id' => $data_user['role_id'],
             'role' => $data_user['role'],
-            'tahun' => $this->getTahun,
+            'unit_id' => $data_user['unit_id'],
+            'unit' => $data_user['unit'],
+            'tahun' => $data_user['tahun'],
             'isLoggedIn' => true,
         ];
 
