@@ -147,8 +147,8 @@ class Editdata extends BaseController
         $data_user = $this->data_user;
         $user = $this->usersModel->getUserByEmail($data_user['email']);
 
-        $old_password = $this->request->getVar('old-password');
-        $new_password = $this->request->getVar('new-password');
+        $old_password = $this->request->getVar('oldPassword');
+        $new_password = $this->request->getVar('newPassword');
 
         // Cek apakah password lama sama dengan password lama
         if (password_verify($old_password, $user['password'])) {
@@ -186,7 +186,9 @@ class Editdata extends BaseController
         } else {
             // Hapus foto lama
             $namafoto = $user['foto'];
-            unlink('profile/' . $namafoto);
+            if ($namafoto != 'default.png') {
+                unlink('profile/' . $namafoto);
+            }
             // set nama foto baru
             $namafoto = 'foto-' . $user['email'] . '.' . $foto->getExtension();
             $foto->move('profile/', $namafoto);

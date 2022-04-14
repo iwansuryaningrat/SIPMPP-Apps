@@ -2,11 +2,11 @@ Back End
 - alert component, kurang tag penutup </i> (add data induk admin, add standar admin) (Done)
 - edit nilai indikator (user) tidak bisa menampilkan perubahan (Done)
 - flash data pada profile (Done)
+- ubah foto profile gagal, unlink permission denied (all user) (Done)
+- edit profile, tidak bisa menampilkan nama baru, redirect salah(all role) (Done)
+- ubah password page profile (all user) (Done)
 - Doc Preview (User & Auditor) (Just Can Download It) (Done, kurang di form indikator Auditor)
 - form add indikator, select kebutuhan data tidak tampil + link batal belum dibuat
-- edit profile, tidak bisa menampilkan nama baru, redirect salah(all role)
-- ubah password page profile (all user)
-- ubah foto profile gagal, unlink permission denied (all user)
 - redirect salah, form add base user, add auditor, add leader + data handling
 - redirect salah, after deleting form add base user, add auditor, add leader
 - edit unit
