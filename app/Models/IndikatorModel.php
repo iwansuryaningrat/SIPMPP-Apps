@@ -25,4 +25,13 @@ class IndikatorModel extends Model
             ->where('indikator.standar_id', $standar_id)
             ->findAll();
     }
+
+    // Find Indikator by induk_id
+    public function findIndikatorByInduk($induk_id, $kategori_id)
+    {
+        return $this->select('indikator.*')
+            ->where('indikator.induk_id', $induk_id)
+            ->where('indikator.kategori_id', $kategori_id)
+            ->findAll();
+    }
 }

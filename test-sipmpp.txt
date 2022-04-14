@@ -7,6 +7,7 @@
 - edit profile, tidak bisa menampilkan nama baru, redirect salah(all role) (Done)
 - ubah password page profile (all user) (Done)
 - Doc Preview (User) (Just Can Download It) (Done)
+- Edit Induk must edit nilai indikator (Done)
 
 * Admin Page
 - form add indikator, select kebutuhan data tidak tampil + link batal belum dibuat
@@ -27,7 +28,6 @@
 - Report Page (Same With User Page)
 
 * USER Page
-- Edit Induk must edit nilai indikator
 - report Page (user)
 
 ----- Front End -----
