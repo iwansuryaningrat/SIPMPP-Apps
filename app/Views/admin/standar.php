@@ -139,6 +139,7 @@
         </div>
     </div>
 </div>
+<a href="/admin/editIndikatorform"></a>
 
 <?= $this->endSection(); ?>
 

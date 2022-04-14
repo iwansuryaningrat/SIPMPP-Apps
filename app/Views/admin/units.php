@@ -86,7 +86,7 @@
         <h4 class="modal-title" id="modal-data-induk">Edit Unit</h4>
 
         <!-- form -->
-        <form class="modal__form" method="POST" action="/Editdata/editunit">
+        <form class="modal__form" method="POST" action="/Editdata/editunit" id="formEditUnit">
           <!-- id input -->
           <input type="hidden" id="idEdit" name="unit_id" />
           <!-- unit -->
@@ -100,7 +100,7 @@
             <button type="button" class="btn cancel__btn shadow-none" data-bs-dismiss="modal">
               Batal
             </button>
-            <button type="submit" class="btn modal__btn shadow-none">Kirim</button>
+            <button type="submit" class="btn modal__btn shadow-none" id="btnEditUnit">Simpan</button>
           </div>
         </form>
       </div>
@@ -120,7 +120,7 @@
         <h4 class="modal-title" id="modal-data-induk">Add Unit</h4>
 
         <!-- form -->
-        <form class="modal__form" method="POST" action="/savedata/addunit">
+        <form class="modal__form" method="POST" action="/savedata/addunit" id="formAddUnit">
           <!-- id input -->
           <input type="hidden" id="idAdd" />
           <!-- unit -->
@@ -134,7 +134,7 @@
             <button type="button" class="btn cancel__btn shadow-none" data-bs-dismiss="modal">
               Batal
             </button>
-            <button type="submit" class="btn modal__btn shadow-none">Kirim</button>
+            <button type="submit" class="btn modal__btn shadow-none" id="btnAddUnit">Simpan</button>
           </div>
         </form>
       </div>
@@ -145,7 +145,10 @@
 <?= $this->endSection(); ?>
 
 <?= $this->section('script'); ?>
-
+<!-- jquery validate -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.19.3/jquery.validate.min.js"
+  integrity="sha512-37T7leoNS06R80c8Ulq7cdCDU5MNQBwlYoy1TX/WUsLFC2eYNqtKlV0QjH7r8JpG/S0GUMZwebnVFLPd6SU5yg=="
+  crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 <!-- scripts -->
 <script>
   // tooltips
@@ -175,6 +178,43 @@
     $(".add__unit__icon").on("click", function() {
       // Call Modal Edit
       $(".add__unit__modal").modal("show");
+    });
+  });
+
+  // validate form jquery
+  const exclamationCircle = "<i class='fa-solid fa-circle-exclamation'></i>";
+
+  $(document).ready(function() {
+    $("#formAddUnit").validate({
+      rules: {
+        nama_unit: {
+          required: true,
+        },
+      },
+      messages: {
+        nama_unit: {
+          required: exclamationCircle + " Unit is required.",
+        },
+      },
+    });
+    $("#formEditUnit").validate({
+      rules: {
+        nama_unit: {
+          required: true,
+        },
+      },
+      messages: {
+        nama_unit: {
+          required: exclamationCircle + " Unit is required.",
+        },
+      },
+    });
+
+    $("#btnAddUnit").on("click", () => {
+      console.log($("#formAddUnit").valid());
+    });
+    $("#btnEditUnit").on("click", () => {
+      console.log($("#formEditUnit").valid());
     });
   });
 </script>

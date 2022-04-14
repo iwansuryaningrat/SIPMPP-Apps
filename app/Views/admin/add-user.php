@@ -77,6 +77,8 @@
     crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 <script>
     // validate form jquery
+    const exclamationCircle = "<i class='fa-solid fa-circle-exclamation'></i>";
+
     $(document).ready(function() {
         $("#formAddUser").validate({
             rules: {
@@ -85,10 +87,24 @@
                 },
                 email: {
                     required: true,
+                    email: true,
                 },
                 password: {
                     required: true,
                     minlength: 8,
+                },
+            },
+            messages: {
+                fullname: {
+                    required: exclamationCircle + " Nama lengkap is required.",
+                },
+                email: {
+                    required: exclamationCircle + " Email is required.",
+                    email: exclamationCircle + " A valid email address is required.",
+                },
+                password: {
+                    required: exclamationCircle + " Password is required.",
+                    minlength: exclamationCircle + " Password must have at least 8 characters.",
                 },
             },
         });

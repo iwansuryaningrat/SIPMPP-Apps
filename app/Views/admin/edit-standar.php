@@ -26,7 +26,8 @@
 <!-- form add standar -->
 <div class="form__add__standar">
     <form method="POST"
-        action="/editdata/editstandar/<?= $standar['standar_id'] . '/' . $standar['kategori_id']; ?>">
+        action="/editdata/editstandar/<?= $standar['standar_id'] . '/' . $standar['kategori_id']; ?>"
+        id="formEditStandar">
         <!-- kategori -->
         <div class="row mb-3 mb-sm-4">
             <label for="kategori" class="col-lg-3 col-md-3 col-sm-4 col-form-label form__label">Kategori
@@ -72,7 +73,7 @@
         <div class="row">
             <div class="col-lg-9 col-md-12 col-sm-12 button__section">
                 <a href="/admin/standar" class="btn form__btn cancel__btn me-4 shadow-none" role="button">Batal</a>
-                <button type="submit" class="btn form__btn btn__dark shadow-none">
+                <button type="submit" class="btn form__btn btn__dark shadow-none" id="btnEditStandar">
                     Simpan
                 </button>
             </div>
@@ -83,9 +84,50 @@
 <?= $this->endSection(); ?>
 
 <?= $this->section('script'); ?>
-
+<!-- jquery validate -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.19.3/jquery.validate.min.js"
+    integrity="sha512-37T7leoNS06R80c8Ulq7cdCDU5MNQBwlYoy1TX/WUsLFC2eYNqtKlV0QjH7r8JpG/S0GUMZwebnVFLPd6SU5yg=="
+    crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 <script>
+    // to uppercase
+    $(function() {
+        $('input#kode').keyup(function() {
+            this.value = this.value.toLocaleUpperCase();
+        });
+    })
+    // validate form jquery
+    const exclamationCircle = "<i class='fa-solid fa-circle-exclamation'></i>";
 
+    $(document).ready(function() {
+        $("#formEditStandar").validate({
+            rules: {
+                kategori_id: {
+                    required: true,
+                },
+                kode: {
+                    required: true,
+                },
+                namaStandar: {
+                    required: true,
+                },
+            },
+            messages: {
+                kategori_id: {
+                    required: exclamationCircle + " Kategori is required.",
+                },
+                kode: {
+                    required: exclamationCircle + " Kode is required.",
+                },
+                namaStandar: {
+                    required: exclamationCircle + " Nama Standars is required.",
+                },
+            },
+        });
+
+        $("#btnEditStandar").on("click", () => {
+            console.log($("#formEditStandar").valid());
+        });
+    });
 </script>
 
 <?= $this->endSection();

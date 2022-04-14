@@ -24,7 +24,7 @@
 
 <!-- form add indikator -->
 <div class="form__add__user">
-    <form method="POST" action="#">
+    <form method="POST" action="#" id="formAddIndikator">
         <!-- User -->
         <div class="row mb-3 mb-sm-4">
             <label for="indikator" class="col-lg-3 col-md-3 col-sm-4 col-form-label form__label">Indikator <span
@@ -85,7 +85,7 @@
         <div class="row">
             <div class="col-lg-9 col-md-12 col-sm-12 button__section">
                 <a href="#" class="btn form__btn cancel__btn me-4 shadow-none" role="button">Batal</a>
-                <button type="submit" class="btn form__btn btn__dark shadow-none">
+                <button type="submit" class="btn form__btn btn__dark shadow-none" id="btnAddIndikator">
                     Simpan
                 </button>
             </div>
@@ -98,7 +98,10 @@
 <?= $this->endSection(); ?>
 
 <?= $this->section('script'); ?>
-
+<!-- jquery validate -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.19.3/jquery.validate.min.js"
+    integrity="sha512-37T7leoNS06R80c8Ulq7cdCDU5MNQBwlYoy1TX/WUsLFC2eYNqtKlV0QjH7r8JpG/S0GUMZwebnVFLPd6SU5yg=="
+    crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 <script>
     // validation number
     let validationNumber = (evt) => {
@@ -108,6 +111,58 @@
 
         return true;
     };
+
+    // validate form jquery
+    const exclamationCircle = "<i class='fa-solid fa-circle-exclamation'></i>";
+
+    $(document).ready(function() {
+        $("#formAddIndikator").validate({
+            rules: {
+                indikator: {
+                    required: true,
+                },
+                target: {
+                    required: true,
+                },
+                kebutuhan_data: {
+                    required: true,
+                },
+                nilai_patokan: {
+                    required: true,
+                },
+                satuan: {
+                    required: true,
+                },
+                keterangan: {
+                    required: true,
+                },
+            },
+            messages: {
+                indikator: {
+                    required: exclamationCircle + " Indikator is required.",
+                },
+                target: {
+                    required: exclamationCircle + " Target is required.",
+                },
+                kebutuhan_data: {
+                    required: exclamationCircle + " Kebutuhan Data is required.",
+                },
+                nilai_patokan: {
+                    required: exclamationCircle + " Nilai Patokan is required.",
+                },
+                satuan: {
+                    required: exclamationCircle + " Satuan is required.",
+                },
+                keterangan: {
+                    required: exclamationCircle + " Keterangan is required.",
+                },
+            },
+        });
+
+        $("#btnAddIndikator").on("click", () => {
+            console.log($("#formAddIndikator").valid());
+        });
+    });
 </script>
 
 <?= $this->endSection();

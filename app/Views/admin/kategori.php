@@ -86,7 +86,7 @@
                 <h4 class="modal-title" id="modal-data-induk">Edit Kategori</h4>
 
                 <!-- form -->
-                <form class="modal__form" method="POST" action="/editdata/editkategori">
+                <form class="modal__form" method="POST" action="/editdata/editkategori" id="formEditKategori">
                     <!-- id input -->
                     <input type="hidden" name="id" id="idEdit" />
                     <!-- unit -->
@@ -101,7 +101,7 @@
                         <button type="button" class="btn cancel__btn shadow-none" data-bs-dismiss="modal">
                             Batal
                         </button>
-                        <button type="submit" class="btn modal__btn shadow-none">Kirim</button>
+                        <button type="submit" class="btn modal__btn shadow-none" id="btnEditKategori">Simpan</button>
                     </div>
                 </form>
             </div>
@@ -121,7 +121,7 @@
                 <h4 class="modal-title" id="modal-data-induk">Add Kategori</h4>
 
                 <!-- form -->
-                <form class="modal__form" method="POST" action="/savedata/addkategori">
+                <form class="modal__form" method="POST" action="/savedata/addkategori" id="formAddKategori">
                     <!-- id input -->
                     <input type="hidden" id="idAdd" />
                     <!-- unit -->
@@ -136,7 +136,7 @@
                         <button type="button" class="btn cancel__btn shadow-none" data-bs-dismiss="modal">
                             Batal
                         </button>
-                        <button type="submit" class="btn modal__btn shadow-none">Kirim</button>
+                        <button type="submit" class="btn modal__btn shadow-none" id="btnAddKategori">Simpan</button>
                     </div>
                 </form>
             </div>
@@ -147,7 +147,11 @@
 <?= $this->endSection(); ?>
 
 <?= $this->section('script'); ?>
-
+<!-- jquery validate -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.19.3/jquery.validate.min.js"
+    integrity="sha512-37T7leoNS06R80c8Ulq7cdCDU5MNQBwlYoy1TX/WUsLFC2eYNqtKlV0QjH7r8JpG/S0GUMZwebnVFLPd6SU5yg=="
+    crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+<!-- scripts -->
 <script>
     // tooltips
     const tooltipsEdit = document.querySelectorAll(
@@ -164,8 +168,6 @@
             // get data from button edit
             const idKat = $(this).data("dataidkat");
             const kategoriKat = $(this).data("datakat");
-            console.log(idKat);
-            console.log(kategoriKat);
             // Set data to Form Edit
             $("#idEdit").val(idKat);
             $("#kategoriEdit").val(kategoriKat);
@@ -176,6 +178,43 @@
         $(".add__unit__icon").on("click", function() {
             // Call Modal Edit
             $(".add__kategori__modal").modal("show");
+        });
+    });
+
+    // validate form jquery
+    const exclamationCircle = "<i class='fa-solid fa-circle-exclamation'></i>";
+
+    $(document).ready(function() {
+        $("#formAddKategori").validate({
+            rules: {
+                kategori: {
+                    required: true,
+                },
+            },
+            messages: {
+                kategori: {
+                    required: exclamationCircle + " Kategori is required.",
+                },
+            },
+        });
+        $("#formEditKategori").validate({
+            rules: {
+                kategori: {
+                    required: true,
+                },
+            },
+            messages: {
+                kategori: {
+                    required: exclamationCircle + " Kategori is required.",
+                },
+            },
+        });
+
+        $("#btnAddKategori").on("click", () => {
+            console.log($("#formAddKategori").valid());
+        });
+        $("#btnEditKategori").on("click", () => {
+            console.log($("#formEditKategori").valid());
         });
     });
 </script>

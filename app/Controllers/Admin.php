@@ -598,12 +598,33 @@ class Admin extends BaseController
     }
 
     // Edit Indikator Method
-    public function editIndikatorform($standar_id, $kategori_id, $indikator_id)
+    // public function editIndikatorform($standar_id, $kategori_id, $indikator_id)
+    // {
+    //     $usersession = $this->data_user;
+    //     $standar = $this->standarModel->getStandarByKategori($standar_id, $kategori_id);
+    //     $kategori = $this->kategoriModel->getKategoriById($kategori_id);
+    //     $indikator = $this->indikatorModel->getIndikatorById($indikator_id);
+
+    //     $data = [
+    //         'title' => 'Edit Indikator | SIPMPP Admin UNDIP ' . $this->thisTahun,
+    //         'tab' => 'standar',
+    //         'css' => 'styles-admin-edit-indikator.css',
+    //         'header' => 'header__mini',
+    //         'i' => $this->i,
+    //         'usersession' => $usersession,
+    //         'standar' => $standar,
+    //         'kategori' => $kategori,
+    //         'indikator' => $indikator,
+    //         'tahun' => $usersession['tahun'],
+    //         'tahunsession' => $this->tahun,
+    //         'cssCustom' => '',
+    //     ];
+
+    //     return view('admin/edit-indikator', $data);
+    // }
+    public function editIndikatorform()
     {
         $usersession = $this->data_user;
-        $standar = $this->standarModel->getStandarByKategori($standar_id, $kategori_id);
-        $kategori = $this->kategoriModel->getKategoriById($kategori_id);
-        $indikator = $this->indikatorModel->getIndikatorById($indikator_id);
 
         $data = [
             'title' => 'Edit Indikator | SIPMPP Admin UNDIP ' . $this->thisTahun,
@@ -612,9 +633,6 @@ class Admin extends BaseController
             'header' => 'header__mini',
             'i' => $this->i,
             'usersession' => $usersession,
-            'standar' => $standar,
-            'kategori' => $kategori,
-            'indikator' => $indikator,
             'tahun' => $usersession['tahun'],
             'tahunsession' => $this->tahun,
             'cssCustom' => '',

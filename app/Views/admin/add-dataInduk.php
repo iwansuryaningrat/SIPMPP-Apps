@@ -24,7 +24,7 @@
 
 <!-- form add data induk -->
 <div class="form__add__datainduk">
-    <form method="POST" action="/savedata/adddatainduk">
+    <form method="POST" action="/savedata/adddatainduk" id="formAddInduk">
         <!-- kategori -->
         <div class="row mb-3 mb-sm-4">
             <label for="kategori" class="col-lg-3 col-md-3 col-sm-4 col-form-label form__label">Kategori
@@ -46,11 +46,12 @@
         </div>
         <!-- Induk -->
         <div class="row mb-3 mb-sm-4">
-            <label for="kode" class="col-lg-3 col-md-3 col-sm-4 col-form-label form__label">Induk Id
+            <label for="induk_id" class="col-lg-3 col-md-3 col-sm-4 col-form-label form__label">Induk Id
                 <span class="color__danger">*</span></label>
             <div class="col-lg-6 col-md-9 col-sm-8">
-                <input class="form-control form__control shadow-none" id="kode" name="induk_id" required
-                    autocomplete="off" placeholder="Masukkan id data induk" />
+                <input class="form-control form__control shadow-none" id="induk_id" name="induk_id" required
+                    autocomplete="off" onkeypress="javascript: return validationNumber(event)"
+                    placeholder="Masukkan id data induk" />
             </div>
         </div>
         <!-- kode -->
@@ -64,11 +65,11 @@
         </div>
         <!-- kebutuhan data -->
         <div class="row mb-3 mb-sm-4">
-            <label for="kebutuhanData" class="col-lg-3 col-md-3 col-sm-4 col-form-label form__label">Kebutuhan
+            <label for="nama_induk" class="col-lg-3 col-md-3 col-sm-4 col-form-label form__label">Kebutuhan
                 Data
                 <span class="color__danger">*</span></label>
             <div class="col-lg-6 col-md-9 col-sm-8">
-                <input class="form-control form__control shadow-none" id="kebutuhanData" name="nama_induk" required
+                <input class="form-control form__control shadow-none" id="nama_induk" name="nama_induk" required
                     autocomplete="off" placeholder="Masukkan kebutuhan data" />
             </div>
         </div>
@@ -76,7 +77,7 @@
         <div class="row">
             <div class="col-lg-9 col-md-12 col-sm-12 button__section">
                 <a href="/admin/datainduk" class="btn form__btn cancel__btn me-4 shadow-none" role="button">Batal</a>
-                <button type="submit" class="btn form__btn btn__dark shadow-none">
+                <button type="submit" class="btn form__btn btn__dark shadow-none" id="btnAddInduk">
                     Simpan
                 </button>
             </div>
@@ -87,9 +88,57 @@
 <?= $this->endSection(); ?>
 
 <?= $this->section('script'); ?>
-
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.19.3/jquery.validate.min.js"
+    integrity="sha512-37T7leoNS06R80c8Ulq7cdCDU5MNQBwlYoy1TX/WUsLFC2eYNqtKlV0QjH7r8JpG/S0GUMZwebnVFLPd6SU5yg=="
+    crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+<script src="https://cdn.jsdelivr.net/npm/jquery-validation@1.19.3/dist/additional-methods.js"></script>
 <script>
+    // validation number
+    let validationNumber = (evt) => {
+        var iKeyCode = evt.which ? evt.which : evt.keyCode;
+        if (iKeyCode != 46 && iKeyCode > 31 && (iKeyCode < 48 || iKeyCode > 57))
+            return false;
 
+        return true;
+    };
+
+    // to uppercase
+    $(function() {
+        $('input#kode').keyup(function() {
+            this.value = this.value.toLocaleUpperCase();
+        });
+    })
+
+    // validation jquery
+    const exclamationCircle = "<i class='fa-solid fa-circle-exclamation'></i>";
+    $(document).ready(function() {
+        $("#formAddInduk").validate({
+            rules: {
+                kategori_id: "required",
+                induk_id: "required",
+                kode: "required",
+                nama_induk: "required",
+            },
+            messages: {
+                kategori_id: {
+                    required: exclamationCircle + " Kategori is required.",
+                },
+                induk_id: {
+                    required: exclamationCircle + " Induk ID is required.",
+                },
+                kode: {
+                    required: exclamationCircle + " Kode is required.",
+                },
+                nama_induk: {
+                    required: exclamationCircle + " Kebutuhan data is required.",
+                },
+            },
+        });
+
+        $("#btnAddInduk").on("click", () => {
+            console.log($("#formAddInduk").valid());
+        });
+    });
 </script>
 
 <?= $this->endSection();

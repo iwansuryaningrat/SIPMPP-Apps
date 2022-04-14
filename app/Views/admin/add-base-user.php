@@ -24,7 +24,7 @@
 
 <!-- form add user -->
 <div class="form__add__user">
-  <form method="POST" action="/savedata/addbasicuser/user">
+  <form method="POST" action="/savedata/addbasicuser/user" id="formAddBaseUser">
     <!-- User -->
     <div class="row mb-3 mb-sm-4">
       <label for="user" class="col-lg-3 col-md-3 col-sm-4 col-form-label form__label">User <span
@@ -64,8 +64,9 @@
       <label for="tahun" class="col-lg-3 col-md-3 col-sm-4 col-form-label form__label">Tahun <span
           class="color__danger">*</span></label>
       <div class="col-lg-6 col-md-9 col-sm-8">
-        <select name="tahun" id="tahun" class="form-select form__select shadow-none" required>
-          <option value="" disabled selected>Pilih Tahun</option>
+        <select name="tahun" id="tahun" class="form-select form__select shadow-none" multiple multiselect-search="true"
+          multiselect-select-all="true" multiselect-max-items="5" onchange="console.log(this.selectedOptions)" required
+          placeholder-inputs="Pilih Tahun">
           <?php foreach ($tahuns as $tahuns) : ?>
           <option
             value="<?= $tahuns['tahun'] ?>">
@@ -80,7 +81,7 @@
     <div class="row">
       <div class="col-lg-9 col-md-12 col-sm-12 button__section">
         <a href="/admin/user" class="btn form__btn cancel__btn me-4 shadow-none" role="button">Batal</a>
-        <button type="submit" class="btn form__btn btn__dark shadow-none">
+        <button type="submit" class="btn form__btn btn__dark shadow-none" id="btnAddBaseUser">
           Simpan
         </button>
       </div>
@@ -92,7 +93,44 @@
 
 <?= $this->section('script'); ?>
 <script src="/admin/assets/js/multipleselect-dropdown.js"></script>
+<!-- jquery validate -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.19.3/jquery.validate.min.js"
+  integrity="sha512-37T7leoNS06R80c8Ulq7cdCDU5MNQBwlYoy1TX/WUsLFC2eYNqtKlV0QjH7r8JpG/S0GUMZwebnVFLPd6SU5yg=="
+  crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 <script>
+  // validate form jquery
+  const exclamationCircle = "<i class='fa-solid fa-circle-exclamation'></i>";
+
+  $(document).ready(function() {
+    $("#formAddBaseUser").validate({
+      rules: {
+        user: {
+          required: true,
+        },
+        unit: {
+          required: true,
+        },
+        tahun: {
+          required: true,
+        },
+      },
+      messages: {
+        user: {
+          required: exclamationCircle + " User is required.",
+        },
+        unit: {
+          required: exclamationCircle + " Unit is required.",
+        },
+        tahun: {
+          required: exclamationCircle + " Tahun is required.",
+        },
+      },
+    });
+
+    $("#btnAddBaseUser").on("click", () => {
+      console.log($("#formAddBaseUser").valid());
+    });
+  });
 </script>
 
 <?= $this->endSection();
