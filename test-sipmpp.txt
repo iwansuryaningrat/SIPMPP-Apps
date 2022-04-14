@@ -1,10 +1,10 @@
 Back End
-- Doc Preview (User & Auditor) (Just Can Download It) (Done, kurang di form indikator Auditor)
 - alert component, kurang tag penutup </i> (add data induk admin, add standar admin) (Done)
-- form add indikator, select kebutuhan data tidak tampil + link batal belum dibuat
 - edit nilai indikator (user) tidak bisa menampilkan perubahan (Done)
+- flash data pada profile (Done)
+- Doc Preview (User & Auditor) (Just Can Download It) (Done, kurang di form indikator Auditor)
+- form add indikator, select kebutuhan data tidak tampil + link batal belum dibuat
 - edit profile, tidak bisa menampilkan nama baru, redirect salah(all role)
-- flash data pada profile
 - ubah password page profile (all user)
 - ubah foto profile gagal, unlink permission denied (all user)
 - redirect salah, form add base user, add auditor, add leader + data handling
