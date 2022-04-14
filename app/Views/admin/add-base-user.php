@@ -27,15 +27,12 @@
   <form method="POST" action="/savedata/addbasicuser/user" id="formAddBaseUser">
     <!-- User -->
     <div class="row mb-3 mb-sm-4">
-      <label for="user" class="col-lg-3 col-md-3 col-sm-4 col-form-label form__label">User <span
-          class="color__danger">*</span></label>
+      <label for="user" class="col-lg-3 col-md-3 col-sm-4 col-form-label form__label">User <span class="color__danger">*</span></label>
       <div class="col-lg-6 col-md-9 col-sm-8">
         <select name="user" id="user" class="form-select form__select shadow-none" required>
           <option value="" disabled selected>Pilih User</option>
           <?php foreach ($users as $user) : ?>
-          <option value="<?= $user['email'] ?>">
-            <?= $user['nama']; ?>
-          </option>
+            <option value="<?= $user['email'] ?>"><?= $user['nama']; ?></option>
           <?php endforeach; ?>
         </select>
       </div>
@@ -43,17 +40,11 @@
 
     <!-- unit -->
     <div class="row mb-3 mb-sm-4">
-      <label for="unit" class="col-lg-3 col-md-3 col-sm-4 col-form-label form__label">Unit <span
-          class="color__danger">*</span></label>
+      <label for="unit" class="col-lg-3 col-md-3 col-sm-4 col-form-label form__label">Unit <span class="color__danger">*</span></label>
       <div class="col-lg-6 col-md-9 col-sm-8">
-        <select name="unit" id="unit" class="form-select form__select shadow-none" multiple multiselect-search="true"
-          multiselect-select-all="true" multiselect-max-items="5" onchange="console.log(this.selectedOptions)" required
-          placeholder-inputs="Pilih Unit">
+        <select name="unit[]" id="unit" class="form-select form__select shadow-none" multiple multiselect-search="true" multiselect-select-all="true" multiselect-max-items="5" onchange="console.log(this.selectedOptions)" required placeholder-inputs="Pilih Unit">
           <?php foreach ($units as $unit) : ?>
-          <option
-            value="<?= $unit['unit_id'] ?>">
-            <?= $unit['nama_unit']; ?>
-          </option>
+            <option value="<?= $unit['unit_id'] ?>"><?= $unit['nama_unit']; ?></option>
           <?php endforeach; ?>
         </select>
       </div>
@@ -61,17 +52,11 @@
 
     <!-- tahun -->
     <div class="row mb-3 mb-sm-4">
-      <label for="tahun" class="col-lg-3 col-md-3 col-sm-4 col-form-label form__label">Tahun <span
-          class="color__danger">*</span></label>
+      <label for="tahun" class="col-lg-3 col-md-3 col-sm-4 col-form-label form__label">Tahun <span class="color__danger">*</span></label>
       <div class="col-lg-6 col-md-9 col-sm-8">
-        <select name="tahun" id="tahun" class="form-select form__select shadow-none" multiple multiselect-search="true"
-          multiselect-select-all="true" multiselect-max-items="5" onchange="console.log(this.selectedOptions)" required
-          placeholder-inputs="Pilih Tahun">
+        <select name="tahun[]" id="tahun" class="form-select form__select shadow-none" multiple multiselect-search="true" multiselect-select-all="true" multiselect-max-items="5" onchange="console.log(this.selectedOptions)" required placeholder-inputs="Pilih Tahun">
           <?php foreach ($tahuns as $tahuns) : ?>
-          <option
-            value="<?= $tahuns['tahun'] ?>">
-            <?= $tahuns['tahun'] ?>
-          </option>
+            <option value="<?= $tahuns['tahun'] ?>"><?= $tahuns['tahun'] ?></option>
           <?php endforeach; ?>
 
         </select>
@@ -94,9 +79,7 @@
 <?= $this->section('script'); ?>
 <script src="/admin/assets/js/multipleselect-dropdown.js"></script>
 <!-- jquery validate -->
-<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.19.3/jquery.validate.min.js"
-  integrity="sha512-37T7leoNS06R80c8Ulq7cdCDU5MNQBwlYoy1TX/WUsLFC2eYNqtKlV0QjH7r8JpG/S0GUMZwebnVFLPd6SU5yg=="
-  crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.19.3/jquery.validate.min.js" integrity="sha512-37T7leoNS06R80c8Ulq7cdCDU5MNQBwlYoy1TX/WUsLFC2eYNqtKlV0QjH7r8JpG/S0GUMZwebnVFLPd6SU5yg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 <script>
   // validate form jquery
   const exclamationCircle = "<i class='fa-solid fa-circle-exclamation'></i>";

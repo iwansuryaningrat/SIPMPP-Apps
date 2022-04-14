@@ -106,31 +106,57 @@ class Savedata extends BaseController
     // Add user role unit method (Done)
     public function addBasicUser($role)
     {
+        $data = $this->request->getPost();
         $email = $this->request->getVar('user');
         $role_id = $this->roleModel->getRole($role);
         $role_id = (int)$role_id['role_id'];
 
-        if ($role == 'pimpinan') {
-            $unit = 'lppm';
-        } else {
-            $unit = $this->request->getVar('unit');
+        if ($role != 'pimpinan') {
+            $unit_id = $data['unit'];
         }
-        $tahun = (int)$this->request->getVar('tahun');
+        $tahun = $data['tahun'];
+        // dd($tahun);
 
-        $data = [
-            'email' => $email,
-            'role_id' => $role_id,
-            'unit_id' => $unit,
-            'tahun' => $tahun,
-        ];
-
-        // Insert data ke User Role Unit
-        $this->userroleunitModel->insert($data);
+        if ($role == 'pimpinan') {
+            $unit_id = 'lppm';
+            foreach ($tahun as $key => $value) {
+                $cek = $this->userroleunitModel->getDataSpec($email, $value, $role, $unit_id);
+                if ($cek == null) {
+                    $data = [
+                        'email' => $email,
+                        'role_id' => $role_id,
+                        'unit_id' => $unit_id,
+                        'tahun' => $value,
+                    ];
+                    $this->userroleunitModel->insert($data);
+                }
+            }
+        } else {
+            foreach ($unit_id as $unit) {
+                foreach ($tahun as $key => $value) {
+                    $cek = $this->userroleunitModel->getDataSpec($email, $value, $role, $unit);
+                    if ($cek == null) {
+                        $data = [
+                            'email' => $email,
+                            'role_id' => $role_id,
+                            'unit_id' => $unit,
+                            'tahun' => $value,
+                        ];
+                        $this->userroleunitModel->insert($data);
+                    }
+                }
+            }
+        }
 
         // Set flashdata gagal dan kirim pesan eror dengan flashdata
         $this->session->setFlashdata('msg', '<div class="alert alert-success alert__sipmpp alert-dismissible fade show" role="alert"><i class="fa-solid fa-circle-check color__success"></i><span>User berhasil ditambahkan!</span></div>');
-
-        return redirect()->to(base_url('admin/daftaruser'));
+        if ($role == 'user') {
+            return redirect()->to(base_url('admin/user'));
+        } else if ($role == 'auditor') {
+            return redirect()->to(base_url('admin/auditor'));
+        } else {
+            return redirect()->to(base_url('admin/leader'));
+        }
     }
 
     // Add Unit method (Done)

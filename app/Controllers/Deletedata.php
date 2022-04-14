@@ -67,7 +67,13 @@ class Deletedata extends BaseController
         // Set flashdata gagal dan kirim pesan eror dengan flashdata
 
         $this->session->setFlashdata('msg', '<div class="alert alert-success alert__sipmpp alert-dismissible fade show" role="alert"><i class="fa-solid fa-circle-minus color__success"></i><span>User berhasil dihapus!</span></div>');
-        return redirect()->to(base_url('admin/daftaruser'));
+        if ($role_id == 1) {
+            return redirect()->to(base_url('admin/user'));
+        } else if ($role_id == 3) {
+            return redirect()->to(base_url('admin/auditor'));
+        } else {
+            return redirect()->to(base_url('admin/leader'));
+        }
     }
 
     // Delete unit method
