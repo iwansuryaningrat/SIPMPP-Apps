@@ -517,4 +517,10 @@ class Home extends BaseController
 
         return json_encode($datasession['tahun']);
     }
+
+    // Download Method (Done)
+    public function download($fileName)
+    {
+        return $this->response->download('dokumen/' . $fileName, null);
+    }
 }
