@@ -1,17 +1,19 @@
-Back End
+----- Back End -----
+* Fixed Issue
 - alert component, kurang tag penutup </i> (add data induk admin, add standar admin) (Done)
 - edit nilai indikator (user) tidak bisa menampilkan perubahan (Done)
 - flash data pada profile (Done)
-- Doc Preview (User & Auditor) (Just Can Download It) (Done, kurang di form indikator Auditor)
+- ubah foto profile gagal, unlink permission denied (all user) (Done)
+- edit profile, tidak bisa menampilkan nama baru, redirect salah(all role) (Done)
+- ubah password page profile (all user) (Done)
+- Doc Preview (User) (Just Can Download It) (Done)
+
+* Admin Page
 - form add indikator, select kebutuhan data tidak tampil + link batal belum dibuat
-- edit profile, tidak bisa menampilkan nama baru, redirect salah(all role)
-- ubah password page profile (all user)
-- ubah foto profile gagal, unlink permission denied (all user)
 - redirect salah, form add base user, add auditor, add leader + data handling
 - redirect salah, after deleting form add base user, add auditor, add leader
 - edit unit
 - edit data induk (admin)
-- report (user)
 - counting table daftar kategori do dashboard page (admin)
 - UNDO after add data (all form)
 - ADD KATEGORI (admin) bahaya!! mempengaruhi panel, id panel, nama target panel
@@ -19,7 +21,16 @@ Back End
 - edit indikator action belum bisa
 - penilaian (admin)
 
-Front End
+* Auditor Page
+- Doc Preview (User) (Just Can Download It)
+- Dashboard Page (Same With User Page)
+- Report Page (Same With User Page)
+
+* USER Page
+- Edit Induk must edit nilai indikator
+- report Page (user)
+
+----- Front End -----
 - pagination style link
 - shadow-none button
 - role admin hilangkan pilihan unit, using ajax

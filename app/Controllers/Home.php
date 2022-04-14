@@ -422,8 +422,8 @@ class Home extends BaseController
         $data_user = $this->data_user;
         $user = $this->usersModel->getUserByEmail($data_user['email']);
 
-        $old_password = $this->request->getVar('old-password');
-        $new_password = $this->request->getVar('new-password');
+        $old_password = $this->request->getVar('oldPassword');
+        $new_password = $this->request->getVar('newPassword');
 
         // Cek apakah password lama sama dengan password lama
         if (password_verify($old_password, $user['password'])) {
@@ -461,7 +461,9 @@ class Home extends BaseController
         } else {
             // Hapus foto lama
             $namafoto = $user['foto'];
-            unlink('profile/' . $namafoto);
+            if ($namafoto != 'default.png') {
+                unlink('profile/' . $namafoto);
+            }
             // set nama foto baru
             $namafoto = $foto->getMTime() . '-' . $foto->getName();
             $foto->move('profile/', $namafoto);
@@ -486,7 +488,7 @@ class Home extends BaseController
             'role' => $data_user['role'],
             'unit_id' => $data_user['unit_id'],
             'unit' => $data_user['unit'],
-            'tahun' => $this->getTahun,
+            'tahun' => $data_user['tahun'],
             'isLoggedIn' => true,
         ];
 
