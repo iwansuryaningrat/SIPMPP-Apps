@@ -62,7 +62,7 @@
       <div class="row mb-3">
         <label for="hasil" class="col-lg-3 col-md-3 col-sm-4 col-form-label form__label">Hasil <span class="color__danger">*</span></label>
         <div class="col-lg-6 col-md-9 col-sm-8">
-          <select class="form-select form__select shadow-none" name="hasil" id="hasil">
+          <select class="form-select form__select shadow-none" name="hasil" id="hasil" <?php if ($datapenilaian['status'] == 'Dikirim' || $datapenilaian['status'] == 'Diaudit') echo 'disabled'; ?>>
             <option selected disabled>Pilih hasil data</option>
             <option value="ADA / SESUAI" <?php if ($datapenilaian['nilai_input'] == 1) echo 'selected'; ?>>ADA / SESUAI</option>
             <option value="Tidak ADA / TIDAK SESUAI">Tidak ADA / TIDAK SESUAI</option>
@@ -73,7 +73,7 @@
       <div class="row mb-3 mb-sm-4">
         <label for="hasil" class="col-lg-3 col-md-3 col-sm-4 col-form-label form__label">Hasil <span class="color__danger">*</span></label>
         <div class="col-lg-6 col-md-9 col-sm-8">
-          <input class="form-control form__control shadow-none" value="<?= $datapenilaian['nilai_input'] ?>" id="hasil" name="hasil" required />
+          <input class="form-control form__control shadow-none" value="<?= $datapenilaian['nilai_input'] ?>" id="hasil" name="hasil" required <?php if ($datapenilaian['status'] == 'Dikirim' || $datapenilaian['status'] == 'Diaudit') echo 'disabled'; ?> />
         </div>
       </div>
     <?php } ?>
@@ -85,7 +85,7 @@
         <label for="dokumen" class="col-lg-3 col-md-3 col-sm-4 col-form-label form__label">Dokumen <span class="color__danger">*</span></label>
         <div class="col-lg-6 col-md-9 col-sm-8">
           <div class="input-group">
-            <input type="file" class="form-control form__control shadow-none" name="dokumen" id="dokumen" required />
+            <input type="file" class="form-control form__control shadow-none" name="dokumen" id="dokumen" required <?php if ($datapenilaian['status'] == 'Dikirim' || $datapenilaian['status'] == 'Diaudit') echo 'disabled'; ?> />
             <label class="input-group-text" for="dokumen">Upload</label>
           </div>
         </div>
@@ -99,7 +99,7 @@
           <div class="row me-0">
             <div class="col-10">
               <div class="input-group">
-                <input type="file" class="form-control form__control shadow-none" name="dokumen" id="dokumen" value="<?= $datapenilaian['dokumen']; ?>" placeholder="<?= $datapenilaian['dokumen']; ?>" required />
+                <input type="file" class="form-control form__control shadow-none" name="dokumen" id="dokumen" value="<?= $datapenilaian['dokumen']; ?>" placeholder="<?= $datapenilaian['dokumen']; ?>" required <?php if ($datapenilaian['status'] == 'Dikirim' || $datapenilaian['status'] == 'Diaudit') echo 'disabled'; ?> />
                 <label class="input-group-text" for="dokumen">Upload</label>
               </div>
             </div>
@@ -118,7 +118,7 @@
     <div class="row mb-3">
       <label for="keterangan" class="col-lg-3 col-md-3 col-sm-4 col-form-label form__label">Keterangan <span class="color__danger">*</span></label>
       <div class="col-lg-6 col-md-9 col-sm-8">
-        <textarea class="form-control form__control shadow-none" id="keterangan" cols="30" rows="3" name="keterangan"><?= $datapenilaian['keterangan']; ?></textarea>
+        <textarea class="form-control form__control shadow-none" id="keterangan" cols="30" rows="3" name="keterangan" <?php if ($datapenilaian['status'] == 'Dikirim' || $datapenilaian['status'] == 'Diaudit') echo 'disabled'; ?>><?= $datapenilaian['keterangan']; ?></textarea>
       </div>
     </div>
     <!-- catatan -->
