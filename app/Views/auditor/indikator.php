@@ -64,7 +64,8 @@
             } else {
                 echo 'badge__warning';
             } ?>"><?= $data['status']; ?></span></td>
-          <td><?= $data['nilai_akhir']; ?>
+          <td><?= sprintf("%.2f", floatval($data['nilai_akhir'])); ?>
+
           </td>
           <td>
             <a data-bs-placement="top" title="Edit"
