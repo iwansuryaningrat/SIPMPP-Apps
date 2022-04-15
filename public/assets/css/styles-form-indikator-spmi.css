@@ -41,6 +41,15 @@
   font-weight: 600;
 }
 
+.d-flex.d__flex .error {
+  display: block;
+}
+
+.label__warp label {
+  padding-top: calc(25px / 2);
+  padding-bottom: calc(25px / 2);
+}
+
 @media screen and (max-width: 600px) {
   .form__indikator form .form__label {
     text-align: left;

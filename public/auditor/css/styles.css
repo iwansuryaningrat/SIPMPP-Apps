@@ -162,6 +162,22 @@ select.form__select {
   font-size: 0.875rem;
 }
 
+/* jquery form validation */
+.error {
+  color: var(--danger-color);
+}
+
+input.error,
+select.error,
+textarea.error {
+  border: 1px solid var(--danger-color) !important;
+}
+
+label.error {
+  margin-top: 0.375rem;
+  margin-left: 0.125rem;
+}
+
 /*************************************/
 /*               Table               */
 /*************************************/
