@@ -64,9 +64,9 @@ uicons bold rounded problem loading
 # Role Auditor
 - Page dashboard (DONE)
 - Page report (DONE)
-- show document form indikator
+- show document form indikator (DONE)
 - Responsiveness pages
-- Responsiveness tables
+- Responsiveness tables (DONE)
 - Validation form (DONE)
 - Title page (DONE)
 - Pagination style link (DONE)

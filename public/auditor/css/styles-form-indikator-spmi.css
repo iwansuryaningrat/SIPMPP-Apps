@@ -138,6 +138,15 @@
   margin: 0 0 0 15px;
 }
 
+@media screen and (max-width: 768px) {
+  .input__group__upload {
+    display: none;
+  }
+  .form-control.form__control {
+    border-radius: 0.25rem !important;
+  }
+}
+
 @media screen and (max-width: 600px) {
   .form__indikator form .form__label {
     text-align: left;

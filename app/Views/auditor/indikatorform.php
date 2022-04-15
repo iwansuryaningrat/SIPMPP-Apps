@@ -102,29 +102,18 @@
     <div class="row mb-3">
       <label for="dokumen" class="col-lg-3 col-md-3 col-sm-4 col-form-label form__label">Dokumen</label>
       <div class="col-lg-6 col-md-9 col-sm-8">
-        <div class="document__view">
-          <div class="me-3">
-            <div class="box__document">
-              <div id="pdf-loader"><span>Loading Preview ...</span></div>
-              <canvas id="pdf-preview" width="150"></canvas>
+        <div class="row me-0">
+          <div class="col-10">
+            <div class="input-group">
+              <input type="file" class="form-control form__control shadow-none" id="dokumen" name="dokumen">
+              <label class="input-group-text input__group__upload" for="dokumen">Upload</label>
             </div>
           </div>
-          <div class="info__document">
-            <p id="pdf-name"></p>
-            <a href="/auditor/download/<?= $datapenilaian['dokumen']; ?>"
-              id="viewDocument">View Document</a>
-          </div>
-        </div>
-
-        <!-- WOIII LAA COBAIN AJA DULU -->
-        <div class="">
-          <div id="preview-container">
-            <button id="upload-dialog">Choose PDF</button>
-            <input type="file" id="pdf-file" name="pdf" accept="application/pdf" />
-            <!-- <canvas id="pdf-preview" width="150"></canvas> -->
-            <!-- <span id="pdf-name"></span> -->
-            <button id="upload-button">Upload</button>
-            <button id="cancel-pdf">Cancel</button>
+          <div class="col-2 px-0">
+            <a href="#" target="_blank" class="btn btn__dark btn__preview ellipsis__text btn__preview-icon shadow-none">
+              <span>Preview</span>
+              <i class="fa-solid fa-file-circle-exclamation"></i>
+            </a>
           </div>
         </div>
       </div>
@@ -166,8 +155,6 @@
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.19.3/jquery.validate.min.js"
   integrity="sha512-37T7leoNS06R80c8Ulq7cdCDU5MNQBwlYoy1TX/WUsLFC2eYNqtKlV0QjH7r8JpG/S0GUMZwebnVFLPd6SU5yg=="
   crossorigin="anonymous" referrerpolicy="no-referrer"></script>
-<script src="/auditor/js/pdf.js"></script>
-<script src="/auditor/js/pdf.worker.js"></script>
 <script>
   // validate form jquery
   const exclamationCircle = "<i class='fa-solid fa-circle-exclamation'></i>";
@@ -178,10 +165,16 @@
         catatan: {
           required: true,
         },
+        dokumen: {
+          required: true,
+        },
       },
       messages: {
         catatan: {
           required: exclamationCircle + " Catatan is required.",
+        },
+        dokumen: {
+          required: "",
         },
       },
     });
@@ -189,129 +182,6 @@
     $("#btnIndikator").on("click", () => {
       console.log($("#formIndikator").valid());
     });
-  });
-</script>
-
-<!-- pdf preview image -->
-<script>
-  var _PDF_DOC,
-    _CANVAS = document.querySelector('#pdf-preview'),
-    _OBJECT_URL;
-
-  function showPDF(pdf_url) {
-    PDFJS.getDocument({
-      url: pdf_url
-    }).then(function(pdf_doc) {
-      _PDF_DOC = pdf_doc;
-
-      // Show the first page
-      showPage(1);
-
-      // destroy previous object url
-      URL.revokeObjectURL(_OBJECT_URL);
-    }).catch(function(error) {
-      // trigger Cancel on error
-      document.querySelector("#cancel-pdf").click();
-
-      // error reason
-      alert(error.message);
-    });
-  }
-
-  function showPage(page_no) {
-    // fetch the page
-    _PDF_DOC.getPage(page_no).then(function(page) {
-      // set the scale of viewport
-      var scale_required = _CANVAS.width / page.getViewport(1).width;
-
-      // get viewport of the page at required scale
-      var viewport = page.getViewport(scale_required);
-
-      // set canvas height
-      _CANVAS.height = viewport.height;
-
-      var renderContext = {
-        canvasContext: _CANVAS.getContext('2d'),
-        viewport: viewport
-      };
-
-      // render the page contents in the canvas
-      page.render(renderContext).then(function() {
-        document.querySelector("#pdf-preview").style.display = 'inline-block';
-        document.querySelector("#pdf-loader").style.display = 'none';
-      });
-    });
-  }
-
-
-  /* Show Select File dialog */
-  document.querySelector("#upload-dialog").addEventListener('click', function() {
-    document.querySelector("#pdf-file").click();
-  });
-
-  /* Selected File has changed */
-  document.querySelector("#pdf-file").addEventListener('change', function() {
-    // user selected file
-    var file = this.files[0];
-
-    // allowed MIME types
-    var mime_types = ['application/pdf'];
-
-    // Validate whether PDF
-    if (mime_types.indexOf(file.type) == -1) {
-      alert('Error : Incorrect file type');
-      return;
-    }
-
-    // validate file size
-    if (file.size > 10 * 1024 * 1024) {
-      alert('Error : Exceeded size 10MB');
-      return;
-    }
-
-    // validation is successful
-
-    // hide upload dialog button
-    document.querySelector("#upload-dialog").style.display = 'none';
-
-    // set name of the file
-    document.querySelector("#pdf-name").innerText = file.name;
-    document.querySelector("#pdf-name").style.display = 'block';
-
-    // show cancel and upload buttons now
-    document.querySelector("#cancel-pdf").style.display = 'inline-block';
-    document.querySelector("#upload-button").style.display = 'inline-block';
-
-    // Show the PDF preview loader
-    document.querySelector("#pdf-loader").style.display = 'flex';
-
-    // object url of PDF 
-    _OBJECT_URL = URL.createObjectURL(file)
-
-    // send the object url of the pdf to the PDF preview function
-    showPDF(_OBJECT_URL);
-  });
-
-  /* Reset file input */
-  document.querySelector("#cancel-pdf").addEventListener('click', function() {
-    // show upload dialog button
-    document.querySelector("#upload-dialog").style.display = 'inline-block';
-
-    // reset to no selection
-    document.querySelector("#pdf-file").value = '';
-
-    // hide elements that are not required
-    document.querySelector("#pdf-name").style.display = 'none';
-    document.querySelector("#pdf-preview").style.display = 'none';
-    document.querySelector("#pdf-loader").style.display = 'none';
-    document.querySelector("#cancel-pdf").style.display = 'none';
-    document.querySelector("#upload-button").style.display = 'none';
-  });
-
-  /* Upload file to server */
-  document.querySelector("#upload-button").addEventListener('click', function() {
-    // AJAX request to server
-    alert('This will upload file to server');
   });
 </script>
 

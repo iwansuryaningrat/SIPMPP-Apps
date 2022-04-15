@@ -118,6 +118,17 @@ button,
   background-color: rgba(0, 0, 0, 0.3);
 }
 
+.btn__preview {
+  height: 51px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.btn__preview-icon svg {
+  display: none;
+}
+
 /************************************/
 /*               Form               */
 /************************************/
@@ -1043,6 +1054,19 @@ footer .container-fluid.container__fluid {
   .header__main-color.header__mini.header__spmi.active,
   .header__main-color.header__mini.header__indikator.active {
     height: 16rem !important;
+  }
+}
+
+@media screen and (max-width: 1024px) {
+  /**************************************/
+  /*               Button               */
+  /**************************************/
+  .btn__preview-icon span {
+    display: none;
+  }
+
+  .btn__preview-icon svg {
+    display: block;
   }
 }
 

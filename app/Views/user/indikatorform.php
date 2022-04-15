@@ -108,14 +108,12 @@
           class="color__danger">*</span></label>
       <div class="col-lg-6 col-md-9 col-sm-8">
         <div class="input-group">
-          <div class="d-flex">
-            <input type="file" class="form-control form__control shadow-none" name="dokumen" id="dokumenEmpty" required
-              <?php if ($datapenilaian['status'] == 'Dikirim' || $datapenilaian['status'] == 'Diaudit') {
+          <input type="file" class="form-control form__control shadow-none" name="dokumen" id="dokumenEmpty" required
+            <?php if ($datapenilaian['status'] == 'Dikirim' || $datapenilaian['status'] == 'Diaudit') {
     echo 'disabled';
 } ?>
-            />
-          </div>
-          <div class="label__warp"><label class="input-group-text" for="dokumen">Upload</label></div>
+          />
+          <label class="input-group-text" for="dokumen">Upload</label>
         </div>
       </div>
     </div>
@@ -129,21 +127,19 @@
         <div class="row me-0">
           <div class="col-10">
             <div class="input-group">
-              <div class="d-flex flex-column">
-                <input type="file" class="form-control form__control shadow-none" name="dokumen" id="dokumen"
-                  value="<?= $datapenilaian['dokumen']; ?>"
-                  placeholder="<?= $datapenilaian['dokumen']; ?>"
-                  required <?php if ($datapenilaian['status'] == 'Dikirim' || $datapenilaian['status'] == 'Diaudit') {
+              <input type="file" class="form-control form__control shadow-none" name="dokumen" id="dokumen"
+                value="<?= $datapenilaian['dokumen']; ?>"
+                placeholder="<?= $datapenilaian['dokumen']; ?>"
+                required <?php if ($datapenilaian['status'] == 'Dikirim' || $datapenilaian['status'] == 'Diaudit') {
     echo 'disabled';
 } ?>
-                />
-              </div>
-              <div class="label__warp"><label class="input-group-text" for="dokumen">Upload</label></div>
+              />
+              <label class="input-group-text input__group__upload" for="dokumen">Upload</label>
             </div>
           </div>
           <div class="col-2 px-0">
             <a href="/home/download/<?= $datapenilaian['dokumen']; ?>"
-              target="_blank" class="btn btn btn__dark btn__preview ellipsis__text btn__preview-icon shadow-none">
+              target="_blank" class="btn btn__dark btn__preview ellipsis__text btn__preview-icon shadow-none">
               <span>Preview</span>
               <i class="fa-solid fa-file-circle-exclamation"></i>
             </a>
@@ -223,7 +219,7 @@
           required: exclamationCircle + " Hasil is required.",
         },
         dokumen: {
-          required: exclamationCircle + " Dokumen is required.",
+          required: "",
         },
         keterangan: {
           required: exclamationCircle + " Keterangan is required.",
