@@ -47,8 +47,6 @@
 - Title page
 
 # Role User
-- Responsiveness all pages
-- Responsiveness all tables
 
 # Role Admin
 
