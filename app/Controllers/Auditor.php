@@ -171,7 +171,7 @@ class Auditor extends BaseController
         }
 
         $data = [
-            'title' => 'Standar | SIPMPP UNDIP 2022',
+            'title' => 'Nilai SPMI | SIPMPP UNDIP 2022',
             'data_user' => $data_user,
             'tab' => 'standar',
             'header' => 'header__mini header__spmi',
@@ -241,7 +241,7 @@ class Auditor extends BaseController
             return redirect()->to('/auditor/indikator/' . $standar_id . '/' . $kategori_id);
         } else {
             $data = [
-                'title' => 'Form Indikator SPMI | SIPMPP UNDIP ' . $this->thisTahun,
+                'title' => 'Form Edit Indikator | SIPMPP UNDIP ' . $this->thisTahun,
                 'data_user' => $data_user,
                 'tab' => 'standar',
                 'header' => 'header__mini header__indikator',

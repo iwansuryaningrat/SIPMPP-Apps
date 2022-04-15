@@ -63,7 +63,7 @@
 - Responsiveness pages
 - Responsiveness tables
 - Validation form
-- Title page
+- Title page (DONE)
 - Pagination style link
 - Check link
 - Check console.log
