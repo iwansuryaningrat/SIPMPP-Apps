@@ -31,6 +31,8 @@
 * USER Page
 
 ========== KEKURANGAN FRONT END ==========
+uicons bold rounded problem loading
+
 # Login Page
 - Remove unit select dropdown, while role == admin
 - Login page content
@@ -40,12 +42,14 @@
 - Check link
 - Check console.log
 - Shadow-none button
+- Button lihat password
 
 # Role User
 - Responsiveness pages (DONE)
 - Responsiveness tables (DONE)
 - Validation form (DONE)
 - Title page (DONE)
+- Button lihat password
 
 # Role Admin
 - Multiple select form add base user (DONE)
@@ -55,6 +59,7 @@
 - Responsiveness tables (DONE)
 - Validation form (DONE)
 - Title page (DONE)
+- Button lihat password
 
 # Role Auditor
 - Page dashboard (DONE)
@@ -62,12 +67,13 @@
 - show document form indikator
 - Responsiveness pages
 - Responsiveness tables
-- Validation form
+- Validation form (DONE)
 - Title page (DONE)
-- Pagination style link
-- Check link
-- Check console.log
-- Shadow-none button
+- Pagination style link (DONE)
+- Check link (DONE)
+- Check console.log (DONE)
+- Shadow-none button (DONE)
+- Button lihat password (DONE)
 
 # Role Leader
 - Page dashboard (adding select tahun and unit)
@@ -80,3 +86,4 @@
 - Check link
 - Check console.log
 - Shadow-none button
+- Button lihat password
