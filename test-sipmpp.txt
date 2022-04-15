@@ -14,6 +14,7 @@
 - report Page (user) (Done)
 - edit unit (Done)
 - edit data induk (admin) (Done)
+- penilaian (admin) (Done)
 
 * Admin Page
 - edit indikator action belum bisa (Kurang Update Data method)
@@ -21,7 +22,6 @@
 - UNDO after add data (all form)
 - ADD KATEGORI (admin) bahaya!! mempengaruhi panel, id panel, nama target panel
 - EDIT KATEGORI (admin) bahaya!! mempengaruhi panel, id panel, nama target panel
-- penilaian (admin)
 
 * Auditor Page
 - Doc Preview (User) (Just Can Download It)
