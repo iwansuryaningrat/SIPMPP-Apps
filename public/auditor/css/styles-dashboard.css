@@ -299,6 +299,7 @@
 
 .chart__content-right .chart__container {
   height: 25rem;
+  max-height: 25rem;
   padding-bottom: 3.5rem;
 }
 
