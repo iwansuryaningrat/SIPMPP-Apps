@@ -13,6 +13,9 @@ use App\Models\TahunModel;
 use App\Models\UnitIndukTahunModel;
 use App\Models\UnitsModel;
 use App\Models\UsersModel;
+use App\Models\UserRoleUnitModel;
+
+use App\Controllers\Stats;
 
 class Leader extends BaseController
 {
@@ -24,10 +27,13 @@ class Leader extends BaseController
     protected $tahunModel;
     protected $unitIndukTahunModel;
     protected $unitsModel;
-    protected $userunitModel;
+    protected $usersModel;
+    protected $userroleunitModel;
+    protected $stats;
 
     public function __construct()
     {
+        $this->stats = new Stats();
         $this->dataIndukModel = new DataIndukModel();
         $this->indikatorModel = new IndikatorModel();
         $this->kategoriModel = new KategoriModel();
@@ -37,15 +43,21 @@ class Leader extends BaseController
         $this->unitIndukTahunModel = new UnitIndukTahunModel();
         $this->unitsModel = new UnitsModel();
         $this->usersModel = new UsersModel();
+        $this->userroleunitModel = new UserRoleUnitModel();
         $this->data_user = [
-            'nama' => session()->get('nama'),
-            'role' => session()->get('role'),
             'email' => session()->get('email'),
-            'username' => session()->get('username'),
-            'id_user' => session()->get('id_user'),
+            'nama' => session()->get('nama'),
             'foto' => session()->get('foto'),
+            'unit_id' => session()->get('unit_id'),
+            'unit' => session()->get('unit'),
+            'role' => session()->get('role'),
+            'role_id' => session()->get('role_id'),
+            'tahun' => session()->get('tahun'),
         ];
-        $this->unitData = $this->transaksiModel->getTransaksiUserJoin($this->data_user['id_user']);
+        $this->tahun = $this->userroleunitModel->getTahunRole($this->data_user['email'], $this->data_user['role_id'], $this->data_user['unit_id']);
+        $this->i = 1;
+        $this->session = \Config\Services::session();
+        $this->thisTahun = (int)date('Y');
     }
 
     public function index()
