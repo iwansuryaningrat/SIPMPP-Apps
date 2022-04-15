@@ -86,12 +86,12 @@ class Auditor extends BaseController
             'tahun' => $data_user['tahun'],
             'header' => 'header__big',
             'css' => 'styles-dashboard.css',
+            'tahunsession' => $this->tahun,
             'indukpersen' => $indukpersen,
             'dataprogresstandar' => $dataprogresstandar,
             'datanilaiPEN' => $datanilaiPEN,
             'datanilaiPPM' => $datanilaiPPM,
             'nilaiTahun' => $nilaiTahun,
-            'tahunsession' => $this->tahun,
         ];
 
         return view('auditor/index', $data);
@@ -305,10 +305,29 @@ class Auditor extends BaseController
     {
         $data_user = $this->data_user;
 
+        $unit_id = $data_user['unit_id'];
+        $tahun = $data_user['tahun'];
+
+        $kategori = $this->kategoriModel->findAll();
+        foreach ($kategori as $kat) {
+            $standar = $this->standarModel->getStandarByKategoriId($kat['kategori_id']);
+            foreach ($standar as $std) {
+                $namaStd = $std['standar_id'] . '. ' . $std['nama_standar'];
+                $stat = $this->stats->getNilaiByStandar($unit_id, $tahun, $std['standar_id'], $kat['kategori_id']);
+                $statstd[$std['standar_id']] = [
+                    'kode' => $std['standar_id'],
+                    'standar' => $namaStd,
+                    'namaindikator' => $stat['nama'],
+                    'nilai' => $stat['nilai'],
+                ];
+            }
+            $Stats[$kat['kategori_id']] = $statstd;
+        }
+
         $i = 1;
 
         $data = [
-            'title' => 'Dashboard SIPMPP | SIPMPP UNDIP 2022',
+            'title' => 'Report SIPMPP | SIPMPP UNDIP 2022',
             'data_user' => $data_user,
             'i' => $i,
             'tab' => 'report',
@@ -316,6 +335,7 @@ class Auditor extends BaseController
             'css' => 'styles-report.css',
             'tahunsession' => $this->tahun,
             'tahun' => $data_user['tahun'],
+            'stats' => $Stats,
         ];
 
         return view('auditor/report', $data);
