@@ -49,7 +49,7 @@ uicons bold rounded problem loading
 - Responsiveness tables (DONE)
 - Validation form (DONE)
 - Title page (DONE)
-- Button lihat password
+- Button lihat password (DONE)
 
 # Role Admin
 - Multiple select form add base user (DONE)
@@ -59,7 +59,7 @@ uicons bold rounded problem loading
 - Responsiveness tables (DONE)
 - Validation form (DONE)
 - Title page (DONE)
-- Button lihat password
+- Button lihat password (DONE)
 
 # Role Auditor
 - Page dashboard (DONE)

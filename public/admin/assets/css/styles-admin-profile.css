@@ -86,6 +86,28 @@
   background-color: rgba(242, 89, 97, 0.1);
 }
 
+/* password hide */
+#oldPassword,
+#newPassword,
+#newPasswordConfirm {
+  padding-right: 3rem !important;
+}
+
+#toggleOldPassword svg,
+#toggleNewPassword svg,
+#toggleNewPasswordConfirm svg {
+  z-index: 99;
+  color: rgba(79, 79, 79, 0.25) !important;
+}
+
+form .position-relative .icon__hide__password {
+  top: 3rem;
+  right: 1.5rem;
+  font-size: 1rem;
+  position: absolute;
+  transition: var(--trans-m);
+}
+
 @media screen and (max-width: 991px) {
   .profile__section {
     flex-direction: column;

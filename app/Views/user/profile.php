@@ -100,26 +100,30 @@
       <hr />
       <?= session()->getFlashdata('pwdmessage'); ?>
       <form class="form__change__password" id="formChangePassword" action="/home/editpassword" method="POST">
-        <div class="mb-3">
+        <div class="mb-3 position-relative">
           <label for="oldPassword" class="form-label form__label">Password Lama <span
               class="color__danger">*</span></label>
           <input type="password" class="form-control form__control shadow-none" id="oldPassword" name="oldPassword"
             autocomplete="off" required />
+          <span id="toggleOldPassword"><i class="fa-solid fa-eye icon__hide__password" title="show password"></i></span>
         </div>
-        <div class="mb-3">
+        <div class="mb-3 position-relative">
           <label for="newPassword" class="form-label form__label">Password Baru <span
               class="color__danger">*</span></label>
           <input type="password" class="form-control form__control shadow-none" id="newPassword" name="newPassword"
             aria-labelledby="new-password-notice" autocomplete="off" required />
+          <span id="toggleNewPassword"><i class="fa-solid fa-eye icon__hide__password" title="show password"></i></span>
           <div id="new-password-notice" class="form-text form__text">
             Gunakan minimal 8 karakter dengan kombinasi huruf dan angka.
           </div>
         </div>
-        <div class="mb-3 mb__big">
+        <div class="mb-3 mb__big position-relative">
           <label for="newPasswordConfirm" class="form-label form__label">Konfirmasi Password Baru
             <span class="color__danger">*</span></label>
           <input type="password" class="form-control form__control shadow-none" name="newPasswordConfirm"
             id="newPasswordConfirm" autocomplete="off" required />
+          <span id="toggleNewPasswordConfirm"><i class="fa-solid fa-eye icon__hide__password"
+              title="show password"></i></span>
         </div>
         <div class="d-flex justify-content-end">
           <button type="submit" class="btn btn__light shadow-none" id="btnSubmitChangePassword">
@@ -242,6 +246,32 @@
     $("#btnSubmitChangeInfo").on("click", () => {
       console.log($("#formChangeInfo").valid());
     });
+  });
+
+  // togglePassword
+  // change icon
+  $("#toggleOldPassword").click(function() {
+    $(this).children().toggleClass("fa-eye-slash");
+    $(this).children().toggleClass("fa-eye");
+
+    var type = $("#oldPassword").attr("type") === "password" ? "text" : "password";
+    $("#oldPassword").attr("type", type);
+  });
+
+  $("#toggleNewPassword").click(function() {
+    $(this).children().toggleClass("fa-eye-slash");
+    $(this).children().toggleClass("fa-eye");
+
+    var type = $("#newPassword").attr("type") === "password" ? "text" : "password";
+    $("#newPassword").attr("type", type);
+  });
+
+  $("#toggleNewPasswordConfirm").click(function() {
+    $(this).children().toggleClass("fa-eye-slash");
+    $(this).children().toggleClass("fa-eye");
+
+    var type = $("#newPasswordConfirm").attr("type") === "password" ? "text" : "password";
+    $("#newPasswordConfirm").attr("type", type);
   });
 </script>
 
