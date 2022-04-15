@@ -1116,7 +1116,7 @@ footer .container-fluid.container__fluid {
 
   .header__main-color.header__mini.header__report,
   .header__main-color.header__mini.header__report.active {
-    height: 16rem !important;
+    height: 15rem !important;
   }
 
   /**************************************/
@@ -1355,6 +1355,16 @@ footer .container-fluid.container__fluid {
   }
 }
 
+@media screen and (max-width: 359px) {
+  .header__main-color.header__mini.header__report {
+    height: 19.5rem !important;
+  }
+
+  .header__main-color.header__mini.header__report.active {
+    height: 16rem !important;
+  }
+}
+
 @media screen and (max-width: 350px) {
   .header__main-color.header__mini.header__spmi,
   .header__main-color.header__mini.header__indikator {
@@ -1369,16 +1379,6 @@ footer .container-fluid.container__fluid {
 
   .header__main-color.header__mini.header__profile.active {
     height: 14.25rem !important;
-  }
-}
-
-@media screen and (max-width: 359px) {
-  .header__main-color.header__mini.header__report {
-    height: 18.75rem !important;
-  }
-
-  .header__main-color.header__mini.header__report.active {
-    height: 14.5rem !important;
   }
 }
 

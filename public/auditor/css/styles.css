@@ -1114,6 +1114,11 @@ footer .container-fluid.container__fluid {
     height: 16rem !important;
   }
 
+  .header__main-color.header__mini.header__report,
+  .header__main-color.header__mini.header__report.active {
+    height: 15rem !important;
+  }
+
   /**************************************/
   /*               Navbar               */
   /**************************************/
@@ -1127,6 +1132,15 @@ footer .container-fluid.container__fluid {
   .header__main-color.header__mini.header__spmi.active,
   .header__main-color.header__mini.header__indikator.active {
     height: 17rem !important;
+  }
+}
+
+@media screen and (max-width: 717px) {
+  .header__main-color.header__mini.header__report {
+    height: 18rem !important;
+  }
+  .header__main-color.header__mini.header__report.active {
+    height: 15rem !important;
   }
 }
 
@@ -1210,6 +1224,13 @@ footer .container-fluid.container__fluid {
     width: calc(100% - 4.75rem) !important;
   }
 
+  .header__main-color.header__mini.header__report {
+    height: 16rem !important;
+  }
+  .header__main-color.header__mini.header__report.active {
+    height: 14rem !important;
+  }
+
   /**************************************/
   /*               Navbar               */
   /**************************************/
@@ -1282,6 +1303,15 @@ footer .container-fluid.container__fluid {
   }
 }
 
+@media screen and (max-width: 469px) {
+  .header__main-color.header__mini.header__report {
+    height: 16.5rem !important;
+  }
+  .header__main-color.header__mini.header__report.active {
+    height: 14.25rem !important;
+  }
+}
+
 @media screen and (max-width: 440px) {
   .header__main-color.header__mini.header__spmi,
   .header__main-color.header__mini.header__indikator {
@@ -1294,6 +1324,15 @@ footer .container-fluid.container__fluid {
   }
 }
 
+@media screen and (max-width: 424px) {
+  .header__main-color.header__mini.header__report {
+    height: 16.75rem !important;
+  }
+  .header__main-color.header__mini.header__report.active {
+    height: 16rem !important;
+  }
+}
+
 @media screen and (max-width: 420px) {
   .header__main-color.header__mini.header__datainduk.active {
     height: 16rem !important;
@@ -1302,6 +1341,25 @@ footer .container-fluid.container__fluid {
   .header__main-color.header__mini.header__spmi,
   .header__main-color.header__mini.header__indikator {
     height: 23rem !important;
+  }
+}
+
+@media screen and (max-width: 419px) {
+  .header__main-color.header__mini.header__profile {
+    height: 15.5rem !important;
+  }
+
+  .header__main-color.header__mini.header__profile.active {
+    height: 14.5rem !important;
+  }
+}
+
+@media screen and (max-width: 405px) {
+  .header__main-color.header__mini.header__report {
+    height: 19.75rem !important;
+  }
+  .header__main-color.header__mini.header__report.active {
+    height: 16rem !important;
   }
 }
 
@@ -1324,10 +1382,30 @@ footer .container-fluid.container__fluid {
   }
 }
 
+@media screen and (max-width: 359px) {
+  .header__main-color.header__mini.header__report {
+    height: 22rem !important;
+  }
+
+  .header__main-color.header__mini.header__report.active {
+    height: 16rem !important;
+  }
+}
+
 @media screen and (max-width: 350px) {
   .header__main-color.header__mini.header__spmi,
   .header__main-color.header__mini.header__indikator {
     height: 25rem !important;
+  }
+}
+
+@media screen and (max-width: 333px) {
+  .header__main-color.header__mini.header__profile {
+    height: 18.5rem !important;
+  }
+
+  .header__main-color.header__mini.header__profile.active {
+    height: 14.25rem !important;
   }
 }
 

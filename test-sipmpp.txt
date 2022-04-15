@@ -65,7 +65,7 @@ uicons bold rounded problem loading
 - Page dashboard (DONE)
 - Page report (DONE)
 - show document form indikator (DONE)
-- Responsiveness pages
+- Responsiveness pages (DONE)
 - Responsiveness tables (DONE)
 - Validation form (DONE)
 - Title page (DONE)
