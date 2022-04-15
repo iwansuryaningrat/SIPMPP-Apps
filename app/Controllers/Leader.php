@@ -101,8 +101,6 @@ class Leader extends BaseController
 
         $data = [
             'title' => 'Dashboard',
-            'data_user' => $this->data_user,
-            'unitData' => $this->unitData,
         ];
         return view('leader/index', $data);
     }
