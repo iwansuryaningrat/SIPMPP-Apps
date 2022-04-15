@@ -395,13 +395,21 @@ class Home extends BaseController
         $unit_id = $data_user['unit_id'];
         $tahun = $data_user['tahun'];
 
-        $kat = $this->kategoriModel->findAll();
-        foreach ($kat as $k) {
-            // $kategori[$k['id']] = $k['nama_kategori'];
-            $standar[] = $this->penilaianModel->getPenilaianData($unit_id, $tahun, $k['kategori_id']);
+        $kategori = $this->kategoriModel->findAll();
+        foreach ($kategori as $kat) {
+            $standar = $this->standarModel->getStandarByKategoriId($kat['kategori_id']);
+            foreach ($standar as $std) {
+                $namaStd = $std['standar_id'] . '. ' . $std['nama_standar'];
+                $stat = $this->stats->getNilaiByStandar($unit_id, $tahun, $std['standar_id'], $kat['kategori_id']);
+                $statstd[$std['standar_id']] = [
+                    'kode' => $std['standar_id'],
+                    'standar' => $namaStd,
+                    'namaindikator' => $stat['nama'],
+                    'nilai' => $stat['nilai'],
+                ];
+            }
+            $Stats[$kat['kategori_id']] = $statstd;
         }
-        // $standar = $this->penilaianModel->findAll();
-        dd($standar);
 
         $i = 1;
 
@@ -414,6 +422,7 @@ class Home extends BaseController
             'css' => 'styles-report.css',
             'tahunsession' => $this->tahun,
             'tahun' => $data_user['tahun'],
+            'stats' => $Stats,
         ];
 
         return view('user/report', $data);

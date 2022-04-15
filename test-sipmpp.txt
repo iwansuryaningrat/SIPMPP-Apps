@@ -11,6 +11,7 @@
 - form add indikator, select kebutuhan data tidak tampil + link batal belum dibuat (Done)
 - redirect salah, form add base user, add auditor, add leader + data handling (Done)
 - redirect salah, after deleting form add base user, add auditor, add leader (Done)
+- report Page (user) (Done)
 
 * Admin Page
 - edit indikator action belum bisa (Kurang Update Data method)
@@ -28,7 +29,6 @@
 - Report Page (Same With User Page)
 
 * USER Page
-- report Page (user)
 
 ----- Front End -----
 - pagination style link

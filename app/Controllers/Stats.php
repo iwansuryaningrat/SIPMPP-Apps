@@ -257,4 +257,24 @@ class Stats extends BaseController
 
         return $data;
     }
+
+    // Get Nilai Per Indikator
+    public function getNilaiByStandar($unit_id, $tahun, $standar_id, $kategori_id)
+    {
+        $indikator = $this->penilaianModel->getPenilaianProgress($unit_id, $tahun, $standar_id, $kategori_id);
+        $nama = [];
+        $nilai = [];
+        foreach ($indikator as $indikator) {
+            $nilai[] = $indikator['nilai_akhir'];
+            $namaIndikator = $this->indikatorModel->findIndikator($indikator['indikator_id'], $kategori_id, $standar_id);
+            $nama[] = $namaIndikator['nama_indikator'];
+        }
+
+        $data = [
+            'nama' => $nama,
+            'nilai' => $nilai,
+        ];
+
+        return $data;
+    }
 }

@@ -42,111 +42,59 @@
     </div>
 
     <div class="body__tab">
-      <!-- standar1 -->
-      <div class="body__tab-item">
-        <!-- title -->
-        <div class="body__tab-item__title">
-          <a class="tab-item__link" data-bs-toggle="collapse" href="#collapsePENS1" role="button" aria-expanded="false" aria-controls="collapsePENS1">
-            <span>S1. Standar Hasil Penelitian</span>
-            <i class="fi-br-angle-down"></i>
-          </a>
-        </div>
-        <!-- collapse -->
-        <div class="collapse collapse__item" id="collapsePENS1">
-          <div class="mb-5 pt-3">
-            <!-- bar chart standar 1 -->
-            <div class="chart__collapse-container mb-4">
-              <canvas id="barChartPENS1"></canvas>
-            </div>
 
-            <!-- table indikator standar 1 -->
-            <div class="table__collapse">
-              <div class="sipmpp__table">
-                <div class="table__unit table-responsive">
-                  <table class="table sipmpp__table-content table-hover" id="tableCollapsePENS1">
-                    <thead class="bg__light">
-                      <tr>
-                        <th class="table__collapse-number">no</th>
-                        <th class="table__collapse-indikator">indikator</th>
-                        <th class="table__collapse-keterangan">keterangan</th>
-                      </tr>
-                    </thead>
-                    <tbody>
-                      <tr>
-                        <td>1</td>
-                        <td>Indikator 1</td>
-                        <td>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Illum, nobis officia voluptatum
-                          expedita natus adipisci porro ullam numquam earum, vel quam accusantium, doloribus nostrum
-                          quisquam laudantium eaque rerum molestiae labore.</td>
-                      </tr>
-                      <tr>
-                        <td>2</td>
-                        <td>Indikator 2</td>
-                        <td>Lorem ipsum dolor sit amet consectetur adipisicing elit. Odio fugiat eos unde eius ipsam
-                          voluptate vero! Quaerat similique nostrum dolor facilis illo nesciunt perferendis blanditiis,
-                          ducimus eveniet quos sit perspiciatis?</td>
-                      </tr>
-                    </tbody>
-                  </table>
+      <?php foreach ($stats['PEN'] as $stat) : ?>
+        <!-- standar1 -->
+        <div class="body__tab-item">
+          <!-- title -->
+          <div class="body__tab-item__title">
+            <a class="tab-item__link" data-bs-toggle="collapse" href="#collapsePEN<?= $stat['kode'] ?>" role="button" aria-expanded="false" aria-controls="collapsePEN<?= $stat['kode'] ?>">
+              <span><?= $stat['standar'] ?></span>
+              <i class="fi-br-angle-down"></i>
+            </a>
+          </div>
+          <!-- collapse -->
+          <div class="collapse collapse__item" id="collapsePEN<?= $stat['kode'] ?>">
+            <div class="mb-5 pt-3">
+              <!-- bar chart standar 1 -->
+              <div class="chart__collapse-container mb-4">
+                <canvas id="barChartPEN<?= $stat['kode'] ?>"></canvas>
+              </div>
+
+              <!-- table indikator standar 1 -->
+              <div class="table__collapse">
+                <div class="sipmpp__table">
+                  <div class="table__unit table-responsive">
+                    <table class="table sipmpp__table-content table-hover" id="tableCollapsePEN<?= $stat['kode'] ?>">
+                      <thead class="bg__light">
+                        <tr>
+                          <th class="table__collapse-number">no</th>
+                          <th class="table__collapse-indikator">indikator</th>
+                          <th class="table__collapse-keterangan">keterangan</th>
+                        </tr>
+                      </thead>
+                      <tbody>
+
+                        <?php $i = 1;
+                        foreach ($stat['namaindikator'] as $key => $value) : ?>
+                          <tr>
+                            <td><?= $i; ?></td>
+                            <td>Indikator <?= $i; ?></td>
+                            <td><?= $value; ?></td>
+                          </tr>
+                        <?php $i++;
+                        endforeach ?>
+
+                      </tbody>
+                    </table>
+                  </div>
                 </div>
               </div>
             </div>
           </div>
         </div>
-      </div>
+      <?php endforeach; ?>
 
-      <!-- standar2 -->
-      <div class="body__tab-item">
-        <!-- title -->
-        <div class="body__tab-item__title">
-          <a class="tab-item__link" data-bs-toggle="collapse" href="#collapsePENS2" role="button" aria-expanded="false" aria-controls="collapsePENS2">
-            <span>S2. Standar Sistem Informasi Penelitian</span>
-            <i class="fi-br-angle-down"></i>
-          </a>
-        </div>
-        <!-- collapse -->
-        <div class="collapse collapse__item" id="collapsePENS2">
-          <div class="mb-5 pt-3">
-            <!-- bar chart standar 2 -->
-            <div class="chart__collapse-container mb-4">
-              <canvas id="barChartPENS2"></canvas>
-            </div>
-
-            <!-- table indikator standar 2 -->
-            <div class="table__collapse">
-              <div class="sipmpp__table">
-                <div class="table__unit table-responsive">
-                  <table class="table sipmpp__table-content table-hover" id="tableCollapsePENS2">
-                    <thead class="bg__light">
-                      <tr>
-                        <th class="table__collapse-number">no</th>
-                        <th class="table__collapse-indikator">indikator</th>
-                        <th class="table__collapse-keterangan">keterangan</th>
-                      </tr>
-                    </thead>
-                    <tbody>
-                      <tr>
-                        <td>1</td>
-                        <td>Indikator 1</td>
-                        <td>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Illum, nobis officia voluptatum
-                          expedita natus adipisci porro ullam numquam earum, vel quam accusantium, doloribus nostrum
-                          quisquam laudantium eaque rerum molestiae labore.</td>
-                      </tr>
-                      <tr>
-                        <td>2</td>
-                        <td>Indikator 2</td>
-                        <td>Lorem ipsum dolor sit amet consectetur adipisicing elit. Odio fugiat eos unde eius ipsam
-                          voluptate vero! Quaerat similique nostrum dolor facilis illo nesciunt perferendis blanditiis,
-                          ducimus eveniet quos sit perspiciatis?</td>
-                      </tr>
-                    </tbody>
-                  </table>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
     </div>
   </div>
 
@@ -158,111 +106,59 @@
     </div>
 
     <div class="body__tab">
-      <!-- standar1 -->
-      <div class="body__tab-item">
-        <!-- title -->
-        <div class="body__tab-item__title">
-          <a class="tab-item__link" data-bs-toggle="collapse" href="#collapsePPMS1" role="button" aria-expanded="false" aria-controls="collapsePPMS1">
-            <span>S1. Standar Hasil PKM</span>
-            <i class="fi-br-angle-down"></i>
-          </a>
-        </div>
-        <!-- collapse -->
-        <div class="collapse collapse__item" id="collapsePPMS1">
-          <div class="mb-5 pt-3">
-            <!-- bar chart standar 1 -->
-            <div class="chart__collapse-container mb-4">
-              <canvas id="barChartPPMS1"></canvas>
-            </div>
 
-            <!-- table indikator standar 1 -->
-            <div class="table__collapse">
-              <div class="sipmpp__table">
-                <div class="table__unit table-responsive">
-                  <table class="table sipmpp__table-content table-hover" id="tableCollapsePPMS1">
-                    <thead class="bg__light">
-                      <tr>
-                        <th class="table__collapse-number">no</th>
-                        <th class="table__collapse-indikator">indikator</th>
-                        <th class="table__collapse-keterangan">keterangan</th>
-                      </tr>
-                    </thead>
-                    <tbody>
-                      <tr>
-                        <td>1</td>
-                        <td>Indikator 1</td>
-                        <td>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Illum, nobis officia voluptatum
-                          expedita natus adipisci porro ullam numquam earum, vel quam accusantium, doloribus nostrum
-                          quisquam laudantium eaque rerum molestiae labore.</td>
-                      </tr>
-                      <tr>
-                        <td>2</td>
-                        <td>Indikator 2</td>
-                        <td>Lorem ipsum dolor sit amet consectetur adipisicing elit. Odio fugiat eos unde eius ipsam
-                          voluptate vero! Quaerat similique nostrum dolor facilis illo nesciunt perferendis blanditiis,
-                          ducimus eveniet quos sit perspiciatis?</td>
-                      </tr>
-                    </tbody>
-                  </table>
+      <?php foreach ($stats['PPM'] as $stat) : ?>
+        <!-- standar1 -->
+        <div class="body__tab-item">
+          <!-- title -->
+          <div class="body__tab-item__title">
+            <a class="tab-item__link" data-bs-toggle="collapse" href="#collapsePPM<?= $stat['kode'] ?>" role="button" aria-expanded="false" aria-controls="collapsePPM<?= $stat['kode'] ?>">
+              <span><?= $stat['standar'] ?></span>
+              <i class="fi-br-angle-down"></i>
+            </a>
+          </div>
+          <!-- collapse -->
+          <div class="collapse collapse__item" id="collapsePPM<?= $stat['kode'] ?>">
+            <div class="mb-5 pt-3">
+              <!-- bar chart standar 1 -->
+              <div class="chart__collapse-container mb-4">
+                <canvas id="barChartPPM<?= $stat['kode'] ?>"></canvas>
+              </div>
+
+              <!-- table indikator standar 1 -->
+              <div class="table__collapse">
+                <div class="sipmpp__table">
+                  <div class="table__unit table-responsive">
+                    <table class="table sipmpp__table-content table-hover" id="tableCollapsePPM<?= $stat['kode'] ?>">
+                      <thead class="bg__light">
+                        <tr>
+                          <th class="table__collapse-number">no</th>
+                          <th class="table__collapse-indikator">indikator</th>
+                          <th class="table__collapse-keterangan">keterangan</th>
+                        </tr>
+                      </thead>
+                      <tbody>
+
+                        <?php $i = 1;
+                        foreach ($stat['namaindikator'] as $key => $value) : ?>
+                          <tr>
+                            <td><?= $i; ?></td>
+                            <td>Indikator <?= $i; ?></td>
+                            <td><?= $value; ?></td>
+                          </tr>
+                        <?php $i++;
+                        endforeach ?>
+
+                      </tbody>
+                    </table>
+                  </div>
                 </div>
               </div>
             </div>
           </div>
         </div>
-      </div>
+      <?php endforeach; ?>
 
-      <!-- standar2 -->
-      <div class="body__tab-item">
-        <!-- title -->
-        <div class="body__tab-item__title">
-          <a class="tab-item__link" data-bs-toggle="collapse" href="#collapsePPMS2" role="button" aria-expanded="false" aria-controls="collapsePPMS2">
-            <span>S2. Standar Sistem Informasi PKM</span>
-            <i class="fi-br-angle-down"></i>
-          </a>
-        </div>
-        <!-- collapse -->
-        <div class="collapse collapse__item" id="collapsePPMS2">
-          <div class="mb-5 pt-3">
-            <!-- bar chart standar 2 -->
-            <div class="chart__collapse-container mb-4">
-              <canvas id="barChartPPMS2"></canvas>
-            </div>
-
-            <!-- table indikator standar 2 -->
-            <div class="table__collapse">
-              <div class="sipmpp__table">
-                <div class="table__unit table-responsive">
-                  <table class="table sipmpp__table-content table-hover" id="tableCollapsePPMS2">
-                    <thead class="bg__light">
-                      <tr>
-                        <th class="table__collapse-number">no</th>
-                        <th class="table__collapse-indikator">indikator</th>
-                        <th class="table__collapse-keterangan">keterangan</th>
-                      </tr>
-                    </thead>
-                    <tbody>
-                      <tr>
-                        <td>1</td>
-                        <td>Indikator 1</td>
-                        <td>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Illum, nobis officia voluptatum
-                          expedita natus adipisci porro ullam numquam earum, vel quam accusantium, doloribus nostrum
-                          quisquam laudantium eaque rerum molestiae labore.</td>
-                      </tr>
-                      <tr>
-                        <td>2</td>
-                        <td>Indikator 2</td>
-                        <td>Lorem ipsum dolor sit amet consectetur adipisicing elit. Odio fugiat eos unde eius ipsam
-                          voluptate vero! Quaerat similique nostrum dolor facilis illo nesciunt perferendis blanditiis,
-                          ducimus eveniet quos sit perspiciatis?</td>
-                      </tr>
-                    </tbody>
-                  </table>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
     </div>
   </div>
 </div>
@@ -277,219 +173,131 @@
 
 <!-- ===== CHART PENELITIAN ===== -->
 <!-- Standar 1 -->
-<script>
-  const labelsPENS1 = ['Indikator 1', 'Indikator 2', 'Indikator 3', 'Indikator 4', 'Indikator 5', 'Indikator 6',
-    'Indikator 7', 'Indikator 8',
-  ];
+<?php foreach ($stats['PEN'] as $stat) : ?>
+  <script>
+    const labelsPEN<?= $stat['kode'] ?> = [
+      <?php $i = 1;
+      foreach ($stat['namaindikator'] as $key => $value) : ?> 'Indikator <?= $i; ?>',
+      <?php $i++;
+      endforeach; ?>
+    ];
 
-  const dataPENS1 = {
-    labels: labelsPENS1,
-    datasets: [{
-      label: 'Nilai Indikator',
-      backgroundColor: 'rgb(15, 22, 67)',
-      borderColor: 'rgba(255, 99, 132, 0)',
-      data: [6, 10, 5, 2, 20, 30, 45, 96],
-    }]
-  };
+    const dataPEN<?= $stat['kode'] ?> = {
+      labels: labelsPEN<?= $stat['kode'] ?>,
+      datasets: [{
+        label: 'Nilai Indikator',
+        backgroundColor: 'rgb(15, 22, 67)',
+        borderColor: 'rgba(255, 99, 132, 0)',
+        data: [
+          <?php foreach ($stat['nilai'] as $key => $value) : ?> <?= $value; ?>,
+          <?php endforeach; ?>
+        ],
+      }]
+    };
 
-  const configPENS1 = {
-    type: 'bar',
-    data: dataPENS1,
-    options: {
-      indexAxis: 'y',
-      elements: {
-        bar: {
-          borderWidth: 2,
-        }
-      },
-      responsive: true,
-      plugins: {
-        legend: {
-          position: 'bottom',
+    const configPEN<?= $stat['kode'] ?> = {
+      type: 'bar',
+      data: dataPEN<?= $stat['kode'] ?>,
+      options: {
+        indexAxis: 'y',
+        elements: {
+          bar: {
+            borderWidth: 2,
+          }
         },
-        title: {
-          display: true,
-          text: 'Data Indikator Standar Hasil Penelitian'
-        }
-      },
-      scales: {
-        x: {
-          beginAtZero: true,
-          suggestedMin: 0,
-          suggestedMax: 100,
+        responsive: true,
+        plugins: {
+          legend: {
+            position: 'bottom',
+          },
+          title: {
+            display: true,
+            text: '<?= $stat['standar'] ?>'
+          }
         },
-      },
-    },
-  };
-
-  const barChartPENS1 = new Chart(
-    document.getElementById('barChartPENS1'),
-    configPENS1
-  );
-</script>
-
-<!-- Standar 2 -->
-<script>
-  const labelsPENS2 = ['Indikator 1', 'Indikator 2', 'Indikator 3', 'Indikator 4', 'Indikator 5', 'Indikator 6',
-    'Indikator 7', 'Indikator 8',
-  ];
-
-  const dataPENS2 = {
-    labels: labelsPENS2,
-    datasets: [{
-      label: 'Nilai Indikator',
-      backgroundColor: 'rgb(15, 22, 67)',
-      borderColor: 'rgba(255, 99, 132, 0)',
-      data: [18, 20, 75, 38, 24, 84, 56, 100],
-    }]
-  };
-
-  const configPENS2 = {
-    type: 'bar',
-    data: dataPENS2,
-    options: {
-      indexAxis: 'y',
-      elements: {
-        bar: {
-          borderWidth: 2,
-        }
-      },
-      responsive: true,
-      plugins: {
-        legend: {
-          position: 'bottom',
-        },
-        title: {
-          display: true,
-          text: 'Data Indikator Standar Sistem Informasi Penelitian'
-        }
-      },
-      scales: {
-        x: {
-          beginAtZero: true,
-          suggestedMin: 0,
-          suggestedMax: 100,
+        scales: {
+          x: {
+            beginAtZero: true,
+            suggestedMin: 0,
+            suggestedMax: 100,
+          },
         },
       },
-    },
-  };
+    };
 
-  const barChartPENS2 = new Chart(
-    document.getElementById('barChartPENS2'),
-    configPENS2
-  );
-</script>
+    const barChartPEN<?= $stat['kode'] ?> = new Chart(
+      document.getElementById('barChartPEN<?= $stat['kode'] ?>'),
+      configPEN<?= $stat['kode'] ?>
+    );
+  </script>
+<?php endforeach; ?>
 
 <!-- ===== CHART PENGABDIAN MASYARAKAT ===== -->
-<!-- Standar 1 -->
-<script>
-  const leblsPPMS1 = ['Indikator 1', 'Indikator 2', 'Indikator 3', 'Indikator 4', 'Indikator 5', 'Indikator 6',
-    'Indikator 7', 'Indikator 8',
-  ];
+<?php foreach ($stats['PPM'] as $stat) : ?>
+  <!-- Standar 1 -->
+  <script>
+    const leblsPPM<?= $stat['kode'] ?> = [
+      <?php $i = 1;
+      foreach ($stat['namaindikator'] as $key => $value) : ?> 'Indikator <?= $i; ?>',
+      <?php $i++;
+      endforeach; ?>
+    ];
 
-  const dataPPMS1 = {
-    labels: leblsPPMS1,
-    datasets: [{
-      label: 'Nilai Indikator',
-      backgroundColor: 'rgb(15, 22, 67)',
-      borderColor: 'rgba(255, 99, 132, 0)',
-      data: [6, 10, 5, 2, 20, 30, 45, 96],
-    }]
-  };
+    const dataPPM<?= $stat['kode'] ?> = {
+      labels: leblsPPM<?= $stat['kode'] ?>,
+      datasets: [{
+        label: 'Nilai Indikator',
+        backgroundColor: 'rgb(15, 22, 67)',
+        borderColor: 'rgba(255, 99, 132, 0)',
+        data: [
+          <?php foreach ($stat['nilai'] as $key => $value) : ?> <?= $value; ?>,
+          <?php endforeach; ?>
+        ],
+      }]
+    };
 
-  const configPPMS1 = {
-    type: 'bar',
-    data: dataPPMS1,
-    options: {
-      indexAxis: 'y',
-      elements: {
-        bar: {
-          borderWidth: 2,
-        }
-      },
-      responsive: true,
-      plugins: {
-        legend: {
-          position: 'bottom',
+    const configPPM<?= $stat['kode'] ?> = {
+      type: 'bar',
+      data: dataPPM<?= $stat['kode'] ?>,
+      options: {
+        indexAxis: 'y',
+        elements: {
+          bar: {
+            borderWidth: 2,
+          }
         },
-        title: {
-          display: true,
-          text: 'Data Indikator Standar Hasil PKM'
-        }
-      },
-      scales: {
-        x: {
-          beginAtZero: true,
-          suggestedMin: 0,
-          suggestedMax: 100,
+        responsive: true,
+        plugins: {
+          legend: {
+            position: 'bottom',
+          },
+          title: {
+            display: true,
+            text: '<?= $stat['standar'] ?>'
+          }
         },
-      },
-      scales: {
-        x: {
-          beginAtZero: true,
-          suggestedMin: 0,
-          suggestedMax: 100,
+        scales: {
+          x: {
+            beginAtZero: true,
+            suggestedMin: 0,
+            suggestedMax: 100,
+          },
         },
-      },
-    },
-  };
-
-  const barChartPPMS1 = new Chart(
-    document.getElementById('barChartPPMS1'),
-    configPPMS1
-  );
-</script>
-
-<!-- Standar 2 -->
-<script>
-  const labelsPPMS2 = ['Indikator 1', 'Indikator 2', 'Indikator 3', 'Indikator 4', 'Indikator 5', 'Indikator 6',
-    'Indikator 7', 'Indikator 8',
-  ];
-
-  const dataPPMS2 = {
-    labels: labelsPPMS2,
-    datasets: [{
-      label: 'Nilai Indikator',
-      backgroundColor: 'rgb(15, 22, 67)',
-      borderColor: 'rgba(255, 99, 132, 0)',
-      data: [18, 20, 75, 38, 24, 84, 56, 100],
-    }]
-  };
-
-  const configPPMS2 = {
-    type: 'bar',
-    data: dataPPMS2,
-    options: {
-      indexAxis: 'y',
-      elements: {
-        bar: {
-          borderWidth: 2,
-        }
-      },
-      responsive: true,
-      plugins: {
-        legend: {
-          position: 'bottom',
-        },
-        title: {
-          display: true,
-          text: 'Data Indikator Standar Sistem Informasi PKM'
-        }
-      },
-      scales: {
-        x: {
-          beginAtZero: true,
-          suggestedMin: 0,
-          suggestedMax: 100,
+        scales: {
+          x: {
+            beginAtZero: true,
+            suggestedMin: 0,
+            suggestedMax: 100,
+          },
         },
       },
-    },
-  };
+    };
 
-  const barChartPPMS2 = new Chart(
-    document.getElementById('barChartPPMS2'),
-    configPPMS2
-  );
-</script>
+    const barChartPPM<?= $stat['kode'] ?> = new Chart(
+      document.getElementById('barChartPPM<?= $stat['kode'] ?>'),
+      configPPM<?= $stat['kode'] ?>
+    );
+  </script>
+<?php endforeach; ?>
 
 <?= $this->endSection();
