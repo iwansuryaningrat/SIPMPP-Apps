@@ -58,7 +58,7 @@
 
 # Role Auditor
 - Page dashboard (DONE)
-- Page report
+- Page report (DONE)
 - show document form indikator
 - Responsiveness pages
 - Responsiveness tables
