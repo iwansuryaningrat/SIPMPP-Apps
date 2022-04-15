@@ -50,22 +50,48 @@ class Leader extends BaseController
 
     public function index()
     {
-        // Check Login status
-        // if (!session()->get('isLoggedIn')) {
-        //     session()->setFlashdata('gagal', 'Anda harus login terlebih dahulu');
-        //     return redirect()->to('/login');
-        // }
+        // Untuk menampilkan data Dougnut Chart & tahunan
+        $data_user = $this->data_user;
 
-        // if (session()->get('role') != 'leader') {
-        //     if (session()->get('role') == 'admin') {
-        //         return redirect()->to('/admin');
-        //     } elseif (session()->get('role') == 'auditor') {
-        //         return redirect()->to('/auditor');
-        //     } elseif (session()->get('role') == 'user') {
-        //         return redirect()->to('/home');
-        //     }
-        // }
+        // Induk Progress
+        $indukpersen = $this->stats->getIndukProgress($data_user['unit_id'], $data_user['tahun']);
 
-        $user = session()->get('email');
+        // Standar Progress
+        $dataprogresstandar = $this->stats->getStandarProgress($data_user['unit_id'], $data_user['tahun']);
+
+        $databykat = $this->stats->getStandarProgressDoughnut($data_user['unit_id'], $data_user['tahun']);
+        $datanilaiPEN = $databykat['pen'];
+        $datanilaiPPM = $databykat['ppm'];
+
+        // Nilai Per Tahun
+        $nilaiTahun = $this->stats->getNilaiPerTahun($data_user['unit_id']);
+
+
+        // Untuk menampilkan data indikator
+        $unit_id = $data_user['unit_id'];
+        $tahun = $data_user['tahun'];
+
+        $kategori = $this->kategoriModel->findAll();
+        foreach ($kategori as $kat) {
+            $standar = $this->standarModel->getStandarByKategoriId($kat['kategori_id']);
+            foreach ($standar as $std) {
+                $namaStd = $std['standar_id'] . '. ' . $std['nama_standar'];
+                $stat = $this->stats->getNilaiByStandar($unit_id, $tahun, $std['standar_id'], $kat['kategori_id']);
+                $statstd[$std['standar_id']] = [
+                    'kode' => $std['standar_id'],
+                    'standar' => $namaStd,
+                    'namaindikator' => $stat['nama'],
+                    'nilai' => $stat['nilai'],
+                ];
+            }
+            $Stats[$kat['kategori_id']] = $statstd;
+        }
+
+        $data = [
+            'title' => 'Dashboard',
+            'data_user' => $this->data_user,
+            'unitData' => $this->unitData,
+        ];
+        return view('leader/index', $data);
     }
 }
