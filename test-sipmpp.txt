@@ -31,20 +31,15 @@
 * USER Page
 
 ========== KEKURANGAN FRONT END ==========
-# All role
-- Pagination style link
-- Shadow-none button
-- Responsiveness all tables
-- Check link
-- Check console.log
-- Check responsives all pages
-
 # Login Page
 - Remove unit select dropdown, while role == admin
 - Login page content
 - Responsiveness
 - Validation form
 - Title page
+- Check link
+- Check console.log
+- Shadow-none button
 
 # Role User
 
@@ -58,6 +53,10 @@
 - Responsiveness tables
 - Validation form
 - Title page
+- Pagination style link
+- Check link
+- Check console.log
+- Shadow-none button
 
 # Role Leader
 - Page dashboard (adding select tahun and unit)
@@ -66,3 +65,7 @@
 - Responsiveness tables
 - Validation form
 - Title page
+- Pagination style link
+- Check link
+- Check console.log
+- Shadow-none button
