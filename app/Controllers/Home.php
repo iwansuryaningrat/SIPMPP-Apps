@@ -58,7 +58,7 @@ class Home extends BaseController
         $this->thisTahun = (int)date('Y');
     }
 
-    // Dashboard Method (Done, Checked & Tested 11 April 2022) 
+    // Dashboard Method (Done, Checked & Tested 11 April 2022)
     public function index()
     {
         $data_user = $this->data_user;
@@ -214,7 +214,7 @@ class Home extends BaseController
         }
 
         $data = [
-            'title' => 'Standar | SIPMPP UNDIP ' . $this->thisTahun,
+            'title' => 'Nilai SPMI | SIPMPP UNDIP ' . $this->thisTahun,
             'data_user' => $data_user,
             'tab' => 'standar',
             'header' => 'header__mini header__spmi',
@@ -283,7 +283,7 @@ class Home extends BaseController
             return redirect()->to('/home/indikator/' . $standar_id . '/' . $kategori_id);
         } else {
             $data = [
-                'title' => 'Form Indikator SPMI | SIPMPP UNDIP ' . $this->thisTahun,
+                'title' => 'Form Edit Indikator SPMI | SIPMPP UNDIP ' . $this->thisTahun,
                 'data_user' => $data_user,
                 'tab' => 'standar',
                 'header' => 'header__mini header__indikator',

@@ -166,8 +166,6 @@
       // get data from button edit
       const id = $(this).data("dataidunit");
       const unit = $(this).data("dataunit");
-      console.log(id);
-      console.log(unit);
       // Set data to Form Edit
       $("#idEdit").val(id);
       $("#unitEdit").val(unit);
