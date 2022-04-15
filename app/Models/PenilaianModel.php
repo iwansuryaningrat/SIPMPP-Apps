@@ -242,4 +242,25 @@ class PenilaianModel extends Model
             ->set('catatan', $catatan)
             ->update();
     }
+
+    public function getPenilaianAllStandar($tahun, $unit_id, $kategori_id, $standar_id)
+    {
+        return $this->select('penilaian.*')
+            ->where('penilaian.unit_id', $unit_id)
+            ->where('penilaian.tahun', $tahun)
+            ->where('penilaian.kategori_id', $kategori_id)
+            ->where('penilaian.standar_id', $standar_id)
+            ->first();
+    }
+
+
+    // Delete penilaian
+    public function deletePenilaian($tahun, $unit_id, $standar_id, $kategori_id)
+    {
+        return $this->where('tahun', $tahun)
+            ->where('unit_id', $unit_id)
+            ->where('standar_id', $standar_id)
+            ->where('kategori_id', $kategori_id)
+            ->delete();
+    }
 }

@@ -693,8 +693,6 @@ class Admin extends BaseController
     {
         $users = $this->usersModel->findAll();
         $usersession = $this->data_user;
-        // $datapenilaian = $this->penilaianModel->getAllData();
-        // dd($datapenilaian);
 
         // Get All Tahun
         $tahun = $this->tahunModel->findAll();
@@ -704,6 +702,8 @@ class Admin extends BaseController
 
         // get All Standar
         $standars = $this->standarModel->getAllStandar();
+        $standar = $this->standarModel->findAll();
+        // dd($standars);
 
         // dd($tahun, $units, $standars);
         $dataPenilaian = [];
@@ -711,10 +711,12 @@ class Admin extends BaseController
         foreach ($tahun as $year) {
             foreach ($units as $unit) {
                 foreach ($standars as $standar) {
-                    // $data = $this->penilaianModel->getPenilaianSpecOne($unit['unit_id'], $standar['standar_id'], $year['tahun'], $standar['kategori_id']);
-                    // if ($data) {
-                    $dataPenilaian[] = $standar;
-                    // }
+                    $data = $this->penilaianModel->getPenilaianAllStandar($year['tahun'], $unit['unit_id'], $standar['kategori_id'], $standar['standar_id']);
+                    if ($data) {
+                        $data['nama_standar'] = $standar['nama_standar'];
+                        $data['nama_unit'] = $unit['nama_unit'];
+                        $dataPenilaian[] = $data;
+                    }
                 }
             }
         }
@@ -728,6 +730,7 @@ class Admin extends BaseController
             'header' => 'header__mini',
             'i' => $this->i,
             'users' => $users,
+            'dataPenilaian' => $dataPenilaian,
             'usersession' => $usersession,
             'tahun' => $usersession['tahun'],
             'tahunsession' => $this->tahun,
@@ -735,26 +738,6 @@ class Admin extends BaseController
         ];
 
         return view('admin/penilaian', $data);
-    }
-
-    // Report Method
-    public function report()
-    {
-        $users = $this->usersModel->findAll();
-        $usersession = $this->data_user;
-        $data = [
-            'title' => 'Report | SIPMPP UNDIP ' . $this->thisTahun,
-            'tab' => 'report',
-            'css' => 'styles-admin-report.css',
-            'header' => 'header__mini',
-            'i' => $this->i,
-            'users' => $users,
-            'usersession' => $usersession,
-            'tahun' => $usersession['tahun'],
-            'tahunsession' => $this->tahun,
-            'cssCustom' => '',
-        ];
-        return view('admin/report', $data);
     }
 
     // Swith Tahun Method (Done)

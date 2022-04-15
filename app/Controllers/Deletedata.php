@@ -146,4 +146,13 @@ class Deletedata extends BaseController
 
         return redirect()->to(base_url('admin/isianDataInduk'));
     }
+
+    // Delete Penilaian
+    public function deletePenilaian($tahun, $unit_id, $standar_id, $kategori_id)
+    {
+        $this->penilaianModel->deletePenilaian($tahun, $unit_id, $standar_id, $kategori_id);
+        session()->setFlashdata('message', '<div class="alert alert-success alert__sipmpp alert-dismissible fade show" role="alert"><i class="fa-solid fa-circle-minus color__success"></i><span>Data Penilaian berhasil dihapus!</span></div>');
+
+        return redirect()->to(base_url('admin/penilaian'));
+    }
 }
