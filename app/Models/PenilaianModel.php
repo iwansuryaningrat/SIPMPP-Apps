@@ -230,4 +230,16 @@ class PenilaianModel extends Model
             // ->orderBy('standar.NoStd', 'ASC')
             ->first();
     }
+
+    // Update Catatan
+    public function updateCatatan($tahun, $unit_id, $standar_id, $indikator_id, $kategori_id, $catatan)
+    {
+        return $this->where('tahun', $tahun)
+            ->where('unit_id', $unit_id)
+            ->where('standar_id', $standar_id)
+            ->where('indikator_id', $indikator_id)
+            ->where('kategori_id', $kategori_id)
+            ->set('catatan', $catatan)
+            ->update();
+    }
 }

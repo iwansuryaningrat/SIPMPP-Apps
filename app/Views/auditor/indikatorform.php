@@ -65,9 +65,8 @@
         <label for="hasil" class="col-lg-3 col-md-3 col-sm-4 col-form-label form__label">Hasil</label>
         <div class="col-lg-6 col-md-9 col-sm-8">
           <select class="form-select form__select shadow-none" name="hasil" id="hasil" disabled>
-            <option selected disabled>Pilih hasil data</option>
-            <option value="ADA / SESUAI">ADA / SESUAI</option>
-            <option value="Tidak ADA / TIDAK SESUAI">Tidak ADA / TIDAK SESUAI</option>
+            <option value="ADA / SESUAI" <?php if ($datapenilaian['nilai_input'] == 1) echo 'selected'; ?>>ADA / SESUAI</option>
+            <option value="Tidak ADA / TIDAK SESUAI" <?php if ($datapenilaian['nilai_input'] == 0) echo 'selected'; ?>>Tidak ADA / TIDAK SESUAI</option>
           </select>
         </div>
       </div>
@@ -75,7 +74,7 @@
       <div class="row mb-3 mb-sm-4">
         <label for="hasil" class="col-lg-3 col-md-3 col-sm-4 col-form-label form__label">Hasil</label>
         <div class="col-lg-6 col-md-9 col-sm-8">
-          <input class="form-control form__control shadow-none" id="hasil" name="hasil" disabled />
+          <input class="form-control form__control shadow-none" value="<?= $datapenilaian['nilai_input']; ?>" id="hasil" name="hasil" disabled />
         </div>
       </div>
     <?php } ?>
@@ -93,7 +92,7 @@
           </div>
           <div class="info__document">
             <p id="pdf-name"></p>
-            <a href="/auditor/download/" id="viewDocument">View Document</a>
+            <a href="/auditor/download/<?= $datapenilaian['dokumen']; ?>" id="viewDocument">View Document</a>
           </div>
         </div>
 
@@ -114,7 +113,7 @@
     <div class="row mb-3">
       <label for="keterangan" class="col-lg-3 col-md-3 col-sm-4 col-form-label form__label">Keterangan</label>
       <div class="col-lg-6 col-md-9 col-sm-8">
-        <textarea class="form-control form__control shadow-none" id="keterangan" cols="30" rows="3" name="keterangan" disabled></textarea>
+        <textarea class="form-control form__control shadow-none" id="keterangan" cols="30" rows="3" name="keterangan" disabled><?= $datapenilaian['keterangan']; ?></textarea>
       </div>
     </div>
     <!-- catatan -->

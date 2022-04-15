@@ -126,27 +126,6 @@ class Auditor extends BaseController
         return view('auditor/datainduk', $data);
     }
 
-    // Edit Data Induk Method (Done)
-    public function editDataInduk()
-    {
-        $user = $this->data_user;
-        $tahun = $user['tahun'];
-        $unit_id = $user['unit_id'];
-
-        $induk_id = $this->request->getVar('induk_id');
-
-        $nilai = $this->request->getVar('nilai');
-        $kategori_id = $this->request->getVar('kategori_id');
-
-
-        // Update Data
-        $this->unitIndukTahunModel->updateNilai($unit_id, $tahun, $induk_id, $kategori_id, $nilai);
-
-        session()->setFlashdata('message', '<div class="alert alert-success alert__sipmpp" role="alert"><i class="fa-solid fa-circle-check color__success"></i><span>Data Induk berhasil diubah!</span></div>');
-
-        return redirect()->to('/auditor/datainduk/' . $unit_id . '/' . $tahun);
-    }
-
     // Standar Method (Done)
     public function standar()
     {
@@ -188,6 +167,7 @@ class Auditor extends BaseController
             $status = "Sudah Diaudit";
         } else {
             $status = "Belum Dikirim";
+            $data_nilai = [];
         }
 
         $data = [
@@ -280,55 +260,9 @@ class Auditor extends BaseController
     // Save Indikator Method (Done)
     public function saveIndikator($indikator_id, $tahun, $standar_id, $unit_id, $kategori_id)
     {
-        $indikator_id = (int)$indikator_id;
-        $nilai_input = $this->request->getVar('hasil');
-        $keterangan = $this->request->getVar('keterangan');
-        $status = "Diisi";
+        $catatan = $this->request->getPost('catatan');
 
-        $datapenilaian = $this->penilaianModel->getPenilaianSpecId($unit_id, $standar_id, $tahun, $kategori_id, $indikator_id);
-        // dd($datapenilaian);
-
-        if ($nilai_input == 'ADA / SESUAI') {
-            $nilai_input = 1;
-            $hasil = 100;
-            $nilai_akhir = $hasil;
-        } elseif ($nilai_input == 'TIDAK ADA / SESUAI') {
-            $nilai_input = 0;
-            $hasil = 0;
-            $nilai_akhir = $hasil;
-        } else {
-            $nilai_input = (int)$nilai_input;
-            $nilai_acuan = (int)$datapenilaian[0]['nilai_acuan'];
-            $nilai_induk = (int)$datapenilaian[0]['nilai'];
-            $hasil = $nilai_input / $nilai_induk * 100;
-            if ($hasil >= $nilai_acuan) {
-                $nilai_akhir = 100;
-            } else {
-                $nilai_akhir = $hasil / $nilai_acuan * 100;
-            }
-        }
-
-
-        // Dokumen handler
-        $dokumen = $this->request->getFile('dokumen');
-        if ($dokumen->getError() == 4) {
-            return redirect()->to('/auditor/indikatorform/' . $kategori_id . '/' . $standar_id . '/' . $indikator_id);
-        } else {
-            $namadokumen = 'dokumen-' . $indikator_id . '-' . $standar_id . '-' . $unit_id . '-' . $kategori_id . '-' . $tahun . '.' . $dokumen->getExtension();
-            // dd($namadokumen);
-            $dokumen->move('dokumen/', $namadokumen);
-        };
-
-        $data = [
-            'nilai_input' => $nilai_input,
-            'dokumen' => $namadokumen,
-            'keterangan' => $keterangan,
-            'status' => $status,
-            'hasil' => $hasil,
-            'nilai_akhir' => $nilai_akhir
-        ];
-
-        $this->penilaianModel->updatePenilaian($unit_id, $tahun, $standar_id, $kategori_id, $indikator_id, $data);
+        $this->penilaianModel->updateCatatan($tahun, $unit_id, $standar_id, $indikator_id, $kategori_id, $catatan);
 
         session()->setFlashdata('message', '<div class="alert alert-success alert__sipmpp" role="alert"><i class="fa-solid fa-circle-check color__success"></i><span>Data Indikator berhasil diubah!</span></div>');
 
