@@ -47,4 +47,14 @@ class DataIndukModel extends Model
         return $this->where('kategori_id', $kategori_id)
             ->findAll();
     }
+
+    // Update Data Induk
+    public function updateInduk($induk_id, $kategori_id, $kode, $nama_induk)
+    {
+        return $this->where('induk_id', $induk_id)
+            ->where('kategori_id', $kategori_id)
+            ->set('kode', $kode)
+            ->set('nama_induk', $nama_induk)
+            ->update();
+    }
 }

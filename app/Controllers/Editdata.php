@@ -60,7 +60,7 @@ class Editdata extends BaseController
         $this->session = \Config\Services::session();
     }
 
-    // Edit unit method
+    // Edit unit method (Done)
     public function editunit()
     {
         $unit_id = $this->request->getVar('unit_id');
@@ -112,27 +112,17 @@ class Editdata extends BaseController
     }
 
     // Update data induk
-    public function updateInduk()
+    public function updateInduk($induk_id, $kategori_id)
     {
-        $induk_id = $this->request->getVar('induk_id');
         $kode = $this->request->getVar('kode');
-        $kategori_id = $this->request->getVar('kategori_id');
         $nama_induk = $this->request->getVar('nama_induk');
 
-        $data = [
-            'induk_id' => $induk_id,
-            'kategori_id' => $kategori_id,
-            'kode' => $kode,
-            'nama_induk' => $nama_induk,
-        ];
-        // dd($data);
-
-        $this->dataIndukModel->update($induk_id, $data);
+        $this->dataIndukModel->updateInduk($induk_id, $kategori_id, $kode, $nama_induk);
 
         // Set flashdata gagal dan kirim pesan eror dengan flashdata
-        $this->session->setFlashdata('msg', '<div class="alert alert-success alert__sipmpp alert-dismissible fade show" role="alert"><i class="fa-solid fa-circle-check color__success"></i><span>Data Induk berhasil diubah!</span></div>');
+        $this->session->setFlashdata('message', '<div class="alert alert-success alert__sipmpp alert-dismissible fade show" role="alert"><i class="fa-solid fa-circle-check color__success"></i><span>Data Induk berhasil diubah!</span></div>');
 
-        return redirect()->to(base_url('admin/induk'));
+        return redirect()->to(base_url('admin/datainduk'));
     }
 
     // Edit Password Method (Done)
