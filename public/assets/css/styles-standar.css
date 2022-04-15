@@ -67,25 +67,45 @@
   border-bottom: none;
   border-bottom-style: hidden;
 }
-.table__spmi-number,
-.table__spmi-standar,
-.table__spmi-nilai,
+.table__spmi-number {
+  width: 7%;
+  min-width: 4rem;
+}
+.table__spmi-standar {
+  width: 12%;
+  min-width: 6rem;
+}
+.table__spmi-nilai {
+  width: 10%;
+  min-width: 4.5rem;
+}
 .table__spmi-aksi {
   width: 10%;
+  min-width: 4rem;
 }
 
 .table__spmi-status {
   width: 15%;
+  min-width: 7.75rem;
 }
 
 .table__spmi-nama {
-  width: 45%;
+  width: 46%;
+  min-width: 15rem;
 }
 
 .table__spmi__content thead tr th,
 .table__spmi__content tbody tr td {
   padding-right: 1.5rem;
   padding-left: 1.5rem;
+}
+
+@media screen and (max-width: 991px) {
+  .table__spmi__content thead tr th,
+  .table__spmi__content tbody tr td {
+    padding-right: 0.875rem;
+    padding-left: 0.875rem;
+  }
 }
 
 @media screen and (max-width: 576px) {

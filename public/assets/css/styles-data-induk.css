@@ -89,18 +89,28 @@
   border-bottom-style: hidden;
 }
 
-.table__datainduk-number,
+.table__datainduk-number {
+  width: 7%;
+  min-width: 4rem;
+}
 .table__datainduk-nilai,
 .table__datainduk-aksi {
-  width: 10%;
+  width: 15%;
+  min-width: 4.5rem;
 }
 
 .table__datainduk-kode {
   width: 13%;
+  min-width: 5.625rem;
 }
 
 .table__datainduk-kebutuhandata {
-  width: 57%;
+  width: 50%;
+  min-width: 11.25rem;
+}
+
+.table__datainduk__content thead tr th {
+  vertical-align: middle;
 }
 
 .table__datainduk__content thead tr th,
@@ -168,6 +178,12 @@
   .filter__table-year {
     width: 100%;
     justify-content: end;
+  }
+
+  .table__datainduk__content thead tr th,
+  .table__datainduk__content tbody tr td {
+    padding-right: 0.875rem;
+    padding-left: 0.875rem;
   }
 }
 

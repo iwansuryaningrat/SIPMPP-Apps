@@ -30,18 +30,42 @@
 
 * USER Page
 
------ Front End -----
-- pagination style link
-- shadow-none button
-- role admin hilangkan pilihan unit, using ajax
-- login page content
-- multiple select tahun di form add base user
-- add data induk, induk id -> angka, kode -> huruf kapital
-- form edit indikator admin
-- page report + index role auditor samakan dengan page role user
+========== KEKURANGAN FRONT END ==========
+# Login Page
+- Remove unit select dropdown, while role == admin
+- Login page content
+- Responsiveness
+- Validation form
+- Title page
+- Check link
+- Check console.log
+- Shadow-none button
+
+# Role User
+
+# Role Admin
+
+# Role Auditor
+- Page dashboard
+- Page report
 - show document form indikator
+- Responsiveness pages
+- Responsiveness tables
+- Validation form
+- Title page
+- Pagination style link
+- Check link
+- Check console.log
+- Shadow-none button
 
-
-LEADER PAGE!
-- melihat seluruh chart dari semua unit dan tahun, terdapat select tahun dan unit
-- daftar unit
+# Role Leader
+- Page dashboard (adding select tahun and unit)
+- Page unit
+- Responsiveness pages
+- Responsiveness tables
+- Validation form
+- Title page
+- Pagination style link
+- Check link
+- Check console.log
+- Shadow-none button

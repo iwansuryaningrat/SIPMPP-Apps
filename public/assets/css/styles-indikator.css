@@ -28,24 +28,37 @@
   text-align: center;
 }
 
+.table__indikator__content thead tr th {
+  vertical-align: middle;
+}
+
 .table__indikator__content tbody tr:last-child {
   border-bottom: none;
   border-bottom-style: hidden;
 }
 
-.table__indikator-number,
-.table__indikator-nilai,
+.table__indikator-number {
+  width: 7%;
+  min-width: 4rem;
+}
+.table__indikator-nilai {
+  width: 10%;
+  min-width: 4.5rem;
+}
 .table__indikator-aksi {
   width: 10%;
+  min-width: 4rem;
 }
 
 .table__indikator-status {
   width: 15%;
+  min-width: 7.75rem;
 }
 
 .table__indikator-indikator,
 .table__indikator-target {
-  width: 27.5%;
+  width: 29%;
+  min-width: 15rem;
 }
 
 .table__indikator__content thead tr th,
@@ -56,4 +69,12 @@
 
 .sipmpp__table tr td .edit__data__induk__icon svg {
   color: rgba(21, 114, 232, 1);
+}
+
+@media screen and (max-width: 991px) {
+  .table__indikator__content thead tr th,
+  .table__indikator__content tbody tr td {
+    padding-right: 0.875rem;
+    padding-left: 0.875rem;
+  }
 }
