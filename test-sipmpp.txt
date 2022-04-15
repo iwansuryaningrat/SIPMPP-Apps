@@ -31,7 +31,6 @@
 * USER Page
 
 ========== KEKURANGAN FRONT END ==========
-uicons bold rounded problem loading
 
 # Login Page
 - Remove unit select dropdown, while role == admin
