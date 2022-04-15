@@ -127,40 +127,6 @@
     });
   });
 
-  // tooltips
-  // progress bar unit
-  const tooltipsEdit = document.querySelectorAll(
-    ".edit__data__induk__icon"
-  );
-  tooltipsEdit.forEach((t) => {
-    new bootstrap.Tooltip(t);
-  });
-
-  // data trigger
-  $(document).ready(() => {
-    // get Edit Product
-    $(".edit__data__induk__icon").on("click", function() {
-      // get data from button edit
-      const id = $(this).data("id");
-      const kode = $(this).data("kode");
-      const kategori = $(this).data("kategori");
-      const kategoriId = $(this).data("katid");
-      console.log(kategoriId);
-      console.log(id);
-      const kebutuhanData = $(this).data("kebutuhan-data");
-      const nilai = $(this).data("nilai");
-      // Set data to Form Edit
-      $("#id").val(id);
-      $("#kode").val(kode);
-      $("#nama_kategori").val(kategori);
-      $("#kebutuhan-data").val(kebutuhanData);
-      $("#nilai").val(nilai);
-      $("#kategori_id").val(kategoriId);
-      // Call Modal Edit
-      $(".edit__datainduk__modal").modal("show");
-    });
-  });
-
   // validation number
   let validationNumber = (evt) => {
     var iKeyCode = evt.which ? evt.which : evt.keyCode;
