@@ -23,4 +23,12 @@ class UnitsModel extends Model
         return $this->where('unit_id', $unit_id)
             ->first();
     }
+
+    // Update unit
+    public function updateUnit($unit_id, $nama_unit)
+    {
+        return $this->where('unit_id', $unit_id)
+            ->set('nama_unit', $nama_unit)
+            ->update();
+    }
 }

@@ -12,10 +12,10 @@
 - redirect salah, form add base user, add auditor, add leader + data handling (Done)
 - redirect salah, after deleting form add base user, add auditor, add leader (Done)
 - report Page (user) (Done)
+- edit unit (Done)
 
 * Admin Page
 - edit indikator action belum bisa (Kurang Update Data method)
-- edit unit
 - edit data induk (admin)
 - counting table daftar kategori do dashboard page (admin)
 - UNDO after add data (all form)

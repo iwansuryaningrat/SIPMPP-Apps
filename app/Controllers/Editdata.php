@@ -65,19 +65,13 @@ class Editdata extends BaseController
     {
         $unit_id = $this->request->getVar('unit_id');
         $nama_unit = $this->request->getVar('nama_unit');
-        dd($unit_id, $nama_unit);
+        // dd($unit_id, $nama_unit);
 
         $unit = $this->unitsModel->getUnit($unit_id);
 
         if ($unit != null) {
-            $data = [
-                'unit_id' => $unit_id,
-                'nama_unit' => $nama_unit,
-            ];
 
-            // dd($data);
-
-            $this->unitsModel->update($unit_id, $data);
+            $this->unitsModel->updateUnit($unit_id, $nama_unit);
 
             // Set flashdata gagal dan kirim pesan eror dengan flashdata
             $this->session->setFlashdata('msg', '<div class="alert alert-success alert__sipmpp alert-dismissible fade show" role="alert"><i class="fa-solid fa-circle-check color__success"></i><span>Unit berhasil diubah!</span></div>');
