@@ -1,1 +1,159 @@
 @import url(styles.css);
+
+/* link tab */
+.nav__tabs {
+  border: none;
+}
+
+.nav__item-tab {
+  margin-right: 0.625rem;
+}
+
+.nav__item-tab:last-child {
+  margin-right: 0;
+}
+
+.nav__link-tab {
+  padding: 0.875rem 1.5rem;
+  border: none !important;
+  margin-bottom: 0 !important;
+  background-color: rgba(230, 235, 250, 0.3) !important;
+  color: rgba(0, 0, 0, 0.6) !important;
+  border-radius: var(--radius-md) var(--radius-md) 0 0 !important;
+  transition: var(--trans-m);
+  border-bottom: 0.25rem solid rgba(230, 235, 250, 0.3) !important;
+}
+
+.nav__link-tab:hover {
+  background-color: rgba(230, 235, 250, 0.4) !important;
+}
+
+.nav__link-tab.active {
+  background-color: rgba(230, 235, 250, 0.6) !important;
+  color: var(--black) !important;
+  border-bottom: 0.25rem solid var(--dark-main-color) !important;
+}
+
+.nav__link-tab.active:hover {
+  background-color: rgba(230, 235, 250, 0.6) !important;
+}
+
+/* tab */
+.tab__content {
+  padding: 1.5rem 1.875rem 1.875rem;
+  background-color: rgba(230, 235, 250, 0.6);
+  border-radius: 0 var(--radius-md) var(--radius-md) var(--radius-md);
+}
+
+/* body */
+.title__tab {
+  margin: 1rem 0 1.875rem;
+}
+
+.tab-item__link {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0.625rem 0;
+}
+
+.tab-item__link:hover span,
+.tab-item__link:hover i {
+  color: var(--black);
+}
+
+.tab-item__link span {
+  font-weight: 500;
+  font-size: 1.125rem;
+}
+
+.body__tab-item__title {
+  margin-bottom: 0.625rem;
+}
+
+.chart__collapse-container {
+  padding: 1.5rem;
+  background-color: var(--white);
+  border-radius: var(--radius-md);
+}
+
+.sipmpp__table-content thead tr th,
+.sipmpp__table-content tbody tr td {
+  padding: 1rem 0;
+}
+
+.table__collapse {
+  padding: 2rem;
+  border-radius: var(--radius-md);
+  background-color: var(--white);
+}
+
+.sipmpp__table {
+  border: none !important;
+}
+
+.sipmpp__table-content tbody tr:hover {
+  background-color: rgba(38, 48, 77, 0.1) !important;
+}
+
+.sipmpp__table-content tr th:first-child,
+.sipmpp__table-content tr td:first-child {
+  text-align: center;
+}
+
+.sipmpp__table-content tr th:last-child,
+.sipmpp__table-content tr td:last-child {
+  padding-right: 1.875rem;
+  padding-left: 1.875rem;
+
+  vertical-align: middle;
+}
+
+.table__collapse-number {
+  width: 10%;
+  min-width: 3rem;
+}
+
+.table__collapse-indikator {
+  width: 20%;
+  min-width: 6.4rem;
+}
+
+.table__collapse-keterangan {
+  width: 70%;
+  min-width: 25rem;
+}
+
+@media screen and (max-width: 700px) {
+  .tab__content {
+    border-radius: 0 0 var(--radius-md) var(--radius-md);
+  }
+
+  .nav__item-tab {
+    width: 50%;
+    margin-right: 0;
+    margin-left: 0;
+  }
+
+  .nav__item-tab:first-child {
+    padding-right: 0.4rem;
+  }
+
+  .nav__item-tab:last-child {
+    padding-left: 0.4rem;
+  }
+
+  .nav__item-tab button {
+    width: 100%;
+  }
+}
+
+@media screen and (max-width: 576px) {
+  .nav__item-tab:first-child {
+    padding-right: 0.25rem;
+  }
+
+  .nav__item-tab:last-child {
+    padding-left: 0.25rem;
+  }
+}

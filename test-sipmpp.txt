@@ -42,12 +42,23 @@
 - Shadow-none button
 
 # Role User
+- Responsiveness pages (DONE)
+- Responsiveness tables (DONE)
+- Validation form (DONE)
+- Title page (DONE)
 
 # Role Admin
+- Multiple select form add base user (DONE)
+- Form add data induk (DONE)
+- Form edit indikator (DONE)
+- Responsiveness pages (DONE)
+- Responsiveness tables (DONE)
+- Validation form (DONE)
+- Title page (DONE)
 
 # Role Auditor
-- Page dashboard
-- Page report
+- Page dashboard (DONE)
+- Page report (DONE)
 - show document form indikator
 - Responsiveness pages
 - Responsiveness tables
