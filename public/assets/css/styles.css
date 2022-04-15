@@ -487,6 +487,10 @@ label.error {
   margin-bottom: 1.5rem;
 }
 
+.header__main-title__pagination a {
+  font-weight: 600;
+}
+
 .header__main-title__subtitle {
   display: flex;
 
@@ -1110,6 +1114,11 @@ footer .container-fluid.container__fluid {
     height: 16rem !important;
   }
 
+  .header__main-color.header__mini.header__report,
+  .header__main-color.header__mini.header__report.active {
+    height: 16rem !important;
+  }
+
   /**************************************/
   /*               Navbar               */
   /**************************************/
@@ -1206,6 +1215,13 @@ footer .container-fluid.container__fluid {
     width: calc(100% - 4.75rem) !important;
   }
 
+  .header__main-color.header__mini.header__report {
+    height: 15rem !important;
+  }
+  .header__main-color.header__mini.header__report.active {
+    height: 14rem !important;
+  }
+
   /**************************************/
   /*               Navbar               */
   /**************************************/
@@ -1278,6 +1294,15 @@ footer .container-fluid.container__fluid {
   }
 }
 
+@media screen and (max-width: 469px) {
+  .header__main-color.header__mini.header__report {
+    height: 16.5rem !important;
+  }
+  .header__main-color.header__mini.header__report.active {
+    height: 14.25rem !important;
+  }
+}
+
 @media screen and (max-width: 440px) {
   .header__main-color.header__mini.header__spmi,
   .header__main-color.header__mini.header__indikator {
@@ -1298,6 +1323,16 @@ footer .container-fluid.container__fluid {
   .header__main-color.header__mini.header__spmi,
   .header__main-color.header__mini.header__indikator {
     height: 23rem !important;
+  }
+}
+
+@media screen and (max-width: 419px) {
+  .header__main-color.header__mini.header__profile {
+    height: 15.5rem !important;
+  }
+
+  .header__main-color.header__mini.header__profile.active {
+    height: 14.5rem !important;
   }
 }
 
@@ -1324,6 +1359,26 @@ footer .container-fluid.container__fluid {
   .header__main-color.header__mini.header__spmi,
   .header__main-color.header__mini.header__indikator {
     height: 25rem !important;
+  }
+}
+
+@media screen and (max-width: 333px) {
+  .header__main-color.header__mini.header__profile {
+    height: 18.5rem !important;
+  }
+
+  .header__main-color.header__mini.header__profile.active {
+    height: 14.25rem !important;
+  }
+}
+
+@media screen and (max-width: 359px) {
+  .header__main-color.header__mini.header__report {
+    height: 18.75rem !important;
+  }
+
+  .header__main-color.header__mini.header__report.active {
+    height: 14.5rem !important;
   }
 }
 

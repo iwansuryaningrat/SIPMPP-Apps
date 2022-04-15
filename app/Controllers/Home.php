@@ -418,7 +418,7 @@ class Home extends BaseController
             'data_user' => $data_user,
             'i' => $i,
             'tab' => 'report',
-            'header' => 'header__mini',
+            'header' => 'header__mini header__report',
             'css' => 'styles-report.css',
             'tahunsession' => $this->tahun,
             'tahun' => $data_user['tahun'],

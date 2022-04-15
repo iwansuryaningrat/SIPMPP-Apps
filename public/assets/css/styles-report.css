@@ -9,6 +9,10 @@
   margin-right: 0.625rem;
 }
 
+.nav__item-tab:last-child {
+  margin-right: 0;
+}
+
 .nav__link-tab {
   padding: 0.875rem 1.5rem;
   border: none !important;
@@ -118,4 +122,38 @@
 .table__collapse-keterangan {
   width: 70%;
   min-width: 25rem;
+}
+
+@media screen and (max-width: 700px) {
+  .tab__content {
+    border-radius: 0 0 var(--radius-md) var(--radius-md);
+  }
+
+  .nav__item-tab {
+    width: 50%;
+    margin-right: 0;
+    margin-left: 0;
+  }
+
+  .nav__item-tab:first-child {
+    padding-right: 0.4rem;
+  }
+
+  .nav__item-tab:last-child {
+    padding-left: 0.4rem;
+  }
+
+  .nav__item-tab button {
+    width: 100%;
+  }
+}
+
+@media screen and (max-width: 576px) {
+  .nav__item-tab:first-child {
+    padding-right: 0.25rem;
+  }
+
+  .nav__item-tab:last-child {
+    padding-left: 0.25rem;
+  }
 }

@@ -4,7 +4,7 @@
 
 <div class="header__main-title">
   <div class="header__main-title__pagination">
-    <a id="unit-user" href="/" style="font-weight: 600;"><?= $data_user['unit']; ?></a>
+    <a id="unit-user" href="/"><?= $data_user['unit']; ?></a>
     / Profile
   </div>
   <div class="header__main-title__subtitle">

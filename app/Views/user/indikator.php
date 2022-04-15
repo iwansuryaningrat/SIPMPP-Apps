@@ -4,7 +4,7 @@
 
 <div class="header__main-title">
   <div class="header__main-title__pagination">
-    <a id="unit-user" href="/" style="font-weight: 600"><?= $data_user['unit']; ?></a>
+    <a id="unit-user" href="/"><?= $data_user['unit']; ?></a>
     / <a href="/home/standar">Nilai SPMI</a> / Indikator
   </div>
   <div class="header__main-title__subtitle">
@@ -42,32 +42,36 @@
       <tbody>
 
         <?php foreach ($datapenilaian as $data) : ?>
-          <tr>
-            <td><?= $i; ?></td>
-            <?php foreach ($indikator as $indi) :
+        <tr>
+          <td><?= $i; ?>
+          </td>
+          <?php foreach ($indikator as $indi) :
               if ($data['indikator_id'] == $indi['indikator_id'] &&  $data['standar_id'] == $indi['standar_id'] && $data['kategori_id'] == $indi['kategori_id']) : ?>
-                <td>
-                  <?= $indi['nama_indikator']; ?>
-                </td>
-                <td>
-                  <?= $indi['target']; ?>
-                </td>
-            <?php endif;
+          <td>
+            <?= $indi['nama_indikator']; ?>
+          </td>
+          <td>
+            <?= $indi['target']; ?>
+          </td>
+          <?php endif;
             endforeach; ?>
-            <td><span class="badge badge__sipmpp <?php if ($data['status'] == 'Diaudit') {
-                                                    echo 'badge__success';
-                                                  } elseif ($data['status'] == 'Dikirim') {
-                                                    echo 'badge__primary';
-                                                  } elseif ($data['status'] == 'Belum Diisi') {
-                                                    echo 'badge__danger';
-                                                  } else {
-                                                    echo 'badge__warning';
-                                                  } ?>"><?= $data['status']; ?></span></td>
-            <td><?= $data['nilai_akhir']; ?></td>
-            <td>
-              <a data-bs-placement="top" title="Edit" href="/home/indikatorform/<?= $data['kategori_id'] . '/' . $data['standar_id'] . '/' . $data['indikator_id']; ?>" class="edit__data__induk__icon"><i class="fa-solid fa-pen-to-square"></i></a>
-            </td>
-          </tr>
+          <td><span class="badge badge__sipmpp <?php if ($data['status'] == 'Diaudit') {
+                echo 'badge__success';
+            } elseif ($data['status'] == 'Dikirim') {
+                echo 'badge__primary';
+            } elseif ($data['status'] == 'Belum Diisi') {
+                echo 'badge__danger';
+            } else {
+                echo 'badge__warning';
+            } ?>"><?= $data['status']; ?></span></td>
+          <td><?= $data['nilai_akhir']; ?>
+          </td>
+          <td>
+            <a data-bs-placement="top" title="Edit"
+              href="/home/indikatorform/<?= $data['kategori_id'] . '/' . $data['standar_id'] . '/' . $data['indikator_id']; ?>"
+              class="edit__data__induk__icon"><i class="fa-solid fa-pen-to-square"></i></a>
+          </td>
+        </tr>
         <?php $i++;
         endforeach; ?>
 

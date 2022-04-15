@@ -6,7 +6,7 @@
 
 <div class="header__main-title">
   <div class="header__main-title__pagination">
-    <span id="unit-user" style="font-weight: 600"><?= $data_user['unit']; ?></span>
+    <span id="unit-user"><?= $data_user['unit']; ?></span>
   </div>
   <div class="header__main-title__subtitle">
     <div class="title__subtitle-desc">
