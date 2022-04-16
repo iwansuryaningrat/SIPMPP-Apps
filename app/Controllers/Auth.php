@@ -61,6 +61,9 @@ class Auth extends BaseController
         $role = $this->roleModel->getRoleId($role);
         $role = $role['role'];
         $unit_id = $this->request->getVar('unit');
+        if ($unit_id == null) {
+            $unit_id = 'lppm';
+        }
         $tahun = $this->request->getVar('tahun');
 
         $data = $this->userroleunitModel->getDataSpec($email, $tahun, $role, $unit_id);
