@@ -124,8 +124,9 @@
                         sesuai dengan unit Anda!</p>
 
                     <form class="form__login" method="POST"
-                        action="/auth/loginprocess/<?= $email; ?>">
-                        <div class="mb-4 position-relative">
+                        action="/auth/loginprocess/<?= $email; ?>"
+                        id="formLoginUnit">
+                        <div class="mb-4 position-relative" id="formFieldTahun">
                             <label for="tahun" class="form-label form__label">Tahun</label>
                             <select class="form-select form__select shadow-none" name="tahun" id="tahun" required>
                                 <option selected disabled>Pilih Tahun</option>
@@ -137,19 +138,20 @@
                                 <?php endforeach; ?>
                             </select>
                         </div>
-                        <div class="mb-4 position-relative">
+                        <div class="mb-4 position-relative" id="formFieldRole">
                             <label for="role" class="form-label form__label">Role</label>
                             <select class="form-select form__select shadow-none" name="role" id="role" required>
                                 <option selected disabled>Pilih Role</option>
                             </select>
                         </div>
-                        <div class="mb-5 position-relative">
+                        <div class="position-relative" id="formFieldUnit">
                             <label for="unit" class="form-label form__label">Unit</label>
                             <select class="form-select form__select shadow-none" name="unit" id="unit" required>
                                 <option selected disabled>Pilih Unit</option>
                             </select>
                         </div>
-                        <button type="submit" class="btn login__btn shadow-none">Login</button>
+                        <div class="mb-5"></div>
+                        <button type="submit" class="btn login__btn shadow-none" id="btnLoginUnit">Login</button>
                     </form>
                 </div>
             </div>
@@ -168,13 +170,24 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.min.js"
         integrity="sha384-cVKIPhGWiC2Al4u+LWgxfKTRIcfu0JTxR+EQDz/bgldoEyl4H0zUF0QKbrJ0EcQF" crossorigin="anonymous">
     </script>
+    <!-- jquery validate -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.19.3/jquery.validate.min.js"
+        integrity="sha512-37T7leoNS06R80c8Ulq7cdCDU5MNQBwlYoy1TX/WUsLFC2eYNqtKlV0QjH7r8JpG/S0GUMZwebnVFLPd6SU5yg=="
+        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
     <!-- fontawesome -->
     <script defer src="https://use.fontawesome.com/releases/v6.1.0/js/all.js"
         integrity="sha384-vLLEq/Un/eZFmXAu4Xxf8F00RSSMzPcI7iDiT6hpB4zFpezCEGhb5daeR8PLyrLI" crossorigin="anonymous">
     </script>
     <!-- custom -->
     <script>
+        // initial hide field unit
+        $("#formFieldUnit").hide();
+        // iniital exclamation icon
+        const exclamationCircle = "<i class='fa-solid fa-circle-exclamation'></i>";
+
+        // document ready function
         $(document).ready(function() {
+            // change data select option
             $("#tahun").change(function() {
                 var tahun = $(this).val();
                 $.ajax({
@@ -204,6 +217,46 @@
                         $("#unit").html(response);
                     },
                 });
+            });
+
+            // show field unit
+            $("#role").change(function() {
+                var value = $(this).val();
+                if (value == "1" || value == "3") {
+                    $("#formFieldUnit").show();
+                } else {
+                    $("#formFieldUnit").hide();
+                }
+            });
+
+            // form validate
+            $("#formLoginUnit").validate({
+                rules: {
+                    tahun: {
+                        required: true,
+                    },
+                    role: {
+                        required: true,
+                    },
+                    unit: {
+                        required: true,
+                    },
+                },
+                messages: {
+                    tahun: {
+                        required: exclamationCircle + " Tahun is required.",
+                    },
+                    role: {
+                        required: exclamationCircle + " Role is required.",
+                    },
+                    unit: {
+                        required: exclamationCircle + " Unit is required.",
+                    },
+                },
+            });
+
+            $("#btnLoginUnit").on("click", () => {
+                console.log($("#formLoginUnit").valid());
             });
         });
     </script>

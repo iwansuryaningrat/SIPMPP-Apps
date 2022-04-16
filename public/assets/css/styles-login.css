@@ -189,6 +189,15 @@ form .position-relative .icon__hide__password {
   right: 3rem;
 }
 
+form .position-relative .error svg {
+  display: inline-block;
+  position: static;
+  top: unset;
+  right: unset;
+  color: var(--danger-color);
+  font-size: 0.875rem;
+}
+
 @media screen and (max-width: 1048px) {
   .content-left__carousel {
     display: none;
