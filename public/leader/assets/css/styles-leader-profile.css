@@ -1,0 +1,166 @@
+@import url(styles-leader.css);
+
+.profile__section {
+  display: flex;
+}
+
+.profile__section-profile {
+  flex: 0.6;
+  border-radius: 0.75rem;
+  border: var(--border-sm);
+  padding: 1.5rem 2.625rem 1.875rem;
+  margin-right: 0.75rem;
+}
+
+.profile__section-password {
+  flex: 0.4;
+  margin-left: 0.75rem;
+}
+
+.section-password__border {
+  border-radius: 0.75rem;
+  border: var(--border-sm);
+  padding: 1.5rem 2.625rem 1.875rem;
+}
+
+.head__hr {
+  margin-bottom: 1.5rem;
+}
+
+.mb__big {
+  margin-bottom: 2.625rem !important;
+}
+.form__profile button,
+.form__change__password button {
+  padding: 0.75rem 1.875rem;
+}
+
+.img__input-field {
+  /* width: calc(100% - 204px); */
+  width: 13.75rem;
+}
+
+.img__photo-field {
+  width: 11.25rem;
+  height: 11.25rem;
+  border-radius: 0.5rem;
+  background-color: var(--light-color);
+  margin-right: 1.5rem;
+}
+
+.img__photo-field img {
+  width: 100%;
+  border-radius: 0.5rem;
+  object-fit: cover;
+  height: 100%;
+  object-position: center;
+}
+
+.input-group__photo {
+  display: flex;
+}
+
+.form__control__photo {
+  width: 0.1px;
+  height: 0.1px;
+  opacity: 0;
+  overflow: hidden;
+  position: absolute;
+  z-index: -1;
+}
+
+.form__label__photo {
+  cursor: pointer;
+  padding: 0.75rem 2.25rem;
+}
+
+#photo-notice {
+  max-width: 15rem;
+  margin-top: 1.25rem;
+  display: block;
+}
+
+#alert-wrong-photo .color__danger {
+  padding: 1rem;
+  border-radius: var(--radius-sm);
+  background-color: rgba(242, 89, 97, 0.1);
+}
+
+/* password hide */
+#oldPassword,
+#newPassword,
+#newPasswordConfirm {
+  padding-right: 3rem !important;
+}
+
+#toggleOldPassword svg,
+#toggleNewPassword svg,
+#toggleNewPasswordConfirm svg {
+  z-index: 99;
+  color: rgba(79, 79, 79, 0.25) !important;
+}
+
+form .position-relative .icon__hide__password {
+  top: 3rem;
+  right: 1.5rem;
+  font-size: 1rem;
+  position: absolute;
+  transition: var(--trans-m);
+}
+
+@media screen and (max-width: 991px) {
+  .profile__section {
+    flex-direction: column;
+  }
+
+  .profile__section-profile {
+    margin-right: 0;
+    margin-bottom: 1.5rem;
+  }
+
+  .profile__section-password {
+    margin-left: 0;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .input-group__photo {
+    flex-direction: column;
+  }
+
+  .img__input-photo,
+  .form__label__photo {
+    margin-bottom: 1rem;
+  }
+
+  .img__input-field {
+    width: 100%;
+  }
+
+  #photo-notice {
+    margin-top: 0;
+    max-width: 100%;
+  }
+
+  .img__photo-field {
+    width: 5rem;
+    height: 5rem;
+  }
+}
+
+@media screen and (max-width: 576px) {
+  .mb__big {
+    margin-bottom: 1.875rem !important;
+  }
+
+  .form__profile button,
+  .form__change__password button,
+  .form__label__photo {
+    padding: 0.5rem 0.635rem;
+  }
+
+  .profile__section-profile,
+  .section-password__border {
+    padding: 1.5rem 1.5rem 1.625rem;
+  }
+}

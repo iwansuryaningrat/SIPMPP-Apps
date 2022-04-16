@@ -23,7 +23,7 @@
                     </li>
                     <!-- unit -->
                     <li>
-                        <a href="/leader/units" class="nav__list__link <?php if ($tab == "unit") : echo 'active';
+                        <a href="/leader/units" class="nav__list__link <?php if ($tab == "units") : echo 'active';
                                                                         endif; ?>">
                             <i class="fa-solid fa-building-columns"></i>
                             <span>Unit</span>

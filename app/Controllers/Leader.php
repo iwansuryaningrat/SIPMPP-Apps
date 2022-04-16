@@ -100,12 +100,12 @@ class Leader extends BaseController
         }
 
         $data = [
-            'title' => 'Dashboard SIPMPP | SIPMPP UNDIP ' . $this->thisTahun,
+            'title' => 'Dashboard Leader | SIPMPP UNDIP ' . $this->thisTahun,
             'data_user' => $data_user,
             'tab' => 'home',
             'tahun' => $data_user['tahun'],
             'header' => 'header__big',
-            'css' => 'styles-dashboard.css',
+            'css' => 'styles-leader-dashboard.css',
             'tahunsession' => $this->tahun,
             'indukpersen' => $indukpersen,
             'dataprogresstandar' => $dataprogresstandar,
@@ -122,15 +122,37 @@ class Leader extends BaseController
     {
         $data_user = $this->data_user;
         $data = [
-            'title' => 'Dashboard SIPMPP | SIPMPP UNDIP ' . $this->thisTahun,
+            'title' => 'Datar Unit | SIPMPP UNDIP ' . $this->thisTahun,
             'data_user' => $data_user,
             'tab' => 'units',
             'tahun' => $data_user['tahun'],
-            'header' => 'header__big',
-            'css' => 'styles-dashboard.css',
+            'header' => 'header__mini',
+            'css' => 'styles-leader-unit.css',
             'tahunsession' => $this->tahun,
         ];
 
         return view('leader/unit', $data);
+    }
+
+    // Profile Method
+    public function profile()
+    {
+        $data_user = $this->data_user;
+        $user = $this->usersModel->getUserByEmail($data_user['email']);
+
+        $data = [
+            'title' => 'Profile | SIPMPP UNDIP ' . $this->thisTahun,
+            'usersession' => $data_user,
+            'data_user' => $data_user,
+            'user' => $user,
+            'tab' => 'profile',
+            'header' => 'header__mini header__profile',
+            'css' => 'styles-leader-profile.css',
+            'tahun' => $data_user['tahun'],
+            'tahunsession' => $this->tahun,
+            'cssCustom' => '',
+        ];
+
+        return view('leader/profile', $data);
     }
 }

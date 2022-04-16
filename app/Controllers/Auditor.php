@@ -79,7 +79,7 @@ class Auditor extends BaseController
         $i = 1;
 
         $data = [
-            'title' => 'Dashboard SIPMPP | SIPMPP UNDIP 2022',
+            'title' => 'Dashboard Auditor | SIPMPP UNDIP 2022',
             'data_user' => $data_user,
             'i' => $i,
             'tab' => 'home',

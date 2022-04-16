@@ -458,7 +458,8 @@ label.error {
   margin-bottom: 0.15rem;
 }
 
-.nav-profile__desc #profileEmail {
+.nav-profile__desc #profileEmail,
+.nav-profile__desc #profileStatus {
   font-size: 0.75rem;
 
   margin-bottom: 0;

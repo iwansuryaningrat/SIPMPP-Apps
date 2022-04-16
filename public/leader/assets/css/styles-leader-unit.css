@@ -1,0 +1,53 @@
+@import url(styles-leader.css);
+/* table */
+.table__unit__content tbody tr:hover {
+  background-color: rgba(38, 48, 77, 0.1) !important;
+}
+
+.table__unit__content tr th:first-child,
+.table__unit__content tr td:first-child,
+.table__unit__content tr th:last-child,
+.table__unit__content tr td:last-child {
+  text-align: center;
+}
+
+.table__unit__content thead tr th,
+.table__unit__content tbody tr td {
+  padding-right: 1.5rem;
+  padding-left: 1.5rem;
+}
+
+.table__unit__content tbody tr:last-child {
+  border-bottom: none;
+  border-bottom-style: hidden;
+}
+
+.table__unit-number {
+  width: 10%;
+}
+
+.table__unit-aksi {
+  width: 15%;
+  min-width: 6.5rem;
+}
+
+.table__unit-namaunit {
+  width: 70%;
+  min-width: 11.25rem;
+}
+
+.sipmpp__table tr td .edit__data__induk__icon svg {
+  color: rgba(21, 114, 232, 1);
+}
+
+.sipmpp__table tr td .delete__data__induk__icon svg {
+  color: var(--danger-color);
+}
+
+@media screen and (max-width: 991px) {
+  .table__unit__content thead tr th,
+  .table__unit__content tbody tr td {
+    padding-right: 0.875rem;
+    padding-left: 0.875rem;
+  }
+}

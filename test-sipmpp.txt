@@ -80,9 +80,9 @@
 - Responsiveness pages
 - Responsiveness tables
 - Validation form
-- Title page
-- Pagination style link
+- Title page (DONE)
+- Pagination style link (DONE)
 - Check link
-- Check console.log
-- Shadow-none button
-- Button lihat password
+- Check console.log (DONE)
+- Shadow-none button (DONE)
+- Button lihat password (DONE)
