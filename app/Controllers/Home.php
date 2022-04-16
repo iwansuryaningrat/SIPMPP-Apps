@@ -335,22 +335,29 @@ class Home extends BaseController
 
         // Dokumen handler
         $dokumen = $this->request->getFile('dokumen');
-        if ($dokumen->getError() == 4) {
-            return redirect()->to('/home/indikatorform/' . $kategori_id . '/' . $standar_id . '/' . $indikator_id);
+        // $dokumen = $this->request->getPost('dokumen');
+        $err = $dokumen->getErrorString();
+        if ($err = "No file was uploaded.") {
+            $namadokumen = $datapenilaian['dokumen'];
         } else {
-            $namadokumen = $dokumen->getMTime() . '-' . $dokumen->getName();
-            // dd($namadokumen);
-            $dokumen->move('dokumen/', $namadokumen);
-        };
+            if ($dokumen->getError() == 4) {
+                return redirect()->to('/home/indikatorform/' . $kategori_id . '/' . $standar_id . '/' . $indikator_id);
+            } else {
+                $namadokumen = $dokumen->getMTime() . '-' . $dokumen->getName();
+                // dd($namadokumen);
+                $dokumen->move('dokumen/', $namadokumen);
+            };
+        }
 
         $data = [
             'nilai_input' => $nilai_input,
             'dokumen' => $namadokumen,
             'keterangan' => $keterangan,
             'status' => $status,
-            'hasil' => $hasil,
-            'nilai_akhir' => $nilai_akhir
+            'hasil' => round($hasil, 2),
+            'nilai_akhir' => round($nilai_akhir, 2)
         ];
+        // dd($data);
 
         $this->penilaianModel->updatePenilaian($unit_id, $tahun, $standar_id, $kategori_id, $indikator_id, $data);
 
