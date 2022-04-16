@@ -65,6 +65,21 @@ class Admin extends BaseController
     {
         $usersession = $this->data_user;
         $units = $this->unitsModel->findAll();
+        $kategori = $this->kategoriModel->findAll();
+        $counter = [];
+        foreach ($kategori as $k) {
+            $induk = count($this->dataIndukModel->getIndukByKategoriId($k['kategori_id']));
+            $standar = count($this->standarModel->getStandarByKategoriId($k['kategori_id']));
+            $indikator = count($this->indikatorModel->getIndikatorByKategoriId($k['kategori_id']));
+            // dd($induk, $standar, $indikator);
+            $counter[] = [
+                'kategori' => $k['nama_kategori'],
+                'induk' => $induk,
+                'standar' => $standar,
+                'indikator' => $indikator,
+            ];
+        }
+
 
         $data = [
             'title' => 'Dashboard Admin | SIPMPP UNDIP ' . $this->thisTahun,
@@ -74,6 +89,7 @@ class Admin extends BaseController
             'i' => $this->i,
             'usersession' => $usersession,
             'units' => $units,
+            'counter' => $counter,
             'tahun' => $usersession['tahun'],
             'tahunsession' => $this->tahun,
             'cssCustom' => '',

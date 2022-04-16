@@ -18,10 +18,10 @@
 - Doc Preview (User) (Just Can Download It) (Done)
 - Dashboard Page (Same With User Page) (Done)
 - Report Page (Same With User Page) (Done)
+- counting table daftar kategori on dashboard page (admin) (Done)
 
 * Admin Page
 - edit indikator action belum bisa (Kurang Update Data method)
-- counting table daftar kategori do dashboard page (admin)
 - UNDO after add data (all form)
 - ADD KATEGORI (admin) bahaya!! mempengaruhi panel, id panel, nama target panel
 - EDIT KATEGORI (admin) bahaya!! mempengaruhi panel, id panel, nama target panel

@@ -13,10 +13,10 @@
           <?php // uses regex that accepts any word character or hyphen in last name
           function split_name($name)
           {
-              $name = trim($name);
-              $last_name = (strpos($name, ' ') === false) ? '' : preg_replace('#.*\s([\w-]*)$#', '$1', $name);
-              $first_name = trim(preg_replace('#' . preg_quote($last_name, '#') . '#', '', $name));
-              return array($first_name, $last_name);
+            $name = trim($name);
+            $last_name = (strpos($name, ' ') === false) ? '' : preg_replace('#.*\s([\w-]*)$#', '$1', $name);
+            $first_name = trim(preg_replace('#' . preg_quote($last_name, '#') . '#', '', $name));
+            return array($first_name, $last_name);
           }
           echo split_name($usersession['nama'])[0];
           ?>
@@ -44,12 +44,12 @@
           <tbody>
 
             <?php foreach ($units as $unit) : ?>
-            <tr>
-              <td><?= $i; ?>
-              </td>
-              <td><?= $unit['nama_unit']; ?>
-              </td>
-            </tr>
+              <tr>
+                <td><?= $i; ?>
+                </td>
+                <td><?= $unit['nama_unit']; ?>
+                </td>
+              </tr>
             <?php $i++;
             endforeach; ?>
 
@@ -75,20 +75,19 @@
             </tr>
           </thead>
           <tbody>
-            <tr>
-              <td>1</td>
-              <td>Penelitian</td>
-              <td>20</td>
-              <td>15</td>
-              <td>30</td>
-            </tr>
-            <tr>
-              <td>2</td>
-              <td>Pengabdian Masyarakat</td>
-              <td>18</td>
-              <td>12</td>
-              <td>24</td>
-            </tr>
+
+            <?php $i = 1;
+            foreach ($counter as $data) : ?>
+              <tr>
+                <td><?= $i; ?></td>
+                <td><?= $data['kategori']; ?></td>
+                <td><?= $data['induk']; ?></td>
+                <td><?= $data['standar']; ?></td>
+                <td><?= $data['indikator']; ?></td>
+              </tr>
+            <?php $i++;
+            endforeach; ?>
+
           </tbody>
         </table>
       </div>

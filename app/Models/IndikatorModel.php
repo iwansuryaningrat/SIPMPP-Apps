@@ -53,4 +53,12 @@ class IndikatorModel extends Model
             ->where('standar_id', $standar_id)
             ->update($data);
     }
+
+    // Get Indikator By Kategori_id
+    public function getIndikatorByKategoriId($kategori_id)
+    {
+        return $this->select('indikator.*')
+            ->where('indikator.kategori_id', $kategori_id)
+            ->findAll();
+    }
 }
