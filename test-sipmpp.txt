@@ -20,11 +20,11 @@
 - Report Page (Same With User Page) (Done)
 - counting table daftar kategori on dashboard page (admin) (Done)
 - EDIT KATEGORI (admin) bahaya!! mempengaruhi panel, id panel, nama target panel (Just Edit Name, Panel Tetap Sama) (DONE)
+- ADD KATEGORI (admin) bahaya!! mempengaruhi panel, id panel, nama target panel (Just Can Add, Panel tidak bisa tambah otomatis, harus manual) (Done)
 
 * Admin Page
 - edit indikator action belum bisa (Kurang Update Data method)
 - UNDO after add data (all form)
-- ADD KATEGORI (admin) bahaya!! mempengaruhi panel, id panel, nama target panel
 
 * Auditor Page
 
