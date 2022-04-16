@@ -181,15 +181,15 @@
 <!-- Standar 1 -->
 <?php foreach ($stats['PEN'] as $stat) : ?>
   <script>
-    const labelsPEN <?= $stat['kode'] ?> = [
+    const labelsPEN<?= $stat['kode'] ?> = [
       <?php $i = 1;
       foreach ($stat['namaindikator'] as $key => $value) : ?> 'Indikator <?= $i; ?>',
       <?php $i++;
       endforeach; ?>
     ];
 
-    const dataPEN <?= $stat['kode'] ?> = {
-      labels: labelsPEN <?= $stat['kode'] ?>,
+    const dataPEN<?= $stat['kode'] ?> = {
+      labels: labelsPEN<?= $stat['kode'] ?>,
       datasets: [{
         label: 'Nilai Indikator',
         backgroundColor: 'rgb(15, 22, 67)',
@@ -202,9 +202,9 @@
       }]
     };
 
-    const configPEN <?= $stat['kode'] ?> = {
+    const configPEN<?= $stat['kode'] ?> = {
       type: 'bar',
-      data: dataPEN <?= $stat['kode'] ?>,
+      data: dataPEN<?= $stat['kode'] ?>,
       options: {
         indexAxis: 'y',
         elements: {
@@ -232,10 +232,10 @@
       },
     };
 
-    const barChartPEN <?= $stat['kode'] ?> = new Chart(
+    const barChartPEN<?= $stat['kode'] ?> = new Chart(
       document.getElementById(
         'barChartPEN<?= $stat['kode'] ?>'),
-      configPEN <?= $stat['kode'] ?>
+      configPEN<?= $stat['kode'] ?>
     );
   </script>
 <?php endforeach; ?>
@@ -244,15 +244,15 @@
 <?php foreach ($stats['PPM'] as $stat) : ?>
   <!-- Standar 1 -->
   <script>
-    const leblsPPM <?= $stat['kode'] ?> = [
+    const leblsPPM<?= $stat['kode'] ?> = [
       <?php $i = 1;
       foreach ($stat['namaindikator'] as $key => $value) : ?> 'Indikator <?= $i; ?>',
       <?php $i++;
       endforeach; ?>
     ];
 
-    const dataPPM <?= $stat['kode'] ?> = {
-      labels: leblsPPM <?= $stat['kode'] ?>,
+    const dataPPM<?= $stat['kode'] ?> = {
+      labels: leblsPPM<?= $stat['kode'] ?>,
       datasets: [{
         label: 'Nilai Indikator',
         backgroundColor: 'rgb(15, 22, 67)',
@@ -265,9 +265,9 @@
       }]
     };
 
-    const configPPM <?= $stat['kode'] ?> = {
+    const configPPM<?= $stat['kode'] ?> = {
       type: 'bar',
-      data: dataPPM <?= $stat['kode'] ?>,
+      data: dataPPM<?= $stat['kode'] ?>,
       options: {
         indexAxis: 'y',
         elements: {
@@ -302,10 +302,10 @@
       },
     };
 
-    const barChartPPM <?= $stat['kode'] ?> = new Chart(
+    const barChartPPM<?= $stat['kode'] ?> = new Chart(
       document.getElementById(
         'barChartPPM<?= $stat['kode'] ?>'),
-      configPPM <?= $stat['kode'] ?>
+      configPPM<?= $stat['kode'] ?>
     );
   </script>
 <?php endforeach; ?>
