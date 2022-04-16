@@ -16,6 +16,8 @@
 - edit data induk (admin) (Done)
 - penilaian (admin) (Done)
 - Doc Preview (User) (Just Can Download It) (Done)
+- Dashboard Page (Same With User Page) (Done)
+- Report Page (Same With User Page) (Done)
 
 * Admin Page
 - edit indikator action belum bisa (Kurang Update Data method)
@@ -25,8 +27,6 @@
 - EDIT KATEGORI (admin) bahaya!! mempengaruhi panel, id panel, nama target panel
 
 * Auditor Page
-- Dashboard Page (Same With User Page)
-- Report Page (Same With User Page)
 
 * USER Page
 
