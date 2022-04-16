@@ -35,28 +35,28 @@
     <div class="row mb-3">
       <label for="indikator" class="col-lg-3 col-md-3 col-sm-4 col-form-label form__label">Indikator</label>
       <div class="col-lg-6 col-md-9 col-sm-8">
-        <textarea class="form-control form__control shadow-none" id="indikator" name="indikator" cols="30" rows="3" disabled required><?= $datapenilaian['nama_indikator']; ?></textarea>
+        <textarea class="form-control form__control shadow-none" id="indikator" name="indikator" cols="30" rows="3" disabled><?= $datapenilaian['nama_indikator']; ?></textarea>
       </div>
     </div>
     <!-- target -->
     <div class="row mb-3">
       <label for="target" class="col-lg-3 col-md-3 col-sm-4 col-form-label form__label">Target</label>
       <div class="col-lg-6 col-md-9 col-sm-8">
-        <textarea class="form-control form__control shadow-none" name="target" id="target" cols="30" rows="3" disabled required><?= $datapenilaian['target']; ?></textarea>
+        <textarea class="form-control form__control shadow-none" name="target" id="target" cols="30" rows="3" disabled><?= $datapenilaian['target']; ?></textarea>
       </div>
     </div>
     <!-- kebutuhan data -->
     <div class="row mb-3 mb-sm-4">
       <label for="kebutuhan-data" class="col-lg-3 col-md-3 col-sm-4 col-form-label form__label">Kebutuhan Data</label>
       <div class="col-lg-6 col-md-9 col-sm-8">
-        <textarea class="form-control form__control shadow-none" id="kebutuhan-data" name="kebutuhan-data" cols="30" rows="3" disabled required><?= $datapenilaian['nama_induk']; ?></textarea>
+        <textarea class="form-control form__control shadow-none" id="kebutuhan-data" name="kebutuhan-data" cols="30" rows="3" disabled><?= $datapenilaian['nama_induk']; ?></textarea>
       </div>
     </div>
     <!-- satuan -->
     <div class="row mb-3 mb-sm-4">
       <label for="satuan" class="col-lg-3 col-md-3 col-sm-4 col-form-label form__label">Satuan</label>
       <div class="col-lg-6 col-md-9 col-sm-8">
-        <input class="form-control form__control shadow-none" id="satuan" name="satuan" disabled required value="<?= $datapenilaian['satuan']; ?>" />
+        <input class="form-control form__control shadow-none" id="satuan" name="satuan" disabled value="<?= $datapenilaian['satuan']; ?>" />
       </div>
     </div>
     <!-- Hasil -->
@@ -67,14 +67,10 @@
           <select class="form-select form__select shadow-none" name="hasil" id="hasil" disabled>
             <option value="ADA / SESUAI" <?php if ($datapenilaian['nilai_input'] == 1) {
                                             echo 'selected';
-                                          } ?>>ADA
-              / SESUAI
-            </option>
+                                          } ?>>ADA / SESUAI</option>
             <option value="Tidak ADA / TIDAK SESUAI" <?php if ($datapenilaian['nilai_input'] == 0) {
                                                         echo 'selected';
-                                                      } ?>>Tidak
-              ADA / TIDAK SESUAI
-            </option>
+                                                      } ?>>Tidak ADA / TIDAK SESUAI</option>
           </select>
         </div>
       </div>
