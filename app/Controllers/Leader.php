@@ -100,8 +100,37 @@ class Leader extends BaseController
         }
 
         $data = [
-            'title' => 'Dashboard',
+            'title' => 'Dashboard SIPMPP | SIPMPP UNDIP ' . $this->thisTahun,
+            'data_user' => $data_user,
+            'tab' => 'home',
+            'tahun' => $data_user['tahun'],
+            'header' => 'header__big',
+            'css' => 'styles-dashboard.css',
+            'tahunsession' => $this->tahun,
+            'indukpersen' => $indukpersen,
+            'dataprogresstandar' => $dataprogresstandar,
+            'datanilaiPEN' => $datanilaiPEN,
+            'datanilaiPPM' => $datanilaiPPM,
+            'nilaiTahun' => $nilaiTahun,
         ];
+
         return view('leader/index', $data);
+    }
+
+    // Units Method
+    public function units()
+    {
+        $data_user = $this->data_user;
+        $data = [
+            'title' => 'Dashboard SIPMPP | SIPMPP UNDIP ' . $this->thisTahun,
+            'data_user' => $data_user,
+            'tab' => 'units',
+            'tahun' => $data_user['tahun'],
+            'header' => 'header__big',
+            'css' => 'styles-dashboard.css',
+            'tahunsession' => $this->tahun,
+        ];
+
+        return view('leader/unit', $data);
     }
 }

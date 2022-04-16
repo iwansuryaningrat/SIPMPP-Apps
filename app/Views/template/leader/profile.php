@@ -8,11 +8,10 @@
     </div>
     <div class="header__main-nav-profile">
         <div class="nav-profile__photo">
-            <img src="/profile/<?= $usersession['foto']; ?>"
-                alt="profile-picture" id="photo-dropdown" />
+            <img src="/profile/<?= $data_user['foto']; ?>" alt="profile-picture" id="photo-dropdown" />
         </div>
         <div class="nav-profile__desc">
-            <p id="profileName" class="ellipsis__text"><?= $usersession['nama']; ?>
+            <p id="profileName" class="ellipsis__text"><?= $data_user['nama']; ?>
             </p>
             <p id="profileStatus" class="ellipsis__text">Leader</p>
         </div>
@@ -28,18 +27,15 @@
         </p>
         <hr />
         <form action="/leader/switchtahun" method="POST" id="form-tahun-profile">
-            <label for="tahunProfile" class="form-label form__label__profile nav-dropdown__title"
-                id="form-tahun-profile-label">Tahun</label>
+            <label for="tahunProfile" class="form-label form__label__profile nav-dropdown__title" id="form-tahun-profile-label">Tahun</label>
             <div class="d-flex align-items-center">
                 <select name="tahun" id="tahunProfile" class="form-select form__select__profile shadow-none">
                     <?php foreach ($tahunsession as $data_tahun) : ?>
-                    <option
-                        value="<?= $data_tahun['tahun']; ?>"
-                        <?php if ($tahun == $data_tahun['tahun']) {
-    echo 'selected';
-} ?>>
-                        <?= $data_tahun['tahun']; ?>
-                    </option>
+                        <option value="<?= $data_tahun['tahun']; ?>" <?php if ($tahun == $data_tahun['tahun']) {
+                                                                            echo 'selected';
+                                                                        } ?>>
+                            <?= $data_tahun['tahun']; ?>
+                        </option>
                     <?php endforeach; ?>
                 </select>
             </div>

@@ -11,15 +11,15 @@
             <h1>Dashboard Leader Overview</h1>
             <p>Halo <span>
                     <?php // uses regex that accepts any word character or hyphen in last name
-          function split_name($name)
-          {
-              $name = trim($name);
-              $last_name = (strpos($name, ' ') === false) ? '' : preg_replace('#.*\s([\w-]*)$#', '$1', $name);
-              $first_name = trim(preg_replace('#' . preg_quote($last_name, '#') . '#', '', $name));
-              return array($first_name, $last_name);
-          }
-          echo split_name($data_user['nama'])[0];
-          ?>
+                    function split_name($name)
+                    {
+                        $name = trim($name);
+                        $last_name = (strpos($name, ' ') === false) ? '' : preg_replace('#.*\s([\w-]*)$#', '$1', $name);
+                        $first_name = trim(preg_replace('#' . preg_quote($last_name, '#') . '#', '', $name));
+                        return array($first_name, $last_name);
+                    }
+                    echo split_name($data_user['nama'])[0];
+                    ?>
                 </span>, selamat
                 datang kembali!</p>
         </div>
@@ -47,12 +47,7 @@
             </div>
             <div>
                 <div class="progress progress__content-progress-bar">
-                    <div class="progress-bar bg__dark-main unit__progressbar" role="progressbar"
-                        aria-valuenow="<?= $indukpersen; ?>"
-                        aria-valuemin="0" aria-valuemax="100"
-                        style="width: <?= $indukpersen; ?>%"
-                        data-bs-toggle="tooltip" data-bs-placement="top"
-                        title="<?= $indukpersen; ?>%"></div>
+                    <div class="progress-bar bg__dark-main unit__progressbar" role="progressbar" aria-valuenow="<?= $indukpersen; ?>" aria-valuemin="0" aria-valuemax="100" style="width: <?= $indukpersen; ?>%" data-bs-toggle="tooltip" data-bs-placement="top" title="<?= $indukpersen; ?>%"></div>
                 </div>
             </div>
         </div>
@@ -76,12 +71,7 @@
             </div>
             <div>
                 <div class="progress progress__content-progress-bar">
-                    <div class="progress-bar bg__dark-main unit__progressbar" role="progressbar"
-                        aria-valuenow="<?= $dataprogresstandar['persen'] ?>"
-                        aria-valuemin="0" aria-valuemax="100"
-                        style="width: <?= $dataprogresstandar['persen'] ?>%"
-                        data-bs-toggle="tooltip" data-bs-placement="top"
-                        title="<?= $dataprogresstandar['persen'] ?>%">
+                    <div class="progress-bar bg__dark-main unit__progressbar" role="progressbar" aria-valuenow="<?= $dataprogresstandar['persen'] ?>" aria-valuemin="0" aria-valuemax="100" style="width: <?= $dataprogresstandar['persen'] ?>%" data-bs-toggle="tooltip" data-bs-placement="top" title="<?= $dataprogresstandar['persen'] ?>%">
                     </div>
                 </div>
             </div>
@@ -131,15 +121,10 @@
                 </h5>
                 <div class="filter__panel mb-3">
                     <div class="nav nav-pills" id="pills-tab" role="tablist">
-                        <button class="btn filter__btn me-0 me-md-3 shadow-none active nav-link active mb-2"
-                            id="pills-spmi-penelitian" data-bs-toggle="pill"
-                            data-bs-target="#pills-table-spmi-penelitian" type="button" role="tab"
-                            aria-controls="pills-table-spmi-penelitian" aria-selected="true">
+                        <button class="btn filter__btn me-0 me-md-3 shadow-none active nav-link active mb-2" id="pills-spmi-penelitian" data-bs-toggle="pill" data-bs-target="#pills-table-spmi-penelitian" type="button" role="tab" aria-controls="pills-table-spmi-penelitian" aria-selected="true">
                             Penelitian
                         </button>
-                        <button class="btn filter__btn shadow-none nav-link mb-2" id="pills-spmi-pm"
-                            data-bs-toggle="pill" data-bs-target="#pills-table-spmi-pm" type="button" role="tab"
-                            aria-controls="pills-table-spmi-pm" aria-selected="false">
+                        <button class="btn filter__btn shadow-none nav-link mb-2" id="pills-spmi-pm" data-bs-toggle="pill" data-bs-target="#pills-table-spmi-pm" type="button" role="tab" aria-controls="pills-table-spmi-pm" aria-selected="false">
                             Pengabdian Masyarakat
                         </button>
                     </div>
@@ -148,8 +133,7 @@
 
             <div class="tab-content" id="pills-tabContent">
                 <!-- table penelitian -->
-                <div class="tab-pane fade show active" id="pills-table-spmi-penelitian" role="tabpanel"
-                    aria-labelledby="pills-spmi-penelitian">
+                <div class="tab-pane fade show active" id="pills-table-spmi-penelitian" role="tabpanel" aria-labelledby="pills-spmi-penelitian">
                     <div class="table__unit table-responsive">
                         <table class="table table__unit__content sipmpp__table-content table-hover">
                             <thead class="bg__light">
@@ -162,27 +146,22 @@
                             <tbody>
 
                                 <?php $Standard = $dataprogresstandar['standar'];
-                foreach ($Standard as $standar) :
-                  if ($standar['kategori'] == 'PEN') : ?>
-                                <tr>
-                                    <td><?= $standar['standar']; ?>
-                                    </td>
-                                    <td><?= $standar['nama_standar']; ?>
-                                    </td>
-                                    <td>
-                                        <div class="progress table__unit__progress">
-                                            <div class="progress-bar bg__dark-main unit__progressbar" role="progressbar"
-                                                aria-valuenow="<?= round($standar['persen'], 2); ?>"
-                                                aria-valuemin="0" aria-valuemax="100"
-                                                style="width: <?= round($standar['persen'], 2); ?>%"
-                                                data-bs-toggle="tooltip" data-bs-placement="top"
-                                                title="<?= round($standar['persen'], 2); ?>%">
-                                            </div>
-                                        </div>
-                                    </td>
-                                </tr>
+                                foreach ($Standard as $standar) :
+                                    if ($standar['kategori'] == 'PEN') : ?>
+                                        <tr>
+                                            <td><?= $standar['standar']; ?>
+                                            </td>
+                                            <td><?= $standar['nama_standar']; ?>
+                                            </td>
+                                            <td>
+                                                <div class="progress table__unit__progress">
+                                                    <div class="progress-bar bg__dark-main unit__progressbar" role="progressbar" aria-valuenow="<?= round($standar['persen'], 2); ?>" aria-valuemin="0" aria-valuemax="100" style="width: <?= round($standar['persen'], 2); ?>%" data-bs-toggle="tooltip" data-bs-placement="top" title="<?= round($standar['persen'], 2); ?>%">
+                                                    </div>
+                                                </div>
+                                            </td>
+                                        </tr>
                                 <?php endif;
-                endforeach; ?>
+                                endforeach; ?>
 
                             </tbody>
                         </table>
@@ -203,27 +182,22 @@
                             <tbody>
 
                                 <?php $Standard = $dataprogresstandar['standar'];
-                foreach ($Standard as $standar) :
-                  if ($standar['kategori'] == 'PPM') : ?>
-                                <tr>
-                                    <td><?= $standar['standar']; ?>
-                                    </td>
-                                    <td><?= $standar['nama_standar']; ?>
-                                    </td>
-                                    <td>
-                                        <div class="progress table__unit__progress">
-                                            <div class="progress-bar bg__dark-main unit__progressbar" role="progressbar"
-                                                aria-valuenow="<?= round($standar['persen'], 2); ?>"
-                                                aria-valuemin="0" aria-valuemax="100"
-                                                style="width: <?= round($standar['persen'], 2); ?>%"
-                                                data-bs-toggle="tooltip" data-bs-placement="top"
-                                                title="<?= round($standar['persen'], 2); ?>%">
-                                            </div>
-                                        </div>
-                                    </td>
-                                </tr>
+                                foreach ($Standard as $standar) :
+                                    if ($standar['kategori'] == 'PPM') : ?>
+                                        <tr>
+                                            <td><?= $standar['standar']; ?>
+                                            </td>
+                                            <td><?= $standar['nama_standar']; ?>
+                                            </td>
+                                            <td>
+                                                <div class="progress table__unit__progress">
+                                                    <div class="progress-bar bg__dark-main unit__progressbar" role="progressbar" aria-valuenow="<?= round($standar['persen'], 2); ?>" aria-valuemin="0" aria-valuemax="100" style="width: <?= round($standar['persen'], 2); ?>%" data-bs-toggle="tooltip" data-bs-placement="top" title="<?= round($standar['persen'], 2); ?>%">
+                                                    </div>
+                                                </div>
+                                            </td>
+                                        </tr>
                                 <?php endif;
-                endforeach; ?>
+                                endforeach; ?>
 
                             </tbody>
                         </table>
@@ -244,15 +218,10 @@
                 </h5>
                 <div class="filter__panel">
                     <div class="nav nav-pills" id="pills-tab" role="tablist">
-                        <button class="btn filter__btn-chart me-0 me-md-3 shadow-none active nav-link active mb-3"
-                            id="pillsStandarPenelitian" data-bs-toggle="pill"
-                            data-bs-target="#pillsChartStandarPenelitian" type="button" role="tab"
-                            aria-controls="pillsChartStandarPenelitian" aria-selected="true">
+                        <button class="btn filter__btn-chart me-0 me-md-3 shadow-none active nav-link active mb-3" id="pillsStandarPenelitian" data-bs-toggle="pill" data-bs-target="#pillsChartStandarPenelitian" type="button" role="tab" aria-controls="pillsChartStandarPenelitian" aria-selected="true">
                             Penelitian
                         </button>
-                        <button class="btn filter__btn-chart shadow-none nav-link mb-3" id="pillsStandarPengabdian"
-                            data-bs-toggle="pill" data-bs-target="#pillsChartStandarPengabdian" type="button" role="tab"
-                            aria-controls="pillsChartStandarPengabdian" aria-selected="false">
+                        <button class="btn filter__btn-chart shadow-none nav-link mb-3" id="pillsStandarPengabdian" data-bs-toggle="pill" data-bs-target="#pillsChartStandarPengabdian" type="button" role="tab" aria-controls="pillsChartStandarPengabdian" aria-selected="false">
                             Pengabdian Masyarakat
                         </button>
                     </div>
@@ -261,16 +230,14 @@
             <hr />
             <div class="tab-content" id="pills-tabContent">
                 <!-- penelitian -->
-                <div class="tab-pane fade show active" id="pillsChartStandarPenelitian" role="tabpanel"
-                    aria-labelledby="pillsStandarPenelitian">
+                <div class="tab-pane fade show active" id="pillsChartStandarPenelitian" role="tabpanel" aria-labelledby="pillsStandarPenelitian">
                     <div class="chart__container">
                         <canvas id="chartStandarDoughnutPenelitian"></canvas>
                     </div>
                 </div>
 
                 <!-- pengabdian masyarakat -->
-                <div class="tab-pane fade" id="pillsChartStandarPengabdian" role="tabpanel"
-                    aria-labelledby="pillsStandarPengabdian">
+                <div class="tab-pane fade" id="pillsChartStandarPengabdian" role="tabpanel" aria-labelledby="pillsStandarPengabdian">
                     <div class="chart__container">
                         <canvas id="chartStandarDoughnutPengabdian"></canvas>
                     </div>
@@ -286,10 +253,8 @@
             <div class="chart__container">
                 <canvas id="chartStandarLine"></canvas>
                 <div class="legends__chart">
-                    <button id="legendsPenelitian" class="legends__item btn shadow-none ellipsis__text"
-                        onclick="toggleDataChart(0)"></button>
-                    <button id="legendsPengabdian" class="legends__item btn shadow-none ellipsis__text"
-                        onclick="toggleDataChart(1)"></button>
+                    <button id="legendsPenelitian" class="legends__item btn shadow-none ellipsis__text" onclick="toggleDataChart(0)"></button>
+                    <button id="legendsPengabdian" class="legends__item btn shadow-none ellipsis__text" onclick="toggleDataChart(1)"></button>
                 </div>
             </div>
         </div>
@@ -309,8 +274,8 @@
     // setup block
     const labelsDoughnutPenelitian = [
         <?php foreach ($datanilaiPEN['standar'] as $PEN) {
-                    echo '"' . $PEN . '",';
-                } ?>
+            echo '"' . $PEN . '",';
+        } ?>
     ];
 
     const dataDoughnutPenelitian = {
@@ -433,8 +398,8 @@
     // setup block
     const labelsDoughnutPengabdian = [
         <?php foreach ($datanilaiPPM['standar'] as $PPM) {
-                    echo '"' . $PPM . '",';
-                } ?>
+            echo '"' . $PPM . '",';
+        } ?>
     ];
 
     const dataDoughnutPengabdian = {
@@ -556,8 +521,8 @@
     // ========== CONFIG CHART LINE ==========
     const labelsLine = [
         <?php foreach ($nilaiTahun['tahun'] as $tahun) {
-                    echo '"' . $tahun . '",';
-                } ?>
+            echo '"' . $tahun . '",';
+        } ?>
     ];
 
     const dataLine = {
@@ -567,8 +532,8 @@
                 label: 'Penelitian',
                 data: [
                     <?php foreach ($nilaiTahun['nilai'] as $nilaitahunpen) {
-                    echo '"' . $nilaitahunpen['pen']['avg'] . '",';
-                } ?>
+                        echo '"' . $nilaitahunpen['pen']['avg'] . '",';
+                    } ?>
                 ],
                 borderColor: 'rgba(73, 74, 106, 1)',
                 backgroundColor: function gradientGenerate(chartStandarLine) {
@@ -583,8 +548,8 @@
                 label: 'Pengabdian Masyarakat',
                 data: [
                     <?php foreach ($nilaiTahun['nilai'] as $nilaitahunppm) {
-                    echo '"' . $nilaitahunppm['ppm']['avg'] . '",';
-                } ?>
+                        echo '"' . $nilaitahunppm['ppm']['avg'] . '",';
+                    } ?>
                 ],
                 borderColor: 'rgba(178, 99, 87, 1)',
                 backgroundColor: function gradientGenerate(chartStandarLine) {
