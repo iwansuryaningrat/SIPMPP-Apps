@@ -58,7 +58,7 @@
 
         <!-- footer sidebar -->
         <div class="sidebar__content-footer">
-            <p class="mb-4">@sipmppundip . <span id="sidebarfooterYearNow"></span></p>
+            <p class="mb-4">@auditor.sipmppundip . <span id="sidebarfooterYearNow"></span></p>
             <p>
                 Sistem Informasi Penjaminan Mutu Penelitian dan Pengabdian
                 Universitas Diponegoro
