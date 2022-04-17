@@ -93,31 +93,27 @@
 <div class="recap__content row">
     <!-- left -->
     <div class="recap__content-link col-lg-4 col-12">
-        <div class="recap__link-card shadow__box-md">
-            <div class="recap__link-card__body">
-                <img src="/assets/img/penelitian-logo.svg" alt="penelitian-logo" />
-                <h5 class="card__title mb-0 ellipsis__text">Penelitian</h5>
-            </div>
-            <div class="recap__link-card__footer">
-                <a href="/home/standar">
-                    <span class="ellipsis__text">Selengkapnya</span>
-                    <i class="bi bi-arrow-right-circle d-flex"></i>
-                </a>
-            </div>
-        </div>
-
-        <div class="recap__link-card shadow__box-md">
-            <div class="recap__link-card__body">
-                <img src="/assets/img/pengabdian-masyarakat-logo.svg" alt="penelitian-logo" />
-                <h5 class="card__title mb-0 ellipsis__text">
-                    Pengabdian Masyarakat
-                </h5>
-            </div>
-            <div class="recap__link-card__footer">
-                <a href="/home/standar">
-                    <span class="ellipsis__text">Selengkapnya</span>
-                    <i class="bi bi-arrow-right-circle d-flex"></i>
-                </a>
+        <div class="recap__link-card shadow__box-sm">
+            <div class="recap__link-card__body kategori">
+                <h5 class="card__title">Daftar Kategori</h5>
+                <table class="table sipmpp__table-content table-hover table__kategori">
+                    <thead class="bg-white">
+                        <tr>
+                            <th class="kategori__number">#</th>
+                            <th class="kategori__nama">Nama</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>1</td>
+                            <td>Penelitian</td>
+                        </tr>
+                        <tr>
+                            <td>2</td>
+                            <td>Pengabdian Masyarakat</td>
+                        </tr>
+                    </tbody>
+                </table>
             </div>
         </div>
     </div>
@@ -295,6 +291,72 @@
         </div>
     </div>
 </div>
+
+<!-- indikator chart content -->
+<div class="indikator__content">
+    <div class="indikator__content-card shadow__box-sm">
+        <div class="content-indikator__title">
+            <h5 class="card__title mb-3">Rekap Indikator <span><?= $data_user['tahun']; ?></span>
+            </h5>
+            <div class="filter__panel mb-3">
+                <div class="nav nav-pills" id="pills-tab" role="tablist">
+                    <button class="btn filter__btn-indikator me-0 me-md-3 shadow-none active nav-link active mb-2"
+                        id="piils-indikator-penelitian" data-bs-toggle="pill"
+                        data-bs-target="#pills-chart-indikator-penelitian" type="button" role="tab"
+                        aria-controls="pills-chart-indikator-penelitian" aria-selected="true">
+                        Penelitian
+                    </button>
+                    <button class="btn filter__btn-indikator shadow-none nav-link mb-2" id="pills-indikator-pm"
+                        data-bs-toggle="pill" data-bs-target="#pills-chart-indikator-pm" type="button" role="tab"
+                        aria-controls="pills-chart-indikator-pm" aria-selected="false">
+                        Pengabdian Masyarakat
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <div class="tab-content" id="pills-tabContent">
+            <!-- table penelitian -->
+            <div class="tab-pane fade show active" id="pills-chart-indikator-penelitian" role="tabpanel"
+                aria-labelledby="piils-indikator-penelitian">
+                <div class="indikator__kategori-title">
+                    <h3>Penelitian</h3>
+                    <form action="" method="POST">
+                        <div class="form-group form-group__standar" id="formStandarPenelitian">
+                            <label for="filterStandarPenelitian"
+                                class="form-label form__label me-3 mb-0">Standar:</label>
+                            <select name="filterStandarPenelitian" id="filterStandarPenelitian"
+                                class="form-select form__select form-select__standar shadow-none">
+                                <option value="">S1</option>
+                                <option value="">S2</option>
+                            </select>
+                        </div>
+                    </form>
+                </div>
+            </div>
+
+            <!-- table pengabdian masyarakat -->
+            <div class="tab-pane fade" id="pills-chart-indikator-pm" role="tabpanel"
+                aria-labelledby="pills-indikator-pm">
+                <div class="indikator__kategori-title">
+                    <h3>Pengabdian Masyarakat</h3>
+                    <form action="" method="POST">
+                        <div class="form-group form-group__standar" id="formStandarPengabdian">
+                            <label for="filterStandarPengabdian"
+                                class="form-label form__label me-3 mb-0">Standar:</label>
+                            <select name="filterStandarPengabdian" id="filterStandarPengabdian"
+                                class="form-select form__select form-select__standar shadow-none">
+                                <option value="">S1</option>
+                                <option value="">S2</option>
+                            </select>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
 
 <?= $this->endSection(); ?>
 
@@ -685,6 +747,17 @@
         $(".filter__btn-chart").click(function() {
             // remove classes from all
             $(".filter__btn-chart").removeClass("active");
+            // add class to the one we clicked
+            $(this).addClass("active");
+            // stop the page from jumping to the top
+            return false;
+        });
+    });
+
+    $(function() {
+        $(".filter__btn-indikator").click(function() {
+            // remove classes from all
+            $(".filter__btn-indikator").removeClass("active");
             // add class to the one we clicked
             $(this).addClass("active");
             // stop the page from jumping to the top

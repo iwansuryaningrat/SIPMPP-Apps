@@ -468,7 +468,7 @@ label.error {
 .nav-dropdown__title {
   font-weight: 600 !important;
 
-  margin-bottom: 1.125rem !important;
+  margin-bottom: 0.875rem !important;
 
   color: var(--black) !important;
 }

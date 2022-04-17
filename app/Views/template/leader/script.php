@@ -7,7 +7,9 @@
             e.target.id !== "photo-dropdown" &&
             e.target.id !== "form-tahun-profile" &&
             e.target.id !== "form-tahun-profile-label" &&
+            e.target.id !== "form-unit-profile-label" &&
             e.target.id !== "tahunProfile" &&
+            e.target.id !== "unitProfile" &&
             e.target.id !== "profileEmail" &&
             e.target.id !== "profileName" &&
             e.target.id !== "profileStatus"

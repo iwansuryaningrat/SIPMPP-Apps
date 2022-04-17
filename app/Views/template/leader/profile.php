@@ -8,7 +8,8 @@
     </div>
     <div class="header__main-nav-profile">
         <div class="nav-profile__photo">
-            <img src="/profile/<?= $data_user['foto']; ?>" alt="profile-picture" id="photo-dropdown" />
+            <img src="/profile/<?= $data_user['foto']; ?>"
+                alt="profile-picture" id="photo-dropdown" />
         </div>
         <div class="nav-profile__desc">
             <p id="profileName" class="ellipsis__text"><?= $data_user['nama']; ?>
@@ -27,17 +28,36 @@
         </p>
         <hr />
         <form action="/leader/switchtahun" method="POST" id="form-tahun-profile">
-            <label for="tahunProfile" class="form-label form__label__profile nav-dropdown__title" id="form-tahun-profile-label">Tahun</label>
-            <div class="d-flex align-items-center">
-                <select name="tahun" id="tahunProfile" class="form-select form__select__profile shadow-none">
-                    <?php foreach ($tahunsession as $data_tahun) : ?>
-                        <option value="<?= $data_tahun['tahun']; ?>" <?php if ($tahun == $data_tahun['tahun']) {
-                                                                            echo 'selected';
-                                                                        } ?>>
+            <!-- tahun -->
+            <div class="mb-3">
+                <label for="tahunProfile" class="form-label form__label__profile nav-dropdown__title"
+                    id="form-tahun-profile-label">Tahun</label>
+                <div class="d-flex align-items-center">
+                    <select name="tahun" id="tahunProfile" class="form-select form__select__profile shadow-none">
+                        <?php foreach ($tahunsession as $data_tahun) : ?>
+                        <option
+                            value="<?= $data_tahun['tahun']; ?>"
+                            <?php if ($tahun == $data_tahun['tahun']) {
+    echo 'selected';
+} ?>>
                             <?= $data_tahun['tahun']; ?>
                         </option>
-                    <?php endforeach; ?>
-                </select>
+                        <?php endforeach; ?>
+                    </select>
+                </div>
+            </div>
+
+            <!-- unit -->
+            <div class="mb-3">
+                <label for="unitProfile" class="form-label form__label__profile nav-dropdown__title"
+                    id="form-unit-profile-label">Unit</label>
+                <div class="d-flex align-items-center">
+                    <select name="unit" id="unitProfile" class="form-select form__select__profile shadow-none">
+                        <option value="">Unit 1</option>
+                        <option value="">Unit 2</option>
+                        <option value="">Unit 3</option>
+                    </select>
+                </div>
             </div>
         </form>
         <hr />
