@@ -23,6 +23,8 @@
 - ADD KATEGORI (admin) bahaya!! mempengaruhi panel, id panel, nama target panel (Just Can Add, Panel tidak bisa tambah otomatis, harus manual) (Done)
 - edit indikator action belum bisa (Done)
 - Add Daftar Unit at Unit Page (Done)
+- Fixing Filter (Done)
+- Fixing Dashboard Page (Done)
 
 * Admin Page
 - UNDO after add data (all form)
@@ -33,8 +35,6 @@
 - Fixing daftar penilaian after generated (PPM tidak Muncul)
 
 * Leader Page
-- Fixing Filter
-- Fixing Dashboard Page
 
 ========== KEKURANGAN FRONT END ==========
 Add SweetAlert2

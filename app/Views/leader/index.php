@@ -150,12 +150,12 @@
     $(document).ready(function() {
         $('#filterStandarPenelitian').change(function() {
             $('.PENIndikator').hide();
-            $('#PENS' + $(this).val() + 'Indikator').show();
+            $('#PEN' + $(this).val() + 'Indikator').show();
         });
 
         $('#filterStandarPengabdian').change(function() {
             $('.PPMIndikator').hide();
-            $('#PPMS' + $(this).val() + 'Indikator').show();
+            $('#PPM' + $(this).val() + 'Indikator').show();
         });
     });
 </script>

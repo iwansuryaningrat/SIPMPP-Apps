@@ -1,97 +1,68 @@
 <!-- PENGABDIAN -->
-<script>
-    const labelsPPMS1Indikator = ['Indikator 1', 'Indikator 2', 'Indikator 3', 'Indikator 4', 'Indikator 5'];
-    const labelsPPMS2Indikator = ['Indikator 1', 'Indikator 2', 'Indikator 3', 'Indikator 4', 'Indikator 5'];
+<?php foreach ($Stats['PPM'] as $stat) : ?>
+    <script>
+        const leblsPPM<?= $stat['kode'] ?>Indikator = [
+            <?php $i = 1;
+            foreach ($stat['namaindikator'] as $key => $value) : ?> 'Indikator <?= $i; ?>',
+            <?php $i++;
+            endforeach; ?>
+        ];
 
-    const dataPPMS1Indikator = {
-        labels: labelsPPMS1Indikator,
-        datasets: [{
-            label: 'Nilai Indikator',
-            backgroundColor: 'rgb(15, 22, 67)',
-            borderColor: 'rgba(255, 99, 132, 0)',
-            data: [10, 20, 30, 50, 80],
-        }]
-    };
+        const dataPPM<?= $stat['kode'] ?>Indikator = {
+            labels: leblsPPM<?= $stat['kode'] ?>Indikator,
+            datasets: [{
+                label: 'Nilai Indikator',
+                backgroundColor: 'rgb(15, 22, 67)',
+                borderColor: 'rgba(255, 99, 132, 0)',
+                data: [
+                    <?php foreach ($stat['nilai'] as $key => $value) : ?>
+                        <?= $value; ?>,
+                    <?php endforeach; ?>
+                ],
+            }]
+        };
 
-    const dataPPMS2Indikator = {
-        labels: labelsPPMS2Indikator,
-        datasets: [{
-            label: 'Nilai Indikator',
-            backgroundColor: 'rgb(15, 22, 67)',
-            borderColor: 'rgba(255, 99, 132, 0)',
-            data: [30, 10, 10, 40, 63],
-        }]
-    };
-
-    const configPPMS1Indikator = {
-        type: 'bar',
-        data: dataPPMS1Indikator,
-        options: {
-            indexAxis: 'y',
-            elements: {
-                bar: {
-                    borderWidth: 2,
-                }
-            },
-            responsive: true,
-            plugins: {
-                legend: {
-                    position: 'bottom',
+        const configPPM<?= $stat['kode'] ?>Indikator = {
+            type: 'bar',
+            data: dataPPM<?= $stat['kode'] ?>Indikator,
+            options: {
+                indexAxis: 'y',
+                elements: {
+                    bar: {
+                        borderWidth: 2,
+                    }
                 },
-                title: {
-                    display: true,
-                    text: 'S1. Nama Standar'
-                }
-            },
-            scales: {
-                x: {
-                    beginAtZero: true,
-                    suggestedMin: 0,
-                    suggestedMax: 100,
+                responsive: true,
+                plugins: {
+                    legend: {
+                        position: 'bottom',
+                    },
+                    title: {
+                        display: true,
+                        text: '<?= $stat['standar'] ?>'
+                    }
                 },
-            },
-        },
-    };
-
-    const configPPMS2Indikator = {
-        type: 'bar',
-        data: dataPPMS2Indikator,
-        options: {
-            indexAxis: 'y',
-            elements: {
-                bar: {
-                    borderWidth: 2,
-                }
-            },
-            responsive: true,
-            plugins: {
-                legend: {
-                    position: 'bottom',
+                scales: {
+                    x: {
+                        beginAtZero: true,
+                        suggestedMin: 0,
+                        suggestedMax: 100,
+                    },
                 },
-                title: {
-                    display: true,
-                    text: 'S2. Nama Standar'
-                }
-            },
-            scales: {
-                x: {
-                    beginAtZero: true,
-                    suggestedMin: 0,
-                    suggestedMax: 100,
+                scales: {
+                    x: {
+                        beginAtZero: true,
+                        suggestedMin: 0,
+                        suggestedMax: 100,
+                    },
                 },
             },
-        },
-    };
+        };
 
-    const chartPPMS1Indikator = new Chart(
-        document.getElementById(
-            'chartPPMS1Indikator'),
-        configPPMS1Indikator
-    );
-
-    const chartPPMS2Indikator = new Chart(
-        document.getElementById(
-            'chartPPMS2Indikator'),
-        configPPMS2Indikator
-    );
-</script>
+        const chartPPM<?= $stat['kode'] ?>Indikator = new Chart(
+            document.getElementById(
+                'chartPPM<?= $stat['kode'] ?>Indikator'),
+            configPPM<?= $stat['kode'] ?>Indikator
+        );
+    </script>
+<?php endforeach; ?>
