@@ -22,6 +22,7 @@
 - EDIT KATEGORI (admin) bahaya!! mempengaruhi panel, id panel, nama target panel (Just Edit Name, Panel Tetap Sama) (DONE)
 - ADD KATEGORI (admin) bahaya!! mempengaruhi panel, id panel, nama target panel (Just Can Add, Panel tidak bisa tambah otomatis, harus manual) (Done)
 - edit indikator action belum bisa (Done)
+- Add Daftar Unit at Unit Page (Done)
 
 * Admin Page
 - UNDO after add data (all form)
@@ -32,7 +33,6 @@
 - Fixing daftar penilaian after generated (PPM tidak Muncul)
 
 * Leader Page
-- Add Daftar Unit at Unit Page
 - Fixing Filter
 - Fixing Dashboard Page
 

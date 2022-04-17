@@ -121,6 +121,7 @@ class Leader extends BaseController
     public function units()
     {
         $data_user = $this->data_user;
+        $units = $this->unitsModel->findAll();
         $data = [
             'title' => 'Datar Unit | SIPMPP UNDIP ' . $this->thisTahun,
             'data_user' => $data_user,
@@ -129,6 +130,7 @@ class Leader extends BaseController
             'header' => 'header__mini header__unit',
             'css' => 'styles-leader-unit.css',
             'tahunsession' => $this->tahun,
+            'units' => $units,
         ];
 
         return view('leader/unit', $data);

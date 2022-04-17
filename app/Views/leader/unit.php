@@ -44,16 +44,18 @@
                 </tr>
             </thead>
             <tbody>
-                <td>1</td>
-                <td>Unit 1</td>
+                <?php $i = 1;
+                foreach ($units as $unit) : ?>
+                    <tr>
+                        <td class="table__unit-number"><?= $i; ?></td>
+                        <td class="table__unit-namaunit"><?= $unit['nama_unit']; ?></td>
+                    </tr>
+                <?php $i++;
+                endforeach; ?>
             </tbody>
         </table>
     </div>
 </div>
-
-<?= $this->endSection(); ?>
-
-<?= $this->section('modal'); ?>
 
 <?= $this->endSection(); ?>
 
