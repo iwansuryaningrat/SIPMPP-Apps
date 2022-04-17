@@ -96,24 +96,26 @@
         <div class="recap__link-card shadow__box-sm">
             <div class="recap__link-card__body kategori">
                 <h5 class="card__title">Daftar Kategori</h5>
-                <table class="table sipmpp__table-content table-hover table__kategori">
-                    <thead class="bg-white">
-                        <tr>
-                            <th class="kategori__number">#</th>
-                            <th class="kategori__nama">Nama</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr>
-                            <td>1</td>
-                            <td>Penelitian</td>
-                        </tr>
-                        <tr>
-                            <td>2</td>
-                            <td>Pengabdian Masyarakat</td>
-                        </tr>
-                    </tbody>
-                </table>
+                <div class="table-responsive">
+                    <table class="table sipmpp__table-content table-hover table__kategori">
+                        <thead class="bg-white">
+                            <tr>
+                                <th class="kategori__number">#</th>
+                                <th class="kategori__nama">Nama</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>1</td>
+                                <td>Penelitian</td>
+                            </tr>
+                            <tr>
+                                <td>2</td>
+                                <td>Pengabdian Masyarakat</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
             </div>
         </div>
     </div>
@@ -327,11 +329,105 @@
                                 class="form-label form__label me-3 mb-0">Standar:</label>
                             <select name="filterStandarPenelitian" id="filterStandarPenelitian"
                                 class="form-select form__select form-select__standar shadow-none">
-                                <option value="">S1</option>
-                                <option value="">S2</option>
+                                <option selected disabled>Pilih Standar</option>
+                                <option value="1">S1</option>
+                                <option value="2">S2</option>
+                                <option value="3">S3</option>
+                                <option value="4">S4</option>
+                                <option value="5">S5</option>
                             </select>
                         </div>
                     </form>
+                </div>
+
+                <!-- indikator chart content -->
+                <!-- PENS1 -->
+                <div id="PENS1Indikator" class="PENIndikator">
+                    <h5 style="font-weight: 600;">S1. Standar Hasil Penelitian</h5>
+                    <!-- bar chart standar 1 -->
+                    <div class="chart__indikator-container mb-4">
+                        <canvas id="chartPENS1Indikator"></canvas>
+                    </div>
+
+                    <!-- table indikator standar 1 -->
+                    <div class="sipmpp__table">
+                        <div class="table-responsive">
+                            <table class="table sipmpp__table-content indikator__tbl table-hover"
+                                id="tablePENS1Indikator">
+                                <thead class="bg__light">
+                                    <tr>
+                                        <th class="table__indikator-number">no</th>
+                                        <th class="table__indikator-indikator">indikator</th>
+                                        <th class="table__indikator-keterangan">keterangan</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td>1</td>
+                                        <td>Indikator 1</td>
+                                        <td>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Alias
+                                            similique
+                                            nisi facere iste, qui, modi itaque quis quas eos quia porro culpa dicta
+                                            mollitia et eligendi, laudantium blanditiis in aut.</td>
+                                    </tr>
+                                    <tr>
+                                        <td>2</td>
+                                        <td>Indikator 2</td>
+                                        <td>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Alias
+                                            similique
+                                            nisi facere iste, qui, modi itaque quis quas eos quia porro culpa dicta
+                                            mollitia et eligendi, laudantium blanditiis in aut.</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+                <!-- PENS2 -->
+                <div id="PENS2Indikator" class="PENIndikator">
+                    <h5 style="font-weight: 600;">S2. Standar Isi Penelitian</h5>
+                    <!-- bar chart standar 2 -->
+                    <div class="chart__indikator-container mb-4">
+                        <canvas id="chartPENS2Indikator"></canvas>
+                    </div>
+
+                    <!-- table indikator standar 2 -->
+                    <div class="sipmpp__table">
+                        <div class="table-responsive">
+                            <table class="table sipmpp__table-content indikator__tbl table-hover"
+                                id="tablePENS2Indikator">
+                                <thead class="bg__light">
+                                    <tr>
+                                        <th class="table__indikator-number">no</th>
+                                        <th class="table__indikator-indikator">indikator</th>
+                                        <th class="table__indikator-keterangan">keterangan</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td>1</td>
+                                        <td>Indikator 1</td>
+                                        <td>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Alias
+                                            similique
+                                            nisi facere iste, qui, modi itaque quis quas eos quia porro culpa dicta
+                                            mollitia et eligendi, laudantium blanditiis in aut.</td>
+                                    </tr>
+                                    <tr>
+                                        <td>2</td>
+                                        <td>Indikator 2</td>
+                                        <td>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Alias
+                                            similique
+                                            nisi facere iste, qui, modi itaque quis quas eos quia porro culpa dicta
+                                            mollitia et eligendi, laudantium blanditiis in aut.</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+                <!-- PENS3 -->
+                <div id="PENS3Indikator" class="PENIndikator">
+                    <h5 style="font-weight: 600;">S3. Standar Proses Penelitian</h5>
                 </div>
             </div>
 
@@ -346,11 +442,105 @@
                                 class="form-label form__label me-3 mb-0">Standar:</label>
                             <select name="filterStandarPengabdian" id="filterStandarPengabdian"
                                 class="form-select form__select form-select__standar shadow-none">
-                                <option value="">S1</option>
-                                <option value="">S2</option>
+                                <option selected disabled>Pilih Standar</option>
+                                <option value="1">S1</option>
+                                <option value="2">S2</option>
+                                <option value="3">S3</option>
+                                <option value="4">S4</option>
+                                <option value="5">S5</option>
                             </select>
                         </div>
                     </form>
+                </div>
+
+                <!-- indikator chart content -->
+                <!-- PPMS1 -->
+                <div id="PPMS1Indikator" class="PPMIndikator">
+                    <h5 style="font-weight: 600;">S1. Standar Hasil PKM</h5>
+                    <!-- bar chart standar 1 -->
+                    <div class="chart__indikator-container mb-4">
+                        <canvas id="chartPPMS1Indikator"></canvas>
+                    </div>
+
+                    <!-- table indikator standar 1 -->
+                    <div class="sipmpp__table">
+                        <div class="table-responsive">
+                            <table class="table sipmpp__table-content indikator__tbl table-hover"
+                                id="tablePPPMS1Indikator">
+                                <thead class="bg__light">
+                                    <tr>
+                                        <th class="table__indikator-number">no</th>
+                                        <th class="table__indikator-indikator">indikator</th>
+                                        <th class="table__indikator-keterangan">keterangan</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td>1</td>
+                                        <td>Indikator 1</td>
+                                        <td>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Alias
+                                            similique
+                                            nisi facere iste, qui, modi itaque quis quas eos quia porro culpa dicta
+                                            mollitia et eligendi, laudantium blanditiis in aut.</td>
+                                    </tr>
+                                    <tr>
+                                        <td>2</td>
+                                        <td>Indikator 2</td>
+                                        <td>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Alias
+                                            similique
+                                            nisi facere iste, qui, modi itaque quis quas eos quia porro culpa dicta
+                                            mollitia et eligendi, laudantium blanditiis in aut.</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+                <!-- PPMS2 -->
+                <div id="PPMS2Indikator" class="PPMIndikator">
+                    <h5 style="font-weight: 600;">S2. Standar Isi PKM</h5>
+                    <!-- bar chart standar 2 -->
+                    <div class="chart__indikator-container mb-4">
+                        <canvas id="chartPPMS2Indikator"></canvas>
+                    </div>
+
+                    <!-- table indikator standar 2 -->
+                    <div class="sipmpp__table">
+                        <div class="table-responsive">
+                            <table class="table sipmpp__table-content indikator__tbl table-hover"
+                                id="tablePPPMS2Indikator">
+                                <thead class="bg__light">
+                                    <tr>
+                                        <th class="table__indikator-number">no</th>
+                                        <th class="table__indikator-indikator">indikator</th>
+                                        <th class="table__indikator-keterangan">keterangan</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td>1</td>
+                                        <td>Indikator 1</td>
+                                        <td>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Alias
+                                            similique
+                                            nisi facere iste, qui, modi itaque quis quas eos quia porro culpa dicta
+                                            mollitia et eligendi, laudantium blanditiis in aut.</td>
+                                    </tr>
+                                    <tr>
+                                        <td>2</td>
+                                        <td>Indikator 2</td>
+                                        <td>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Alias
+                                            similique
+                                            nisi facere iste, qui, modi itaque quis quas eos quia porro culpa dicta
+                                            mollitia et eligendi, laudantium blanditiis in aut.</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+                <!-- PPMS3 -->
+                <div id="PPMS3Indikator" class="PPMIndikator">
+                    <h5 style="font-weight: 600;">S3. Standar Proses PKM</h5>
                 </div>
             </div>
         </div>
@@ -772,6 +962,209 @@
     tooltipsUnitProgress.forEach((t) => {
         new bootstrap.Tooltip(t);
     });
+
+    // show and hide indikator chart
+    $(document).ready(function() {
+        $('#filterStandarPenelitian').change(function() {
+            $('.PENIndikator').hide();
+            $('#PENS' + $(this).val() + 'Indikator').show();
+        });
+
+        $('#filterStandarPengabdian').change(function() {
+            $('.PPMIndikator').hide();
+            $('#PPMS' + $(this).val() + 'Indikator').show();
+        });
+    });
+</script>
+
+<!-- CHART INDIKATOR -->
+<!-- PENELITIAN -->
+<script>
+    const labelsPENS1Indikator = ['Indikator 1', 'Indikator 2', 'Indikator 3', 'Indikator 4', 'Indikator 5'];
+    const labelsPENS2Indikator = ['Indikator 1', 'Indikator 2', 'Indikator 3', 'Indikator 4', 'Indikator 5'];
+
+    const dataPENS1Indikator = {
+        labels: labelsPENS1Indikator,
+        datasets: [{
+            label: 'Nilai Indikator',
+            backgroundColor: 'rgb(15, 22, 67)',
+            borderColor: 'rgba(255, 99, 132, 0)',
+            data: [10, 20, 30, 50, 80],
+        }]
+    };
+    const dataPENS2Indikator = {
+        labels: labelsPENS2Indikator,
+        datasets: [{
+            label: 'Nilai Indikator',
+            backgroundColor: 'rgb(15, 22, 67)',
+            borderColor: 'rgba(255, 99, 132, 0)',
+            data: [30, 10, 10, 40, 63],
+        }]
+    };
+
+    const configPENS1Indikator = {
+        type: 'bar',
+        data: dataPENS1Indikator,
+        options: {
+            indexAxis: 'y',
+            elements: {
+                bar: {
+                    borderWidth: 2,
+                }
+            },
+            responsive: true,
+            plugins: {
+                legend: {
+                    position: 'bottom',
+                },
+                title: {
+                    display: true,
+                    text: 'S1. Nama Standar'
+                }
+            },
+            scales: {
+                x: {
+                    beginAtZero: true,
+                    suggestedMin: 0,
+                    suggestedMax: 100,
+                },
+            },
+        },
+    };
+    const configPENS2Indikator = {
+        type: 'bar',
+        data: dataPENS2Indikator,
+        options: {
+            indexAxis: 'y',
+            elements: {
+                bar: {
+                    borderWidth: 2,
+                }
+            },
+            responsive: true,
+            plugins: {
+                legend: {
+                    position: 'bottom',
+                },
+                title: {
+                    display: true,
+                    text: 'S2. Nama Standar'
+                }
+            },
+            scales: {
+                x: {
+                    beginAtZero: true,
+                    suggestedMin: 0,
+                    suggestedMax: 100,
+                },
+            },
+        },
+    };
+
+    const chartPENS1Indikator = new Chart(
+        document.getElementById(
+            'chartPENS1Indikator'),
+        configPENS1Indikator
+    );
+    const chartPENS2Indikator = new Chart(
+        document.getElementById(
+            'chartPENS2Indikator'),
+        configPENS2Indikator
+    );
+</script>
+<!-- PENGABDIAN -->
+<script>
+    const labelsPPMS1Indikator = ['Indikator 1', 'Indikator 2', 'Indikator 3', 'Indikator 4', 'Indikator 5'];
+    const labelsPPMS2Indikator = ['Indikator 1', 'Indikator 2', 'Indikator 3', 'Indikator 4', 'Indikator 5'];
+
+    const dataPPMS1Indikator = {
+        labels: labelsPPMS1Indikator,
+        datasets: [{
+            label: 'Nilai Indikator',
+            backgroundColor: 'rgb(15, 22, 67)',
+            borderColor: 'rgba(255, 99, 132, 0)',
+            data: [10, 20, 30, 50, 80],
+        }]
+    };
+    const dataPPMS2Indikator = {
+        labels: labelsPPMS2Indikator,
+        datasets: [{
+            label: 'Nilai Indikator',
+            backgroundColor: 'rgb(15, 22, 67)',
+            borderColor: 'rgba(255, 99, 132, 0)',
+            data: [30, 10, 10, 40, 63],
+        }]
+    };
+
+    const configPPMS1Indikator = {
+        type: 'bar',
+        data: dataPPMS1Indikator,
+        options: {
+            indexAxis: 'y',
+            elements: {
+                bar: {
+                    borderWidth: 2,
+                }
+            },
+            responsive: true,
+            plugins: {
+                legend: {
+                    position: 'bottom',
+                },
+                title: {
+                    display: true,
+                    text: 'S1. Nama Standar'
+                }
+            },
+            scales: {
+                x: {
+                    beginAtZero: true,
+                    suggestedMin: 0,
+                    suggestedMax: 100,
+                },
+            },
+        },
+    };
+    const configPPMS2Indikator = {
+        type: 'bar',
+        data: dataPPMS2Indikator,
+        options: {
+            indexAxis: 'y',
+            elements: {
+                bar: {
+                    borderWidth: 2,
+                }
+            },
+            responsive: true,
+            plugins: {
+                legend: {
+                    position: 'bottom',
+                },
+                title: {
+                    display: true,
+                    text: 'S2. Nama Standar'
+                }
+            },
+            scales: {
+                x: {
+                    beginAtZero: true,
+                    suggestedMin: 0,
+                    suggestedMax: 100,
+                },
+            },
+        },
+    };
+
+    const chartPPMS1Indikator = new Chart(
+        document.getElementById(
+            'chartPPMS1Indikator'),
+        configPPMS1Indikator
+    );
+    const chartPPMS2Indikator = new Chart(
+        document.getElementById(
+            'chartPPMS2Indikator'),
+        configPPMS2Indikator
+    );
 </script>
 
 <?= $this->endSection();

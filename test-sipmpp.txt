@@ -31,6 +31,7 @@
 * USER Page
 
 ========== KEKURANGAN FRONT END ==========
+Add SweetAlert2
 
 # Login Page
 - Remove unit select dropdown, while role == admin (DONE)
@@ -75,14 +76,14 @@
 - Button lihat password (DONE)
 
 # Role Leader
-- Page dashboard (adding select tahun and unit)
+- Page dashboard (adding select tahun and unit) (DONE)
 - Page unit (DONE)
-- Responsiveness pages
-- Responsiveness tables
-- Validation form
+- Responsiveness pages (DONE)
+- Responsiveness tables (DONE)
+- Validation form (DONE)
 - Title page (DONE)
 - Pagination style link (DONE)
-- Check link
+- Check link (DONE)
 - Check console.log (DONE)
 - Shadow-none button (DONE)
 - Button lihat password (DONE)
