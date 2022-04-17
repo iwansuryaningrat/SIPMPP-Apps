@@ -74,15 +74,10 @@
                 </h5>
                 <div class="filter__panel">
                     <div class="nav nav-pills" id="pills-tab" role="tablist">
-                        <button class="btn filter__btn-chart me-0 me-md-3 shadow-none active nav-link active mb-3"
-                            id="pillsStandarPenelitian" data-bs-toggle="pill"
-                            data-bs-target="#pillsChartStandarPenelitian" type="button" role="tab"
-                            aria-controls="pillsChartStandarPenelitian" aria-selected="true">
+                        <button class="btn filter__btn-chart me-0 me-md-3 shadow-none active nav-link active mb-3" id="pillsStandarPenelitian" data-bs-toggle="pill" data-bs-target="#pillsChartStandarPenelitian" type="button" role="tab" aria-controls="pillsChartStandarPenelitian" aria-selected="true">
                             Penelitian
                         </button>
-                        <button class="btn filter__btn-chart shadow-none nav-link mb-3" id="pillsStandarPengabdian"
-                            data-bs-toggle="pill" data-bs-target="#pillsChartStandarPengabdian" type="button" role="tab"
-                            aria-controls="pillsChartStandarPengabdian" aria-selected="false">
+                        <button class="btn filter__btn-chart shadow-none nav-link mb-3" id="pillsStandarPengabdian" data-bs-toggle="pill" data-bs-target="#pillsChartStandarPengabdian" type="button" role="tab" aria-controls="pillsChartStandarPengabdian" aria-selected="false">
                             Pengabdian Masyarakat
                         </button>
                     </div>
@@ -91,16 +86,14 @@
             <hr />
             <div class="tab-content" id="pills-tabContent">
                 <!-- penelitian -->
-                <div class="tab-pane fade show active" id="pillsChartStandarPenelitian" role="tabpanel"
-                    aria-labelledby="pillsStandarPenelitian">
+                <div class="tab-pane fade show active" id="pillsChartStandarPenelitian" role="tabpanel" aria-labelledby="pillsStandarPenelitian">
                     <div class="chart__container">
                         <canvas id="chartStandarDoughnutPenelitian"></canvas>
                     </div>
                 </div>
 
                 <!-- pengabdian masyarakat -->
-                <div class="tab-pane fade" id="pillsChartStandarPengabdian" role="tabpanel"
-                    aria-labelledby="pillsStandarPengabdian">
+                <div class="tab-pane fade" id="pillsChartStandarPengabdian" role="tabpanel" aria-labelledby="pillsStandarPengabdian">
                     <div class="chart__container">
                         <canvas id="chartStandarDoughnutPengabdian"></canvas>
                     </div>
@@ -117,10 +110,8 @@
             <div class="chart__container">
                 <canvas id="chartStandarLine"></canvas>
                 <div class="legends__chart">
-                    <button id="legendsPenelitian" class="legends__item btn shadow-none ellipsis__text"
-                        onclick="toggleDataChart(0)"></button>
-                    <button id="legendsPengabdian" class="legends__item btn shadow-none ellipsis__text"
-                        onclick="toggleDataChart(1)"></button>
+                    <button id="legendsPenelitian" class="legends__item btn shadow-none ellipsis__text" onclick="toggleDataChart(0)"></button>
+                    <button id="legendsPengabdian" class="legends__item btn shadow-none ellipsis__text" onclick="toggleDataChart(1)"></button>
                 </div>
             </div>
         </div>
@@ -136,15 +127,10 @@
             </h5>
             <div class="filter__panel mb-3">
                 <div class="nav nav-pills" id="pills-tab" role="tablist">
-                    <button class="btn filter__btn-indikator me-0 me-md-3 shadow-none active nav-link active mb-2"
-                        id="piils-indikator-penelitian" data-bs-toggle="pill"
-                        data-bs-target="#pills-chart-indikator-penelitian" type="button" role="tab"
-                        aria-controls="pills-chart-indikator-penelitian" aria-selected="true">
+                    <button class="btn filter__btn-indikator me-0 me-md-3 shadow-none active nav-link active mb-2" id="piils-indikator-penelitian" data-bs-toggle="pill" data-bs-target="#pills-chart-indikator-penelitian" type="button" role="tab" aria-controls="pills-chart-indikator-penelitian" aria-selected="true">
                         Penelitian
                     </button>
-                    <button class="btn filter__btn-indikator shadow-none nav-link mb-2" id="pills-indikator-pm"
-                        data-bs-toggle="pill" data-bs-target="#pills-chart-indikator-pm" type="button" role="tab"
-                        aria-controls="pills-chart-indikator-pm" aria-selected="false">
+                    <button class="btn filter__btn-indikator shadow-none nav-link mb-2" id="pills-indikator-pm" data-bs-toggle="pill" data-bs-target="#pills-chart-indikator-pm" type="button" role="tab" aria-controls="pills-chart-indikator-pm" aria-selected="false">
                         Pengabdian Masyarakat
                     </button>
                 </div>
@@ -153,16 +139,13 @@
 
         <div class="tab-content" id="pills-tabContent">
             <!-- table penelitian -->
-            <div class="tab-pane fade show active" id="pills-chart-indikator-penelitian" role="tabpanel"
-                aria-labelledby="piils-indikator-penelitian">
+            <div class="tab-pane fade show active" id="pills-chart-indikator-penelitian" role="tabpanel" aria-labelledby="piils-indikator-penelitian">
                 <div class="indikator__kategori-title">
                     <h3>Penelitian</h3>
                     <form action="" method="POST">
                         <div class="form-group form-group__standar" id="formStandarPenelitian">
-                            <label for="filterStandarPenelitian"
-                                class="form-label form__label me-3 mb-0">Standar:</label>
-                            <select name="filterStandarPenelitian" id="filterStandarPenelitian"
-                                class="form-select form__select form-select__standar shadow-none">
+                            <label for="filterStandarPenelitian" class="form-label form__label me-3 mb-0">Standar:</label>
+                            <select name="filterStandarPenelitian" id="filterStandarPenelitian" class="form-select form__select form-select__standar shadow-none">
                                 <option selected disabled>Pilih Standar</option>
                                 <option value="1">S1</option>
                                 <option value="2">S2</option>
@@ -186,8 +169,7 @@
                     <!-- table indikator standar 1 -->
                     <div class="sipmpp__table">
                         <div class="table-responsive">
-                            <table class="table sipmpp__table-content indikator__tbl table-hover"
-                                id="tablePENS1Indikator">
+                            <table class="table sipmpp__table-content indikator__tbl table-hover" id="tablePENS1Indikator">
                                 <thead class="bg__light">
                                     <tr>
                                         <th class="table__indikator-number">no</th>
@@ -228,8 +210,7 @@
                     <!-- table indikator standar 2 -->
                     <div class="sipmpp__table">
                         <div class="table-responsive">
-                            <table class="table sipmpp__table-content indikator__tbl table-hover"
-                                id="tablePENS2Indikator">
+                            <table class="table sipmpp__table-content indikator__tbl table-hover" id="tablePENS2Indikator">
                                 <thead class="bg__light">
                                     <tr>
                                         <th class="table__indikator-number">no</th>
@@ -266,16 +247,13 @@
             </div>
 
             <!-- table pengabdian masyarakat -->
-            <div class="tab-pane fade" id="pills-chart-indikator-pm" role="tabpanel"
-                aria-labelledby="pills-indikator-pm">
+            <div class="tab-pane fade" id="pills-chart-indikator-pm" role="tabpanel" aria-labelledby="pills-indikator-pm">
                 <div class="indikator__kategori-title">
                     <h3>Pengabdian Masyarakat</h3>
                     <form action="" method="POST">
                         <div class="form-group form-group__standar" id="formStandarPengabdian">
-                            <label for="filterStandarPengabdian"
-                                class="form-label form__label me-3 mb-0">Standar:</label>
-                            <select name="filterStandarPengabdian" id="filterStandarPengabdian"
-                                class="form-select form__select form-select__standar shadow-none">
+                            <label for="filterStandarPengabdian" class="form-label form__label me-3 mb-0">Standar:</label>
+                            <select name="filterStandarPengabdian" id="filterStandarPengabdian" class="form-select form__select form-select__standar shadow-none">
                                 <option selected disabled>Pilih Standar</option>
                                 <option value="1">S1</option>
                                 <option value="2">S2</option>
@@ -299,8 +277,7 @@
                     <!-- table indikator standar 1 -->
                     <div class="sipmpp__table">
                         <div class="table-responsive">
-                            <table class="table sipmpp__table-content indikator__tbl table-hover"
-                                id="tablePPPMS1Indikator">
+                            <table class="table sipmpp__table-content indikator__tbl table-hover" id="tablePPPMS1Indikator">
                                 <thead class="bg__light">
                                     <tr>
                                         <th class="table__indikator-number">no</th>
@@ -341,8 +318,7 @@
                     <!-- table indikator standar 2 -->
                     <div class="sipmpp__table">
                         <div class="table-responsive">
-                            <table class="table sipmpp__table-content indikator__tbl table-hover"
-                                id="tablePPPMS2Indikator">
+                            <table class="table sipmpp__table-content indikator__tbl table-hover" id="tablePPPMS2Indikator">
                                 <thead class="bg__light">
                                     <tr>
                                         <th class="table__indikator-number">no</th>
@@ -395,8 +371,8 @@
     // setup block
     const labelsDoughnutPenelitian = [
         <?php foreach ($datanilaiPEN['standar'] as $PEN) {
-                        echo '"' . $PEN . '",';
-                    } ?>
+            echo '"' . $PEN . '",';
+        } ?>
     ];
 
     const dataDoughnutPenelitian = {
@@ -405,8 +381,8 @@
             label: 'Standar Dataset',
             data: [
                 <?php foreach ($datanilaiPEN['nilai'] as $nilaiPEN) {
-                        echo $nilaiPEN . ',';
-                    } ?>
+                    echo $nilaiPEN . ',';
+                } ?>
             ],
             backgroundColor: [
                 'rgb(15, 22, 67)',
@@ -519,8 +495,8 @@
     // setup block
     const labelsDoughnutPengabdian = [
         <?php foreach ($datanilaiPPM['standar'] as $PPM) {
-                        echo '"' . $PPM . '",';
-                    } ?>
+            echo '"' . $PPM . '",';
+        } ?>
     ];
 
     const dataDoughnutPengabdian = {
@@ -529,8 +505,8 @@
             label: 'Standar Dataset',
             data: [
                 <?php foreach ($datanilaiPPM['nilai'] as $nilaiPPM) {
-                        echo $nilaiPPM . ',';
-                    } ?>
+                    echo $nilaiPPM . ',';
+                } ?>
             ],
             backgroundColor: [
                 'rgb(15, 22, 67)',
@@ -642,8 +618,8 @@
     // ========== CONFIG CHART LINE ==========
     const labelsLine = [
         <?php foreach ($nilaiTahun['tahun'] as $tahun) {
-                        echo '"' . $tahun . '",';
-                    } ?>
+            echo '"' . $tahun . '",';
+        } ?>
     ];
 
     const dataLine = {

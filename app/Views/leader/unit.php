@@ -11,15 +11,15 @@
         <div class="title__subtitle-desc">
             <h1>Unit</h1>
             <p>Halo <span><?php // uses regex that accepts any word character or hyphen in last name
-                    function split_name($name)
-                    {
-                        $name = trim($name);
-                        $last_name = (strpos($name, ' ') === false) ? '' : preg_replace('#.*\s([\w-]*)$#', '$1', $name);
-                        $first_name = trim(preg_replace('#' . preg_quote($last_name, '#') . '#', '', $name));
-                        return array($first_name, $last_name);
-                    }
-                    echo split_name($data_user['nama'])[0];
-                    ?>
+                            function split_name($name)
+                            {
+                                $name = trim($name);
+                                $last_name = (strpos($name, ' ') === false) ? '' : preg_replace('#.*\s([\w-]*)$#', '$1', $name);
+                                $first_name = trim(preg_replace('#' . preg_quote($last_name, '#') . '#', '', $name));
+                                return array($first_name, $last_name);
+                            }
+                            echo split_name($data_user['nama'])[0];
+                            ?>
                 </span>, selamat datang di dashboard Unit</p>
         </div>
     </div>
@@ -59,9 +59,7 @@
 
 <?= $this->section('script'); ?>
 <!-- jquery validate -->
-<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.19.3/jquery.validate.min.js"
-    integrity="sha512-37T7leoNS06R80c8Ulq7cdCDU5MNQBwlYoy1TX/WUsLFC2eYNqtKlV0QjH7r8JpG/S0GUMZwebnVFLPd6SU5yg=="
-    crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.19.3/jquery.validate.min.js" integrity="sha512-37T7leoNS06R80c8Ulq7cdCDU5MNQBwlYoy1TX/WUsLFC2eYNqtKlV0QjH7r8JpG/S0GUMZwebnVFLPd6SU5yg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 <!-- scripts -->
 <script>
 </script>
