@@ -29,6 +29,12 @@
 * Auditor Page
 
 * USER Page
+- Fixing daftar penilaian after generated (PPM tidak Muncul)
+
+* Leader Page
+- Add Daftar Unit at Unit Page
+- Fixing Filter
+- Fixing Dashboard Page
 
 ========== KEKURANGAN FRONT END ==========
 Add SweetAlert2
