@@ -5,9 +5,7 @@
 }
 
 .table__unit__content tr th:first-child,
-.table__unit__content tr td:first-child,
-.table__unit__content tr th:last-child,
-.table__unit__content tr td:last-child {
+.table__unit__content tr td:first-child {
   text-align: center;
 }
 
@@ -23,16 +21,15 @@
 }
 
 .table__unit-number {
-  width: 10%;
+  width: 12%;
+  min-width: 4.5rem;
 }
-
-.table__unit-aksi {
+/* .table__unit-aksi {
   width: 15%;
   min-width: 6.5rem;
-}
-
+} */
 .table__unit-namaunit {
-  width: 70%;
+  width: 88%;
   min-width: 11.25rem;
 }
 

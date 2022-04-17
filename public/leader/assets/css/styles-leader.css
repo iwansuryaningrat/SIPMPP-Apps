@@ -1103,6 +1103,10 @@ footer .container-fluid.container__fluid {
     height: 16rem !important;
   }
 
+  .header__main-color.header__mini.header__unit {
+    height: 16rem !important;
+  }
+
   .header__main-color.header__mini.header__datainduk {
     height: 16rem !important;
   }
@@ -1133,6 +1137,12 @@ footer .container-fluid.container__fluid {
   .header__main-color.header__mini.header__spmi.active,
   .header__main-color.header__mini.header__indikator.active {
     height: 17rem !important;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .header__main-color.header__mini.header__unit {
+    height: 15.25rem !important;
   }
 }
 
@@ -1221,6 +1231,14 @@ footer .container-fluid.container__fluid {
   }
   .header__main-color.header__mini.header__report.active {
     height: 14rem !important;
+  }
+
+  .header__main-color.header__mini.header__unit {
+    height: 15rem !important;
+  }
+
+  .header__main-color.header__mini.header__unit.active {
+    height: 13.75rem !important;
   }
 
   /**************************************/
@@ -1337,6 +1355,16 @@ footer .container-fluid.container__fluid {
   }
 }
 
+@media screen and (max-width: 398px) {
+  .header__main-color.header__mini.header__unit {
+    height: 17.25rem !important;
+  }
+
+  .header__main-color.header__mini.header__unit.active {
+    height: 14.75rem !important;
+  }
+}
+
 @media screen and (max-width: 380px) {
   .header__main-color.header__mini.header__spmi.active,
   .header__main-color.header__mini.header__indikator.active {
@@ -1370,6 +1398,16 @@ footer .container-fluid.container__fluid {
   .header__main-color.header__mini.header__spmi,
   .header__main-color.header__mini.header__indikator {
     height: 25rem !important;
+  }
+}
+
+@media screen and (max-width: 335px) {
+  .header__main-color.header__mini.header__unit {
+    height: 20.75rem !important;
+  }
+
+  .header__main-color.header__mini.header__unit.active {
+    height: 14.75rem !important;
   }
 }
 

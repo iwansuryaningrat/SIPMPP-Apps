@@ -126,7 +126,7 @@ class Leader extends BaseController
             'data_user' => $data_user,
             'tab' => 'units',
             'tahun' => $data_user['tahun'],
-            'header' => 'header__mini',
+            'header' => 'header__mini header__unit',
             'css' => 'styles-leader-unit.css',
             'tahunsession' => $this->tahun,
         ];
