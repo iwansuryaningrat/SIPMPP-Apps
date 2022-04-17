@@ -232,9 +232,6 @@ class Editdata extends BaseController
         $keterangan = $data['keterangan'];
 
         $datas = [
-            'indikator_id' => $indikator_id,
-            'kategori_id' => $kategori_id,
-            'standar_id' => $standar_id,
             'nama_indikator' => $nama_indikator,
             'target' => $target,
             'nilai_acuan' => $nilai_acuan,
@@ -247,7 +244,7 @@ class Editdata extends BaseController
             $this->indikatorModel->updateIndikator($indikator_id, $kategori_id, $standar_id, $datas);
         }
 
-        session()->setFlashdata('message', '<div class="alert alert-success alert__sipmpp" role="alert"><i class="fa-solid fa-circle-check color__success"></i><span>Data Indikator berhasil ditambahkan!</span></div>');
+        session()->setFlashdata('message', '<div class="alert alert-success alert__sipmpp" role="alert"><i class="fa-solid fa-circle-check color__success"></i><span>Data Indikator berhasil diubah!</span></div>');
 
         return redirect()->to(base_url('/admin/viewIndikator/' . $standar_id . '/' . $kategori_id));
     }

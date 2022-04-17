@@ -308,21 +308,33 @@ class Auditor extends BaseController
         $unit_id = $data_user['unit_id'];
         $tahun = $data_user['tahun'];
 
-        $kategori = $this->kategoriModel->findAll();
-        foreach ($kategori as $kat) {
-            $standar = $this->standarModel->getStandarByKategoriId($kat['kategori_id']);
-            foreach ($standar as $std) {
-                $namaStd = $std['standar_id'] . '. ' . $std['nama_standar'];
-                $stat = $this->stats->getNilaiByStandar($unit_id, $tahun, $std['standar_id'], $kat['kategori_id']);
-                $statstd[$std['standar_id']] = [
-                    'kode' => $std['standar_id'],
-                    'standar' => $namaStd,
-                    'namaindikator' => $stat['nama'],
-                    'nilai' => $stat['nilai'],
-                ];
-            }
-            $Stats[$kat['kategori_id']] = $statstd;
+        // Penelitian Chart
+        $standarPEN = $this->standarModel->getStandarByKategoriId('PEN');
+        foreach ($standarPEN as $stdPEN) {
+            $namastdPEN = $stdPEN['standar_id'] . '. ' . $stdPEN['nama_standar'];
+            $stat = $this->stats->getNilaiByStandar($unit_id, $tahun, $stdPEN['standar_id'], 'PEN');
+            $statstdPEN[$stdPEN['standar_id']] = [
+                'kode' => $stdPEN['standar_id'],
+                'standar' => $namastdPEN,
+                'namaindikator' => $stat['nama'],
+                'nilai' => $stat['nilai'],
+            ];
         }
+        $Stats['PEN'] = $statstdPEN;
+
+        // Pengabdian Chart
+        $standarPPM = $this->standarModel->getStandarByKategoriId('PPM');
+        foreach ($standarPPM as $stdPPM) {
+            $namastdPPM = $stdPPM['standar_id'] . '. ' . $stdPPM['nama_standar'];
+            $stat = $this->stats->getNilaiByStandar($unit_id, $tahun, $stdPPM['standar_id'], 'PPM');
+            $statstdPPM[$stdPPM['standar_id']] = [
+                'kode' => $stdPPM['standar_id'],
+                'standar' => $namastdPPM,
+                'namaindikator' => $stat['nama'],
+                'nilai' => $stat['nilai'],
+            ];
+        }
+        $Stats['PPM'] = $statstdPPM;
 
         $i = 1;
 

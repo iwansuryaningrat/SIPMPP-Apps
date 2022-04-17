@@ -1,4 +1,4 @@
------ Back End -----
+============= Back End =============
 * Fixed Issue
 - alert component, kurang tag penutup </i> (add data induk admin, add standar admin) (Done)
 - edit nilai indikator (user) tidak bisa menampilkan perubahan (Done)
@@ -15,18 +15,18 @@
 - edit unit (Done)
 - edit data induk (admin) (Done)
 - penilaian (admin) (Done)
+- Doc Preview (User) (Just Can Download It) (Done)
+- Dashboard Page (Same With User Page) (Done)
+- Report Page (Same With User Page) (Done)
+- counting table daftar kategori on dashboard page (admin) (Done)
+- EDIT KATEGORI (admin) bahaya!! mempengaruhi panel, id panel, nama target panel (Just Edit Name, Panel Tetap Sama) (DONE)
+- ADD KATEGORI (admin) bahaya!! mempengaruhi panel, id panel, nama target panel (Just Can Add, Panel tidak bisa tambah otomatis, harus manual) (Done)
+- edit indikator action belum bisa (Done)
 
 * Admin Page
-- edit indikator action belum bisa (Kurang Update Data method)
-- counting table daftar kategori do dashboard page (admin)
 - UNDO after add data (all form)
-- ADD KATEGORI (admin) bahaya!! mempengaruhi panel, id panel, nama target panel
-- EDIT KATEGORI (admin) bahaya!! mempengaruhi panel, id panel, nama target panel
 
 * Auditor Page
-- Doc Preview (User) (Just Can Download It)
-- Dashboard Page (Same With User Page)
-- Report Page (Same With User Page)
 
 * USER Page
 

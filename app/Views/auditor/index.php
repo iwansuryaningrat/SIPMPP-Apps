@@ -90,7 +90,7 @@
         <h5 class="card__title mb-0 ellipsis__text">Penelitian</h5>
       </div>
       <div class="recap__link-card__footer">
-        <a href="/home/standar">
+        <a href="/auditor/standar">
           <span class="ellipsis__text">Selengkapnya</span>
           <i class="bi bi-arrow-right-circle d-flex"></i>
         </a>
@@ -105,7 +105,7 @@
         </h5>
       </div>
       <div class="recap__link-card__footer">
-        <a href="/home/standar">
+        <a href="/auditor/standar">
           <span class="ellipsis__text">Selengkapnya</span>
           <i class="bi bi-arrow-right-circle d-flex"></i>
         </a>
