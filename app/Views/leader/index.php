@@ -112,7 +112,8 @@
 <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 <?= $this->include('leader/chartsetup/DoughnutChart'); ?>
 <?= $this->include('leader/chartsetup/LineChart'); ?>
-<?= $this->include('leader/chartsetup/IndikatorChart'); ?>
+<?= $this->include('leader/chartsetup/PenelitianChart'); ?>
+<?= $this->include('leader/chartsetup/PengabdianChart'); ?>
 
 <script>
     $(function() {

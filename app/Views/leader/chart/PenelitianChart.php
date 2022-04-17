@@ -58,49 +58,4 @@
             </div>
         </div>
     </div>
-    <!-- PENS2 -->
-    <div id="PENS2Indikator" class="PENIndikator">
-        <h5 style="font-weight: 600;">S2. Standar Isi Penelitian</h5>
-        <!-- bar chart standar 2 -->
-        <div class="chart__indikator-container mb-4">
-            <canvas id="chartPENS2Indikator"></canvas>
-        </div>
-
-        <!-- table indikator standar 2 -->
-        <div class="sipmpp__table">
-            <div class="table-responsive">
-                <table class="table sipmpp__table-content indikator__tbl table-hover" id="tablePENS2Indikator">
-                    <thead class="bg__light">
-                        <tr>
-                            <th class="table__indikator-number">no</th>
-                            <th class="table__indikator-indikator">indikator</th>
-                            <th class="table__indikator-keterangan">keterangan</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr>
-                            <td>1</td>
-                            <td>Indikator 1</td>
-                            <td>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Alias
-                                similique
-                                nisi facere iste, qui, modi itaque quis quas eos quia porro culpa dicta
-                                mollitia et eligendi, laudantium blanditiis in aut.</td>
-                        </tr>
-                        <tr>
-                            <td>2</td>
-                            <td>Indikator 2</td>
-                            <td>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Alias
-                                similique
-                                nisi facere iste, qui, modi itaque quis quas eos quia porro culpa dicta
-                                mollitia et eligendi, laudantium blanditiis in aut.</td>
-                        </tr>
-                    </tbody>
-                </table>
-            </div>
-        </div>
-    </div>
-    <!-- PENS3 -->
-    <div id="PENS3Indikator" class="PENIndikator">
-        <h5 style="font-weight: 600;">S3. Standar Proses Penelitian</h5>
-    </div>
 </div>

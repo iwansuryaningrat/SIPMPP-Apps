@@ -67,18 +67,40 @@ class Leader extends BaseController
         $data_tahun = $this->tahunModel->findAll();
         $data_unit = $this->unitsModel->findAll();
 
-        // Induk Progress
-        $indukpersen = $this->stats->getIndukProgress($data_user['unit_id'], $data_user['tahun']);
-
-        // Standar Progress
-        $dataprogresstandar = $this->stats->getStandarProgress($data_user['unit_id'], $data_user['tahun']);
-
         $databykat = $this->stats->getStandarProgressDoughnut($data_user['unit_id'], $data_user['tahun']);
         $datanilaiPEN = $databykat['pen'];
         $datanilaiPPM = $databykat['ppm'];
 
         // Nilai Per Tahun
         $nilaiTahun = $this->stats->getNilaiPerTahun($data_user['unit_id']);
+
+        // Indikator Penelitian Chart
+        $standarPEN = $this->standarModel->getStandarByKategoriId('PEN');
+        foreach ($standarPEN as $stdPEN) {
+            $namastdPEN = $stdPEN['standar_id'] . '. ' . $stdPEN['nama_standar'];
+            $stat = $this->stats->getNilaiByStandar($data_user['unit_id'], $data_user['tahun'], $stdPEN['standar_id'], 'PEN');
+            $statstdPEN[$stdPEN['standar_id']] = [
+                'kode' => $stdPEN['standar_id'],
+                'standar' => $namastdPEN,
+                'namaindikator' => $stat['nama'],
+                'nilai' => $stat['nilai'],
+            ];
+        }
+        $Stats['PEN'] = $statstdPEN;
+
+        // Indikator Pengabdian Chart
+        $standarPPM = $this->standarModel->getStandarByKategoriId('PPM');
+        foreach ($standarPPM as $stdPPM) {
+            $namastdPPM = $stdPPM['standar_id'] . '. ' . $stdPPM['nama_standar'];
+            $stat = $this->stats->getNilaiByStandar($data_user['unit_id'], $data_user['tahun'], $stdPPM['standar_id'], 'PPM');
+            $statstdPPM[$stdPPM['standar_id']] = [
+                'kode' => $stdPPM['standar_id'],
+                'standar' => $namastdPPM,
+                'namaindikator' => $stat['nama'],
+                'nilai' => $stat['nilai'],
+            ];
+        }
+        $Stats['PPM'] = $statstdPPM;
 
         $data = [
             'title' => 'Dashboard Leader | SIPMPP UNDIP ' . $this->thisTahun,
@@ -90,11 +112,10 @@ class Leader extends BaseController
             'tahunsession' => $this->tahun,
             'data_tahun' => $data_tahun,
             'data_unit' => $data_unit,
-            'indukpersen' => $indukpersen,
-            'dataprogresstandar' => $dataprogresstandar,
             'datanilaiPEN' => $datanilaiPEN,
             'datanilaiPPM' => $datanilaiPPM,
             'nilaiTahun' => $nilaiTahun,
+            'Stats' => $Stats,
         ];
 
         return view('leader/index', $data);
