@@ -64,6 +64,8 @@ class Leader extends BaseController
     {
         // Untuk menampilkan data Dougnut Chart & tahunan
         $data_user = $this->data_user;
+        $data_tahun = $this->tahunModel->findAll();
+        $data_unit = $this->unitsModel->findAll();
 
         // Induk Progress
         $indukpersen = $this->stats->getIndukProgress($data_user['unit_id'], $data_user['tahun']);
@@ -78,27 +80,6 @@ class Leader extends BaseController
         // Nilai Per Tahun
         $nilaiTahun = $this->stats->getNilaiPerTahun($data_user['unit_id']);
 
-
-        // Untuk menampilkan data indikator
-        $unit_id = $data_user['unit_id'];
-        $tahun = $data_user['tahun'];
-
-        $kategori = $this->kategoriModel->findAll();
-        foreach ($kategori as $kat) {
-            $standar = $this->standarModel->getStandarByKategoriId($kat['kategori_id']);
-            foreach ($standar as $std) {
-                $namaStd = $std['standar_id'] . '. ' . $std['nama_standar'];
-                $stat = $this->stats->getNilaiByStandar($unit_id, $tahun, $std['standar_id'], $kat['kategori_id']);
-                $statstd[$std['standar_id']] = [
-                    'kode' => $std['standar_id'],
-                    'standar' => $namaStd,
-                    'namaindikator' => $stat['nama'],
-                    'nilai' => $stat['nilai'],
-                ];
-            }
-            $Stats[$kat['kategori_id']] = $statstd;
-        }
-
         $data = [
             'title' => 'Dashboard Leader | SIPMPP UNDIP ' . $this->thisTahun,
             'data_user' => $data_user,
@@ -107,6 +88,8 @@ class Leader extends BaseController
             'header' => 'header__big',
             'css' => 'styles-leader-dashboard.css',
             'tahunsession' => $this->tahun,
+            'data_tahun' => $data_tahun,
+            'data_unit' => $data_unit,
             'indukpersen' => $indukpersen,
             'dataprogresstandar' => $dataprogresstandar,
             'datanilaiPEN' => $datanilaiPEN,
@@ -156,5 +139,19 @@ class Leader extends BaseController
         ];
 
         return view('leader/profile', $data);
+    }
+
+    // Switch Tahun & Unit Method 
+    public function switchTahunUnit()
+    {
+        $tahun = $this->request->getPost('tahunLeader');
+        $unit = $this->request->getPost('unitLeader');
+        $nama_unit = $this->unitsModel->getUnit($unit)['nama_unit'];
+
+        $this->session->set('tahun', $tahun);
+        $this->session->set('unit_id', $unit);
+        $this->session->set('unit', $nama_unit);
+
+        return redirect()->to(base_url('leader/index'));
     }
 }
