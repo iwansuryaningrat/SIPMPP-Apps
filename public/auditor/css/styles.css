@@ -119,7 +119,7 @@ button,
 }
 
 .btn__preview {
-  height: 51px;
+  min-height: 2.5rem;
   display: flex;
   justify-content: center;
   align-items: center;

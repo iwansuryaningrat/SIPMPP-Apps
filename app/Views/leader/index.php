@@ -24,219 +24,51 @@
                 datang kembali!</p>
         </div>
         <div class="title__subtitle-btn">
+            <div class="report__link btn btn__dark shadow-none button__filters" id="btnFilterLeader">
+                <i class="fa-solid fa-filter me-2" id="btnFilterLeaderIcon"></i>
+                <span id="btnFilterLeaderSpan">Filter</span>
+            </div>
         </div>
+    </div>
+</div>
+
+<div id="filterLeader">
+    <div class="filter__leader-container position-relative" id="filterLeaderContainer">
+        <form action="#" method="POST" id="formFilterLeader">
+            <h5 class="title__filter">Filters</h5>
+            <!-- tahun -->
+            <div class="mb-3">
+                <label for="tahunLeader" class="form-label form__label">Tahun</label>
+                <select name="tahunLeader" id="tahunLeader" class="form-select form__select shadow-none">
+                    <option value="">tahun1</option>
+                    <option value="">tahun2</option>
+                    <option value="">tahun3</option>
+                </select>
+            </div>
+            <!-- unit -->
+            <div class="mb-3">
+                <label for="unitLeader" class="form-label form__label">Unit</label>
+                <select name="unitLeader" id="unitLeader" class="form-select form__select shadow-none">
+                    <option value="">unit1</option>
+                    <option value="">unit2</option>
+                    <option value="">unit3</option>
+                </select>
+            </div>
+            <!-- submit -->
+            <div class="submit__leader">
+                <a href="#" class="btn__submit-leader shadow-none color__primary">Save view</a>
+            </div>
+        </form>
     </div>
 </div>
 
 <!-- body main -->
-<!-- progress pengisian -->
-<div class="progress__content">
-    <div class="progress__content-card mb-3 mb-sm-4 mb-lg-0 shadow__box-sm" id="progress-data-induk">
-        <div class="d-flex align-items-center mb-2">
-            <div class="progress__icon-warp">
-                <img src="/assets/img/logo-data-induk.svg" alt="logo-data-induk" />
-            </div>
-            <h5 class="card__title mb-2">Pengisian Data Induk <span><?= $data_user['tahun']; ?></span>
-            </h5>
-        </div>
-
-        <div class="progress__content-progress">
-            <div class="progress__content-progress-desc">
-                <p>Task Complete</p>
-                <p><?= $indukpersen; ?>%</p>
-            </div>
-            <div>
-                <div class="progress progress__content-progress-bar">
-                    <div class="progress-bar bg__dark-main unit__progressbar" role="progressbar"
-                        aria-valuenow="<?= $indukpersen; ?>"
-                        aria-valuemin="0" aria-valuemax="100"
-                        style="width: <?= $indukpersen; ?>%"
-                        data-bs-toggle="tooltip" data-bs-placement="top"
-                        title="<?= $indukpersen; ?>%"></div>
-                </div>
-            </div>
-        </div>
-    </div>
-
-    <div class="progress__content-card shadow__box-sm" id="progress-spmi">
-        <div class="d-flex align-items-center mb-2">
-            <div class="progress__icon-warp">
-                <img src="/assets/img/logo-spmi.svg" alt="logo-spmi" />
-            </div>
-            <h5 class="mb-3 card__title">Pengisian Nilai SPMI <span><?= $data_user['tahun']; ?></span>
-            </h5>
-        </div>
-
-        <div class="progress__content-progress">
-            <div class="progress__content-progress-desc">
-                <p>Task Complete</p>
-                <p><?= $dataprogresstandar['sum'] . '/' . $dataprogresstandar['count'] ?>
-                    Indikator (<?= $dataprogresstandar['persen'] ?>%)
-                </p>
-            </div>
-            <div>
-                <div class="progress progress__content-progress-bar">
-                    <div class="progress-bar bg__dark-main unit__progressbar" role="progressbar"
-                        aria-valuenow="<?= $dataprogresstandar['persen'] ?>"
-                        aria-valuemin="0" aria-valuemax="100"
-                        style="width: <?= $dataprogresstandar['persen'] ?>%"
-                        data-bs-toggle="tooltip" data-bs-placement="top"
-                        title="<?= $dataprogresstandar['persen'] ?>%">
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-</div>
-
-<!-- rekap content -->
-<div class="recap__content row">
-    <!-- left -->
-    <div class="recap__content-link col-lg-4 col-12">
-        <div class="recap__link-card shadow__box-sm">
-            <div class="recap__link-card__body kategori">
-                <h5 class="card__title">Daftar Kategori</h5>
-                <div class="table-responsive">
-                    <table class="table sipmpp__table-content table-hover table__kategori">
-                        <thead class="bg-white">
-                            <tr>
-                                <th class="kategori__number">#</th>
-                                <th class="kategori__nama">Nama</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <tr>
-                                <td>1</td>
-                                <td>Penelitian</td>
-                            </tr>
-                            <tr>
-                                <td>2</td>
-                                <td>Pengabdian Masyarakat</td>
-                            </tr>
-                        </tbody>
-                    </table>
-                </div>
-            </div>
-        </div>
-    </div>
-
-    <!-- right -->
-    <!-- table unit -->
-    <div class="recap__content-unit col-lg-4 col-12">
-        <div class=" sipmpp__table radius__lg shadow__box-sm">
-            <div class="content-unit__title">
-                <h5 class="card__title mb-3">Progress SPMI <span><?= $data_user['tahun']; ?></span>
-                </h5>
-                <div class="filter__panel mb-3">
-                    <div class="nav nav-pills" id="pills-tab" role="tablist">
-                        <button class="btn filter__btn me-0 me-md-3 shadow-none active nav-link active mb-2"
-                            id="pills-spmi-penelitian" data-bs-toggle="pill"
-                            data-bs-target="#pills-table-spmi-penelitian" type="button" role="tab"
-                            aria-controls="pills-table-spmi-penelitian" aria-selected="true">
-                            Penelitian
-                        </button>
-                        <button class="btn filter__btn shadow-none nav-link mb-2" id="pills-spmi-pm"
-                            data-bs-toggle="pill" data-bs-target="#pills-table-spmi-pm" type="button" role="tab"
-                            aria-controls="pills-table-spmi-pm" aria-selected="false">
-                            Pengabdian Masyarakat
-                        </button>
-                    </div>
-                </div>
-            </div>
-
-            <div class="tab-content" id="pills-tabContent">
-                <!-- table penelitian -->
-                <div class="tab-pane fade show active" id="pills-table-spmi-penelitian" role="tabpanel"
-                    aria-labelledby="pills-spmi-penelitian">
-                    <div class="table__unit table-responsive">
-                        <table class="table table__unit__content sipmpp__table-content table-hover">
-                            <thead class="bg__light">
-                                <tr>
-                                    <th class="table__unit__head__number">No</th>
-                                    <th class="table__unit__head__unit">nama standar</th>
-                                    <th class="table__unit__head__progress">Progress</th>
-                                </tr>
-                            </thead>
-                            <tbody>
-
-                                <?php $Standard = $dataprogresstandar['standar'];
-                                foreach ($Standard as $standar) :
-                                    if ($standar['kategori'] == 'PEN') : ?>
-                                <tr>
-                                    <td><?= $standar['standar']; ?>
-                                    </td>
-                                    <td><?= $standar['nama_standar']; ?>
-                                    </td>
-                                    <td>
-                                        <div class="progress table__unit__progress">
-                                            <div class="progress-bar bg__dark-main unit__progressbar" role="progressbar"
-                                                aria-valuenow="<?= round($standar['persen'], 2); ?>"
-                                                aria-valuemin="0" aria-valuemax="100"
-                                                style="width: <?= round($standar['persen'], 2); ?>%"
-                                                data-bs-toggle="tooltip" data-bs-placement="top"
-                                                title="<?= round($standar['persen'], 2); ?>%">
-                                            </div>
-                                        </div>
-                                    </td>
-                                </tr>
-                                <?php endif;
-                                endforeach; ?>
-
-                            </tbody>
-                        </table>
-                    </div>
-                </div>
-
-                <!-- table pengabdian masyarakat -->
-                <div class="tab-pane fade" id="pills-table-spmi-pm" role="tabpanel" aria-labelledby="pills-spmi-pm">
-                    <div class="table__unit table-responsive">
-                        <table class="table table__unit__content sipmpp__table-content table-hover">
-                            <thead class="bg__light">
-                                <tr>
-                                    <th class="table__unit__head__number">No</th>
-                                    <th class="table__unit__head__unit">nama standar</th>
-                                    <th class="table__unit__head__progress">Progress</th>
-                                </tr>
-                            </thead>
-                            <tbody>
-
-                                <?php $Standard = $dataprogresstandar['standar'];
-                                foreach ($Standard as $standar) :
-                                    if ($standar['kategori'] == 'PPM') : ?>
-                                <tr>
-                                    <td><?= $standar['standar']; ?>
-                                    </td>
-                                    <td><?= $standar['nama_standar']; ?>
-                                    </td>
-                                    <td>
-                                        <div class="progress table__unit__progress">
-                                            <div class="progress-bar bg__dark-main unit__progressbar" role="progressbar"
-                                                aria-valuenow="<?= round($standar['persen'], 2); ?>"
-                                                aria-valuemin="0" aria-valuemax="100"
-                                                style="width: <?= round($standar['persen'], 2); ?>%"
-                                                data-bs-toggle="tooltip" data-bs-placement="top"
-                                                title="<?= round($standar['persen'], 2); ?>%">
-                                            </div>
-                                        </div>
-                                    </td>
-                                </tr>
-                                <?php endif;
-                                endforeach; ?>
-
-                            </tbody>
-                        </table>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-</div>
-
 <!-- chart content -->
 <div class="chart__content row">
     <!-- left -->
     <div class="chart__content-left col-lg-5 col-12">
         <div class="chart__content-dounat shadow__box-sm">
+            <h6 id="unitStandar">Nama Unit Sekarang</h6>
             <div class="content-unit__title">
                 <h5 class="card__title">Status Nilai SPMI <span><?= $data_user['tahun']; ?></span>
                 </h5>
@@ -280,6 +112,7 @@
     <!-- right -->
     <div class="chart__content-right col-lg-7 col-12">
         <div class="chart__content-line shadow__box-sm">
+            <h6 id="unitTahun">Nama Unit Sekarang</h6>
             <h5 class="card__title">Analisis Kategori Tahunan</h5>
             <div class="chart__container">
                 <canvas id="chartStandarLine"></canvas>
@@ -297,6 +130,7 @@
 <!-- indikator chart content -->
 <div class="indikator__content">
     <div class="indikator__content-card shadow__box-sm">
+        <h6 id="unitIndikator">Nama Unit Sekarang</h6>
         <div class="content-indikator__title">
             <h5 class="card__title mb-3">Rekap Indikator <span><?= $data_user['tahun']; ?></span>
             </h5>
@@ -561,8 +395,8 @@
     // setup block
     const labelsDoughnutPenelitian = [
         <?php foreach ($datanilaiPEN['standar'] as $PEN) {
-                                    echo '"' . $PEN . '",';
-                                } ?>
+                        echo '"' . $PEN . '",';
+                    } ?>
     ];
 
     const dataDoughnutPenelitian = {
@@ -571,8 +405,8 @@
             label: 'Standar Dataset',
             data: [
                 <?php foreach ($datanilaiPEN['nilai'] as $nilaiPEN) {
-                                    echo $nilaiPEN . ',';
-                                } ?>
+                        echo $nilaiPEN . ',';
+                    } ?>
             ],
             backgroundColor: [
                 'rgb(15, 22, 67)',
@@ -685,8 +519,8 @@
     // setup block
     const labelsDoughnutPengabdian = [
         <?php foreach ($datanilaiPPM['standar'] as $PPM) {
-                                    echo '"' . $PPM . '",';
-                                } ?>
+                        echo '"' . $PPM . '",';
+                    } ?>
     ];
 
     const dataDoughnutPengabdian = {
@@ -695,8 +529,8 @@
             label: 'Standar Dataset',
             data: [
                 <?php foreach ($datanilaiPPM['nilai'] as $nilaiPPM) {
-                                    echo $nilaiPPM . ',';
-                                } ?>
+                        echo $nilaiPPM . ',';
+                    } ?>
             ],
             backgroundColor: [
                 'rgb(15, 22, 67)',
@@ -808,8 +642,8 @@
     // ========== CONFIG CHART LINE ==========
     const labelsLine = [
         <?php foreach ($nilaiTahun['tahun'] as $tahun) {
-                                    echo '"' . $tahun . '",';
-                                } ?>
+                        echo '"' . $tahun . '",';
+                    } ?>
     ];
 
     const dataLine = {
@@ -819,8 +653,8 @@
                 label: 'Penelitian',
                 data: [
                     <?php foreach ($nilaiTahun['nilai'] as $nilaitahunpen) {
-                                    echo '"' . $nilaitahunpen['pen']['avg'] . '",';
-                                } ?>
+                        echo '"' . $nilaitahunpen['pen']['avg'] . '",';
+                    } ?>
                 ],
                 borderColor: 'rgba(73, 74, 106, 1)',
                 backgroundColor: function gradientGenerate(chartStandarLine) {
@@ -835,8 +669,8 @@
                 label: 'Pengabdian Masyarakat',
                 data: [
                     <?php foreach ($nilaiTahun['nilai'] as $nilaitahunppm) {
-                                    echo '"' . $nilaitahunppm['ppm']['avg'] . '",';
-                                } ?>
+                        echo '"' . $nilaitahunppm['ppm']['avg'] . '",';
+                    } ?>
                 ],
                 borderColor: 'rgba(178, 99, 87, 1)',
                 backgroundColor: function gradientGenerate(chartStandarLine) {
@@ -921,18 +755,6 @@
 </script>
 
 <script>
-    // active filer button
-    $(function() {
-        $(".filter__btn").click(function() {
-            // remove classes from all
-            $(".filter__btn").removeClass("active");
-            // add class to the one we clicked
-            $(this).addClass("active");
-            // stop the page from jumping to the top
-            return false;
-        });
-    });
-
     $(function() {
         $(".filter__btn-chart").click(function() {
             // remove classes from all

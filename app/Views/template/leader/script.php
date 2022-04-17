@@ -12,9 +12,18 @@
             e.target.id !== "unitProfile" &&
             e.target.id !== "profileEmail" &&
             e.target.id !== "profileName" &&
-            e.target.id !== "profileStatus"
+            e.target.id !== "profileStatus" &&
+            e.target.id !== "btnFilterLeader" &&
+            e.target.id !== "filterLeader" &&
+            e.target.id !== "btnFilterLeaderIcon" &&
+            e.target.id !== "btnFilterLeaderSpan" &&
+            e.target.id !== "tahunLeader" &&
+            e.target.id !== "unitLeader" &&
+            e.target.id !== "filterLeaderContainer" &&
+            e.target.id !== "formFilterLeader"
         ) {
             $("#header-main-nav-dropdown").removeClass("active");
+            $("#filterLeader").removeClass("active");
         }
     });
     $("#btn-dropdown").click(() => {
@@ -31,6 +40,15 @@
     });
     $("#profileStatus").click(() => {
         $("#header-main-nav-dropdown").toggleClass("active");
+    });
+    $("#btnFilterLeader").click(() => {
+        $("#filterLeader").toggleClass("active");
+    });
+    $("#btnFilterLeaderIcon").click(() => {
+        $("#filterLeader").toggleClass("active");
+    });
+    $("#btnFilterLeaderSpan").click(() => {
+        $("#filterLeader").toggleClass("active");
     });
 
     // switch tahun

@@ -27,40 +27,6 @@
             <a href="/leader/profile" class="d-block">Lihat Profil</a>
         </p>
         <hr />
-        <form action="/leader/switchtahun" method="POST" id="form-tahun-profile">
-            <!-- tahun -->
-            <div class="mb-3">
-                <label for="tahunProfile" class="form-label form__label__profile nav-dropdown__title"
-                    id="form-tahun-profile-label">Tahun</label>
-                <div class="d-flex align-items-center">
-                    <select name="tahun" id="tahunProfile" class="form-select form__select__profile shadow-none">
-                        <?php foreach ($tahunsession as $data_tahun) : ?>
-                        <option
-                            value="<?= $data_tahun['tahun']; ?>"
-                            <?php if ($tahun == $data_tahun['tahun']) {
-    echo 'selected';
-} ?>>
-                            <?= $data_tahun['tahun']; ?>
-                        </option>
-                        <?php endforeach; ?>
-                    </select>
-                </div>
-            </div>
-
-            <!-- unit -->
-            <div class="mb-3">
-                <label for="unitProfile" class="form-label form__label__profile nav-dropdown__title"
-                    id="form-unit-profile-label">Unit</label>
-                <div class="d-flex align-items-center">
-                    <select name="unit" id="unitProfile" class="form-select form__select__profile shadow-none">
-                        <option value="">Unit 1</option>
-                        <option value="">Unit 2</option>
-                        <option value="">Unit 3</option>
-                    </select>
-                </div>
-            </div>
-        </form>
-        <hr />
         <p class="d-flex align-items-center">
             <i class="fa-solid fa-arrow-right-from-bracket d-flex"></i>
             <a href="/logout" class="d-block">Log out</a>

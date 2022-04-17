@@ -41,101 +41,18 @@
   font-weight: 600;
 }
 
-.document__view {
+.dokumen__prev {
   display: flex;
-}
-
-.box__document {
-  width: 152px;
-  height: 213px;
-  background: rgb(237, 237, 237);
-}
-
-#viewDocument {
-  padding-bottom: 1px;
-  border-bottom: 1px solid #336699;
-  color: #336699;
-  transition: var(--trans-m);
-}
-
-#viewDocument:hover {
-  border-color: #1e60a2;
-  color: #1e60a2;
-}
-
-#pdf-name {
-  display: none;
-  vertical-align: middle;
-  color: var(--black);
-  margin: 0 0 1rem;
-}
-
-#pdf-file {
-  display: none;
-}
-
-#pdf-loader {
-  display: none;
-  vertical-align: middle;
-  color: #343434;
-  font-size: 12px;
   align-items: center;
-  justify-content: center;
-  width: 100%;
-  height: 100%;
 }
 
-#pdf-preview {
-  display: none;
-  vertical-align: middle;
-  border: 1px solid rgba(0, 0, 0, 0.2);
-  border-radius: 2px;
+.dokumen__prev img {
+  height: 1.5rem;
+  margin-right: 0.5rem;
 }
 
-/* =============================pdf preview img */
-
-#upload-dialog {
-  padding: 5px;
-  border: 1px solid #336699;
-  background-color: white;
-  color: #336699;
-  background: none;
-  font-size: inherit;
-  font-family: inherit;
-  outline: none;
-  display: inline-block;
-  vertical-align: middle;
-  cursor: pointer;
-  border-radius: 2px;
-}
-
-#upload-button {
-  padding: 5px;
-  border: 1px solid #336699;
-  background-color: #336699;
-  color: white;
-  font-size: inherit;
-  font-family: inherit;
-  outline: none;
-  display: none;
-  vertical-align: middle;
-  cursor: pointer;
-  border-radius: 2px;
-}
-
-#cancel-pdf {
-  display: none;
-  vertical-align: middle;
-  padding: 0px;
-  border: none;
-  color: #777777;
-  background-color: white;
-  font-size: inherit;
-  font-family: inherit;
-  outline: none;
-  vertical-align: middle;
-  cursor: pointer;
-  margin: 0 0 0 15px;
+.dokumen__name {
+  margin-bottom: 0;
 }
 
 @media screen and (max-width: 768px) {
