@@ -57,7 +57,7 @@
             <!-- submit -->
             <div class="submit__leader">
                 <button class="btn btn__submit-leader shadow-none color__primary" type="submit">
-                    Save view
+                    Apply Filters
                 </button>
             </div>
         </form>
