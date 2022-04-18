@@ -141,12 +141,14 @@ table.dataTable thead td {
   color: rgba(0, 0, 0, 1);
 }
 
-#datatablePenilaianPenelitian_filter input[type="search"]:focus {
+#datatablePenilaianPenelitian_filter input[type="search"]:focus,
+#datatablePenilaianPengabdian_filter input[type="search"]:focus {
   border: 1px solid #1a42b8;
   outline: none;
 }
 
-#datatablePenilaianPenelitian_length select {
+#datatablePenilaianPenelitian_length select,
+#datatablePenilaianPengabdian_length select {
   padding: 0.375rem 0.25rem;
   margin-left: 0.375rem;
   margin-right: 0.375rem;
@@ -154,12 +156,23 @@ table.dataTable thead td {
   color: rgba(0, 0, 0, 1);
 }
 
-#datatablePenilaianPenelitian_length select:focus {
+#datatablePenilaianPenelitian_length select:focus,
+#datatablePenilaianPengabdian_length select:focus {
   border: 1px solid #1a42b8;
   outline: none;
 }
 
-#datatablePenilaianPenelitian_paginate > span {
+#datatablePenilaianPenelitian_paginate span .paginate_button,
+#datatablePenilaianPengabdian_paginate span .paginate_button {
+  border: none;
+  background-color: transparent;
+  background: transparent;
+  font-size: 0.875rem;
+  line-height: 0.875rem;
+  padding: 0;
+  margin: 0;
+  min-width: 0;
+
   width: 2rem;
   height: 2rem;
   display: inline-flex;
@@ -170,27 +183,73 @@ table.dataTable thead td {
   transition: var(--trans-m);
 }
 
-#datatablePenilaianPenelitian_paginate > span:hover {
+#datatablePenilaianPenelitian_paginate > span .paginate_button:hover,
+#datatablePenilaianPengabdian_paginate > span .paginate_button:hover,
+#datatablePenilaianPenelitian_paginate > span .paginate_button.current:hover,
+#datatablePenilaianPengabdian_paginate > span .paginate_button.current:hover {
   background-color: rgba(230, 235, 250, 1);
-}
-
-#datatablePenilaianPenelitian_paginate span .paginate_button {
-  border: none;
-  background-color: transparent;
-  background: transparent;
-  font-size: 0.875rem;
-  line-height: 0.875rem;
-  padding: 0;
-  margin: 0;
-  min-width: 0;
+  color: var(--black) !important;
 }
 
 #datatablePenilaianPenelitian_paginate span .paginate_button:focus,
 #datatablePenilaianPenelitian_paginate span .paginate_button:active,
-#datatablePenilaianPenelitian_paginate span .paginate_button:visited {
+#datatablePenilaianPenelitian_paginate span .paginate_button:visited,
+#datatablePenilaianPengabdian_paginate span .paginate_button:focus,
+#datatablePenilaianPengabdian_paginate span .paginate_button:active,
+#datatablePenilaianPengabdian_paginate span .paginate_button:visited {
   outline: none !important;
   border: none;
   box-shadow: none;
+}
+
+#datatablePenilaianPenelitian_paginate span a,
+#datatablePenilaianPengabdian_paginate span a {
+  margin-right: 0.5rem !important;
+}
+
+#datatablePenilaianPenelitian_paginate span a:last-child,
+#datatablePenilaianPengabdian_paginate span a:last-child {
+  margin-right: 0 !important;
+}
+
+#datatablePenilaianPenelitian_paginate #datatablePenilaianPenelitian_next,
+#datatablePenilaianPenelitian_paginate #datatablePenilaianPenelitian_previous,
+#datatablePenilaianPengabdian_paginate #datatablePenilaianPengabdian_next,
+#datatablePenilaianPengabdian_paginate #datatablePenilaianPengabdian_previous,
+#datatablePenilaianPenelitian_paginate
+  #datatablePenilaianPenelitian_next.disabled,
+#datatablePenilaianPenelitian_paginate
+  #datatablePenilaianPengabdian_previous.disabled,
+#datatablePenilaianPengabdian_paginate
+  #datatablePenilaianPengabdian_next.disabled,
+#datatablePenilaianPengabdian_paginate
+  #datatablePenilaianPengabdian_previous.disabled {
+  border: none !important;
+}
+
+#datatablePenilaianPenelitian_paginate #datatablePenilaianPenelitian_next:hover,
+#datatablePenilaianPenelitian_paginate
+  #datatablePenilaianPenelitian_previous:hover,
+#datatablePenilaianPengabdian_paginate #datatablePenilaianPengabdian_next:hover,
+#datatablePenilaianPengabdian_paginate
+  #datatablePenilaianPengabdian_previous:hover {
+  background: rgba(230, 235, 250, 1);
+  border-radius: 2rem !important;
+  color: var(--black) !important;
+  border: none !important;
+  box-shadow: none;
+}
+
+#datatablePenilaianPenelitian_paginate
+  #datatablePenilaianPenelitian_next.disabled:hover,
+#datatablePenilaianPenelitian_paginate
+  #datatablePenilaianPenelitian_previous.disabled:hover,
+#datatablePenilaianPengabdian_paginate
+  #datatablePenilaianPengabdian_next.disabled:hover,
+#datatablePenilaianPengabdian_paginate
+  #datatablePenilaianPengabdian_previous.disabled:hover {
+  background: none;
+  border: none !important;
 }
 
 table.dataTable.display tbody tr.even > .sorting_1,
