@@ -24,45 +24,63 @@
                 datang kembali!</p>
         </div>
         <div class="title__subtitle-btn">
-            <div class="report__link btn btn__dark shadow-none button__filters" id="btnFilterLeader">
+            <button type="button" class="report__link btn btn__dark shadow-none button__filters" id="btnFilterLeader"
+                data-bs-toggle="modal" data-bs-target="#filterLeaderContainer">
                 <i class="fa-solid fa-filter me-2" id="btnFilterLeaderIcon"></i>
                 <span id="btnFilterLeaderSpan">Filter</span>
+            </button>
+        </div>
+    </div>
+</div>
+
+<!-- Modal Filter Form -->
+<div class="modal fade" id="filterLeaderContainer" tabindex="-1" aria-labelledby="filterLeaderContainerLabel"
+    aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered align-items-center justify-content-center">
+        <div class="modal-content modal__content-filter">
+            <div class="modal-body position-relative modal__body-filter">
+                <form action="/leader/switchTahunUnit" method="POST" id="formFilterLeader">
+                    <h5 class="title__filter">Filters</h5>
+                    <!-- tahun -->
+                    <div class="mb-3">
+                        <label for="tahunLeader" class="form-label form__label">Tahun</label>
+                        <select name="tahunLeader" id="tahunLeader" class="form-select form__select shadow-none">
+                            <?php foreach ($data_tahun as $daftartahun) : ?>
+                            <option
+                                value="<?= $daftartahun['tahun'] ?>"
+                                <?php if ($data_user['tahun'] == $daftartahun['tahun']) {
+                        echo "selected";
+                    } ?>><?= $daftartahun['tahun'] ?>
+                            </option>
+                            <?php endforeach; ?>
+                        </select>
+                    </div>
+                    <!-- unit -->
+                    <div class="mb-3">
+                        <label for="unitLeader" class="form-label form__label">Unit</label>
+                        <select name="unitLeader" id="unitLeader" class="form-select form__select shadow-none">
+                            <?php foreach ($data_unit as $daftarunit) : ?>
+                            <option
+                                value="<?= $daftarunit['unit_id'] ?>"
+                                <?php if ($data_user['unit_id'] == $daftarunit['unit_id']) {
+                        echo "selected";
+                    } ?>><?= $daftarunit['nama_unit'] ?>
+                            </option>
+                            <?php endforeach; ?>
+                        </select>
+                    </div>
+                    <!-- submit -->
+                    <div class="submit__leader">
+                        <button class="btn btn__submit-leader shadow-none color__primary" type="submit">
+                            Save view
+                        </button>
+                    </div>
+                </form>
             </div>
         </div>
     </div>
 </div>
 
-<div id="filterLeader">
-    <div class="filter__leader-container position-relative" id="filterLeaderContainer">
-        <form action="/leader/switchTahunUnit" method="POST" id="formFilterLeader">
-            <h5 class="title__filter">Filters</h5>
-            <!-- tahun -->
-            <div class="mb-3">
-                <label for="tahunLeader" class="form-label form__label">Tahun</label>
-                <select name="tahunLeader" id="tahunLeader" class="form-select form__select shadow-none">
-                    <?php foreach ($data_tahun as $daftartahun) : ?>
-                        <option value="<?= $daftartahun['tahun'] ?>" <?php if ($data_user['tahun'] == $daftartahun['tahun']) echo "selected"; ?>><?= $daftartahun['tahun'] ?></option>
-                    <?php endforeach; ?>
-                </select>
-            </div>
-            <!-- unit -->
-            <div class="mb-3">
-                <label for="unitLeader" class="form-label form__label">Unit</label>
-                <select name="unitLeader" id="unitLeader" class="form-select form__select shadow-none">
-                    <?php foreach ($data_unit as $daftarunit) : ?>
-                        <option value="<?= $daftarunit['unit_id'] ?>" <?php if ($data_user['unit_id'] == $daftarunit['unit_id']) echo "selected"; ?>><?= $daftarunit['nama_unit'] ?></option>
-                    <?php endforeach; ?>
-                </select>
-            </div>
-            <!-- submit -->
-            <div class="submit__leader">
-                <button class="btn btn__submit-leader shadow-none color__primary" type="submit">
-                    Apply Filters
-                </button>
-            </div>
-        </form>
-    </div>
-</div>
 
 <!-- body main -->
 <!-- chart content -->
@@ -78,16 +96,22 @@
 <!-- indikator chart content -->
 <div class="indikator__content">
     <div class="indikator__content-card shadow__box-sm">
-        <h6 id="unitIndikator"><?= $data_user['unit'] ?></h6>
+        <h6 id="unitIndikator"><?= $data_user['unit'] ?>
+        </h6>
         <div class="content-indikator__title">
             <h5 class="card__title mb-3">Rekap Indikator <span><?= $data_user['tahun']; ?></span>
             </h5>
             <div class="filter__panel mb-3">
                 <div class="nav nav-pills" id="pills-tab" role="tablist">
-                    <button class="btn filter__btn-indikator me-0 me-md-3 shadow-none active nav-link active mb-2" id="piils-indikator-penelitian" data-bs-toggle="pill" data-bs-target="#pills-chart-indikator-penelitian" type="button" role="tab" aria-controls="pills-chart-indikator-penelitian" aria-selected="true">
+                    <button class="btn filter__btn-indikator me-0 me-md-3 shadow-none active nav-link active mb-2"
+                        id="piils-indikator-penelitian" data-bs-toggle="pill"
+                        data-bs-target="#pills-chart-indikator-penelitian" type="button" role="tab"
+                        aria-controls="pills-chart-indikator-penelitian" aria-selected="true">
                         Penelitian
                     </button>
-                    <button class="btn filter__btn-indikator shadow-none nav-link mb-2" id="pills-indikator-pm" data-bs-toggle="pill" data-bs-target="#pills-chart-indikator-pm" type="button" role="tab" aria-controls="pills-chart-indikator-pm" aria-selected="false">
+                    <button class="btn filter__btn-indikator shadow-none nav-link mb-2" id="pills-indikator-pm"
+                        data-bs-toggle="pill" data-bs-target="#pills-chart-indikator-pm" type="button" role="tab"
+                        aria-controls="pills-chart-indikator-pm" aria-selected="false">
                         Pengabdian Masyarakat
                     </button>
                 </div>
@@ -160,4 +184,4 @@
     });
 </script>
 
-<?= $this->endSection(); ?>
+<?= $this->endSection();
