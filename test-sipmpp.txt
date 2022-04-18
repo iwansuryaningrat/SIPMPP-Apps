@@ -67,6 +67,7 @@ Add SweetAlert2
 - Validation form (DONE)
 - Title page (DONE)
 - Button lihat password (DONE)
+- Revisi styling pagination (DONE)
 
 # Role Auditor
 - Page dashboard (DONE)
@@ -97,4 +98,4 @@ Add SweetAlert2
 - Shadow-none button (DONE)
 - Button lihat password (DONE)
 - Revisi content dashboard (DONE)
-- PAKE MODAL APA NGG YA ? HUFT
+- PAKE MODAL APA NGG YA ? HUFT (DONE)
