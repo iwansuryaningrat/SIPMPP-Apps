@@ -81,6 +81,7 @@ Add SweetAlert2
 - Shadow-none button (DONE)
 - Button lihat password (DONE)
 - Revisi change display document at form indikator (DONE)
+- Revisi icon document (DONE)
 
 # Role Leader
 - Page dashboard (adding select tahun and unit) (DONE)
@@ -95,3 +96,4 @@ Add SweetAlert2
 - Shadow-none button (DONE)
 - Button lihat password (DONE)
 - Revisi content dashboard (DONE)
+- PAKE MODAL APA NGG YA ? HUFT
