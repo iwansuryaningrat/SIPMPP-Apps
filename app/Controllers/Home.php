@@ -345,7 +345,7 @@ class Home extends BaseController
             if ($dokumen->getError() == 4) {
                 return redirect()->to('/home/indikatorform/' . $kategori_id . '/' . $standar_id . '/' . $indikator_id);
             } else {
-                $namadokumen = $dokumen->getMTime() . '-' . $dokumen->getName();
+                $namadokumen = $dokumen->getMTime() . '-' . $tahun . '-' . $dokumen->getName();
                 // dd($namadokumen);
                 $dokumen->move('dokumen/', $namadokumen);
             };
