@@ -337,8 +337,10 @@ class Home extends BaseController
         $dokumen = $this->request->getFile('dokumen');
         // $dokumen = $this->request->getPost('dokumen');
         $err = $dokumen->getErrorString();
-        if ($err = "No file was uploaded.") {
+        // dd($err);
+        if ($err == "No file was uploaded.") {
             $namadokumen = $datapenilaian['dokumen'];
+            // dd('No File');
         } else {
             if ($dokumen->getError() == 4) {
                 return redirect()->to('/home/indikatorform/' . $kategori_id . '/' . $standar_id . '/' . $indikator_id);

@@ -25,6 +25,7 @@
 - Add Daftar Unit at Unit Page (Done)
 - Fixing Filter (Done)
 - Fixing Dashboard Page (Done)
+- Cek Upload Dokumen (Done)
 
 * Admin Page
 - UNDO after add data (all form)
@@ -33,7 +34,6 @@
 
 * USER Page
 - Fixing daftar penilaian after generated (PPM tidak Muncul)
-- Cek Upload Dokumen
 
 * Leader Page
 

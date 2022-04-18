@@ -107,9 +107,9 @@
           <div class="row me-0">
             <div class="col-10">
               <div class="input-group">
-                <input type="file" class="form-control form__control shadow-none" name="dokumen" id="dokumen" value="<?= $datapenilaian['dokumen']; ?>" placeholder="<?= $datapenilaian['dokumen']; ?>" <?php if ($datapenilaian['status'] == 'Dikirim' || $datapenilaian['status'] == 'Diaudit') {
-                                                                                                                                                                                                          echo 'disabled';
-                                                                                                                                                                                                        } ?> />
+                <input type="file" class="form-control form__control shadow-none" name="dokumen" id="dokumen" placeholder="<?= $datapenilaian['dokumen']; ?>" <?php if ($datapenilaian['status'] == 'Dikirim' || $datapenilaian['status'] == 'Diaudit') {
+                                                                                                                                                                echo 'disabled';
+                                                                                                                                                              } ?> />
                 <label class="input-group-text input__group__upload" for="dokumen">Upload</label>
               </div>
             </div>
