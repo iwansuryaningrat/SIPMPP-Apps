@@ -114,7 +114,8 @@
                     </thead>
                     <tbody>
 
-                        <?php foreach ($dataPenilaian as $data) :
+                        <?php $i = 1;
+                        foreach ($dataPenilaian as $data) :
                             if ($data['kategori_id'] == 'PPM') : ?>
                                 <tr>
                                     <td><?= $i; ?></td>
