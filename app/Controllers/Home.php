@@ -181,7 +181,52 @@ class Home extends BaseController
         $unit_id = $data_user['unit_id'];
 
 
-        $data = $this->penilaianModel->getPenilaian($unit_id, $tahun);
+        $data = [];
+        // Penelitian
+        $dataPEN = $this->penilaianModel->getPenilaianStat($unit_id, $tahun, 'PEN');
+        $nilaiPEN = [];
+        foreach ($dataPEN as $datap) {
+            $nilai_akhir = 0;
+            $i = 1;
+            $datapenilaian = $this->penilaianModel->getPenilaianSpec($data_user['unit_id'], $datap['standar_id'], $tahun, $datap['kategori_id']);
+            foreach ($datapenilaian as $nilai) {
+                $nilai_akhir += $nilai['nilai_akhir'];
+                $i++;
+            }
+            $nilai_akhir = $nilai_akhir / $i;
+            $nilaiPEN[] = [
+                'standar_id' => $datap['standar_id'],
+                'kategori_id' => $datap['kategori_id'],
+                'nilai_akhir' => $nilai_akhir,
+            ];
+        }
+
+        // Pengabdian
+        $dataPPM = $this->penilaianModel->getPenilaianStat($unit_id, $tahun, 'PPM');
+        $nilaiPPM = [];
+        foreach ($dataPPM as $datap) {
+            $nilai_akhir = 0;
+            $i = 1;
+            $dataPPMilaian = $this->penilaianModel->getPenilaianSpec($data_user['unit_id'], $datap['standar_id'], $tahun, $datap['kategori_id']);
+            foreach ($dataPPMilaian as $nilai) {
+                $nilai_akhir += $nilai['nilai_akhir'];
+                $i++;
+            }
+            $nilai_akhir = $nilai_akhir / $i;
+            $nilaiPPM[] = [
+                'standar_id' => $datap['standar_id'],
+                'kategori_id' => $datap['kategori_id'],
+                'nilai_akhir' => $nilai_akhir,
+            ];
+        }
+
+        foreach ($dataPEN as $PEN) {
+            $data[] = $PEN;
+        }
+        foreach ($dataPPM as $PPM) {
+            $data[] = $PPM;
+        }
+
         $data_nilai = [];
         foreach ($data as $datap) {
             $nilai_akhir = 0;
@@ -345,7 +390,7 @@ class Home extends BaseController
         // dd($err);
         if ($err == "No file was uploaded.") {
             $namadokumen = $datapenilaian['dokumen'];
-        // dd('No File');
+            // dd('No File');
         } else {
             if ($dokumen->getError() == 4) {
                 return redirect()->to('/home/indikatorform/' . $kategori_id . '/' . $standar_id . '/' . $indikator_id);
@@ -381,7 +426,14 @@ class Home extends BaseController
 
 
         $unit_id = $data_user['unit_id'];
-        $standar = $this->penilaianModel->getPenilaian($unit_id, $tahun);
+        $dataPEN = $this->penilaianModel->getPenilaianStat($unit_id, $tahun, 'PEN');
+        $dataPPM = $this->penilaianModel->getPenilaianStat($unit_id, $tahun, 'PPM');
+        foreach ($dataPEN as $PEN) {
+            $standar[] = $PEN;
+        }
+        foreach ($dataPPM as $PPM) {
+            $standar[] = $PPM;
+        }
         $status = [];
         foreach ($standar as $s) {
             array_push($status, $s['status']);

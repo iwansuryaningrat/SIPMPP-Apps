@@ -276,4 +276,19 @@ class PenilaianModel extends Model
             ])
             ->update();
     }
+
+    // TESTING FUNCTION
+    public function getPenilaianStat($unit_id, $tahun, $kategori_id)
+    {
+        return $this->select('penilaian.tahun, penilaian.unit_id, penilaian.standar_id, penilaian.kategori_id, penilaian.status, penilaian.nilai_akhir, standar.nama_standar, standar.NoStd')
+            ->join('standar', 'standar.standar_id=penilaian.standar_id')
+            ->where('penilaian.unit_id', $unit_id)
+            ->where('penilaian.tahun', $tahun)
+            ->where('penilaian.kategori_id', $kategori_id)
+            ->where('standar.kategori_id', $kategori_id)
+            // ->where('standar.kategori_id', 'penilaian.kategori_id')
+            ->groupby('standar.nama_standar')
+            ->orderBy('standar.NoStd', 'ASC')
+            ->findAll();
+    }
 }

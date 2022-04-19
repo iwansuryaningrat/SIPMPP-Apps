@@ -28,6 +28,7 @@
 - Cek Upload Dokumen (Done)
 - Create method to reset data induk (Done)
 - Create method to reset data penilaian (Done)
+- Fixing daftar penilaian after generated (PPM tidak Muncul) (Done)
 
 * Admin Page
 - UNDO after add data (all form)
@@ -35,7 +36,6 @@
 * Auditor Page
 
 * USER Page
-- Fixing daftar penilaian after generated (PPM tidak Muncul)
 
 * Leader Page
 

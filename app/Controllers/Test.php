@@ -68,10 +68,11 @@ class Test extends BaseController
         $unit_id = $data_user['unit_id'];
 
 
-        $data = $this->penilaianModel->getPenilaian($unit_id, $tahun);
-        dd($data);
-        $data_nilai = [];
-        foreach ($data as $datap) {
+        $data = [];
+        // Penelitian
+        $dataPEN = $this->penilaianModel->getPenilaianStat($unit_id, $tahun, 'PEN');
+        $nilaiPEN = [];
+        foreach ($dataPEN as $datap) {
             $nilai_akhir = 0;
             $i = 1;
             $datapenilaian = $this->penilaianModel->getPenilaianSpec($data_user['unit_id'], $datap['standar_id'], $tahun, $datap['kategori_id']);
@@ -80,11 +81,39 @@ class Test extends BaseController
                 $i++;
             }
             $nilai_akhir = $nilai_akhir / $i;
-            $data_nilai[] = [
+            $nilaiPEN[] = [
                 'standar_id' => $datap['standar_id'],
                 'kategori_id' => $datap['kategori_id'],
                 'nilai_akhir' => $nilai_akhir,
             ];
         }
+
+        // Pengabdian
+        $dataPPM = $this->penilaianModel->getPenilaianStat($unit_id, $tahun, 'PPM');
+        $nilaiPPM = [];
+        foreach ($dataPPM as $datap) {
+            $nilai_akhir = 0;
+            $i = 1;
+            $dataPPMilaian = $this->penilaianModel->getPenilaianSpec($data_user['unit_id'], $datap['standar_id'], $tahun, $datap['kategori_id']);
+            foreach ($dataPPMilaian as $nilai) {
+                $nilai_akhir += $nilai['nilai_akhir'];
+                $i++;
+            }
+            $nilai_akhir = $nilai_akhir / $i;
+            $nilaiPPM[] = [
+                'standar_id' => $datap['standar_id'],
+                'kategori_id' => $datap['kategori_id'],
+                'nilai_akhir' => $nilai_akhir,
+            ];
+        }
+
+        foreach ($dataPEN as $PEN) {
+            $data[] = $PEN;
+        }
+        foreach ($dataPPM as $PPM) {
+            $data[] = $PPM;
+        }
+
+        dd($data);
     }
 }
