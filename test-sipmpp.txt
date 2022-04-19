@@ -29,6 +29,7 @@
 
 * Admin Page
 - UNDO after add data (all form)
+- Create method to reset data
 
 * Auditor Page
 
