@@ -92,7 +92,7 @@ class Admin extends BaseController
             'counter' => $counter,
             'tahun' => $usersession['tahun'],
             'tahunsession' => $this->tahun,
-            'cssCustom' => '',
+            'cssCustom' => '<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>',
         ];
 
 
