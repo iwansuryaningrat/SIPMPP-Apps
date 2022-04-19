@@ -38,19 +38,17 @@
 * Leader Page
 
 ========== KEKURANGAN FRONT END ==========
-Add SweetAlert2
-
 # Login Page
 - Remove unit select dropdown, while role == admin (DONE)
 - Login page content
 - Responsiveness (DONE)
 - Validation form (DONE)
 - Title page (DONE)
-- Check link
+- Check link (DONE)
 - Check console.log (DONE)
 - Shadow-none button (DONE)
 - Button lihat password (DONE)
-- Fixing Shadow Styles ()
+- Fixing Shadow Styles (DONE)
 
 # Role User
 - Responsiveness pages (DONE)
@@ -74,7 +72,7 @@ Add SweetAlert2
 - Revisi styling pagination (DONE)
 - Tambah Action Reset Data Penilaian dan isian data induk (DONE)
 - Add notify dashboard (DONE)
-- Change filter asc and desc data table ()
+- Change filter asc and desc data table (DONE)
 - Fixing Shadow Styles (DONE)
 
 # Role Auditor
