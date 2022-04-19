@@ -149,6 +149,16 @@
     </div>
 </div>
 
+<div class="mt-5 reset__section">
+    <!-- reset data -->
+    <a href="/admin/resetDataInduk" class="btn btn-danger mb-3 shadow-none">
+        Reset Data
+    </a>
+    <p class="text-danger">*Tombol reset data hanya digunakan jika data yang sudah dikirim untuk di audit terdapat
+        kesalahan input data. Setelah reset dilakukan, user harus mengirim ulang data untuk di audit.
+    </p>
+</div>
+
 <?= $this->endSection(); ?>
 
 <?= $this->section('script'); ?>

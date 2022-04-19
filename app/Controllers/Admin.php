@@ -776,4 +776,54 @@ class Admin extends BaseController
 
         return redirect()->to(base_url('/admin/index'));
     }
+
+    // Reset Penilaian
+    public function resetPenilaian()
+    {
+        $usersession = $this->data_user;
+        $daftartahun = $this->tahunModel->findAll();
+        $daftarunit = $this->unitsModel->findAll();
+
+        $data = [
+            'title' => 'Reset Data Penilaian | SIPMPP UNDIP ' . $this->thisTahun,
+            'tab' => 'penilaian',
+            'css' => 'styles-admin-add-indikator.css',
+            'header' => 'header__mini header__mini-data-induk',
+            'i' => $this->i,
+            'usersession' => $usersession,
+            'tahun' => $usersession['tahun'],
+            'tahunsession' => $this->tahun,
+            'cssCustom' => '',
+            'daftartahun' => $daftartahun,
+            'daftarunit' => $daftarunit,
+        ];
+        ;
+
+        return view('/admin/reset-penilaian', $data);
+    }
+
+    // Reset dataInduk
+    public function resetDataInduk()
+    {
+        $usersession = $this->data_user;
+        $daftartahun = $this->tahunModel->findAll();
+        $daftarunit = $this->unitsModel->findAll();
+
+        $data = [
+            'title' => 'Reset Data Induk | SIPMPP UNDIP ' . $this->thisTahun,
+            'tab' => 'induk',
+            'css' => 'styles-admin-add-indikator.css',
+            'header' => 'header__mini header__mini-data-induk',
+            'i' => $this->i,
+            'usersession' => $usersession,
+            'tahun' => $usersession['tahun'],
+            'tahunsession' => $this->tahun,
+            'cssCustom' => '',
+            'daftartahun' => $daftartahun,
+            'daftarunit' => $daftarunit,
+        ];
+        ;
+
+        return view('/admin/reset-dataInduk', $data);
+    }
 }

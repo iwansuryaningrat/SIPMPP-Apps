@@ -68,6 +68,7 @@ Add SweetAlert2
 - Title page (DONE)
 - Button lihat password (DONE)
 - Revisi styling pagination (DONE)
+- Tambah Action Reset Data Penilaian dan isian data induk (DONE)
 
 # Role Auditor
 - Page dashboard (DONE)

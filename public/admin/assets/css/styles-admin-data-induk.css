@@ -324,6 +324,14 @@ table.dataTable.display tbody tr > .sorting_3 {
   background-color: var(--dark-main-color) !important;
 }
 
+.reset__section {
+  width: 50%;
+}
+
+.reset__section p {
+  font-size: 0.75rem;
+}
+
 @media screen and (max-width: 1024px) {
   /* ========== filter btn ========== */
   .filter__btn {
@@ -351,6 +359,10 @@ table.dataTable.display tbody tr > .sorting_3 {
 
   .title__body__button .btn__add.btn__dark {
     margin-left: 0 !important;
+  }
+
+  .reset__section {
+    width: 100%;
   }
 }
 
