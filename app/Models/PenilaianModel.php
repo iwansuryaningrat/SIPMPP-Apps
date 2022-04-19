@@ -291,4 +291,14 @@ class PenilaianModel extends Model
             ->orderBy('standar.NoStd', 'ASC')
             ->findAll();
     }
+
+    // TESTING FUNCTION
+    public function test($unit_id, $tahun)
+    {
+        return $this->select('penilaian.*')
+            ->where('penilaian.unit_id', $unit_id)
+            ->where('penilaian.tahun', $tahun)
+            // ->where('penilaian.kategori_id', $kategori_id)
+            ->findAll();
+    }
 }
