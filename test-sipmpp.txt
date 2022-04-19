@@ -29,7 +29,8 @@
 
 * Admin Page
 - UNDO after add data (all form)
-- Create method to reset data
+- Create method to reset data penilaian
+- Create method to reset data induk
 
 * Auditor Page
 
