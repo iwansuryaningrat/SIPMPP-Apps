@@ -92,8 +92,8 @@ Add SweetAlert2
 - Button lihat password (DONE)
 - Revisi change display document at form indikator (DONE)
 - Revisi icon document (DONE)
-- Add notify dashboard ()
-- Change filter asc and desc data table ()
+- Add notify dashboard (DONE)
+- Change filter asc and desc data table (DONE)
 - Fixing Shadow Styles (DONE)
 
 # Role Leader
@@ -110,6 +110,6 @@ Add SweetAlert2
 - Button lihat password (DONE)
 - Revisi content dashboard (DONE)
 - Revisi filter form dashboard (DONE)
-- Add notify dashboard ()
-- Change filter asc and desc data table ()
+- Add notify dashboard (DONE)
+- Change filter asc and desc data table (DONE)
 - Fixing Shadow Styles (DONE)

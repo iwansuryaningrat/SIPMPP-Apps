@@ -109,6 +109,7 @@ class Leader extends BaseController
             'tahun' => $data_user['tahun'],
             'header' => 'header__big',
             'css' => 'styles-leader-dashboard.css',
+            'cssCustom' => '<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>',
             'tahunsession' => $this->tahun,
             'data_tahun' => $data_tahun,
             'data_unit' => $data_unit,
@@ -133,6 +134,7 @@ class Leader extends BaseController
             'tahun' => $data_user['tahun'],
             'header' => 'header__mini header__unit',
             'css' => 'styles-leader-unit.css',
+            'cssCustom' => '',
             'tahunsession' => $this->tahun,
             'units' => $units,
         ];
@@ -154,6 +156,7 @@ class Leader extends BaseController
             'tab' => 'profile',
             'header' => 'header__mini header__profile',
             'css' => 'styles-leader-profile.css',
+            'cssCustom' => '',
             'tahun' => $data_user['tahun'],
             'tahunsession' => $this->tahun,
             'cssCustom' => '',
@@ -162,7 +165,7 @@ class Leader extends BaseController
         return view('leader/profile', $data);
     }
 
-    // Switch Tahun & Unit Method 
+    // Switch Tahun & Unit Method
     public function switchTahunUnit()
     {
         $tahun = $this->request->getPost('tahunLeader');
