@@ -86,6 +86,7 @@ class Home extends BaseController
             'tahun' => $data_user['tahun'],
             'header' => 'header__big',
             'css' => 'styles-dashboard.css',
+            'cssCustom' => '<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>',
             'tahunsession' => $this->tahun,
             'indukpersen' => $indukpersen,
             'dataprogresstandar' => $dataprogresstandar,
@@ -115,6 +116,7 @@ class Home extends BaseController
             'tab' => 'induk',
             'header' => 'header__mini header__datainduk',
             'css' => 'styles-data-induk.css',
+            'cssCustom' => '',
             'i' => $i,
             'data_user' => $data_user,
             'data_indukPen' => $data_indukPen,
@@ -219,6 +221,7 @@ class Home extends BaseController
             'tab' => 'standar',
             'header' => 'header__mini header__spmi',
             'css' => 'styles-standar.css',
+            'cssCustom' => '',
             'tahun' => $tahun,
             'i' => $i,
             'status' => $status,
@@ -253,6 +256,7 @@ class Home extends BaseController
             'i' => $i,
             'header' => 'header__mini header__indikator',
             'css' => 'styles-indikator.css',
+            'cssCustom' => '',
             'tahun' => $tahun,
             'datapenilaian' => $datapenilaian,
             'standar' => $standar,
@@ -288,6 +292,7 @@ class Home extends BaseController
                 'tab' => 'standar',
                 'header' => 'header__mini header__indikator',
                 'css' => 'styles-form-indikator-spmi.css',
+                'cssCustom' => '',
                 'kategori' => $kategori['nama_kategori'],
                 'datapenilaian' => $datapenilaian,
                 'standar' => $standar,
@@ -340,7 +345,7 @@ class Home extends BaseController
         // dd($err);
         if ($err == "No file was uploaded.") {
             $namadokumen = $datapenilaian['dokumen'];
-            // dd('No File');
+        // dd('No File');
         } else {
             if ($dokumen->getError() == 4) {
                 return redirect()->to('/home/indikatorform/' . $kategori_id . '/' . $standar_id . '/' . $indikator_id);
@@ -441,6 +446,7 @@ class Home extends BaseController
             'tab' => 'report',
             'header' => 'header__mini header__report',
             'css' => 'styles-report.css',
+            'cssCustom' => '',
             'tahunsession' => $this->tahun,
             'tahun' => $data_user['tahun'],
             'stats' => $Stats,
@@ -462,6 +468,7 @@ class Home extends BaseController
             'tab' => 'profile',
             'header' => 'header__mini header__profile',
             'css' => 'styles-profile.css',
+            'cssCustom' => '',
             'tahunsession' => $this->tahun,
             'tahun' => $data_user['tahun'],
         ];

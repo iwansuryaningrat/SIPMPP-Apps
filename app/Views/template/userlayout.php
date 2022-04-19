@@ -33,6 +33,7 @@
 
     <!-- Custom Page Style -->
     <link rel="stylesheet" href="/assets/css/<?= $css; ?>" />
+    <?= $cssCustom; ?>
 
     <!-- appletochicon -->
     <link rel="shortcut icon" href="/assets/img/icon/favicon.ico" type="image/x-icon" />

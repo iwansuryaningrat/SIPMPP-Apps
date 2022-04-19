@@ -200,6 +200,8 @@ table.dataTable thead td {
   outline: none !important;
   border: none;
   box-shadow: none;
+  -webkit-box-shadow: none;
+  -moz-box-shadow: none;
 }
 
 #datatablePenilaianPenelitian_paginate span a,
@@ -238,6 +240,8 @@ table.dataTable thead td {
   color: var(--black) !important;
   border: none !important;
   box-shadow: none;
+  -webkit-box-shadow: none;
+  -moz-box-shadow: none;
 }
 
 #datatablePenilaianPenelitian_paginate

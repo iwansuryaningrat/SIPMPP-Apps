@@ -50,6 +50,7 @@ Add SweetAlert2
 - Check console.log (DONE)
 - Shadow-none button (DONE)
 - Button lihat password (DONE)
+- Fixing Shadow Styles ()
 
 # Role User
 - Responsiveness pages (DONE)
@@ -57,6 +58,9 @@ Add SweetAlert2
 - Validation form (DONE)
 - Title page (DONE)
 - Button lihat password (DONE)
+- Add notify dashboard (DONE)
+- Change filter asc and desc data table (DONE)
+- Fixing Shadow Styles (DONE)
 
 # Role Admin
 - Multiple select form add base user (DONE)
@@ -69,6 +73,9 @@ Add SweetAlert2
 - Button lihat password (DONE)
 - Revisi styling pagination (DONE)
 - Tambah Action Reset Data Penilaian dan isian data induk (DONE)
+- Add notify dashboard (DONE)
+- Change filter asc and desc data table ()
+- Fixing Shadow Styles (DONE)
 
 # Role Auditor
 - Page dashboard (DONE)
@@ -85,6 +92,9 @@ Add SweetAlert2
 - Button lihat password (DONE)
 - Revisi change display document at form indikator (DONE)
 - Revisi icon document (DONE)
+- Add notify dashboard ()
+- Change filter asc and desc data table ()
+- Fixing Shadow Styles (DONE)
 
 # Role Leader
 - Page dashboard (adding select tahun and unit) (DONE)
@@ -100,3 +110,6 @@ Add SweetAlert2
 - Button lihat password (DONE)
 - Revisi content dashboard (DONE)
 - Revisi filter form dashboard (DONE)
+- Add notify dashboard ()
+- Change filter asc and desc data table ()
+- Fixing Shadow Styles (DONE)
