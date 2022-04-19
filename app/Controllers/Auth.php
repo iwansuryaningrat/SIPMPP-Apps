@@ -171,19 +171,23 @@ class Auth extends BaseController
     // Update Admin (Done)
     public function updateadmin($email)
     {
-        $user = $this->usersModel->getUserByEmail($email);
-        $data = [
-            'email' => $email,
-            'role_id' => '2',
-            'unit_id' => 'lppm',
-            'tahun' => date('Y'),
-        ];
+        $tahun = date('Y');
+        $role_id = $this->roleModel->getRoleId('admin');
+        $user = $this->userroleunitModel->getUserUnitRoleTahun($email, $tahun, $role_id);
+        if ($user == null) {
+            $data = [
+                'email' => $email,
+                'role_id' => $role_id,
+                'unit_id' => 'lppm',
+                'tahun' => $tahun,
+            ];
 
-        $this->userroleunitModel->insert($data);
+            $this->userroleunitModel->insert($data);
 
-        session()->setFlashdata('success', 'Akun berhasil diupdate, silahkan login sebagai administrator.');
+            session()->setFlashdata('success', 'Akun berhasil diupdate, silahkan login sebagai administrator.');
 
-        return redirect()->to('/login');
+            return redirect()->to('/login');
+        }
     }
 
     // Logout
