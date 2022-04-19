@@ -125,4 +125,13 @@ class UnitIndukTahunModel extends Model
             ->where('kategori_id', $kategori_id)
             ->delete();
     }
+
+    // Reset Data Induk
+    public function resetUnitIndukTahun($tahun, $unit_id)
+    {
+        return $this->where('tahun', $tahun)
+            ->where('unit_id', $unit_id)
+            ->set('nilai', 0)
+            ->update();
+    }
 }

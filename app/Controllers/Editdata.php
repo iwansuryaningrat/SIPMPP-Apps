@@ -248,4 +248,19 @@ class Editdata extends BaseController
 
         return redirect()->to(base_url('/admin/viewIndikator/' . $standar_id . '/' . $kategori_id));
     }
+
+    // Reset Data Induk Method (Done)
+    public function resetDataInduk()
+    {
+        $tahun = $this->request->getVar('tahun');
+        $unit_id = $this->request->getVar('unit');
+        foreach ($tahun as $tahun) {
+            foreach ($unit_id as $unit) {
+                $this->unitIndukTahunModel->resetUnitIndukTahun($tahun, $unit);
+            }
+        }
+
+        session()->setFlashdata('message', '<div class="alert alert-success alert__sipmpp" role="alert"><i class="fa-solid fa-circle-check color__success"></i><span>Data Induk berhasil direset!</span></div>');
+        return redirect()->to(base_url('/admin/isianDataInduk'));
+    }
 }

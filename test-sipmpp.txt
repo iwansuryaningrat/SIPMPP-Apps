@@ -26,11 +26,11 @@
 - Fixing Filter (Done)
 - Fixing Dashboard Page (Done)
 - Cek Upload Dokumen (Done)
+- Create method to reset data induk (Done)
 
 * Admin Page
 - UNDO after add data (all form)
 - Create method to reset data penilaian
-- Create method to reset data induk
 
 * Auditor Page
 
