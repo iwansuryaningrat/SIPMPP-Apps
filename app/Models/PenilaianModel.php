@@ -263,4 +263,17 @@ class PenilaianModel extends Model
             ->where('kategori_id', $kategori_id)
             ->delete();
     }
+
+
+    // Reset penilaian
+    public function resetPenilaian($tahun, $unit_id)
+    {
+        return $this->where('tahun', $tahun)
+            ->where('unit_id', $unit_id)
+            ->set([
+                'status' => 'Belum Diisi',
+                'keterangan' => '',
+            ])
+            ->update();
+    }
 }

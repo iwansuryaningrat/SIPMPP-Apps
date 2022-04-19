@@ -24,7 +24,7 @@
 
 <!-- form reset data penelitian -->
 <div class="form__add__user">
-    <form method="POST" action="#">
+    <form method="POST" action="/editdata/resetDataPenilaian">
         <!-- tahun -->
         <div class="row mb-3 mb-sm-4">
             <label for="tahun" class="col-lg-3 col-md-3 col-sm-4 col-form-label form__label">Tahun <span class="color__danger">*</span></label>
