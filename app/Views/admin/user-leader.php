@@ -14,10 +14,10 @@
           <?php // uses regex that accepts any word character or hyphen in last name
           function split_name($name)
           {
-            $name = trim($name);
-            $last_name = (strpos($name, ' ') === false) ? '' : preg_replace('#.*\s([\w-]*)$#', '$1', $name);
-            $first_name = trim(preg_replace('#' . preg_quote($last_name, '#') . '#', '', $name));
-            return array($first_name, $last_name);
+              $name = trim($name);
+              $last_name = (strpos($name, ' ') === false) ? '' : preg_replace('#.*\s([\w-]*)$#', '$1', $name);
+              $first_name = trim(preg_replace('#' . preg_quote($last_name, '#') . '#', '', $name));
+              return array($first_name, $last_name);
           }
           echo split_name($usersession['nama'])[0];
           ?>
@@ -54,29 +54,32 @@
       <tbody>
         <?php foreach ($users as $user) :
           if ($user['role'] == 'pimpinan') : ?>
-            <tr>
-              <td><?= $i; ?>
-              </td>
-              <td><?= $user['nama']; ?>
-              </td>
-              <td><?= $user['email']; ?>
-              </td>
-              <td>
-                <ol class="list__table__user-unit">
-                  <?php foreach ($units as $unit) :
+        <tr>
+          <td><?= $i; ?>
+          </td>
+          <td><?= $user['nama']; ?>
+          </td>
+          <td><?= $user['email']; ?>
+          </td>
+          <td>
+            <ol class="list__table__user-unit">
+              <?php foreach ($units as $unit) :
                     if ($unit['email'] == $user['email'] && $unit['role'] == 'pimpinan') : ?>
-                      <li><?= $unit['nama_unit']; ?>
-                      </li>
-                  <?php endif;
+              <li><?= $unit['nama_unit']; ?>
+                <?= $unit['tahun']; ?>
+              </li>
+              <?php endif;
                   endforeach; ?>
-                </ol>
-              </td>
-              <td><?= $user['telp']; ?>
-              </td>
-              <td>
-                <a data-bs-placement="top" title="Delete" href="/deletedata/deleteUserRoleUnit/<?= $user['email']; ?>/4" class="delete__data__induk__icon"><i class="fa-solid fa-trash"></i></a>
-              </td>
-            </tr>
+            </ol>
+          </td>
+          <td><?= $user['telp']; ?>
+          </td>
+          <td>
+            <a data-bs-placement="top" title="Delete"
+              href="/deletedata/deleteUserRoleUnit/<?= $user['email']; ?>/4"
+              class="delete__data__induk__icon"><i class="fa-solid fa-trash"></i></a>
+          </td>
+        </tr>
         <?php $i++;
           endif;
         endforeach; ?>

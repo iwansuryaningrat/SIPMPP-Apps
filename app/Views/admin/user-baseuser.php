@@ -68,6 +68,7 @@
               <?php foreach ($units as $unit) :
                   if ($unit['email'] == $user['email'] && $unit['role'] == 'user') : ?>
               <li><?= $unit['nama_unit']; ?>
+                <?= $unit['tahun']; ?>
               </li>
               <?php endif;
                 endforeach; ?>

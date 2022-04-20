@@ -90,8 +90,8 @@ class UserRoleUnitModel extends Model
             ->join('users', 'users.email = user_role_unit.email')
             ->join('units', 'units.unit_id = user_role_unit.unit_id')
             ->join('role', 'role.role_id = user_role_unit.role_id')
-            ->groupby('units.nama_unit')
-            ->groupby('users.email')
+            // ->groupby('units.nama_unit')
+            // ->groupby('users.email')
             ->findAll();
     }
 
