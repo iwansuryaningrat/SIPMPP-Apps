@@ -152,7 +152,7 @@ class Savedata extends BaseController
         $this->session->setFlashdata('msg', '<div class="alert alert-success alert__sipmpp alert-dismissible fade show" role="alert"><i class="fa-solid fa-circle-check color__success"></i><span>User berhasil ditambahkan!</span></div>');
         if ($role == 'user') {
             return redirect()->to(base_url('admin/user'));
-        } else if ($role == 'auditor') {
+        } elseif ($role == 'auditor') {
             return redirect()->to(base_url('admin/auditor'));
         } else {
             return redirect()->to(base_url('admin/leader'));
@@ -401,7 +401,7 @@ class Savedata extends BaseController
                 foreach ($standarPengabdian as $ppm) {
                     $data = $this->indikatorModel->getIndikator('PPM', $ppm);
                     foreach ($data as $indikator) {
-                        $respon = $this->generator->penilaianGenerator($year, $units, $pen, $indikator['indikator_id'], 'PPM');
+                        $respon = $this->generator->penilaianGenerator($year, $units, $ppm, $indikator['indikator_id'], 'PPM');
                         if ($respon == "200") {
                             $countppm++;
                         }

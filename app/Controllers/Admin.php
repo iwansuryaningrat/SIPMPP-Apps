@@ -146,6 +146,8 @@ class Admin extends BaseController
         $units = $this->userroleunitModel->getData();
         $users = $this->userroleunitModel->getDataEmailRole(1);
 
+        // dd($units, $users);
+
         $data = [
             'title' => 'Base User | SIPMPP UNDIP ' . $this->thisTahun,
             'tab' => 'user',
