@@ -67,16 +67,16 @@
                                 </h3>
                                 <div class="carousel-caption carousel__caption d-none d-md-block">
                                     <h5>Selamat Datang di SIPMPP UNDIP <span id="year__now"></span></h5>
-                                    <p>Non vel hac urna aliquet aliquam egestas in ultrices blandit. Purus, commodo
-                                        nibh.</p>
+                                    <p>Menjadi Agen Pembaharu Pendidikan Melalui Pengembangan Sistem Pendidikan yang
+                                        handal.</p>
                                 </div>
                             </div>
                             <div class="carousel-item carousel__item">
-                                <!-- <img src="..." class="d-block w-100" alt="..."> -->
                                 <div class="carousel-caption carousel__caption d-none d-md-block">
-                                    <h5>Second slide label</h5>
-                                    <p>Lectus ut donec eros, diam purus enim mauris aliquam et. Id scelerisque turpis
-                                        justo eget diam tempus.</p>
+                                    <h5>SIPMPP UNDIP</h5>
+                                    <p>Mengembangkan LP2MP sebagai pusat penelitian, pengkajian metode pembelajaran,
+                                        penjaminan mutu pendidikan tinggi, pusat konsultasi, dan pelayanan pengembangan
+                                        pembelajaran.</p>
                                 </div>
                             </div>
                             <div class="carousel-item carousel__item">
@@ -96,18 +96,7 @@
                                 </div>
                             </div>
                         </div>
-                        <!-- <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleCaptions"
-                            data-bs-slide="prev">
-                            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                            <span class="visually-hidden">Previous</span>
-                        </button>
-                        <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleCaptions"
-                            data-bs-slide="next">
-                            <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                            <span class="visually-hidden">Next</span>
-                        </button> -->
                     </div>
-
                 </div>
             </div>
 
@@ -131,7 +120,6 @@
                     <?php if (session()->getFlashdata('gagal')) : ?>
                     <!-- alert danger -->
                     <div class="alert alert-danger d-flex alert-dismissible" role="alert" style="padding-right: 2.5rem">
-                        <!-- <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close" style="padding: 1.25rem"></button> -->
                         <i class="bi bi-exclamation-triangle-fill d-block pe-3" style="font-size: 1.25rem"></i>
                         <div>
                             <!-- Menampilkan flashdata gagal -->
@@ -216,7 +204,6 @@
 
             var type = $("#password").attr("type") === "password" ? "text" : "password";
             $("#password").attr("type", type);
-
         });
     </script>
 </body>
