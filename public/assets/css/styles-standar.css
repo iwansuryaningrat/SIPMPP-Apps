@@ -2,8 +2,10 @@
 
 .status__spmi__content {
   display: flex;
-  justify-content: space-between;
+
   margin-bottom: 1rem;
+
+  justify-content: space-between;
   flex-wrap: wrap;
 }
 
@@ -16,27 +18,32 @@
 }
 
 .kirim__btn {
-  padding: 1.25rem 1.5rem;
-  border-radius: var(--radius-md);
-  color: rgba(255, 255, 255, 0.7);
-  background-color: rgba(38, 48, 77, 0.9);
   font-weight: 600;
+
   display: flex;
+
+  padding: 1.25rem 1.5rem;
+
+  color: rgba(255, 255, 255, 0.7);
+  border-radius: var(--radius-md);
+  background-color: rgba(38, 48, 77, 0.9);
+
   align-items: center;
   justify-content: center;
 }
 
 .kirim__btn svg {
   font-size: 1rem;
+
   margin-right: 0.75rem;
 }
 
 .kirim__btn:hover {
   color: var(--white);
-  background-color: var(--dark-main-color);
-  box-shadow: 0 0.25rem 1.25rem rgba(0, 0, 0, 0.2);
+  background-color: var(--space-cadet);
   -webkit-box-shadow: 0 0.25rem 1.25rem rgba(0, 0, 0, 0.2);
   -moz-box-shadow: 0 0.25rem 1.25rem rgba(0, 0, 0, 0.2);
+  box-shadow: 0 0.25rem 1.25rem rgba(0, 0, 0, 0.2);
 }
 
 /* table */
@@ -67,18 +74,22 @@
   border-bottom: none;
   border-bottom-style: hidden;
 }
+
 .table__spmi-number {
   width: 7%;
   min-width: 4rem;
 }
+
 .table__spmi-standar {
   width: 12%;
   min-width: 6rem;
 }
+
 .table__spmi-nilai {
   width: 10%;
   min-width: 4.5rem;
 }
+
 .table__spmi-aksi {
   width: 10%;
   min-width: 4rem;

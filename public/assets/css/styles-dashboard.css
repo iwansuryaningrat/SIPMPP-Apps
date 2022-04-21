@@ -1,9 +1,9 @@
 @import url(styles.css);
 
 /* ==========header main========== */
-
 .report__link {
   display: flex;
+
   transition: var(--trans-m);
 
   align-items: center;
@@ -30,9 +30,9 @@
 }
 
 .report__link:hover {
-  box-shadow: 0 0.25rem 1.25rem rgba(0, 0, 0, 0.2);
   -webkit-box-shadow: 0 0.25rem 1.25rem rgba(0, 0, 0, 0.2);
   -moz-box-shadow: 0 0.25rem 1.25rem rgba(0, 0, 0, 0.2);
+  box-shadow: 0 0.25rem 1.25rem rgba(0, 0, 0, 0.2);
 }
 
 .report__link:hover span {
@@ -51,6 +51,9 @@
 }
 
 .progress__content-card {
+  display: flex;
+  flex-direction: column;
+
   padding: 2.25rem 1.875rem 1.875rem;
 
   border: var(--border-sm);
@@ -58,8 +61,6 @@
   background-color: var(--white);
 
   flex: 0.5;
-  display: flex;
-  flex-direction: column;
 }
 
 .progress__content-card:first-child {
@@ -106,7 +107,7 @@
   height: 0.75rem;
 
   border-radius: 1rem;
-  background-color: var(--light-color);
+  background-color: var(--lavender);
 }
 
 .progress-bar.bg__dark-main {
@@ -116,6 +117,7 @@
 /* ==========recap content========== */
 .recap__content {
   display: flex;
+
   margin-bottom: 0.5rem;
 }
 
@@ -133,8 +135,9 @@
 
   border: var(--border-sm);
   border-radius: var(--radius-lg);
-  background-color: var(--light-color);
+  background-color: var(--lavender);
 }
+
 .recap__content-unit .sipmpp__table {
   margin-bottom: 1.25rem;
 }
@@ -152,7 +155,7 @@
   padding: 1.5rem 1.875rem;
 
   border-radius: 0 0 var(--radius-lg) var(--radius-lg);
-  background-color: var(--dark-main-color);
+  background-color: var(--space-cadet);
 }
 
 .recap__link-card__footer a {
@@ -234,7 +237,7 @@
   height: 0.6rem;
 
   border-radius: 1rem;
-  background-color: var(--light-color);
+  background-color: var(--lavender);
 }
 
 .unit__link:hover {
@@ -245,9 +248,11 @@
 
 .content-unit__title {
   display: flex;
+
+  padding: 1.875rem 1.75rem 1rem;
+
   align-items: center;
   justify-content: space-between;
-  padding: 1.875rem 1.75rem 1rem;
   flex-wrap: wrap;
 }
 
@@ -259,11 +264,13 @@
 .filter__btn,
 .filter__btn-chart {
   font-size: 0.75rem;
+
   padding: 0.25rem 0.5rem;
-  border-radius: var(--radius-sm);
-  background-color: var(--light-color) !important;
-  border: var(--border-sm) !important;
+
   color: rgba(0, 0, 0, 0.8) !important;
+  border: var(--border-sm) !important;
+  border-radius: var(--radius-sm);
+  background-color: var(--lavender) !important;
 }
 
 .filter__btn:hover,
@@ -273,23 +280,24 @@
 
 .filter__btn.active,
 .filter__btn-chart.active {
-  color: rgba(255, 255, 255, 0.8) !important;
   font-weight: 500 !important;
+
+  color: rgba(255, 255, 255, 0.8) !important;
   background-color: rgba(38, 48, 77, 0.9) !important;
 }
 
 .filter__btn.active:hover,
 .filter__btn-chart.active:hover {
   color: var(--white) !important;
-  background-color: var(--dark-main-color) !important;
+  background-color: var(--space-cadet) !important;
 }
 
 /* chart */
 .chart__content {
   width: 100%;
   max-width: 100vw;
-  margin-left: 0;
   margin-right: 0;
+  margin-left: 0;
 }
 
 .chart__container {
@@ -310,22 +318,25 @@
 }
 
 .chart__content-dounat {
-  padding: 1.875rem 1.75rem 2.25rem;
-  border-radius: var(--radius-lg);
-  border: var(--border-sm);
   width: 100%;
+  padding: 1.875rem 1.75rem 2.25rem;
+
+  border: var(--border-sm);
+  border-radius: var(--radius-lg);
 }
 
 .chart__content-line {
-  padding: 1.875rem 1.75rem 1.875rem;
-  border-radius: var(--radius-lg);
-  border: var(--border-sm);
   width: 100%;
+  padding: 1.875rem 1.75rem 1.875rem;
+
+  border: var(--border-sm);
+  border-radius: var(--radius-lg);
 }
 
 .chart__content-left .card__title {
-  margin-bottom: 1.5rem;
   font-size: 1.25rem;
+
+  margin-bottom: 1.5rem;
 }
 
 .chart__content-right .card__title {
@@ -333,31 +344,33 @@
 }
 
 .chart__content-dounat .content-unit__title {
-  padding: 0 0.625rem;
   margin-left: 0 !important;
+  padding: 0 0.625rem;
 }
 
 .chart__content-left {
-  padding-left: 0 !important;
   padding-right: 0.875rem;
+  padding-left: 0 !important;
 }
 
 .chart__content-right {
-  padding-left: 0.875rem;
   padding-right: 0 !important;
+  padding-left: 0.875rem;
 }
 
 .legends__chart {
-  width: 100%;
   display: flex;
+
+  width: 100%;
+  margin-top: 1.5rem;
+
   align-items: center;
   justify-content: center;
-  margin-top: 1.5rem;
 }
 
 .legends__item {
-  background-color: transparent;
   border: 0;
+  background-color: transparent;
 }
 
 .legends__item.hideChart {
@@ -370,6 +383,7 @@
   .progress__content {
     flex-direction: column;
   }
+
   .progress__content-card:first-child,
   .progress__content-card:last-child {
     margin-right: 0;
@@ -381,6 +395,7 @@
   /* ==========recap content========== */
   .recap__content {
     flex-direction: column;
+
     margin-bottom: 1.75rem;
   }
 
@@ -395,6 +410,7 @@
   .recap__link-card {
     width: 100%;
     margin-bottom: 1.75rem;
+
     flex: 1;
   }
 
@@ -418,13 +434,13 @@
 
   /* ========== chart ========== */
   .chart__content-left {
-    padding-right: 0;
     margin-bottom: 1.75rem;
+    padding-right: 0;
   }
 
   .chart__content-right {
-    padding-left: 0;
     margin-bottom: 1.75rem;
+    padding-left: 0;
   }
 }
 
@@ -445,6 +461,7 @@
   .content-unit__title {
     flex-direction: column;
   }
+
   .recap__link-card {
     /* width: 100%; */
     margin-bottom: 1rem;
@@ -468,6 +485,7 @@
     #pills-tab,
   .recap__content-unit .content-unit__title .filter__panel #pills-tab {
     flex-direction: column;
+
     width: 100%;
   }
 
@@ -479,6 +497,7 @@
     button,
   .recap__content-unit .content-unit__title .filter__panel #pills-tab button {
     width: 100%;
+
     flex: 1;
   }
 

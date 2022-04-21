@@ -1,74 +1,83 @@
 @import url(styles.css);
 
 .form__indikator {
-  width: 100%;
-  margin: auto;
+    width: 100%;
+    margin: auto;
 }
 
 .form__indikator form .form__label {
-  text-align: right;
-  font-weight: 600;
-  padding-right: 2rem;
+    font-weight: 600;
+
+    padding-right: 2rem;
+
+    text-align: right;
 }
 
 .input__group__text {
-  font-size: 0.875rem;
-  background-color: var(--dark-main-color);
-  color: rgba(255, 255, 255, 0.8);
-  transition: var(--trans-m);
+    font-size: .875rem;
+
+    transition: var(--trans-m);
+
+    color: rgba(255, 255, 255, .8);
+    background-color: var(--space-cadet);
 }
 
 .input__group__text:hover {
-  color: var(--white);
+    color: var(--white);
 }
 
 .button__section {
-  display: flex;
-  align-items: center;
-  justify-content: end;
-  margin-top: 2.625rem;
+    display: flex;
+
+    margin-top: 2.625rem;
+
+    align-items: center;
+    justify-content: end;
 }
 
 .title__body__indikator-u {
-  font-weight: 600;
-  margin-top: 2.625rem;
-  margin-bottom: 1rem;
+    font-weight: 600;
+
+    margin-top: 2.625rem;
+    margin-bottom: 1rem;
 }
 
 .title__body__indikator-s {
-  margin-top: 0;
-  margin-bottom: 2rem;
-  font-weight: 600;
+    font-weight: 600;
+
+    margin-top: 0;
+    margin-bottom: 2rem;
 }
 
 .d-flex.d__flex .error {
-  display: block;
+    display: block;
 }
 
 .label__warp label {
-  padding-top: calc(25px / 2);
-  padding-bottom: calc(25px / 2);
+    padding-top: calc(25px / 2);
+    padding-bottom: calc(25px / 2);
 }
 
 @media screen and (max-width: 768px) {
-  .input__group__upload {
-    display: none;
-  }
-  .form-control.form__control {
-    border-radius: 0.25rem !important;
-  }
+    .input__group__upload {
+        display: none;
+    }
+
+    .form-control.form__control {
+        border-radius: .25rem !important;
+    }
 }
 
 @media screen and (max-width: 600px) {
-  .form__indikator form .form__label {
-    text-align: left;
-  }
+    .form__indikator form .form__label {
+        text-align: left;
+    }
 
-  .button__section {
-    margin-top: 0.875rem;
-  }
+    .button__section {
+        margin-top: .875rem;
+    }
 
-  .button__section .form__btn {
-    padding: 0.625rem 0.875rem !important;
-  }
+    .button__section .form__btn {
+        padding: .625rem .875rem !important;
+    }
 }

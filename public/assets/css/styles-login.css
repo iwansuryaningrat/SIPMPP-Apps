@@ -16,7 +16,7 @@
   height: 100vh;
   min-height: 100%;
 
-  background-color: var(--dark-main-color);
+  background-color: var(--space-cadet);
 
   flex: 0.5;
 }
@@ -140,7 +140,7 @@
 
 .login__btn:hover {
   color: var(--white);
-  background-color: var(--dark-main-color);
+  background-color: var(--space-cadet);
 }
 
 .form__login .form-control.form__control,
@@ -204,7 +204,7 @@ form .position-relative .icon__hide__password {
 }
 
 form .position-relative .error svg {
-  font-size: 0.875rem;
+  font-size: var(--reg-size);
 
   position: static;
   top: unset;
@@ -212,7 +212,7 @@ form .position-relative .error svg {
 
   display: inline-block;
 
-  color: var(--danger-color);
+  color: var(--sunset-orange);
 }
 
 /* ========== mini laptop view ==========*/

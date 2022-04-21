@@ -2,6 +2,7 @@
 
 .title__body__main {
   font-weight: 600;
+
   margin-top: 2.625rem;
   margin-bottom: 2rem;
 }
@@ -9,17 +10,20 @@
 /* ========== filter btn ========== */
 .filter__table {
   display: flex;
+
+  margin-bottom: 1.5rem;
+
   align-items: center;
   justify-content: space-between;
-  margin-bottom: 1.5rem;
 }
 
 .filter__btn {
   padding: 0.75rem 1rem !important;
-  border-radius: var(--radius-sm) !important;
-  background-color: var(--light-color) !important;
-  border: var(--border-sm) !important;
+
   color: rgba(0, 0, 0, 0.8) !important;
+  border: var(--border-sm) !important;
+  border-radius: var(--radius-sm) !important;
+  background-color: var(--lavender) !important;
 }
 
 .filter__btn:hover {
@@ -27,45 +31,51 @@
 }
 
 .filter__btn.active {
-  color: rgba(255, 255, 255, 0.8) !important;
   font-weight: 500 !important;
+
+  color: rgba(255, 255, 255, 0.8) !important;
   background-color: rgba(38, 48, 77, 0.9) !important;
 }
 
 .filter__btn.active:hover {
   color: var(--white) !important;
-  background-color: var(--dark-main-color) !important;
+  background-color: var(--space-cadet) !important;
 }
 
 .filter__table-year {
   display: flex;
+
   align-items: center;
 }
 
 .filter__table-year label {
   font-weight: 500;
+
   margin-right: 1rem;
-  color: var(--black);
   margin-bottom: 0;
+
+  color: var(--black);
 }
 
 .filter__table-year select {
-  padding: 0.75rem 1rem;
+  font-size: var(--reg-sizes);
+
   width: 12.5rem;
   margin-right: 1.125rem;
-  font-size: 0.875rem;
+  padding: 0.75rem 1rem;
 }
 
 .terapkan__btn {
   padding: 0.75rem 1.25rem;
-  border-radius: var(--radius-sm);
+
   color: rgba(255, 255, 255, 0.8);
+  border-radius: var(--radius-sm);
   background-color: rgba(38, 48, 77, 0.9);
 }
 
 .terapkan__btn:hover {
   color: var(--white);
-  background-color: var(--dark-main-color);
+  background-color: var(--space-cadet);
 }
 
 /* ========== table ========== */
@@ -93,6 +103,7 @@
   width: 7%;
   min-width: 4rem;
 }
+
 .table__datainduk-nilai,
 .table__datainduk-aksi {
   width: 15%;
@@ -125,6 +136,7 @@
 
 #alert-wrong-text .color__danger {
   padding: 1rem;
+
   border-radius: var(--radius-sm);
   background-color: rgba(242, 89, 97, 0.1);
 }
@@ -134,6 +146,7 @@
   .filter__btn {
     padding: 0.5rem 0.875rem !important;
   }
+
   .filter__table {
     flex-direction: column;
   }
@@ -171,12 +184,14 @@
   .filter__btn:first-child {
     margin-right: 0.625rem !important;
   }
+
   .filter__btn:last-child {
     margin-left: 0.625rem !important;
   }
 
   .filter__table-year {
     width: 100%;
+
     justify-content: end;
   }
 
@@ -197,8 +212,8 @@
   }
 
   .filter__btn:first-child {
-    margin-bottom: 0.75rem !important;
     margin-right: 0 !important;
+    margin-bottom: 0.75rem !important;
   }
 
   .filter__btn:last-child {
@@ -207,6 +222,7 @@
 
   .filter__table-year {
     width: 100%;
+
     flex-wrap: wrap;
   }
 
@@ -216,11 +232,13 @@
 
   .filter__table-year select {
     margin-bottom: 0.75rem;
+
     flex: 0.7;
   }
 
   .filter__table-year button {
     margin-bottom: 0.75rem;
+
     flex: 0.3;
   }
 }
