@@ -99,14 +99,7 @@
                     </p>
                     <p class="login__desc__unit mb-4">Silahkan pilih unit yang ingin Anda kunjungi. Harap masukkan unit
                         sesuai dengan unit Anda!</p>
-<<<<<<< Updated upstream
-                    <form class="form__login" method="POST"
-                        action="/auth/loginprocess/<?= $email; ?>"
-                        id="formLoginUnit">
-=======
-
                     <form class="form__login" method="POST" action="/auth/loginprocess/<?= $email; ?>" id="formLoginUnit">
->>>>>>> Stashed changes
                         <div class="mb-4 position-relative" id="formFieldTahun">
                             <label for="tahun" class="form-label form__label">Tahun</label>
                             <select class="form-select form__select shadow-none" name="tahun" id="tahun" required>

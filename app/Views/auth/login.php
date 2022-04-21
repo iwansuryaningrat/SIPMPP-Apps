@@ -106,94 +106,83 @@
 
                     <!-- Mengecek apakah ada flash data -->
                     <?php if (session()->getFlashdata('gagal')) : ?>
-<<<<<<< Updated upstream
-                    <!-- alert danger -->
-                    <div class="alert alert-danger d-flex alert-dismissible" role="alert" style="padding-right: 2.5rem">
-                        <i class="bi bi-exclamation-triangle-fill d-block pe-3" style="font-size: 1.25rem"></i>
-                        <div>
-                            <!-- Menampilkan flashdata gagal -->
-                            <?= session()->getFlashdata('gagal'); ?>
-=======
                         <!-- alert danger -->
                         <div class="alert alert-danger d-flex alert-dismissible" role="alert" style="padding-right: 2.5rem">
-                            <!-- <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close" style="padding: 1.25rem"></button> -->
                             <i class="bi bi-exclamation-triangle-fill d-block pe-3" style="font-size: 1.25rem"></i>
                             <div>
                                 <!-- Menampilkan flashdata gagal -->
                                 <?= session()->getFlashdata('gagal'); ?>
                             </div>
->>>>>>> Stashed changes
-                        </div>
-                        <!-- end alert danger -->
-                    <?php endif; ?>
+                            <!-- end alert danger -->
+                        <?php endif; ?>
 
-                    <?php if (session()->getFlashdata('success')) : ?>
-                        <!-- alert success -->
-                        <div class="alert alert-success d-flex alert-dismissible" role="alert" style="padding-right: 2.5rem">
-                            <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close" style="padding: 1.25rem"></button>
-                            <i class="bi bi-check-circle-fill d-block pe-3" style="font-size: 1.25rem"></i>
-                            <div>
-                                <!-- Menampilkan flashdata success -->
-                                <?= session()->getFlashdata('success'); ?>
+                        <?php if (session()->getFlashdata('success')) : ?>
+                            <!-- alert success -->
+                            <div class="alert alert-success d-flex alert-dismissible" role="alert" style="padding-right: 2.5rem">
+                                <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close" style="padding: 1.25rem"></button>
+                                <i class="bi bi-check-circle-fill d-block pe-3" style="font-size: 1.25rem"></i>
+                                <div>
+                                    <!-- Menampilkan flashdata success -->
+                                    <?= session()->getFlashdata('success'); ?>
+                                </div>
                             </div>
-                        </div>
-                        <!-- end alert success -->
-                    <?php endif; ?>
+                            <!-- end alert success -->
+                        <?php endif; ?>
 
 
-                    <form class="form__login" method="POST" action="/auth/formloginunit">
-                        <div class="mb-4 position-relative">
-                            <label for="email" class="form-label form__label">Email</label>
-                            <input type="email" class="form-control form__control shadow-none" name="email" id="email" placeholder="Masukkan email" required autocomplete="off" />
-                            <i class="fa-solid fa-at icon__form"></i>
+                        <form class="form__login" method="POST" action="/auth/formloginunit">
+                            <div class="mb-4 position-relative">
+                                <label for="email" class="form-label form__label">Email</label>
+                                <input type="email" class="form-control form__control shadow-none" name="email" id="email" placeholder="Masukkan email" required autocomplete="off" />
+                                <i class="fa-solid fa-at icon__form"></i>
+                            </div>
+                            <div class="mb-5 position-relative">
+                                <label for="password" class="form-label form__label">Password</label>
+                                <input type="password" class="form-control form__control shadow-none" name="password" id="password" placeholder="Masukkan password" required />
+                                <i class="fa-solid fa-lock icon__form"></i>
+                                <span id="togglePassword"><i class="fa-solid fa-eye icon__hide__password" title="show password"></i></span>
+                            </div>
+                            <button type="submit" class="btn login__btn shadow-none">Login</button>
+                        </form>
                         </div>
-                        <div class="mb-5 position-relative">
-                            <label for="password" class="form-label form__label">Password</label>
-                            <input type="password" class="form-control form__control shadow-none" name="password" id="password" placeholder="Masukkan password" required />
-                            <i class="fa-solid fa-lock icon__form"></i>
-                            <span id="togglePassword"><i class="fa-solid fa-eye icon__hide__password" title="show password"></i></span>
-                        </div>
-                        <button type="submit" class="btn login__btn shadow-none">Login</button>
-                    </form>
                 </div>
             </div>
         </div>
-    </div>
 
-    <!-- scripts -->
-    <!-- jquery -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js" integrity="sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
-    <!-- bootstrap -->
-    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js" integrity="sha384-IQsoLXl5PILFhosVNubq5LC7Qb9DXgDA9i+tQ8Zj3iwWAwPtgFTxbJ8NT4GN1R8p" crossorigin="anonymous">
-    </script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.min.js" integrity="sha384-cVKIPhGWiC2Al4u+LWgxfKTRIcfu0JTxR+EQDz/bgldoEyl4H0zUF0QKbrJ0EcQF" crossorigin="anonymous">
-    </script>
-    <!-- fontawesome -->
-    <script defer src="https://use.fontawesome.com/releases/v6.1.0/js/all.js" integrity="sha384-vLLEq/Un/eZFmXAu4Xxf8F00RSSMzPcI7iDiT6hpB4zFpezCEGhb5daeR8PLyrLI" crossorigin="anonymous">
-    </script>
-    <!-- custom -->
-    <script>
-        $(function() {
-            $("input").focus(function(event) {
-                $("svg").css("color", "rgba(79, 79, 79, 0.6)");
-                $(event.target).next(".icon__form").css("color", "#1a42b8");
+        <!-- scripts -->
+        <!-- jquery -->
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js" integrity="sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+        <!-- bootstrap -->
+        <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js" integrity="sha384-IQsoLXl5PILFhosVNubq5LC7Qb9DXgDA9i+tQ8Zj3iwWAwPtgFTxbJ8NT4GN1R8p" crossorigin="anonymous">
+        </script>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.min.js" integrity="sha384-cVKIPhGWiC2Al4u+LWgxfKTRIcfu0JTxR+EQDz/bgldoEyl4H0zUF0QKbrJ0EcQF" crossorigin="anonymous">
+        </script>
+        <!-- fontawesome -->
+        <script defer src="https://use.fontawesome.com/releases/v6.1.0/js/all.js" integrity="sha384-vLLEq/Un/eZFmXAu4Xxf8F00RSSMzPcI7iDiT6hpB4zFpezCEGhb5daeR8PLyrLI" crossorigin="anonymous">
+        </script>
+        <!-- custom -->
+        <script>
+            $(function() {
+                $("input").focus(function(event) {
+                    $("svg").css("color", "rgba(79, 79, 79, 0.6)");
+                    $(event.target).next(".icon__form").css("color", "#1a42b8");
+                });
             });
-        });
 
-        // get year now
-        var currentYear = new Date().getFullYear();
-        $("#year__now").text(currentYear);
+            // get year now
+            var currentYear = new Date().getFullYear();
+            $("#year__now").text(currentYear);
 
-        // togglePassword
-        // change icon
-        $("#togglePassword").click(function() {
-            $(this).children().toggleClass("fa-eye-slash");
-            $(this).children().toggleClass("fa-eye");
+            // togglePassword
+            // change icon
+            $("#togglePassword").click(function() {
+                $(this).children().toggleClass("fa-eye-slash");
+                $(this).children().toggleClass("fa-eye");
 
-            var type = $("#password").attr("type") === "password" ? "text" : "password";
-            $("#password").attr("type", type);
-        });
-    </script>
+                var type = $("#password").attr("type") === "password" ? "text" : "password";
+                $("#password").attr("type", type);
+            });
+        </script>
 </body>
 
 </html>
