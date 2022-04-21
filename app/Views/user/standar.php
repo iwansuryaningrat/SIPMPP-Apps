@@ -92,8 +92,7 @@
                                                         echo 'badge__warning';
                                                       } ?>"><?= $standar['status']; ?></span>
                   </td>
-                  <td><?php
-                      foreach ($data_nilai as $nilai) :
+                  <td><?php foreach ($data_nilai as $nilai) :
                         if ($nilai['standar_id'] == $standar['standar_id'] && $nilai['kategori_id'] == $standar['kategori_id']) {
                           echo sprintf("%.2f", floatval($nilai['nilai_akhir']));
                         }
@@ -105,8 +104,7 @@
                     </a>
                   </td>
                 </tr>
-            <?php
-                $i++;
+            <?php $i++;
               endif;
             endforeach; ?>
 
@@ -153,8 +151,7 @@
                                                         echo 'badge__warning';
                                                       } ?>"><?= $standar['status']; ?></span>
                   </td>
-                  <td><?php
-                      foreach ($data_nilai as $nilai) :
+                  <td><?php foreach ($data_nilai as $nilai) :
                         if ($nilai['standar_id'] == $standar['standar_id'] && $nilai['kategori_id'] == $standar['kategori_id']) {
                           echo sprintf("%.2f", floatval($nilai['nilai_akhir']));
                         }
@@ -166,8 +163,7 @@
                     </a>
                   </td>
                 </tr>
-            <?php
-                $i++;
+            <?php $i++;
               endif;
             endforeach; ?>
 

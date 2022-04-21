@@ -13,10 +13,10 @@
           <?php // uses regex that accepts any word character or hyphen in last name
           function split_name($name)
           {
-              $name = trim($name);
-              $last_name = (strpos($name, ' ') === false) ? '' : preg_replace('#.*\s([\w-]*)$#', '$1', $name);
-              $first_name = trim(preg_replace('#' . preg_quote($last_name, '#') . '#', '', $name));
-              return array($first_name, $last_name);
+            $name = trim($name);
+            $last_name = (strpos($name, ' ') === false) ? '' : preg_replace('#.*\s([\w-]*)$#', '$1', $name);
+            $first_name = trim(preg_replace('#' . preg_quote($last_name, '#') . '#', '', $name));
+            return array($first_name, $last_name);
           }
           echo split_name($usersession['nama'])[0];
           ?>
@@ -44,12 +44,12 @@
           <tbody>
 
             <?php foreach ($units as $unit) : ?>
-            <tr>
-              <td><?= $i; ?>
-              </td>
-              <td><?= $unit['nama_unit']; ?>
-              </td>
-            </tr>
+              <tr>
+                <td><?= $i; ?>
+                </td>
+                <td><?= $unit['nama_unit']; ?>
+                </td>
+              </tr>
             <?php $i++;
             endforeach; ?>
 
@@ -78,18 +78,18 @@
 
             <?php $i = 1;
             foreach ($counter as $data) : ?>
-            <tr>
-              <td><?= $i; ?>
-              </td>
-              <td><?= $data['kategori']; ?>
-              </td>
-              <td><?= $data['induk']; ?>
-              </td>
-              <td><?= $data['standar']; ?>
-              </td>
-              <td><?= $data['indikator']; ?>
-              </td>
-            </tr>
+              <tr>
+                <td><?= $i; ?>
+                </td>
+                <td><?= $data['kategori']; ?>
+                </td>
+                <td><?= $data['induk']; ?>
+                </td>
+                <td><?= $data['standar']; ?>
+                </td>
+                <td><?= $data['indikator']; ?>
+                </td>
+              </tr>
             <?php $i++;
             endforeach; ?>
 
@@ -101,8 +101,7 @@
 </div>
 
 <div class="toast-container position-fixed bottom-0 end-0 p-4 animate__animated animate__slow animate__fadeInDown">
-  <div class="toast toast__welcome" role="alert" aria-live="assertive" aria-atomic="true" data-autohide="true"
-    data-bs-delay="5000">
+  <div class="toast toast__welcome" role="alert" aria-live="assertive" aria-atomic="true" data-autohide="true" data-bs-delay="5000">
     <div class="row">
       <div class="toast__left col-2 px-0 d-flex align-items-center justify-content-center">
         <img src="/admin/assets/img/undip-logo-color.png" class="toast__welcome-img" alt="logo-undip">

@@ -8,8 +8,7 @@
     </div>
     <div class="header__main-nav-profile">
         <div class="nav-profile__photo">
-            <img src="/profile/<?= $data_user['foto']; ?>"
-                alt="profile-picture" id="photo-dropdown" />
+            <img src="/profile/<?= $data_user['foto']; ?>" alt="profile-picture" id="photo-dropdown" />
         </div>
         <div class="nav-profile__desc">
             <p id="profileName" class="ellipsis__text"><?= $data_user['nama']; ?>

@@ -28,8 +28,7 @@
 <!--========== body main ==========-->
 <div class="title__table__add mb-3">
     <h4 class="title__body__user me-3 mb-lg-4 mb-3">Daftar Kategori</h4>
-    <a href="#staticBackdrop2" class="btn shadow-none btn__add btn__dark add__unit__icon mb-lg-4 mb-3" role="button"
-        data-bs-toggle="modal">
+    <a href="#staticBackdrop2" class="btn shadow-none btn__add btn__dark add__unit__icon mb-lg-4 mb-3" role="button" data-bs-toggle="modal">
         <i class="fa-solid fa-plus"></i>
         Add Kategori
     </a>
@@ -49,19 +48,15 @@
             <tbody>
 
                 <?php foreach ($kategori as $k) : ?>
-                <tr>
-                    <td><?= $i; ?>
-                    </td>
-                    <td><?= $k['nama_kategori']; ?>
-                    </td>
-                    <td>
-                        <a role="button" data-bs-toggle="modal" data-bs-placement="top" title="Edit"
-                            href="#staticBackdrop" class="edit__data__induk__icon"
-                            data-datakat="<?= $k['nama_kategori']; ?>"
-                            data-dataidkat="<?= $k['kategori_id']; ?>"><i
-                                class="fa-solid fa-pen-to-square"></i></a>
-                    </td>
-                </tr>
+                    <tr>
+                        <td><?= $i; ?>
+                        </td>
+                        <td><?= $k['nama_kategori']; ?>
+                        </td>
+                        <td>
+                            <a role="button" data-bs-toggle="modal" data-bs-placement="top" title="Edit" href="#staticBackdrop" class="edit__data__induk__icon" data-datakat="<?= $k['nama_kategori']; ?>" data-dataidkat="<?= $k['kategori_id']; ?>"><i class="fa-solid fa-pen-to-square"></i></a>
+                        </td>
+                    </tr>
                 <?php $i++;
                 endforeach; ?>
 
@@ -75,8 +70,7 @@
 <?= $this->section('modal'); ?>
 
 <!-- Modal edit -->
-<div class="modal fade edit__kategori__modal" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false"
-    tabindex="-1" aria-labelledby="modal-unit" aria-hidden="true">
+<div class="modal fade edit__kategori__modal" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="modal-unit" aria-hidden="true">
     <div class="modal-dialog modal-dialog-centered">
         <div class="modal-content modal__content">
             <div class="modal-header modal__header">
@@ -91,10 +85,8 @@
                     <input type="hidden" name="id" id="idEdit" />
                     <!-- unit -->
                     <div class="modal__form-content">
-                        <label for="kategoriEdit" class="form-label form__label">Kategori <span
-                                class="color__danger">*</span></label>
-                        <input type="text" class="form-control shadow-none form__control" name="kategori"
-                            id="kategoriEdit" required autocomplete="off" />
+                        <label for="kategoriEdit" class="form-label form__label">Kategori <span class="color__danger">*</span></label>
+                        <input type="text" class="form-control shadow-none form__control" name="kategori" id="kategoriEdit" required autocomplete="off" />
                     </div>
                     <!-- Button -->
                     <div class="modal__form-btn">
@@ -110,8 +102,7 @@
 </div>
 
 <!-- Modal add -->
-<div class="modal fade add__kategori__modal" id="staticBackdrop2" data-bs-backdrop="static" data-bs-keyboard="false"
-    tabindex="-1" aria-labelledby="modal-unit" aria-hidden="true">
+<div class="modal fade add__kategori__modal" id="staticBackdrop2" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="modal-unit" aria-hidden="true">
     <div class="modal-dialog modal-dialog-centered">
         <div class="modal-content modal__content">
             <div class="modal-header modal__header">
@@ -126,10 +117,8 @@
                     <input type="hidden" id="idAdd" />
                     <!-- unit -->
                     <div class="modal__form-content">
-                        <label for="kategoriAdd" class="form-label form__label">Kategori <span
-                                class="color__danger">*</span></label>
-                        <input type="text" class="form-control shadow-none form__control" name="kategori"
-                            id="kategoriAdd" required autocomplete="off" />
+                        <label for="kategoriAdd" class="form-label form__label">Kategori <span class="color__danger">*</span></label>
+                        <input type="text" class="form-control shadow-none form__control" name="kategori" id="kategoriAdd" required autocomplete="off" />
                     </div>
                     <!-- Button -->
                     <div class="modal__form-btn">
@@ -148,9 +137,7 @@
 
 <?= $this->section('script'); ?>
 <!-- jquery validate -->
-<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.19.3/jquery.validate.min.js"
-    integrity="sha512-37T7leoNS06R80c8Ulq7cdCDU5MNQBwlYoy1TX/WUsLFC2eYNqtKlV0QjH7r8JpG/S0GUMZwebnVFLPd6SU5yg=="
-    crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.19.3/jquery.validate.min.js" integrity="sha512-37T7leoNS06R80c8Ulq7cdCDU5MNQBwlYoy1TX/WUsLFC2eYNqtKlV0QjH7r8JpG/S0GUMZwebnVFLPd6SU5yg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 <!-- scripts -->
 <script>
     // tooltips

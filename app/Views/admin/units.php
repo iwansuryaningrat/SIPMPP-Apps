@@ -13,10 +13,10 @@
       <p>Halo <span><?php // uses regex that accepts any word character or hyphen in last name
                     function split_name($name)
                     {
-                        $name = trim($name);
-                        $last_name = (strpos($name, ' ') === false) ? '' : preg_replace('#.*\s([\w-]*)$#', '$1', $name);
-                        $first_name = trim(preg_replace('#' . preg_quote($last_name, '#') . '#', '', $name));
-                        return array($first_name, $last_name);
+                      $name = trim($name);
+                      $last_name = (strpos($name, ' ') === false) ? '' : preg_replace('#.*\s([\w-]*)$#', '$1', $name);
+                      $first_name = trim(preg_replace('#' . preg_quote($last_name, '#') . '#', '', $name));
+                      return array($first_name, $last_name);
                     }
                     echo split_name($usersession['nama'])[0];
                     ?>
@@ -28,8 +28,7 @@
 <!--========== body main ==========-->
 <div class="title__table__add mb-3">
   <h4 class="title__body__user me-3 mb-lg-4 mb-3">Daftar Unit</h4>
-  <a href="/admin/addUnit" class="btn shadow-none btn__add btn__dark add__unit__icon mb-lg-4 mb-3" role="button"
-    data-bs-toggle="modal" href="#staticBackdrop2">
+  <a href="/admin/addUnit" class="btn shadow-none btn__add btn__dark add__unit__icon mb-lg-4 mb-3" role="button" data-bs-toggle="modal" href="#staticBackdrop2">
     <i class="fa-solid fa-plus"></i>
     Add Unit
   </a>
@@ -51,19 +50,15 @@
       </thead>
       <tbody>
         <?php foreach ($units as $unit) : ?>
-        <tr>
-          <td><?= $i; ?>
-          </td>
-          <td><?= $unit['nama_unit']; ?>
-          </td>
-          <td>
-            <a role="button" data-bs-toggle="modal" data-bs-placement="top" title="Edit" href="#staticBackdrop"
-              class="edit__data__induk__icon"
-              data-dataunit="<?= $unit['nama_unit']; ?>"
-              data-dataidunit="<?= $unit['unit_id']; ?>"><i
-                class="fa-solid fa-pen-to-square"></i></a>
-          </td>
-        </tr>
+          <tr>
+            <td><?= $i; ?>
+            </td>
+            <td><?= $unit['nama_unit']; ?>
+            </td>
+            <td>
+              <a role="button" data-bs-toggle="modal" data-bs-placement="top" title="Edit" href="#staticBackdrop" class="edit__data__induk__icon" data-dataunit="<?= $unit['nama_unit']; ?>" data-dataidunit="<?= $unit['unit_id']; ?>"><i class="fa-solid fa-pen-to-square"></i></a>
+            </td>
+          </tr>
         <?php $i++;
         endforeach; ?>
       </tbody>
@@ -75,8 +70,7 @@
 
 <?= $this->section('modal'); ?>
 <!-- Modal edit -->
-<div class="modal fade edit__unit__modal" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false"
-  tabindex="-1" aria-labelledby="modal-unit" aria-hidden="true">
+<div class="modal fade edit__unit__modal" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="modal-unit" aria-hidden="true">
   <div class="modal-dialog modal-dialog-centered">
     <div class="modal-content modal__content">
       <div class="modal-header modal__header">
@@ -92,8 +86,7 @@
           <!-- unit -->
           <div class="modal__form-content">
             <label for="unitEdit" class="form-label form__label">Unit <span class="color__danger">*</span></label>
-            <input type="text" class="form-control shadow-none form__control" name="nama_unit" id="unitEdit" required
-              autocomplete="off" />
+            <input type="text" class="form-control shadow-none form__control" name="nama_unit" id="unitEdit" required autocomplete="off" />
           </div>
           <!-- Button -->
           <div class="modal__form-btn">
@@ -109,8 +102,7 @@
 </div>
 
 <!-- Modal add -->
-<div class="modal fade add__unit__modal" id="staticBackdrop2" data-bs-backdrop="static" data-bs-keyboard="false"
-  tabindex="-1" aria-labelledby="modal-unit" aria-hidden="true">
+<div class="modal fade add__unit__modal" id="staticBackdrop2" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="modal-unit" aria-hidden="true">
   <div class="modal-dialog modal-dialog-centered">
     <div class="modal-content modal__content">
       <div class="modal-header modal__header">
@@ -126,8 +118,7 @@
           <!-- unit -->
           <div class="modal__form-content">
             <label for="unitAdd" class="form-label form__label">Unit <span class="color__danger">*</span></label>
-            <input type="text" name="nama_unit" class="form-control shadow-none form__control" id="unitAdd" required
-              autocomplete="off" />
+            <input type="text" name="nama_unit" class="form-control shadow-none form__control" id="unitAdd" required autocomplete="off" />
           </div>
           <!-- Button -->
           <div class="modal__form-btn">
@@ -146,9 +137,7 @@
 
 <?= $this->section('script'); ?>
 <!-- jquery validate -->
-<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.19.3/jquery.validate.min.js"
-  integrity="sha512-37T7leoNS06R80c8Ulq7cdCDU5MNQBwlYoy1TX/WUsLFC2eYNqtKlV0QjH7r8JpG/S0GUMZwebnVFLPd6SU5yg=="
-  crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.19.3/jquery.validate.min.js" integrity="sha512-37T7leoNS06R80c8Ulq7cdCDU5MNQBwlYoy1TX/WUsLFC2eYNqtKlV0QjH7r8JpG/S0GUMZwebnVFLPd6SU5yg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 <!-- scripts -->
 <script>
   // tooltips

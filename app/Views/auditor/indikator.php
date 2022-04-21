@@ -42,37 +42,35 @@
       <tbody>
 
         <?php foreach ($datapenilaian as $data) : ?>
-        <tr>
-          <td><?= $i; ?>
-          </td>
-          <?php foreach ($indikator as $indi) :
+          <tr>
+            <td><?= $i; ?>
+            </td>
+            <?php foreach ($indikator as $indi) :
               if ($data['indikator_id'] == $indi['indikator_id'] &&  $data['standar_id'] == $indi['standar_id'] && $data['kategori_id'] == $indi['kategori_id']) : ?>
-          <td>
-            <?= $indi['nama_indikator']; ?>
-          </td>
-          <td>
-            <?= $indi['target']; ?>
-          </td>
-          <?php endif;
+                <td>
+                  <?= $indi['nama_indikator']; ?>
+                </td>
+                <td>
+                  <?= $indi['target']; ?>
+                </td>
+            <?php endif;
             endforeach; ?>
-          <td><span class="badge badge__sipmpp <?php if ($data['status'] == 'Diaudit') {
-                echo 'badge__success';
-            } elseif ($data['status'] == 'Dikirim') {
-                echo 'badge__primary';
-            } elseif ($data['status'] == 'Belum Diisi') {
-                echo 'badge__danger';
-            } else {
-                echo 'badge__warning';
-            } ?>"><?= $data['status']; ?></span></td>
-          <td><?= sprintf("%.2f", floatval($data['nilai_akhir'])); ?>
+            <td><span class="badge badge__sipmpp <?php if ($data['status'] == 'Diaudit') {
+                                                    echo 'badge__success';
+                                                  } elseif ($data['status'] == 'Dikirim') {
+                                                    echo 'badge__primary';
+                                                  } elseif ($data['status'] == 'Belum Diisi') {
+                                                    echo 'badge__danger';
+                                                  } else {
+                                                    echo 'badge__warning';
+                                                  } ?>"><?= $data['status']; ?></span></td>
+            <td><?= sprintf("%.2f", floatval($data['nilai_akhir'])); ?>
 
-          </td>
-          <td>
-            <a data-bs-placement="top" title="Edit"
-              href="/auditor/indikatorform/<?= $data['kategori_id'] . '/' . $data['standar_id'] . '/' . $data['indikator_id']; ?>"
-              class="edit__data__induk__icon"><i class="fa-solid fa-pen-to-square"></i></a>
-          </td>
-        </tr>
+            </td>
+            <td>
+              <a data-bs-placement="top" title="Edit" href="/auditor/indikatorform/<?= $data['kategori_id'] . '/' . $data['standar_id'] . '/' . $data['indikator_id']; ?>" class="edit__data__induk__icon"><i class="fa-solid fa-pen-to-square"></i></a>
+            </td>
+          </tr>
         <?php $i++;
         endforeach; ?>
 
