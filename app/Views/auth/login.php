@@ -125,43 +125,43 @@
                             <!-- Menampilkan flashdata gagal -->
                             <?= session()->getFlashdata('gagal'); ?>
                         </div>
-                        <!-- end alert danger -->
-                        <?php endif; ?>
-
-                        <?php if (session()->getFlashdata('success')) : ?>
-                        <!-- alert success -->
-                        <div class="alert alert-success d-flex alert-dismissible" role="alert"
-                            style="padding-right: 2.5rem">
-                            <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"
-                                style="padding: 1.25rem"></button>
-                            <i class="bi bi-check-circle-fill d-block pe-3" style="font-size: 1.25rem"></i>
-                            <div>
-                                <!-- Menampilkan flashdata success -->
-                                <?= session()->getFlashdata('success'); ?>
-                            </div>
-                        </div>
-                        <!-- end alert success -->
-                        <?php endif; ?>
-
-
-                        <form class="form__login" method="POST" action="/auth/formloginunit">
-                            <div class="mb-4 position-relative">
-                                <label for="email" class="form-label form__label">Email</label>
-                                <input type="email" class="form-control form__control shadow-none" name="email"
-                                    id="email" placeholder="Masukkan email" required autocomplete="off" />
-                                <i class="fa-solid fa-at icon__form"></i>
-                            </div>
-                            <div class="mb-5 position-relative">
-                                <label for="password" class="form-label form__label">Password</label>
-                                <input type="password" class="form-control form__control shadow-none" name="password"
-                                    id="password" placeholder="Masukkan password" required />
-                                <i class="fa-solid fa-lock icon__form"></i>
-                                <span id="togglePassword"><i class="fa-solid fa-eye icon__hide__password"
-                                        title="show password"></i></span>
-                            </div>
-                            <button type="submit" class="btn login__btn shadow-none">Login</button>
-                        </form>
                     </div>
+                    <!-- end alert danger -->
+                    <?php endif; ?>
+
+                    <?php if (session()->getFlashdata('success')) : ?>
+                    <!-- alert success -->
+                    <div class="alert alert-success d-flex alert-dismissible" role="alert"
+                        style="padding-right: 2.5rem">
+                        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"
+                            style="padding: 1.25rem"></button>
+                        <i class="bi bi-check-circle-fill d-block pe-3" style="font-size: 1.25rem"></i>
+                        <div>
+                            <!-- Menampilkan flashdata success -->
+                            <?= session()->getFlashdata('success'); ?>
+                        </div>
+                    </div>
+                    <!-- end alert success -->
+                    <?php endif; ?>
+
+
+                    <form class="form__login" method="POST" action="/auth/formloginunit">
+                        <div class="mb-4 position-relative">
+                            <label for="email" class="form-label form__label">Email</label>
+                            <input type="email" class="form-control form__control shadow-none" name="email" id="email"
+                                placeholder="Masukkan email" required autocomplete="off" />
+                            <i class="fa-solid fa-at icon__form"></i>
+                        </div>
+                        <div class="mb-5 position-relative">
+                            <label for="password" class="form-label form__label">Password</label>
+                            <input type="password" class="form-control form__control shadow-none" name="password"
+                                id="password" placeholder="Masukkan password" required />
+                            <i class="fa-solid fa-lock icon__form"></i>
+                            <span id="togglePassword"><i class="fa-solid fa-eye icon__hide__password"
+                                    title="show password"></i></span>
+                        </div>
+                        <button type="submit" class="btn login__btn shadow-none">Login</button>
+                    </form>
                 </div>
             </div>
         </div>
