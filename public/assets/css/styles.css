@@ -1086,7 +1086,8 @@ footer .container-fluid.container__fluid {
   border-top: none;
   border-right: none;
   border-bottom: none;
-  border-left: 0.375rem solid var(--space-cadet);
+  border-left: 0.375rem solid rgb(12, 29, 81);
+  border-radius: 0.375rem;
   background-color: var(--white);
   -webkit-box-shadow: 0 0.25rem 1.5rem rgba(0, 0, 0, 0.25);
   -moz-box-shadow: 0 0.25rem 1.5rem rgba(0, 0, 0, 0.25);
