@@ -1,9 +1,16 @@
 @media screen and (max-width: 1169px) {
+  /* ========== standar ========== */
   .header__main-color.header__mini.header__spmi {
     height: calc(149px + 154px) !important;
   }
-  .header__main-color.header__mini.header__spmi.active {
+  .header__main-color.header__mini.header__spmi.active,
+  .header__main-color.header__mini.header__indikator.active {
     height: calc(149px + 105px) !important;
+  }
+
+  /* ========== indikator ========== */
+  .header__main-color.header__mini.header__indikator {
+    height: calc(149px + 154px) !important;
   }
 }
 
@@ -15,7 +22,8 @@
   .header__main-color.header__mini.header__report,
   .header__main-color.header__mini.header__report.active,
   .header__main-color.header__mini.header__profile,
-  .header__main-color.header__mini.header__profile.active {
+  .header__main-color.header__mini.header__profile.active,
+  .header__main-color.header__mini.header__indikator.active {
     height: calc(137px + 103px) !important;
   }
 
@@ -23,11 +31,17 @@
   .header__main-color.header__mini.header__spmi {
     height: calc(137px + 148px) !important;
   }
+
+  /* ========== indikator ========== */
+  .header__main-color.header__mini.header__indikator {
+    height: calc(137px + 147px) !important;
+  }
 }
 
 @media screen and (max-width: 860px) {
   /* ========== standar ========== */
-  .header__main-color.header__mini.header__spmi.active {
+  .header__main-color.header__mini.header__spmi.active,
+  .header__main-color.header__mini.header__indikator.active {
     height: calc(137px + 143px) !important;
   }
 }
@@ -41,7 +55,8 @@
 
 @media screen and (max-width: 736px) {
   /* ========== standar ========== */
-  .header__main-color.header__mini.header__spmi {
+  .header__main-color.header__mini.header__spmi,
+  .header__main-color.header__mini.header__indikator {
     height: calc(137px + 178px) !important;
   }
 }
@@ -76,7 +91,8 @@
 
 @media screen and (max-width: 608px) {
   /* ========== standar ========== */
-  .header__main-color.header__mini.header__spmi {
+  .header__main-color.header__mini.header__spmi,
+  .header__main-color.header__mini.header__indikator {
     height: calc(137px + 208px) !important;
   }
 
@@ -107,10 +123,12 @@
   }
 
   /* ========== standar ========== */
-  .header__main-color.header__mini.header__spmi {
+  .header__main-color.header__mini.header__spmi,
+  .header__main-color.header__mini.header__indikator {
     height: calc(117px + 169px) !important;
   }
-  .header__main-color.header__mini.header__spmi.active {
+  .header__main-color.header__mini.header__spmi.active,
+  .header__main-color.header__mini.header__indikator.active {
     height: calc(117px + 133px) !important;
   }
 }
@@ -152,7 +170,8 @@
 
 @media screen and (max-width: 469px) {
   /* ========== standar ========== */
-  .header__main-color.header__mini.header__spmi {
+  .header__main-color.header__mini.header__spmi,
+  .header__main-color.header__mini.header__indikator {
     height: calc(117px + 198px) !important;
   }
 
@@ -164,7 +183,8 @@
 
 @media screen and (max-width: 454px) {
   /* ========== standar ========== */
-  .header__main-color.header__mini.header__spmi {
+  .header__main-color.header__mini.header__spmi,
+  .header__main-color.header__mini.header__indikator {
     height: calc(117px + 218px) !important;
   }
 }
@@ -178,8 +198,16 @@
 
 @media screen and (max-width: 440px) {
   /* ========== standar ========== */
-  .header__main-color.header__mini.header__spmi.active {
+  .header__main-color.header__mini.header__spmi.active,
+  .header__main-color.header__mini.header__indikator.active {
     height: calc(117px + 162px) !important;
+  }
+}
+
+@media screen and (max-width: 430px) {
+  /* ========== indikator ========== */
+  .header__main-color.header__mini.header__indikator {
+    height: calc(138px + 217px) !important;
   }
 }
 
@@ -187,6 +215,11 @@
   /* ========== standar ========== */
   .header__main-color.header__mini.header__spmi {
     height: calc(117px + 250px) !important;
+  }
+
+  /* ========== indikator ========== */
+  .header__main-color.header__mini.header__indikator {
+    height: calc(138px + 250px) !important;
   }
 }
 
@@ -235,6 +268,11 @@
   .header__main-color.header__mini.header__spmi {
     height: calc(117px + 266px) !important;
   }
+
+  /* ========== indikator ========== */
+  .header__main-color.header__mini.header__indikator {
+    height: calc(138px + 266px) !important;
+  }
 }
 
 @media screen and (max-width: 359px) {
@@ -265,6 +303,13 @@
   }
 }
 
+@media screen and (max-width: 341px) {
+  /* ========== indikator ========== */
+  .header__main-color.header__mini.header__indikator {
+    height: calc(159px + 264px) !important;
+  }
+}
+
 @media screen and (max-width: 335px) {
   /* ========== profile ========== */
   .header__main-color.header__mini.header__profile {
@@ -274,14 +319,16 @@
 
 @media screen and (max-width: 332px) {
   /* ========== standar ========== */
-  .header__main-color.header__mini.header__spmi.active {
+  .header__main-color.header__mini.header__spmi.active,
+  .header__main-color.header__mini.header__indikator.active {
     height: calc(117px + 177px) !important;
   }
 }
 
 @media screen and (max-width: 330px) {
   /* ========== standar ========== */
-  .header__main-color.header__mini.header__spmi.active {
+  .header__main-color.header__mini.header__spmi.active,
+  .header__main-color.header__mini.header__indikator.active {
     height: calc(117px + 209px) !important;
   }
 
@@ -301,6 +348,13 @@
   }
 }
 
+@media screen and (max-width: 308px) {
+  /* ========== indikator ========== */
+  .header__main-color.header__mini.header__indikator.active {
+    height: calc(138px + 208px) !important;
+  }
+}
+
 @media screen and (max-width: 304px) {
   /* ========== data induk ========== */
   .header__main-color.header__mini.header__datainduk {
@@ -312,6 +366,13 @@
   /* ========== data induk ========== */
   .header__main-color.header__mini.header__datainduk {
     height: calc(159px + 239px) !important;
+  }
+}
+
+@media screen and (max-width: 302px) {
+  /* ========== indikator ========== */
+  .header__main-color.header__mini.header__indikator {
+    height: calc(180px + 264px) !important;
   }
 }
 
@@ -331,5 +392,17 @@
   /* ========== standar ========== */
   .header__main-color.header__mini.header__spmi.active {
     height: calc(117px + 238px) !important;
+  }
+
+  /* ========== indikator ========== */
+  .header__main-color.header__mini.header__indikator.active {
+    height: calc(138px + 238px) !important;
+  }
+}
+
+@media screen and (max-width: 240px) {
+  /* ========== indikator ========== */
+  .header__main-color.header__mini.header__indikator.active {
+    height: calc(138px + 255px) !important;
   }
 }

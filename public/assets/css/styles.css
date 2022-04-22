@@ -1122,16 +1122,6 @@ footer .container-fluid.container__fluid {
 /******************************************/
 /*               Responsive               */
 /******************************************/
-@media screen and (max-width: 1160px) {
-  .header__main-color.header__mini.header__indikator {
-    height: 18.5rem !important;
-  }
-
-  .header__main-color.header__mini.header__indikator.active {
-    height: 16rem !important;
-  }
-}
-
 @media screen and (max-width: 1024px) {
   /**************************************/
   /*               Button               */
@@ -1191,24 +1181,6 @@ footer .container-fluid.container__fluid {
   }
 }
 
-@media screen and (max-width: 860px) {
-  .header__main-color.header__mini.header__indikator.active {
-    height: 17rem !important;
-  }
-}
-
-@media screen and (max-width: 710px) {
-  .header__main-color.header__mini.header__indikator {
-    height: 20rem !important;
-  }
-}
-
-@media screen and (max-width: 600px) {
-  .header__main-color.header__mini.header__indikator {
-    height: 22rem !important;
-  }
-}
-
 /* ========== Mobile View ========== */
 @media screen and (max-width: 576px) {
   /**************************************/
@@ -1239,14 +1211,6 @@ footer .container-fluid.container__fluid {
 
   .header__main-color.header__mini.active {
     height: 15rem !important;
-  }
-
-  .header__main-color.header__mini.header__indikator {
-    height: 18rem !important;
-  }
-
-  .header__main-color.header__mini.header__indikator.active {
-    height: 16rem !important;
   }
 
   .main__content {
@@ -1332,39 +1296,5 @@ footer .container-fluid.container__fluid {
   /* ========== Toast ========== */
   .toast__welcome {
     width: 15rem;
-  }
-}
-
-@media screen and (max-width: 440px) {
-  .header__main-color.header__mini.header__indikator {
-    height: 21rem !important;
-  }
-
-  .header__main-color.header__mini.header__indikator.active {
-    height: 17.5rem !important;
-  }
-}
-
-@media screen and (max-width: 420px) {
-  .header__main-color.header__mini.header__indikator {
-    height: 23rem !important;
-  }
-}
-
-@media screen and (max-width: 380px) {
-  .header__main-color.header__mini.header__indikator.active {
-    height: 17rem !important;
-  }
-}
-
-@media screen and (max-width: 350px) {
-  .header__main-color.header__mini.header__indikator {
-    height: 25rem !important;
-  }
-}
-
-@media screen and (max-width: 320px) {
-  .header__main-color.header__mini.header__indikator.active {
-    height: 20rem !important;
   }
 }
