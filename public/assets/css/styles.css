@@ -766,6 +766,10 @@ label.error {
 }
 
 ::-webkit-scrollbar-track {
+  background: rgba(0, 0, 0, 0.15) !important;
+}
+
+.sidebar__content::-webkit-scrollbar-track {
   background: rgba(255, 255, 255, 0.1) !important;
 }
 
@@ -1119,12 +1123,10 @@ footer .container-fluid.container__fluid {
 /*               Responsive               */
 /******************************************/
 @media screen and (max-width: 1160px) {
-  .header__main-color.header__mini.header__spmi,
   .header__main-color.header__mini.header__indikator {
     height: 18.5rem !important;
   }
 
-  .header__main-color.header__mini.header__spmi.active,
   .header__main-color.header__mini.header__indikator.active {
     height: 16rem !important;
   }
@@ -1179,11 +1181,6 @@ footer .container-fluid.container__fluid {
     height: 16rem !important;
   }
 
-  .header__main-color.header__mini.header__report,
-  .header__main-color.header__mini.header__report.active {
-    height: 15rem !important;
-  }
-
   /**************************************/
   /*               Navbar               */
   /**************************************/
@@ -1199,21 +1196,18 @@ footer .container-fluid.container__fluid {
 }
 
 @media screen and (max-width: 860px) {
-  .header__main-color.header__mini.header__spmi.active,
   .header__main-color.header__mini.header__indikator.active {
     height: 17rem !important;
   }
 }
 
 @media screen and (max-width: 710px) {
-  .header__main-color.header__mini.header__indikator,
-  .header__main-color.header__mini.header__spmi {
+  .header__main-color.header__mini.header__indikator {
     height: 20rem !important;
   }
 }
 
 @media screen and (max-width: 600px) {
-  .header__main-color.header__mini.header__spmi,
   .header__main-color.header__mini.header__indikator {
     height: 22rem !important;
   }
@@ -1251,12 +1245,10 @@ footer .container-fluid.container__fluid {
     height: 15rem !important;
   }
 
-  .header__main-color.header__mini.header__spmi,
   .header__main-color.header__mini.header__indikator {
     height: 18rem !important;
   }
 
-  .header__main-color.header__mini.header__spmi.active,
   .header__main-color.header__mini.header__indikator.active {
     height: 16rem !important;
   }
@@ -1275,14 +1267,6 @@ footer .container-fluid.container__fluid {
 
   .main__content.minimize__sidebar {
     width: calc(100% - 4.75rem) !important;
-  }
-
-  .header__main-color.header__mini.header__report {
-    height: 15rem !important;
-  }
-
-  .header__main-color.header__mini.header__report.active {
-    height: 14rem !important;
   }
 
   /**************************************/
@@ -1363,30 +1347,17 @@ footer .container-fluid.container__fluid {
   }
 }
 
-@media screen and (max-width: 469px) {
-  .header__main-color.header__mini.header__report {
-    height: 16.5rem !important;
-  }
-
-  .header__main-color.header__mini.header__report.active {
-    height: 14.25rem !important;
-  }
-}
-
 @media screen and (max-width: 440px) {
-  .header__main-color.header__mini.header__spmi,
   .header__main-color.header__mini.header__indikator {
     height: 21rem !important;
   }
 
-  .header__main-color.header__mini.header__spmi.active,
   .header__main-color.header__mini.header__indikator.active {
     height: 17.5rem !important;
   }
 }
 
 @media screen and (max-width: 420px) {
-  .header__main-color.header__mini.header__spmi,
   .header__main-color.header__mini.header__indikator {
     height: 23rem !important;
   }
@@ -1403,7 +1374,6 @@ footer .container-fluid.container__fluid {
 }
 
 @media screen and (max-width: 380px) {
-  .header__main-color.header__mini.header__spmi.active,
   .header__main-color.header__mini.header__indikator.active {
     height: 17rem !important;
   }
@@ -1413,18 +1383,7 @@ footer .container-fluid.container__fluid {
   }
 }
 
-@media screen and (max-width: 359px) {
-  .header__main-color.header__mini.header__report {
-    height: 19.5rem !important;
-  }
-
-  .header__main-color.header__mini.header__report.active {
-    height: 16rem !important;
-  }
-}
-
 @media screen and (max-width: 350px) {
-  .header__main-color.header__mini.header__spmi,
   .header__main-color.header__mini.header__indikator {
     height: 25rem !important;
   }
@@ -1441,7 +1400,6 @@ footer .container-fluid.container__fluid {
 }
 
 @media screen and (max-width: 320px) {
-  .header__main-color.header__mini.header__spmi.active,
   .header__main-color.header__mini.header__indikator.active {
     height: 20rem !important;
   }

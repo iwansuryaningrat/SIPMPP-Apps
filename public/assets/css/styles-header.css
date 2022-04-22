@@ -1,10 +1,31 @@
+@media screen and (max-width: 1169px) {
+  .header__main-color.header__mini.header__spmi {
+    height: calc(149px + 154px) !important;
+  }
+  .header__main-color.header__mini.header__spmi.active {
+    height: calc(149px + 105px) !important;
+  }
+}
+
 @media screen and (max-width: 991px) {
   /* ========== data induk ========== */
-  .header__main-color.header__mini.header__datainduk {
+  .header__main-color.header__mini.header__datainduk,
+  .header__main-color.header__mini.header__datainduk.active,
+  .header__main-color.header__mini.header__spmi.active,
+  .header__main-color.header__mini.header__report {
     height: calc(137px + 103px) !important;
   }
-  .header__main-color.header__mini.header__datainduk.active {
-    height: calc(137px + 103px) !important;
+
+  /* ========== standar ========== */
+  .header__main-color.header__mini.header__spmi {
+    height: calc(137px + 148px) !important;
+  }
+}
+
+@media screen and (max-width: 860px) {
+  /* ========== standar ========== */
+  .header__main-color.header__mini.header__spmi.active {
+    height: calc(137px + 143px) !important;
   }
 }
 
@@ -12,6 +33,20 @@
   /* ========== data induk ========== */
   .header__main-color.header__mini.header__datainduk {
     height: calc(137px + 121px) !important;
+  }
+}
+
+@media screen and (max-width: 736px) {
+  /* ========== standar ========== */
+  .header__main-color.header__mini.header__spmi {
+    height: calc(137px + 178px) !important;
+  }
+}
+
+@media screen and (max-width: 727px) {
+  /* ========== report ========== */
+  .header__main-color.header__mini.header__report {
+    height: calc(137px + 119px) !important;
   }
 }
 
@@ -29,6 +64,18 @@
   }
 }
 
+@media screen and (max-width: 608px) {
+  /* ========== standar ========== */
+  .header__main-color.header__mini.header__spmi {
+    height: calc(137px + 208px) !important;
+  }
+
+  /* ========== report ========== */
+  .header__main-color.header__mini.header__report {
+    height: calc(137px + 155px) !important;
+  }
+}
+
 @media screen and (max-width: 607px) {
   /* ========== data induk ========== */
   .header__main-color.header__mini.header__datainduk {
@@ -38,11 +85,20 @@
 
 @media screen and (max-width: 576px) {
   /* ========== data induk ========== */
-  .header__main-color.header__mini.header__datainduk {
+  .header__main-color.header__mini.header__datainduk,
+  .header__main-color.header__mini.header__report {
     height: calc(117px + 117px) !important;
   }
   .header__main-color.header__mini.header__datainduk.active {
     height: calc(117px + 96px) !important;
+  }
+
+  /* ========== standar ========== */
+  .header__main-color.header__mini.header__spmi {
+    height: calc(117px + 169px) !important;
+  }
+  .header__main-color.header__mini.header__spmi.active {
+    height: calc(117px + 133px) !important;
   }
 }
 
@@ -64,6 +120,46 @@
   /* ========== data induk ========== */
   .header__main-color.header__mini.header__datainduk {
     height: calc(117px + 171px) !important;
+  }
+}
+
+@media screen and (max-width: 469px) {
+  /* ========== standar ========== */
+  .header__main-color.header__mini.header__spmi {
+    height: calc(117px + 198px) !important;
+  }
+
+  /* ========== report ========== */
+  .header__main-color.header__mini.header__report {
+    height: calc(117px + 150px) !important;
+  }
+}
+
+@media screen and (max-width: 454px) {
+  /* ========== standar ========== */
+  .header__main-color.header__mini.header__spmi {
+    height: calc(117px + 218px) !important;
+  }
+}
+
+@media screen and (max-width: 440px) {
+  /* ========== standar ========== */
+  .header__main-color.header__mini.header__spmi.active {
+    height: calc(117px + 162px) !important;
+  }
+}
+
+@media screen and (max-width: 421px) {
+  /* ========== standar ========== */
+  .header__main-color.header__mini.header__spmi {
+    height: calc(117px + 250px) !important;
+  }
+}
+
+@media screen and (max-width: 419px) {
+  /* ========== report ========== */
+  .header__main-color.header__mini.header__report {
+    height: calc(117px + 169px) !important;
   }
 }
 
@@ -95,9 +191,70 @@
   }
 }
 
+@media screen and (max-width: 362px) {
+  /* ========== standar ========== */
+  .header__main-color.header__mini.header__spmi {
+    height: calc(117px + 266px) !important;
+  }
+}
+
+@media screen and (max-width: 359px) {
+  /* ========== report ========== */
+  .header__main-color.header__mini.header__report {
+    height: calc(117px + 188px) !important;
+  }
+}
+
 @media screen and (max-width: 358px) {
   /* ========== data induk ========== */
   .header__main-color.header__mini.header__datainduk {
     height: calc(138px + 222px) !important;
+  }
+}
+
+@media screen and (max-width: 353px) {
+  /* ========== data induk ========== */
+  .header__main-color.header__mini.header__spmi {
+    height: calc(138px + 266px) !important;
+  }
+}
+
+@media screen and (max-width: 332px) {
+  /* ========== standar ========== */
+  .header__main-color.header__mini.header__spmi.active {
+    height: calc(117px + 177px) !important;
+  }
+}
+
+@media screen and (max-width: 330px) {
+  /* ========== standar ========== */
+  .header__main-color.header__mini.header__spmi.active {
+    height: calc(117px + 209px) !important;
+  }
+
+  /* ========== report ========== */
+  .header__main-color.header__mini.header__report {
+    height: calc(138px + 188px) !important;
+  }
+}
+
+@media screen and (max-width: 304px) {
+  /* ========== data induk ========== */
+  .header__main-color.header__mini.header__datainduk {
+    height: calc(159px + 218px) !important;
+  }
+}
+
+@media screen and (max-width: 304px) {
+  /* ========== data induk ========== */
+  .header__main-color.header__mini.header__datainduk {
+    height: calc(159px + 239px) !important;
+  }
+}
+
+@media screen and (max-width: 286px) {
+  /* ========== standar ========== */
+  .header__main-color.header__mini.header__spmi.active {
+    height: calc(117px + 238px) !important;
   }
 }
