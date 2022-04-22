@@ -263,7 +263,7 @@ form .position-relative .error svg {
 }
 
 /* ========== conditional view ==========*/
-@media screen and (max-height: 540px) {
+@media screen and (max-height: 630px) {
   .logo__sipmpp {
     display: none;
   }
