@@ -134,7 +134,6 @@ class Auth extends BaseController
         } else {
             $user = $this->usersModel->getUserByEmail($email);
             if ($user == null) {
-
                 $data = [
                     'nama' => $this->request->getVar('nama'),
                     'email' => $email,
@@ -232,7 +231,7 @@ class Auth extends BaseController
                 return redirect()->to('/login');
             }
         } else {
-            session()->setFlashdata('gagal', 'Gagal melakukan proses autentikasi. Mohon maaf akun belum terdaftar. Silakan menghubungi admin untuk mendaftar.');
+            session()->setFlashdata('gagal', 'Gagal melakukan proses autentikasi. Akun Anda belum terdaftar. Silakan hubungi admin untuk mendaftar.');
 
             return redirect()->to('/login');
         }

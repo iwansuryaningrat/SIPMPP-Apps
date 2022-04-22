@@ -9,7 +9,7 @@ h4,
 h5,
 h6,
 input {
-  font-family: var(--body-font) !important;
+  font-family: "Work Sans", sans-serif !important;
 }
 
 input {
@@ -25,10 +25,33 @@ input {
 .main.main__register {
   position: relative;
 
-  padding-bottom: 12.5rem;
+  display: flex;
 
-  background: url(/assets/img/background-gradient-book.png) no-repeat center
-    center fixed;
+  min-height: 100vh;
+  padding-top: 6.25rem;
+  padding-bottom: 9.375rem;
+
+  background: url(/assets/img/photo-background-4.png) no-repeat center center
+    fixed;
+  background-size: cover;
+
+  align-items: center;
+  justify-content: center;
+}
+
+.signup-form.signup__form {
+  overflow: visible;
+
+  margin-right: 4rem;
+  margin-left: 4rem;
+}
+
+.signup-form.signup__form .form-title {
+  -webkit-hyphens: auto;
+  -moz-hyphens: auto;
+  hyphens: auto;
+
+  -ms-hyphens: auto;
 }
 
 .signup__caption {
@@ -74,6 +97,8 @@ input {
 .form-group.form-button #signup {
   font-size: 0.875rem !important;
   font-weight: 500 !important;
+
+  padding: 0.75rem 2rem !important;
 }
 
 .btn__dark {
@@ -108,8 +133,13 @@ footer p {
   color: rgba(242, 89, 97, 0.6);
 }
 
-/* tablet view */
+/* ========== tablet view ========== */
 @media screen and (max-width: 768px) {
+  .signup-form.signup__form {
+    margin-right: 0;
+    margin-left: 0;
+  }
+
   .signup__caption {
     left: 2.5rem;
   }
@@ -119,7 +149,8 @@ footer p {
   }
 
   .main.main__register .signup-content {
-    padding-top: 7rem;
+    padding-top: 6rem;
+    padding-bottom: 3rem;
   }
 
   .signup-image.signup__image {
@@ -131,7 +162,8 @@ footer p {
   }
 }
 
-/* mobile view */
+/* ========== moible view ========== */
+
 @media screen and (max-width: 576px) {
   .container.container__register {
     width: 90%;
@@ -144,5 +176,12 @@ footer p {
   .signup__caption {
     right: 0;
     left: 0;
+  }
+}
+
+/* ========== conditional view ========== */
+@media screen and (max-width: 360px) {
+  .main.main__register {
+    padding-bottom: 11.25rem;
   }
 }
