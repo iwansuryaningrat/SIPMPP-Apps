@@ -147,6 +147,19 @@ form .position-relative .icon__hide__password {
   }
 }
 
+@media screen and (max-width: 631px) {
+  .main__content form .position-relative.confirm__pass .icon__hide__password {
+    top: 4.3rem;
+  }
+
+  .main__content.minimize__sidebar
+    form
+    .position-relative.confirm__pass
+    .icon__hide__password {
+    top: 3rem;
+  }
+}
+
 @media screen and (max-width: 600px) {
   .input-group__photo {
     flex-direction: column;
@@ -186,5 +199,54 @@ form .position-relative .icon__hide__password {
   .profile__section-profile,
   .section-password__border {
     padding: 1.5rem 1.5rem 1.625rem;
+  }
+
+  .main__content form .position-relative.confirm__pass .icon__hide__password {
+    top: 3rem;
+  }
+}
+
+@media screen and (max-width: 473px) {
+  .main__content form .position-relative.confirm__pass .icon__hide__password {
+    top: 4.3rem;
+  }
+}
+
+@media screen and (max-width: 400px) {
+  .main__content form .position-relative.old__pass .icon__hide__password {
+    top: 4.3rem;
+  }
+
+  .main__content.minimize__sidebar
+    form
+    .position-relative.old__pass
+    .icon__hide__password {
+    top: 3rem;
+  }
+}
+
+@media screen and (max-width: 395px) {
+  .main__content form .position-relative.new__pass .icon__hide__password {
+    top: 4.3rem;
+  }
+
+  .main__content.minimize__sidebar
+    form
+    .position-relative.new__pass
+    .icon__hide__password {
+    top: 3rem;
+  }
+
+  .main__content form .position-relative.confirm__pass .icon__hide__password {
+    top: 5.6rem;
+  }
+}
+
+@media screen and (max-width: 351px) {
+  .main__content.minimize__sidebar
+    form
+    .position-relative.confirm__pass
+    .icon__hide__password {
+    top: 4.3rem;
   }
 }
