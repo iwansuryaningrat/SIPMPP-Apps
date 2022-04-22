@@ -335,7 +335,7 @@ class Home extends BaseController
                 'title' => 'Form Edit Indikator SPMI | SIPMPP UNDIP ' . $this->thisTahun,
                 'data_user' => $data_user,
                 'tab' => 'standar',
-                'header' => 'header__mini header__indikator',
+                'header' => 'header__mini header__indikator-form',
                 'css' => 'styles-form-indikator-spmi.css',
                 'cssCustom' => '',
                 'kategori' => $kategori['nama_kategori'],
@@ -390,7 +390,7 @@ class Home extends BaseController
         // dd($err);
         if ($err == "No file was uploaded.") {
             $namadokumen = $datapenilaian['dokumen'];
-            // dd('No File');
+        // dd('No File');
         } else {
             if ($dokumen->getError() == 4) {
                 return redirect()->to('/home/indikatorform/' . $kategori_id . '/' . $standar_id . '/' . $indikator_id);
