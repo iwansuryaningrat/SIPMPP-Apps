@@ -1,6 +1,7 @@
 /**************************************/
 /*               Import               */
 /**************************************/
+@import url(styles-header.css);
 @import url("https://fonts.googleapis.com/css2?family=Work+Sans:wght@300;400;500;600;700;800;900&display=swap");
 
 /****************************************/
@@ -1174,14 +1175,6 @@ footer .container-fluid.container__fluid {
     height: 16rem !important;
   }
 
-  .header__main-color.header__mini.header__datainduk {
-    height: 16rem !important;
-  }
-
-  .header__main-color.header__mini.header__datainduk.active {
-    height: 15rem !important;
-  }
-
   .header__main-color.header__mini.header__profile {
     height: 16rem !important;
   }
@@ -1216,10 +1209,6 @@ footer .container-fluid.container__fluid {
   .header__main-color.header__mini.header__indikator,
   .header__main-color.header__mini.header__spmi {
     height: 20rem !important;
-  }
-
-  .header__main-color.header__mini.header__datainduk {
-    height: 18rem !important;
   }
 }
 
@@ -1270,10 +1259,6 @@ footer .container-fluid.container__fluid {
   .header__main-color.header__mini.header__spmi.active,
   .header__main-color.header__mini.header__indikator.active {
     height: 16rem !important;
-  }
-
-  .header__main-color.header__mini.header__datainduk.active {
-    height: 15rem !important;
   }
 
   .header__main-color.header__mini.header__profile {
@@ -1401,10 +1386,6 @@ footer .container-fluid.container__fluid {
 }
 
 @media screen and (max-width: 420px) {
-  .header__main-color.header__mini.header__datainduk.active {
-    height: 16rem !important;
-  }
-
   .header__main-color.header__mini.header__spmi,
   .header__main-color.header__mini.header__indikator {
     height: 23rem !important;
@@ -1424,14 +1405,6 @@ footer .container-fluid.container__fluid {
 @media screen and (max-width: 380px) {
   .header__main-color.header__mini.header__spmi.active,
   .header__main-color.header__mini.header__indikator.active {
-    height: 17rem !important;
-  }
-
-  .header__main-color.header__mini.header__datainduk {
-    height: 22.5rem !important;
-  }
-
-  .header__main-color.header__mini.header__datainduk.active {
     height: 17rem !important;
   }
 

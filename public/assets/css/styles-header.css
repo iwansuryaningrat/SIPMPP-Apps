@@ -1,0 +1,103 @@
+@media screen and (max-width: 991px) {
+  /* ========== data induk ========== */
+  .header__main-color.header__mini.header__datainduk {
+    height: calc(137px + 103px) !important;
+  }
+  .header__main-color.header__mini.header__datainduk.active {
+    height: calc(137px + 103px) !important;
+  }
+}
+
+@media screen and (max-width: 814px) {
+  /* ========== data induk ========== */
+  .header__main-color.header__mini.header__datainduk {
+    height: calc(137px + 121px) !important;
+  }
+}
+
+@media screen and (max-width: 708px) {
+  /* ========== data induk ========== */
+  .header__main-color.header__mini.header__datainduk {
+    height: calc(137px + 158px) !important;
+  }
+}
+
+@media screen and (max-width: 618px) {
+  /* ========== data induk ========== */
+  .header__main-color.header__mini.header__datainduk.active {
+    height: calc(137px + 118px) !important;
+  }
+}
+
+@media screen and (max-width: 607px) {
+  /* ========== data induk ========== */
+  .header__main-color.header__mini.header__datainduk {
+    height: calc(137px + 176px) !important;
+  }
+}
+
+@media screen and (max-width: 576px) {
+  /* ========== data induk ========== */
+  .header__main-color.header__mini.header__datainduk {
+    height: calc(117px + 117px) !important;
+  }
+  .header__main-color.header__mini.header__datainduk.active {
+    height: calc(117px + 96px) !important;
+  }
+}
+
+@media screen and (max-width: 570px) {
+  /* ========== data induk ========== */
+  .header__main-color.header__mini.header__datainduk.active {
+    height: calc(117px + 117px) !important;
+  }
+}
+
+@media screen and (max-width: 562px) {
+  /* ========== data induk ========== */
+  .header__main-color.header__mini.header__datainduk {
+    height: calc(117px + 153px) !important;
+  }
+}
+
+@media screen and (max-width: 485px) {
+  /* ========== data induk ========== */
+  .header__main-color.header__mini.header__datainduk {
+    height: calc(117px + 171px) !important;
+  }
+}
+
+@media screen and (max-width: 416px) {
+  /* ========== data induk ========== */
+  .header__main-color.header__mini.header__datainduk.active {
+    height: calc(117px + 148px) !important;
+  }
+}
+
+@media screen and (max-width: 387px) {
+  /* ========== data induk ========== */
+  .header__main-color.header__mini.header__datainduk {
+    height: calc(117px + 189px) !important;
+  }
+}
+
+@media screen and (max-width: 378px) {
+  /* ========== data induk ========== */
+  .header__main-color.header__mini.header__datainduk {
+    height: calc(117px + 222px) !important;
+  }
+}
+
+@media screen and (max-width: 363px) {
+  /* ========== data induk ========== */
+  .header__main-color.header__mini.header__datainduk.active {
+    height: calc(117px + 167px) !important;
+  }
+}
+
+@media screen and (max-width: 358px) {
+  /* ========== data induk ========== */
+  .header__main-color.header__mini.header__datainduk {
+    height: calc(138px + 222px) !important;
+  }
+}
