@@ -1177,10 +1177,6 @@ footer .container-fluid.container__fluid {
     height: 16rem !important;
   }
 
-  .header__main-color.header__mini.header__profile {
-    height: 16rem !important;
-  }
-
   /**************************************/
   /*               Navbar               */
   /**************************************/
@@ -1251,14 +1247,6 @@ footer .container-fluid.container__fluid {
 
   .header__main-color.header__mini.header__indikator.active {
     height: 16rem !important;
-  }
-
-  .header__main-color.header__mini.header__profile {
-    height: 14rem !important;
-  }
-
-  .header__main-color.header__mini.header__profile.active {
-    height: 14rem !important;
   }
 
   .main__content {
@@ -1363,39 +1351,15 @@ footer .container-fluid.container__fluid {
   }
 }
 
-@media screen and (max-width: 419px) {
-  .header__main-color.header__mini.header__profile {
-    height: 15.5rem !important;
-  }
-
-  .header__main-color.header__mini.header__profile.active {
-    height: 14.5rem !important;
-  }
-}
-
 @media screen and (max-width: 380px) {
   .header__main-color.header__mini.header__indikator.active {
     height: 17rem !important;
-  }
-
-  .header__main-color.header__mini.header__profile {
-    height: 15.5rem !important;
   }
 }
 
 @media screen and (max-width: 350px) {
   .header__main-color.header__mini.header__indikator {
     height: 25rem !important;
-  }
-}
-
-@media screen and (max-width: 333px) {
-  .header__main-color.header__mini.header__profile {
-    height: 18.5rem !important;
-  }
-
-  .header__main-color.header__mini.header__profile.active {
-    height: 14.25rem !important;
   }
 }
 
