@@ -1,12 +1,13 @@
 @media screen and (max-width: 1169px) {
-  /* ========== standar ========== */
-  .header__main-color.header__mini.header__spmi {
-    height: calc(149px + 154px) !important;
-  }
   .header__main-color.header__mini.header__spmi.active,
   .header__main-color.header__mini.header__indikator.active,
   .header__main-color.header__mini.header__indikator-form.active {
     height: calc(149px + 105px) !important;
+  }
+
+  /* ========== standar ========== */
+  .header__main-color.header__mini.header__spmi {
+    height: calc(149px + 154px) !important;
   }
 
   /* ========== indikator ========== */
