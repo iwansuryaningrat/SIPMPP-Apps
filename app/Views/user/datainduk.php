@@ -160,7 +160,7 @@
           <input type="hidden" id="kategori_id" name="kategori_id" />
           <!-- kategori -->
           <div class="modal__form-content">
-            <label for="kategori" class="form-label form__label">Kategori</label>
+            <label for="nama_kategori" class="form-label form__label">Kategori</label>
             <input type="text" class="form-control shadow-none form__control" id="nama_kategori" name="nama_kategori"
               disabled required />
           </div>

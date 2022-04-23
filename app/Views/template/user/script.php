@@ -55,20 +55,20 @@
     $("#sidebarfooterYearNow").text(currentYear);
 
     // change sidebar
-    // if ($(window).width() < 991) {
-    //     $(".sidebar__content").addClass("minimize__sidebar");
-    //     $(".main__content").addClass("minimize__sidebar");
-    // } else {
-    //     $(".sidebar__content").removeClass("minimize__sidebar");
-    //     $(".main__content").removeClass("minimize__sidebar");
-    // }
-    // $(window).resize(function() {
-    //     if ($(window).width() < 991) {
-    //         $(".sidebar__content").addClass("minimize__sidebar");
-    //         $(".main__content").addClass("minimize__sidebar");
-    //     } else {
-    //         $(".sidebar__content").removeClass("minimize__sidebar");
-    //         $(".main__content").removeClass("minimize__sidebar");
-    //     }
-    // })
+    if ($(window).width() < 991) {
+        $(".sidebar__content").addClass("minimize__sidebar");
+        $(".main__content").addClass("minimize__sidebar");
+    } else {
+        $(".sidebar__content").removeClass("minimize__sidebar");
+        $(".main__content").removeClass("minimize__sidebar");
+    }
+    $(window).resize(function() {
+        if ($(window).width() < 991) {
+            $(".sidebar__content").addClass("minimize__sidebar");
+            $(".main__content").addClass("minimize__sidebar");
+        } else {
+            $(".sidebar__content").removeClass("minimize__sidebar");
+            $(".main__content").removeClass("minimize__sidebar");
+        }
+    })
 </script>
