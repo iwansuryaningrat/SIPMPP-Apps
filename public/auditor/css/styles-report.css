@@ -1,6 +1,5 @@
 @import url(styles.css);
 
-/* link tab */
 .nav__tabs {
   border: none;
 }
@@ -14,14 +13,16 @@
 }
 
 .nav__link-tab {
-  padding: 0.875rem 1.5rem;
-  border: none !important;
   margin-bottom: 0 !important;
-  background-color: rgba(230, 235, 250, 0.3) !important;
-  color: rgba(0, 0, 0, 0.6) !important;
-  border-radius: var(--radius-md) var(--radius-md) 0 0 !important;
+  padding: 0.875rem 1.5rem;
+
   transition: var(--trans-m);
+
+  color: rgba(0, 0, 0, 0.6) !important;
+  border: none !important;
   border-bottom: 0.25rem solid rgba(230, 235, 250, 0.3) !important;
+  border-radius: var(--radius-md) var(--radius-md) 0 0 !important;
+  background-color: rgba(230, 235, 250, 0.3) !important;
 }
 
 .nav__link-tab:hover {
@@ -29,32 +30,33 @@
 }
 
 .nav__link-tab.active {
-  background-color: rgba(230, 235, 250, 0.6) !important;
   color: var(--black) !important;
-  border-bottom: 0.25rem solid var(--dark-main-color) !important;
+  border-bottom: 0.25rem solid var(--space-cadet) !important;
+  background-color: rgba(230, 235, 250, 0.6) !important;
 }
 
 .nav__link-tab.active:hover {
   background-color: rgba(230, 235, 250, 0.6) !important;
 }
 
-/* tab */
 .tab__content {
   padding: 1.5rem 1.875rem 1.875rem;
-  background-color: rgba(230, 235, 250, 0.6);
+
   border-radius: 0 var(--radius-md) var(--radius-md) var(--radius-md);
+  background-color: rgba(230, 235, 250, 0.6);
 }
 
-/* body */
 .title__tab {
   margin: 1rem 0 1.875rem;
 }
 
 .tab-item__link {
   display: flex;
+
+  padding: 0.625rem 0;
+
   align-items: center;
   justify-content: space-between;
-  padding: 0.625rem 0;
 }
 
 .tab-item__link:hover span,
@@ -63,8 +65,8 @@
 }
 
 .tab-item__link span {
-  font-weight: 500;
   font-size: 1.125rem;
+  font-weight: 500;
 }
 
 .body__tab-item__title {
@@ -73,18 +75,19 @@
 
 .chart__collapse-container {
   padding: 1.5rem;
-  background-color: var(--white);
+
   border-radius: var(--radius-md);
+  background-color: var(--white);
 }
 
 .sipmpp__table-content thead tr th,
 .sipmpp__table-content tbody tr td {
-  padding-top: 1rem;
-  padding-bottom: 1rem;
+  padding: 1rem 0;
 }
 
 .table__collapse {
   padding: 2rem;
+
   border-radius: var(--radius-md);
   background-color: var(--white);
 }
@@ -106,8 +109,6 @@
 .sipmpp__table-content tr td {
   padding-right: 1.875rem !important;
   padding-left: 1.875rem !important;
-
-  vertical-align: middle;
 }
 
 .table__collapse-number {
@@ -157,6 +158,12 @@
   }
 }
 
+@media screen and (max-width: 768px) {
+  .table__collapse {
+    padding: 1.5rem;
+  }
+}
+
 @media screen and (max-width: 576px) {
   .nav__item-tab:first-child {
     padding-right: 0.25rem;
@@ -164,5 +171,10 @@
 
   .nav__item-tab:last-child {
     padding-left: 0.25rem;
+  }
+
+  .table__collapse,
+  .chart__collapse-container {
+    padding: 1rem;
   }
 }
