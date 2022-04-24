@@ -15,7 +15,7 @@
 .login__content-left {
   height: 100vh;
 
-  background-color: var(--dark-main-color);
+  background-color: var(--space-cadet);
 
   flex: 0.5;
 }
@@ -130,7 +130,7 @@
 
 .login__btn:hover {
   color: var(--white);
-  background-color: var(--dark-main-color);
+  background-color: var(--space-cadet);
 }
 
 .form__login .form-control.form__control,

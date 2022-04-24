@@ -1,16 +1,3 @@
-/* @media screen and (max-width: 1169px) {
-  .header__main-color.header__mini.header__spmi.active,
-  .header__main-color.header__mini.header__indikator.active,
-  .header__main-color.header__mini.header__indikator-form.active {
-  } */
-
-/* ========== standar ========== */
-/* .header__main-color.header__mini.header__spmi {
-  } */
-
-/* ========== indikator ========== */
-/* } */
-
 @media screen and (max-width: 991px) {
   /* ========== data induk ========== */
   .header__main-color.header__mini.header__datainduk,

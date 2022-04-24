@@ -106,7 +106,7 @@
   height: 0.75rem;
 
   border-radius: 1rem;
-  background-color: var(--light-color);
+  background-color: var(--lavender);
 }
 
 .progress-bar.bg__dark-main {
@@ -133,7 +133,7 @@
 
   border: var(--border-sm);
   border-radius: var(--radius-lg);
-  background-color: var(--light-color);
+  background-color: var(--lavender);
 }
 .recap__content-unit .sipmpp__table {
   margin-bottom: 1.25rem;
@@ -152,7 +152,7 @@
   padding: 1.5rem 1.875rem;
 
   border-radius: 0 0 var(--radius-lg) var(--radius-lg);
-  background-color: var(--dark-main-color);
+  background-color: var(--space-cadet);
 }
 
 .recap__link-card__footer a {
@@ -234,7 +234,7 @@
   height: 0.6rem;
 
   border-radius: 1rem;
-  background-color: var(--light-color);
+  background-color: var(--lavender);
 }
 
 .unit__link:hover {
@@ -261,7 +261,7 @@
   font-size: 0.75rem;
   padding: 0.25rem 0.5rem;
   border-radius: var(--radius-sm);
-  background-color: var(--light-color) !important;
+  background-color: var(--lavender) !important;
   border: var(--border-sm) !important;
   color: rgba(0, 0, 0, 0.8) !important;
 }
@@ -281,7 +281,7 @@
 .filter__btn.active:hover,
 .filter__btn-chart.active:hover {
   color: var(--white) !important;
-  background-color: var(--dark-main-color) !important;
+  background-color: var(--space-cadet) !important;
 }
 
 /* chart */

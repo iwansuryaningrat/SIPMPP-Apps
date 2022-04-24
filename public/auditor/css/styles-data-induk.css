@@ -17,7 +17,7 @@
 .filter__btn {
   padding: 0.75rem 1rem !important;
   border-radius: var(--radius-sm) !important;
-  background-color: var(--light-color) !important;
+  background-color: var(--lavender) !important;
   border: var(--border-sm) !important;
   color: rgba(0, 0, 0, 0.8) !important;
 }
@@ -34,7 +34,7 @@
 
 .filter__btn.active:hover {
   color: var(--white) !important;
-  background-color: var(--dark-main-color) !important;
+  background-color: var(--space-cadet) !important;
 }
 
 .filter__table-year {
@@ -65,7 +65,7 @@
 
 .terapkan__btn:hover {
   color: var(--white);
-  background-color: var(--dark-main-color);
+  background-color: var(--space-cadet);
 }
 
 /* ========== table ========== */

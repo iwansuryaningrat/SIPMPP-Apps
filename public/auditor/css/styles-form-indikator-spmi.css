@@ -13,7 +13,7 @@
 
 .input__group__text {
   font-size: 0.875rem;
-  background-color: var(--dark-main-color);
+  background-color: var(--space-cadet);
   color: rgba(255, 255, 255, 0.8);
   transition: var(--trans-m);
 }
