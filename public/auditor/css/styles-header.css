@@ -1,0 +1,343 @@
+/* @media screen and (max-width: 1169px) {
+  .header__main-color.header__mini.header__spmi.active,
+  .header__main-color.header__mini.header__indikator.active,
+  .header__main-color.header__mini.header__indikator-form.active {
+  } */
+
+/* ========== standar ========== */
+/* .header__main-color.header__mini.header__spmi {
+  } */
+
+/* ========== indikator ========== */
+/* } */
+
+@media screen and (max-width: 991px) {
+  /* ========== data induk ========== */
+  .header__main-color.header__mini.header__datainduk,
+  .header__main-color.header__mini.header__datainduk.active,
+  .header__main-color.header__mini.header__spmi,
+  .header__main-color.header__mini.header__spmi.active,
+  .header__main-color.header__mini.header__indikator,
+  .header__main-color.header__mini.header__indikator.active {
+    height: calc(137px + 103px) !important;
+  }
+}
+
+@media screen and (max-width: 780px) {
+  /* ========== data induk ========== */
+  .header__main-color.header__mini.header__datainduk {
+    height: calc(137px + 121px) !important;
+  }
+}
+
+@media screen and (max-width: 684px) {
+  /* ========== standar ========== */
+  .header__main-color.header__mini.header__spmi {
+    height: calc(137px + 136px) !important;
+  }
+}
+
+@media screen and (max-width: 682px) {
+  /* ========== indikator ========== */
+  .header__main-color.header__mini.header__indikator {
+    height: calc(137px + 136px) !important;
+  }
+}
+
+@media screen and (max-width: 633px) {
+  /* ========== standar ========== */
+  .header__main-color.header__mini.header__spmi {
+    height: calc(137px + 156px) !important;
+  }
+}
+
+@media screen and (max-width: 610px) {
+  /* ========== data induk ========== */
+  .header__main-color.header__mini.header__datainduk {
+    height: calc(137px + 158px) !important;
+  }
+}
+
+@media screen and (max-width: 593px) {
+  /* ========== indikator ========== */
+  .header__main-color.header__mini.header__indikator {
+    height: calc(158px + 133px) !important;
+  }
+}
+
+@media screen and (max-width: 584px) {
+  /* ========== data induk ========== */
+  .header__main-color.header__mini.header__datainduk.active {
+    height: calc(137px + 118px) !important;
+  }
+}
+
+@media screen and (max-width: 579px) {
+  /* ========== indikator ========== */
+  .header__main-color.header__mini.header__indikator {
+    height: calc(158px + 154px) !important;
+  }
+}
+
+@media screen and (max-width: 578px) {
+  /* ========== standar ========== */
+  .header__main-color.header__mini.header__spmi {
+    height: calc(137px + 190px) !important;
+  }
+}
+
+@media screen and (max-width: 576px) {
+  /* ========== data induk ========== */
+  .header__main-color.header__mini.header__datainduk {
+    height: calc(117px + 117px) !important;
+  }
+  .header__main-color.header__mini.header__datainduk.active,
+  .header__main-color.header__mini.header__spmi,
+  .header__main-color.header__mini.header__spmi.active,
+  .header__main-color.header__mini.header__indikator,
+  .header__main-color.header__mini.header__indikator.active {
+    height: calc(117px + 96px) !important;
+  }
+}
+
+@media screen and (max-width: 549px) {
+  /* ========== standar ========== */
+  .header__main-color.header__mini.header__spmi {
+    height: calc(117px + 131px) !important;
+  }
+}
+
+@media screen and (max-width: 537px) {
+  /* ========== indikator ========== */
+  .header__main-color.header__mini.header__indikator {
+    height: calc(117px + 131px) !important;
+  }
+}
+
+@media screen and (max-width: 536px) {
+  /* ========== data induk ========== */
+  .header__main-color.header__mini.header__datainduk.active {
+    height: calc(117px + 117px) !important;
+  }
+}
+
+@media screen and (max-width: 511px) {
+  /* ========== standar ========== */
+  .header__main-color.header__mini.header__spmi {
+    height: calc(117px + 151px) !important;
+  }
+}
+
+@media screen and (max-width: 471px) {
+  /* ========== data induk ========== */
+  .header__main-color.header__mini.header__datainduk,
+  .header__main-color.header__mini.header__dataiduk.active {
+    height: calc(117px + 150px) !important;
+  }
+
+  /* ========== indikator ========== */
+  .header__main-color.header__mini.header__indikator {
+    height: calc(138px + 129px) !important;
+  }
+}
+
+@media screen and (max-width: 457px) {
+  /* ========== indikator ========== */
+  .header__main-color.header__mini.header__indikator {
+    height: calc(138px + 149px) !important;
+  }
+}
+
+@media screen and (max-width: 451px) {
+  /* ========== data induk ========== */
+  .header__main-color.header__mini.header__datainduk {
+    height: calc(117px + 170px) !important;
+  }
+}
+
+@media screen and (max-width: 440px) {
+  /* ========== standar ========== */
+  .header__main-color.header__mini.header__spmi {
+    height: calc(117px + 183px) !important;
+  }
+}
+
+@media screen and (max-width: 438px) {
+  /* ========== indikator ========== */
+  .header__main-color.header__mini.header__indikator {
+    height: calc(138px + 183px) !important;
+  }
+}
+
+@media screen and (max-width: 399px) {
+  /* ========== data induk ========== */
+  .header__main-color.header__mini.header__datainduk {
+    height: calc(138px + 168px) !important;
+  }
+}
+
+@media screen and (max-width: 395px) {
+  /* ========== standar ========== */
+  .header__main-color.header__mini.header__spmi.active {
+    height: calc(117px + 126px) !important;
+  }
+}
+
+@media screen and (max-width: 394px) {
+  /* ========== standar ========== */
+  .header__main-color.header__mini.header__spmi {
+    height: calc(138px + 180px) !important;
+  }
+}
+
+@media screen and (max-width: 393px) {
+  /* ========== indikator ========== */
+  .header__main-color.header__mini.header__indikator.active {
+    height: calc(117px + 126px) !important;
+  }
+}
+
+@media screen and (max-width: 392px) {
+  /* ========== standar ========== */
+  .header__main-color.header__mini.header__spmi {
+    height: calc(138px + 201px) !important;
+  }
+}
+
+@media screen and (max-width: 389px) {
+  /* ========== standar ========== */
+  .header__main-color.header__mini.header__spmi.active {
+    height: calc(117px + 147px) !important;
+  }
+}
+
+@media screen and (max-width: 387px) {
+  /* ========== data induk ========== */
+  .header__main-color.header__mini.header__datainduk {
+    height: calc(138px + 189px) !important;
+  }
+}
+
+@media screen and (max-width: 374px) {
+  /* ========== data induk ========== */
+  .header__main-color.header__mini.header__datainduk {
+    height: calc(138px + 221px) !important;
+  }
+}
+
+@media screen and (max-width: 356px) {
+  /* ========== indikator ========== */
+  .header__main-color.header__mini.header__indikator {
+    height: calc(159px + 178px) !important;
+  }
+}
+
+@media screen and (max-width: 349px) {
+  /* ========== data induk ========== */
+  .header__main-color.header__mini.header__datainduk {
+    height: calc(138px + 241px) !important;
+  }
+
+  /* ========== indikator ========== */
+  .header__main-color.header__mini.header__indikator.active {
+    height: calc(138px + 124px) !important;
+  }
+}
+
+@media screen and (max-width: 339px) {
+  /* ========== data induk ========== */
+  .header__main-color.header__mini.header__datainduk {
+    height: calc(138px + 261px) !important;
+  }
+}
+
+@media screen and (max-width: 335px) {
+  /* ========== indikator ========== */
+  .header__main-color.header__mini.header__indikator.active {
+    height: calc(138px + 145px) !important;
+  }
+}
+
+@media screen and (max-width: 332px) {
+  /* ========== data induk ========== */
+  .header__main-color.header__mini.header__datainduk.active {
+    height: calc(117px + 145px) !important;
+  }
+}
+
+@media screen and (max-width: 329px) {
+  /* ========== data induk ========== */
+  .header__main-color.header__mini.header__datainduk.active {
+    height: calc(117px + 166px) !important;
+  }
+}
+
+@media screen and (max-width: 315px) {
+  /* ========== data induk ========== */
+  .header__main-color.header__mini.header__datainduk {
+    height: calc(159px + 302px) !important;
+  }
+}
+
+@media screen and (max-width: 309px) {
+  /* ========== standar ========== */
+  .header__main-color.header__mini.header__spmi {
+    height: calc(159px + 197px) !important;
+  }
+}
+
+@media screen and (max-width: 304px) {
+  /* ========== data induk ========== */
+  .header__main-color.header__mini.header__datainduk {
+    height: calc(180px + 302px) !important;
+  }
+}
+
+@media screen and (max-width: 303px) {
+  /* ========== standar ========== */
+  .header__main-color.header__mini.header__spmi.active {
+    height: calc(117px + 176px) !important;
+  }
+}
+
+@media screen and (max-width: 302px) {
+  /* ========== indikator ========== */
+  .header__main-color.header__mini.header__indikator {
+    height: calc(201px + 175px) !important;
+  }
+}
+
+@media screen and (max-width: 301px) {
+  /* ========== indikator ========== */
+  .header__main-color.header__mini.header__indikator.active {
+    height: calc(138px + 175px) !important;
+  }
+}
+
+@media screen and (max-width: 277px) {
+  /* ========== data induk ========== */
+  .header__main-color.header__mini.header__datainduk.active {
+    height: calc(138px + 164px) !important;
+  }
+}
+
+@media screen and (max-width: 279px) {
+  /* ========== standar ========== */
+  .header__main-color.header__mini.header__spmi.active {
+    height: calc(138px + 195px) !important;
+  }
+}
+
+@media screen and (max-width: 265px) {
+  /* ========== data induk ========== */
+  .header__main-color.header__mini.header__datainduk.active {
+    height: calc(138px + 184px) !important;
+  }
+}
+
+@media screen and (max-width: 241px) {
+  /* ========== data induk ========== */
+  .header__main-color.header__mini.header__datainduk.active {
+    height: calc(138px + 214px) !important;
+  }
+}
