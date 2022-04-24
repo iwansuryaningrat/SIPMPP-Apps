@@ -18,8 +18,17 @@
   .header__main-color.header__mini.header__spmi,
   .header__main-color.header__mini.header__spmi.active,
   .header__main-color.header__mini.header__indikator,
-  .header__main-color.header__mini.header__indikator.active {
+  .header__main-color.header__mini.header__indikator.active,
+  .header__main-color.header__mini.header__indikator-form,
+  .header__main-color.header__mini.header__indikator-form.active {
     height: calc(137px + 103px) !important;
+  }
+}
+
+@media screen and (max-width: 883px) {
+  /* ========== indikator form ========== */
+  .header__main-color.header__mini.header__indikator-form {
+    height: calc(137px + 144px) !important;
   }
 }
 
@@ -27,6 +36,13 @@
   /* ========== data induk ========== */
   .header__main-color.header__mini.header__datainduk {
     height: calc(137px + 121px) !important;
+  }
+}
+
+@media screen and (max-width: 711px) {
+  /* ========== indikator form ========== */
+  .header__main-color.header__mini.header__indikator-form {
+    height: calc(158px + 137px) !important;
   }
 }
 
@@ -51,6 +67,13 @@
   }
 }
 
+@media screen and (max-width: 630px) {
+  /* ========== indikator form ========== */
+  .header__main-color.header__mini.header__indikator-form.active {
+    height: calc(137px + 134px) !important;
+  }
+}
+
 @media screen and (max-width: 610px) {
   /* ========== data induk ========== */
   .header__main-color.header__mini.header__datainduk {
@@ -69,6 +92,13 @@
   /* ========== data induk ========== */
   .header__main-color.header__mini.header__datainduk.active {
     height: calc(137px + 118px) !important;
+  }
+}
+
+@media screen and (max-width: 581px) {
+  /* ========== indikator form ========== */
+  .header__main-color.header__mini.header__indikator-form {
+    height: calc(158px + 170px) !important;
   }
 }
 
@@ -95,8 +125,21 @@
   .header__main-color.header__mini.header__spmi,
   .header__main-color.header__mini.header__spmi.active,
   .header__main-color.header__mini.header__indikator,
-  .header__main-color.header__mini.header__indikator.active {
+  .header__main-color.header__mini.header__indikator.active,
+  .header__main-color.header__mini.header__indikator-form.active {
     height: calc(117px + 96px) !important;
+  }
+
+  /* ========== indikator form ========== */
+  .header__main-color.header__mini.header__indikator-form {
+    height: calc(138px + 133px) !important;
+  }
+}
+
+@media screen and (max-width: 568px) {
+  /* ========== indikator form ========== */
+  .header__main-color.header__mini.header__indikator-form.active {
+    height: calc(117px + 132px) !important;
   }
 }
 
@@ -141,6 +184,13 @@
   }
 }
 
+@media screen and (max-width: 467px) {
+  /* ========== indikator form ========== */
+  .header__main-color.header__mini.header__indikator-form.active {
+    height: calc(138px + 129px) !important;
+  }
+}
+
 @media screen and (max-width: 457px) {
   /* ========== indikator ========== */
   .header__main-color.header__mini.header__indikator {
@@ -155,6 +205,13 @@
   }
 }
 
+@media screen and (max-width: 444px) {
+  /* ========== indikator form ========== */
+  .header__main-color.header__mini.header__indikator-form {
+    height: calc(138px + 162px) !important;
+  }
+}
+
 @media screen and (max-width: 440px) {
   /* ========== standar ========== */
   .header__main-color.header__mini.header__spmi {
@@ -166,6 +223,25 @@
   /* ========== indikator ========== */
   .header__main-color.header__mini.header__indikator {
     height: calc(138px + 183px) !important;
+  }
+
+  /* ========== indikator form ========== */
+  .header__main-color.header__mini.header__indikator-form {
+    height: calc(138px + 196px) !important;
+  }
+}
+
+@media screen and (max-width: 431px) {
+  /* ========== indikator form ========== */
+  .header__main-color.header__mini.header__indikator-form {
+    height: calc(138px + 217px) !important;
+  }
+}
+
+@media screen and (max-width: 408px) {
+  /* ========== indikator form ========== */
+  .header__main-color.header__mini.header__indikator-form {
+    height: calc(159px + 215px) !important;
   }
 }
 
@@ -230,6 +306,11 @@
   .header__main-color.header__mini.header__indikator {
     height: calc(159px + 178px) !important;
   }
+
+  /* ========== indikator form ========== */
+  .header__main-color.header__mini.header__indikator-form {
+    height: calc(180px + 211px) !important;
+  }
 }
 
 @media screen and (max-width: 349px) {
@@ -265,6 +346,13 @@
   }
 }
 
+@media screen and (max-width: 331px) {
+  /* ========== indikator form ========== */
+  .header__main-color.header__mini.header__indikator-form {
+    height: calc(201px + 209px) !important;
+  }
+}
+
 @media screen and (max-width: 329px) {
   /* ========== data induk ========== */
   .header__main-color.header__mini.header__datainduk.active {
@@ -283,6 +371,18 @@
   /* ========== standar ========== */
   .header__main-color.header__mini.header__spmi {
     height: calc(159px + 197px) !important;
+  }
+
+  /* ========== indikator form ========== */
+  .header__main-color.header__mini.header__indikator-form.active {
+    height: calc(138px + 144px) !important;
+  }
+}
+
+@media screen and (max-width: 306px) {
+  /* ========== indikator form ========== */
+  .header__main-color.header__mini.header__indikator-form.active {
+    height: calc(138px + 176px) !important;
   }
 }
 
@@ -305,12 +405,29 @@
   .header__main-color.header__mini.header__indikator {
     height: calc(201px + 175px) !important;
   }
+
+  /* ========== indikator form ========== */
+  .header__main-color.header__mini.header__indikator-form {
+    height: calc(243px + 207px) !important;
+  }
 }
 
 @media screen and (max-width: 301px) {
   /* ========== indikator ========== */
   .header__main-color.header__mini.header__indikator.active {
     height: calc(138px + 175px) !important;
+  }
+
+  /* ========== indikator form ========== */
+  .header__main-color.header__mini.header__indikator-form.active {
+    height: calc(138px + 207px) !important;
+  }
+}
+
+@media screen and (max-width: 286px) {
+  /* ========== indikator form ========== */
+  .header__main-color.header__mini.header__indikator-form.active {
+    height: calc(159px + 206px) !important;
   }
 }
 
