@@ -2,14 +2,16 @@
 
 .title__body__indikator-u {
   font-weight: 600;
+
   margin-top: 2.625rem;
   margin-bottom: 1rem;
 }
 
 .title__body__indikator-s {
+  font-weight: 600;
+
   margin-top: 0;
   margin-bottom: 2rem;
-  font-weight: 600;
 }
 
 /* table */
@@ -37,10 +39,12 @@
   width: 7%;
   min-width: 4rem;
 }
+
 .table__indikator-nilai {
   width: 10%;
   min-width: 4.5rem;
 }
+
 .table__indikator-aksi {
   width: 10%;
   min-width: 4rem;

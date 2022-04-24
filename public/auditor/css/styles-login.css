@@ -21,17 +21,18 @@
 }
 
 .content-left__bg {
-  background: url(/assets/img/background-gradient-book.png);
+  width: 100%;
   height: 100%;
-  background-size: auto 100%;
+
+  background: url(/assets/img/background-gradient-book.png);
   background-repeat: no-repeat;
   background-position: right;
-  width: 100%;
+  background-size: auto 100%;
 }
 
 .content-left__carousel {
-  height: 100%;
   width: 100%;
+  height: 100%;
   padding: 4rem;
 }
 
@@ -46,43 +47,50 @@
 .carousel__item .carousel-caption > p {
   color: rgb(203, 203, 203);
 }
+
 .carousel__item .carousel-caption > h5 {
-  color: rgba(255, 255, 255, 0.9);
   font-weight: 600;
+
+  color: rgba(255, 255, 255, 0.9);
 }
 
 .carousel__item-title {
   width: 30rem;
-  color: rgba(255, 255, 255, 0.9);
   margin-top: 2rem;
   margin-bottom: 2rem;
+
+  color: rgba(255, 255, 255, 0.9);
 }
 
 .carousel__item-map__content {
-  height: calc(100% - 15rem);
-  width: 100%;
   display: flex;
+
+  width: 100%;
+  height: calc(100% - 15rem);
+
   align-items: center;
 }
 
 .carousel__item-map {
-  margin: 0 auto;
+  position: relative;
+
   max-width: 30rem;
   max-height: 20rem;
-  position: relative;
-  box-shadow: 0 0.25rem 1.125rem rgba(0, 0, 0, 0.4);
+  margin: 0 auto;
+
   -webkit-box-shadow: 0 0.25rem 1.125rem rgba(0, 0, 0, 0.4);
   -moz-box-shadow: 0 0.25rem 1.125rem rgba(0, 0, 0, 0.4);
+  box-shadow: 0 0.25rem 1.125rem rgba(0, 0, 0, 0.4);
 }
 
 .carousel__item-map iframe {
-  height: 20rem;
   max-width: 100%;
+  height: 20rem;
 }
 
 .carousel-caption.carousel__caption {
-  left: 10%;
   right: 10%;
+  left: 10%;
 }
 
 .login__card-content {
@@ -144,6 +152,7 @@
 
 #togglePassword svg {
   z-index: 99;
+
   color: rgba(79, 79, 79, 0.25) !important;
 }
 
@@ -154,21 +163,25 @@
 
 .logo__sipmpp__content {
   display: flex;
+
   align-items: center;
   justify-content: start;
 }
 
 .logo__sipmpp__content img {
-  height: 1.875rem;
   display: block;
+
+  height: 1.875rem;
   margin-right: 0.75rem;
 }
 
 .logo__sipmpp__content p {
   font-size: 1.375rem;
-  margin-bottom: 0;
-  letter-spacing: 0.03em;
   font-weight: 700;
+
+  margin-bottom: 0;
+
+  letter-spacing: 0.03em;
 }
 
 form .position-relative svg {

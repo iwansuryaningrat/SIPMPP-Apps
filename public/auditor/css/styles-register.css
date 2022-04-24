@@ -18,38 +18,46 @@ input {
 
 .form-group label i {
   font-size: 1.125rem !important;
+
   color: rgba(0, 0, 0, 0.8);
 }
 
 .main.main__register {
+  position: relative;
+
+  padding-bottom: 12.5rem;
+
   background: url(/assets/img/background-gradient-book.png) no-repeat center
     center fixed;
-  position: relative;
-  padding-bottom: 12.5rem;
 }
 
 .signup__caption {
   position: absolute;
-  right: 2.5rem;
   top: 2rem;
+  right: 2.5rem;
 }
 
 .logo__sipmpp__content {
   display: flex;
+
   align-items: center;
 }
 
 .logo__sipmpp__content img {
-  height: 1.875rem;
   display: block;
+
+  height: 1.875rem;
   margin-right: 0.75rem;
 }
 
 .logo__sipmpp__content p {
   font-size: 1.375rem;
-  margin-bottom: 0;
-  letter-spacing: 0.03em;
   font-weight: 700;
+
+  margin-bottom: 0;
+
+  letter-spacing: 0.03em;
+
   color: rgba(0, 0, 0, 1);
 }
 
@@ -58,37 +66,40 @@ input {
 }
 
 .container.container__register {
-  box-shadow: 0 0.5rem 2rem rgba(0, 0, 0, 0.6);
   -webkit-box-shadow: 0 0.5rem 2rem rgba(0, 0, 0, 0.6);
   -moz-box-shadow: 0 0.5rem 2rem rgba(0, 0, 0, 0.6);
+  box-shadow: 0 0.5rem 2rem rgba(0, 0, 0, 0.6);
 }
 
 .form-group.form-button #signup {
-  font-weight: 500 !important;
   font-size: 0.875rem !important;
+  font-weight: 500 !important;
 }
 
 .btn__dark {
-  background-color: rgba(38, 48, 77, 0.9);
-  color: rgba(255, 255, 255, 0.8);
   transition: all 0.3s ease-in-out;
+
+  color: rgba(255, 255, 255, 0.8);
+  background-color: rgba(38, 48, 77, 0.9);
 }
 
 .btn__dark:hover {
-  background-color: rgba(38, 48, 77, 1);
   color: rgba(255, 255, 255, 1);
+  background-color: rgba(38, 48, 77, 1);
 }
 
 footer {
   position: absolute;
-  bottom: 1rem;
   right: 0;
+  bottom: 1rem;
   left: 0;
+
   padding: 0 1.75rem;
 }
 
 footer p {
   text-align: center;
+
   color: rgba(255, 255, 255, 0.6);
 }
 
