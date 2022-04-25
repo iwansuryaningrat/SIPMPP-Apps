@@ -622,7 +622,6 @@
     flex-direction: column;
   }
   .recap__link-card {
-    /* width: 100%; */
     margin-bottom: 1rem;
 
     border-radius: var(--radius-md);
@@ -642,7 +641,8 @@
     .content-unit__title
     .filter__panel
     #pills-tab,
-  .recap__content-unit .content-unit__title .filter__panel #pills-tab {
+  .recap__content-unit .content-unit__title .filter__panel #pills-tab,
+  .indikator__content-card .content-indikator__title .filter__panel #pills-tab {
     flex-direction: column;
     width: 100%;
   }
@@ -653,7 +653,12 @@
     .filter__panel
     #pills-tab
     button,
-  .recap__content-unit .content-unit__title .filter__panel #pills-tab button {
+  .recap__content-unit .content-unit__title .filter__panel #pills-tab button,
+  .indikator__content-card
+    .content-indikator__title
+    .filter__panel
+    #pills-tab
+    button {
     width: 100%;
     flex: 1;
   }
@@ -694,11 +699,51 @@
     padding-right: 1.125rem;
     padding-left: 1.125rem;
   }
+
+  .chart__content-dounat,
+  .chart__content-line,
+  .indikator__content-card {
+    padding: 1.25rem;
+    border-radius: var(--radius-md);
+  }
+
+  .chart__content-dounat #unitStandar,
+  .chart__content-dounat .content-unit__title {
+    padding: 0;
+  }
+
+  #pills-tab > button:first-child {
+    margin-right: 0 !important;
+  }
+
+  .filter__panel {
+    width: 100%;
+  }
 }
 
 /* mini-mobile view */
 @media screen and (max-width: 380px) {
   .recap__link-card__footer a i {
     display: none !important;
+  }
+}
+
+/* ========== conditional view ========== */
+@media screen and (max-width: 500px) {
+  .indikator__kategori-title > form {
+    width: 100%;
+  }
+
+  #formStandarPenelitian,
+  #formStandarPengabdian {
+    flex-direction: column;
+    min-width: 0;
+    width: 100%;
+  }
+
+  #formStandarPenelitian > label,
+  #formStandarPengabdian > label {
+    margin-right: 0 !important;
+    margin-bottom: 0.625rem !important;
   }
 }
