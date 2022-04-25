@@ -1,0 +1,88 @@
+@media screen and (max-width: 991px) {
+  /* ========== unit ========== */
+  .header__main-color.header__mini.header__unit,
+  .header__main-color.header__mini.header__unit.active {
+    height: calc(137px + 103px) !important;
+  }
+}
+
+@media screen and (max-width: 719px) {
+  /* ========== unit ========== */
+  .header__main-color.header__mini.header__unit {
+    height: calc(137px + 119px) !important;
+  }
+}
+
+@media screen and (max-width: 576px) {
+  /* ========== unit ========== */
+  .header__main-color.header__mini.header__unit {
+    height: calc(117px + 117px) !important;
+  }
+
+  .header__main-color.header__mini.header__unit.active {
+    height: calc(117px + 96px) !important;
+  }
+}
+
+@media screen and (max-width: 475px) {
+  /* ========== unit ========== */
+  .header__main-color.header__mini.header__unit.active {
+    height: calc(117px + 115px) !important;
+  }
+}
+
+@media screen and (max-width: 419px) {
+  /* ========== unit ========== */
+  .header__main-color.header__mini.header__unit {
+    height: calc(117px + 135px) !important;
+  }
+}
+
+@media screen and (max-width: 398px) {
+  /* ========== unit ========== */
+  .header__main-color.header__mini.header__unit {
+    height: calc(138px + 135px) !important;
+  }
+}
+
+@media screen and (max-width: 352px) {
+  /* ========== unit ========== */
+  .header__main-color.header__mini.header__unit {
+    height: calc(138px + 155px) !important;
+  }
+}
+
+@media screen and (max-width: 335px) {
+  /* ========== unit ========== */
+  .header__main-color.header__mini.header__unit {
+    height: calc(138px + 196px) !important;
+  }
+}
+
+@media screen and (max-width: 320px) {
+  /* ========== unit ========== */
+  .header__main-color.header__mini.header__unit {
+    height: calc(159px + 196px) !important;
+  }
+}
+
+@media screen and (max-width: 308px) {
+  /* ========== unit ========== */
+  .header__main-color.header__mini.header__unit {
+    height: calc(159px + 217px) !important;
+  }
+}
+
+@media screen and (max-width: 297px) {
+  /* ========== unit ========== */
+  .header__main-color.header__mini.header__unit.active {
+    height: calc(117px + 133px) !important;
+  }
+}
+
+@media screen and (max-width: 276px) {
+  /* ========== unit ========== */
+  .header__main-color.header__mini.header__unit.active {
+    height: calc(138px + 132px) !important;
+  }
+}

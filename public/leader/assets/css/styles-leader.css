@@ -1,6 +1,7 @@
 /**************************************/
 /*               Import               */
 /**************************************/
+@import url(styles-leader-header.css);
 @import url("https://fonts.googleapis.com/css2?family=Work+Sans:wght@300;400;500;600;700;800;900&display=swap");
 
 /****************************************/
@@ -1081,18 +1082,6 @@ footer .container-fluid.container__fluid {
 /******************************************/
 /*               Responsive               */
 /******************************************/
-@media screen and (max-width: 1160px) {
-  .header__main-color.header__mini.header__spmi,
-  .header__main-color.header__mini.header__indikator {
-    height: 18.5rem !important;
-  }
-
-  .header__main-color.header__mini.header__spmi.active,
-  .header__main-color.header__mini.header__indikator.active {
-    height: 16rem !important;
-  }
-}
-
 @media screen and (max-width: 1024px) {
   /**************************************/
   /*               Button               */
@@ -1130,35 +1119,6 @@ footer .container-fluid.container__fluid {
     height: 22.25rem;
   }
 
-  .header__main-color.header__mini {
-    height: 17rem !important;
-  }
-
-  .header__main-color.header__mini.active {
-    height: 16rem !important;
-  }
-
-  .header__main-color.header__mini.header__unit {
-    height: 16rem !important;
-  }
-
-  .header__main-color.header__mini.header__datainduk {
-    height: 16rem !important;
-  }
-
-  .header__main-color.header__mini.header__datainduk.active {
-    height: 15rem !important;
-  }
-
-  .header__main-color.header__mini.header__profile {
-    height: 16rem !important;
-  }
-
-  .header__main-color.header__mini.header__report,
-  .header__main-color.header__mini.header__report.active {
-    height: 15rem !important;
-  }
-
   /**************************************/
   /*               Navbar               */
   /**************************************/
@@ -1170,37 +1130,6 @@ footer .container-fluid.container__fluid {
   /* ========== Toast ========== */
   .toast__welcome {
     width: 20rem;
-  }
-}
-
-@media screen and (max-width: 860px) {
-  .header__main-color.header__mini.header__spmi.active,
-  .header__main-color.header__mini.header__indikator.active {
-    height: 17rem !important;
-  }
-}
-
-@media screen and (max-width: 768px) {
-  .header__main-color.header__mini.header__unit {
-    height: 15.25rem !important;
-  }
-}
-
-@media screen and (max-width: 710px) {
-  .header__main-color.header__mini.header__indikator,
-  .header__main-color.header__mini.header__spmi {
-    height: 20rem !important;
-  }
-
-  .header__main-color.header__mini.header__datainduk {
-    height: 18rem !important;
-  }
-}
-
-@media screen and (max-width: 600px) {
-  .header__main-color.header__mini.header__spmi,
-  .header__main-color.header__mini.header__indikator {
-    height: 22rem !important;
   }
 }
 
@@ -1228,57 +1157,12 @@ footer .container-fluid.container__fluid {
     height: 24rem;
   }
 
-  .header__main-color.header__mini {
-    height: 18rem !important;
-  }
-
-  .header__main-color.header__mini.active {
-    height: 15rem !important;
-  }
-
-  .header__main-color.header__mini.header__spmi,
-  .header__main-color.header__mini.header__indikator {
-    height: 18rem !important;
-  }
-
-  .header__main-color.header__mini.header__spmi.active,
-  .header__main-color.header__mini.header__indikator.active {
-    height: 16rem !important;
-  }
-
-  .header__main-color.header__mini.header__datainduk.active {
-    height: 15rem !important;
-  }
-
-  .header__main-color.header__mini.header__profile {
-    height: 14rem !important;
-  }
-
-  .header__main-color.header__mini.header__profile.active {
-    height: 14rem !important;
-  }
-
   .main__content {
     width: calc(100% - 12.375rem) !important;
   }
 
   .main__content.minimize__sidebar {
     width: calc(100% - 4.75rem) !important;
-  }
-
-  .header__main-color.header__mini.header__report {
-    height: 15rem !important;
-  }
-  .header__main-color.header__mini.header__report.active {
-    height: 14rem !important;
-  }
-
-  .header__main-color.header__mini.header__unit {
-    height: 15rem !important;
-  }
-
-  .header__main-color.header__mini.header__unit.active {
-    height: 13.75rem !important;
   }
 
   /**************************************/
@@ -1355,120 +1239,5 @@ footer .container-fluid.container__fluid {
   /* ========== Toast ========== */
   .toast__welcome {
     width: 15rem;
-  }
-}
-
-@media screen and (max-width: 469px) {
-  .header__main-color.header__mini.header__report {
-    height: 16.5rem !important;
-  }
-  .header__main-color.header__mini.header__report.active {
-    height: 14.25rem !important;
-  }
-}
-
-@media screen and (max-width: 440px) {
-  .header__main-color.header__mini.header__spmi,
-  .header__main-color.header__mini.header__indikator {
-    height: 21rem !important;
-  }
-
-  .header__main-color.header__mini.header__spmi.active,
-  .header__main-color.header__mini.header__indikator.active {
-    height: 17.5rem !important;
-  }
-}
-
-@media screen and (max-width: 420px) {
-  .header__main-color.header__mini.header__datainduk.active {
-    height: 16rem !important;
-  }
-
-  .header__main-color.header__mini.header__spmi,
-  .header__main-color.header__mini.header__indikator {
-    height: 23rem !important;
-  }
-}
-
-@media screen and (max-width: 419px) {
-  .header__main-color.header__mini.header__profile {
-    height: 15.5rem !important;
-  }
-
-  .header__main-color.header__mini.header__profile.active {
-    height: 14.5rem !important;
-  }
-}
-
-@media screen and (max-width: 398px) {
-  .header__main-color.header__mini.header__unit {
-    height: 17.25rem !important;
-  }
-
-  .header__main-color.header__mini.header__unit.active {
-    height: 14.75rem !important;
-  }
-}
-
-@media screen and (max-width: 380px) {
-  .header__main-color.header__mini.header__spmi.active,
-  .header__main-color.header__mini.header__indikator.active {
-    height: 17rem !important;
-  }
-
-  .header__main-color.header__mini.header__datainduk {
-    height: 22.5rem !important;
-  }
-
-  .header__main-color.header__mini.header__datainduk.active {
-    height: 17rem !important;
-  }
-
-  .header__main-color.header__mini.header__profile {
-    height: 15.5rem !important;
-  }
-}
-
-@media screen and (max-width: 359px) {
-  .header__main-color.header__mini.header__report {
-    height: 19.5rem !important;
-  }
-
-  .header__main-color.header__mini.header__report.active {
-    height: 16rem !important;
-  }
-}
-
-@media screen and (max-width: 350px) {
-  .header__main-color.header__mini.header__spmi,
-  .header__main-color.header__mini.header__indikator {
-    height: 25rem !important;
-  }
-}
-
-@media screen and (max-width: 335px) {
-  .header__main-color.header__mini.header__unit {
-    height: 20.75rem !important;
-  }
-
-  .header__main-color.header__mini.header__unit.active {
-    height: 14.75rem !important;
-  }
-}
-
-@media screen and (max-width: 333px) {
-  .header__main-color.header__mini.header__profile {
-    height: 18.5rem !important;
-  }
-
-  .header__main-color.header__mini.header__profile.active {
-    height: 14.25rem !important;
-  }
-}
-
-@media screen and (max-width: 320px) {
-  .header__main-color.header__mini.header__spmi.active,
-  .header__main-color.header__mini.header__indikator.active {
-    height: 20rem !important;
   }
 }
