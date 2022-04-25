@@ -703,7 +703,7 @@
   .chart__content-dounat,
   .chart__content-line,
   .indikator__content-card {
-    padding: 1.25rem;
+    padding: 1.5rem 1.25rem;
     border-radius: var(--radius-md);
   }
 

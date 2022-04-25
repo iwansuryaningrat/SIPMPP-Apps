@@ -148,6 +148,44 @@ form .position-relative .icon__hide__password {
   }
 }
 
+@media screen and (max-width: 631px) {
+  .main__content form .position-relative.confirm__pass .icon__hide__password {
+    top: 4.3rem;
+  }
+
+  .main__content.minimize__sidebar
+    form
+    .position-relative.confirm__pass
+    .icon__hide__password {
+    top: 3rem;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .input-group__photo {
+    flex-direction: column;
+  }
+
+  .img__input-photo,
+  .form__label__photo {
+    margin-bottom: 1rem;
+  }
+
+  .img__input-field {
+    width: 100%;
+  }
+
+  #photo-notice {
+    max-width: 100%;
+    margin-top: 0;
+  }
+
+  .img__photo-field {
+    width: 5rem;
+    height: 5rem;
+  }
+}
+
 @media screen and (max-width: 576px) {
   .mb__big {
     margin-bottom: 1.875rem !important;
@@ -161,6 +199,56 @@ form .position-relative .icon__hide__password {
 
   .profile__section-profile,
   .section-password__border {
-    padding: 1.5rem 1.5rem 1.625rem;
+    padding: 1.5rem 1.25rem;
+    border-radius: var(--radius-md);
+  }
+
+  .main__content form .position-relative.confirm__pass .icon__hide__password {
+    top: 3rem;
+  }
+}
+
+@media screen and (max-width: 473px) {
+  .main__content form .position-relative.confirm__pass .icon__hide__password {
+    top: 4.3rem;
+  }
+}
+
+@media screen and (max-width: 400px) {
+  .main__content form .position-relative.old__pass .icon__hide__password {
+    top: 4.3rem;
+  }
+
+  .main__content.minimize__sidebar
+    form
+    .position-relative.old__pass
+    .icon__hide__password {
+    top: 3rem;
+  }
+}
+
+@media screen and (max-width: 395px) {
+  .main__content form .position-relative.new__pass .icon__hide__password {
+    top: 4.3rem;
+  }
+
+  .main__content.minimize__sidebar
+    form
+    .position-relative.new__pass
+    .icon__hide__password {
+    top: 3rem;
+  }
+
+  .main__content form .position-relative.confirm__pass .icon__hide__password {
+    top: 5.6rem;
+  }
+}
+
+@media screen and (max-width: 351px) {
+  .main__content.minimize__sidebar
+    form
+    .position-relative.confirm__pass
+    .icon__hide__password {
+    top: 4.3rem;
   }
 }
