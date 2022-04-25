@@ -34,7 +34,7 @@
 </div>
 
 <!-- Modal Filter Form -->
-<div class="modal fade" id="filterLeaderContainer" tabindex="-1" aria-labelledby="filterLeaderContainerLabel"
+<div class="modal fade" id="filterLeaderContainer" tabindex="-1" aria-labelledby="filterLeaderContainer"
     aria-hidden="true">
     <div class="modal-dialog modal-dialog-centered align-items-center justify-content-center">
         <div class="modal-content modal__content-filter">
@@ -102,7 +102,7 @@
             <h5 class="card__title mb-3">Rekap Indikator <span><?= $data_user['tahun']; ?></span>
             </h5>
             <div class="filter__panel mb-3">
-                <div class="nav nav-pills" id="pills-tab" role="tablist">
+                <div class="nav nav-pills" id="pills-tab2" role="tablist">
                     <button
                         class="btn filter__btn-indikator me-0 me-md-3 shadow-none active nav-link ellipsis__text active mb-2"
                         id="piils-indikator-penelitian" data-bs-toggle="pill"
@@ -119,7 +119,7 @@
             </div>
         </div>
 
-        <div class="tab-content" id="pills-tabContent">
+        <div class="tab-content" id="pills-tabContent2">
             <!-- table penelitian -->
             <?= $this->include('leader/chart/PenelitianChart'); ?>
 
@@ -183,14 +183,6 @@
             // stop the page from jumping to the top
             return false;
         });
-    });
-
-    // tooltips
-    // progress bar unit
-    const tooltipsUnitProgress =
-        document.querySelectorAll(".unit__progressbar");
-    tooltipsUnitProgress.forEach((t) => {
-        new bootstrap.Tooltip(t);
     });
 
     // show and hide indikator chart

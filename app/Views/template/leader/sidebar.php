@@ -42,7 +42,7 @@
 
         <!-- footer sidebar -->
         <div class="sidebar__content-footer">
-            <p class="mb-4">@leader.sipmppundip . <span id="sidebarfooterYearNow"></p>
+            <p class="mb-4">@leader.sipmppundip . <span id="sidebarfooterYearNow"></span></p>
             <p>
                 Sistem Informasi Penjaminan Mutu Penelitian dan Pengabdian
                 Universitas Diponegoro
