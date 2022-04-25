@@ -46,10 +46,12 @@
             <tbody>
                 <?php $i = 1;
                 foreach ($units as $unit) : ?>
-                    <tr>
-                        <td class="table__unit-number"><?= $i; ?></td>
-                        <td class="table__unit-namaunit"><?= $unit['nama_unit']; ?></td>
-                    </tr>
+                <tr>
+                    <td class="table__unit-number"><?= $i; ?>
+                    </td>
+                    <td class="table__unit-namaunit"><?= $unit['nama_unit']; ?>
+                    </td>
+                </tr>
                 <?php $i++;
                 endforeach; ?>
             </tbody>
@@ -60,8 +62,6 @@
 <?= $this->endSection(); ?>
 
 <?= $this->section('script'); ?>
-<!-- jquery validate -->
-<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.19.3/jquery.validate.min.js" integrity="sha512-37T7leoNS06R80c8Ulq7cdCDU5MNQBwlYoy1TX/WUsLFC2eYNqtKlV0QjH7r8JpG/S0GUMZwebnVFLPd6SU5yg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 <!-- scripts -->
 <script>
 </script>
