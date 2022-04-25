@@ -106,7 +106,7 @@
   height: 0.75rem;
 
   border-radius: 1rem;
-  background-color: var(--light-color);
+  background-color: var(--lavender);
 }
 
 .progress-bar.bg__dark-main {
@@ -133,8 +133,9 @@
 
   border: var(--border-sm);
   border-radius: var(--radius-lg);
-  background-color: var(--light-color);
+  background-color: var(--lavender);
 }
+
 .recap__content-unit .sipmpp__table {
   margin-bottom: 1.25rem;
 }
@@ -152,7 +153,7 @@
   padding: 1.5rem 1.875rem;
 
   border-radius: 0 0 var(--radius-lg) var(--radius-lg);
-  background-color: var(--dark-main-color);
+  background-color: var(--space-cadet);
 }
 
 .recap__link-card__footer a {
@@ -261,7 +262,7 @@
   height: 0.6rem;
 
   border-radius: 1rem;
-  background-color: var(--light-color);
+  background-color: var(--lavender);
 }
 
 .unit__link:hover {
@@ -290,7 +291,7 @@
   font-size: 0.75rem;
   padding: 0.25rem 0.5rem;
   border-radius: var(--radius-sm);
-  background-color: var(--light-color) !important;
+  background-color: var(--lavender) !important;
   border: var(--border-sm) !important;
   color: rgba(0, 0, 0, 0.8) !important;
 }
@@ -313,7 +314,7 @@
 .filter__btn-chart.active:hover,
 .filter__btn-indikator.active:hover {
   color: var(--white) !important;
-  background-color: var(--dark-main-color) !important;
+  background-color: var(--space-cadet) !important;
 }
 
 /* chart */
@@ -404,12 +405,14 @@
 .indikator__content {
   margin-bottom: 1.75rem;
 }
+
 .indikator__content-card {
   padding: 1.875rem;
   border: var(--border-sm);
   border-radius: var(--radius-lg);
   background-color: var(--white);
 }
+
 .content-indikator__title {
   display: flex;
   align-items: center;
@@ -417,6 +420,7 @@
   padding: 0;
   flex-wrap: wrap;
 }
+
 .indikator__kategori-title {
   display: flex;
   align-items: center;
@@ -424,103 +428,125 @@
   margin-bottom: 1rem;
   flex-wrap: wrap;
 }
+
 .btn__generate {
   background-color: rgba(255, 159, 64, 0.8);
   color: rgba(255, 255, 255, 0.8);
 }
 
 .btn__generate:hover {
-  background-color: rgba(255, 159, 64, 1);
+  background-color: var(--deep-safron);
   color: rgba(255, 255, 255, 1);
 }
+
 .form-group.form-group__standar {
   display: flex;
   align-items: center;
   min-width: 12.5rem;
 }
+
 .form-select.form__select.form-select__standar {
   padding: 0.25rem 2.25rem 0.375rem 0.75rem;
 }
+
 .PENIndikator,
 .PPMIndikator {
   display: none;
   margin-bottom: 1rem;
 }
+
 .sipmpp__table-content.indikator__tbl thead tr th,
 .sipmpp__table-content.indikator__tbl tbody tr td {
   padding: 1rem 0;
 }
+
 .sipmpp__table-content tbody tr:hover {
   background-color: rgba(38, 48, 77, 0.1) !important;
 }
+
 .sipmpp__table-content tr th:first-child,
 .sipmpp__table-content tr td:first-child {
   text-align: center;
 }
+
 .sipmpp__table-content tr th,
 .sipmpp__table-content tr td {
   padding-right: 1.875rem !important;
   padding-left: 1.875rem !important;
 }
+
 .table__indikator-number {
   width: 10%;
   min-width: 3rem;
 }
+
 .table__indikator-indikator {
   width: 15%;
   min-width: 5.5rem;
 }
+
 .table__indikator-keterangan {
   width: 75%;
   min-width: 25rem;
 }
+
 .chart__indikator-container {
   padding: 1.5rem;
   background-color: var(--white);
   border-radius: var(--radius-md);
 }
+
 .button__filters {
   border-radius: var(--radius-md);
   padding: 0.75rem 1.5rem;
 }
+
 #unitStandar {
   padding: 0 0.625rem 0;
   margin-bottom: 1rem;
   font-weight: 600;
-  color: rgba(255, 159, 64, 1);
+  color: var(--deep-safron);
 }
+
 #unitTahun {
   margin-bottom: 1rem;
   font-weight: 600;
-  color: rgba(255, 159, 64, 1);
+  color: var(--deep-safron);
 }
+
 #unitIndikator {
   font-weight: 600;
-  color: rgba(255, 159, 64, 1);
+  color: var(--deep-safron);
   margin-bottom: 1rem;
 }
+
 .title__filter {
   font-weight: 600;
   margin-bottom: 1.5rem;
 }
+
 #formFilterLeader select {
   padding: 0.5rem 1rem !important;
 }
+
 .submit__leader {
   position: absolute;
   right: 1.875rem;
   top: 2rem;
 }
+
 .btn__submit-leader {
   font-size: 1rem !important;
   padding: 0 !important;
   margin: 0 !important;
 }
+
 .modal-content.modal__content-filter {
   border: none !important;
   border-radius: var(--radius-md);
   width: 20rem;
 }
+
 .modal-body.modal__body-filter {
   padding: 1.875rem;
 }
@@ -531,6 +557,7 @@
   .progress__content {
     flex-direction: column;
   }
+
   .progress__content-card:first-child,
   .progress__content-card:last-child {
     margin-right: 0;
@@ -621,6 +648,7 @@
   .content-unit__title {
     flex-direction: column;
   }
+
   .recap__link-card {
     margin-bottom: 1rem;
 

@@ -1,4 +1,5 @@
 @import url(styles-leader.css);
+
 /* table */
 .table__unit__content tbody tr:hover {
   background-color: rgba(38, 48, 77, 0.1) !important;
@@ -24,6 +25,7 @@
   width: 12%;
   min-width: 4.5rem;
 }
+
 /* .table__unit-aksi {
   width: 15%;
   min-width: 6.5rem;
@@ -38,7 +40,7 @@
 }
 
 .sipmpp__table tr td .delete__data__induk__icon svg {
-  color: var(--danger-color);
+  color: var(--sunset-orange);
 }
 
 @media screen and (max-width: 991px) {
