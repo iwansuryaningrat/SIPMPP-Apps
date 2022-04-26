@@ -460,10 +460,10 @@
   /* ==========recap content========== */
   .content-unit__title {
     flex-direction: column;
+    padding: 1.5rem 1.25rem 1rem;
   }
 
   .recap__link-card {
-    /* width: 100%; */
     margin-bottom: 1rem;
 
     border-radius: var(--radius-md);
@@ -476,6 +476,15 @@
   .recap__link-card__body img {
     width: 2.25rem;
     margin-bottom: 1rem;
+  }
+
+  .chart__content-dounat,
+  .chart__content-line {
+    padding: 1.5rem 1.25rem 1.25rem;
+  }
+
+  .chart__content-dounat .content-unit__title {
+    padding: 0;
   }
 
   .chart__content-left
@@ -511,7 +520,9 @@
     font-size: 1rem;
   }
 
-  .sipmpp__table {
+  .sipmpp__table,
+  .chart__content-dounat,
+  .chart__content-line {
     border-radius: var(--radius-md);
   }
 

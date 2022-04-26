@@ -199,6 +199,7 @@ form .position-relative .icon__hide__password {
   .profile__section-profile,
   .section-password__border {
     padding: 1.5rem 1.5rem 1.625rem;
+    border-radius: var(--radius-md);
   }
 
   .main__content form .position-relative.confirm__pass .icon__hide__password {
