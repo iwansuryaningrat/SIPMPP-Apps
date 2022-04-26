@@ -15,15 +15,13 @@
           <?php // uses regex that accepts any word character or hyphen in last name
 
           use PhpParser\PrettyPrinter\Standard;
-
-          function split_name($name)
+          
+          function getFirstWord($string)
           {
-              $name = trim($name);
-              $last_name = (strpos($name, ' ') === false) ? '' : preg_replace('#.*\s([\w-]*)$#', '$1', $name);
-              $first_name = trim(preg_replace('#' . preg_quote($last_name, '#') . '#', '', $name));
-              return array($first_name, $last_name);
+              $arr = explode(' ', trim($string));
+              return isset($arr[0]) ? $arr[0] : $string;
           }
-          echo split_name($data_user['nama'])[0];
+          echo getFirstWord($data_user['nama']);
           ?>
         </span>, selamat
         datang kembali!</p>
