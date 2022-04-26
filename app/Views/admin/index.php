@@ -16,7 +16,7 @@
               $arr = explode(' ', trim($string));
               return isset($arr[0]) ? $arr[0] : $string;
           }
-          echo getFirstWord($data_user['nama']);
+          echo getFirstWord($usersession['nama']);
           ?>
         </span>, selamat datang kembali!</p>
     </div>

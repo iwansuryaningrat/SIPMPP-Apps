@@ -11,14 +11,12 @@
         <div class="title__subtitle-desc">
             <h1>Daftar Data Induk</h1>
             <p>Halo <span><?php // uses regex that accepts any word character or hyphen in last name
-                            function split_name($name)
+                            function getFirstWord($string)
                             {
-                                $name = trim($name);
-                                $last_name = (strpos($name, ' ') === false) ? '' : preg_replace('#.*\s([\w-]*)$#', '$1', $name);
-                                $first_name = trim(preg_replace('#' . preg_quote($last_name, '#') . '#', '', $name));
-                                return array($first_name, $last_name);
+                                $arr = explode(' ', trim($string));
+                                return isset($arr[0]) ? $arr[0] : $string;
                             }
-                            echo split_name($usersession['nama'])[0];
+                            echo getFirstWord($usersession['nama']);
                             ?>
                 </span>, selamat datang di dashboard Daftar Data Induk</p>
         </div>
@@ -39,10 +37,14 @@
 <!-- filter -->
 <div class="filter__table mb-4">
     <div class="nav nav-pills" id="pills-tab" role="tablist">
-        <button class="btn filter__btn me-0 me-md-3 shadow-none active nav-link active" id="pills-datainduk-penelitian" data-bs-toggle="pill" data-bs-target="#pills-table-datainduk-penelitian" type="button" role="tab" aria-controls="pills-table-datainduk-penelitian" aria-selected="true">
+        <button class="btn filter__btn me-0 me-md-3 shadow-none active nav-link active" id="pills-datainduk-penelitian"
+            data-bs-toggle="pill" data-bs-target="#pills-table-datainduk-penelitian" type="button" role="tab"
+            aria-controls="pills-table-datainduk-penelitian" aria-selected="true">
             Penelitian
         </button>
-        <button class="btn filter__btn shadow-none nav-link" id="pills-datainduk-pm" data-bs-toggle="pill" data-bs-target="#pills-table-datainduk-pm" type="button" role="tab" aria-controls="pills-table-datainduk-pm" aria-selected="false">
+        <button class="btn filter__btn shadow-none nav-link" id="pills-datainduk-pm" data-bs-toggle="pill"
+            data-bs-target="#pills-table-datainduk-pm" type="button" role="tab" aria-controls="pills-table-datainduk-pm"
+            aria-selected="false">
             Pengabdian Masyarakat
         </button>
     </div>
@@ -50,7 +52,8 @@
 
 <div class="tab-content" id="pills-tabContent">
     <!-- penelitian -->
-    <div class="tab-pane fade show active" id="pills-table-datainduk-penelitian" role="tabpanel" aria-labelledby="pills-datainduk-penelitian">
+    <div class="tab-pane fade show active" id="pills-table-datainduk-penelitian" role="tabpanel"
+        aria-labelledby="pills-datainduk-penelitian">
         <!-- table data induk -->
         <div class="sipmpp__table">
             <?= session()->getFlashdata('message'); ?>
@@ -66,17 +69,19 @@
                     </thead>
                     <tbody>
                         <?php foreach ($indukPEN as $indukPEN) : ?>
-                            <tr>
-                                <td><?= $i; ?>
-                                </td>
-                                <td class="text-uppercase"><?= $indukPEN['kode'] ?>
-                                </td>
-                                <td><?= $indukPEN['nama_induk'] ?>
-                                </td>
-                                <td>
-                                    <a role="button" data-bs-placement="top" title="Edit" href="/admin/editDataInduk/<?= $indukPEN['induk_id'] . '/' . $indukPEN['kategori_id'] ?>" class="edit__data__induk__icon"><i class="fa-solid fa-pen-to-square"></i></a>
-                                </td>
-                            </tr>
+                        <tr>
+                            <td><?= $i; ?>
+                            </td>
+                            <td class="text-uppercase"><?= $indukPEN['kode'] ?>
+                            </td>
+                            <td><?= $indukPEN['nama_induk'] ?>
+                            </td>
+                            <td>
+                                <a role="button" data-bs-placement="top" title="Edit"
+                                    href="/admin/editDataInduk/<?= $indukPEN['induk_id'] . '/' . $indukPEN['kategori_id'] ?>"
+                                    class="edit__data__induk__icon"><i class="fa-solid fa-pen-to-square"></i></a>
+                            </td>
+                        </tr>
                         <?php $i++;
                         endforeach; ?>
                     </tbody>
@@ -103,17 +108,19 @@
                     <tbody>
                         <?php $i = 1;
                         foreach ($indukPPM as $data_induk) : ?>
-                            <tr>
-                                <td><?= $i; ?>
-                                </td>
-                                <td class="text-uppercase"><?= $data_induk['kode'] ?>
-                                </td>
-                                <td><?= $data_induk['nama_induk'] ?>
-                                </td>
-                                <td>
-                                    <a role="button" data-bs-placement="top" title="Edit" href="/admin/editDataInduk/<?= $data_induk['induk_id'] . '/' . $data_induk['kategori_id'] ?>" class="edit__data__induk__icon"><i class="fa-solid fa-pen-to-square"></i></a>
-                                </td>
-                            </tr>
+                        <tr>
+                            <td><?= $i; ?>
+                            </td>
+                            <td class="text-uppercase"><?= $data_induk['kode'] ?>
+                            </td>
+                            <td><?= $data_induk['nama_induk'] ?>
+                            </td>
+                            <td>
+                                <a role="button" data-bs-placement="top" title="Edit"
+                                    href="/admin/editDataInduk/<?= $data_induk['induk_id'] . '/' . $data_induk['kategori_id'] ?>"
+                                    class="edit__data__induk__icon"><i class="fa-solid fa-pen-to-square"></i></a>
+                            </td>
+                        </tr>
                         <?php $i++;
                         endforeach; ?>
                     </tbody>

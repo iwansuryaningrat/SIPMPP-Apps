@@ -11,14 +11,12 @@
         <div class="title__subtitle-desc">
             <h1>Penilaian</h1>
             <p>Halo <span><?php // uses regex that accepts any word character or hyphen in last name
-                            function split_name($name)
+                            function getFirstWord($string)
                             {
-                                $name = trim($name);
-                                $last_name = (strpos($name, ' ') === false) ? '' : preg_replace('#.*\s([\w-]*)$#', '$1', $name);
-                                $first_name = trim(preg_replace('#' . preg_quote($last_name, '#') . '#', '', $name));
-                                return array($first_name, $last_name);
+                                $arr = explode(' ', trim($string));
+                                return isset($arr[0]) ? $arr[0] : $string;
                             }
-                            echo split_name($usersession['nama'])[0];
+                            echo getFirstWord($usersession['nama']);
                             ?>
                 </span>, selamat datang di dashboard Penilaian</p>
         </div>
@@ -29,7 +27,8 @@
 <div class="title__table__add mb-1">
     <h4 class="title__body__user me-3 mb-lg-4 mb-3">Daftar Penilaian</h4>
     <div class="title__body__button">
-        <a href="/admin/autoGeneratePenilaian" class="btn shadow-none btn__add btn__generate mb-lg-4 mb-3" role="button">
+        <a href="/admin/autoGeneratePenilaian" class="btn shadow-none btn__add btn__generate mb-lg-4 mb-3"
+            role="button">
             <i class="fa-solid fa-folder-plus"></i>
             Auto Generate
         </a>
@@ -39,10 +38,14 @@
 <!-- filter -->
 <div class="filter__table">
     <div class="nav nav-pills" id="pills-tab" role="tablist">
-        <button class="btn filter__btn me-0 me-md-3 shadow-none active nav-link active" id="pills-penilaian-penelitian" data-bs-toggle="pill" data-bs-target="#pills-table-penilaian-penelitian" type="button" role="tab" aria-controls="pills-table-penilaian-penelitian" aria-selected="true">
+        <button class="btn filter__btn me-0 me-md-3 shadow-none active nav-link active" id="pills-penilaian-penelitian"
+            data-bs-toggle="pill" data-bs-target="#pills-table-penilaian-penelitian" type="button" role="tab"
+            aria-controls="pills-table-penilaian-penelitian" aria-selected="true">
             Penelitian
         </button>
-        <button class="btn filter__btn shadow-none nav-link" id="pills-penilaian-pm" data-bs-toggle="pill" data-bs-target="#pills-table-penilaian-pm" type="button" role="tab" aria-controls="pills-table-penilaian-pm" aria-selected="false">
+        <button class="btn filter__btn shadow-none nav-link" id="pills-penilaian-pm" data-bs-toggle="pill"
+            data-bs-target="#pills-table-penilaian-pm" type="button" role="tab" aria-controls="pills-table-penilaian-pm"
+            aria-selected="false">
             Pengabdian Masyarakat
         </button>
     </div>
@@ -50,7 +53,8 @@
 
 <div class="tab-content" id="pills-tabContent">
     <!-- penelitian -->
-    <div class="tab-pane fade show active" id="pills-table-penilaian-penelitian" role="tabpanel" aria-labelledby="pills-penilaian-penelitian">
+    <div class="tab-pane fade show active" id="pills-table-penilaian-penelitian" role="tabpanel"
+        aria-labelledby="pills-penilaian-penelitian">
         <!-- table data induk -->
         <div class="">
             <!-- datatable penilaian -->
@@ -72,22 +76,24 @@
 
                         <?php foreach ($dataPenilaian as $data) :
                             if ($data['kategori_id'] == 'PEN') : ?>
-                                <tr>
-                                    <td><?= $i; ?>
-                                    </td>
-                                    <td><?= $data['tahun'] ?>
-                                    </td>
-                                    <td><?= $data['nama_unit'] ?>
-                                    </td>
-                                    <td><?= $data['standar_id'] ?>
-                                    </td>
-                                    <td><?= $data['nama_standar'] ?>
-                                    </td>
-                                    <!-- <td><span class="badge badge__sipmpp badge__success">Sukses</span></td> -->
-                                    <td>
-                                        <a data-bs-placement="top" title="Delete" href="/deletedata/deletePenilaian/<?= $data['tahun'] . '/' . $data['unit_id'] . '/' . $data['standar_id'] . '/' . $data['kategori_id'] ?>$, $standar_id, $kategori_id)" class="delete__data__induk__icon"><i class="fa-solid fa-trash"></i></a>
-                                    </td>
-                                </tr>
+                        <tr>
+                            <td><?= $i; ?>
+                            </td>
+                            <td><?= $data['tahun'] ?>
+                            </td>
+                            <td><?= $data['nama_unit'] ?>
+                            </td>
+                            <td><?= $data['standar_id'] ?>
+                            </td>
+                            <td><?= $data['nama_standar'] ?>
+                            </td>
+                            <!-- <td><span class="badge badge__sipmpp badge__success">Sukses</span></td> -->
+                            <td>
+                                <a data-bs-placement="top" title="Delete"
+                                    href="/deletedata/deletePenilaian/<?= $data['tahun'] . '/' . $data['unit_id'] . '/' . $data['standar_id'] . '/' . $data['kategori_id'] ?>$, $standar_id, $kategori_id)"
+                                    class="delete__data__induk__icon"><i class="fa-solid fa-trash"></i></a>
+                            </td>
+                        </tr>
                         <?php $i++;
                             endif;
                         endforeach; ?>
@@ -122,22 +128,24 @@
                         <?php $i = 1;
                         foreach ($dataPenilaian as $data) :
                             if ($data['kategori_id'] == 'PPM') : ?>
-                                <tr>
-                                    <td><?= $i; ?>
-                                    </td>
-                                    <td><?= $data['tahun'] ?>
-                                    </td>
-                                    <td><?= $data['nama_unit'] ?>
-                                    </td>
-                                    <td><?= $data['standar_id'] ?>
-                                    </td>
-                                    <td><?= $data['nama_standar'] ?>
-                                    </td>
-                                    <!-- <td><span class="badge badge__sipmpp badge__success">Sukses</span></td> -->
-                                    <td>
-                                        <a data-bs-placement="top" title="Delete" href="/deletedata/deletePenilaian/<?= $data['tahun'] . '/' . $data['unit_id'] . '/' . $data['standar_id'] . '/' . $data['kategori_id'] ?>$, $standar_id, $kategori_id)" class="delete__data__induk__icon"><i class="fa-solid fa-trash"></i></a>
-                                    </td>
-                                </tr>
+                        <tr>
+                            <td><?= $i; ?>
+                            </td>
+                            <td><?= $data['tahun'] ?>
+                            </td>
+                            <td><?= $data['nama_unit'] ?>
+                            </td>
+                            <td><?= $data['standar_id'] ?>
+                            </td>
+                            <td><?= $data['nama_standar'] ?>
+                            </td>
+                            <!-- <td><span class="badge badge__sipmpp badge__success">Sukses</span></td> -->
+                            <td>
+                                <a data-bs-placement="top" title="Delete"
+                                    href="/deletedata/deletePenilaian/<?= $data['tahun'] . '/' . $data['unit_id'] . '/' . $data['standar_id'] . '/' . $data['kategori_id'] ?>$, $standar_id, $kategori_id)"
+                                    class="delete__data__induk__icon"><i class="fa-solid fa-trash"></i></a>
+                            </td>
+                        </tr>
                         <?php $i++;
                             endif;
                         endforeach; ?>
