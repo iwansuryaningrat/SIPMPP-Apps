@@ -670,7 +670,10 @@
     .filter__panel
     #pills-tab,
   .recap__content-unit .content-unit__title .filter__panel #pills-tab,
-  .indikator__content-card .content-indikator__title .filter__panel #pills-tab {
+  .indikator__content-card
+    .content-indikator__title
+    .filter__panel
+    #pills-tab2 {
     flex-direction: column;
     width: 100%;
   }
@@ -685,7 +688,7 @@
   .indikator__content-card
     .content-indikator__title
     .filter__panel
-    #pills-tab
+    #pills-tab2
     button {
     width: 100%;
     flex: 1;

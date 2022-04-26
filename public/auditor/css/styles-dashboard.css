@@ -478,7 +478,7 @@
     .chart__content-dounat
     .content-unit__title
     .filter__panel
-    #pills-tab,
+    #pills-tab2,
   .recap__content-unit .content-unit__title .filter__panel #pills-tab {
     flex-direction: column;
     width: 100%;
@@ -488,7 +488,7 @@
     .chart__content-dounat
     .content-unit__title
     .filter__panel
-    #pills-tab
+    #pills-tab2
     button,
   .recap__content-unit .content-unit__title .filter__panel #pills-tab button {
     width: 100%;
