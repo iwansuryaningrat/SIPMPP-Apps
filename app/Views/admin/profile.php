@@ -46,7 +46,7 @@
           <div class="img__input-field">
             <input type="file" class="form-control form__control__photo" id="photo-profile"
               aria-labelledby="photo-notice" onchange="previewImage(this)" name="photo-profile" />
-            <label class="form__label__photo btn btn__dark" for="photo-profile">Ubah Profile</label>
+            <label class="form__label__photo btn btn__dark ellipsis__text" for="photo-profile">Ubah Profile</label>
             <label id="photo-notice" class="form-text form__text mb-3">
               Gambar profil Anda sebaiknya memiliki raiso 1:1 dan
               berukuran tidak lebih dari 2 MB.</label>
@@ -84,7 +84,7 @@
       </div>
       <!-- button -->
       <div class="d-flex justify-content-end">
-        <button type="submit" class="btn btn__dark shadow-none">
+        <button type="submit" class="btn btn__dark shadow-none ellipsis__text">
           Simpan Perubahan
         </button>
       </div>
@@ -98,14 +98,14 @@
       <hr />
       <?= session()->getFlashdata('pwdmessage'); ?>
       <form class="form__change__password" id="formChangePassword" action="/editdata/editpassword" method="POST">
-        <div class="mb-3 position-relative">
+        <div class="mb-3 position-relative old__pass">
           <label for="oldPassword" class="form-label form__label">Password Lama <span
               class="color__danger">*</span></label>
           <input type="password" class="form-control form__control shadow-none" id="oldPassword" name="oldPassword"
             autocomplete="off" required />
           <span id="toggleOldPassword"><i class="fa-solid fa-eye icon__hide__password" title="show password"></i></span>
         </div>
-        <div class="mb-3 position-relative">
+        <div class="mb-3 position-relative new__pass">
           <label for="newPassword" class="form-label form__label">Password Baru <span
               class="color__danger">*</span></label>
           <input type="password" class="form-control form__control shadow-none" id="newPassword" name="newPassword"
@@ -115,7 +115,7 @@
             Gunakan minimal 8 karakter dengan kombinasi huruf dan angka.
           </div>
         </div>
-        <div class="mb-3 mb__big position-relative">
+        <div class="mb-3 mb__big position-relative confirm__pass">
           <label for="newPasswordConfirm" class="form-label form__label">Konfirmasi Password Baru
             <span class="color__danger">*</span></label>
           <input type="password" class="form-control form__control shadow-none" name="newPasswordConfirm"
@@ -124,7 +124,7 @@
               title="show password"></i></span>
         </div>
         <div class="d-flex justify-content-end">
-          <button type="submit" class="btn btn__light shadow-none" id="btnSubmitChangePassword">
+          <button type="submit" class="btn btn__light shadow-none ellipsis__text" id="btnSubmitChangePassword">
             Ubah Password
           </button>
         </div>
@@ -197,7 +197,7 @@
         },
         newPassword: {
           required: exclamationCircle + " Password Baru is required.",
-          minlength: "Password baru minimal 8 karakter",
+          minlength: exclamationCircle + " Your Password must be at least 8 characters.",
         },
         newPasswordConfirm: {
           required: exclamationCircle + " Please enter the password again.",
@@ -234,6 +234,7 @@
         },
         'no-telp': {
           required: exclamationCircle + " Nomor Telepon is required.",
+          minlength: exclamationCircle + " Your Nomor Telepon must be at least 12 characters.",
         },
       }
     });
