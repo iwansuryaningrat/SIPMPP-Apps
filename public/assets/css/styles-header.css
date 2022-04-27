@@ -1,98 +1,75 @@
+.header__main-color.header__big {
+  height: 22.25rem;
+}
+
+@media screen and (max-width: 1181px) {
+  /* ========== standar ========== */
+  .header__main-color.header__mini.header__spmi,
+  .header__main-color.header__mini.header__indikator,
+  .header__main-color.header__mini.header__indikator-form {
+    height: calc(149px + 154px) !important;
+  }
+}
+
 @media screen and (max-width: 1169px) {
   .header__main-color.header__mini.header__spmi.active,
   .header__main-color.header__mini.header__indikator.active,
   .header__main-color.header__mini.header__indikator-form.active {
     height: calc(149px + 105px) !important;
   }
-
-  /* ========== standar ========== */
-  .header__main-color.header__mini.header__spmi {
-    height: calc(149px + 154px) !important;
-  }
-
-  /* ========== indikator ========== */
-  .header__main-color.header__mini.header__indikator,
-  .header__main-color.header__mini.header__indikator-form {
-    height: calc(149px + 154px) !important;
-  }
 }
 
 @media screen and (max-width: 991px) {
+  /* ========== big ========== */
+  .header__main-color.header__big {
+    height: 22.25rem;
+  }
+
   /* ========== data induk ========== */
   .header__main-color.header__mini.header__datainduk,
   .header__main-color.header__mini.header__datainduk.active,
+  .header__main-color.header__mini.header__spmi,
   .header__main-color.header__mini.header__spmi.active,
   .header__main-color.header__mini.header__report,
   .header__main-color.header__mini.header__report.active,
   .header__main-color.header__mini.header__profile,
   .header__main-color.header__mini.header__profile.active,
+  .header__main-color.header__mini.header__indikator,
   .header__main-color.header__mini.header__indikator.active,
+  .header__main-color.header__mini.header__indikator-form,
   .header__main-color.header__mini.header__indikator-form.active {
     height: calc(137px + 103px) !important;
   }
+}
 
+@media screen and (max-width: 871px) {
   /* ========== standar ========== */
-  .header__main-color.header__mini.header__spmi {
-    height: calc(137px + 148px) !important;
-  }
-
-  /* ========== indikator ========== */
-  .header__main-color.header__mini.header__indikator,
-  .header__main-color.header__mini.header__indikator-form {
-    height: calc(137px + 147px) !important;
+  .header__main-color.header__mini.header__indikator.active {
+    height: calc(137px + 143px) !important;
   }
 }
 
 @media screen and (max-width: 860px) {
   /* ========== standar ========== */
   .header__main-color.header__mini.header__spmi.active,
-  .header__main-color.header__mini.header__indikator.active,
   .header__main-color.header__mini.header__indikator-form.active {
     height: calc(137px + 143px) !important;
   }
 }
 
-@media screen and (max-width: 814px) {
-  /* ========== data induk ========== */
-  .header__main-color.header__mini.header__datainduk {
-    height: calc(137px + 121px) !important;
+@media screen and (max-width: 739px) {
+  /* ========== standar ========== */
+  .header__main-color.header__mini.header__spmi,
+  .header__main-color.header__mini.header__indikator,
+  .header__main-color.header__mini.header__indikator-form {
+    height: calc(137px + 139px) !important;
   }
 }
 
 @media screen and (max-width: 736px) {
   /* ========== standar ========== */
-  .header__main-color.header__mini.header__spmi,
-  .header__main-color.header__mini.header__indikator,
-  .header__main-color.header__mini.header__indikator-form {
+  .header__main-color.header__mini.header__indikator {
     height: calc(137px + 178px) !important;
-  }
-}
-
-@media screen and (max-width: 727px) {
-  /* ========== report ========== */
-  .header__main-color.header__mini.header__report {
-    height: calc(137px + 119px) !important;
-  }
-}
-
-@media screen and (max-width: 708px) {
-  /* ========== data induk ========== */
-  .header__main-color.header__mini.header__datainduk {
-    height: calc(137px + 158px) !important;
-  }
-}
-
-@media screen and (max-width: 688px) {
-  /* ========== profile ========== */
-  .header__main-color.header__mini.header__profile {
-    height: calc(137px + 119px) !important;
-  }
-}
-
-@media screen and (max-width: 670px) {
-  /* ========== indikator form ========== */
-  .header__main-color.header__mini.header__indikator-form {
-    height: calc(158px + 174px) !important;
   }
 }
 
@@ -103,52 +80,26 @@
   }
 }
 
-@media screen and (max-width: 608px) {
-  /* ========== standar ========== */
-  .header__main-color.header__mini.header__spmi,
-  .header__main-color.header__mini.header__indikator {
-    height: calc(137px + 208px) !important;
-  }
-
-  /* ========== report ========== */
-  .header__main-color.header__mini.header__report {
-    height: calc(137px + 155px) !important;
-  }
-
-  /* ========== indikator form ========== */
-  .header__main-color.header__mini.header__indikator-form {
-    height: calc(158px + 208px) !important;
-  }
-}
-
-@media screen and (max-width: 607px) {
-  /* ========== data induk ========== */
-  .header__main-color.header__mini.header__datainduk {
-    height: calc(137px + 176px) !important;
-  }
-}
-
 @media screen and (max-width: 576px) {
-  /* ========== data induk ========== */
-  .header__main-color.header__mini.header__datainduk,
-  .header__main-color.header__mini.header__report {
-    height: calc(117px + 117px) !important;
+  /* ========== big ========== */
+  .header__main-color.header__big {
+    height: 24rem;
   }
+
+  .header__main-color.header__mini.header__datainduk,
   .header__main-color.header__mini.header__datainduk.active,
+  .header__main-color.header__mini.header__report,
   .header__main-color.header__mini.header__report.active,
   .header__main-color.header__mini.header__profile,
   .header__main-color.header__mini.header__profile.active {
     height: calc(117px + 96px) !important;
   }
 
-  /* ========== standar ========== */
   .header__main-color.header__mini.header__spmi,
-  .header__main-color.header__mini.header__indikator,
-  .header__main-color.header__mini.header__indikator-form {
-    height: calc(117px + 169px) !important;
-  }
   .header__main-color.header__mini.header__spmi.active,
+  .header__main-color.header__mini.header__indikator,
   .header__main-color.header__mini.header__indikator.active,
+  .header__main-color.header__mini.header__indikator-form,
   .header__main-color.header__mini.header__indikator-form.active {
     height: calc(117px + 133px) !important;
   }
@@ -161,69 +112,24 @@
   }
 }
 
-@media screen and (max-width: 566px) {
-  /* ========== profile ========== */
-  .header__main-color.header__mini.header__profile {
-    height: calc(117px + 117px) !important;
-  }
-}
-
-@media screen and (max-width: 562px) {
+@media screen and (max-width: 502px) {
   /* ========== data induk ========== */
   .header__main-color.header__mini.header__datainduk {
-    height: calc(117px + 153px) !important;
+    height: calc(117px + 115px) !important;
   }
 }
 
-@media screen and (max-width: 548px) {
-  /* ========== indikator form ========== */
-  .header__main-color.header__mini.header__indikator-form {
-    height: calc(138px + 168px) !important;
-  }
-}
-
-@media screen and (max-width: 485px) {
-  /* ========== data induk ========== */
-  .header__main-color.header__mini.header__datainduk {
-    height: calc(117px + 171px) !important;
-  }
-}
-
-@media screen and (max-width: 483px) {
+@media screen and (max-width: 448px) {
   /* ========== report ========== */
   .header__main-color.header__mini.header__report.active {
     height: calc(117px + 115px) !important;
   }
 }
 
-@media screen and (max-width: 469px) {
+@media screen and (max-width: 450px) {
   /* ========== standar ========== */
-  .header__main-color.header__mini.header__spmi,
-  .header__main-color.header__mini.header__indikator {
-    height: calc(117px + 198px) !important;
-  }
-
-  /* ========== report ========== */
-  .header__main-color.header__mini.header__report {
-    height: calc(117px + 150px) !important;
-  }
-
-  /* ========== indikator form ========== */
-  .header__main-color.header__mini.header__indikator-form {
-    height: calc(138px + 198px) !important;
-  }
-}
-
-@media screen and (max-width: 454px) {
-  /* ========== standar ========== */
-  .header__main-color.header__mini.header__spmi,
-  .header__main-color.header__mini.header__indikator {
-    height: calc(117px + 218px) !important;
-  }
-
-  /* ========== indikator form ========== */
-  .header__main-color.header__mini.header__indikator-form {
-    height: calc(138px + 218px) !important;
+  .header__main-color.header__mini.header__indikator.active {
+    height: calc(117px + 162px) !important;
   }
 }
 
@@ -237,16 +143,8 @@
 @media screen and (max-width: 440px) {
   /* ========== standar ========== */
   .header__main-color.header__mini.header__spmi.active,
-  .header__main-color.header__mini.header__indikator.active,
   .header__main-color.header__mini.header__indikator-form.active {
     height: calc(117px + 162px) !important;
-  }
-}
-
-@media screen and (max-width: 430px) {
-  /* ========== indikator ========== */
-  .header__main-color.header__mini.header__indikator {
-    height: calc(138px + 217px) !important;
   }
 }
 
@@ -255,34 +153,10 @@
   .header__main-color.header__mini.header__indikator-form.active {
     height: calc(138px + 161px) !important;
   }
-}
 
-@media screen and (max-width: 421px) {
-  /* ========== standar ========== */
-  .header__main-color.header__mini.header__spmi {
-    height: calc(117px + 250px) !important;
-  }
-
-  /* ========== indikator ========== */
-  .header__main-color.header__mini.header__indikator {
-    height: calc(138px + 250px) !important;
-  }
-
-  /* ========== indikator form ========== */
-  .header__main-color.header__mini.header__indikator-form {
-    height: calc(138px + 250px) !important;
-  }
-}
-
-@media screen and (max-width: 419px) {
-  /* ========== report ========== */
-  .header__main-color.header__mini.header__report {
-    height: calc(117px + 169px) !important;
-  }
-
-  /* ========== profile ========== */
-  .header__main-color.header__mini.header__profile {
-    height: calc(117px + 135px) !important;
+  /* ========== data induk ========== */
+  .header__main-color.header__mini.header__datainduk.active {
+    height: calc(117px + 148px) !important;
   }
 }
 
@@ -293,104 +167,73 @@
   }
 }
 
-@media screen and (max-width: 408px) {
-  /* ========== indikator form ========== */
-  .header__main-color.header__mini.header__indikator-form {
-    height: calc(159px + 249px) !important;
+@media screen and (max-width: 375px) {
+  /* ========== big ========== */
+  .header__main-color.header__big.active {
+    height: 29rem;
   }
 }
 
-@media screen and (max-width: 387px) {
-  /* ========== data induk ========== */
-  .header__main-color.header__mini.header__datainduk {
-    height: calc(117px + 189px) !important;
+@media screen and (max-width: 372px) {
+  /* ========== report ========== */
+  .header__main-color.header__mini.header__report {
+    height: calc(117px + 113px) !important;
   }
 }
 
-@media screen and (max-width: 378px) {
-  /* ========== data induk ========== */
-  .header__main-color.header__mini.header__datainduk {
-    height: calc(117px + 222px) !important;
-  }
-}
-
-@media screen and (max-width: 363px) {
+@media screen and (max-width: 371px) {
   /* ========== data induk ========== */
   .header__main-color.header__mini.header__datainduk.active {
     height: calc(117px + 167px) !important;
   }
 }
 
-@media screen and (max-width: 362px) {
+@media screen and (max-width: 358px) {
   /* ========== standar ========== */
   .header__main-color.header__mini.header__spmi {
-    height: calc(117px + 266px) !important;
+    height: calc(117px + 158px) !important;
   }
 
   /* ========== indikator ========== */
   .header__main-color.header__mini.header__indikator {
-    height: calc(138px + 266px) !important;
+    height: calc(117px + 158px) !important;
   }
 
   /* ========== indikator form ========== */
   .header__main-color.header__mini.header__indikator-form {
-    height: calc(159px + 266px) !important;
+    height: calc(138px + 158px) !important;
   }
 }
 
-@media screen and (max-width: 359px) {
-  /* ========== report ========== */
-  .header__main-color.header__mini.header__report {
-    height: calc(117px + 188px) !important;
+@media screen and (max-width: 340px) {
+  .header__main-color.header__mini.header__indikator.active {
+    height: calc(117px + 177px) !important;
   }
 }
 
-@media screen and (max-width: 358px) {
-  /* ========== data induk ========== */
-  .header__main-color.header__mini.header__datainduk {
-    height: calc(138px + 222px) !important;
-  }
-}
-
-@media screen and (max-width: 353px) {
-  /* ========== data induk ========== */
-  .header__main-color.header__mini.header__spmi {
-    height: calc(138px + 266px) !important;
-  }
-}
-
-@media screen and (max-width: 351px) {
-  /* ========== profile ========== */
-  .header__main-color.header__mini.header__profile {
-    height: calc(117px + 155px) !important;
-  }
-}
-
-@media screen and (max-width: 342px) {
-  /* ========== indikator form ========== */
-  .header__main-color.header__mini.header__indikator-form {
-    height: calc(180px + 264px) !important;
-  }
-}
-
-@media screen and (max-width: 341px) {
-  /* ========== indikator ========== */
-  .header__main-color.header__mini.header__indikator {
-    height: calc(159px + 264px) !important;
+@media screen and (max-width: 339px) {
+  .header__main-color.header__mini.header__indikator.active {
+    height: calc(117px + 209px) !important;
   }
 }
 
 @media screen and (max-width: 335px) {
+  /* ========== data induk ========== */
+  .header__main-color.header__mini.header__datainduk {
+    height: calc(117px + 145px) !important;
+  }
+}
+
+@media screen and (max-width: 334px) {
   /* ========== profile ========== */
   .header__main-color.header__mini.header__profile {
-    height: calc(117px + 175px) !important;
+    height: calc(117px + 112px) !important;
   }
 }
 
 @media screen and (max-width: 332px) {
   /* ========== standar ========== */
-  .header__main-color.header__mini.header__spmi.active,
-  .header__main-color.header__mini.header__indikator.active {
+  .header__main-color.header__mini.header__spmi.active {
     height: calc(117px + 177px) !important;
   }
 
@@ -400,24 +243,12 @@
   }
 }
 
-@media screen and (max-width: 331px) {
-  /* ========== indikator form ========== */
-  .header__main-color.header__mini.header__indikator-form {
-    height: calc(201px + 263px) !important;
-  }
-}
-
 @media screen and (max-width: 330px) {
   /* ========== standar ========== */
-  .header__main-color.header__mini.header__spmi.active,
-  .header__main-color.header__mini.header__indikator.active {
+  .header__main-color.header__mini.header__spmi.active {
     height: calc(117px + 209px) !important;
   }
 
-  /* ========== report ========== */
-  .header__main-color.header__mini.header__report {
-    height: calc(138px + 188px) !important;
-  }
   .header__main-color.header__mini.header__report.active {
     height: calc(117px + 145px) !important;
   }
@@ -428,43 +259,10 @@
   }
 }
 
-@media screen and (max-width: 328px) {
-  /* ========== profile ========== */
-  .header__main-color.header__mini.header__profile {
-    height: calc(138px + 175px) !important;
-  }
-}
-
-@media screen and (max-width: 308px) {
+@media screen and (max-width: 316px) {
   /* ========== indikator ========== */
   .header__main-color.header__mini.header__indikator.active {
     height: calc(138px + 208px) !important;
-  }
-}
-
-@media screen and (max-width: 304px) {
-  /* ========== data induk ========== */
-  .header__main-color.header__mini.header__datainduk {
-    height: calc(159px + 218px) !important;
-  }
-}
-
-@media screen and (max-width: 304px) {
-  /* ========== data induk ========== */
-  .header__main-color.header__mini.header__datainduk {
-    height: calc(159px + 239px) !important;
-  }
-}
-
-@media screen and (max-width: 302px) {
-  /* ========== indikator ========== */
-  .header__main-color.header__mini.header__indikator {
-    height: calc(180px + 264px) !important;
-  }
-
-  /* ========== indikator form ========== */
-  .header__main-color.header__mini.header__indikator-form {
-    height: calc(222px + 263px) !important;
   }
 }
 
@@ -480,15 +278,24 @@
   }
 }
 
+@media screen and (max-width: 295px) {
+  /* ========== data induk ========== */
+  .header__main-color.header__mini.header__datainduk {
+    height: calc(117px + 164px) !important;
+  }
+}
+
+@media screen and (max-width: 294px) {
+  /* ========== indikator ========== */
+  .header__main-color.header__mini.header__indikator.active {
+    height: calc(138px + 238px) !important;
+  }
+}
+
 @media screen and (max-width: 286px) {
   /* ========== standar ========== */
   .header__main-color.header__mini.header__spmi.active {
     height: calc(117px + 238px) !important;
-  }
-
-  /* ========== indikator ========== */
-  .header__main-color.header__mini.header__indikator.active {
-    height: calc(138px + 238px) !important;
   }
 
   /* ========== indikator form ========== */
