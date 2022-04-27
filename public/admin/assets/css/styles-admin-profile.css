@@ -5,22 +5,26 @@
 }
 
 .profile__section-profile {
-  flex: 0.6;
-  border-radius: 0.75rem;
-  border: var(--border-sm);
-  padding: 1.5rem 2.625rem 1.875rem;
   margin-right: 0.75rem;
+  padding: 1.5rem 2.625rem 1.875rem;
+
+  border: var(--border-sm);
+  border-radius: 0.75rem;
+
+  flex: 0.6;
 }
 
 .profile__section-password {
-  flex: 0.4;
   margin-left: 0.75rem;
+
+  flex: 0.4;
 }
 
 .section-password__border {
-  border-radius: 0.75rem;
-  border: var(--border-sm);
   padding: 1.5rem 2.625rem 1.875rem;
+
+  border: var(--border-sm);
+  border-radius: 0.75rem;
 }
 
 .head__hr {
@@ -30,6 +34,7 @@
 .mb__big {
   margin-bottom: 2.625rem !important;
 }
+
 .form__profile button,
 .form__change__password button {
   padding: 0.75rem 1.875rem;
@@ -43,16 +48,19 @@
 .img__photo-field {
   width: 11.25rem;
   height: 11.25rem;
-  border-radius: 0.5rem;
-  background-color: var(--light-color);
   margin-right: 1.5rem;
+
+  border-radius: 0.5rem;
+  background-color: var(--lavender);
 }
 
 .img__photo-field img {
   width: 100%;
-  border-radius: 0.5rem;
-  object-fit: cover;
   height: 100%;
+
+  border-radius: 0.5rem;
+
+  object-fit: cover;
   object-position: center;
 }
 
@@ -61,27 +69,33 @@
 }
 
 .form__control__photo {
-  width: 0.1px;
-  height: 0.1px;
-  opacity: 0;
-  overflow: hidden;
   position: absolute;
   z-index: -1;
+
+  overflow: hidden;
+
+  width: 0.1px;
+  height: 0.1px;
+
+  opacity: 0;
 }
 
 .form__label__photo {
-  cursor: pointer;
   padding: 0.75rem 2.25rem;
+
+  cursor: pointer;
 }
 
 #photo-notice {
+  display: block;
+
   max-width: 15rem;
   margin-top: 1.25rem;
-  display: block;
 }
 
 #alert-wrong-photo .color__danger {
   padding: 1rem;
+
   border-radius: var(--radius-sm);
   background-color: rgba(242, 89, 97, 0.1);
 }
@@ -97,14 +111,17 @@
 #toggleNewPassword svg,
 #toggleNewPasswordConfirm svg {
   z-index: 99;
+
   color: rgba(79, 79, 79, 0.25) !important;
 }
 
 form .position-relative .icon__hide__password {
+  font-size: 1rem;
+
+  position: absolute;
   top: 3rem;
   right: 1.5rem;
-  font-size: 1rem;
-  position: absolute;
+
   transition: var(--trans-m);
 }
 
@@ -138,8 +155,8 @@ form .position-relative .icon__hide__password {
   }
 
   #photo-notice {
-    margin-top: 0;
     max-width: 100%;
+    margin-top: 0;
   }
 
   .img__photo-field {

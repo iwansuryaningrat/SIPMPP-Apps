@@ -1,4 +1,5 @@
 @import url(styles-admin.css);
+
 /* ========== table ========== */
 .table__datainduk__content tbody tr:hover,
 #datatableDataIndukPenelitian tbody tr:hover,
@@ -72,7 +73,7 @@
 .sipmpp__table tr td .delete__data__induk__icon svg,
 #datatableDataIndukPenelitian tr td .delete__data__induk__icon svg,
 #datatableDataIndukPengabdian tr td .delete__data__induk__icon svg {
-  color: var(--danger-color);
+  color: var(--sunset-orange);
 }
 
 /* datatable */
@@ -84,16 +85,20 @@ table.dataTable thead td {
 
 #datatableDataIndukPenelitian,
 #datatableDataIndukPengabdian {
+  margin-bottom: 0.5rem;
+
   border-collapse: separate;
+
   border: var(--border-sm);
   background-color: var(--white);
-  margin-bottom: 0.5rem;
 }
 
 #datatableDataIndukPenelitian thead tr th,
 #datatableDataIndukPengabdian thead tr th {
   font-weight: 700;
+
   text-transform: uppercase;
+
   color: rgba(0, 0, 0, 0.6);
 }
 
@@ -166,9 +171,11 @@ table.dataTable thead td {
 
 #datatableDataIndukPenelitian_filter input[type="search"],
 #datatableDataIndukPengabdian_filter input[type="search"] {
-  padding: 0.375rem 0.75rem;
-  margin-left: 0.5rem;
   font-size: 0.875rem;
+
+  margin-left: 0.5rem;
+  padding: 0.375rem 0.75rem;
+
   color: rgba(0, 0, 0, 1);
 }
 
@@ -180,10 +187,12 @@ table.dataTable thead td {
 
 #datatableDataIndukPenelitian_length select,
 #datatableDataIndukPengabdian_length select {
-  padding: 0.375rem 0.25rem;
-  margin-left: 0.375rem;
-  margin-right: 0.375rem;
   font-size: 0.875rem;
+
+  margin-right: 0.375rem;
+  margin-left: 0.375rem;
+  padding: 0.375rem 0.25rem;
+
   color: rgba(0, 0, 0, 1);
 }
 
@@ -195,31 +204,35 @@ table.dataTable thead td {
 
 #datatableDataIndukPenelitian_paginate span .paginate_button,
 #datatableDataIndukPengabdian_paginate span .paginate_button {
-  border: none;
-  background-color: transparent;
-  background: transparent;
   font-size: 0.875rem;
   line-height: 0.875rem;
-  padding: 0;
-  margin: 0;
-  min-width: 0;
+
+  display: inline-flex;
 
   width: 2rem;
+  min-width: 0;
   height: 2rem;
-  display: inline-flex;
+  margin: 0;
+  padding: 0;
+
+  transition: var(--trans-m);
+
+  border: none;
+  border-radius: 2.5rem;
+  background: transparent;
+  background-color: transparent;
+  background-color: rgba(230, 235, 250, 0.5);
+
   align-items: center;
   justify-content: center;
-  background-color: rgba(230, 235, 250, 0.5);
-  border-radius: 2.5rem;
-  transition: var(--trans-m);
 }
 
 #datatableDataIndukPenelitian_paginate > span .paginate_button:hover,
 #datatableDataIndukPengabdian_paginate > span .paginate_button:hover,
 #datatableDataIndukPenelitian_paginate > span .paginate_button.current:hover,
 #datatableDataIndukPengabdian_paginate > span .paginate_button.current:hover {
-  background-color: rgba(230, 235, 250, 1);
   color: var(--black) !important;
+  background-color: rgba(230, 235, 250, 1);
 }
 
 #datatableDataIndukPenelitian_paginate span .paginate_button:focus,
@@ -228,11 +241,11 @@ table.dataTable thead td {
 #datatableDataIndukPengabdian_paginate span .paginate_button:focus,
 #datatableDataIndukPengabdian_paginate span .paginate_button:active,
 #datatableDataIndukPengabdian_paginate span .paginate_button:visited {
-  outline: none !important;
   border: none;
-  box-shadow: none;
+  outline: none !important;
   -webkit-box-shadow: none;
   -moz-box-shadow: none;
+  box-shadow: none;
 }
 
 #datatableDataIndukPenelitian_paginate span a,
@@ -266,13 +279,13 @@ table.dataTable thead td {
 #datatableDataIndukPengabdian_paginate #datatableDataIndukPengabdian_next:hover,
 #datatableDataIndukPengabdian_paginate
   #datatableDataIndukPengabdian_previous:hover {
-  background: rgba(230, 235, 250, 1);
-  border-radius: 2rem !important;
   color: var(--black) !important;
   border: none !important;
-  box-shadow: none;
+  border-radius: 2rem !important;
+  background: rgba(230, 235, 250, 1);
   -webkit-box-shadow: none;
   -moz-box-shadow: none;
+  box-shadow: none;
 }
 
 #datatableDataIndukPenelitian_paginate
@@ -283,8 +296,8 @@ table.dataTable thead td {
   #datatableDataIndukPengabdian_next.disabled:hover,
 #datatableDataIndukPengabdian_paginate
   #datatableDataIndukPengabdian_previous.disabled:hover {
-  background: none;
   border: none !important;
+  background: none;
 }
 
 table.dataTable.display tbody tr.even > .sorting_1,
@@ -307,10 +320,11 @@ table.dataTable.display tbody tr > .sorting_3 {
 
 .filter__btn {
   padding: 0.75rem 1rem !important;
-  border-radius: var(--radius-sm) !important;
-  background-color: var(--light-color) !important;
-  border: var(--border-sm) !important;
+
   color: rgba(0, 0, 0, 0.8) !important;
+  border: var(--border-sm) !important;
+  border-radius: var(--radius-sm) !important;
+  background-color: var(--lavender) !important;
 }
 
 .filter__btn:hover {
@@ -318,14 +332,15 @@ table.dataTable.display tbody tr > .sorting_3 {
 }
 
 .filter__btn.active {
-  color: rgba(255, 255, 255, 0.8) !important;
   font-weight: 500 !important;
+
+  color: rgba(255, 255, 255, 0.8) !important;
   background-color: rgba(38, 48, 77, 0.9) !important;
 }
 
 .filter__btn.active:hover {
   color: var(--white) !important;
-  background-color: var(--dark-main-color) !important;
+  background-color: var(--space-cadet) !important;
 }
 
 .reset__section {
@@ -351,6 +366,7 @@ table.dataTable.display tbody tr > .sorting_3 {
   .filter__btn:first-child {
     margin-right: 0.625rem !important;
   }
+
   .filter__btn:last-child {
     margin-left: 0.625rem !important;
   }
@@ -374,19 +390,20 @@ table.dataTable.display tbody tr > .sorting_3 {
   .nav.nav-pills {
     flex-direction: column;
   }
+
   .filter__btn {
     width: 100%;
   }
 
   .filter__btn:first-child {
-    margin-bottom: 0.75rem !important;
-    margin-right: 0 !important;
     width: 100%;
+    margin-right: 0 !important;
+    margin-bottom: 0.75rem !important;
   }
 
   .filter__btn:last-child {
-    margin-left: 0 !important;
     width: 100%;
+    margin-left: 0 !important;
   }
 }
 

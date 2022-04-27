@@ -1,4 +1,5 @@
 @import url(styles-admin.css);
+
 /* table */
 .table__daftar-user__content tbody tr:hover {
   background-color: rgba(38, 48, 77, 0.1) !important;

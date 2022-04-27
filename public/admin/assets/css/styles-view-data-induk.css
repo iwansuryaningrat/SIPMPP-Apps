@@ -1,4 +1,5 @@
 @import url(styles-admin.css);
+
 /* ========== table ========== */
 .table__view-datainduk__content tbody tr:hover {
   background-color: rgba(38, 48, 77, 0.1) !important;
@@ -51,7 +52,7 @@
 }
 
 .sipmpp__table tr td .delete__data__induk__icon svg {
-  color: var(--danger-color);
+  color: var(--sunset-orange);
 }
 
 @media screen and (max-width: 1024px) {

@@ -6,16 +6,20 @@
 }
 
 .form__add__user form .form__label {
-  text-align: right;
   font-weight: 600;
+
   padding-right: 2rem;
+
+  text-align: right;
 }
 
 .input__group__text {
   font-size: 0.875rem;
-  background-color: var(--dark-main-color);
-  color: rgba(255, 255, 255, 0.8);
+
   transition: var(--trans-m);
+
+  color: rgba(255, 255, 255, 0.8);
+  background-color: var(--space-cadet);
 }
 
 .input__group__text:hover {
@@ -24,9 +28,11 @@
 
 .button__section {
   display: flex;
+
+  margin-top: 2.625rem;
+
   align-items: center;
   justify-content: end;
-  margin-top: 2.625rem;
 }
 
 .position-relative > #password {
@@ -34,15 +40,16 @@
 }
 
 #togglePassword svg {
-  z-index: 99;
-  color: rgba(79, 79, 79, 0.25) !important;
   font-size: 1rem;
 
   position: absolute;
+  z-index: 99;
   top: 1.125rem;
   right: 1.75rem;
 
   transition: var(--trans-m);
+
+  color: rgba(79, 79, 79, 0.25) !important;
 }
 
 @media screen and (max-width: 768px) {

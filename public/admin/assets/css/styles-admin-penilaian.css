@@ -1,4 +1,5 @@
 @import url(styles-admin-data-induk.css);
+
 /* ========== table ========== */
 #datatablePenilaianPenelitian tbody tr:hover,
 #datatablePenilaianPengabdian tbody tr:hover {
@@ -36,16 +37,20 @@ table.dataTable thead td {
 
 #datatablePenilaianPenelitian,
 #datatablePenilaianPengabdian {
+  margin-bottom: 0.5rem;
+
   border-collapse: separate;
+
   border: var(--border-sm);
   background-color: var(--white);
-  margin-bottom: 0.5rem;
 }
 
 #datatablePenilaianPenelitian thead tr th,
 #datatablePenilaianPengabdian thead tr th {
   font-weight: 700;
+
   text-transform: uppercase;
+
   color: rgba(0, 0, 0, 0.6);
 }
 
@@ -106,7 +111,7 @@ table.dataTable thead td {
 
 #datatablePenilaianPenelitian tr td .delete__data__induk__icon svg,
 #datatablePenilaianPengabdian tr td .delete__data__induk__icon svg {
-  color: var(--danger-color);
+  color: var(--sunset-orange);
 }
 
 #datatablePenilaianPenelitian_length,
@@ -135,9 +140,11 @@ table.dataTable thead td {
 
 #datatablePenilaianPenelitian_filter input[type="search"],
 #datatablePenilaianPengabdian_filter input[type="search"] {
-  padding: 0.375rem 0.75rem;
-  margin-left: 0.5rem;
   font-size: 0.875rem;
+
+  margin-left: 0.5rem;
+  padding: 0.375rem 0.75rem;
+
   color: rgba(0, 0, 0, 1);
 }
 
@@ -149,10 +156,12 @@ table.dataTable thead td {
 
 #datatablePenilaianPenelitian_length select,
 #datatablePenilaianPengabdian_length select {
-  padding: 0.375rem 0.25rem;
-  margin-left: 0.375rem;
-  margin-right: 0.375rem;
   font-size: 0.875rem;
+
+  margin-right: 0.375rem;
+  margin-left: 0.375rem;
+  padding: 0.375rem 0.25rem;
+
   color: rgba(0, 0, 0, 1);
 }
 
@@ -164,31 +173,35 @@ table.dataTable thead td {
 
 #datatablePenilaianPenelitian_paginate span .paginate_button,
 #datatablePenilaianPengabdian_paginate span .paginate_button {
-  border: none;
-  background-color: transparent;
-  background: transparent;
   font-size: 0.875rem;
   line-height: 0.875rem;
-  padding: 0;
-  margin: 0;
-  min-width: 0;
+
+  display: inline-flex;
 
   width: 2rem;
+  min-width: 0;
   height: 2rem;
-  display: inline-flex;
+  margin: 0;
+  padding: 0;
+
+  transition: var(--trans-m);
+
+  border: none;
+  border-radius: 2.5rem;
+  background: transparent;
+  background-color: transparent;
+  background-color: rgba(230, 235, 250, 0.5);
+
   align-items: center;
   justify-content: center;
-  background-color: rgba(230, 235, 250, 0.5);
-  border-radius: 2.5rem;
-  transition: var(--trans-m);
 }
 
 #datatablePenilaianPenelitian_paginate > span .paginate_button:hover,
 #datatablePenilaianPengabdian_paginate > span .paginate_button:hover,
 #datatablePenilaianPenelitian_paginate > span .paginate_button.current:hover,
 #datatablePenilaianPengabdian_paginate > span .paginate_button.current:hover {
-  background-color: rgba(230, 235, 250, 1);
   color: var(--black) !important;
+  background-color: rgba(230, 235, 250, 1);
 }
 
 #datatablePenilaianPenelitian_paginate span .paginate_button:focus,
@@ -197,11 +210,11 @@ table.dataTable thead td {
 #datatablePenilaianPengabdian_paginate span .paginate_button:focus,
 #datatablePenilaianPengabdian_paginate span .paginate_button:active,
 #datatablePenilaianPengabdian_paginate span .paginate_button:visited {
-  outline: none !important;
   border: none;
-  box-shadow: none;
+  outline: none !important;
   -webkit-box-shadow: none;
   -moz-box-shadow: none;
+  box-shadow: none;
 }
 
 #datatablePenilaianPenelitian_paginate span a,
@@ -235,13 +248,13 @@ table.dataTable thead td {
 #datatablePenilaianPengabdian_paginate #datatablePenilaianPengabdian_next:hover,
 #datatablePenilaianPengabdian_paginate
   #datatablePenilaianPengabdian_previous:hover {
-  background: rgba(230, 235, 250, 1);
-  border-radius: 2rem !important;
   color: var(--black) !important;
   border: none !important;
-  box-shadow: none;
+  border-radius: 2rem !important;
+  background: rgba(230, 235, 250, 1);
   -webkit-box-shadow: none;
   -moz-box-shadow: none;
+  box-shadow: none;
 }
 
 #datatablePenilaianPenelitian_paginate
@@ -252,8 +265,8 @@ table.dataTable thead td {
   #datatablePenilaianPengabdian_next.disabled:hover,
 #datatablePenilaianPengabdian_paginate
   #datatablePenilaianPengabdian_previous.disabled:hover {
-  background: none;
   border: none !important;
+  background: none;
 }
 
 table.dataTable.display tbody tr.even > .sorting_1,

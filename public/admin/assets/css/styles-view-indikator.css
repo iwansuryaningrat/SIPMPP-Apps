@@ -1,4 +1,5 @@
 @import url(styles-admin.css);
+
 /* ========== table ========== */
 .table__indikator__content tbody tr:hover {
   background-color: rgba(38, 48, 77, 0.1) !important;
@@ -20,6 +21,7 @@
   width: 7%;
   min-width: 4rem;
 }
+
 .table__indikator-kebutuha-data {
   width: 15%;
   min-width: 8.75rem;

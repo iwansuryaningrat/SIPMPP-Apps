@@ -28,6 +28,7 @@
 .table__user-number {
   width: 7%;
 }
+
 .table__user-aksi {
   width: 10%;
 }
@@ -36,6 +37,7 @@
   width: 20%;
   min-width: 10rem;
 }
+
 .table__user-telepon {
   width: 13%;
   min-width: 8.75rem;
@@ -60,7 +62,7 @@
 }
 
 .sipmpp__table tr td .delete__data__induk__icon svg {
-  color: var(--danger-color);
+  color: var(--sunset-orange);
 }
 
 @media screen and (max-width: 991px) {

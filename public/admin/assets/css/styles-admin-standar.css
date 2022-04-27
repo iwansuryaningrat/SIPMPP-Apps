@@ -1,4 +1,5 @@
 @import url(styles-admin-data-induk.css);
+
 /* ========== table ========== */
 .table__standar__content tbody tr:hover {
   background-color: rgba(38, 48, 77, 0.1) !important;
@@ -48,15 +49,16 @@
 }
 
 .sipmpp__table tr td .delete__data__induk__icon svg {
-  color: var(--danger-color);
+  color: var(--sunset-orange);
 }
 
 .filter__btn {
   padding: 0.75rem 1rem !important;
-  border-radius: var(--radius-sm) !important;
-  background-color: var(--light-color) !important;
-  border: var(--border-sm) !important;
+
   color: rgba(0, 0, 0, 0.8) !important;
+  border: var(--border-sm) !important;
+  border-radius: var(--radius-sm) !important;
+  background-color: var(--lavender) !important;
 }
 
 .filter__btn:hover {
@@ -64,14 +66,15 @@
 }
 
 .filter__btn.active {
-  color: rgba(255, 255, 255, 0.8) !important;
   font-weight: 500 !important;
+
+  color: rgba(255, 255, 255, 0.8) !important;
   background-color: rgba(38, 48, 77, 0.9) !important;
 }
 
 .filter__btn.active:hover {
   color: var(--white) !important;
-  background-color: var(--dark-main-color) !important;
+  background-color: var(--space-cadet) !important;
 }
 
 .title__table__add.nav__kategori {
@@ -93,12 +96,15 @@
   .filter__btn {
     flex: 0.5;
   }
+
   .filter__btn:first-child {
     margin-right: 0.625rem !important;
   }
+
   .filter__btn:last-child {
     margin-left: 0.625rem !important;
   }
+
   .table__standar__content thead tr th,
   .table__standar__content tbody tr td {
     padding-right: 0.875rem;
@@ -110,9 +116,10 @@
   .filter__btn {
     width: 100%;
   }
+
   .filter__btn:first-child {
-    margin-bottom: 0.75rem !important;
     margin-right: 0 !important;
+    margin-bottom: 0.75rem !important;
   }
 
   .filter__btn:last-child {
