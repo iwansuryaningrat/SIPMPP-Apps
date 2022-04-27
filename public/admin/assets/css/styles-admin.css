@@ -1,6 +1,7 @@
 /**************************************/
 /*               Import               */
 /**************************************/
+@import url(styles-admin-header.css);
 @import url("https://fonts.googleapis.com/css2?family=Work+Sans:wght@300;400;500;600;700;800;900&display=swap");
 
 /****************************************/
@@ -1276,7 +1277,6 @@ footer .container-fluid.container__fluid {
     height: 16rem !important;
   }
 
-  .header__main-color.header__mini.header__profile,
   .header__main-color.header__mini.header__addStandarForm {
     height: 14rem !important;
   }
@@ -1286,7 +1286,6 @@ footer .container-fluid.container__fluid {
     height: 18rem !important;
   }
 
-  .header__main-color.header__mini.header__profile.active,
   .header__main-color.header__mini.header__addUserForm.active,
   .header__main-color.header__mini.header__addBasicUserForm.active,
   .header__main-color.header__mini.header__addAuditor.active,
