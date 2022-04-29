@@ -2,6 +2,12 @@
   height: 22.25rem;
 }
 
+.header__main-color.header__mini {
+  height: 16rem !important;
+
+  transition: var(--trans-m);
+}
+
 @media screen and (max-width: 1181px) {
   /* ========== standar ========== */
   .header__main-color.header__mini.header__spmi,
@@ -23,6 +29,15 @@
   /* ========== big ========== */
   .header__main-color.header__big {
     height: 22.25rem;
+  }
+
+  /* ========== mini ========== */
+  .header__main-color.header__mini {
+    height: 17rem !important;
+  }
+
+  .header__main-color.header__mini.active {
+    height: 16rem !important;
   }
 
   /* ========== data induk ========== */
@@ -73,6 +88,12 @@
   }
 }
 
+@media screen and (max-width: 659px) {
+  .header__main-color.header__big.active {
+    height: 24.5rem;
+  }
+}
+
 @media screen and (max-width: 618px) {
   /* ========== data induk ========== */
   .header__main-color.header__mini.header__datainduk.active {
@@ -84,6 +105,15 @@
   /* ========== big ========== */
   .header__main-color.header__big {
     height: 24rem;
+  }
+
+  /* ========== mini ========== */
+  .header__main-color.header__mini {
+    height: 18rem !important;
+  }
+
+  .header__main-color.header__mini.active {
+    height: 15rem !important;
   }
 
   .header__main-color.header__mini.header__datainduk,
