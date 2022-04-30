@@ -44,33 +44,3 @@
     margin-top: 2rem;
   }
 }
-
-@media screen and (max-width: 415px) {
-  .header__main-color.header__mini.header__addStandarForm.active {
-    height: 13.5rem !important;
-  }
-
-  .header__main-color.header__mini.header__addStandarForm {
-    height: 18.25rem !important;
-  }
-}
-
-@media screen and (max-width: 401px) {
-  .header__main-color.header__mini.header__addStandarForm.active {
-    height: 13.5rem !important;
-  }
-
-  .header__main-color.header__mini.header__addStandarForm {
-    height: 20rem !important;
-  }
-}
-
-@media screen and (max-width: 335px) {
-  .header__main-color.header__mini.header__addStandarForm.active {
-    height: 15.5rem !important;
-  }
-
-  .header__main-color.header__mini.header__addStandarForm {
-    height: 23rem !important;
-  }
-}

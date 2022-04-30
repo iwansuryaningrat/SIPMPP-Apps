@@ -58,7 +58,13 @@
   .header__main-color.header__mini.header__autoGeneratePenilaian,
   .header__main-color.header__mini.header__autoGeneratePenilaian.active,
   .header__main-color.header__mini.header__resetPenilaian,
-  .header__main-color.header__mini.header__resetPenilaian.active {
+  .header__main-color.header__mini.header__resetPenilaian.active,
+  .header__main-color.header__mini.header__standar,
+  .header__main-color.header__mini.header__standar.active,
+  .header__main-color.header__mini.header__addStandarForm,
+  .header__main-color.header__mini.header__addStandarForm.active,
+  .header__main-color.header__mini.header__editStandarForm,
+  .header__main-color.header__mini.header__editStandarForm.active {
     height: calc(137px + 103px) !important;
   }
 }
@@ -109,7 +115,13 @@
   .header__main-color.header__mini.header__autoGeneratePenilaian,
   .header__main-color.header__mini.header__autoGeneratePenilaian.active,
   .header__main-color.header__mini.header__resetPenilaian,
-  .header__main-color.header__mini.header__resetPenilaian.active {
+  .header__main-color.header__mini.header__resetPenilaian.active,
+  .header__main-color.header__mini.header__standar,
+  .header__main-color.header__mini.header__standar.active,
+  .header__main-color.header__mini.header__addStandarForm,
+  .header__main-color.header__mini.header__addStandarForm.active,
+  .header__main-color.header__mini.header__editStandarForm,
+  .header__main-color.header__mini.header__editStandarForm.active {
     height: calc(117px + 96px) !important;
   }
 }
@@ -186,7 +198,8 @@
 }
 
 @media screen and (max-width: 460px) {
-  .header__main-color.header__mini.header__kategori.active {
+  .header__main-color.header__mini.header__kategori.active,
+  .header__main-color.header__mini.header__standar.active {
     height: calc(117px + 115px) !important;
   }
 
@@ -208,6 +221,16 @@
 
   .header__main-color.header__mini.header__dataInduk {
     height: calc(117px + 114px) !important;
+  }
+
+  .header__main-color.header__mini.header__editStandarForm.active {
+    height: calc(138px + 93px) !important;
+  }
+}
+
+@media screen and (max-width: 447px) {
+  .header__main-color.header__mini.header__addStandarForm.active {
+    height: calc(138px + 93px) !important;
   }
 }
 
@@ -297,7 +320,8 @@
 }
 
 @media screen and (max-width: 393px) {
-  .header__main-color.header__mini.header__autoGeneratePenilaian {
+  .header__main-color.header__mini.header__autoGeneratePenilaian,
+  .header__main-color.header__mini.header__addStandarForm.active {
     height: calc(138px + 113px) !important;
   }
 }
@@ -337,6 +361,12 @@
   }
 }
 
+@media screen and (max-width: 379px) {
+  .header__main-color.header__mini.header__standar {
+    height: calc(117px + 113px) !important;
+  }
+}
+
 @media screen and (max-width: 376px) {
   .header__main-color.header__mini.header__dataInduk.active {
     height: calc(138px + 113px) !important;
@@ -351,7 +381,8 @@
 
 @media screen and (max-width: 372px) {
   /* ========== big ========== */
-  .header__main-color.header__mini.header__addUserForm {
+  .header__main-color.header__mini.header__addUserForm,
+  .header__main-color.header__mini.header__editStandarForm {
     height: calc(138px + 92px) !important;
   }
 }
@@ -360,13 +391,14 @@
   .header__main-color.header__mini.header__addUserForm.active {
     height: calc(138px + 113px) !important;
   }
+
+  .header__main-color.header__mini.header__addStandarForm {
+    height: calc(138px + 92px) !important;
+  }
 }
 
 @media screen and (max-width: 368px) {
-  .header__main-color.header__mini.header__autoGeneratePenilaian {
-    height: calc(138px + 146px) !important;
-  }
-
+  .header__main-color.header__mini.header__autoGeneratePenilaian,
   .header__main-color.header__mini.header__resetPenilaian.active {
     height: calc(138px + 146px) !important;
   }
@@ -393,6 +425,12 @@
 @media screen and (max-width: 358px) {
   .header__main-color.header__mini.header__dataInduk.active {
     height: calc(138px + 146px) !important;
+  }
+}
+
+@media screen and (max-width: 356px) {
+  .header__main-color.header__mini.header__editStandarForm.active {
+    height: calc(138px + 113px) !important;
   }
 }
 
@@ -468,6 +506,12 @@
   }
 }
 
+@media screen and (max-width: 317px) {
+  .header__main-color.header__mini.header__addStandarForm {
+    height: calc(138px + 112px) !important;
+  }
+}
+
 @media screen and (max-width: 316px) {
   .header__main-color.header__mini.header__editDataInduk.active {
     height: calc(159px + 144px) !important;
@@ -485,10 +529,7 @@
 }
 
 @media screen and (max-width: 314px) {
-  .header__main-color.header__mini.header__addAuditor {
-    height: calc(138px + 112px) !important;
-  }
-
+  .header__main-color.header__mini.header__addAuditor,
   .header__main-color.header__mini.header__kategori.active {
     height: calc(138px + 112px) !important;
   }
@@ -497,6 +538,10 @@
 @media screen and (max-width: 312px) {
   .header__main-color.header__mini.header__resetPenilaian {
     height: calc(138px + 123px) !important;
+  }
+
+  .header__main-color.header__mini.header__standar.active {
+    height: calc(138px + 112px) !important;
   }
 }
 
@@ -509,6 +554,13 @@
 
   .header__main-color.header__mini.header__autoGenerateInduk.active {
     height: calc(159px + 144px) !important;
+  }
+}
+
+@media screen and (max-width: 307px) {
+  .header__main-color.header__mini.header__addStandarForm.active,
+  .header__main-color.header__mini.header__editStandarForm.active {
+    height: calc(159px + 112px) !important;
   }
 }
 
@@ -526,6 +578,10 @@
   .header__main-color.header__mini.header__autoGeneratePenilaian.active {
     height: calc(159px + 197px) !important;
   }
+
+  .header__main-color.header__mini.header__standar.active {
+    height: calc(159px + 133px) !important;
+  }
 }
 
 @media screen and (max-width: 303px) {
@@ -537,6 +593,10 @@
 @media screen and (max-width: 301px) {
   .header__main-color.header__mini.header__addAuditor.active {
     height: calc(138px + 133px) !important;
+  }
+
+  .header__main-color.header__mini.header__addStandarForm.active {
+    height: calc(159px + 133px) !important;
   }
 }
 
@@ -576,14 +636,14 @@
 }
 
 @media screen and (max-width: 289px) {
-  /* ========== profile ========== */
-  .header__main-color.header__mini.header__profile.active {
-    height: calc(138px + 112px) !important;
-  }
-
   /* ========== big ========== */
   .header__main-color.header__big {
     height: 23rem;
+  }
+
+  /* ========== profile ========== */
+  .header__main-color.header__mini.header__profile.active {
+    height: calc(138px + 112px) !important;
   }
 
   .header__main-color.header__mini.header__unit.active {
@@ -625,6 +685,24 @@
   }
 }
 
+@media screen and (max-width: 280px) {
+  .header__main-color.header__mini.header__editStandarForm {
+    height: calc(138px + 111px) !important;
+  }
+}
+
+@media screen and (max-width: 277px) {
+  .header__main-color.header__mini.header__editStandarForm.active {
+    height: calc(159px + 143px) !important;
+  }
+}
+
+@media screen and (max-width: 276px) {
+  .header__main-color.header__mini.header__addStandarForm.active {
+    height: calc(159px + 164px) !important;
+  }
+}
+
 @media screen and (max-width: 272px) {
   .header__main-color.header__mini.header__autoGenerateInduk.active {
     height: calc(159px + 216px) !important;
@@ -650,6 +728,12 @@
 @media screen and (max-width: 266px) {
   .header__main-color.header__mini.header__daftarUser.active {
     height: calc(138px + 163px) !important;
+  }
+}
+
+@media screen and (max-width: 264px) {
+  .header__main-color.header__mini.header__editStandarForm.active {
+    height: calc(159px + 163px) !important;
   }
 }
 
@@ -706,6 +790,12 @@
   }
 }
 
+@media screen and (max-width: 250px) {
+  .header__main-color.header__mini.header__standar.active {
+    height: calc(138px + 153px) !important;
+  }
+}
+
 @media screen and (max-width: 248px) {
   .header__main-color.header__mini.header__auditor.active {
     height: calc(138px + 153px) !important;
@@ -750,17 +840,34 @@
   .header__main-color.header__mini.header__resetPenilaian.active {
     height: calc(180px + 193px) !important;
   }
+
+  .header__main-color.header__mini.header__editStandarForm.active {
+    height: calc(180px + 162px) !important;
+  }
 }
 
 @media screen and (max-width: 232px) {
   .header__main-color.header__mini.header__resetInduk.active {
     height: calc(180px + 193px) !important;
   }
+
+  .header__main-color.header__mini.header__standar.active {
+    height: calc(159px + 153px) !important;
+  }
 }
 
 @media screen and (max-width: 231px) {
   .header__main-color.header__mini.header__editDataInduk.active {
     height: calc(180px + 193px) !important;
+  }
+
+  .header__main-color.header__mini.header__standar {
+    height: calc(138px + 111px) !important;
+  }
+
+  .header__main-color.header__mini.header__addStandarForm,
+  .header__main-color.header__mini.header__editStandarForm {
+    height: calc(159px + 111px) !important;
   }
 }
 
