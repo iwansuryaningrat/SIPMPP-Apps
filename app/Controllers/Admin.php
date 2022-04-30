@@ -256,7 +256,7 @@ class Admin extends BaseController
             'title' => 'Auditor | SIPMPP UNDIP ' . $this->thisTahun,
             'tab' => 'user',
             'css' => 'styles-admin-user.css',
-            'header' => 'header__mini',
+            'header' => 'header__mini header__auditor',
             'i' => $this->i,
             'usersession' => $usersession,
             'users' => $users,

@@ -1285,11 +1285,6 @@ footer .container-fluid.container__fluid {
     height: 14rem !important;
   }
 
-  .header__main-color.header__mini.header__addAuditor {
-    height: 18rem !important;
-  }
-
-  .header__main-color.header__mini.header__addAuditor.active,
   .header__main-color.header__mini.header__addStandarForm.active {
     height: 13.5rem !important;
   }

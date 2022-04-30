@@ -92,7 +92,7 @@
         <div class="row me-0 align-items-center">
           <div class="col-10">
             <div class="dokumen__prev">
-              <img src="" alt="document-icon" id="dokumenIcon">
+              <img src="#" alt="document-icon" id="dokumenIcon">
               <p id="dokumen" class="dokumen__name ellipsis__text"><?= $datapenilaian['dokumen']; ?>
               </p>
             </div>
