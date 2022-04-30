@@ -1,37 +1,94 @@
+.header__main-color.header__big {
+  height: 22.25rem;
+}
+
 @media screen and (max-width: 991px) {
+  /* ========== big ========== */
+  .header__main-color.header__big {
+    height: 22rem;
+  }
+
+  .header__main-color.header__big.active {
+    height: 22.25rem;
+  }
+
   /* ========== profile ========== */
   .header__main-color.header__mini.header__profile,
-  .header__main-color.header__mini.header__profile.active {
+  .header__main-color.header__mini.header__profile.active,
+  .header__main-color.header__mini.header__daftarUser,
+  .header__main-color.header__mini.header__daftarUser.active,
+  .header__main-color.header__mini.header__addUserForm,
+  .header__main-color.header__mini.header__addUserForm.active,
+  .header__main-color.header__mini.header__addBasicUserForm,
+  .header__main-color.header__mini.header__addBasicUserForm.active {
     height: calc(137px + 103px) !important;
   }
 }
 
-@media screen and (max-width: 635px) {
-  /* ========== profile ========== */
-  .header__main-color.header__mini.header__profile {
-    height: calc(137px + 118px) !important;
-  }
-}
-
 @media screen and (max-width: 576px) {
+  /* ========== big ========== */
+  .header__main-color.header__big {
+    height: 21rem;
+  }
+
+  .header__main-color.header__big.active {
+    height: 21.5rem;
+  }
+
   /* ========== profile ========== */
   .header__main-color.header__mini.header__profile,
-  .header__main-color.header__mini.header__profile.active {
+  .header__main-color.header__mini.header__profile.active,
+  .header__main-color.header__mini.header__daftarUser,
+  .header__main-color.header__mini.header__daftarUser.active,
+  .header__main-color.header__mini.header__addUserForm,
+  .header__main-color.header__mini.header__addUserForm.active,
+  .header__main-color.header__mini.header__addBasicUserForm,
+  .header__main-color.header__mini.header__addBasicUserForm.active {
     height: calc(117px + 96px) !important;
   }
 }
 
-@media screen and (max-width: 513px) {
-  /* ========== profile ========== */
-  .header__main-color.header__mini.header__profile {
-    height: calc(117px + 116px) !important;
+@media screen and (max-width: 521px) {
+  /* ========== big ========== */
+  .header__main-color.header__big.active {
+    height: 23rem;
   }
 }
 
-@media screen and (max-width: 411px) {
-  /* ========== profile ========== */
-  .header__main-color.header__mini.header__profile {
+@media screen and (max-width: 484px) {
+  .header__main-color.header__mini.header__daftarUser.active {
+    height: calc(117px + 115px) !important;
+  }
+}
+
+@media screen and (max-width: 448px) {
+  .header__main-color.header__mini.header__addUserForm.active {
+    height: calc(138px + 93px) !important;
+  }
+}
+
+@media screen and (max-width: 438px) {
+  .header__main-color.header__mini.header__addBasicUserForm.active {
+    height: calc(138px + 93px) !important;
+  }
+}
+
+@media screen and (max-width: 426px) {
+  /* ========== big ========== */
+  .header__main-color.header__big {
+    height: 22rem;
+  }
+}
+
+@media screen and (max-width: 408px) {
+  .header__main-color.header__mini.header__addBasicUserForm.active {
     height: calc(138px + 114px) !important;
+  }
+}
+
+@media screen and (max-width: 403px) {
+  .header__main-color.header__mini.header__daftarUser {
+    height: calc(117px + 114px) !important;
   }
 }
 
@@ -42,24 +99,74 @@
   }
 }
 
-@media screen and (max-width: 373px) {
-  /* ========== profile ========== */
-  .header__main-color.header__mini.header__profile {
-    height: calc(138px + 134px) !important;
+@media screen and (max-width: 372px) {
+  /* ========== big ========== */
+  .header__main-color.header__mini.header__addUserForm {
+    height: calc(138px + 92px) !important;
   }
 }
 
-@media screen and (max-width: 335px) {
-  /* ========== profile ========== */
-  .header__main-color.header__mini.header__profile {
-    height: calc(138px + 154px) !important;
+@media screen and (max-width: 371px) {
+  .header__main-color.header__mini.header__addUserForm.active {
+    height: calc(138px + 113px) !important;
+  }
+}
+
+@media screen and (max-width: 362px) {
+  .header__main-color.header__mini.header__addBasicUserForm {
+    height: calc(138px + 92px) !important;
+  }
+}
+
+@media screen and (max-width: 334px) {
+  .header__main-color.header__mini.header__daftarUser.active {
+    height: calc(138px + 112px) !important;
   }
 }
 
 @media screen and (max-width: 333px) {
+  /* ========== big ========== */
+  .header__main-color.header__big.active {
+    height: 25rem;
+  }
+
+  .header__main-color.header__mini.header__addBasicUserForm {
+    height: calc(138px + 112px) !important;
+  }
+}
+
+@media screen and (max-width: 323px) {
   /* ========== profile ========== */
   .header__main-color.header__mini.header__profile {
-    height: calc(159px + 154px) !important;
+    height: calc(117px + 116px) !important;
+  }
+}
+
+@media screen and (max-width: 334px) {
+  .header__main-color.header__mini.header__daftarUser.active {
+    height: calc(138px + 112px) !important;
+  }
+}
+
+@media screen and (max-width: 308px) {
+  .header__main-color.header__mini.header__daftarUser.active {
+    height: calc(138px + 133px) !important;
+  }
+}
+
+@media screen and (max-width: 295px) {
+  .header__main-color.header__mini.header__addUserForm {
+    height: calc(138px + 112px) !important;
+  }
+
+  .header__main-color.header__mini.header__addUserForm.active {
+    height: calc(159px + 112px) !important;
+  }
+}
+
+@media screen and (max-width: 305px) {
+  .header__main-color.header__mini.header__addBasicUserForm.active {
+    height: calc(138px + 165px) !important;
   }
 }
 
@@ -67,5 +174,53 @@
   /* ========== profile ========== */
   .header__main-color.header__mini.header__profile.active {
     height: calc(138px + 112px) !important;
+  }
+
+  /* ========== big ========== */
+  .header__main-color.header__big {
+    height: 23rem;
+  }
+}
+
+@media screen and (max-width: 287px) {
+  .header__main-color.header__mini.header__addUserForm.active {
+    height: calc(159px + 133px) !important;
+  }
+}
+
+@media screen and (max-width: 284px) {
+  .header__main-color.header__mini.header__addBasicUserForm.active {
+    height: calc(159px + 164px) !important;
+  }
+}
+
+@media screen and (max-width: 266px) {
+  .header__main-color.header__mini.header__daftarUser.active {
+    height: calc(138px + 163px) !important;
+  }
+}
+
+@media screen and (max-width: 259px) {
+  /* ========== profile ========== */
+  .header__main-color.header__mini.header__profile.active {
+    height: calc(138px + 132px) !important;
+  }
+}
+
+@media screen and (max-width: 256px) {
+  .header__main-color.header__mini.header__daftarUser.active {
+    height: calc(138px + 184px) !important;
+  }
+}
+
+@media screen and (max-width: 254px) {
+  .header__main-color.header__mini.header__daftarUser {
+    height: calc(138px + 110px) !important;
+  }
+}
+
+@media screen and (max-width: 237px) {
+  .header__main-color.header__mini.header__addUserForm.active {
+    height: calc(180px + 132px) !important;
   }
 }
