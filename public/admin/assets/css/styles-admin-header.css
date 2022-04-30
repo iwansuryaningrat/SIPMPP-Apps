@@ -2,6 +2,12 @@
   height: 22.25rem;
 }
 
+.header__main-color.header__mini {
+  height: 16rem !important;
+
+  transition: var(--trans-m);
+}
+
 @media screen and (max-width: 991px) {
   /* ========== big ========== */
   .header__main-color.header__big {
@@ -10,6 +16,14 @@
 
   .header__main-color.header__big.active {
     height: 22.25rem;
+  }
+
+  .header__main-color.header__mini {
+    height: 15rem !important;
+  }
+
+  .header__main-color.header__mini.active {
+    height: 15rem !important;
   }
 
   /* ========== profile ========== */
@@ -28,7 +42,17 @@
   .header__main-color.header__mini.header__unit,
   .header__main-color.header__mini.header__unit.active,
   .header__main-color.header__mini.header__kategori,
-  .header__main-color.header__mini.header__kategori.active {
+  .header__main-color.header__mini.header__kategori.active,
+  .header__main-color.header__mini.header__dataInduk,
+  .header__main-color.header__mini.header__dataInduk.active,
+  .header__main-color.header__mini.header__editDataInduk,
+  .header__main-color.header__mini.header__editDataInduk.active,
+  .header__main-color.header__mini.header__isianInduk,
+  .header__main-color.header__mini.header__isianInduk.active,
+  .header__main-color.header__mini.header__autoGenerateInduk,
+  .header__main-color.header__mini.header__autoGenerateInduk.active,
+  .header__main-color.header__mini.header__resetInduk,
+  .header__main-color.header__mini.header__resetInduk.active {
     height: calc(137px + 103px) !important;
   }
 }
@@ -43,6 +67,10 @@
     height: 21.5rem;
   }
 
+  .header__main-color.header__mini {
+    height: 16rem !important;
+  }
+
   /* ========== profile ========== */
   .header__main-color.header__mini.header__profile,
   .header__main-color.header__mini.header__profile.active,
@@ -59,8 +87,24 @@
   .header__main-color.header__mini.header__unit,
   .header__main-color.header__mini.header__unit.active,
   .header__main-color.header__mini.header__kategori,
-  .header__main-color.header__mini.header__kategori.active {
+  .header__main-color.header__mini.header__kategori.active,
+  .header__main-color.header__mini.header__dataInduk,
+  .header__main-color.header__mini.header__dataInduk.active,
+  .header__main-color.header__mini.header__editDataInduk,
+  .header__main-color.header__mini.header__editDataInduk.active,
+  .header__main-color.header__mini.header__isianInduk,
+  .header__main-color.header__mini.header__isianInduk.active,
+  .header__main-color.header__mini.header__autoGenerateInduk,
+  .header__main-color.header__mini.header__autoGenerateInduk.active,
+  .header__main-color.header__mini.header__resetInduk,
+  .header__main-color.header__mini.header__resetInduk.active {
     height: calc(117px + 96px) !important;
+  }
+}
+
+@media screen and (max-width: 528px) {
+  .header__main-color.header__mini.header__dataInduk.active {
+    height: calc(117px + 116px) !important;
   }
 }
 
@@ -71,15 +115,49 @@
   }
 }
 
+@media screen and (max-width: 515px) {
+  .header__main-color.header__mini.header__isianInduk.active {
+    height: calc(117px + 116px) !important;
+  }
+}
+
+@media screen and (max-width: 496px) {
+  .header__main-color.header__mini.header__autoGenerateInduk.active {
+    height: calc(117px + 115px) !important;
+  }
+}
+
+@media screen and (max-width: 491px) {
+  .header__main-color.header__mini.header__autoGenerateInduk.active {
+    height: calc(117px + 150px) !important;
+  }
+}
+
+@media screen and (max-width: 489px) {
+  .header__main-color.header__mini.header__editDataInduk.active {
+    height: calc(138px + 94px) !important;
+  }
+}
+
 @media screen and (max-width: 484px) {
   .header__main-color.header__mini.header__daftarUser.active {
     height: calc(117px + 115px) !important;
   }
 }
 
+@media screen and (max-width: 481px) {
+  .header__main-color.header__mini.header__autoGenerateInduk.active {
+    height: calc(138px + 150px) !important;
+  }
+}
+
 @media screen and (max-width: 460px) {
   .header__main-color.header__mini.header__kategori.active {
     height: calc(117px + 115px) !important;
+  }
+
+  .header__main-color.header__mini.header__resetInduk.active {
+    height: calc(138px + 94px) !important;
   }
 }
 
@@ -92,6 +170,16 @@
 @media screen and (max-width: 448px) {
   .header__main-color.header__mini.header__addUserForm.active {
     height: calc(138px + 93px) !important;
+  }
+
+  .header__main-color.header__mini.header__dataInduk {
+    height: calc(117px + 114px) !important;
+  }
+}
+
+@media screen and (max-width: 440px) {
+  .header__main-color.header__mini.header__isianInduk {
+    height: calc(117px + 114px) !important;
   }
 }
 
@@ -120,8 +208,26 @@
   }
 }
 
+@media screen and (max-width: 420px) {
+  .header__main-color.header__mini.header__autoGenerateInduk {
+    height: calc(117px + 114px) !important;
+  }
+}
+
+@media screen and (max-width: 413px) {
+  .header__main-color.header__mini.header__editDataInduk {
+    height: calc(138px + 93px) !important;
+  }
+}
+
 @media screen and (max-width: 408px) {
   .header__main-color.header__mini.header__addBasicUserForm.active {
+    height: calc(138px + 114px) !important;
+  }
+}
+
+@media screen and (max-width: 405px) {
+  .header__main-color.header__mini.header__autoGenerateInduk {
     height: calc(138px + 114px) !important;
   }
 }
@@ -129,6 +235,12 @@
 @media screen and (max-width: 403px) {
   .header__main-color.header__mini.header__daftarUser {
     height: calc(117px + 114px) !important;
+  }
+}
+
+@media screen and (max-width: 397px) {
+  .header__main-color.header__mini.header__autoGenerateInduk {
+    height: calc(138px + 147px) !important;
   }
 }
 
@@ -149,11 +261,27 @@
   .header__main-color.header__mini.header__kategori {
     height: calc(117px + 113px) !important;
   }
+
+  .header__main-color.header__mini.header__resetInduk {
+    height: calc(138px + 92px) !important;
+  }
 }
 
 @media screen and (max-width: 380px) {
   .header__main-color.header__mini.header__auditor {
     height: calc(117px + 113px) !important;
+  }
+}
+
+@media screen and (max-width: 376px) {
+  .header__main-color.header__mini.header__dataInduk.active {
+    height: calc(138px + 113px) !important;
+  }
+}
+
+@media screen and (max-width: 373px) {
+  .header__main-color.header__mini.header__editDataInduk.active {
+    height: calc(138px + 113px) !important;
   }
 }
 
@@ -170,9 +298,21 @@
   }
 }
 
+@media screen and (max-width: 365px) {
+  .header__main-color.header__mini.header__isianInduk.active {
+    height: calc(138px + 113px) !important;
+  }
+}
+
 @media screen and (max-width: 362px) {
   .header__main-color.header__mini.header__addBasicUserForm {
     height: calc(138px + 92px) !important;
+  }
+}
+
+@media screen and (max-width: 358px) {
+  .header__main-color.header__mini.header__dataInduk.active {
+    height: calc(138px + 146px) !important;
   }
 }
 
@@ -182,9 +322,19 @@
   }
 }
 
+@media screen and (max-width: 346px) {
+  .header__main-color.header__mini.header__resetInduk.active {
+    height: calc(138px + 124px) !important;
+  }
+}
+
 @media screen and (max-width: 345px) {
   .header__main-color.header__mini.header__addAuditor {
     height: calc(138px + 92px) !important;
+  }
+
+  .header__main-color.header__mini.header__resetInduk.active {
+    height: calc(138px + 145px) !important;
   }
 }
 
@@ -203,6 +353,16 @@
   .header__main-color.header__mini.header__addBasicUserForm {
     height: calc(138px + 112px) !important;
   }
+
+  .header__main-color.header__mini.header__isianInduk.active {
+    height: calc(138px + 145px) !important;
+  }
+}
+
+@media screen and (max-width: 324px) {
+  .header__main-color.header__mini.header__dataInduk.active {
+    height: calc(138px + 165px) !important;
+  }
 }
 
 @media screen and (max-width: 323px) {
@@ -212,9 +372,19 @@
   }
 }
 
-@media screen and (max-width: 334px) {
-  .header__main-color.header__mini.header__daftarUser.active {
-    height: calc(138px + 112px) !important;
+@media screen and (max-width: 320px) {
+  .header__main-color.header__mini.header__editDataInduk.active {
+    height: calc(138px + 144px) !important;
+  }
+
+  .header__main-color.header__mini.header__isianInduk.active {
+    height: calc(138px + 165px) !important;
+  }
+}
+
+@media screen and (max-width: 316px) {
+  .header__main-color.header__mini.header__editDataInduk.active {
+    height: calc(159px + 144px) !important;
   }
 }
 
@@ -234,11 +404,34 @@
   .header__main-color.header__mini.header__kategori.active {
     height: calc(138px + 133px) !important;
   }
+
+  .header__main-color.header__mini.header__autoGenerateInduk.active {
+    height: calc(159px + 144px) !important;
+  }
+}
+
+@media screen and (max-width: 306px) {
+  .header__main-color.header__mini.header__autoGenerateInduk.active {
+    height: calc(159px + 197px) !important;
+  }
+}
+
+@media screen and (max-width: 305px) {
+  .header__main-color.header__mini.header__addBasicUserForm.active {
+    height: calc(138px + 165px) !important;
+  }
 }
 
 @media screen and (max-width: 301px) {
   .header__main-color.header__mini.header__addAuditor.active {
     height: calc(138px + 133px) !important;
+  }
+}
+
+@media screen and (max-width: 298px) {
+  .header__main-color.header__mini.header__dataInduk,
+  .header__main-color.header__mini.header__editDataInduk {
+    height: calc(138px + 112px) !important;
   }
 }
 
@@ -249,12 +442,6 @@
 
   .header__main-color.header__mini.header__addUserForm.active {
     height: calc(159px + 112px) !important;
-  }
-}
-
-@media screen and (max-width: 305px) {
-  .header__main-color.header__mini.header__addBasicUserForm.active {
-    height: calc(138px + 165px) !important;
   }
 }
 
@@ -272,11 +459,23 @@
   .header__main-color.header__mini.header__unit.active {
     height: calc(117px + 133px) !important;
   }
+
+  .header__main-color.header__mini.header__editDataInduk.active {
+    height: calc(159px + 164px) !important;
+  }
 }
 
 @media screen and (max-width: 287px) {
   .header__main-color.header__mini.header__addUserForm.active {
     height: calc(159px + 133px) !important;
+  }
+
+  .header__main-color.header__mini.header__isianInduk {
+    height: calc(138px + 112px) !important;
+  }
+
+  .header__main-color.header__mini.header__resetInduk.active {
+    height: calc(159px + 143px) !important;
   }
 }
 
@@ -296,9 +495,25 @@
   }
 }
 
+@media screen and (max-width: 272px) {
+  .header__main-color.header__mini.header__autoGenerateInduk.active {
+    height: calc(159px + 216px) !important;
+  }
+}
+
+@media screen and (max-width: 269px) {
+  .header__main-color.header__mini.header__resetInduk {
+    height: calc(138px + 111px) !important;
+  }
+}
+
 @media screen and (max-width: 268px) {
   .header__main-color.header__mini.header__addAuditor.active {
     height: calc(159px + 163px) !important;
+  }
+
+  .header__main-color.header__mini.header__dataInduk {
+    height: calc(138px + 142px) !important;
   }
 }
 
@@ -313,11 +528,19 @@
   .header__main-color.header__mini.header__profile.active {
     height: calc(138px + 132px) !important;
   }
+
+  .header__main-color.header__mini.header__resetInduk {
+    height: calc(138px + 142px) !important;
+  }
 }
 
 @media screen and (max-width: 256px) {
   .header__main-color.header__mini.header__daftarUser.active {
     height: calc(138px + 184px) !important;
+  }
+
+  .header__main-color.header__mini.header__dataInduk.active {
+    height: calc(138px + 215px) !important;
   }
 }
 
@@ -329,6 +552,14 @@
   .header__main-color.header__mini.header__kategori.active {
     height: calc(138px + 153px) !important;
   }
+
+  .header__main-color.header__mini.header__autoGenerateInduk.active {
+    height: calc(159px + 246px) !important;
+  }
+
+  .header__main-color.header__mini.header__resetInduk.active {
+    height: calc(159px + 173px) !important;
+  }
 }
 
 @media screen and (max-width: 248px) {
@@ -337,8 +568,36 @@
   }
 }
 
+@media screen and (max-width: 245px) {
+  .header__main-color.header__mini.header__isianInduk {
+    height: calc(138px + 163px) !important;
+  }
+
+  .header__main-color.header__mini.header__isianInduk.active {
+    height: calc(138px + 214px) !important;
+  }
+}
+
+@media screen and (max-width: 240px) {
+  .header__main-color.header__mini.header__dataInduk.active {
+    height: calc(159px + 235px) !important;
+  }
+}
+
 @media screen and (max-width: 237px) {
   .header__main-color.header__mini.header__addUserForm.active {
     height: calc(180px + 132px) !important;
+  }
+}
+
+@media screen and (max-width: 232px) {
+  .header__main-color.header__mini.header__resetInduk.active {
+    height: calc(180px + 193px) !important;
+  }
+}
+
+@media screen and (max-width: 231px) {
+  .header__main-color.header__mini.header__editDataInduk.active {
+    height: calc(180px + 193px) !important;
   }
 }

@@ -309,12 +309,6 @@ label.error {
   height: 16rem;
 }
 
-.header__main-color.header__mini {
-  height: 16rem !important;
-
-  transition: var(--trans-m);
-}
-
 .main__content > .container-fluid.container__fluid {
   padding: 2.5rem 2.625rem;
 }
@@ -1187,14 +1181,6 @@ footer .container-fluid.container__fluid {
     padding: 1.75rem 2rem;
   }
 
-  .header__main-color.header__mini {
-    height: 15rem !important;
-  }
-
-  .header__main-color.header__mini.active {
-    height: 15rem !important;
-  }
-
   .main__content {
     width: 100% !important;
   }
@@ -1214,26 +1200,6 @@ footer .container-fluid.container__fluid {
   /* ========== Toast ========== */
   .toast__welcome {
     width: 20rem;
-  }
-}
-
-@media screen and (max-width: 800px) {
-  .header__main-color.header__mini.header__autoGenerate {
-    height: 15.5rem !important;
-  }
-
-  .header__main-color.header__mini.header__autoGenerate.active {
-    height: 14rem !important;
-  }
-}
-
-@media screen and (max-width: 620px) {
-  .header__main-color.header__mini.header__addIndikatorForm {
-    height: 15rem !important;
-  }
-
-  .header__main-color.header__mini.header__addIndikatorForm.active {
-    height: 14rem !important;
   }
 }
 
@@ -1275,18 +1241,6 @@ footer .container-fluid.container__fluid {
   /********************************************/
   .main__content > .container-fluid.container__fluid {
     padding: 1rem 1rem;
-  }
-
-  .header__main-color.header__mini {
-    height: 16rem !important;
-  }
-
-  .header__main-color.header__mini.header__addStandarForm {
-    height: 14rem !important;
-  }
-
-  .header__main-color.header__mini.header__addStandarForm.active {
-    height: 13.5rem !important;
   }
 
   .main__content {
@@ -1374,119 +1328,5 @@ footer .container-fluid.container__fluid {
 
   .footer__caption > p {
     text-align: center;
-  }
-}
-
-@media screen and (max-width: 734px) {
-  .header__main-color.header__mini.header__autoGenerate {
-    height: 18rem !important;
-  }
-
-  .header__main-color.header__mini.header__autoGenerate.active {
-    height: 15.5rem !important;
-  }
-}
-
-@media screen and (max-width: 481px) {
-  .header__main-color.header__mini.header__autoGenerate {
-    height: 18rem !important;
-  }
-
-  .header__main-color.header__mini.header__autoGenerate.active {
-    height: 16rem !important;
-  }
-}
-
-@media screen and (max-width: 439px) {
-  .header__main-color.header__mini.header__addIndikatorForm {
-    height: 17rem !important;
-  }
-
-  .header__main-color.header__mini.header__addIndikatorForm.active {
-    height: 14.5rem !important;
-  }
-}
-
-@media screen and (max-width: 425px) {
-  .header__main-color.header__mini.header__addStandarForm {
-    height: 16rem !important;
-  }
-
-  .header__main-color.header__mini.header__autoGenerate {
-    height: 21.5rem !important;
-  }
-
-  .header__main-color.header__mini.header__autoGenerate.active {
-    height: 17rem !important;
-  }
-}
-
-@media screen and (max-width: 390px) {
-  .header__main-color.header__mini {
-    height: 17rem !important;
-  }
-
-  .header__main-color.header__mini.header__addStandarForm {
-    height: 19rem !important;
-  }
-
-  .header__main-color.header__mini.header__addStandarForm.active {
-    height: 15rem !important;
-  }
-
-  .header__main-color.header__mini.header__autoGenerate {
-    height: 24rem !important;
-  }
-
-  .header__main-color.header__mini.header__autoGenerate.active {
-    height: 17rem !important;
-  }
-}
-
-@media screen and (max-width: 419px) {
-  .header__main-color.header__mini.header__addIndikatorForm {
-    height: 19.5rem !important;
-  }
-
-  .header__main-color.header__mini.header__addIndikatorForm.active {
-    height: 14.5rem !important;
-  }
-}
-
-@media screen and (max-width: 372px) {
-  .header__main-color.header__mini.header__addIndikatorForm {
-    height: 21.5rem !important;
-  }
-
-  .header__main-color.header__mini.header__addIndikatorForm.active {
-    height: 15rem !important;
-  }
-}
-
-@media screen and (max-width: 342px) {
-  .header__main-color.header__mini.header__addIndikatorForm {
-    height: 24rem !important;
-  }
-
-  .header__main-color.header__mini.header__addIndikatorForm.active {
-    height: 16rem !important;
-  }
-}
-
-@media screen and (max-width: 320px) {
-  .header__main-color.header__mini {
-    height: 22.5rem !important;
-  }
-
-  .header__main-color.header__mini.header__addStandarForm {
-    height: 21.5rem !important;
-  }
-
-  .header__main-color.header__mini.header__autoGenerate {
-    height: 28rem !important;
-  }
-
-  .header__main-color.header__mini.header__autoGenerate.active {
-    height: 17rem !important;
   }
 }
