@@ -26,7 +26,9 @@
   .header__main-color.header__mini.header__addAuditor,
   .header__main-color.header__mini.header__addAuditor.active,
   .header__main-color.header__mini.header__unit,
-  .header__main-color.header__mini.header__unit.active {
+  .header__main-color.header__mini.header__unit.active,
+  .header__main-color.header__mini.header__kategori,
+  .header__main-color.header__mini.header__kategori.active {
     height: calc(137px + 103px) !important;
   }
 }
@@ -55,7 +57,9 @@
   .header__main-color.header__mini.header__addAuditor,
   .header__main-color.header__mini.header__addAuditor.active,
   .header__main-color.header__mini.header__unit,
-  .header__main-color.header__mini.header__unit.active {
+  .header__main-color.header__mini.header__unit.active,
+  .header__main-color.header__mini.header__kategori,
+  .header__main-color.header__mini.header__kategori.active {
     height: calc(117px + 96px) !important;
   }
 }
@@ -69,6 +73,12 @@
 
 @media screen and (max-width: 484px) {
   .header__main-color.header__mini.header__daftarUser.active {
+    height: calc(117px + 115px) !important;
+  }
+}
+
+@media screen and (max-width: 460px) {
+  .header__main-color.header__mini.header__kategori.active {
     height: calc(117px + 115px) !important;
   }
 }
@@ -132,6 +142,12 @@
 @media screen and (max-width: 390px) {
   .header__main-color.header__mini.header__addAuditor.active {
     height: calc(138px + 113px) !important;
+  }
+}
+
+@media screen and (max-width: 384px) {
+  .header__main-color.header__mini.header__kategori {
+    height: calc(117px + 113px) !important;
   }
 }
 
@@ -206,11 +222,16 @@
   .header__main-color.header__mini.header__addAuditor {
     height: calc(138px + 112px) !important;
   }
+
+  .header__main-color.header__mini.header__kategori.active {
+    height: calc(138px + 112px) !important;
+  }
 }
 
 @media screen and (max-width: 308px) {
   .header__main-color.header__mini.header__daftarUser.active,
-  .header__main-color.header__mini.header__auditor.active {
+  .header__main-color.header__mini.header__auditor.active,
+  .header__main-color.header__mini.header__kategori.active {
     height: calc(138px + 133px) !important;
   }
 }
@@ -303,6 +324,10 @@
 @media screen and (max-width: 254px) {
   .header__main-color.header__mini.header__daftarUser {
     height: calc(138px + 110px) !important;
+  }
+
+  .header__main-color.header__mini.header__kategori.active {
+    height: calc(138px + 153px) !important;
   }
 }
 

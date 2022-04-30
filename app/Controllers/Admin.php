@@ -328,7 +328,7 @@ class Admin extends BaseController
             'title' => 'Daftar Kategori | SIPMPP UNDIP ' . $this->thisTahun,
             'tab' => 'kategori',
             'css' => 'styles-admin-kategori.css',
-            'header' => 'header__mini',
+            'header' => 'header__mini header__kategori',
             'i' => $this->i,
             'usersession' => $usersession,
             'kategori' => $kategori,
