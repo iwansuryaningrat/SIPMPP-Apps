@@ -66,6 +66,18 @@ ul {
   list-style: none;
 }
 
+html.nav__open {
+  overflow: hidden !important;
+}
+
+.wrapper__sipmpp {
+  min-height: 100vh;
+  position: relative;
+  top: 0;
+  height: 100vh;
+  overflow: auto;
+}
+
 /**************************************/
 /*               Button               */
 /**************************************/
@@ -255,7 +267,7 @@ label.error {
 }
 
 .main__content.minimize__sidebar {
-  width: calc(100% - 5.75rem);
+  width: calc(100% - 5.75rem) !important;
 }
 
 .header__main-color {
@@ -304,16 +316,6 @@ label.error {
 
 .header__main-color {
   height: 16rem;
-}
-
-.header__main-color.header__big {
-  height: 22.25rem;
-}
-
-.header__main-color.header__mini {
-  height: 16rem !important;
-
-  transition: var(--trans-m);
 }
 
 .main__content > .container-fluid.container__fluid {
@@ -1136,6 +1138,10 @@ footer .container-fluid.container__fluid {
 
 /* ========== Tablet View 2 ========== */
 @media screen and (max-width: 991px) {
+  .nav__open .wrapper__sipmpp {
+    overflow-x: hidden;
+  }
+
   /**************************************/
   /*               Button               */
   /**************************************/
@@ -1150,12 +1156,12 @@ footer .container-fluid.container__fluid {
     padding: 1.75rem 2rem;
   }
 
-  .header__main-color.header__big {
-    height: 27rem;
+  .main__content {
+    width: 100% !important;
   }
 
-  .header__main-color.header__big.active {
-    height: 22.25rem;
+  .nav__open .main__content {
+    transform: translate3d(18rem, 0, 0) !important;
   }
 
   /**************************************/
@@ -1188,16 +1194,11 @@ footer .container-fluid.container__fluid {
     padding: 1rem 1rem;
   }
 
-  .header__main-color.header__big {
-    height: 28rem;
-  }
-
-  .header__main-color.header__big.active {
-    height: 24rem;
-  }
-
   .main__content {
-    width: calc(100% - 12.375rem) !important;
+    width: 100% !important;
+  }
+  .nav__open .main__content {
+    transform: translate3d(12.375rem, 0, 0) !important;
   }
 
   .main__content.minimize__sidebar {
