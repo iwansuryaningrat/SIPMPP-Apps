@@ -745,7 +745,7 @@ class Admin extends BaseController
             'title' => 'Daftar Penilaian | SIPMPP UNDIP ' . $this->thisTahun,
             'tab' => 'penilaian',
             'css' => 'styles-admin-penilaian.css',
-            'header' => 'header__mini',
+            'header' => 'header__mini header__penilaian',
             'i' => $this->i,
             'users' => $users,
             'dataPenilaian' => $dataPenilaian,

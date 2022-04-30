@@ -52,7 +52,9 @@
   .header__main-color.header__mini.header__autoGenerateInduk,
   .header__main-color.header__mini.header__autoGenerateInduk.active,
   .header__main-color.header__mini.header__resetInduk,
-  .header__main-color.header__mini.header__resetInduk.active {
+  .header__main-color.header__mini.header__resetInduk.active,
+  .header__main-color.header__mini.header__penilaian,
+  .header__main-color.header__mini.header__penilaian.active {
     height: calc(137px + 103px) !important;
   }
 }
@@ -97,7 +99,9 @@
   .header__main-color.header__mini.header__autoGenerateInduk,
   .header__main-color.header__mini.header__autoGenerateInduk.active,
   .header__main-color.header__mini.header__resetInduk,
-  .header__main-color.header__mini.header__resetInduk.active {
+  .header__main-color.header__mini.header__resetInduk.active,
+  .header__main-color.header__mini.header__penilaian,
+  .header__main-color.header__mini.header__penilaian.active {
     height: calc(117px + 96px) !important;
   }
 }
@@ -148,6 +152,12 @@
 @media screen and (max-width: 481px) {
   .header__main-color.header__mini.header__autoGenerateInduk.active {
     height: calc(138px + 150px) !important;
+  }
+}
+
+@media screen and (max-width: 463px) {
+  .header__main-color.header__mini.header__penilaian.active {
+    height: calc(117px + 115px) !important;
   }
 }
 
@@ -254,6 +264,12 @@
 @media screen and (max-width: 390px) {
   .header__main-color.header__mini.header__addAuditor.active {
     height: calc(138px + 113px) !important;
+  }
+}
+
+@media screen and (max-width: 387px) {
+  .header__main-color.header__mini.header__penilaian {
+    height: calc(117px + 113px) !important;
   }
 }
 
@@ -388,6 +404,12 @@
   }
 }
 
+@media screen and (max-width: 315px) {
+  .header__main-color.header__mini.header__penilaian.active {
+    height: calc(138px + 112px) !important;
+  }
+}
+
 @media screen and (max-width: 314px) {
   .header__main-color.header__mini.header__addAuditor {
     height: calc(138px + 112px) !important;
@@ -419,6 +441,12 @@
 @media screen and (max-width: 305px) {
   .header__main-color.header__mini.header__addBasicUserForm.active {
     height: calc(138px + 165px) !important;
+  }
+}
+
+@media screen and (max-width: 303px) {
+  .header__main-color.header__mini.header__penilaian.active {
+    height: calc(138px + 133px) !important;
   }
 }
 
@@ -584,9 +612,19 @@
   }
 }
 
+@media screen and (max-width: 239px) {
+  .header__main-color.header__mini.header__penilaian {
+    height: calc(138px + 111px) !important;
+  }
+}
+
 @media screen and (max-width: 237px) {
   .header__main-color.header__mini.header__addUserForm.active {
     height: calc(180px + 132px) !important;
+  }
+
+  .header__main-color.header__mini.header__penilaian.active {
+    height: calc(159px + 153px) !important;
   }
 }
 
