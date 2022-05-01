@@ -1088,13 +1088,14 @@ footer .container-fluid.container__fluid {
 }
 
 .toast__welcome {
+  float: right;
+
   width: 28rem;
 
   border-top: none;
   border-right: none;
   border-bottom: none;
-  border-left: 0.375rem solid rgb(12, 29, 81);
-  border-radius: 0.375rem;
+  border-left: 0.375rem solid var(--space-cadet);
   background-color: var(--white);
   -webkit-box-shadow: 0 0.25rem 1.5rem rgba(0, 0, 0, 0.25);
   -moz-box-shadow: 0 0.25rem 1.5rem rgba(0, 0, 0, 0.25);
@@ -1280,6 +1281,6 @@ footer .container-fluid.container__fluid {
 
   /* ========== Toast ========== */
   .toast__welcome {
-    width: 15rem;
+    width: 90%;
   }
 }

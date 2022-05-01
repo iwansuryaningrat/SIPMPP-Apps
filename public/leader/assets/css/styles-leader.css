@@ -1088,6 +1088,8 @@ footer .container-fluid.container__fluid {
 }
 
 .toast__welcome {
+  float: right;
+
   width: 28rem;
 
   border-top: none;
@@ -1279,6 +1281,6 @@ footer .container-fluid.container__fluid {
 
   /* ========== Toast ========== */
   .toast__welcome {
-    width: 15rem;
+    width: 90%;
   }
 }

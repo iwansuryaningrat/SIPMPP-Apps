@@ -72,11 +72,13 @@ html.nav__open {
 }
 
 .wrapper__sipmpp {
-  min-height: 100vh;
   position: relative;
   top: 0;
-  height: 100vh;
+
   overflow: auto;
+
+  height: 100vh;
+  min-height: 100vh;
 }
 
 /**************************************/
@@ -760,6 +762,10 @@ label.error {
 }
 
 ::-webkit-scrollbar-track {
+  background: rgba(0, 0, 0, 0.15) !important;
+}
+
+.sidebar__content::-webkit-scrollbar-track {
   background: rgba(255, 255, 255, 0.1) !important;
 }
 
@@ -1104,6 +1110,8 @@ footer .container-fluid.container__fluid {
 }
 
 .toast__welcome {
+  float: right;
+
   width: 28rem;
 
   border-top: none;
@@ -1320,13 +1328,12 @@ footer .container-fluid.container__fluid {
   .footer__caption {
     justify-content: center;
   }
+  .footer__caption > p {
+    text-align: center;
+  }
 
   /* ========== Toast ========== */
   .toast__welcome {
-    width: 15rem;
-  }
-
-  .footer__caption > p {
-    text-align: center;
+    width: 90%;
   }
 }
