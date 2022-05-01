@@ -64,7 +64,13 @@
   .header__main-color.header__mini.header__addStandarForm,
   .header__main-color.header__mini.header__addStandarForm.active,
   .header__main-color.header__mini.header__editStandarForm,
-  .header__main-color.header__mini.header__editStandarForm.active {
+  .header__main-color.header__mini.header__editStandarForm.active,
+  .header__main-color.header__mini.header__indikator,
+  .header__main-color.header__mini.header__indikator.active,
+  .header__main-color.header__mini.header__addIndikatorForm,
+  .header__main-color.header__mini.header__addIndikatorForm.active,
+  .header__main-color.header__mini.header__editIndikatorForm,
+  .header__main-color.header__mini.header__editIndikatorForm.active {
     height: calc(137px + 103px) !important;
   }
 }
@@ -121,8 +127,26 @@
   .header__main-color.header__mini.header__addStandarForm,
   .header__main-color.header__mini.header__addStandarForm.active,
   .header__main-color.header__mini.header__editStandarForm,
-  .header__main-color.header__mini.header__editStandarForm.active {
+  .header__main-color.header__mini.header__editStandarForm.active,
+  .header__main-color.header__mini.header__indikator,
+  .header__main-color.header__mini.header__indikator.active,
+  .header__main-color.header__mini.header__addIndikatorForm,
+  .header__main-color.header__mini.header__addIndikatorForm.active,
+  .header__main-color.header__mini.header__editIndikatorForm,
+  .header__main-color.header__mini.header__editIndikatorForm.active {
     height: calc(117px + 96px) !important;
+  }
+}
+
+@media screen and (max-width: 533px) {
+  .header__main-color.header__mini.header__editIndikatorForm.active {
+    height: calc(138px + 95px) !important;
+  }
+}
+
+@media screen and (max-width: 532px) {
+  .header__main-color.header__mini.header__addIndikatorForm.active {
+    height: calc(138px + 95px) !important;
   }
 }
 
@@ -186,7 +210,8 @@
 }
 
 @media screen and (max-width: 463px) {
-  .header__main-color.header__mini.header__penilaian.active {
+  .header__main-color.header__mini.header__penilaian.active,
+  .header__main-color.header__mini.header__indikator.active {
     height: calc(117px + 115px) !important;
   }
 }
@@ -208,9 +233,19 @@
   }
 }
 
+@media screen and (max-width: 457px) {
+  .header__main-color.header__mini.header__editIndikatorForm {
+    height: calc(138px + 94px) !important;
+  }
+}
+
 @media screen and (max-width: 456px) {
   .header__main-color.header__mini.header__auditor.active {
     height: calc(117px + 115px) !important;
+  }
+
+  .header__main-color.header__mini.header__addIndikatorForm {
+    height: calc(138px + 93px) !important;
   }
 }
 
@@ -328,7 +363,8 @@
 
 @media screen and (max-width: 391px) {
   /* ========== profile ========== */
-  .header__main-color.header__mini.header__profile.active {
+  .header__main-color.header__mini.header__profile.active,
+  .header__main-color.header__mini.header__indikator {
     height: calc(117px + 113px) !important;
   }
 }
@@ -342,6 +378,10 @@
 @media screen and (max-width: 387px) {
   .header__main-color.header__mini.header__penilaian {
     height: calc(117px + 113px) !important;
+  }
+
+  .header__main-color.header__mini.header__indikator.active {
+    height: calc(138px + 113px) !important;
   }
 }
 
@@ -364,6 +404,12 @@
 @media screen and (max-width: 379px) {
   .header__main-color.header__mini.header__standar {
     height: calc(117px + 113px) !important;
+  }
+}
+
+@media screen and (max-width: 377px) {
+  .header__main-color.header__mini.header__addIndikatorForm.active {
+    height: calc(138px + 113px) !important;
   }
 }
 
@@ -456,6 +502,12 @@
   }
 }
 
+@media screen and (max-width: 337px) {
+  .header__main-color.header__mini.header__editIndikatorForm.active {
+    height: calc(138px + 112px) !important;
+  }
+}
+
 @media screen and (max-width: 334px) {
   .header__main-color.header__mini.header__daftarUser.active {
     height: calc(138px + 112px) !important;
@@ -480,6 +532,18 @@
 @media screen and (max-width: 331px) {
   .header__main-color.header__mini.header__autoGeneratePenilaian.active {
     height: calc(138px + 166px) !important;
+  }
+}
+
+@media screen and (max-width: 326px) {
+  .header__main-color.header__mini.header__editIndikatorForm.active {
+    height: calc(159px + 112px) !important;
+  }
+}
+
+@media screen and (max-width: 325px) {
+  .header__main-color.header__mini.header__addIndikatorForm.active {
+    height: calc(159px + 112px) !important;
   }
 }
 
@@ -540,7 +604,8 @@
     height: calc(138px + 123px) !important;
   }
 
-  .header__main-color.header__mini.header__standar.active {
+  .header__main-color.header__mini.header__standar.active,
+  .header__main-color.header__mini.header__indikator {
     height: calc(138px + 112px) !important;
   }
 }
@@ -548,7 +613,8 @@
 @media screen and (max-width: 308px) {
   .header__main-color.header__mini.header__daftarUser.active,
   .header__main-color.header__mini.header__auditor.active,
-  .header__main-color.header__mini.header__kategori.active {
+  .header__main-color.header__mini.header__kategori.active,
+  .header__main-color.header__mini.header__indikator.active {
     height: calc(138px + 133px) !important;
   }
 
@@ -598,6 +664,10 @@
   .header__main-color.header__mini.header__addStandarForm.active {
     height: calc(159px + 133px) !important;
   }
+
+  .header__main-color.header__mini.header__addIndikatorForm {
+    height: calc(138px + 112px) !important;
+  }
 }
 
 @media screen and (max-width: 299px) {
@@ -629,9 +699,19 @@
   }
 }
 
+@media screen and (max-width: 294px) {
+  .header__main-color.header__mini.header__editIndikatorForm.active {
+    height: calc(159px + 143px) !important;
+  }
+}
+
 @media screen and (max-width: 292px) {
   .header__main-color.header__mini.header__resetPenilaian {
     height: calc(138px + 143px) !important;
+  }
+
+  .header__main-color.header__mini.header__addIndikatorForm.active {
+    height: calc(159px + 143px) !important;
   }
 }
 
@@ -698,7 +778,8 @@
 }
 
 @media screen and (max-width: 276px) {
-  .header__main-color.header__mini.header__addStandarForm.active {
+  .header__main-color.header__mini.header__addStandarForm.active,
+  .header__main-color.header__mini.header__addIndikatorForm.active {
     height: calc(159px + 164px) !important;
   }
 }
@@ -737,6 +818,12 @@
   }
 }
 
+@media screen and (max-width: 261px) {
+  .header__main-color.header__mini.header__editIndikatorForm {
+    height: calc(138px + 111px) !important;
+  }
+}
+
 @media screen and (max-width: 259px) {
   /* ========== profile ========== */
   .header__main-color.header__mini.header__profile.active {
@@ -745,6 +832,20 @@
 
   .header__main-color.header__mini.header__resetInduk {
     height: calc(138px + 142px) !important;
+  }
+
+  .header__main-color.header__mini.header__indikator.active {
+    height: calc(138px + 153px) !important;
+  }
+}
+
+@media screen and (max-width: 258px) {
+  .header__main-color.header__mini.header__addIndikatorForm.active {
+    height: calc(180px + 163px) !important;
+  }
+
+  .header__main-color.header__mini.header__editIndikatorForm.active {
+    height: calc(180px + 142px) !important;
   }
 }
 
@@ -790,9 +891,29 @@
   }
 }
 
+@media screen and (max-width: 253px) {
+  .header__main-color.header__mini.header__editIndikatorForm.active {
+    height: calc(180px + 163px) !important;
+  }
+}
+
 @media screen and (max-width: 250px) {
   .header__main-color.header__mini.header__standar.active {
     height: calc(138px + 153px) !important;
+  }
+
+  .header__main-color.header__mini.header__indikator.active {
+    height: calc(159px + 153px) !important;
+  }
+
+  .header__main-color.header__mini.header__editIndikatorForm {
+    height: calc(159px + 111px) !important;
+  }
+}
+
+@media screen and (max-width: 249px) {
+  .header__main-color.header__mini.header__addIndikatorForm {
+    height: calc(159px + 111px) !important;
   }
 }
 
@@ -844,6 +965,10 @@
   .header__main-color.header__mini.header__editStandarForm.active {
     height: calc(180px + 162px) !important;
   }
+
+  .header__main-color.header__mini.header__editIndikatorForm.active {
+    height: calc(201px + 162px) !important;
+  }
 }
 
 @media screen and (max-width: 232px) {
@@ -874,5 +999,12 @@
 @media screen and (max-width: 229px) {
   .header__main-color.header__mini.header__autoGeneratePenilaian.active {
     height: calc(201px + 214px) !important;
+  }
+}
+
+@media screen and (max-width: 228px) {
+  .header__main-color.header__mini.header__addIndikatorForm.active,
+  .header__main-color.header__mini.header__editIndikatorForm.active {
+    height: calc(222px + 162px) !important;
   }
 }
