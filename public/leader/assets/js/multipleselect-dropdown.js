@@ -24,7 +24,7 @@ style.innerHTML = `
 }
 
 .multiselect-dropdown span.optext{
-  background-color: var(--light-color);
+  background-color: var(--lavender);
   padding: .5rem 1rem 0.5rem 0.5rem;
   border-radius: 4px; 
   margin-top: .25rem;

@@ -74,14 +74,14 @@
 
 <!-- Modal edit -->
 <div class="modal fade edit__kategori__modal" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false"
-    tabindex="-1" aria-labelledby="modal-unit" aria-hidden="true">
+    tabindex="-1" aria-labelledby="staticBackdrop" aria-hidden="true">
     <div class="modal-dialog modal-dialog-centered">
         <div class="modal-content modal__content">
             <div class="modal-header modal__header">
                 <button type="button" class="btn-close shadow-none" data-bs-dismiss="modal" aria-label="Close"></button>
             </div>
             <div class="modal-body modal__body">
-                <h4 class="modal-title" id="modal-data-induk">Edit Kategori</h4>
+                <h4 class="modal-title">Edit Kategori</h4>
 
                 <!-- form -->
                 <form class="modal__form" method="POST" action="/editdata/editkategori" id="formEditKategori">
@@ -109,14 +109,14 @@
 
 <!-- Modal add -->
 <div class="modal fade add__kategori__modal" id="staticBackdrop2" data-bs-backdrop="static" data-bs-keyboard="false"
-    tabindex="-1" aria-labelledby="modal-unit" aria-hidden="true">
+    tabindex="-1" aria-labelledby="staticBackdrop2" aria-hidden="true">
     <div class="modal-dialog modal-dialog-centered">
         <div class="modal-content modal__content">
             <div class="modal-header modal__header">
                 <button type="button" class="btn-close shadow-none" data-bs-dismiss="modal" aria-label="Close"></button>
             </div>
             <div class="modal-body modal__body">
-                <h4 class="modal-title" id="modal-data-induk">Add Kategori</h4>
+                <h4 class="modal-title">Add Kategori</h4>
 
                 <!-- form -->
                 <form class="modal__form" method="POST" action="/savedata/addkategori" id="formAddKategori">

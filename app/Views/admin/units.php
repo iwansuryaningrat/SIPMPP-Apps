@@ -26,8 +26,8 @@
 <!--========== body main ==========-->
 <div class="title__table__add mb-3">
   <h4 class="title__body__user me-3 mb-lg-4 mb-3">Daftar Unit</h4>
-  <a href="/admin/addUnit" class="btn shadow-none btn__add btn__dark add__unit__icon mb-lg-4 mb-3" role="button"
-    data-bs-toggle="modal" href="#staticBackdrop2">
+  <a class="btn shadow-none btn__add btn__dark add__unit__icon mb-lg-4 mb-3" role="button" data-bs-toggle="modal"
+    href="#staticBackdrop2">
     <i class="fa-solid fa-plus"></i>
     Add Unit
   </a>
@@ -74,14 +74,14 @@
 <?= $this->section('modal'); ?>
 <!-- Modal edit -->
 <div class="modal fade edit__unit__modal" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false"
-  tabindex="-1" aria-labelledby="modal-unit" aria-hidden="true">
+  tabindex="-1" aria-labelledby="staticBackdrop" aria-hidden="true">
   <div class="modal-dialog modal-dialog-centered">
     <div class="modal-content modal__content">
       <div class="modal-header modal__header">
         <button type="button" class="btn-close shadow-none" data-bs-dismiss="modal" aria-label="Close"></button>
       </div>
       <div class="modal-body modal__body">
-        <h4 class="modal-title" id="modal-data-induk">Edit Unit</h4>
+        <h4 class="modal-title">Edit Unit</h4>
 
         <!-- form -->
         <form class="modal__form" method="POST" action="/Editdata/editunit" id="formEditUnit">
@@ -108,14 +108,14 @@
 
 <!-- Modal add -->
 <div class="modal fade add__unit__modal" id="staticBackdrop2" data-bs-backdrop="static" data-bs-keyboard="false"
-  tabindex="-1" aria-labelledby="modal-unit" aria-hidden="true">
+  tabindex="-1" aria-labelledby="staticBackdrop2" aria-hidden="true">
   <div class="modal-dialog modal-dialog-centered">
     <div class="modal-content modal__content">
       <div class="modal-header modal__header">
         <button type="button" class="btn-close shadow-none" data-bs-dismiss="modal" aria-label="Close"></button>
       </div>
       <div class="modal-body modal__body">
-        <h4 class="modal-title" id="modal-data-induk">Add Unit</h4>
+        <h4 class="modal-title">Add Unit</h4>
 
         <!-- form -->
         <form class="modal__form" method="POST" action="/savedata/addunit" id="formAddUnit">
