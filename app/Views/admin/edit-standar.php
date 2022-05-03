@@ -33,7 +33,7 @@
             <label for="kategori" class="col-lg-3 col-md-3 col-sm-4 col-form-label form__label">Kategori
                 <span class="color__danger">*</span></label>
             <div class="col-lg-6 col-md-9 col-sm-8">
-                <select class="form-select form__select shadow-none" name="kategori_id" id="kategori" required disabled
+                <select class="form-select form__select shadow-none" name="kategori_id" id="kategori" disabled
                     autocomplete="off">
                     <option disabled selected>Pilih Kategori</option>
                     <?php foreach ($kategori as $kategori) : ?>

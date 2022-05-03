@@ -187,11 +187,6 @@
     });
 
     // tooltips
-    const tooltipsEdit = document.querySelectorAll(".edit__data__induk__icon");
-    tooltipsEdit.forEach((t) => {
-        new bootstrap.Tooltip(t);
-    });
-
     const tooltipsDelete = document.querySelectorAll(".delete__data__induk__icon");
     tooltipsDelete.forEach((t) => {
         new bootstrap.Tooltip(t);
