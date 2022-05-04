@@ -297,6 +297,31 @@
 
 <?= $this->endSection(); ?>
 
+<?= $this->section('modal'); ?>
+<!-- Toast Welcome -->
+<div class="toast-container position-fixed bottom-0 end-0 p-4 animate__animated animate__slow animate__fadeInDown">
+  <div class="toast toast__welcome" role="alert" aria-live="assertive" aria-atomic="true" data-autohide="true"
+    data-bs-delay="5000">
+    <div class="row">
+      <div class="toast__left col-2 px-0 d-flex align-items-center justify-content-center">
+        <img src="/admin/assets/img/undip-logo-color.png" class="toast__welcome-img" alt="logo-undip">
+      </div>
+      <div class="toast__right col-10">
+        <div class="toast-header border-0 px-0">
+          <strong class="me-auto">SIPMPP UNDIP <span id="year__now"></span></strong>
+          <button type="button" class="btn-close shadow-none" data-bs-dismiss="toast" aria-label="Close"></button>
+        </div>
+        <div class="toast-body pt-0 ps-0 pe-3 pb-2">
+          Selamat Datang di Dashboard <span><?= $data_user['unit']; ?></span>
+          SIPMPP
+          UNDIP
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<?= $this->endSection(); ?>
+
 <?= $this->section('userscript'); ?>
 <!-- chart js -->
 <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
