@@ -6,6 +6,7 @@ $(document).click((e) => {
     $("#main-content").removeClass("minimize__sidebar");
     $(".header__mini").removeClass("active");
     $(".header__big").removeClass("active");
+    $("html").addClass("nav__open");
   }
 });
 
