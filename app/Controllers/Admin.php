@@ -799,7 +799,6 @@ class Admin extends BaseController
             'daftartahun' => $daftartahun,
             'daftarunit' => $daftarunit,
         ];
-        ;
 
         return view('/admin/reset-penilaian', $data);
     }
@@ -823,8 +822,7 @@ class Admin extends BaseController
             'cssCustom' => '',
             'daftartahun' => $daftartahun,
             'daftarunit' => $daftarunit,
-        ];
-        ;
+        ];;
 
         return view('/admin/reset-dataInduk', $data);
     }
