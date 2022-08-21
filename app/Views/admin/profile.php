@@ -13,8 +13,8 @@
       <p>Halo <span><?php // uses regex that accepts any word character or hyphen in last name
                     function getFirstWord($string)
                     {
-                        $arr = explode(' ', trim($string));
-                        return isset($arr[0]) ? $arr[0] : $string;
+                      $arr = explode(' ', trim($string));
+                      return isset($arr[0]) ? $arr[0] : $string;
                     }
                     echo getFirstWord($usersession['nama']);
                     ?>
@@ -30,22 +30,18 @@
     <h5>Profile Pengguna</h5>
     <hr class="head__hr" />
     <?= session()->getFlashdata('profilemessage'); ?>
-    <form class="form__profile" id="formChangeInfo" action="/editdata/editprofile" enctype="multipart/form-data"
-      method="POST">
+    <form class="form__profile" id="formChangeInfo" action="/editdata/editprofile" enctype="multipart/form-data" method="POST">
       <!-- foto -->
       <div>
         <label for="photo-profile" class="form-label form__label">Foto Profil</label>
         <div class="input-group input-group__photo">
           <div class="img__input-photo mb-3">
             <div class="img__photo-field">
-              <img
-                src="/profile/<?= $data_user['foto']; ?>"
-                alt="photo-profile" class="img__input" id="img-input-preview" />
+              <img src="/profile/<?= $data_user['foto']; ?>" alt="photo-profile" class="img__input" id="img-input-preview" />
             </div>
           </div>
           <div class="img__input-field">
-            <input type="file" class="form-control form__control__photo" id="photo-profile"
-              aria-labelledby="photo-notice" onchange="previewImage(this)" name="photo-profile" />
+            <input type="file" class="form-control form__control__photo" id="photo-profile" aria-labelledby="photo-notice" onchange="previewImage(this)" name="photo-profile" />
             <label class="form__label__photo btn btn__dark ellipsis__text" for="photo-profile">Ubah Profile</label>
             <label id="photo-notice" class="form-text form__text mb-3">
               Gambar profil Anda sebaiknya memiliki raiso 1:1 dan
@@ -57,30 +53,22 @@
       <!-- Nama lengkap -->
       <div class="mb-3">
         <label for="fullname" class="form-label form__label">Nama Lengkap</label>
-        <input type="text" class="form-control form__control shadow-none" id="fullname"
-          value="<?= $data_user['nama']; ?>"
-          name="fullname" required />
+        <input type="text" class="form-control form__control shadow-none" id="fullname" value="<?= $data_user['nama']; ?>" name="fullname" required />
       </div>
       <!-- email -->
       <div class="mb-3">
         <label for="email" class="form-label form__label">Email</label>
-        <input type="text" class="form-control form__control shadow-none" id="email" name="email" disabled
-          value="<?= $data_user['email']; ?>"
-          required />
+        <input type="text" class="form-control form__control shadow-none" id="email" name="email" disabled value="<?= $data_user['email']; ?>" required />
       </div>
       <!-- nip -->
       <div class="mb-3">
         <label for="nip" class="form-label form__label">NIP</label>
-        <input type="text" class="form-control form__control shadow-none" id="nip" name="nip"
-          value="<?= $user['nip']; ?>"
-          required />
+        <input type="text" class="form-control form__control shadow-none" id="nip" name="nip" value="<?= $user['nip']; ?>" required onkeypress="javascript: return validationNumber(event)" />
       </div>
       <!-- nomor telepon -->
       <div class="mb-3 mb__big">
         <label for="no-telp" class="form-label form__label">Nomor telepon</label>
-        <input type="text" class="form-control form__control shadow-none" id="no-telp" name="no-telp"
-          value="<?= $user['telp']; ?>"
-          required />
+        <input type="text" class="form-control form__control shadow-none" id="no-telp" name="no-telp" value="<?= $user['telp']; ?>" required onkeypress="javascript: return validationNumber(event)" />
       </div>
       <!-- button -->
       <div class="d-flex justify-content-end">
@@ -99,17 +87,13 @@
       <?= session()->getFlashdata('pwdmessage'); ?>
       <form class="form__change__password" id="formChangePassword" action="/editdata/editpassword" method="POST">
         <div class="mb-3 position-relative old__pass">
-          <label for="oldPassword" class="form-label form__label">Password Lama <span
-              class="color__danger">*</span></label>
-          <input type="password" class="form-control form__control shadow-none" id="oldPassword" name="oldPassword"
-            autocomplete="off" required />
+          <label for="oldPassword" class="form-label form__label">Password Lama <span class="color__danger">*</span></label>
+          <input type="password" class="form-control form__control shadow-none" id="oldPassword" name="oldPassword" autocomplete="off" required />
           <span id="toggleOldPassword"><i class="fa-solid fa-eye icon__hide__password" title="show password"></i></span>
         </div>
         <div class="mb-3 position-relative new__pass">
-          <label for="newPassword" class="form-label form__label">Password Baru <span
-              class="color__danger">*</span></label>
-          <input type="password" class="form-control form__control shadow-none" id="newPassword" name="newPassword"
-            aria-labelledby="new-password-notice" autocomplete="off" required />
+          <label for="newPassword" class="form-label form__label">Password Baru <span class="color__danger">*</span></label>
+          <input type="password" class="form-control form__control shadow-none" id="newPassword" name="newPassword" aria-labelledby="new-password-notice" autocomplete="off" required />
           <span id="toggleNewPassword"><i class="fa-solid fa-eye icon__hide__password" title="show password"></i></span>
           <div id="new-password-notice" class="form-text form__text">
             Gunakan minimal 8 karakter dengan kombinasi huruf dan angka.
@@ -118,10 +102,8 @@
         <div class="mb-3 mb__big position-relative confirm__pass">
           <label for="newPasswordConfirm" class="form-label form__label">Konfirmasi Password Baru
             <span class="color__danger">*</span></label>
-          <input type="password" class="form-control form__control shadow-none" name="newPasswordConfirm"
-            id="newPasswordConfirm" autocomplete="off" required />
-          <span id="toggleNewPasswordConfirm"><i class="fa-solid fa-eye icon__hide__password"
-              title="show password"></i></span>
+          <input type="password" class="form-control form__control shadow-none" name="newPasswordConfirm" id="newPasswordConfirm" autocomplete="off" required />
+          <span id="toggleNewPasswordConfirm"><i class="fa-solid fa-eye icon__hide__password" title="show password"></i></span>
         </div>
         <div class="d-flex justify-content-end">
           <button type="submit" class="btn btn__light shadow-none ellipsis__text" id="btnSubmitChangePassword">
@@ -137,11 +119,17 @@
 
 <?= $this->section('script'); ?>
 <!-- jquery validate -->
-<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.19.3/jquery.validate.min.js"
-  integrity="sha512-37T7leoNS06R80c8Ulq7cdCDU5MNQBwlYoy1TX/WUsLFC2eYNqtKlV0QjH7r8JpG/S0GUMZwebnVFLPd6SU5yg=="
-  crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.19.3/jquery.validate.min.js" integrity="sha512-37T7leoNS06R80c8Ulq7cdCDU5MNQBwlYoy1TX/WUsLFC2eYNqtKlV0QjH7r8JpG/S0GUMZwebnVFLPd6SU5yg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 <script src="https://cdn.jsdelivr.net/npm/jquery-validation@1.19.3/dist/additional-methods.js"></script>
 <script>
+  // validation number
+  let validationNumber = (evt) => {
+    var iKeyCode = evt.which ? evt.which : evt.keyCode;
+    if (iKeyCode != 46 && iKeyCode > 31 && (iKeyCode < 48 || iKeyCode > 57))
+      return false;
+
+    return true;
+  };
   // preview image and validation
   previewImage = (input) => {
     const fi = document.getElementById("photo-profile");
@@ -174,6 +162,11 @@
     }
   };
 
+  // add method validation only letters
+  $.validator.addMethod("alphabetOnly", function(value, element) {
+    return this.optional(element) || value == value.match(/^[a-zA-Z\s]+$/);
+  });
+
   const exclamationCircle = "<i class='fa-solid fa-circle-exclamation'></i>";
 
   // validatePassword with JQuery
@@ -202,7 +195,8 @@
         },
         newPasswordConfirm: {
           required: exclamationCircle + " Please enter the password again.",
-          equalTo: exclamationCircle + " Your Konfirmasi Password does not match the Password Baru",
+          equalTo: exclamationCircle +
+            " Your Konfirmasi Password does not match the Password Baru.",
         },
       },
     });
@@ -211,33 +205,42 @@
       rules: {
         fullname: {
           required: true,
+          alphabetOnly: true,
         },
         email: {
           required: true,
+          email: true,
         },
         nip: {
           required: true,
+          digits: true,
         },
-        'no-telp': {
+        "no-telp": {
           required: true,
           minlength: 12,
+          digits: true,
         },
       },
       messages: {
         fullname: {
           required: exclamationCircle + " Nama Lengkap is required.",
+          alphabetOnly: exclamationCircle + " Nama Lengkap must be letters.",
         },
         email: {
           required: exclamationCircle + " Email is required.",
+          email: exclamationCircle + " Please enter a valid email address.",
         },
         nip: {
           required: exclamationCircle + " NIP is required.",
+          digits: exclamationCircle + " NIP must be number.",
         },
-        'no-telp': {
+        "no-telp": {
           required: exclamationCircle + " Nomor Telepon is required.",
-          minlength: exclamationCircle + " Your Nomor Telepon must be at least 12 characters.",
+          minlength: exclamationCircle +
+            " Your Nomor Telepon must be at least 12 characters.",
+          digits: exclamationCircle + " Nomor Telepon must be number.",
         },
-      }
+      },
     });
 
     $("#btnSubmitChangePassword").on("click", () => {
