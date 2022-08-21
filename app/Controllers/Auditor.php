@@ -540,4 +540,18 @@ class Auditor extends BaseController
     {
         return $this->response->download('dokumen/' . $fileName, null);
     }
+
+    // Audit Method (Done)
+    public function audit()
+    {
+        $data_user = $this->data_user;
+        $unit_id = $data_user['unit_id'];
+        $tahun = $data_user['tahun'];
+
+        $this->penilaianModel->updateStatus($unit_id, $tahun, 'Diaudit');
+
+        $this->session->setFlashdata('message', '<div class="alert alert-success alert__sipmpp" role="alert"><i class="fa-solid fa-circle-check color__success"></i><span><strong>Selamat!</strong> Data penilaian telah diaudit.</span></div>');
+
+        return redirect()->to('/auditor/standar/');
+    }
 }
