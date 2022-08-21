@@ -32,7 +32,7 @@
     </p>
   </div>
   <div class="spmi__content-btn">
-    <a href="#" class="btn kirim__btn">
+    <a href="/auditor/audit" class="btn kirim__btn">
       <i class="fa-solid fa-file-signature"></i>
       Konfirmasi Audit
     </a>
