@@ -72,7 +72,7 @@
 
                         <form method="POST" class="register-form" id="register-form" action="/auth/registerprocess">
                             <div class="form-group">
-                                <label for="name"><i class="zmdi zmdi-account material-icons-name"></i></label>
+                                <label for="nama"><i class="zmdi zmdi-account material-icons-name"></i></label>
                                 <input type="text" name="nama" id="nama" placeholder="Nama" required />
                             </div>
                             <div class="form-group">
@@ -84,7 +84,7 @@
                                 <input type="password" name="pass" id="pass" placeholder="Password" required />
                             </div>
                             <div class="form-group">
-                                <label for="re-pass"><i class="zmdi zmdi-lock-outline"></i></label>
+                                <label for="superpass"><i class="zmdi zmdi-lock-outline"></i></label>
                                 <input type="password" name="superpass" id="superpass" placeholder="Superadmin password" required />
                             </div>
                             <div class="form-group form-button">
